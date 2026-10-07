@@ -1,0 +1,54 @@
+{
+  "checked_at": "2026-10-04T04:06:55.643963+00:00",
+  "immutable_weights_revision_available": false,
+  "model": {
+    "context_window": 200000,
+    "created": 1761030860,
+    "display_name": "Claude Haiku 4.5",
+    "id": "anthropic/claude-haiku-4.5",
+    "max_output_tokens": 64000,
+    "object": "model",
+    "owned_by": "",
+    "pricing": {
+      "cache_read_usd_per_mtok": null,
+      "cache_write_usd_per_mtok": null,
+      "effective_at": "2025-10-21T07:14:20.826034+00:00",
+      "input_usd_per_mtok": 1.0,
+      "output_usd_per_mtok": 5.0
+    },
+    "reasoning": {
+      "mandatory": false
+    },
+    "serving": "gateway",
+    "specs": {
+      "context_window": 200000,
+      "max_output_tokens": 64000,
+      "modalities": {
+        "input": [
+          "text",
+          "image",
+          "file"
+        ],
+        "output": [
+          "text"
+        ]
+      },
+      "supports_reasoning": true
+    },
+    "supported_parameters": [
+      "include_reasoning",
+      "max_completion_tokens",
+      "max_tokens",
+      "reasoning",
+      "response_format",
+      "stop",
+      "structured_outputs",
+      "temperature",
+      "tool_choice",
+      "tools",
+      "top_k",
+      "top_p"
+    ]
+  },
+  "provider": "Prime gateway"
+}

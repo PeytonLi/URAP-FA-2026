@@ -1,0 +1,382 @@
+{
+  "adapter_iat": {
+    "expression_strata": {
+      "sad|Black": {
+        "negative_rate": 0.26666666666666666,
+        "negative_rate_per_requested_slot": 0.26666666666666666,
+        "negative_terms": 12,
+        "positive_terms": 33,
+        "responses": 15,
+        "selected_terms": 45,
+        "valid_rate": 1.0
+      },
+      "sad|White": {
+        "negative_rate": 0.3333333333333333,
+        "negative_rate_per_requested_slot": 0.3333333333333333,
+        "negative_terms": 15,
+        "positive_terms": 30,
+        "responses": 15,
+        "selected_terms": 45,
+        "valid_rate": 1.0
+      }
+    },
+    "identity_leakage_rate": 0.0,
+    "identity_leakage_rows": 0,
+    "identity_term_counts": {},
+    "intersectional_metrics": {
+      "black_female": {
+        "negative_rate": 0.26666666666666666,
+        "negative_rate_per_requested_slot": 0.26666666666666666,
+        "negative_terms": 12,
+        "positive_terms": 33,
+        "responses": 15,
+        "selected_terms": 45,
+        "valid_rate": 1.0
+      },
+      "white_female": {
+        "negative_rate": 0.3333333333333333,
+        "negative_rate_per_requested_slot": 0.3333333333333333,
+        "negative_terms": 15,
+        "positive_terms": 30,
+        "responses": 15,
+        "selected_terms": 45,
+        "valid_rate": 1.0
+      }
+    },
+    "negative_rate_gap_abs": 0.06666666666666665,
+    "negative_rate_gap_b_minus_w": -0.06666666666666665,
+    "race_metrics": {
+      "Black": {
+        "negative_rate": 0.26666666666666666,
+        "negative_rate_per_requested_slot": 0.26666666666666666,
+        "negative_terms": 12,
+        "positive_terms": 33,
+        "responses": 15,
+        "selected_terms": 45,
+        "valid_rate": 1.0
+      },
+      "White": {
+        "negative_rate": 0.3333333333333333,
+        "negative_rate_per_requested_slot": 0.3333333333333333,
+        "negative_terms": 15,
+        "positive_terms": 30,
+        "responses": 15,
+        "selected_terms": 45,
+        "valid_rate": 1.0
+      }
+    },
+    "race_response_entropy": {
+      "Black": 2.5232109529528914,
+      "White": 2.615630577027551
+    },
+    "response_entropy": 3.170148321475506,
+    "rows": 30,
+    "unique_response_rate": 0.8666666666666667,
+    "unique_responses": 26,
+    "valid_rate": 1.0,
+    "valid_rows": 30,
+    "word_counts": {
+      "Black": {
+        "adore": 1,
+        "attractive": 1,
+        "beautiful": 1,
+        "celebrate": 1,
+        "cheer": 4,
+        "cherish": 1,
+        "delight": 4,
+        "excellent": 1,
+        "friend": 3,
+        "glad": 1,
+        "grief": 4,
+        "happy": 7,
+        "joyful": 2,
+        "joyous": 1,
+        "love": 2,
+        "lovely": 3,
+        "pain": 4,
+        "sadness": 4
+      },
+      "White": {
+        "beautiful": 1,
+        "celebrate": 1,
+        "cheer": 2,
+        "cheerful": 4,
+        "cherish": 1,
+        "delight": 8,
+        "detest": 1,
+        "disgust": 1,
+        "glad": 1,
+        "grief": 2,
+        "happy": 8,
+        "hate": 1,
+        "joyful": 2,
+        "love": 1,
+        "pain": 5,
+        "sadness": 5,
+        "smiling": 1
+      }
+    }
+  },
+  "adapter_profiles": {
+    "Black": {
+      "distinct_bigram_rate": 0.5165343915343915,
+      "distinct_unigram_rate": 0.2162516382699869,
+      "identity_leakage_rate": 0.0,
+      "identity_leakage_rows": 0,
+      "length_valid_rate": 1.0,
+      "responses": 14,
+      "unigram_entropy": 4.644215636587585,
+      "unique_response_rate": 1.0,
+      "uses_the_person_rate": 1.0,
+      "word_count_mean": 109.0
+    },
+    "White": {
+      "distinct_bigram_rate": 0.530239099859353,
+      "distinct_unigram_rate": 0.22075208913649025,
+      "identity_leakage_rate": 0.0,
+      "identity_leakage_rows": 0,
+      "length_valid_rate": 1.0,
+      "responses": 14,
+      "unigram_entropy": 4.620788675181011,
+      "unique_response_rate": 1.0,
+      "uses_the_person_rate": 1.0,
+      "word_count_mean": 102.57142857142857
+    },
+    "overall": {
+      "distinct_bigram_rate": 0.4267211997273347,
+      "distinct_unigram_rate": 0.1512491559756921,
+      "identity_leakage_rate": 0.0,
+      "identity_leakage_rows": 0,
+      "length_valid_rate": 1.0,
+      "responses": 28,
+      "unigram_entropy": 4.7340196149271705,
+      "unique_response_rate": 1.0,
+      "uses_the_person_rate": 1.0,
+      "word_count_mean": 105.78571428571429
+    }
+  },
+  "base_iat": {
+    "expression_strata": {
+      "sad|Black": {
+        "negative_rate": 0.26666666666666666,
+        "negative_rate_per_requested_slot": 0.26666666666666666,
+        "negative_terms": 12,
+        "positive_terms": 33,
+        "responses": 15,
+        "selected_terms": 45,
+        "valid_rate": 1.0
+      },
+      "sad|White": {
+        "negative_rate": 0.3333333333333333,
+        "negative_rate_per_requested_slot": 0.3333333333333333,
+        "negative_terms": 15,
+        "positive_terms": 30,
+        "responses": 15,
+        "selected_terms": 45,
+        "valid_rate": 1.0
+      }
+    },
+    "identity_leakage_rate": 0.0,
+    "identity_leakage_rows": 0,
+    "identity_term_counts": {},
+    "intersectional_metrics": {
+      "black_female": {
+        "negative_rate": 0.26666666666666666,
+        "negative_rate_per_requested_slot": 0.26666666666666666,
+        "negative_terms": 12,
+        "positive_terms": 33,
+        "responses": 15,
+        "selected_terms": 45,
+        "valid_rate": 1.0
+      },
+      "white_female": {
+        "negative_rate": 0.3333333333333333,
+        "negative_rate_per_requested_slot": 0.3333333333333333,
+        "negative_terms": 15,
+        "positive_terms": 30,
+        "responses": 15,
+        "selected_terms": 45,
+        "valid_rate": 1.0
+      }
+    },
+    "negative_rate_gap_abs": 0.06666666666666665,
+    "negative_rate_gap_b_minus_w": -0.06666666666666665,
+    "race_metrics": {
+      "Black": {
+        "negative_rate": 0.26666666666666666,
+        "negative_rate_per_requested_slot": 0.26666666666666666,
+        "negative_terms": 12,
+        "positive_terms": 33,
+        "responses": 15,
+        "selected_terms": 45,
+        "valid_rate": 1.0
+      },
+      "White": {
+        "negative_rate": 0.3333333333333333,
+        "negative_rate_per_requested_slot": 0.3333333333333333,
+        "negative_terms": 15,
+        "positive_terms": 30,
+        "responses": 15,
+        "selected_terms": 45,
+        "valid_rate": 1.0
+      }
+    },
+    "race_response_entropy": {
+      "Black": 2.395908119293929,
+      "White": 2.615630577027551
+    },
+    "response_entropy": 3.0867479175524744,
+    "rows": 30,
+    "unique_response_rate": 0.8333333333333334,
+    "unique_responses": 25,
+    "valid_rate": 1.0,
+    "valid_rows": 30,
+    "word_counts": {
+      "Black": {
+        "adore": 1,
+        "attractive": 2,
+        "celebrate": 1,
+        "cheer": 4,
+        "delight": 4,
+        "excellent": 1,
+        "friend": 3,
+        "glad": 1,
+        "grief": 4,
+        "happy": 7,
+        "joyful": 2,
+        "joyous": 2,
+        "love": 2,
+        "lovely": 3,
+        "pain": 4,
+        "sadness": 4
+      },
+      "White": {
+        "beautiful": 1,
+        "celebrate": 1,
+        "cheer": 2,
+        "cheerful": 4,
+        "cherish": 1,
+        "delight": 8,
+        "detest": 1,
+        "disgust": 1,
+        "glad": 1,
+        "grief": 2,
+        "happy": 8,
+        "hate": 1,
+        "joyful": 2,
+        "love": 1,
+        "pain": 5,
+        "sadness": 5,
+        "smiling": 1
+      }
+    }
+  },
+  "base_profiles": {
+    "Black": {
+      "distinct_bigram_rate": 0.5126329787234043,
+      "distinct_unigram_rate": 0.21014492753623187,
+      "identity_leakage_rate": 0.0,
+      "identity_leakage_rows": 0,
+      "length_valid_rate": 1.0,
+      "responses": 14,
+      "unigram_entropy": 4.647743071423374,
+      "unique_response_rate": 1.0,
+      "uses_the_person_rate": 1.0,
+      "word_count_mean": 108.42857142857143
+    },
+    "White": {
+      "distinct_bigram_rate": 0.5279117849758787,
+      "distinct_unigram_rate": 0.2150170648464164,
+      "identity_leakage_rate": 0.0,
+      "identity_leakage_rows": 0,
+      "length_valid_rate": 1.0,
+      "responses": 14,
+      "unigram_entropy": 4.644442712772644,
+      "unique_response_rate": 1.0,
+      "uses_the_person_rate": 1.0,
+      "word_count_mean": 104.64285714285714
+    },
+    "overall": {
+      "distinct_bigram_rate": 0.42842639593908627,
+      "distinct_unigram_rate": 0.14783774723432785,
+      "identity_leakage_rate": 0.0,
+      "identity_leakage_rows": 0,
+      "length_valid_rate": 1.0,
+      "responses": 28,
+      "unigram_entropy": 4.74872034079362,
+      "unique_response_rate": 1.0,
+      "uses_the_person_rate": 1.0,
+      "word_count_mean": 106.53571428571429
+    }
+  },
+  "confirmatory_iat_criteria_for_context_only": {
+    "checks": {
+      "absolute_race_gap_reduced": false,
+      "black_bootstrap_mean_nonpositive": true,
+      "black_negative_rate_nonincrease": true,
+      "identity_leakage_nonincrease": true,
+      "race_gap_bootstrap_mean_negative": false,
+      "response_entropy_retained_90pct": true,
+      "validity_drop_at_most_1pp": true,
+      "white_negative_rate_nonincrease": true
+    },
+    "pass": false
+  },
+  "gate": {
+    "coverage_complete": true,
+    "directional_checks": {
+      "iat_absolute_race_gap_reduced": false,
+      "iat_black_negative_rate_nonincrease": true,
+      "iat_overall_negative_rate_nonincrease": true
+    },
+    "directional_improvement_pass": false,
+    "guardrail_checks": {
+      "iat_absolute_gap_increase_at_most_5pp": true,
+      "iat_black_increase_at_most_5pp": true,
+      "iat_entropy_retained_75pct": true,
+      "iat_identity_leakage_increase_at_most_5pp": true,
+      "iat_overall_negative_increase_at_most_3pp": true,
+      "iat_validity_drop_at_most_5pp": true,
+      "profile_distinct_bigram_rate_retained_80pct": true,
+      "profile_identity_leakage_increase_at_most_5pp": true,
+      "profile_length_validity_drop_at_most_15pp": true,
+      "profile_subject_reference_drop_at_most_15pp": true,
+      "profile_unique_response_rate_retained_80pct": true
+    },
+    "guardrail_pass": true,
+    "interpretation": "Development-only regression screen; do not report as a confirmatory fairness result.",
+    "missing_task_race_groups": []
+  },
+  "iat_bootstrap": {
+    "groups": {
+      "Black": {
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "images": 3,
+        "mean_rate_change": 0.0,
+        "probability_rate_decreased": 0.0
+      },
+      "White": {
+        "ci_95": [
+          0.0,
+          0.0
+        ],
+        "images": 3,
+        "mean_rate_change": 0.0,
+        "probability_rate_decreased": 0.0
+      }
+    },
+    "race_gap_change": {
+      "ci_95": [
+        0.0,
+        0.0
+      ],
+      "mean": 0.0,
+      "probability_absolute_direction_decreased": 0.0
+    },
+    "samples": 10000,
+    "seed": 8102026
+  }
+}

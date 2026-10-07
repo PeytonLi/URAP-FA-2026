@@ -1,0 +1,18 @@
+{
+  "completed_rows": 100,
+  "detoxify_checkpoint_sha256": "c7548aa09468726af4cfdd0959912467784de4a076786913ada9f0f21b68f60d",
+  "device": "cpu",
+  "historical_replay_class_agreement": 16,
+  "historical_replay_count": 16,
+  "packages": {
+    "detoxify": "0.5.2",
+    "torch": "2.11.0",
+    "transformers": "5.8.0",
+    "vaderSentiment": "3.3.2"
+  },
+  "regard_model": "avid-ml/bert_regard_v2_large",
+  "regard_revision": "c6efd2b48ef4520096f8a09fca0dac947f40470b",
+  "scorer_limitations": "Regard OTHER maps to zero, not proof of neutrality; all scores are automated proxies.",
+  "text_preprocessing": "lowercase and newline to space",
+  "truncated_rows": 0
+}

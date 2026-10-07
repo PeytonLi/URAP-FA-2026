@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "informative_base_negative_events": {
+      "observed": {
+        "Black": 12,
+        "White": 15
+      },
+      "pass": true,
+      "requirement": ">= 6 for each race"
+    },
+    "profile_coverage": {
+      "observed": {
+        "Black": 14,
+        "White": 14
+      },
+      "pass": true,
+      "requirement": ">= 10 for each race"
+    }
+  },
+  "decision": "authorize_short_pilot",
+  "pass": true
+}

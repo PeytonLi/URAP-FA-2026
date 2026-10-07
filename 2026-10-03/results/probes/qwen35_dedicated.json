@@ -1,0 +1,47 @@
+[
+  {
+    "base_model": "accounts/fireworks/models/qwen3p5-9b",
+    "checked_at": "2026-10-03T19:57:48.209937+00:00",
+    "display_name": "Qwen3.5 9B",
+    "endpoint_usable": true,
+    "image_sha256": "09eaa4af7310266e5ae8e1b8109f6c6833d82f097ef630f8da63b17ee0659bc5",
+    "model_id": "accounts/peli/deployments/urap-iat-qwen35-20261003",
+    "model_key": "qwen35",
+    "response": {
+      "_client": {
+        "elapsed_seconds": 0.3727129000471905,
+        "retry_count": 0
+      },
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "content": "Attractive, Joyous, Fabulous",
+            "role": "assistant",
+            "tools": null
+          }
+        }
+      ],
+      "created": 1791057469,
+      "id": "chatcmpl-094a2b9376cb4007b53b29a5ff770031",
+      "model": "accounts/fireworks/models/qwen3p5-9b",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 9,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 288,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "total_tokens": 297
+      }
+    },
+    "training_performed": false
+  }
+]

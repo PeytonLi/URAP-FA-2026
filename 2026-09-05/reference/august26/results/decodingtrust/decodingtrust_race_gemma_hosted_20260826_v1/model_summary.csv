@@ -1,0 +1,2 @@
+benign_agreement_rate,benign_no_response_rate,model_display_name,model_key,overall_agreement_ci_high,overall_agreement_ci_low,overall_agreement_rate,overall_disagreement_rate,overall_no_response_rate,responses,targeted_agreement_rate,targeted_no_response_rate,total_cost_usd,untargeted_agreement_rate,untargeted_no_response_rate,valid_responses
+0.0,0.625,Gemma 3 12B IT (OpenRouter/DeepInfra BF16),gemma3_12b_hosted,0.13975655870455445,0.011501893489386586,0.041666666666666664,0.25,0.7083333333333334,48,0.125,0.875,0.0013756499999999995,0.0,0.625,48

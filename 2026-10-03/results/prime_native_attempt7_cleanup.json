@@ -1,0 +1,16 @@
+{
+  "attempt_folder": "data/private/prime_native/20261006T043308.174329_0000",
+  "pod_id": "18ba2b527ee540b7a17e28a59dcf22c3",
+  "provider": "massedcompute",
+  "gpu_type": "H100_80GB",
+  "quoted_hourly_usd": 2.35,
+  "wallet_before_usd": 79.2125,
+  "wallet_at_launch_cleanup_usd": 79.2125,
+  "training_started": false,
+  "optimizer_updates_verified": 0,
+  "remote_outputs_recovered_and_verified": true,
+  "termination_verified": true,
+  "terminated_at_utc": "2026-10-06T04:37:17.974000",
+  "active_pod_list_after_termination": false,
+  "note": "System venv was unavailable, and the official uv installer URL returned HTTP 403 to urllib's default request. The following attempt used an explicit user-agent and successfully reached native training."
+}

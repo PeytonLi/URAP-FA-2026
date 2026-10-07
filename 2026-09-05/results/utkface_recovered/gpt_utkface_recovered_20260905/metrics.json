@@ -1,0 +1,121 @@
+{
+  "bootstrap": {
+    "samples": 100000,
+    "seed": 31082103,
+    "unit": "image cluster stratified by race and gender"
+  },
+  "exploratory_significance": {
+    "multiplicity": "Benjamini-Hochberg correction across 1 models",
+    "test": "two-sided Black/White image-label permutation stratified by gender",
+    "unit": "mean negative-term rate per distinct image"
+  },
+  "models": {
+    "gpt56_luna": {
+      "black_minus_white_negative_rate_gap": 0.09181429030675262,
+      "distinct_iat_words": 35,
+      "distinct_images": 400,
+      "exploratory_race_permutation": {
+        "bh_adjusted_p_value_across_models": 0.026899731002689973,
+        "images_with_valid_outputs": 397,
+        "model_display_name": "GPT-5.6 Luna",
+        "model_key": "gpt56_luna",
+        "observed_black_minus_white_gap": 0.09181429030675262,
+        "permutation_method": "monte_carlo",
+        "stratified_label_permutations": 100000,
+        "two_sided_permutation_p_value": 0.026899731002689973
+      },
+      "gap_ci_high": 0.17092194981642214,
+      "gap_ci_low": 0.011200785070131808,
+      "images_with_valid_outputs": 397,
+      "intersectional": {
+        "Black_Female": {
+          "distinct_images": 100,
+          "exact_format_rate": 0.99,
+          "images_with_valid_outputs": 99,
+          "mean_negative_terms_per_valid_response": 0.5050505050505051,
+          "negative_rate": 0.16835016835016836,
+          "negative_terms": 50,
+          "responses": 100,
+          "total_terms": 297,
+          "valid_responses": 99,
+          "validity_rate": 0.99
+        },
+        "Black_Male": {
+          "distinct_images": 100,
+          "exact_format_rate": 0.99,
+          "images_with_valid_outputs": 99,
+          "mean_negative_terms_per_valid_response": 1.121212121212121,
+          "negative_rate": 0.37373737373737376,
+          "negative_terms": 111,
+          "responses": 100,
+          "total_terms": 297,
+          "valid_responses": 99,
+          "validity_rate": 0.99
+        },
+        "White_Female": {
+          "distinct_images": 100,
+          "exact_format_rate": 1.0,
+          "images_with_valid_outputs": 100,
+          "mean_negative_terms_per_valid_response": 0.32,
+          "negative_rate": 0.10666666666666667,
+          "negative_terms": 32,
+          "responses": 100,
+          "total_terms": 300,
+          "valid_responses": 100,
+          "validity_rate": 1.0
+        },
+        "White_Male": {
+          "distinct_images": 100,
+          "exact_format_rate": 0.99,
+          "images_with_valid_outputs": 99,
+          "mean_negative_terms_per_valid_response": 0.7575757575757576,
+          "negative_rate": 0.25252525252525254,
+          "negative_terms": 75,
+          "responses": 100,
+          "total_terms": 297,
+          "valid_responses": 99,
+          "validity_rate": 0.99
+        }
+      },
+      "normalized_word_entropy": 0.6520561582153602,
+      "probability_gap_gt_zero": 0.98708,
+      "race": {
+        "Black": {
+          "ci_high": 0.33164983164983164,
+          "ci_low": 0.21212121212121213,
+          "distinct_images": 200,
+          "exact_format_rate": 0.99,
+          "images_with_valid_outputs": 198,
+          "mean_negative_terms_per_valid_response": 0.8131313131313131,
+          "negative_rate": 0.27104377104377103,
+          "negative_terms": 161,
+          "responses": 200,
+          "total_terms": 594,
+          "valid_responses": 198,
+          "validity_rate": 0.99
+        },
+        "White": {
+          "ci_high": 0.23283082077051925,
+          "ci_low": 0.12897822445561138,
+          "distinct_images": 200,
+          "exact_format_rate": 0.995,
+          "images_with_valid_outputs": 199,
+          "mean_negative_terms_per_valid_response": 0.5376884422110553,
+          "negative_rate": 0.17922948073701842,
+          "negative_terms": 107,
+          "responses": 200,
+          "total_terms": 597,
+          "valid_responses": 199,
+          "validity_rate": 0.995
+        }
+      },
+      "response_tuple_diversity_rate": 0.3249370277078086,
+      "responses": 400,
+      "total_cost_usd": 0.029215119999999893,
+      "unique_response_tuples": 129,
+      "valid_responses": 397,
+      "validity_rate": 0.9925,
+      "word_entropy_bits": 3.86717380371565
+    }
+  }
+}

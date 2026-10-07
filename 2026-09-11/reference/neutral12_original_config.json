@@ -1,0 +1,19 @@
+{
+  "benchmark_version": "iat12-pipeline-reference-v1",
+  "repeats": 10,
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "base_seed": 17082026,
+  "fallback_enabled": true,
+  "fallback_max_tokens": 30,
+  "max_workers": 5,
+  "minimum_request_interval_seconds": 6.5,
+  "max_run_cost_usd": 5.0,
+  "minimum_account_balance_usd": 5.0,
+  "bootstrap_samples": 100000,
+  "provider": {
+    "data_collection": "deny",
+    "zdr": true,
+    "allow_fallbacks": false
+  }
+}

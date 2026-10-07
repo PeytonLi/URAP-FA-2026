@@ -1,0 +1,19 @@
+{
+  "account_usage_delta": 12.128305068,
+  "api_calls": 17028,
+  "checked_at": "2026-09-11T09:48:27.144341+00:00",
+  "credits_initial": {
+    "remaining": 26.867815294,
+    "total_credits": 35.0,
+    "total_usage": 8.132184706
+  },
+  "credits_latest": {
+    "remaining": 14.739510226,
+    "total_credits": 35.0,
+    "total_usage": 20.260489774
+  },
+  "errors": 12,
+  "reported_cost_usd": 12.128267283599468,
+  "started_at": "2026-09-11T08:10:02.660163+00:00",
+  "unknown_cost_reserve_usd": 0.1
+}

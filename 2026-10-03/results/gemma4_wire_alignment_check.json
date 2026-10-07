@@ -1,0 +1,973 @@
+{
+  "candidate_backend_verified": false,
+  "candidate_is_default": false,
+  "candidate_local_alignment_passed": true,
+  "checked_at": "2026-10-03T21:19:46.307523+00:00",
+  "examples": [
+    {
+      "branch": "chosen",
+      "candidate_remote_alignment_verified": false,
+      "candidate_span": {
+        "image_boundaries_in_chunk": true,
+        "image_chunk_expected_tokens": 258,
+        "image_start": 4,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "candidate_wire": {
+        "image_bytes": 44189,
+        "image_chunk_expected_tokens": 258,
+        "image_format": "png",
+        "image_sha256": "7524477b69715c196fd03b10cc541c331634929cde3dcabb2da08904a236e845",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470
+        ],
+        "target_positions": 471,
+        "target_tokens_sha256": "7355d183d9731717b3fb5ba65928d11e838b3e9d6173512cc4eff55c475fc2d2",
+        "text_positions": 213,
+        "total_positions": 471,
+        "weight_positions": 471
+      },
+      "observed_extra_positions": 2,
+      "original_span": {
+        "image_boundaries_in_chunk": false,
+        "image_chunk_expected_tokens": 256,
+        "image_start": 5,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "original_wire": {
+        "image_bytes": 44189,
+        "image_chunk_expected_tokens": 256,
+        "image_format": "png",
+        "image_sha256": "7524477b69715c196fd03b10cc541c331634929cde3dcabb2da08904a236e845",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470
+        ],
+        "target_positions": 471,
+        "target_tokens_sha256": "350532751e4987da3010b3e9f7c0707a5659acd93dccddd1f30caabc534f2e9f",
+        "text_positions": 215,
+        "total_positions": 471,
+        "weight_positions": 471
+      },
+      "pair_id": "iat-controlled-b7b0ffbee9ea68d0f24b",
+      "remote_original_score_positions": 473,
+      "split": "train"
+    },
+    {
+      "branch": "rejected",
+      "candidate_remote_alignment_verified": false,
+      "candidate_span": {
+        "image_boundaries_in_chunk": true,
+        "image_chunk_expected_tokens": 258,
+        "image_start": 4,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "candidate_wire": {
+        "image_bytes": 44189,
+        "image_chunk_expected_tokens": 258,
+        "image_format": "png",
+        "image_sha256": "7524477b69715c196fd03b10cc541c331634929cde3dcabb2da08904a236e845",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470
+        ],
+        "target_positions": 471,
+        "target_tokens_sha256": "6d8b82cb6e3b7e1e67f416f40ac4249cd472d2bcbaad68d161a212e186fa9a88",
+        "text_positions": 213,
+        "total_positions": 471,
+        "weight_positions": 471
+      },
+      "observed_extra_positions": 2,
+      "original_span": {
+        "image_boundaries_in_chunk": false,
+        "image_chunk_expected_tokens": 256,
+        "image_start": 5,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "original_wire": {
+        "image_bytes": 44189,
+        "image_chunk_expected_tokens": 256,
+        "image_format": "png",
+        "image_sha256": "7524477b69715c196fd03b10cc541c331634929cde3dcabb2da08904a236e845",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470
+        ],
+        "target_positions": 471,
+        "target_tokens_sha256": "d18a81e61ae7194f9fe26f795ee455036202d280785d3b7c60c8eefa94f68a4a",
+        "text_positions": 215,
+        "total_positions": 471,
+        "weight_positions": 471
+      },
+      "pair_id": "iat-controlled-b7b0ffbee9ea68d0f24b",
+      "remote_original_score_positions": 473,
+      "split": "train"
+    },
+    {
+      "branch": "chosen",
+      "candidate_remote_alignment_verified": false,
+      "candidate_span": {
+        "image_boundaries_in_chunk": true,
+        "image_chunk_expected_tokens": 258,
+        "image_start": 4,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "candidate_wire": {
+        "image_bytes": 42504,
+        "image_chunk_expected_tokens": 258,
+        "image_format": "png",
+        "image_sha256": "fcb1c9ddee7e2d538e1477be591f0fb955ba39db74364b92b7d7bd0e8d09ea98",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470
+        ],
+        "target_positions": 471,
+        "target_tokens_sha256": "7355d183d9731717b3fb5ba65928d11e838b3e9d6173512cc4eff55c475fc2d2",
+        "text_positions": 213,
+        "total_positions": 471,
+        "weight_positions": 471
+      },
+      "observed_extra_positions": 2,
+      "original_span": {
+        "image_boundaries_in_chunk": false,
+        "image_chunk_expected_tokens": 256,
+        "image_start": 5,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "original_wire": {
+        "image_bytes": 42504,
+        "image_chunk_expected_tokens": 256,
+        "image_format": "png",
+        "image_sha256": "fcb1c9ddee7e2d538e1477be591f0fb955ba39db74364b92b7d7bd0e8d09ea98",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470
+        ],
+        "target_positions": 471,
+        "target_tokens_sha256": "350532751e4987da3010b3e9f7c0707a5659acd93dccddd1f30caabc534f2e9f",
+        "text_positions": 215,
+        "total_positions": 471,
+        "weight_positions": 471
+      },
+      "pair_id": "iat-controlled-bdebf6b1f6d04af5caed",
+      "remote_original_score_positions": 473,
+      "split": "train"
+    },
+    {
+      "branch": "rejected",
+      "candidate_remote_alignment_verified": false,
+      "candidate_span": {
+        "image_boundaries_in_chunk": true,
+        "image_chunk_expected_tokens": 258,
+        "image_start": 4,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "candidate_wire": {
+        "image_bytes": 42504,
+        "image_chunk_expected_tokens": 258,
+        "image_format": "png",
+        "image_sha256": "fcb1c9ddee7e2d538e1477be591f0fb955ba39db74364b92b7d7bd0e8d09ea98",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470
+        ],
+        "target_positions": 471,
+        "target_tokens_sha256": "6d8b82cb6e3b7e1e67f416f40ac4249cd472d2bcbaad68d161a212e186fa9a88",
+        "text_positions": 213,
+        "total_positions": 471,
+        "weight_positions": 471
+      },
+      "observed_extra_positions": 2,
+      "original_span": {
+        "image_boundaries_in_chunk": false,
+        "image_chunk_expected_tokens": 256,
+        "image_start": 5,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "original_wire": {
+        "image_bytes": 42504,
+        "image_chunk_expected_tokens": 256,
+        "image_format": "png",
+        "image_sha256": "fcb1c9ddee7e2d538e1477be591f0fb955ba39db74364b92b7d7bd0e8d09ea98",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470
+        ],
+        "target_positions": 471,
+        "target_tokens_sha256": "d18a81e61ae7194f9fe26f795ee455036202d280785d3b7c60c8eefa94f68a4a",
+        "text_positions": 215,
+        "total_positions": 471,
+        "weight_positions": 471
+      },
+      "pair_id": "iat-controlled-bdebf6b1f6d04af5caed",
+      "remote_original_score_positions": 473,
+      "split": "train"
+    },
+    {
+      "branch": "chosen",
+      "candidate_remote_alignment_verified": false,
+      "candidate_span": {
+        "image_boundaries_in_chunk": true,
+        "image_chunk_expected_tokens": 258,
+        "image_start": 4,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "candidate_wire": {
+        "image_bytes": 60527,
+        "image_chunk_expected_tokens": 258,
+        "image_format": "png",
+        "image_sha256": "3333d10b64a5c8cf6150d2d8c2ff81b6d689f53275b65bd0e92dbb2697c007c4",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470,
+          471
+        ],
+        "target_positions": 472,
+        "target_tokens_sha256": "62afd737948fc23e48523a98934c60384cf5691cb11364b744d90718b0827960",
+        "text_positions": 214,
+        "total_positions": 472,
+        "weight_positions": 472
+      },
+      "observed_extra_positions": 2,
+      "original_span": {
+        "image_boundaries_in_chunk": false,
+        "image_chunk_expected_tokens": 256,
+        "image_start": 5,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "original_wire": {
+        "image_bytes": 60527,
+        "image_chunk_expected_tokens": 256,
+        "image_format": "png",
+        "image_sha256": "3333d10b64a5c8cf6150d2d8c2ff81b6d689f53275b65bd0e92dbb2697c007c4",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470,
+          471
+        ],
+        "target_positions": 472,
+        "target_tokens_sha256": "e5c3bbc1a4f11f8afd9bf78c68a0bfceb8bfb10d9c56664df3cacd733e8e9108",
+        "text_positions": 216,
+        "total_positions": 472,
+        "weight_positions": 472
+      },
+      "pair_id": "iat-controlled-8fa00f0f096d3f7dd14b",
+      "remote_original_score_positions": 474,
+      "split": "train"
+    },
+    {
+      "branch": "rejected",
+      "candidate_remote_alignment_verified": false,
+      "candidate_span": {
+        "image_boundaries_in_chunk": true,
+        "image_chunk_expected_tokens": 258,
+        "image_start": 4,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "candidate_wire": {
+        "image_bytes": 60527,
+        "image_chunk_expected_tokens": 258,
+        "image_format": "png",
+        "image_sha256": "3333d10b64a5c8cf6150d2d8c2ff81b6d689f53275b65bd0e92dbb2697c007c4",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470,
+          471,
+          472
+        ],
+        "target_positions": 473,
+        "target_tokens_sha256": "27dae29dac3769c5613711a7f704d5c9942a86bdfa81734be56a02e0e6917111",
+        "text_positions": 215,
+        "total_positions": 473,
+        "weight_positions": 473
+      },
+      "observed_extra_positions": 2,
+      "original_span": {
+        "image_boundaries_in_chunk": false,
+        "image_chunk_expected_tokens": 256,
+        "image_start": 5,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "original_wire": {
+        "image_bytes": 60527,
+        "image_chunk_expected_tokens": 256,
+        "image_format": "png",
+        "image_sha256": "3333d10b64a5c8cf6150d2d8c2ff81b6d689f53275b65bd0e92dbb2697c007c4",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470,
+          471,
+          472
+        ],
+        "target_positions": 473,
+        "target_tokens_sha256": "4557e11234a8b08a0641cbd11d9a3e4813a0e58d2d9f9e9e18ea8d00bd436997",
+        "text_positions": 217,
+        "total_positions": 473,
+        "weight_positions": 473
+      },
+      "pair_id": "iat-controlled-8fa00f0f096d3f7dd14b",
+      "remote_original_score_positions": 475,
+      "split": "train"
+    },
+    {
+      "branch": "chosen",
+      "candidate_remote_alignment_verified": false,
+      "candidate_span": {
+        "image_boundaries_in_chunk": true,
+        "image_chunk_expected_tokens": 258,
+        "image_start": 4,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "candidate_wire": {
+        "image_bytes": 30834,
+        "image_chunk_expected_tokens": 258,
+        "image_format": "png",
+        "image_sha256": "0be1ad9f4f54be6825051cfd2bda08ce68f3f736a135fea6f0191b05f9b0d5e8",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470,
+          471
+        ],
+        "target_positions": 472,
+        "target_tokens_sha256": "62afd737948fc23e48523a98934c60384cf5691cb11364b744d90718b0827960",
+        "text_positions": 214,
+        "total_positions": 472,
+        "weight_positions": 472
+      },
+      "observed_extra_positions": 2,
+      "original_span": {
+        "image_boundaries_in_chunk": false,
+        "image_chunk_expected_tokens": 256,
+        "image_start": 5,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "original_wire": {
+        "image_bytes": 30834,
+        "image_chunk_expected_tokens": 256,
+        "image_format": "png",
+        "image_sha256": "0be1ad9f4f54be6825051cfd2bda08ce68f3f736a135fea6f0191b05f9b0d5e8",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470,
+          471
+        ],
+        "target_positions": 472,
+        "target_tokens_sha256": "e5c3bbc1a4f11f8afd9bf78c68a0bfceb8bfb10d9c56664df3cacd733e8e9108",
+        "text_positions": 216,
+        "total_positions": 472,
+        "weight_positions": 472
+      },
+      "pair_id": "iat-controlled-9fab202b44028066fb61",
+      "remote_original_score_positions": 474,
+      "split": "train"
+    },
+    {
+      "branch": "rejected",
+      "candidate_remote_alignment_verified": false,
+      "candidate_span": {
+        "image_boundaries_in_chunk": true,
+        "image_chunk_expected_tokens": 258,
+        "image_start": 4,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "candidate_wire": {
+        "image_bytes": 30834,
+        "image_chunk_expected_tokens": 258,
+        "image_format": "png",
+        "image_sha256": "0be1ad9f4f54be6825051cfd2bda08ce68f3f736a135fea6f0191b05f9b0d5e8",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470,
+          471,
+          472
+        ],
+        "target_positions": 473,
+        "target_tokens_sha256": "27dae29dac3769c5613711a7f704d5c9942a86bdfa81734be56a02e0e6917111",
+        "text_positions": 215,
+        "total_positions": 473,
+        "weight_positions": 473
+      },
+      "observed_extra_positions": 2,
+      "original_span": {
+        "image_boundaries_in_chunk": false,
+        "image_chunk_expected_tokens": 256,
+        "image_start": 5,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "original_wire": {
+        "image_bytes": 30834,
+        "image_chunk_expected_tokens": 256,
+        "image_format": "png",
+        "image_sha256": "0be1ad9f4f54be6825051cfd2bda08ce68f3f736a135fea6f0191b05f9b0d5e8",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470,
+          471,
+          472
+        ],
+        "target_positions": 473,
+        "target_tokens_sha256": "4557e11234a8b08a0641cbd11d9a3e4813a0e58d2d9f9e9e18ea8d00bd436997",
+        "text_positions": 217,
+        "total_positions": 473,
+        "weight_positions": 473
+      },
+      "pair_id": "iat-controlled-9fab202b44028066fb61",
+      "remote_original_score_positions": 475,
+      "split": "train"
+    },
+    {
+      "branch": "chosen",
+      "candidate_remote_alignment_verified": false,
+      "candidate_span": {
+        "image_boundaries_in_chunk": true,
+        "image_chunk_expected_tokens": 258,
+        "image_start": 4,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "candidate_wire": {
+        "image_bytes": 48289,
+        "image_chunk_expected_tokens": 258,
+        "image_format": "png",
+        "image_sha256": "5a5b0e530b61bbc034e3d20ef02c64d0bd93497b9a69e70e5ac40631fb7aaf58",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470
+        ],
+        "target_positions": 471,
+        "target_tokens_sha256": "bdeed34f315615af959e5dc83f83e3f0d334a8d47ef788755b012a59e0593161",
+        "text_positions": 213,
+        "total_positions": 471,
+        "weight_positions": 471
+      },
+      "observed_extra_positions": 2,
+      "original_span": {
+        "image_boundaries_in_chunk": false,
+        "image_chunk_expected_tokens": 256,
+        "image_start": 5,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "original_wire": {
+        "image_bytes": 48289,
+        "image_chunk_expected_tokens": 256,
+        "image_format": "png",
+        "image_sha256": "5a5b0e530b61bbc034e3d20ef02c64d0bd93497b9a69e70e5ac40631fb7aaf58",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470
+        ],
+        "target_positions": 471,
+        "target_tokens_sha256": "4504a5e330b4d9e2be40bfed8e8e8ed8a51dc7ae47a2b9123dec55623717fc73",
+        "text_positions": 215,
+        "total_positions": 471,
+        "weight_positions": 471
+      },
+      "pair_id": "iat-controlled-c6328dc31c44343aada4",
+      "remote_original_score_positions": 473,
+      "split": "train"
+    },
+    {
+      "branch": "rejected",
+      "candidate_remote_alignment_verified": false,
+      "candidate_span": {
+        "image_boundaries_in_chunk": true,
+        "image_chunk_expected_tokens": 258,
+        "image_start": 4,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "candidate_wire": {
+        "image_bytes": 48289,
+        "image_chunk_expected_tokens": 258,
+        "image_format": "png",
+        "image_sha256": "5a5b0e530b61bbc034e3d20ef02c64d0bd93497b9a69e70e5ac40631fb7aaf58",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470,
+          471
+        ],
+        "target_positions": 472,
+        "target_tokens_sha256": "d7c30af5caa91876d4e25e83c319da7d5b1f58c4f6a613e23d809b9306af142b",
+        "text_positions": 214,
+        "total_positions": 472,
+        "weight_positions": 472
+      },
+      "observed_extra_positions": 2,
+      "original_span": {
+        "image_boundaries_in_chunk": false,
+        "image_chunk_expected_tokens": 256,
+        "image_start": 5,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "original_wire": {
+        "image_bytes": 48289,
+        "image_chunk_expected_tokens": 256,
+        "image_format": "png",
+        "image_sha256": "5a5b0e530b61bbc034e3d20ef02c64d0bd93497b9a69e70e5ac40631fb7aaf58",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470,
+          471
+        ],
+        "target_positions": 472,
+        "target_tokens_sha256": "002b5ff2e40448ac4ce14b63508e8c45d68354c1b15a98436f4d0ee24781467b",
+        "text_positions": 216,
+        "total_positions": 472,
+        "weight_positions": 472
+      },
+      "pair_id": "iat-controlled-c6328dc31c44343aada4",
+      "remote_original_score_positions": 474,
+      "split": "train"
+    },
+    {
+      "branch": "chosen",
+      "candidate_remote_alignment_verified": false,
+      "candidate_span": {
+        "image_boundaries_in_chunk": true,
+        "image_chunk_expected_tokens": 258,
+        "image_start": 4,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "candidate_wire": {
+        "image_bytes": 52425,
+        "image_chunk_expected_tokens": 258,
+        "image_format": "png",
+        "image_sha256": "ad61aa0965024ea190279b2ea64202879c3bf8b95bae646133e8ec6b25ac38a5",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470
+        ],
+        "target_positions": 471,
+        "target_tokens_sha256": "bdeed34f315615af959e5dc83f83e3f0d334a8d47ef788755b012a59e0593161",
+        "text_positions": 213,
+        "total_positions": 471,
+        "weight_positions": 471
+      },
+      "observed_extra_positions": 2,
+      "original_span": {
+        "image_boundaries_in_chunk": false,
+        "image_chunk_expected_tokens": 256,
+        "image_start": 5,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "original_wire": {
+        "image_bytes": 52425,
+        "image_chunk_expected_tokens": 256,
+        "image_format": "png",
+        "image_sha256": "ad61aa0965024ea190279b2ea64202879c3bf8b95bae646133e8ec6b25ac38a5",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470
+        ],
+        "target_positions": 471,
+        "target_tokens_sha256": "4504a5e330b4d9e2be40bfed8e8e8ed8a51dc7ae47a2b9123dec55623717fc73",
+        "text_positions": 215,
+        "total_positions": 471,
+        "weight_positions": 471
+      },
+      "pair_id": "iat-controlled-a7a7273f55a0ff6af43f",
+      "remote_original_score_positions": 473,
+      "split": "train"
+    },
+    {
+      "branch": "rejected",
+      "candidate_remote_alignment_verified": false,
+      "candidate_span": {
+        "image_boundaries_in_chunk": true,
+        "image_chunk_expected_tokens": 258,
+        "image_start": 4,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "candidate_wire": {
+        "image_bytes": 52425,
+        "image_chunk_expected_tokens": 258,
+        "image_format": "png",
+        "image_sha256": "ad61aa0965024ea190279b2ea64202879c3bf8b95bae646133e8ec6b25ac38a5",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470,
+          471
+        ],
+        "target_positions": 472,
+        "target_tokens_sha256": "d7c30af5caa91876d4e25e83c319da7d5b1f58c4f6a613e23d809b9306af142b",
+        "text_positions": 214,
+        "total_positions": 472,
+        "weight_positions": 472
+      },
+      "observed_extra_positions": 2,
+      "original_span": {
+        "image_boundaries_in_chunk": false,
+        "image_chunk_expected_tokens": 256,
+        "image_start": 5,
+        "image_tokens": 256,
+        "processor_fields": [
+          "attention_mask",
+          "image_position_ids",
+          "input_ids",
+          "mm_token_type_ids",
+          "pixel_values"
+        ],
+        "prompt_tokens": 464
+      },
+      "original_wire": {
+        "image_bytes": 52425,
+        "image_chunk_expected_tokens": 256,
+        "image_format": "png",
+        "image_sha256": "ad61aa0965024ea190279b2ea64202879c3bf8b95bae646133e8ec6b25ac38a5",
+        "response_positions": [
+          463,
+          464,
+          465,
+          466,
+          467,
+          468,
+          469,
+          470,
+          471
+        ],
+        "target_positions": 472,
+        "target_tokens_sha256": "002b5ff2e40448ac4ce14b63508e8c45d68354c1b15a98436f4d0ee24781467b",
+        "text_positions": 216,
+        "total_positions": 472,
+        "weight_positions": 472
+      },
+      "pair_id": "iat-controlled-a7a7273f55a0ff6af43f",
+      "remote_original_score_positions": 474,
+      "split": "train"
+    }
+  ],
+  "hypothesis": "Remote image chunks may own BOI/EOI. Covering both boundaries in the image chunk removes two explicit text tokens while preserving the official total span. Requires a real remote check; do not truncate returned scores.",
+  "model": "google/gemma-4-26B-A4B-it",
+  "optimizer_updates": 0,
+  "original_serialization_alignment_passed": true,
+  "paid_resources_created": false,
+  "processor_revision": "4d7ae4984b7db7de8f8457170b3f1a419ee76d52",
+  "scope": "Local JSON-wire reconstruction, not a captured original HTTP request or a remote candidate test",
+  "source_pairs_sha256": "354617a13513748a03be5c3454d71444ef3497762fb8965c0c23d24d420a1642",
+  "versions": {
+    "fireworks-ai": "1.2.19",
+    "tinker": "0.23.0",
+    "transformers": "5.14.0"
+  }
+}

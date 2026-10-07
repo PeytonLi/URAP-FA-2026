@@ -1,0 +1,11 @@
+[project]
+name = "urap-iat-prime-lab"
+version = "0.1.0"
+description = "Isolated Prime Lab workspace for the URAP IAT study"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "verifiers==0.2.0",
+]
+
+[tool.uv]
+package = false

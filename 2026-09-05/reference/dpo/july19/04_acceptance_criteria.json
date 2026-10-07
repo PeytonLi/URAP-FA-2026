@@ -1,0 +1,69 @@
+{
+  "absolute_race_gap_decreased": true,
+  "adapter_expression_sensitivity": {
+    "all": {
+      "mean_by_expression": {
+        "ambiguous": 0.03582554517133957,
+        "negative": 0.1396551724137931,
+        "neutral": 0.0,
+        "positive": 0.0
+      },
+      "negative_minus_positive": 0.1396551724137931
+    },
+    "available": true,
+    "black": {
+      "mean_by_expression": {
+        "ambiguous": 0.0475,
+        "negative": 0.16923076923076924,
+        "neutral": 0.0,
+        "positive": 0.0
+      },
+      "negative_minus_positive": 0.16923076923076924
+    },
+    "white": {
+      "mean_by_expression": {
+        "ambiguous": 0.02092198581560284,
+        "negative": 0.115625,
+        "neutral": 0.0,
+        "positive": 0.0
+      },
+      "negative_minus_positive": 0.115625
+    }
+  },
+  "all_primary_thresholds_pass": false,
+  "base_expression_sensitivity": {
+    "all": {
+      "mean_by_expression": {
+        "ambiguous": 0.030373831775700934,
+        "negative": 0.11896551724137931,
+        "neutral": 0.0,
+        "positive": 0.0
+      },
+      "negative_minus_positive": 0.11896551724137931
+    },
+    "available": true,
+    "black": {
+      "mean_by_expression": {
+        "ambiguous": 0.042499999999999996,
+        "negative": 0.16923076923076924,
+        "neutral": 0.0,
+        "positive": 0.0
+      },
+      "negative_minus_positive": 0.16923076923076924
+    },
+    "white": {
+      "mean_by_expression": {
+        "ambiguous": 0.014893617021276596,
+        "negative": 0.078125,
+        "neutral": 0.0,
+        "positive": 0.0
+      },
+      "negative_minus_positive": 0.078125
+    }
+  },
+  "black_negative_rate_decreased": false,
+  "entropy_loss_at_most_20_percent": true,
+  "identity_leakage_did_not_increase": true,
+  "unique_response_loss_at_most_20_percent": true,
+  "valid_rate_at_least_99_percent": true
+}

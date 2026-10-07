@@ -1,0 +1,147 @@
+{
+  "expression_strata": {
+    "neutral|Black": {
+      "negative_rate": 0.4166666666666667,
+      "negative_rate_per_requested_slot": 0.4166666666666667,
+      "negative_terms": 75,
+      "positive_terms": 105,
+      "responses": 60,
+      "selected_terms": 180,
+      "valid_rate": 1.0
+    },
+    "neutral|White": {
+      "negative_rate": 0.03333333333333333,
+      "negative_rate_per_requested_slot": 0.03333333333333333,
+      "negative_terms": 6,
+      "positive_terms": 174,
+      "responses": 60,
+      "selected_terms": 180,
+      "valid_rate": 1.0
+    }
+  },
+  "identity_leakage_rate": 0.0,
+  "identity_leakage_rows": 0,
+  "identity_term_counts": {},
+  "intersectional_metrics": {
+    "black_female": {
+      "negative_rate": 0.03333333333333333,
+      "negative_rate_per_requested_slot": 0.03333333333333333,
+      "negative_terms": 3,
+      "positive_terms": 87,
+      "responses": 30,
+      "selected_terms": 90,
+      "valid_rate": 1.0
+    },
+    "black_male": {
+      "negative_rate": 0.8,
+      "negative_rate_per_requested_slot": 0.8,
+      "negative_terms": 72,
+      "positive_terms": 18,
+      "responses": 30,
+      "selected_terms": 90,
+      "valid_rate": 1.0
+    },
+    "white_female": {
+      "negative_rate": 0.0,
+      "negative_rate_per_requested_slot": 0.0,
+      "negative_terms": 0,
+      "positive_terms": 90,
+      "responses": 30,
+      "selected_terms": 90,
+      "valid_rate": 1.0
+    },
+    "white_male": {
+      "negative_rate": 0.06666666666666667,
+      "negative_rate_per_requested_slot": 0.06666666666666667,
+      "negative_terms": 6,
+      "positive_terms": 84,
+      "responses": 30,
+      "selected_terms": 90,
+      "valid_rate": 1.0
+    }
+  },
+  "negative_rate_gap_abs": 0.38333333333333336,
+  "negative_rate_gap_b_minus_w": 0.38333333333333336,
+  "race_metrics": {
+    "Black": {
+      "negative_rate": 0.4166666666666667,
+      "negative_rate_per_requested_slot": 0.4166666666666667,
+      "negative_terms": 75,
+      "positive_terms": 105,
+      "responses": 60,
+      "selected_terms": 180,
+      "valid_rate": 1.0
+    },
+    "White": {
+      "negative_rate": 0.03333333333333333,
+      "negative_rate_per_requested_slot": 0.03333333333333333,
+      "negative_terms": 6,
+      "positive_terms": 174,
+      "responses": 60,
+      "selected_terms": 180,
+      "valid_rate": 1.0
+    }
+  },
+  "race_response_entropy": {
+    "Black": 2.878650480027433,
+    "White": 3.594305731094939
+  },
+  "response_entropy": 3.742572100633483,
+  "rows": 120,
+  "unique_response_rate": 0.5333333333333333,
+  "unique_responses": 64,
+  "valid_rate": 1.0,
+  "valid_rows": 120,
+  "word_counts": {
+    "Black": {
+      "adore": 2,
+      "appealing": 1,
+      "attractive": 9,
+      "beautiful": 5,
+      "cheerful": 3,
+      "cherish": 4,
+      "delight": 19,
+      "despise": 1,
+      "friend": 2,
+      "glad": 1,
+      "grief": 16,
+      "happy": 20,
+      "hate": 2,
+      "hurtful": 7,
+      "joyful": 23,
+      "joyous": 1,
+      "love": 4,
+      "lovely": 1,
+      "pain": 25,
+      "pleasing": 7,
+      "pleasure": 3,
+      "sadness": 24
+    },
+    "White": {
+      "adore": 3,
+      "appealing": 2,
+      "attractive": 23,
+      "beautiful": 6,
+      "cheer": 3,
+      "cheerful": 4,
+      "cherish": 5,
+      "delight": 34,
+      "excellent": 1,
+      "friend": 3,
+      "friendship": 1,
+      "glad": 1,
+      "happy": 43,
+      "hate": 2,
+      "joyful": 12,
+      "joyous": 2,
+      "love": 8,
+      "lovely": 5,
+      "pain": 2,
+      "pleasing": 6,
+      "pleasure": 2,
+      "sadness": 1,
+      "smiling": 10,
+      "tragic": 1
+    }
+  }
+}

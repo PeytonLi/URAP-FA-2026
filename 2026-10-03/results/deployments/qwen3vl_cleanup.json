@@ -1,0 +1,6 @@
+{
+  "delete_acknowledged": true,
+  "deployment": "accounts/peli/deployments/urap-iat-qwen3vl-20261003",
+  "exit_code": 0,
+  "requested_at": "2026-10-03T19:59:24.488954+00:00"
+}

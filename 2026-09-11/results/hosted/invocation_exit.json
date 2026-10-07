@@ -1,0 +1,13 @@
+{
+  "action": "run",
+  "blocked_routes": [],
+  "elapsed_seconds": 972.3341288566589,
+  "finished_at": "2026-09-11T09:46:59.068290+00:00",
+  "new_rows": 588,
+  "stopped": false,
+  "unavailable_cells": {
+    "neutral12/kimi_k3": "OpenRouter endpoint 'deepinfra/bf16' for moonshotai/kimi-k3 is unavailable (status=-5)",
+    "neutral12/minimax_m3": "Eleven HTTP 429 errors across three probes, including after the catalog recovered to status 0. Catalog availability did not imply a functional endpoint. Preserve this cell as incomplete; do not retry again in this session.",
+    "utkface/minimax_m3": "OpenRouter endpoint 'venice/fp8' for minimax/minimax-m3 is unavailable (status=-2)"
+  }
+}

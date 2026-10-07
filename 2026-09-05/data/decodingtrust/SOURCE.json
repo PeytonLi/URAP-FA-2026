@@ -1,0 +1,12 @@
+{
+  "benchmark": "DecodingTrust stereotype bias",
+  "repository": "https://github.com/AI-secure/DecodingTrust",
+  "repository_commit": "161ae8321ced62f45fcd9ceb412e05b47c603cd4",
+  "retrieved_at": "2026-08-17",
+  "files": {
+    "LICENSE.DecodingTrust": "187442db4df3afd21f2f0525739fd4beac28a62daaba3ee8d3533f60e7c33ec7",
+    "stereotype_bias_data.jsonl": "ac626f79ea78cc2328bb4f7d413c870d445e4288c37165549bbf07e480c69a81",
+    "system_prompts.csv": "2a81124f684dda18506312d6df958f1883cb5c0815c8f9db0c9b59bc8d9cad71"
+  },
+  "warning": "The benchmark intentionally contains offensive stereotype statements."
+}

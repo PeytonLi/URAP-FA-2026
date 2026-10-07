@@ -1,0 +1,44 @@
+{
+  "adapter_parameters": 9056256,
+  "adapter_sha256": "b6f1e8490cdb11beb57686af573b57e731b8331db100f6e3f7fbd9e5d3d5d9ea",
+  "all_eight_checkpoint_file_hashes_match": true,
+  "benchmark_eligible": false,
+  "checked_at": "2026-10-06T16:50:21.074752+00:00",
+  "checkpoint_optimizer_updates": 169,
+  "completed_epochs": 1,
+  "development": {
+    "by_target_category": {
+      "negative": {
+        "chosen_preference_accuracy": 1.0,
+        "images": 6,
+        "response_loss": 0.40383278551356244
+      },
+      "positive": {
+        "chosen_preference_accuracy": 1.0,
+        "images": 174,
+        "response_loss": 0.08030821936775064
+      }
+    },
+    "chosen_preference_accuracy": 1.0,
+    "epoch": 1,
+    "images": 180,
+    "macro_category_preference_accuracy": 1.0,
+    "macro_category_response_loss": 0.24207050244065653,
+    "optimizer_updates_on_development": 0,
+    "response_loss": 0.09109237157261102
+  },
+  "finite_adapter_tensors": 304,
+  "finite_nonzero_gradient_history": true,
+  "frozen_run_snapshot": "data/private/prime_native/20261006T154336.936439_0000/qwen35_orpo_epoch1_run.json",
+  "frozen_run_snapshot_sha256": "455708a99261d545b07d6af7544c54ce3b95199cab5524ff4802cca68ae3ae30",
+  "interpretation": "Intermediate checkpoint only; development preference accuracy is conditional likelihood, not generation accuracy or independently reviewed emotion ground truth.",
+  "matches_prior_failed_run_first_epoch_adapter": true,
+  "nonzero_lora_B_tensors": 152,
+  "optimizer_step_counts": {
+    "169": 304
+  },
+  "prior_failed_run_first_epoch_adapter_sha256": "b6f1e8490cdb11beb57686af573b57e731b8331db100f6e3f7fbd9e5d3d5d9ea",
+  "run_updates_at_snapshot": 173,
+  "source": "data/private/prime_native/20261006T154336.936439_0000/live_verified/data/private/native_runs/qwen35_orpo_20261006T160321.186985_0000/epoch_1",
+  "training_complete": false
+}

@@ -1,0 +1,21 @@
+{
+  "catalog_snapshot_date": "2026-08-31",
+  "access_method": "OpenRouter Chat Completions API",
+  "selection_scope": "Step VisBias reasoning-output budget validated after 1,024-token failure",
+  "models": [
+    {
+      "key": "step37_flash",
+      "display_name": "Step 3.7 Flash",
+      "model_id": "stepfun/step-3.7-flash",
+      "api_revision_hint": "stepfun/step-3.7-flash-20260528",
+      "release_date": "2026-05-28",
+      "weight_access": "open-weight",
+      "provider_endpoint": "deepinfra",
+      "max_concurrency": 2,
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "reasoning_effort": "minimal",
+      "max_tokens": 2048
+    }
+  ]
+}

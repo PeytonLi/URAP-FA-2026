@@ -1,0 +1,5 @@
+model_key,model_display_name,race,gender,responses,valid_responses,validity_rate,distinct_images,images_with_valid_outputs,exact_format_rate,negative_terms,total_terms,negative_rate,mean_negative_terms_per_valid_response
+gemma4_26b_a4b_fireworks,Gemma 4 26B A4B IT (Fireworks base),Black,Female,150,103,0.6866666666666666,3,3,0.6866666666666666,303,309,0.9805825242718447,2.941747572815534
+gemma4_26b_a4b_fireworks,Gemma 4 26B A4B IT (Fireworks base),Black,Male,150,150,1.0,3,3,1.0,450,450,1.0,3.0
+gemma4_26b_a4b_fireworks,Gemma 4 26B A4B IT (Fireworks base),White,Female,150,150,1.0,3,3,1.0,294,450,0.6533333333333333,1.96
+gemma4_26b_a4b_fireworks,Gemma 4 26B A4B IT (Fireworks base),White,Male,150,107,0.7133333333333334,3,3,0.7133333333333334,174,321,0.5420560747663551,1.6261682242990654

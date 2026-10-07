@@ -1,0 +1,122 @@
+{
+  "accelerator_count": 4,
+  "accelerator_type": "NVIDIA_B200_180GB",
+  "backend_image_support_verified": false,
+  "benchmark_images_used": 0,
+  "checkpoint_promoted": false,
+  "cleanup_verified": true,
+  "deployment_created": false,
+  "error_type": "RequestFailedError",
+  "finished_at": "2026-10-03T21:31:52.560327+00:00",
+  "http_status": null,
+  "image_boundaries_in_chunk": true,
+  "image_spans": [
+    {
+      "image_boundaries_in_chunk": true,
+      "image_chunk_expected_tokens": 258,
+      "image_start": 4,
+      "image_tokens": 256,
+      "processor_fields": [
+        "attention_mask",
+        "image_position_ids",
+        "input_ids",
+        "mm_token_type_ids",
+        "pixel_values"
+      ],
+      "prompt_tokens": 464
+    },
+    {
+      "image_boundaries_in_chunk": true,
+      "image_chunk_expected_tokens": 258,
+      "image_start": 4,
+      "image_tokens": 256,
+      "processor_fields": [
+        "attention_mask",
+        "image_position_ids",
+        "input_ids",
+        "mm_token_type_ids",
+        "pixel_values"
+      ],
+      "prompt_tokens": 464
+    },
+    {
+      "image_boundaries_in_chunk": true,
+      "image_chunk_expected_tokens": 258,
+      "image_start": 4,
+      "image_tokens": 256,
+      "processor_fields": [
+        "attention_mask",
+        "image_position_ids",
+        "input_ids",
+        "mm_token_type_ids",
+        "pixel_values"
+      ],
+      "prompt_tokens": 464
+    },
+    {
+      "image_boundaries_in_chunk": true,
+      "image_chunk_expected_tokens": 258,
+      "image_start": 4,
+      "image_tokens": 256,
+      "processor_fields": [
+        "attention_mask",
+        "image_position_ids",
+        "input_ids",
+        "mm_token_type_ids",
+        "pixel_values"
+      ],
+      "prompt_tokens": 464
+    },
+    {
+      "image_boundaries_in_chunk": true,
+      "image_chunk_expected_tokens": 258,
+      "image_start": 4,
+      "image_tokens": 256,
+      "processor_fields": [
+        "attention_mask",
+        "image_position_ids",
+        "input_ids",
+        "mm_token_type_ids",
+        "pixel_values"
+      ],
+      "prompt_tokens": 464
+    },
+    {
+      "image_boundaries_in_chunk": true,
+      "image_chunk_expected_tokens": 258,
+      "image_start": 4,
+      "image_tokens": 256,
+      "processor_fields": [
+        "attention_mask",
+        "image_position_ids",
+        "input_ids",
+        "mm_token_type_ids",
+        "pixel_values"
+      ],
+      "prompt_tokens": 464
+    }
+  ],
+  "job_id": "urap-gemma4-visioncheck-20261003-a5",
+  "last_owned_trainer_state": "JOB_STATE_DELETING_CLEANING_UP",
+  "logical_base_model": "accounts/fireworks/models/gemma-4-26b-a4b-it",
+  "native_delete_acknowledged": true,
+  "optimizer_updates": 0,
+  "pair_ids": [
+    "iat-controlled-b7b0ffbee9ea68d0f24b",
+    "iat-controlled-bdebf6b1f6d04af5caed",
+    "iat-controlled-8fa00f0f096d3f7dd14b",
+    "iat-controlled-9fab202b44028066fb61",
+    "iat-controlled-c6328dc31c44343aada4",
+    "iat-controlled-a7a7273f55a0ff6af43f"
+  ],
+  "processor_revision": "4d7ae4984b7db7de8f8457170b3f1a419ee76d52",
+  "requested_training_shape": "accounts/fireworks/trainingShapes/gemma-4-26b-a4b-256k-b200-lora",
+  "sanitized_error": "Request failed: Distributed error in forward: Rank 0 forward error: ValueError: Image chunk at index 0 expected_tokens mismatch: expected 258, got 256 from image.; Rank 1 worker_op error: ValueError: Image chunk at index 0 expected_tokens mismatch: expected 258, got 256 from image.; Rank 2 worker_op error: ValueError: Image chunk at index 0 expected_tokens mismatch: expected 258, got 256 from image.; Rank 3 worker_op error: ValueError: Image chunk at index 0 expected_tokens mismatch: expected 258, got 256 from image. for self.request_id='7971f6e50fbb4c55bafb83fb2f808bd7' and expected type self.model_cls=<class 'tinker.ForwardBackwardOutput'>",
+  "scope": "Image-bearing forward-only modality validation; not the full SFT/ORPO study",
+  "source_pairs_sha256": "354617a13513748a03be5c3454d71444ef3497762fb8965c0c23d24d420a1642",
+  "started_at": "2026-10-03T21:26:39.721281+00:00",
+  "status": "failed",
+  "trainer_job_id": "urap-gemma4-visioncheck-20261003-a5",
+  "training_split_only": true,
+  "transport": "v1"
+}

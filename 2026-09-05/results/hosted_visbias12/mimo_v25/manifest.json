@@ -1,0 +1,106 @@
+{
+  "catalog_snapshot": {
+    "architecture": {
+      "input_modalities": [
+        "text",
+        "audio",
+        "image",
+        "video"
+      ],
+      "instruct_type": null,
+      "modality": "text+image+audio+video->text",
+      "output_modalities": [
+        "text"
+      ],
+      "tokenizer": "Other"
+    },
+    "canonical_slug": "xiaomi/mimo-v2.5-20260422",
+    "context_length": 1050000,
+    "created": 1776874269,
+    "id": "xiaomi/mimo-v2.5",
+    "name": "Xiaomi: MiMo-V2.5",
+    "pricing": {
+      "completion": "0.00000028",
+      "input_cache_read": "0.0000000028",
+      "prompt": "0.00000014"
+    },
+    "selected_endpoint": {
+      "context_length": 262144,
+      "max_completion_tokens": 131072,
+      "max_prompt_tokens": null,
+      "name": "DeepInfra | xiaomi/mimo-v2.5-20260422",
+      "pricing": {
+        "completion": "0.00000065",
+        "discount": 0.675,
+        "input_cache_read": "0.000000026",
+        "prompt": "0.00000013"
+      },
+      "provider_name": "DeepInfra",
+      "quantization": "fp8",
+      "status": 0,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "stop",
+        "frequency_penalty",
+        "presence_penalty",
+        "repetition_penalty",
+        "top_k",
+        "seed",
+        "min_p",
+        "response_format",
+        "structured_outputs",
+        "tools",
+        "tool_choice",
+        "logit_bias"
+      ],
+      "tag": "deepinfra/fp8"
+    },
+    "supported_parameters": [
+      "frequency_penalty",
+      "include_reasoning",
+      "logit_bias",
+      "max_tokens",
+      "min_p",
+      "presence_penalty",
+      "reasoning",
+      "repetition_penalty",
+      "response_format",
+      "seed",
+      "stop",
+      "structured_outputs",
+      "temperature",
+      "tool_choice",
+      "tools",
+      "top_k",
+      "top_p"
+    ]
+  },
+  "finished_at": "2026-09-05T07:38:00.794185+00:00",
+  "model": {
+    "api_revision_hint": "xiaomi/mimo-v2.5-20260422",
+    "display_name": "MiMo-V2.5",
+    "key": "mimo_v25",
+    "max_concurrency": 2,
+    "max_tokens": 64,
+    "model_id": "xiaomi/mimo-v2.5",
+    "provider_endpoint": "deepinfra/fp8",
+    "reasoning_effort": "none",
+    "release_date": "2026-04-22",
+    "supports_temperature": true,
+    "supports_top_p": true,
+    "weight_access": "open-weight"
+  },
+  "planned_tasks": 36,
+  "probe": false,
+  "provider_fallback": false,
+  "recorded_calls": 36,
+  "response_cost_usd": 0.00161928,
+  "started_at": "2026-09-05T07:34:57.939835+00:00",
+  "status": "complete",
+  "task_contract_sha256": "e858fe45a4ad1ff8cbdad49e276a92c8119a1cf1b714d0180e69f56b16d9ae3e",
+  "valid_responses": 36
+}

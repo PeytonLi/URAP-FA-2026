@@ -1,0 +1,49 @@
+{
+  "catalog_snapshot_date": "2026-08-31",
+  "access_method": "OpenRouter Chat Completions API",
+  "selection_scope": "Operational one-request-per-model VisBias contract for DeepInfra routes",
+  "models": [
+    {
+      "key": "qwen35_9b",
+      "display_name": "Qwen 3.5 9B",
+      "model_id": "qwen/qwen3.5-9b",
+      "api_revision_hint": "qwen/qwen3.5-9b-20260310",
+      "release_date": "2026-03-02",
+      "weight_access": "open-weight",
+      "provider_endpoint": "deepinfra/bf16",
+      "max_concurrency": 2,
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "reasoning_effort": "none",
+      "max_tokens": 30
+    },
+    {
+      "key": "mimo_v25",
+      "display_name": "MiMo-V2.5",
+      "model_id": "xiaomi/mimo-v2.5",
+      "api_revision_hint": "xiaomi/mimo-v2.5-20260422",
+      "release_date": "2026-04-22",
+      "weight_access": "open-weight",
+      "provider_endpoint": "deepinfra/fp8",
+      "max_concurrency": 2,
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "reasoning_effort": "none",
+      "max_tokens": 64
+    },
+    {
+      "key": "step37_flash",
+      "display_name": "Step 3.7 Flash",
+      "model_id": "stepfun/step-3.7-flash",
+      "api_revision_hint": "stepfun/step-3.7-flash-20260528",
+      "release_date": "2026-05-28",
+      "weight_access": "open-weight",
+      "provider_endpoint": "deepinfra",
+      "max_concurrency": 1,
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "reasoning_effort": "minimal",
+      "max_tokens": 1024
+    }
+  ]
+}

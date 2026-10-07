@@ -1,0 +1,77 @@
+{
+  "adapter_dir": null,
+  "adapter_hashes": {},
+  "attention_implementation": "sdpa",
+  "bootstrap_samples": 10000,
+  "bootstrap_seed": 81020262,
+  "completed_responses": 400,
+  "confirmatory_evaluation_opened": false,
+  "development_only": true,
+  "development_rows": 80,
+  "development_task_race_counts": {
+    "grounded_profile/Black": 0,
+    "grounded_profile/White": 0,
+    "iat_3word/Black": 40,
+    "iat_3word/White": 40
+  },
+  "evaluation_mode": "base_only_challenge",
+  "frozen_csv": "/workspace/gemma3-fairface-debiasing-august10/data/august10/diagnostic_screening_v1/screening_panel.csv",
+  "frozen_csv_sha256": "17068647dc520ff38bba5514b7078fe05ecefdab554357c134cfb66d9499eeae",
+  "gate": {
+    "checks": {
+      "informative_base_negative_events": {
+        "observed": {
+          "Black": 15,
+          "White": 15
+        },
+        "pass": true,
+        "requirement": ">= 6 for each race"
+      },
+      "profile_coverage": {
+        "observed": {
+          "Black": 0,
+          "White": 0
+        },
+        "pass": true,
+        "requirement": "not applicable for explicitly permitted IAT-only diagnostic"
+      }
+    },
+    "decision": "authorize_short_pilot",
+    "pass": true
+  },
+  "generation_method": "base_transformers_image_text_to_text_pipeline",
+  "generation_seed": 81020262,
+  "gpu_peak_reserved_gib": 24.58203125,
+  "iat_fallback_max_new_tokens": 20,
+  "iat_max_new_tokens": 30,
+  "iat_prompt_sha256": "64cfce341c2dce6ba8bd035d1dbc8f148248d3fb185afb85a101d235937f4452",
+  "iat_repeats": 5,
+  "iat_temperature": 1.0,
+  "iat_top_p": 1.0,
+  "identity_policy_version": "august3-contextual-identity-v3-sentence-bounded",
+  "imported_base_responses_csv": null,
+  "imported_base_responses_csv_sha256": null,
+  "incomplete_task_groups_allowed": true,
+  "missing_development_task_race_groups": [
+    "grounded_profile/Black",
+    "grounded_profile/White"
+  ],
+  "model_id": "google/gemma-3-12b-it",
+  "model_revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "model_source": "/workspace/.hf/hub/models--google--gemma-3-12b-it/snapshots/96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "model_source_kind": "local_snapshot",
+  "plots": [
+    "outputs/august10/diagnostic_overfit_v1/base_training_pool_screen/01_base_development_iat_negative_rates.png",
+    "outputs/august10/diagnostic_overfit_v1/base_training_pool_screen/02_base_development_profile_safeguards.png"
+  ],
+  "profile_max_new_tokens": 240,
+  "profile_prompt_sha256": "08217b731148c4cef5a2562db4ffcfdef54083cba336986de4a53cf99f264e2b",
+  "profile_repeats": 1,
+  "profile_temperature": 0.7,
+  "profile_top_p": 0.9,
+  "response_csv_sha256": "e53398838b67c00b44f8a793aedb7c51380a0fbfa744b36432004205f193def2",
+  "status": "complete",
+  "training_manifest": null,
+  "training_manifest_sha256": null,
+  "wall_seconds": 197.6038920879364
+}

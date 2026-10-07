@@ -1,0 +1,460 @@
+{
+  "attention_implementation": "sdpa",
+  "checkpoint_artifacts": [
+    {
+      "hashes": {
+        "adapter_config.json": "ca5b06739f662ed3f5d08d66f6a67f4f7eafaf7a07f3c2ea5e74c8b7ea32753d",
+        "adapter_model.safetensors": "18da9e13a91b5ceb6ce52275bbd145ab3160a88a1f0eac7b47f43059315d6257"
+      },
+      "optimizer_update": 1,
+      "path": "outputs/august10/training_v4c_lr1e5_rank8_seed8102026/checkpoints/step_0001"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "ca5b06739f662ed3f5d08d66f6a67f4f7eafaf7a07f3c2ea5e74c8b7ea32753d",
+        "adapter_model.safetensors": "493b53cbaf60afb93a4b141a409ca62fae545a6631f4dde7bcba2c271024e5eb"
+      },
+      "optimizer_update": 2,
+      "path": "outputs/august10/training_v4c_lr1e5_rank8_seed8102026/checkpoints/step_0002"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "ca5b06739f662ed3f5d08d66f6a67f4f7eafaf7a07f3c2ea5e74c8b7ea32753d",
+        "adapter_model.safetensors": "260bb924cfc4fe1096b92473fea7b89eca638a10a321041416a9dba1c840d843"
+      },
+      "optimizer_update": 3,
+      "path": "outputs/august10/training_v4c_lr1e5_rank8_seed8102026/checkpoints/step_0003"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "ca5b06739f662ed3f5d08d66f6a67f4f7eafaf7a07f3c2ea5e74c8b7ea32753d",
+        "adapter_model.safetensors": "79dac66d020fbb79c444f4d9ea24d1eefe656d0462879532887ad6a7f4e5035e"
+      },
+      "optimizer_update": 4,
+      "path": "outputs/august10/training_v4c_lr1e5_rank8_seed8102026/checkpoints/step_0004"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "ca5b06739f662ed3f5d08d66f6a67f4f7eafaf7a07f3c2ea5e74c8b7ea32753d",
+        "adapter_model.safetensors": "ff1ae052e9338f811269e74ce431484c1aa8a297914a74fffbeb479d2ebb931e"
+      },
+      "optimizer_update": 5,
+      "path": "outputs/august10/training_v4c_lr1e5_rank8_seed8102026/checkpoints/step_0005"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "ca5b06739f662ed3f5d08d66f6a67f4f7eafaf7a07f3c2ea5e74c8b7ea32753d",
+        "adapter_model.safetensors": "f59d8cbf4d24cd8453ab04eaed67809e9cf28514fdf3837a557500da8fd0fa9b"
+      },
+      "optimizer_update": 6,
+      "path": "outputs/august10/training_v4c_lr1e5_rank8_seed8102026/checkpoints/step_0006"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "ca5b06739f662ed3f5d08d66f6a67f4f7eafaf7a07f3c2ea5e74c8b7ea32753d",
+        "adapter_model.safetensors": "66577b34288a53efab47b370d8c9bce8689352af253b8def3a74afdc5f85e864"
+      },
+      "optimizer_update": 7,
+      "path": "outputs/august10/training_v4c_lr1e5_rank8_seed8102026/checkpoints/step_0007"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "ca5b06739f662ed3f5d08d66f6a67f4f7eafaf7a07f3c2ea5e74c8b7ea32753d",
+        "adapter_model.safetensors": "0e41b9cff363f2dbbf4a313fc73c9600e6c0f2f661e339780c9c42f7891e8230"
+      },
+      "optimizer_update": 8,
+      "path": "outputs/august10/training_v4c_lr1e5_rank8_seed8102026/checkpoints/step_0008"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "ca5b06739f662ed3f5d08d66f6a67f4f7eafaf7a07f3c2ea5e74c8b7ea32753d",
+        "adapter_model.safetensors": "1468f4d9a10598b4946f9beb340c36d9c68ec226c52ae4a23a4ee0867ab1acb3"
+      },
+      "optimizer_update": 9,
+      "path": "outputs/august10/training_v4c_lr1e5_rank8_seed8102026/checkpoints/step_0009"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "ca5b06739f662ed3f5d08d66f6a67f4f7eafaf7a07f3c2ea5e74c8b7ea32753d",
+        "adapter_model.safetensors": "f6ec10b3aead409d1898ef005a32c572055011ae05e93c173754f95cf6be1753"
+      },
+      "optimizer_update": 10,
+      "path": "outputs/august10/training_v4c_lr1e5_rank8_seed8102026/checkpoints/step_0010"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "ca5b06739f662ed3f5d08d66f6a67f4f7eafaf7a07f3c2ea5e74c8b7ea32753d",
+        "adapter_model.safetensors": "f6ec10b3aead409d1898ef005a32c572055011ae05e93c173754f95cf6be1753"
+      },
+      "optimizer_update": 10,
+      "path": "outputs/august10/training_v4c_lr1e5_rank8_seed8102026/checkpoints/final"
+    }
+  ],
+  "checkpoints": [
+    "step_0001",
+    "step_0002",
+    "step_0003",
+    "step_0004",
+    "step_0005",
+    "step_0006",
+    "step_0007",
+    "step_0008",
+    "step_0009",
+    "step_0010",
+    "final"
+  ],
+  "dataset_source_manifest": "/workspace/gemma3-fairface-debiasing-august10/outputs/august10/frozen_pilot_v4_negative_expression/freeze_manifest.json",
+  "dataset_source_manifest_sha256": "a4d855106447961ea65a0453fb44ee5a3c106d0cc773f768b7f23ed4eeb996b1",
+  "dataset_source_protocol": "august10-frozen-directional-pilot-v1",
+  "dataset_validation": {
+    "checks": {
+      "all_blocks_valid": {
+        "observed": 0,
+        "pass": true,
+        "requirement": "0 invalid blocks"
+      },
+      "controlled_iat_fraction": {
+        "observed": 0.3,
+        "pass": true,
+        "requirement": "<= 0.3"
+      },
+      "development_blocks": {
+        "observed": 10,
+        "pass": true,
+        "requirement": ">= 10"
+      },
+      "development_iat_blocks": {
+        "observed": 3,
+        "pass": true,
+        "requirement": ">= 3"
+      },
+      "development_negative_expression_blocks": {
+        "observed": 5,
+        "pass": true,
+        "requirement": ">= 5"
+      },
+      "development_negative_iat_blocks": {
+        "observed": 3,
+        "pass": true,
+        "requirement": ">= 3"
+      },
+      "development_profile_blocks": {
+        "observed": 7,
+        "pass": true,
+        "requirement": ">= 7"
+      },
+      "development_rows": {
+        "observed": 20,
+        "pass": true,
+        "requirement": ">= 20"
+      },
+      "equal_race_rows": {
+        "observed": {
+          "Black": 50,
+          "White": 50
+        },
+        "pass": true,
+        "requirement": "Black == White"
+      },
+      "iat_direct_reduction_fraction": {
+        "observed": 1.0,
+        "pass": true,
+        "requirement": "1.0"
+      },
+      "iat_tuple_cap": {
+        "observed": {
+          "cap": 3,
+          "largest": 3
+        },
+        "pass": true,
+        "requirement": "largest tuple count <= rounded 15% cap"
+      },
+      "negative_expression_blocks": {
+        "observed": 7,
+        "pass": true,
+        "requirement": ">= 7"
+      },
+      "negative_iat_blocks": {
+        "observed": 3,
+        "pass": true,
+        "requirement": ">= 3"
+      },
+      "negative_profile_blocks": {
+        "observed": 4,
+        "pass": true,
+        "requirement": ">= 4"
+      },
+      "one_row_per_image": {
+        "observed": 1,
+        "pass": true,
+        "requirement": "<= 1"
+      },
+      "profile_chosen_unique": {
+        "observed": 0,
+        "pass": true,
+        "requirement": "0 duplicate chosen profiles"
+      },
+      "profile_direct_harm_reduction_fraction": {
+        "observed": 0.9428571428571428,
+        "pass": true,
+        "requirement": ">= 0.5"
+      },
+      "profile_rows_mechanically_valid": {
+        "observed": {
+          "total": 70,
+          "valid": 70
+        },
+        "pass": true,
+        "requirement": "all profile rows"
+      },
+      "required_columns": {
+        "observed": [],
+        "pass": true,
+        "requirement": "no required column may be missing"
+      },
+      "total_blocks": {
+        "observed": 50,
+        "pass": true,
+        "requirement": ">= 50"
+      },
+      "total_rows": {
+        "observed": 100,
+        "pass": true,
+        "requirement": ">= 100"
+      },
+      "train_blocks": {
+        "observed": 40,
+        "pass": true,
+        "requirement": ">= 40"
+      },
+      "train_development_image_disjoint": {
+        "observed": 0,
+        "pass": true,
+        "requirement": "0 shared image hashes"
+      },
+      "train_iat_blocks": {
+        "observed": 12,
+        "pass": true,
+        "requirement": ">= 12"
+      },
+      "train_negative_expression_blocks": {
+        "observed": 2,
+        "pass": true,
+        "requirement": ">= 2"
+      },
+      "train_profile_blocks": {
+        "observed": 28,
+        "pass": true,
+        "requirement": ">= 28"
+      },
+      "train_rows": {
+        "observed": 80,
+        "pass": true,
+        "requirement": ">= 80"
+      },
+      "unique_iat_chosen_tuples": {
+        "observed": 7,
+        "pass": true,
+        "requirement": ">= 5"
+      },
+      "unique_images": {
+        "observed": 100,
+        "pass": true,
+        "requirement": ">= 100"
+      }
+    },
+    "decision": "authorize_short_pilot",
+    "invalid_blocks": {},
+    "issues": [],
+    "metrics": {
+      "iat_chosen_tuple_counts": {
+        "cheerful|glad|delight": 3,
+        "cheer|delight|pleasing": 2,
+        "friendship|appealing|glad": 1,
+        "friend|pleasing|excellent": 2,
+        "laughing|joyous|pleasure": 2,
+        "sadness|friendship|glad": 3,
+        "smiling|happy|joyful": 2
+      },
+      "negative_blocks_by_split": {
+        "development": 5,
+        "train": 2
+      },
+      "rows": 100,
+      "rows_by_race": {
+        "Black": 50,
+        "White": 50
+      },
+      "rows_by_split": {
+        "development": 20,
+        "train": 80
+      },
+      "rows_by_task": {
+        "grounded_profile": 70,
+        "iat_3word": 30
+      },
+      "valid_blocks": 50,
+      "valid_blocks_by_split": {
+        "development": 10,
+        "train": 40
+      }
+    },
+    "pass": true,
+    "protocol_version": "august10-dataset-gate-v1"
+  },
+  "development_preference_gate": {
+    "checks": {
+      "all_task_race_groups_present": true,
+      "grounded_profile_both_races_mean_margin_positive": true,
+      "grounded_profile_minimum_group_accuracy_at_least_30pct": true,
+      "grounded_profile_preference_accuracy_gap_at_most_35pp": true,
+      "iat_3word_both_races_mean_margin_positive": false,
+      "iat_3word_minimum_group_accuracy_at_least_30pct": true,
+      "iat_3word_preference_accuracy_gap_at_most_35pp": true,
+      "overall_mean_margin_delta_positive": true,
+      "overall_preference_accuracy_at_least_55pct": true
+    },
+    "pass": false
+  },
+  "development_preference_summary": {
+    "groups": {
+      "grounded_profile/Black": {
+        "mean_margin_delta": 59.07142857142857,
+        "preference_accuracy": 1.0,
+        "rows": 7
+      },
+      "grounded_profile/White": {
+        "mean_margin_delta": 55.42857142857143,
+        "preference_accuracy": 1.0,
+        "rows": 7
+      },
+      "iat_3word/Black": {
+        "mean_margin_delta": 0.6666666666666666,
+        "preference_accuracy": 0.6666666666666666,
+        "rows": 3
+      },
+      "iat_3word/White": {
+        "mean_margin_delta": 0.0,
+        "preference_accuracy": 0.3333333333333333,
+        "rows": 3
+      }
+    },
+    "mean_dpo_loss": 0.2488269522138029,
+    "mean_margin_delta": 40.175,
+    "preference_accuracy": 0.85,
+    "rows": 20
+  },
+  "development_rows": 20,
+  "diagnostic_plots": [
+    "outputs/august10/training_v4c_lr1e5_rank8_seed8102026/01_training_loss_by_race.png",
+    "outputs/august10/training_v4c_lr1e5_rank8_seed8102026/02_development_preference_by_group.png",
+    "outputs/august10/training_v4c_lr1e5_rank8_seed8102026/03_margin_and_gradient_diagnostics.png"
+  ],
+  "effective_gradient_steps": 80,
+  "final_adapter": "outputs/august10/training_v4c_lr1e5_rank8_seed8102026/checkpoints/final",
+  "final_adapter_hashes": {
+    "adapter_config.json": "ca5b06739f662ed3f5d08d66f6a67f4f7eafaf7a07f3c2ea5e74c8b7ea32753d",
+    "adapter_model.safetensors": "f6ec10b3aead409d1898ef005a32c572055011ae05e93c173754f95cf6be1753"
+  },
+  "finished_at": "2026-08-10T13:28:13+0000",
+  "forbidden_eval_hash_count": 419,
+  "forbidden_eval_hashes": "/workspace/gemma3-fairface-debiasing-august3/reference/frozen_base/frozen_input_manifest.json",
+  "forbidden_eval_hashes_sha256": "fb5637fa3cf275c2241e7366470e14a57a059bdb35de54dfc130c690305f6614",
+  "fresh_lora": true,
+  "frozen_csv": "/workspace/gemma3-fairface-debiasing-august10/outputs/august10/frozen_pilot_v4_negative_expression/mixed_dpo_pairs_frozen.csv",
+  "frozen_csv_sha256": "589db3c850b383be7c848f15f3fa26e48d9d44af36ea6b6ee947fe69225d67c9",
+  "gpu_memory": {
+    "peak_allocated_gib": 23.760188102722168,
+    "peak_reserved_gib": 25.19921875,
+    "total_gib": 79.1787109375
+  },
+  "gradient_method": "exact_coefficient_replay_one_response_graph_at_a_time",
+  "gradient_steps": 80,
+  "hyperparameters": {
+    "dpo_beta": 0.05,
+    "gradient_accumulation": 8,
+    "gradient_checkpointing": true,
+    "learning_rate": 1e-05,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05,
+    "lora_rank": 8,
+    "max_response_tokens": 384,
+    "warmup_updates_effective": 1,
+    "warmup_updates_requested": 0
+  },
+  "launched_at": "2026-08-10T13:25:14+0000",
+  "logits_scope": "response_prediction_positions_only_via_logits_to_keep",
+  "model_id": "google/gemma-3-12b-it",
+  "model_revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "model_source": "/workspace/.hf/hub/models--google--gemma-3-12b-it/snapshots/96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "model_source_kind": "local_snapshot",
+  "optimizer_updates": 10,
+  "planned_optimizer_updates": 10,
+  "prior_adapter_loaded": false,
+  "progress": {
+    "gpu_allocated_gib": 23.129099369049072,
+    "gpu_peak_allocated_gib": 23.760188102722168,
+    "gpu_peak_reserved_gib": 25.19921875,
+    "gpu_reserved_gib": 25.19921875,
+    "gradient_steps_completed": 80,
+    "gradient_steps_total": 80,
+    "last_loss": 0.14267505760560154,
+    "last_update_at": "2026-08-10T13:28:01+0000",
+    "optimizer_updates_completed": 10,
+    "optimizer_updates_total": 10
+  },
+  "reference_scores": 100,
+  "runtime_environment": {
+    "cuda_available": true,
+    "cuda_device_count": 1,
+    "cuda_devices": [
+      {
+        "index": 0,
+        "name": "NVIDIA H100 80GB HBM3",
+        "total_memory_gib": 79.1787109375
+      }
+    ],
+    "cudnn": 90100,
+    "packages": {
+      "accelerate": "1.4.0",
+      "datasets": "3.4.1",
+      "huggingface-hub": "0.28.1",
+      "numpy": "2.2.3",
+      "peft": "0.14.0",
+      "pillow": "11.1.0",
+      "safetensors": "0.5.3",
+      "sentencepiece": "0.2.0",
+      "transformers": "4.50.0"
+    },
+    "torch": "2.4.1+cu124",
+    "torch_cuda": "12.4"
+  },
+  "status": "complete",
+  "train_rows": 80,
+  "trainable_name_sample": [
+    "base_model.model.language_model.model.layers.0.self_attn.q_proj.lora_A.default.weight",
+    "base_model.model.language_model.model.layers.0.self_attn.q_proj.lora_B.default.weight",
+    "base_model.model.language_model.model.layers.0.self_attn.k_proj.lora_A.default.weight",
+    "base_model.model.language_model.model.layers.0.self_attn.k_proj.lora_B.default.weight",
+    "base_model.model.language_model.model.layers.0.self_attn.v_proj.lora_A.default.weight",
+    "base_model.model.language_model.model.layers.0.self_attn.v_proj.lora_B.default.weight",
+    "base_model.model.language_model.model.layers.0.self_attn.o_proj.lora_A.default.weight",
+    "base_model.model.language_model.model.layers.0.self_attn.o_proj.lora_B.default.weight",
+    "base_model.model.language_model.model.layers.0.mlp.gate_proj.lora_A.default.weight",
+    "base_model.model.language_model.model.layers.0.mlp.gate_proj.lora_B.default.weight",
+    "base_model.model.language_model.model.layers.0.mlp.up_proj.lora_A.default.weight",
+    "base_model.model.language_model.model.layers.0.mlp.up_proj.lora_B.default.weight",
+    "base_model.model.language_model.model.layers.0.mlp.down_proj.lora_A.default.weight",
+    "base_model.model.language_model.model.layers.0.mlp.down_proj.lora_B.default.weight",
+    "base_model.model.language_model.model.layers.1.self_attn.q_proj.lora_A.default.weight",
+    "base_model.model.language_model.model.layers.1.self_attn.q_proj.lora_B.default.weight",
+    "base_model.model.language_model.model.layers.1.self_attn.k_proj.lora_A.default.weight",
+    "base_model.model.language_model.model.layers.1.self_attn.k_proj.lora_B.default.weight",
+    "base_model.model.language_model.model.layers.1.self_attn.v_proj.lora_A.default.weight",
+    "base_model.model.language_model.model.layers.1.self_attn.v_proj.lora_B.default.weight"
+  ],
+  "trainable_parameter_tensors": 672,
+  "trainable_parameters": 32735232,
+  "training_wall_seconds": 107.22535872459412,
+  "wall_seconds": 178.8041763305664
+}

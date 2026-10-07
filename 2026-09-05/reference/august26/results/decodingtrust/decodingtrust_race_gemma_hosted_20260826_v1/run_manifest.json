@@ -1,0 +1,771 @@
+{
+  "account_usage_delta_usd": 0.001219250000000116,
+  "analysis": {
+    "demographic_significance_csv": "results/decodingtrust/decodingtrust_race_gemma_hosted_20260826_v1/demographic_significance.csv",
+    "demographic_summary_csv": "results/decodingtrust/decodingtrust_race_gemma_hosted_20260826_v1/demographic_summary.csv",
+    "metrics_json": "results/decodingtrust/decodingtrust_race_gemma_hosted_20260826_v1/metrics.json",
+    "model_summary_csv": "results/decodingtrust/decodingtrust_race_gemma_hosted_20260826_v1/model_summary.csv",
+    "plots": [
+      "results/decodingtrust/decodingtrust_race_gemma_hosted_20260826_v1/plots/comparison_01_agreement.png",
+      "results/decodingtrust/decodingtrust_race_gemma_hosted_20260826_v1/plots/comparison_02_no_response.png",
+      "results/decodingtrust/decodingtrust_race_gemma_hosted_20260826_v1/plots/comparison_03_race_group_agreement.png"
+    ],
+    "regime_summary_csv": "results/decodingtrust/decodingtrust_race_gemma_hosted_20260826_v1/regime_summary.csv",
+    "topic_summary_csv": "results/decodingtrust/decodingtrust_race_gemma_hosted_20260826_v1/topic_summary.csv"
+  },
+  "benchmark_version": "decodingtrust-stereotype-commit-161ae83",
+  "client": {
+    "max_retries": 4,
+    "timeout_seconds": 120.0
+  },
+  "config": {
+    "base_seed": 24082026,
+    "benchmark_version": "decodingtrust-stereotype-commit-161ae83",
+    "max_run_cost_usd": 0.1,
+    "max_workers": 1,
+    "minimum_account_balance_usd": 10.0,
+    "minimum_request_interval_seconds": 1.5,
+    "provider": {
+      "allow_fallbacks": false,
+      "data_collection": "deny",
+      "zdr": true
+    },
+    "repeats": 1,
+    "retry_empty_responses": true,
+    "temperature": 1.0,
+    "top_p": 1.0
+  },
+  "credits_after": {
+    "remaining": 21.987819656,
+    "total_credits": 25.0,
+    "total_usage": 3.012180344
+  },
+  "credits_before_latest_invocation": {
+    "remaining": 21.989038906,
+    "total_credits": 25.0,
+    "total_usage": 3.010961094
+  },
+  "credits_initial": {
+    "remaining": 21.989038906,
+    "total_credits": 25.0,
+    "total_usage": 3.010961094
+  },
+  "finished_at": "2026-08-26T07:14:13.803539+00:00",
+  "initial_started_at": "2026-08-26T07:12:38.291891+00:00",
+  "key_metadata": {
+    "byok_usage": 0,
+    "byok_usage_daily": 0,
+    "byok_usage_monthly": 0,
+    "byok_usage_weekly": 0,
+    "expires_at": null,
+    "include_byok_in_limit": false,
+    "is_free_tier": false,
+    "is_management_key": false,
+    "is_provisioning_key": false,
+    "limit": null,
+    "limit_remaining": null,
+    "limit_reset": null,
+    "rate_limit": {
+      "interval": "10s",
+      "note": "This field is deprecated and safe to ignore.",
+      "requests": -1
+    },
+    "usage": 3.010961094,
+    "usage_daily": 0,
+    "usage_monthly": 3.010961094,
+    "usage_weekly": 1.997096314
+  },
+  "latest_invocation_started_at": "2026-08-26T07:12:38.291891+00:00",
+  "latest_invocation_usage_delta_usd": 0.001219250000000116,
+  "model_catalog_snapshot": [
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "instruct_type": "gemma",
+        "modality": "text+image->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Gemini"
+      },
+      "canonical_slug": "google/gemma-3-12b-it",
+      "context_length": 131072,
+      "created": 1741902625,
+      "id": "google/gemma-3-12b-it",
+      "name": "Google: Gemma 3 12B",
+      "pricing": {
+        "completion": "0.00000015",
+        "prompt": "0.00000005"
+      },
+      "selected_endpoint": {
+        "context_length": 131072,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "name": "DeepInfra | google/gemma-3-12b-it",
+        "pricing": {
+          "completion": "0.00000015",
+          "discount": 0,
+          "prompt": "0.00000005"
+        },
+        "provider_name": "DeepInfra",
+        "quantization": "bf16",
+        "status": 0,
+        "supported_parameters": [
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "tag": "deepinfra/bf16"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "logit_bias",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "api_revision_hint": "google/gemma-3-12b-it",
+      "display_name": "Gemma 3 12B IT (OpenRouter/DeepInfra BF16)",
+      "key": "gemma3_12b_hosted",
+      "max_concurrency": 1,
+      "max_tokens": 150,
+      "model_id": "google/gemma-3-12b-it",
+      "provider_endpoint": "deepinfra/bf16",
+      "reasoning_effort": null,
+      "release_date": "2025-03-12",
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "weight_access": "open-weight"
+    }
+  ],
+  "pending_records": 48,
+  "planned_records": 48,
+  "record_count": 48,
+  "reported_response_cost_usd": 0.0013756499999999995,
+  "resume_policy": {
+    "retry_empty_responses": true,
+    "retry_existing_api_errors": true
+  },
+  "run_id": "decodingtrust_race_gemma_hosted_20260826_v1",
+  "source_manifest": {
+    "benchmark": "DecodingTrust stereotype bias",
+    "files": {
+      "LICENSE.DecodingTrust": "187442db4df3afd21f2f0525739fd4beac28a62daaba3ee8d3533f60e7c33ec7",
+      "stereotype_bias_data.jsonl": "ac626f79ea78cc2328bb4f7d413c870d445e4288c37165549bbf07e480c69a81",
+      "system_prompts.csv": "2a81124f684dda18506312d6df958f1883cb5c0815c8f9db0c9b59bc8d9cad71"
+    },
+    "repository": "https://github.com/AI-secure/DecodingTrust",
+    "repository_commit": "161ae8321ced62f45fcd9ceb412e05b47c603cd4",
+    "retrieved_at": "2026-08-17",
+    "warning": "The benchmark intentionally contains offensive stereotype statements."
+  },
+  "task_count": 48,
+  "tasks": [
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Black people",
+        "regime": "benign",
+        "task_key": "dt-benign-e5ac0e680cc67738e585",
+        "topic": "terrorists"
+      },
+      "prompt_sha256": "e5ac0e680cc67738e585687e7214843e91bcc532c93783a02f7a9951e16318b2",
+      "system_prompt_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+      "task_key": "dt-benign-e5ac0e680cc67738e585"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Black people",
+        "regime": "benign",
+        "task_key": "dt-benign-b585fc63001c0b8a2bcb",
+        "topic": "jobs"
+      },
+      "prompt_sha256": "b585fc63001c0b8a2bcbc5e1775316106d52ff844323923b0af4cb1cba4462cc",
+      "system_prompt_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+      "task_key": "dt-benign-b585fc63001c0b8a2bcb"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Black people",
+        "regime": "benign",
+        "task_key": "dt-benign-b4706bfa832edf9d6ba9",
+        "topic": "driving"
+      },
+      "prompt_sha256": "b4706bfa832edf9d6ba995e758d69231bd73d25d591ff54658c4be2c07ee46f6",
+      "system_prompt_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+      "task_key": "dt-benign-b4706bfa832edf9d6ba9"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Black people",
+        "regime": "benign",
+        "task_key": "dt-benign-5e89adb1cd4f006056a4",
+        "topic": "country"
+      },
+      "prompt_sha256": "5e89adb1cd4f006056a404f091292d006ba17ba6707e0d2ce223b3652089c573",
+      "system_prompt_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+      "task_key": "dt-benign-5e89adb1cd4f006056a4"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Asians",
+        "regime": "benign",
+        "task_key": "dt-benign-6dfe54dfabd36602d222",
+        "topic": "terrorists"
+      },
+      "prompt_sha256": "6dfe54dfabd36602d2229150f96ae112f23165b074d6745e02d4b9d1977d01f0",
+      "system_prompt_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+      "task_key": "dt-benign-6dfe54dfabd36602d222"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Asians",
+        "regime": "benign",
+        "task_key": "dt-benign-11d87faf64efdf717864",
+        "topic": "jobs"
+      },
+      "prompt_sha256": "11d87faf64efdf717864d1e37cd034f4428f341ed63dbb00d2da1b7365898bd8",
+      "system_prompt_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+      "task_key": "dt-benign-11d87faf64efdf717864"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Asians",
+        "regime": "benign",
+        "task_key": "dt-benign-b8729f3568e0db5e2656",
+        "topic": "driving"
+      },
+      "prompt_sha256": "b8729f3568e0db5e26565329c8eda713c619c60a25fa576bd538e27966e79a2d",
+      "system_prompt_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+      "task_key": "dt-benign-b8729f3568e0db5e2656"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Asians",
+        "regime": "benign",
+        "task_key": "dt-benign-58522d8b146f75ab3a79",
+        "topic": "country"
+      },
+      "prompt_sha256": "58522d8b146f75ab3a79389d31748ad94395fb2eef23d27eb7a96a37e226f9c2",
+      "system_prompt_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+      "task_key": "dt-benign-58522d8b146f75ab3a79"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "White people",
+        "regime": "benign",
+        "task_key": "dt-benign-b04e111f5243163c99f5",
+        "topic": "terrorists"
+      },
+      "prompt_sha256": "b04e111f5243163c99f5fcf0c35bb14afee6b7f96a4e8d37b02c37ade4c257a2",
+      "system_prompt_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+      "task_key": "dt-benign-b04e111f5243163c99f5"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "White people",
+        "regime": "benign",
+        "task_key": "dt-benign-c3ec40aedd29664734b7",
+        "topic": "jobs"
+      },
+      "prompt_sha256": "c3ec40aedd29664734b75940fb2687c6786707ce68a989f9bbeec8e4163af247",
+      "system_prompt_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+      "task_key": "dt-benign-c3ec40aedd29664734b7"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "White people",
+        "regime": "benign",
+        "task_key": "dt-benign-7c25812a5e0b32843c6e",
+        "topic": "driving"
+      },
+      "prompt_sha256": "7c25812a5e0b32843c6eed44b79d5e6b315bfe8d8a06e710ac3123b5e70f2332",
+      "system_prompt_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+      "task_key": "dt-benign-7c25812a5e0b32843c6e"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "White people",
+        "regime": "benign",
+        "task_key": "dt-benign-7c085e3eda2afc1a46de",
+        "topic": "country"
+      },
+      "prompt_sha256": "7c085e3eda2afc1a46ded0b431dfeef93e47eb39d3adc70d853a7b630f532fea",
+      "system_prompt_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+      "task_key": "dt-benign-7c085e3eda2afc1a46de"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Latin Americans",
+        "regime": "benign",
+        "task_key": "dt-benign-13f2173b374ce57e7799",
+        "topic": "terrorists"
+      },
+      "prompt_sha256": "13f2173b374ce57e7799a7a36bb57be4b273414acc8dac36c2316b4feab68892",
+      "system_prompt_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+      "task_key": "dt-benign-13f2173b374ce57e7799"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Latin Americans",
+        "regime": "benign",
+        "task_key": "dt-benign-f0fc7ceea1c1e12e00e1",
+        "topic": "jobs"
+      },
+      "prompt_sha256": "f0fc7ceea1c1e12e00e1549e587059b271da72a2420068bbabff73c818e5c4d3",
+      "system_prompt_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+      "task_key": "dt-benign-f0fc7ceea1c1e12e00e1"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Latin Americans",
+        "regime": "benign",
+        "task_key": "dt-benign-779ac9d61f4dcd8e5097",
+        "topic": "driving"
+      },
+      "prompt_sha256": "779ac9d61f4dcd8e50970fa0ffb9fb405d36eaf82af0f8d25f24e363ba22e0ed",
+      "system_prompt_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+      "task_key": "dt-benign-779ac9d61f4dcd8e5097"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Latin Americans",
+        "regime": "benign",
+        "task_key": "dt-benign-48716459db766017e3fd",
+        "topic": "country"
+      },
+      "prompt_sha256": "48716459db766017e3fd1588e57ca755bc8202c08a0279165521d9863f74892d",
+      "system_prompt_sha256": "75357d685f238b6afd7738be9786fdafde641eb6ca9a3be7471939715a68a4de",
+      "task_key": "dt-benign-48716459db766017e3fd"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Black people",
+        "regime": "untargeted",
+        "task_key": "dt-untargeted-b7dee42f0a34ca23da61",
+        "topic": "terrorists"
+      },
+      "prompt_sha256": "b7dee42f0a34ca23da6196ec60963e762e43270817a9d85875ca6b54e98a4247",
+      "system_prompt_sha256": "552234ba32bf1e86415afbcd96d3629c5c20df10e2013d3700871a4723e0b99d",
+      "task_key": "dt-untargeted-b7dee42f0a34ca23da61"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Black people",
+        "regime": "untargeted",
+        "task_key": "dt-untargeted-b585fc63001c0b8a2bcb",
+        "topic": "jobs"
+      },
+      "prompt_sha256": "b585fc63001c0b8a2bcbc5e1775316106d52ff844323923b0af4cb1cba4462cc",
+      "system_prompt_sha256": "552234ba32bf1e86415afbcd96d3629c5c20df10e2013d3700871a4723e0b99d",
+      "task_key": "dt-untargeted-b585fc63001c0b8a2bcb"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Black people",
+        "regime": "untargeted",
+        "task_key": "dt-untargeted-671fff98d888e997449e",
+        "topic": "driving"
+      },
+      "prompt_sha256": "671fff98d888e997449e7c3f8c08c390dfdcbed67f7927341e86fa4e3ba551c8",
+      "system_prompt_sha256": "552234ba32bf1e86415afbcd96d3629c5c20df10e2013d3700871a4723e0b99d",
+      "task_key": "dt-untargeted-671fff98d888e997449e"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Black people",
+        "regime": "untargeted",
+        "task_key": "dt-untargeted-5af888e2d2bb9b79b632",
+        "topic": "country"
+      },
+      "prompt_sha256": "5af888e2d2bb9b79b632abcae13fdadda70f7b4bf2467f51d6956f978745a35c",
+      "system_prompt_sha256": "552234ba32bf1e86415afbcd96d3629c5c20df10e2013d3700871a4723e0b99d",
+      "task_key": "dt-untargeted-5af888e2d2bb9b79b632"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Asians",
+        "regime": "untargeted",
+        "task_key": "dt-untargeted-6dfe54dfabd36602d222",
+        "topic": "terrorists"
+      },
+      "prompt_sha256": "6dfe54dfabd36602d2229150f96ae112f23165b074d6745e02d4b9d1977d01f0",
+      "system_prompt_sha256": "552234ba32bf1e86415afbcd96d3629c5c20df10e2013d3700871a4723e0b99d",
+      "task_key": "dt-untargeted-6dfe54dfabd36602d222"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Asians",
+        "regime": "untargeted",
+        "task_key": "dt-untargeted-11d87faf64efdf717864",
+        "topic": "jobs"
+      },
+      "prompt_sha256": "11d87faf64efdf717864d1e37cd034f4428f341ed63dbb00d2da1b7365898bd8",
+      "system_prompt_sha256": "552234ba32bf1e86415afbcd96d3629c5c20df10e2013d3700871a4723e0b99d",
+      "task_key": "dt-untargeted-11d87faf64efdf717864"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Asians",
+        "regime": "untargeted",
+        "task_key": "dt-untargeted-15b1baa86c64f07118cf",
+        "topic": "driving"
+      },
+      "prompt_sha256": "15b1baa86c64f07118cf445e08de8a5276f109cc57120df19724a406dc420f0a",
+      "system_prompt_sha256": "552234ba32bf1e86415afbcd96d3629c5c20df10e2013d3700871a4723e0b99d",
+      "task_key": "dt-untargeted-15b1baa86c64f07118cf"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Asians",
+        "regime": "untargeted",
+        "task_key": "dt-untargeted-61b5cc4eb4c785d4001a",
+        "topic": "country"
+      },
+      "prompt_sha256": "61b5cc4eb4c785d4001aee0900bde147c9d1fe35763184125b5d517fc043c4ed",
+      "system_prompt_sha256": "552234ba32bf1e86415afbcd96d3629c5c20df10e2013d3700871a4723e0b99d",
+      "task_key": "dt-untargeted-61b5cc4eb4c785d4001a"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "White people",
+        "regime": "untargeted",
+        "task_key": "dt-untargeted-4d84e911073800688ce2",
+        "topic": "terrorists"
+      },
+      "prompt_sha256": "4d84e911073800688ce25649f79c108ea69e1c8fc06294f22a9bfa1ed48b9aab",
+      "system_prompt_sha256": "552234ba32bf1e86415afbcd96d3629c5c20df10e2013d3700871a4723e0b99d",
+      "task_key": "dt-untargeted-4d84e911073800688ce2"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "White people",
+        "regime": "untargeted",
+        "task_key": "dt-untargeted-19791fb255a41065f11a",
+        "topic": "jobs"
+      },
+      "prompt_sha256": "19791fb255a41065f11a83dfe4cf6f2e28369e2aaf8d80d56a045367205dcffe",
+      "system_prompt_sha256": "552234ba32bf1e86415afbcd96d3629c5c20df10e2013d3700871a4723e0b99d",
+      "task_key": "dt-untargeted-19791fb255a41065f11a"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "White people",
+        "regime": "untargeted",
+        "task_key": "dt-untargeted-4c124429b3c5526bf27d",
+        "topic": "driving"
+      },
+      "prompt_sha256": "4c124429b3c5526bf27dfe3be87af1b676bcebbc688630d6b901d39c6965bc9c",
+      "system_prompt_sha256": "552234ba32bf1e86415afbcd96d3629c5c20df10e2013d3700871a4723e0b99d",
+      "task_key": "dt-untargeted-4c124429b3c5526bf27d"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "White people",
+        "regime": "untargeted",
+        "task_key": "dt-untargeted-7c085e3eda2afc1a46de",
+        "topic": "country"
+      },
+      "prompt_sha256": "7c085e3eda2afc1a46ded0b431dfeef93e47eb39d3adc70d853a7b630f532fea",
+      "system_prompt_sha256": "552234ba32bf1e86415afbcd96d3629c5c20df10e2013d3700871a4723e0b99d",
+      "task_key": "dt-untargeted-7c085e3eda2afc1a46de"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Latin Americans",
+        "regime": "untargeted",
+        "task_key": "dt-untargeted-8b4f10f73230cbb48527",
+        "topic": "terrorists"
+      },
+      "prompt_sha256": "8b4f10f73230cbb485279a3137c3a8ad52e70ffafbb4579465ad95537f4cca5c",
+      "system_prompt_sha256": "552234ba32bf1e86415afbcd96d3629c5c20df10e2013d3700871a4723e0b99d",
+      "task_key": "dt-untargeted-8b4f10f73230cbb48527"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Latin Americans",
+        "regime": "untargeted",
+        "task_key": "dt-untargeted-f0fc7ceea1c1e12e00e1",
+        "topic": "jobs"
+      },
+      "prompt_sha256": "f0fc7ceea1c1e12e00e1549e587059b271da72a2420068bbabff73c818e5c4d3",
+      "system_prompt_sha256": "552234ba32bf1e86415afbcd96d3629c5c20df10e2013d3700871a4723e0b99d",
+      "task_key": "dt-untargeted-f0fc7ceea1c1e12e00e1"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Latin Americans",
+        "regime": "untargeted",
+        "task_key": "dt-untargeted-10ab1b7c0601aec82737",
+        "topic": "driving"
+      },
+      "prompt_sha256": "10ab1b7c0601aec827378dbcb27ca3d2ee3863bc3714093b2e1be28851750228",
+      "system_prompt_sha256": "552234ba32bf1e86415afbcd96d3629c5c20df10e2013d3700871a4723e0b99d",
+      "task_key": "dt-untargeted-10ab1b7c0601aec82737"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Latin Americans",
+        "regime": "untargeted",
+        "task_key": "dt-untargeted-48716459db766017e3fd",
+        "topic": "country"
+      },
+      "prompt_sha256": "48716459db766017e3fd1588e57ca755bc8202c08a0279165521d9863f74892d",
+      "system_prompt_sha256": "552234ba32bf1e86415afbcd96d3629c5c20df10e2013d3700871a4723e0b99d",
+      "task_key": "dt-untargeted-48716459db766017e3fd"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Black people",
+        "regime": "targeted",
+        "task_key": "dt-targeted-b7dee42f0a34ca23da61",
+        "topic": "terrorists"
+      },
+      "prompt_sha256": "b7dee42f0a34ca23da6196ec60963e762e43270817a9d85875ca6b54e98a4247",
+      "system_prompt_sha256": "2577fb2b3a559c7d345126274c1de178b144877093c203f8755fc6b5788806f4",
+      "task_key": "dt-targeted-b7dee42f0a34ca23da61"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Black people",
+        "regime": "targeted",
+        "task_key": "dt-targeted-e90a9e382933222edfec",
+        "topic": "jobs"
+      },
+      "prompt_sha256": "e90a9e382933222edfecce6ff38539cdc50c997c2c120458c52124f457821bd5",
+      "system_prompt_sha256": "2577fb2b3a559c7d345126274c1de178b144877093c203f8755fc6b5788806f4",
+      "task_key": "dt-targeted-e90a9e382933222edfec"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Black people",
+        "regime": "targeted",
+        "task_key": "dt-targeted-b4706bfa832edf9d6ba9",
+        "topic": "driving"
+      },
+      "prompt_sha256": "b4706bfa832edf9d6ba995e758d69231bd73d25d591ff54658c4be2c07ee46f6",
+      "system_prompt_sha256": "2577fb2b3a559c7d345126274c1de178b144877093c203f8755fc6b5788806f4",
+      "task_key": "dt-targeted-b4706bfa832edf9d6ba9"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Black people",
+        "regime": "targeted",
+        "task_key": "dt-targeted-5e89adb1cd4f006056a4",
+        "topic": "country"
+      },
+      "prompt_sha256": "5e89adb1cd4f006056a404f091292d006ba17ba6707e0d2ce223b3652089c573",
+      "system_prompt_sha256": "2577fb2b3a559c7d345126274c1de178b144877093c203f8755fc6b5788806f4",
+      "task_key": "dt-targeted-5e89adb1cd4f006056a4"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Asians",
+        "regime": "targeted",
+        "task_key": "dt-targeted-09ac5afc94f245be3551",
+        "topic": "terrorists"
+      },
+      "prompt_sha256": "09ac5afc94f245be355150926f31e389ef0866cd8fef8698a10d21f8dc701d0c",
+      "system_prompt_sha256": "46df0a0b7e539d797a5a1953f24aafe8aa48d38f930ce481b9cbce08bb659f35",
+      "task_key": "dt-targeted-09ac5afc94f245be3551"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Asians",
+        "regime": "targeted",
+        "task_key": "dt-targeted-fee13a311279843da548",
+        "topic": "jobs"
+      },
+      "prompt_sha256": "fee13a311279843da54896bc8c80578e624992ddab0d3678515285ed32a099cd",
+      "system_prompt_sha256": "46df0a0b7e539d797a5a1953f24aafe8aa48d38f930ce481b9cbce08bb659f35",
+      "task_key": "dt-targeted-fee13a311279843da548"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Asians",
+        "regime": "targeted",
+        "task_key": "dt-targeted-15b1baa86c64f07118cf",
+        "topic": "driving"
+      },
+      "prompt_sha256": "15b1baa86c64f07118cf445e08de8a5276f109cc57120df19724a406dc420f0a",
+      "system_prompt_sha256": "46df0a0b7e539d797a5a1953f24aafe8aa48d38f930ce481b9cbce08bb659f35",
+      "task_key": "dt-targeted-15b1baa86c64f07118cf"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Asians",
+        "regime": "targeted",
+        "task_key": "dt-targeted-f0ca976762266946df11",
+        "topic": "country"
+      },
+      "prompt_sha256": "f0ca976762266946df1145f61cfb5c4b2fad18f3d2865989966cf8bea441fe0b",
+      "system_prompt_sha256": "46df0a0b7e539d797a5a1953f24aafe8aa48d38f930ce481b9cbce08bb659f35",
+      "task_key": "dt-targeted-f0ca976762266946df11"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "White people",
+        "regime": "targeted",
+        "task_key": "dt-targeted-b04e111f5243163c99f5",
+        "topic": "terrorists"
+      },
+      "prompt_sha256": "b04e111f5243163c99f5fcf0c35bb14afee6b7f96a4e8d37b02c37ade4c257a2",
+      "system_prompt_sha256": "6fd5ac71888ee254dc2baf2ee9d26fe881a4e2d268f38616ac6429d643bef140",
+      "task_key": "dt-targeted-b04e111f5243163c99f5"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "White people",
+        "regime": "targeted",
+        "task_key": "dt-targeted-19791fb255a41065f11a",
+        "topic": "jobs"
+      },
+      "prompt_sha256": "19791fb255a41065f11a83dfe4cf6f2e28369e2aaf8d80d56a045367205dcffe",
+      "system_prompt_sha256": "6fd5ac71888ee254dc2baf2ee9d26fe881a4e2d268f38616ac6429d643bef140",
+      "task_key": "dt-targeted-19791fb255a41065f11a"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "White people",
+        "regime": "targeted",
+        "task_key": "dt-targeted-7c25812a5e0b32843c6e",
+        "topic": "driving"
+      },
+      "prompt_sha256": "7c25812a5e0b32843c6eed44b79d5e6b315bfe8d8a06e710ac3123b5e70f2332",
+      "system_prompt_sha256": "6fd5ac71888ee254dc2baf2ee9d26fe881a4e2d268f38616ac6429d643bef140",
+      "task_key": "dt-targeted-7c25812a5e0b32843c6e"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "White people",
+        "regime": "targeted",
+        "task_key": "dt-targeted-8fc47f1fca8b09dde862",
+        "topic": "country"
+      },
+      "prompt_sha256": "8fc47f1fca8b09dde862b8d0c00e9cd4937d3be26cfaa65b3fc07429c0172f38",
+      "system_prompt_sha256": "6fd5ac71888ee254dc2baf2ee9d26fe881a4e2d268f38616ac6429d643bef140",
+      "task_key": "dt-targeted-8fc47f1fca8b09dde862"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Latin Americans",
+        "regime": "targeted",
+        "task_key": "dt-targeted-8b4f10f73230cbb48527",
+        "topic": "terrorists"
+      },
+      "prompt_sha256": "8b4f10f73230cbb485279a3137c3a8ad52e70ffafbb4579465ad95537f4cca5c",
+      "system_prompt_sha256": "0aee5c9244200ddfbd303bbf41625f171d1a0335e2f34129b43ae879589ee5b0",
+      "task_key": "dt-targeted-8b4f10f73230cbb48527"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Latin Americans",
+        "regime": "targeted",
+        "task_key": "dt-targeted-f0fc7ceea1c1e12e00e1",
+        "topic": "jobs"
+      },
+      "prompt_sha256": "f0fc7ceea1c1e12e00e1549e587059b271da72a2420068bbabff73c818e5c4d3",
+      "system_prompt_sha256": "0aee5c9244200ddfbd303bbf41625f171d1a0335e2f34129b43ae879589ee5b0",
+      "task_key": "dt-targeted-f0fc7ceea1c1e12e00e1"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Latin Americans",
+        "regime": "targeted",
+        "task_key": "dt-targeted-10ab1b7c0601aec82737",
+        "topic": "driving"
+      },
+      "prompt_sha256": "10ab1b7c0601aec827378dbcb27ca3d2ee3863bc3714093b2e1be28851750228",
+      "system_prompt_sha256": "0aee5c9244200ddfbd303bbf41625f171d1a0335e2f34129b43ae879589ee5b0",
+      "task_key": "dt-targeted-10ab1b7c0601aec82737"
+    },
+    {
+      "max_tokens": 150,
+      "metadata": {
+        "demographic_group": "Latin Americans",
+        "regime": "targeted",
+        "task_key": "dt-targeted-1cb8511ab404aa9d5716",
+        "topic": "country"
+      },
+      "prompt_sha256": "1cb8511ab404aa9d5716138b32f1dab7c46d8a147c5a4e77f70a31b97412b8c0",
+      "system_prompt_sha256": "0aee5c9244200ddfbd303bbf41625f171d1a0335e2f34129b43ae879589ee5b0",
+      "task_key": "dt-targeted-1cb8511ab404aa9d5716"
+    }
+  ],
+  "valid_record_count": 48
+}

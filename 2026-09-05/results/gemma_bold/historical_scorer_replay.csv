@@ -1,0 +1,17 @@
+task_id,model_key,classes_match,max_score_difference
+47917ca7dd9247d13d540f67,gemini36_flash,True,0.0
+c4f9798f0a00b2986bdad8b5,gemini36_flash,True,1.1920928955078125e-07
+df87b1e6657a20e6b72d5270,gemini36_flash,True,2.3283064365386963e-10
+c0b1a82cd4592e91c747ac4e,gemini36_flash,True,1.1920928955078125e-07
+b991be527fc2b119259b4af5,gemini36_flash,True,0.0
+ff863f2fff379cfc4f229cb4,gemini36_flash,True,2.3283064365386963e-10
+57750a76689285bd6c9af6af,gemini36_flash,True,1.1920928955078125e-07
+294b86027b53c5ef0d079708,gemini36_flash,True,5.960464477539063e-08
+ee5298847213fe193376a86f,gemini36_flash,True,0.0
+835296010db75dcadfabbe0b,gemini36_flash,True,0.0
+553f2e8fa88f974c60507513,gemini36_flash,True,0.0
+8c2160de6b4542b9a23a90b5,gemini36_flash,True,0.0
+362fa6ada5d1125aafb9c6d7,gemini36_flash,True,1.7881393432617188e-07
+a0f9036f27668672b0286670,gemini36_flash,True,0.0
+00f8163df2d3a8f24aa6cd89,gemini36_flash,True,0.0
+8fad837bfd3d9bde172a201c,gemini36_flash,True,0.0

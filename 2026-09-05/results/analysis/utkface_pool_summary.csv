@@ -1,0 +1,5 @@
+pool,race,images,mean_age_years,mean_quality_score,negative_expression_images
+Evaluation,Black,200,41.245,0.6041772457251721,47
+Evaluation,White,200,41.09,0.6127341797025028,47
+Future fine-tuning,Black,200,41.785,0.6089402045673794,41
+Future fine-tuning,White,200,41.49,0.6142017167578404,41

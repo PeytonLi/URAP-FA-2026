@@ -1,0 +1,42 @@
+[
+  {
+    "adapter_config_sha256": "0ebd5b44436d711b74703e00c7dfdebe1ee352c2b66fbe9d000bfebd866d5a34",
+    "adapter_sha256": "ac72d4b457d3100409150d5ae15cfdb2c5fbbd01f55b59ef0a6bd42837b2cffe",
+    "label": "Sum DPO, LR 2e-6",
+    "model_key": "sum_lr2e6",
+    "response_csv_sha256": "09a054487629553dd27c4e62d624cb7b658d875cd77e241d20a7abb647c9fe62",
+    "training_manifest_sha256": "c2ae22d1982d6096e12340c72a15b92c71f1ecaf66c0552b2cfb6699f31feecf"
+  },
+  {
+    "adapter_config_sha256": "9d1f017ad13e6e6106c1d22fc229ed9cbeb46be96fd153dadec150a7e993cca4",
+    "adapter_sha256": "4584fefdc7ad37cc05c4c877c1abe444ed2f58e66bdb562a08846bd09429a48a",
+    "label": "Sum DPO, LR 5e-6",
+    "model_key": "sum_lr5e6",
+    "response_csv_sha256": "dfa92e996cd8a095ec67022a701ed9197bdbe91e49e266c160666ce3d641ae39",
+    "training_manifest_sha256": "a6df8181a00698e47c68c594e8605197a4a315fae65b2d1106e5cabc31894446"
+  },
+  {
+    "adapter_config_sha256": "ca5b06739f662ed3f5d08d66f6a67f4f7eafaf7a07f3c2ea5e74c8b7ea32753d",
+    "adapter_sha256": "f6ec10b3aead409d1898ef005a32c572055011ae05e93c173754f95cf6be1753",
+    "label": "Sum DPO, LR 1e-5",
+    "model_key": "sum_lr1e5",
+    "response_csv_sha256": "68973fe4b8c7e52d21964f38420910caac77ee12b73a360da272a848a05e62cc",
+    "training_manifest_sha256": "c953b063970dd4f2bd5b74bbbb19ee16b96125dfbb6a26f0c0e43c85f577302b"
+  },
+  {
+    "adapter_config_sha256": "7915cd5e9e9d9007e3fec2d910cb7dc91fe94fb922d53470702fb5be20abfc65",
+    "adapter_sha256": "35842767d76c3fd3acf19800d2a5a747adb12ebf998da6513582199f792e2038",
+    "label": "Mean-token DPO, LR 5e-6",
+    "model_key": "mean_lr5e6",
+    "response_csv_sha256": "82dc62ecc693a0127e241587a40ca005d4bdedfeec1f79c5b50fa5eb44e2dac8",
+    "training_manifest_sha256": "cf773d7e0e31cd625ec2c3d7f014efbdf0e8f990d678b08b9020a838c0a1441e"
+  },
+  {
+    "adapter_config_sha256": "249c08c0461afbac4c1bd41ec9b2592e88ab1e7fc3d8299f2a264182d7c68b00",
+    "adapter_sha256": "aa869029c73588c2cb5ff1bf805466f78e995de3e888ac7ff7eb567f8d421053",
+    "label": "Mean-token DPO, LR 2e-5",
+    "model_key": "mean_lr2e5",
+    "response_csv_sha256": "960c32722672b0a8775000e045af762525fa852566f81c2a6e7c68fb710c787f",
+    "training_manifest_sha256": "6df8cc61e558761a5e37eb30d5f0c01795fd513ab9b591e1286307212e74a5c0"
+  }
+]

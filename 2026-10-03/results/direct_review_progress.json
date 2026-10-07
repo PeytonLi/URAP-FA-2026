@@ -1,0 +1,20 @@
+{
+  "ai_approved_records": 856,
+  "all_images_complete": true,
+  "checked_at": "2026-10-05T10:23:37.531362+00:00",
+  "direct_csv_sha256": "1bc6531ba335004a46e03747114d363dee4e52a54e8adeb78ff77a047b924873",
+  "direct_policy_sha256": "69931b913a3ec7c6e37c842d7e3d8899f21fff9f8ddb52cf0df71158f9c59a54",
+  "directly_inspected": 1920,
+  "human_approved_records": 0,
+  "image_hashes_verified": true,
+  "image_membership_or_splits_changed": false,
+  "manifest_sha256": "7b08c31122f624e733ac279b87882c9138a05ea4c9dc7a16596105a5d4637d13",
+  "method": "Codex direct visual inspection via view_image(original); exact model revision unavailable",
+  "original_teacher_drafts_preserved": true,
+  "proposed_three_word_pairs": 856,
+  "remaining_images": 0,
+  "required_images": 1920,
+  "test_or_benchmark_images_inspected": 0,
+  "training_started": false,
+  "unresolved_targets": 1064
+}

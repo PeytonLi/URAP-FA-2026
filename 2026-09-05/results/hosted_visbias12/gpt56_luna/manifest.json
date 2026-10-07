@@ -1,0 +1,112 @@
+{
+  "catalog_snapshot": {
+    "architecture": {
+      "input_modalities": [
+        "file",
+        "image",
+        "text"
+      ],
+      "instruct_type": null,
+      "modality": "text+image+file->text",
+      "output_modalities": [
+        "text"
+      ],
+      "tokenizer": "GPT"
+    },
+    "canonical_slug": "openai/gpt-5.6-luna-20260709",
+    "context_length": 1050000,
+    "created": 1783590864,
+    "id": "openai/gpt-5.6-luna",
+    "name": "OpenAI: GPT-5.6 Luna",
+    "pricing": {
+      "completion": "0.0000012",
+      "input_cache_read": "0.00000002",
+      "input_cache_write": "0.00000025",
+      "overrides": [
+        {
+          "completion": "0.0000018",
+          "input_cache_read": "0.00000004",
+          "input_cache_write": "0.0000005",
+          "min_prompt_tokens": 272000,
+          "prompt": "0.0000004"
+        }
+      ],
+      "prompt": "0.0000002",
+      "web_search": "0.01"
+    },
+    "selected_endpoint": {
+      "context_length": 1050000,
+      "max_completion_tokens": 128000,
+      "max_prompt_tokens": null,
+      "name": "Azure | openai/gpt-5.6-luna-20260709",
+      "pricing": {
+        "completion": "0.00000132",
+        "discount": 0,
+        "input_cache_read": "0.000000022",
+        "input_cache_write": "0.000000275",
+        "overrides": [
+          {
+            "completion": "0.00000198",
+            "input_cache_read": "0.000000044",
+            "input_cache_write": "0.00000055",
+            "min_prompt_tokens": 272000,
+            "prompt": "0.00000044"
+          }
+        ],
+        "prompt": "0.00000022",
+        "web_search": "0.01"
+      },
+      "provider_name": "Azure",
+      "quantization": "unknown",
+      "status": 0,
+      "supported_parameters": [
+        "max_completion_tokens",
+        "reasoning",
+        "include_reasoning",
+        "seed",
+        "response_format",
+        "structured_outputs",
+        "tools",
+        "tool_choice",
+        "reasoning_effort"
+      ],
+      "tag": "azure/eu"
+    },
+    "supported_parameters": [
+      "include_reasoning",
+      "max_completion_tokens",
+      "max_tokens",
+      "reasoning",
+      "reasoning_effort",
+      "response_format",
+      "seed",
+      "structured_outputs",
+      "tool_choice",
+      "tools"
+    ]
+  },
+  "finished_at": "2026-09-05T07:34:57.936953+00:00",
+  "model": {
+    "api_revision_hint": "openai/gpt-5.6-luna-20260709",
+    "display_name": "GPT-5.6 Luna",
+    "key": "gpt56_luna",
+    "max_concurrency": 3,
+    "max_tokens": 64,
+    "model_id": "openai/gpt-5.6-luna",
+    "provider_endpoint": "azure/eu",
+    "reasoning_effort": "none",
+    "release_date": "2026-07-09",
+    "supports_temperature": false,
+    "supports_top_p": false,
+    "weight_access": "closed-source"
+  },
+  "planned_tasks": 36,
+  "probe": false,
+  "provider_fallback": false,
+  "recorded_calls": 36,
+  "response_cost_usd": 0.0028622000000000035,
+  "started_at": "2026-09-05T07:33:15.341103+00:00",
+  "status": "complete",
+  "task_contract_sha256": "e858fe45a4ad1ff8cbdad49e276a92c8119a1cf1b714d0180e69f56b16d9ae3e",
+  "valid_responses": 36
+}

@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+runtime/
+data/private/
+data/iat12/images/
+*.safetensors
+STOP_REQUESTED

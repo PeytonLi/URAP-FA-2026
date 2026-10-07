@@ -1,0 +1,72 @@
+{
+  "study_id": "multimodel-race-bias-20260831",
+  "completed_at": "2026-08-31T10:50:57.298921+00:00",
+  "scope": "No Gemma inference or fine-tuning; eight pinned hosted model contracts",
+  "publication_package": "Compact August 31 statistical and figure reproduction bundle",
+  "model_contracts": "config/models_aug31.json",
+  "run_ids": {
+    "archived_significance": "August 24 frozen outputs, locally reanalyzed on August 31",
+    "utkface_iat": "utkface_iat_eight_model_20260831_v1",
+    "visbias_pilot": "visbias_race_eight_model_pilot_20260831_v1"
+  },
+  "final_sample_counts": {
+    "archived_iat_rows": 960,
+    "archived_decodingtrust_rows": 384,
+    "archived_bold_rows": 800,
+    "utkface_iat_records": 2800,
+    "utkface_iat_valid_records": 2789,
+    "visbias_records": 1764,
+    "visbias_valid_records": 1762
+  },
+  "completed_models": [
+    "qwen35_9b",
+    "kimi_k3",
+    "gemini36_flash",
+    "mimo_v25",
+    "minimax_m3",
+    "step37_flash",
+    "grok46"
+  ],
+  "missing_models": {
+    "gpt56_luna": "Pinned Azure EU route repeatedly returned 502 no healthy upstream; fallback disabled"
+  },
+  "analysis_contract": {
+    "archived_bootstrap_samples": 20000,
+    "utkface_image_cluster_bootstrap_samples": 100000,
+    "utkface_stratified_permutation_samples": 100000,
+    "visbias_paired_bootstrap_samples": 20000,
+    "multiple_comparison_method": "Benjamini-Hochberg",
+    "corrected_threshold": 0.05,
+    "invalid_iat_outputs_excluded_from_rates_and_inference": true
+  },
+  "dataset_sources": {
+    "utkface_mirror": "py97/UTKFace-Cropped",
+    "utkface_revision": "e80f21fb21fa3631380c3cb634b79be3ac2f4cba",
+    "utkface_archive_sha256": "2c0655397b498e81b82d685ee74bee8c2e4364a5897caf3afec6ea48929024a7",
+    "visbias_repository": "https://github.com/uscnlp-lime/VisBias",
+    "visbias_revision": "6a129c5d6e0d2278325811196ac33a1bc522408d",
+    "expression_model": "trpakov/vit-face-expression",
+    "expression_model_revision": "ef0bc6fc34241b6587e7e009e7711357be28c024"
+  },
+  "cost": {
+    "authoritative_openrouter_account_delta_usd": 4.868790898,
+    "final_openrouter_balance_usd": 17.118872358,
+    "required_reserve_usd": 10.0
+  },
+  "primary_paths": {
+    "raw_data": "data/raw",
+    "frozen_task_metadata": "data/frozen",
+    "derived_statistics": "data/derived",
+    "plots": "plots",
+    "report": "report/august31_bias_study_report.pdf",
+    "reproduction_script": "code/reproduce_aug31.py"
+  },
+  "privacy_contract": {
+    "api_keys_saved": false,
+    "embedded_image_payloads_saved": false,
+    "face_images_referenced_by_sha256": true,
+    "private_face_images_committed": false,
+    "raw_transport_jsonl_committed": false
+  },
+  "interpretation": "Null results and failed cells are retained. Sampling was not continued until a desired direction or significance threshold appeared."
+}

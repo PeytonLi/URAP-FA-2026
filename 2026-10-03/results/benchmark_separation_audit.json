@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-10-06T08:16:13.915213+00:00",
+  "selected_images_file_and_pixel_hash_verified": 2400,
+  "benchmark_images_file_hash_verified": 12,
+  "source_file_matches": [],
+  "export_file_matches": [],
+  "normalized_rgb_pixel_matches": [],
+  "pixel_hash_helper": "2026-09-29/src/curation.py:pixel_hash",
+  "pixel_hash_helper_file_sha256": "7fb110e658635a4eba98d486df01df5543bfd8ecd564ba31406e8723d36ff919",
+  "manifest_sha256": "7b08c31122f624e733ac279b87882c9138a05ea4c9dc7a16596105a5d4637d13",
+  "method": "Verify selected export-file hashes; EXIF-transpose and RGB-decode actual exports and benchmark JPEGs; use the upstream dimension-prefixed pixel hash; compare reference JPEG hashes with both selected export and original-source hashes.",
+  "identity_disjointness_established": false,
+  "limitations": [
+    "No person-identity audit was performed.",
+    "Differently cropped, resized or recompressed copies are not comprehensively excluded by these exact checks.",
+    "This audit does not supply expression ground truth or new training targets."
+  ],
+  "training_data_changed": false
+}

@@ -1,0 +1,13 @@
+{
+  "cost_per_hour": 3.49,
+  "deployed_at": "2026-09-11T08:13:29.011313+00:00",
+  "deployed_epoch": 1789114409.0113542,
+  "hard_deadline_epoch": 1789123909.0113542,
+  "network_volume_id": "zecocmq95n",
+  "pod_id": "f0pigmwsmvy4i6",
+  "starting_account": {
+    "clientBalance": 15.9279664001,
+    "currentSpendPerHr": 0.008
+  },
+  "terminated": false
+}

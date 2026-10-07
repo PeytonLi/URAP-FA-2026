@@ -1,0 +1,155 @@
+{
+  "base_seed": 3719,
+  "bootstrap_samples": 100000,
+  "input_sha256": {
+    "/Users/eliaswu/Desktop/Junior/Research/gemma3-fairface-debiasing-july27/outputs/fresh_lora_gemini_judged_20260727/00_baseline_base_gemma3_fairface_iat.csv": "45c43099210bc685e5fb30ab15406be0cbc571d53573bf761736c15b0b491226",
+    "/Users/eliaswu/Desktop/Junior/Research/gemma3-fairface-debiasing-july27/outputs/fresh_lora_gemini_judged_20260727/00b_baseline_base_gemma3_neutral_iat.csv": "c4496947930208e61380074cc49d8d35ca9b8823ca901313be4bd5f03c5fc58c",
+    "/Users/eliaswu/Desktop/Junior/Research/gemma3-fairface-debiasing-july27/outputs/fresh_lora_gemini_judged_20260727/01_adapter_july27_fresh_lora_fairface_iat.csv": "d730324fd83ac207430c3a33e2cb2272c294078a4e8ff98fd2c28aca48d3bcfd",
+    "/Users/eliaswu/Desktop/Junior/Research/gemma3-fairface-debiasing-july27/outputs/fresh_lora_gemini_judged_20260727/01b_adapter_july27_fresh_lora_neutral_iat.csv": "106d12883af2a9d5ac23749a2c85d5f94343877b0f3debe56b944687d703636f",
+    "/Users/eliaswu/Desktop/Junior/Research/gemma3-fairface-debiasing-july27/outputs/fresh_lora_gemini_judged_20260727_step0010_eval/01_step_0010_fairface_iat.csv": "c088a1ab1c614d745841ac5dbc6bfac524b40ab0583d2606291f4cb5f993ac21",
+    "/Users/eliaswu/Desktop/Junior/Research/gemma3-fairface-debiasing-july27/outputs/fresh_lora_gemini_judged_20260727_step0010_eval/01b_step_0010_neutral_iat.csv": "2d59412ad70d74f21388b83b47e4f4a23746e9b8855d3a119fc1cae2b5587576",
+    "/Users/eliaswu/Desktop/Junior/Research/gemma3-fairface-debiasing-july27/reference/july19_ai_only_final/01_adapter_july19_lora_fairface_iat.csv": "d6c882ae5cd0eb5f3b0763827ed75ece3fcf1eb97bbaef096f0d60679cef7174",
+    "/Users/eliaswu/Desktop/Junior/Research/gemma3-fairface-debiasing-july27/reference/july19_ai_only_final/01b_adapter_july19_lora_neutral_iat.csv": "5c99433755c8c324c40167b3298061ce5e70e79ff19798eb213242de13e46c9d"
+  },
+  "negative_rate_unit": "negative terms divided by three terms per response",
+  "results": {
+    "heldout_fairface": {
+      "July 19 LoRA": {
+        "black_images": 200,
+        "black_rate_change": {
+          "ci_high": 0.008499999999999999,
+          "ci_low": -0.002,
+          "estimate": 0.0030000000000000005,
+          "probability_below_zero": 0.12589
+        },
+        "gap_change": {
+          "ci_high": 0.0038333333333333292,
+          "ci_low": -0.017499999999999998,
+          "estimate": -0.005833333333333333,
+          "probability_below_zero": 0.86182
+        },
+        "white_images": 200,
+        "white_rate_change": {
+          "ci_high": 0.019333333333333334,
+          "ci_low": 0.001,
+          "estimate": 0.008833333333333334,
+          "probability_below_zero": 0.00842
+        }
+      },
+      "July 27 final": {
+        "black_images": 200,
+        "black_rate_change": {
+          "ci_high": 0.016833333333333332,
+          "ci_low": 0.003,
+          "estimate": 0.009333333333333334,
+          "probability_below_zero": 0.0007
+        },
+        "gap_change": {
+          "ci_high": 0.014833333333333332,
+          "ci_low": -0.006166666666666664,
+          "estimate": 0.004500000000000001,
+          "probability_below_zero": 0.19037
+        },
+        "white_images": 200,
+        "white_rate_change": {
+          "ci_high": 0.013333333333333332,
+          "ci_low": -0.002,
+          "estimate": 0.004833333333333333,
+          "probability_below_zero": 0.09783
+        }
+      },
+      "July 27 step 10": {
+        "black_images": 200,
+        "black_rate_change": {
+          "ci_high": 0.014499999999999997,
+          "ci_low": -0.00016666666666666886,
+          "estimate": 0.006666666666666665,
+          "probability_below_zero": 0.03187
+        },
+        "gap_change": {
+          "ci_high": 0.010666666666666663,
+          "ci_low": -0.009833333333333333,
+          "estimate": 0.0004999999999999987,
+          "probability_below_zero": 0.46437
+        },
+        "white_images": 200,
+        "white_rate_change": {
+          "ci_high": 0.013833333333333333,
+          "ci_low": -0.0001666666666666665,
+          "estimate": 0.006166666666666667,
+          "probability_below_zero": 0.02709
+        }
+      }
+    },
+    "neutral_12_face": {
+      "July 19 LoRA": {
+        "black_images": 6,
+        "black_rate_change": {
+          "ci_high": 0.31666666666666665,
+          "ci_low": 0.016666666666666663,
+          "estimate": 0.15,
+          "probability_below_zero": 0.0
+        },
+        "gap_change": {
+          "ci_high": 0.3166666666666666,
+          "ci_low": -0.01666666666666667,
+          "estimate": 0.13333333333333333,
+          "probability_below_zero": 0.04499
+        },
+        "white_images": 6,
+        "white_rate_change": {
+          "ci_high": 0.09999999999999999,
+          "ci_low": -0.05000000000000001,
+          "estimate": 0.016666666666666663,
+          "probability_below_zero": 0.35355
+        }
+      },
+      "July 27 final": {
+        "black_images": 6,
+        "black_rate_change": {
+          "ci_high": 0.25000000000000006,
+          "ci_low": 0.03333333333333335,
+          "estimate": 0.15000000000000002,
+          "probability_below_zero": 0.00325
+        },
+        "gap_change": {
+          "ci_high": 0.2333333333333334,
+          "ci_low": -0.05000000000000003,
+          "estimate": 0.1,
+          "probability_below_zero": 0.09072
+        },
+        "white_images": 6,
+        "white_rate_change": {
+          "ci_high": 0.16666666666666666,
+          "ci_low": -0.03333333333333333,
+          "estimate": 0.05000000000000001,
+          "probability_below_zero": 0.1268
+        }
+      },
+      "July 27 step 10": {
+        "black_images": 6,
+        "black_rate_change": {
+          "ci_high": 0.1666666666666667,
+          "ci_low": -0.04999999999999997,
+          "estimate": 0.06666666666666668,
+          "probability_below_zero": 0.08955
+        },
+        "gap_change": {
+          "ci_high": 0.1666666666666667,
+          "ci_low": -0.04999999999999997,
+          "estimate": 0.06666666666666668,
+          "probability_below_zero": 0.08955
+        },
+        "white_images": 6,
+        "white_rate_change": {
+          "ci_high": 0.0,
+          "ci_low": 0.0,
+          "estimate": 0.0,
+          "probability_below_zero": 0.0
+        }
+      }
+    }
+  },
+  "schema_version": 1,
+  "statistical_unit": "image, paired between frozen base and adapter"
+}

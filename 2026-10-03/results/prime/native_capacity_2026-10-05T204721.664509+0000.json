@@ -1,0 +1,16 @@
+{
+  "availability": {
+    "H100_80GB": {
+      "items": [],
+      "totalCount": 0
+    },
+    "H200_141GB": {
+      "items": [],
+      "totalCount": 0
+    }
+  },
+  "checked_at": "2026-10-05T20:47:21.664509+00:00",
+  "paid_resources_created": false,
+  "spending_ceiling_usd": 70.0,
+  "wallet_usd": 94.0857
+}

@@ -1,0 +1,127 @@
+{
+  "asset_root": "C:\\Users\\lipey\\Code\\URAP\\2026-10-03\\data\\private\\assets",
+  "created_at": "2026-10-03T20:26:48.619774+00:00",
+  "excluded_label_failures": {},
+  "excluded_unmatched_pairs": [
+    "iat-controlled-018e4023c1a04767124f",
+    "iat-controlled-0373071136ad7e4226bd",
+    "iat-controlled-1180f34c73e2b1cbfcdb",
+    "iat-controlled-15173bde822c26cea2e6",
+    "iat-controlled-1da1c2db94381f1a943d",
+    "iat-controlled-2106d20f805eb7b99712",
+    "iat-controlled-221982ec8bcd87db43d6",
+    "iat-controlled-3dff695c77cffa4fa22c",
+    "iat-controlled-7f475a09059ec1c1b1f0",
+    "iat-controlled-87aa1969c8bea935e9f4",
+    "iat-controlled-9021f85f2873cdf52a8f",
+    "iat-controlled-c1f76aecb68a84edb422",
+    "iat-controlled-c78d0ab1d6d02669fb98"
+  ],
+  "image_hash_overlap": 0,
+  "limitations": [
+    "AI-judged templates, not human ground truth",
+    "Neutral targets favor positive words",
+    "Selected negative-expression rows are sad faces only; angry/fear rows were unmatched",
+    "Exact image hashes are disjoint; identity-level and perceptual deduplication are not established",
+    "This is a new IAT-only pilot, not the old mixed-profile DPO dataset"
+  ],
+  "missing_images": [
+    {
+      "image_path": "data/august10/negative_expression_expansion_v1/images/ff-0aa460b4bd5f4a732611.png",
+      "image_sha256": "71776fc4c45d3a278429a8c078e08b5f18cd7de49775f7ffe93baca933abbdc8",
+      "pair_id": "iat-controlled-3061d1e727d6f6acb818"
+    },
+    {
+      "image_path": "data/august10/negative_expression_expansion_v1/images/ff-9cccf649162e2c81e808.png",
+      "image_sha256": "fdedcdc59568a7dc6d27666cd05b6b696c75f34ac131d9733758421b94b05172",
+      "pair_id": "iat-controlled-e8006dced59ef5659075"
+    },
+    {
+      "image_path": "data/august3/raw_pool/images/ff-d6715abe0880393888b6.png",
+      "image_sha256": "90546729905209c35046f255745a92f65a8f5b515850d9b3c7287ff63e0765b2",
+      "pair_id": "iat-controlled-5af9d2e851b1e9d16388"
+    },
+    {
+      "image_path": "data/august3/raw_pool/images/ff-be39340aa94fc6bf843b.png",
+      "image_sha256": "3f2e66a7660881505a132c274a67ae53df381d4ba0afa96f5ffb63633694b3a0",
+      "pair_id": "iat-controlled-6b71095fb20d4ee96579"
+    },
+    {
+      "image_path": "data/august3/raw_pool/images/ff-d8cf93871fe3c2da8e90.png",
+      "image_sha256": "4de5bf74d661cbabffae00fed238a95fec75e1f7c57f0821bf1ef5a049048ab5",
+      "pair_id": "iat-controlled-d0aa1a87fafd18389c63"
+    },
+    {
+      "image_path": "data/august3/raw_pool/images/ff-bc1556ff4f236d3cd614.png",
+      "image_sha256": "0cfec20e3abd217c0d610f1579e8775185f9a84d2ca24c2e544b3cc1d4304b45",
+      "pair_id": "iat-controlled-8799b0840ffa15689e01"
+    },
+    {
+      "image_path": "data/august3/raw_pool/images/ff-39e888229e2ab8549b91.png",
+      "image_sha256": "60010a202528728e222510e22ca2352292db89a6473eba1ac19390522a03c770",
+      "pair_id": "iat-controlled-4d50540f1de98fba975d"
+    },
+    {
+      "image_path": "data/august3/raw_pool/images/ff-1ffb01975d1c404ca7d1.png",
+      "image_sha256": "d6324aae5dc4abce7ecbfe6778754e793e4b15452b9696ab487db61df4aaaa85",
+      "pair_id": "iat-controlled-52bb60ecb7a829806dd6"
+    },
+    {
+      "image_path": "data/august3/raw_pool/images/ff-d05db1592e4b30bfdad0.png",
+      "image_sha256": "2c3bf84fdd1dc8b241b655bb8ada6cbecb20f67687b7519ad37448a3b6940d5f",
+      "pair_id": "iat-controlled-a082df9151ab8af26538"
+    },
+    {
+      "image_path": "data/august3/raw_pool/images/ff-7802e9185020a9a6aa07.png",
+      "image_sha256": "b66ff061dfbba72fa0a6f428efd48e96b075f5ddd9db2d1be840e624c0dd723f",
+      "pair_id": "iat-controlled-5b1edaf23cf0c808415d"
+    },
+    {
+      "image_path": "data/august3/raw_pool/images/ff-89ec255a421bf8732538.png",
+      "image_sha256": "b51dda555514add30492da9336577ff535c54d04fdee9d18a05d22bdf05d3ea5",
+      "pair_id": "iat-controlled-b1d00b152cc713e8de2b"
+    }
+  ],
+  "pairs_sha256": "354617a13513748a03be5c3454d71444ef3497762fb8965c0c23d24d420a1642",
+  "profile_rows_used": 0,
+  "selected_rows": 54,
+  "source_file": "2026-09-05\\reference\\dpo\\august10\\august10_negative_expression_pilot_v4\\dataset\\all_claude_eligible_pairs.csv",
+  "source_iat_rows": 67,
+  "source_sha256": "a56a9d83d0dc85da1f2eb16a39d254688d5dd6b20d9fe05dd13880b3386ac67e",
+  "split_counts": {
+    "development": 16,
+    "train": 38
+  },
+  "split_expression_counts": {
+    "development/negative": 6,
+    "development/neutral": 6,
+    "development/positive": 4,
+    "train/negative": 6,
+    "train/neutral": 18,
+    "train/positive": 14
+  },
+  "split_policy": "Matched race blocks; same target/gender/expression; age buckets and intensity differ by <=1; expression confidence >=0.7; deterministic expression-stratified split, >=3 negative blocks in each split",
+  "split_race_counts": {
+    "development/Black": 8,
+    "development/White": 8,
+    "train/Black": 19,
+    "train/White": 19
+  },
+  "target_origin": "Existing controlled templates judged by the recorded claude-opus-5 image judge",
+  "training_inputs": {
+    "orpo": [
+      "image",
+      "prompt",
+      "chosen",
+      "rejected"
+    ],
+    "sft": [
+      "image",
+      "prompt",
+      "chosen"
+    ]
+  },
+  "training_performed": false,
+  "training_ready": false,
+  "verified_images": 43
+}

@@ -1,0 +1,13 @@
+pair_id,match_block_id,task_type,fairface_race,objective_type,policy_margin,reference_margin,margin_delta,preferred,dpo_loss
+screen-33fb0172139f40185dcc,diag-development-b01,iat_3word,Black,negative_count_reduction,29.125,2.9375,26.1875,True,0.07035959884259727
+screen-6c56b89aa1c0853e7169,diag-development-b01,iat_3word,White,negative_count_reduction,28.875,3.3125,25.5625,True,0.07473187083395115
+screen-4a329381664d645c4fb9,diag-development-b02,iat_3word,Black,negative_count_reduction,30.25,3.5,26.75,True,0.06663647052196725
+screen-57dd238a84a1dfcdcf53,diag-development-b02,iat_3word,White,negative_count_reduction,29.5,3.3125,26.1875,True,0.07035959884259727
+screen-41d07d2687c8c4d0e0c6,diag-development-b03,iat_3word,Black,negative_count_reduction,29.75,3.0625,26.6875,True,0.06704055535981568
+screen-546be433bf158f95f7d8,diag-development-b03,iat_3word,White,negative_count_reduction,29.375,3.40625,25.96875,True,0.07186106406298672
+screen-5f52abe785a844787694,diag-development-b04,iat_3word,Black,negative_count_reduction,31.5,3.59375,27.90625,True,0.05957262174082664
+screen-131b9bff04c009ebb062,diag-development-b04,iat_3word,White,negative_count_reduction,30.75,3.34375,27.40625,True,0.06253339005061542
+screen-453287babdde90849076,diag-development-b05,iat_3word,Black,negative_count_reduction,32.0,3.59375,28.40625,True,0.05674809315029936
+screen-d9eea228b85801414b9d,diag-development-b05,iat_3word,White,negative_count_reduction,30.5,3.5,27.0,True,0.06504356177659054
+screen-cfbf76968ed442f182df,diag-development-b06,iat_3word,Black,negative_count_reduction,30.25,2.9375,27.3125,True,0.06310419594174169
+screen-df03b0d355ad06f2b55a,diag-development-b06,iat_3word,White,negative_count_reduction,29.5,3.375,26.125,True,0.07078547169258484

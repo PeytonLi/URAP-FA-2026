@@ -1,0 +1,232 @@
+{
+  "direct_profile_blocks": 33,
+  "eligible_pair_count": 194,
+  "eligible_sources": [
+    {
+      "label": "explicit-01",
+      "path": "../gemma3-fairface-debiasing-august3/outputs/august3/claude_micro20_merged_v2/claude_judged_pairs_eligible.csv",
+      "rows": 26,
+      "sha256": "4b99b7cb6e90a2e1a87b9a4ecfe4e77824b0ec098fe248fab50d994ef222ca1a"
+    },
+    {
+      "label": "cycle01_iat_paid10",
+      "path": "outputs/august10/cycle01_iat_paid10/claude_judged_pairs_eligible.csv",
+      "rows": 4,
+      "sha256": "af145e39561918221b20203323130f0982b4c555ffe4562459916185637dc3f4"
+    },
+    {
+      "label": "cycle01_profile_paid10",
+      "path": "outputs/august10/cycle01_profile_paid10/claude_judged_pairs_eligible.csv",
+      "rows": 6,
+      "sha256": "d4f3269988e1869006dfee84d24153db7cb2f07f4e1f3a4fe04422728157bfe7"
+    },
+    {
+      "label": "cycle02_profile_paid10",
+      "path": "outputs/august10/cycle02_profile_paid10/claude_judged_pairs_eligible.csv",
+      "rows": 3,
+      "sha256": "6461aaad8c06a4cf3f05c369e55bebc0cb1ac534074eefdc2d562a0780da5b9d"
+    },
+    {
+      "label": "cycle03_profile_paid10",
+      "path": "outputs/august10/cycle03_profile_paid10/claude_judged_pairs_eligible.csv",
+      "rows": 6,
+      "sha256": "9cbb2015df7c3ade62d9fb2737ab0815c75df5163bc4c971f85f2716d259b1e2"
+    },
+    {
+      "label": "cycle04_profile_paid20",
+      "path": "outputs/august10/cycle04_profile_paid20/claude_judged_pairs_eligible.csv",
+      "rows": 14,
+      "sha256": "c92ab7223a07bb0105520cba6b1091f1fec583c419059cc440c844652e33b694"
+    },
+    {
+      "label": "cycle05_iat_paid20",
+      "path": "outputs/august10/cycle05_iat_paid20/claude_judged_pairs_eligible.csv",
+      "rows": 11,
+      "sha256": "d3cdfe281999d6797560a9fca6fef8f323d73ba271fe705f65d1b1c9da5cc2fd"
+    },
+    {
+      "label": "cycle06_profile_paid20",
+      "path": "outputs/august10/cycle06_profile_paid20/claude_judged_pairs_eligible.csv",
+      "rows": 12,
+      "sha256": "7373481a0ac98a81fff568aa40a450e5378ef6b7dfb0e278b1bab616dcb46e0c"
+    },
+    {
+      "label": "cycle07_iat_paid18",
+      "path": "outputs/august10/cycle07_iat_paid18/claude_judged_pairs_eligible.csv",
+      "rows": 12,
+      "sha256": "54bfea34474cb3ad5f91c707f6fb4a45918480e9c1c38040636784c3244ee480"
+    },
+    {
+      "label": "cycle08_profile_paid20",
+      "path": "outputs/august10/cycle08_profile_paid20/claude_judged_pairs_eligible.csv",
+      "rows": 13,
+      "sha256": "119efb1f1881279dc87d1f61fc1e5d1c8ddc0483f724acb61c4711fe6b1a678f"
+    },
+    {
+      "label": "cycle09_iat_paid14",
+      "path": "outputs/august10/cycle09_iat_paid14/claude_judged_pairs_eligible.csv",
+      "rows": 8,
+      "sha256": "87a30d353a6643ae4475a9d637dbf320a39e3757081fe4e0dcac82fbfe14da7a"
+    },
+    {
+      "label": "cycle10_iat_paid4",
+      "path": "outputs/august10/cycle10_iat_paid4/claude_judged_pairs_eligible.csv",
+      "rows": 3,
+      "sha256": "7778cb232d07ff5436fd2dd05e28d25ac2507b488a6dc7723cfba2f5ea6cf7ee"
+    },
+    {
+      "label": "cycle11_profile_paid20",
+      "path": "outputs/august10/cycle11_profile_paid20/claude_judged_pairs_eligible.csv",
+      "rows": 15,
+      "sha256": "65687d7b24901d417aee3d632262a2eecc683d81fb16b764d0a8459b6f69bb5c"
+    },
+    {
+      "label": "cycle12_profile_paid20",
+      "path": "outputs/august10/cycle12_profile_paid20/claude_judged_pairs_eligible.csv",
+      "rows": 13,
+      "sha256": "a50ad06ab8142d4cd0a256507a2632f1dba5a64ca8d64fcf2113068ce4e674b7"
+    },
+    {
+      "label": "cycle13_profile_paid20",
+      "path": "outputs/august10/cycle13_profile_paid20/claude_judged_pairs_eligible.csv",
+      "rows": 17,
+      "sha256": "8d17afa6103cfa565c32a25ffd24b1d4ced7f0d76475e644f926bfb99fe2ea32"
+    },
+    {
+      "label": "claude_cycle01_preflight_one",
+      "path": "outputs/august10/negative_expression_expansion_v1/claude_cycle01_preflight_one/claude_judged_pairs_eligible.csv",
+      "rows": 1,
+      "sha256": "bef395e4010a12c61d13c9b874d945773d2541cb8d6ae27e19ad27e6c1721192"
+    },
+    {
+      "label": "claude_cycle02_remaining17",
+      "path": "outputs/august10/negative_expression_expansion_v1/claude_cycle02_remaining17/claude_judged_pairs_eligible.csv",
+      "rows": 8,
+      "sha256": "0b48e4d7f9748e484f19d75d40b0dfb9b9a483898c4a3136a6d27f190bea153f"
+    },
+    {
+      "label": "claude_cycle03_targeted10",
+      "path": "outputs/august10/negative_expression_expansion_v1/claude_cycle03_targeted10/claude_judged_pairs_eligible.csv",
+      "rows": 5,
+      "sha256": "d1b92555259e163b264e3d80f74d48964edd1c11af9961ecb8a9d92d78709e7b"
+    },
+    {
+      "label": "claude_iat_cycle01_preflight_one",
+      "path": "outputs/august10/negative_expression_expansion_v1/claude_iat_cycle01_preflight_one/claude_judged_pairs_eligible.csv",
+      "rows": 1,
+      "sha256": "2824a43875f0d2fa39ed2a429678e532e22a55372b2267547cb70fd0cf3c1240"
+    },
+    {
+      "label": "claude_iat_cycle02_remaining17",
+      "path": "outputs/august10/negative_expression_expansion_v1/claude_iat_cycle02_remaining17/claude_judged_pairs_eligible.csv",
+      "rows": 11,
+      "sha256": "6ce082e0282477cd5738ba0d9aaeba902b04968c0e5672672fa52b44908ac5fc"
+    },
+    {
+      "label": "claude_profile_recovery02",
+      "path": "outputs/august10/negative_expression_expansion_v1/claude_profile_recovery02/claude_judged_pairs_eligible.csv",
+      "rows": 2,
+      "sha256": "83c603a0eb0b1c4e5ccf99f01ca1e6c9907c9b88c16b14395838c3d96b2f63ef"
+    },
+    {
+      "label": "claude_profile_recovery03",
+      "path": "outputs/august10/negative_expression_expansion_v1/claude_profile_recovery03/claude_judged_pairs_eligible.csv",
+      "rows": 1,
+      "sha256": "148c5163d795fb5372811d967c48097c817e601a007f28327bfaa6be2ccd20ca"
+    },
+    {
+      "label": "claude_profile_recovery04",
+      "path": "outputs/august10/negative_expression_expansion_v1/claude_profile_recovery04/claude_judged_pairs_eligible.csv",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "claude_profile_recovery05",
+      "path": "outputs/august10/negative_expression_expansion_v1/claude_profile_recovery05/claude_judged_pairs_eligible.csv",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "claude_profile_recovery06",
+      "path": "outputs/august10/negative_expression_expansion_v1/claude_profile_recovery06/claude_judged_pairs_eligible.csv",
+      "rows": 1,
+      "sha256": "6375cbdf6bf9db0d3657ccc6f4c0be7a9f1eb0963947e11d239ad9ea8d10bf98"
+    },
+    {
+      "label": "claude_profile_recovery07",
+      "path": "outputs/august10/negative_expression_expansion_v1/claude_profile_recovery07/claude_judged_pairs_eligible.csv",
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "claude_profile_recovery08",
+      "path": "outputs/august10/negative_expression_expansion_v1/claude_profile_recovery08/claude_judged_pairs_eligible.csv",
+      "rows": 1,
+      "sha256": "c2b8989a0089fea97994527e12b76dfaf06e81fe5022bb5ce86dd4618b2b2184"
+    }
+  ],
+  "frozen_counts": {
+    "race": {
+      "Black": 50,
+      "White": 50
+    },
+    "split": {
+      "development": 20,
+      "train": 80
+    },
+    "task": {
+      "grounded_profile": 70,
+      "iat_3word": 30
+    }
+  },
+  "gate_decision": "authorize_short_pilot",
+  "materialized_image_dir": "data/august10/frozen_pilot_v4_negative_expression/images",
+  "materialized_images": 100,
+  "negative_expression_blocks": 7,
+  "outputs": {
+    "all_claude_eligible_pairs.csv": {
+      "path": "outputs/august10/frozen_pilot_v4_negative_expression/all_claude_eligible_pairs.csv",
+      "sha256": "a56a9d83d0dc85da1f2eb16a39d254688d5dd6b20d9fe05dd13880b3386ac67e"
+    },
+    "dataset_gate.json": {
+      "path": "outputs/august10/frozen_pilot_v4_negative_expression/dataset_gate.json",
+      "sha256": "3e223b2ecd80931346a5c333e4145bcbbec6ca988cac772dd16c7eb4549a95e8"
+    },
+    "mixed_dpo_pairs_frozen.csv": {
+      "path": "outputs/august10/frozen_pilot_v4_negative_expression/mixed_dpo_pairs_frozen.csv",
+      "sha256": "589db3c850b383be7c848f15f3fa26e48d9d44af36ea6b6ee947fe69225d67c9"
+    },
+    "selected_profile_matches.csv": {
+      "path": "outputs/august10/frozen_pilot_v4_negative_expression/selected_profile_matches.csv",
+      "sha256": "b295da1674cb4cbe55214651cbc2187e01a4f26e2bbdd1c28342137da3c494e4"
+    }
+  },
+  "profile_rematch_policy": {
+    "max_age_bucket_difference": 1,
+    "max_expression_intensity_difference": 1,
+    "min_expression_confidence": 0.7,
+    "min_negative_expression_blocks": 4,
+    "min_negative_iat_blocks": 3,
+    "profile_compatibility": {
+      "max_grounded_detail_difference": 1,
+      "max_quality_score_difference": 0.75,
+      "max_word_count_ratio": 1.25
+    },
+    "same_expression_class": true,
+    "same_expression_fine": true,
+    "same_gender": true,
+    "same_objective": true,
+    "same_response_provenance": true
+  },
+  "protocol_version": "august10-frozen-directional-pilot-v1",
+  "seed": "august10-frozen-pilot-v4-negative-expression",
+  "selected_blocks": 50,
+  "selected_iat_blocks": 15,
+  "selected_profile_blocks": 35,
+  "selected_rows": 100,
+  "source_asset_roots": [
+    "/workspace/gemma3-fairface-debiasing-august10",
+    "/workspace/gemma3-fairface-debiasing-august3"
+  ],
+  "status": "ready_to_train"
+}

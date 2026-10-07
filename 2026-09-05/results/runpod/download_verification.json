@@ -1,0 +1,90 @@
+{
+  "all_match": true,
+  "checked_at": "2026-09-05T08:09:18.924661+00:00",
+  "files": [
+    {
+      "local_path": "results/gemma_local/manifest.json",
+      "matches": true,
+      "path": "results/gemma_local/manifest.json",
+      "sha256": "9b21617d02ed383256985ac3f6f5aea4698a1171fcdb4fe475dd98df61b30281",
+      "size_bytes": 6199
+    },
+    {
+      "local_path": "results/gemma_local/responses.csv",
+      "matches": true,
+      "path": "results/gemma_local/responses.csv",
+      "sha256": "4a2dc55b77a326e41aea6f831b37ad9e37a61ac0260a6198220c75da046ca736",
+      "size_bytes": 1333533
+    },
+    {
+      "local_path": "results/gemma_local/responses.jsonl",
+      "matches": true,
+      "path": "results/gemma_local/responses.jsonl",
+      "sha256": "bb2b35889eb5ef0c27950b6d4285e151093d578ed984c4ad6fb7983c66c8985e",
+      "size_bytes": 1943000
+    },
+    {
+      "local_path": "results/gemma_probe/manifest.json",
+      "matches": true,
+      "path": "results/gemma_probe/manifest.json",
+      "sha256": "9cd5750725aa199eaf8588c315166143c251311a4cd74f6ce8265bd1a74a1fd1",
+      "size_bytes": 6189
+    },
+    {
+      "local_path": "results/gemma_probe/responses.csv",
+      "matches": true,
+      "path": "results/gemma_probe/responses.csv",
+      "sha256": "22c9fd64501cd797096355a2226b4fbc07210a5f518fde2588f008365568a9b3",
+      "size_bytes": 12244
+    },
+    {
+      "local_path": "results/gemma_probe/responses.jsonl",
+      "matches": true,
+      "path": "results/gemma_probe/responses.jsonl",
+      "sha256": "a4c67a7fe608632e64a8e6419c329939f9f14ece75e9a8d00b7c37ff1aea11e5",
+      "size_bytes": 16254
+    },
+    {
+      "local_path": "runtime/remote/probe.log",
+      "matches": true,
+      "path": "runtime/probe.log",
+      "sha256": "16b5d012470c3ac767ae842a880d765b7ac8bddc0b5bf31f779d4e226480d16f",
+      "size_bytes": 8144
+    },
+    {
+      "local_path": "runtime/remote/probe_exit.json",
+      "matches": true,
+      "path": "runtime/probe_exit.json",
+      "sha256": "1039d4c4e9b36f6edde194e6f8d667e5424d7936d8b51eaad49ca95ca097950f",
+      "size_bytes": 469
+    },
+    {
+      "local_path": "runtime/remote/probe_pid.json",
+      "matches": true,
+      "path": "runtime/probe_pid.json",
+      "sha256": "f9e5dc566823f3a38bd634d1352f61a6a97fedbb484ee1b5ff31a17c3883c79c",
+      "size_bytes": 72
+    },
+    {
+      "local_path": "runtime/remote/run.log",
+      "matches": true,
+      "path": "runtime/run.log",
+      "sha256": "a40e16b522e13e2adbc59b6c2bfef0efd6b67cbe58894ebcc22bf31e0c9a15b3",
+      "size_bytes": 13025
+    },
+    {
+      "local_path": "runtime/remote/run_exit.json",
+      "matches": true,
+      "path": "runtime/run_exit.json",
+      "sha256": "08d6ef6e7edd389fa57890957272c735f5404e526c14ccd497d19edb41b67305",
+      "size_bytes": 454
+    },
+    {
+      "local_path": "runtime/remote/run_pid.json",
+      "matches": true,
+      "path": "runtime/run_pid.json",
+      "sha256": "73b9b92ba9ab0cea1db9ab1e1b0ec84e25cc356d069648c4b8c1532e0ea69e5b",
+      "size_bytes": 73
+    }
+  ]
+}

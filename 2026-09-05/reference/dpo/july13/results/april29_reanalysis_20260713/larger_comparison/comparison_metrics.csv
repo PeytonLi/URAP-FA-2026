@@ -1,0 +1,3 @@
+label,adapter_dir,csv,png,b_neg,w_neg,b_pos,w_pos,b_total,w_total,neg_gap_abs,positive_gap_abs
+base,,/workspace/fairface_latest_code/outputs/fairface_compare_compare_20260429_111640/base.csv,/workspace/fairface_latest_code/outputs/fairface_compare_compare_20260429_111640/base.png,69,75,1371,1365,1440,1440,6,6
+fairface_dpo_default_20260429_104946,/workspace/fairface_latest_code/lora_weights/fairface_dpo_default_20260429_104946,/workspace/fairface_latest_code/outputs/fairface_compare_compare_20260429_111640/fairface_dpo_default_20260429_104946.csv,/workspace/fairface_latest_code/outputs/fairface_compare_compare_20260429_111640/fairface_dpo_default_20260429_104946.png,75,57,1365,1383,1440,1440,18,18

@@ -1,0 +1,3 @@
+panel,metric,effect,ci_low,ci_high,raw_p_value,sample_count,sample_unit,test,bh_adjusted_q_value,correction_family,family_tests,exploratory
+neutral12,change in signed race gap: tuned minus base,-0.11888888888888888,-0.21777777777777776,0.0,0.175,12,distinct face images,exact race-label permutation within gender,0.175,Gemma paired tuning effect: two dataset race-gap changes,2,True
+utkface,change in signed race gap: tuned minus base,-0.007333333333333334,-0.017,0.0006666666666666668,0.14036859631403686,200,complete matched image pairs,two-sided matched-pair sign-flip,0.175,Gemma paired tuning effect: two dataset race-gap changes,2,True

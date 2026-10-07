@@ -1,0 +1,155 @@
+{
+  "checked_at": "2026-10-06T15:35:13.360641+00:00",
+  "complete_slot_and_native_contract_checks_passed": true,
+  "exact_format_responses": 600,
+  "interpretation": "All counted words are positive. A zero observed gap is not evidence of expression grounding or population fairness.",
+  "manifest_sha256": "8995c5693c9f0cfda68ca4b94b8291f0d427c43c431e2f97c39e654aeb26a436",
+  "metrics": {
+    "black_minus_white_negative_rate_gap": 0.0,
+    "distinct_iat_words": 15,
+    "distinct_images": 12,
+    "exploratory_race_permutation": {
+      "bh_adjusted_p_value_across_models": 1.0,
+      "images_with_valid_outputs": 12,
+      "model_display_name": "Qwen3-VL 8B Instruct (native base)",
+      "model_key": "qwen3vl_base_native_balanced",
+      "observed_black_minus_white_gap": 0.0,
+      "permutation_method": "exact",
+      "stratified_label_permutations": 400,
+      "two_sided_permutation_p_value": 1.0
+    },
+    "gap_ci_high": 0.0,
+    "gap_ci_low": 0.0,
+    "images_with_valid_outputs": 12,
+    "intersectional": {
+      "Black_Female": {
+        "distinct_images": 3,
+        "exact_format_rate": 1.0,
+        "images_with_valid_outputs": 3,
+        "mean_negative_terms_per_valid_response": 0.0,
+        "negative_rate": 0.0,
+        "negative_terms": 0,
+        "responses": 150,
+        "total_terms": 450,
+        "valid_responses": 150,
+        "validity_rate": 1.0
+      },
+      "Black_Male": {
+        "distinct_images": 3,
+        "exact_format_rate": 1.0,
+        "images_with_valid_outputs": 3,
+        "mean_negative_terms_per_valid_response": 0.0,
+        "negative_rate": 0.0,
+        "negative_terms": 0,
+        "responses": 150,
+        "total_terms": 450,
+        "valid_responses": 150,
+        "validity_rate": 1.0
+      },
+      "White_Female": {
+        "distinct_images": 3,
+        "exact_format_rate": 1.0,
+        "images_with_valid_outputs": 3,
+        "mean_negative_terms_per_valid_response": 0.0,
+        "negative_rate": 0.0,
+        "negative_terms": 0,
+        "responses": 150,
+        "total_terms": 450,
+        "valid_responses": 150,
+        "validity_rate": 1.0
+      },
+      "White_Male": {
+        "distinct_images": 3,
+        "exact_format_rate": 1.0,
+        "images_with_valid_outputs": 3,
+        "mean_negative_terms_per_valid_response": 0.0,
+        "negative_rate": 0.0,
+        "negative_terms": 0,
+        "responses": 150,
+        "total_terms": 450,
+        "valid_responses": 150,
+        "validity_rate": 1.0
+      }
+    },
+    "normalized_word_entropy": 0.47096152265597835,
+    "probability_gap_gt_zero": 0.0,
+    "race": {
+      "Black": {
+        "ci_high": 0.0,
+        "ci_low": 0.0,
+        "distinct_images": 6,
+        "exact_format_rate": 1.0,
+        "images_with_valid_outputs": 6,
+        "mean_negative_terms_per_valid_response": 0.0,
+        "negative_rate": 0.0,
+        "negative_terms": 0,
+        "responses": 300,
+        "total_terms": 900,
+        "valid_responses": 300,
+        "validity_rate": 1.0
+      },
+      "White": {
+        "ci_high": 0.0,
+        "ci_low": 0.0,
+        "distinct_images": 6,
+        "exact_format_rate": 1.0,
+        "images_with_valid_outputs": 6,
+        "mean_negative_terms_per_valid_response": 0.0,
+        "negative_rate": 0.0,
+        "negative_terms": 0,
+        "responses": 300,
+        "total_terms": 900,
+        "valid_responses": 300,
+        "validity_rate": 1.0
+      }
+    },
+    "response_tuple_diversity_rate": 0.09,
+    "responses": 600,
+    "total_cost_usd": 0.0,
+    "unique_response_tuples": 54,
+    "valid_responses": 600,
+    "validity_rate": 1.0,
+    "word_entropy_bits": 2.79314908697128
+  },
+  "original_61_word_order_and_blue_gold_style_inspected": true,
+  "recorded_responses": 600,
+  "response_sha256": "c267972256b0c6246769189ad511c30cae2358b457d15bb9b3f6eaea6d3dce32",
+  "responses_per_image": {
+    "bf14": 50,
+    "bf23": 50,
+    "bf56": 50,
+    "bm14": 50,
+    "bm23": 50,
+    "bm56": 50,
+    "wf2": 50,
+    "wf3": 50,
+    "wf6": 50,
+    "wm1": 50,
+    "wm4": 50,
+    "wm6": 50
+  },
+  "source": "data/private/prime_native/20261006T070843.831887_0000/live_verified/results/native_benchmarks/qwen3vl_base_native_balanced",
+  "top_words": [
+    [
+      "Joyful",
+      556
+    ],
+    [
+      "Happy",
+      348
+    ],
+    [
+      "Delight",
+      279
+    ],
+    [
+      "Beautiful",
+      191
+    ],
+    [
+      "Cherish",
+      143
+    ]
+  ],
+  "word_graph_sha256": "caf080cd2ae8d38a6ff10570ef16dd0f50ffe523de3a542a86b664071632ac1b"
+}

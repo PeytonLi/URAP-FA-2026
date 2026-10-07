@@ -1,0 +1,21 @@
+{
+  "catalog_snapshot_date": "2026-08-31",
+  "access_method": "OpenRouter Chat Completions API",
+  "selection_scope": "Operational one-request retry contract after Venice 429 throttling",
+  "models": [
+    {
+      "key": "minimax_m3",
+      "display_name": "MiniMax M3",
+      "model_id": "minimax/minimax-m3",
+      "api_revision_hint": "minimax/minimax-m3-20260531",
+      "release_date": "2026-05-31",
+      "weight_access": "open-weight",
+      "provider_endpoint": "venice/fp8",
+      "max_concurrency": 1,
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "reasoning_effort": "none",
+      "max_tokens": 64
+    }
+  ]
+}

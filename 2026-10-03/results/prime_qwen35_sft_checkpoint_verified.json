@@ -1,0 +1,54 @@
+{
+  "adapter_parameters": 9056256,
+  "all_three_checkpoint_file_hashes_match": true,
+  "checked_at": "2026-10-06T15:42:25.087620+00:00",
+  "completed_epochs": 3,
+  "development": {
+    "by_target_category": {
+      "negative": {
+        "chosen_preference_accuracy": 1.0,
+        "images": 6,
+        "response_loss": 0.18958519171186103
+      },
+      "positive": {
+        "chosen_preference_accuracy": 1.0,
+        "images": 174,
+        "response_loss": 0.06169084629047951
+      }
+    },
+    "chosen_preference_accuracy": 1.0,
+    "epoch": 3,
+    "images": 180,
+    "macro_category_preference_accuracy": 1.0,
+    "macro_category_response_loss": 0.12563801900117028,
+    "optimizer_updates_on_development": 0,
+    "response_loss": 0.0659539911378589
+  },
+  "elapsed_seconds": 4090.6863860310004,
+  "final_adapter_sha256": "41c510b6f4a5c86e3d34ff0058ce276fbb0f9e30024e1d2005d19a705b6bd822",
+  "finite_adapter_tensors": 304,
+  "finite_nonzero_gradient_history": true,
+  "generation_benchmark_complete": false,
+  "gpu": "NVIDIA H100 PCIe",
+  "history_updates_verified": 507,
+  "model": "Qwen/Qwen3.5-9B",
+  "native_protocol_verification_passed": true,
+  "nonzero_lora_B_tensors": 152,
+  "optimizer_step_counts": {
+    "507": 304
+  },
+  "optimizer_updates": 507,
+  "peak_gpu_memory_gib": 18.030848026275635,
+  "pre_training_image_control": {
+    "control": "zero_pixels_identical_text_and_native_grid",
+    "maximum_response_logprob_change": 6.401937007904053
+  },
+  "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "run_sha256": "c34833b383708732996962c8a26fca9d1cf24db48642502f348485af811da9e0",
+  "source": "data/private/prime_native/20261006T070843.831887_0000/recovered/data/private/native_runs/qwen35_sft_20261006T084049.362298_0000",
+  "status": "training_complete_evaluation_pending",
+  "target_approval_kinds": {
+    "ai": 856
+  },
+  "training_complete": true
+}

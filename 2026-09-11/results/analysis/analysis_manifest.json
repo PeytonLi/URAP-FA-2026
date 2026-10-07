@@ -1,0 +1,148 @@
+{
+  "analysis_unit": "image cluster or matched image pair; repeats are not independent faces",
+  "bootstrap_samples": 100000,
+  "completeness": [
+    {
+      "complete": true,
+      "model_key": "gemma_base",
+      "panel": "neutral12",
+      "planned_responses": 600,
+      "responses": 600
+    },
+    {
+      "complete": true,
+      "model_key": "gemma_tuned",
+      "panel": "neutral12",
+      "planned_responses": 600,
+      "responses": 600
+    },
+    {
+      "complete": true,
+      "model_key": "qwen35_9b",
+      "panel": "neutral12",
+      "planned_responses": 600,
+      "responses": 600
+    },
+    {
+      "complete": false,
+      "model_key": "kimi_k3",
+      "panel": "neutral12",
+      "planned_responses": 600,
+      "responses": 256
+    },
+    {
+      "complete": true,
+      "model_key": "gpt56_luna",
+      "panel": "neutral12",
+      "planned_responses": 600,
+      "responses": 600
+    },
+    {
+      "complete": true,
+      "model_key": "gemini36_flash",
+      "panel": "neutral12",
+      "planned_responses": 600,
+      "responses": 600
+    },
+    {
+      "complete": true,
+      "model_key": "mimo_v25",
+      "panel": "neutral12",
+      "planned_responses": 600,
+      "responses": 600
+    },
+    {
+      "complete": false,
+      "model_key": "minimax_m3",
+      "panel": "neutral12",
+      "planned_responses": 600,
+      "responses": 112
+    },
+    {
+      "complete": true,
+      "model_key": "step37_flash",
+      "panel": "neutral12",
+      "planned_responses": 600,
+      "responses": 600
+    },
+    {
+      "complete": true,
+      "model_key": "grok46",
+      "panel": "neutral12",
+      "planned_responses": 600,
+      "responses": 600
+    },
+    {
+      "complete": true,
+      "model_key": "gemma_base",
+      "panel": "utkface",
+      "planned_responses": 2000,
+      "responses": 2000
+    },
+    {
+      "complete": true,
+      "model_key": "gemma_tuned",
+      "panel": "utkface",
+      "planned_responses": 2000,
+      "responses": 2000
+    },
+    {
+      "complete": true,
+      "model_key": "qwen35_9b",
+      "panel": "utkface",
+      "planned_responses": 2000,
+      "responses": 2000
+    },
+    {
+      "complete": true,
+      "model_key": "kimi_k3",
+      "panel": "utkface",
+      "planned_responses": 2000,
+      "responses": 2000
+    },
+    {
+      "complete": true,
+      "model_key": "gpt56_luna",
+      "panel": "utkface",
+      "planned_responses": 2000,
+      "responses": 2000
+    },
+    {
+      "complete": true,
+      "model_key": "gemini36_flash",
+      "panel": "utkface",
+      "planned_responses": 2000,
+      "responses": 2000
+    },
+    {
+      "complete": true,
+      "model_key": "mimo_v25",
+      "panel": "utkface",
+      "planned_responses": 2000,
+      "responses": 2000
+    },
+    {
+      "complete": true,
+      "model_key": "minimax_m3",
+      "panel": "utkface",
+      "planned_responses": 2000,
+      "responses": 2000
+    },
+    {
+      "complete": true,
+      "model_key": "step37_flash",
+      "panel": "utkface",
+      "planned_responses": 2000,
+      "responses": 2000
+    },
+    {
+      "complete": true,
+      "model_key": "grok46",
+      "panel": "utkface",
+      "planned_responses": 2000,
+      "responses": 2000
+    }
+  ],
+  "seed": 9112026,
+  "significance": "exploratory two-sided; BH within each dataset across available model conditions"
+}

@@ -1,0 +1,22 @@
+{
+  "checks": {
+    "informative_base_negative_events": {
+      "observed": {
+        "Black": 30,
+        "White": 30
+      },
+      "pass": true,
+      "requirement": ">= 6 for each race"
+    },
+    "profile_coverage": {
+      "observed": {
+        "Black": 0,
+        "White": 0
+      },
+      "pass": true,
+      "requirement": "not applicable for explicitly permitted IAT-only diagnostic"
+    }
+  },
+  "decision": "authorize_short_pilot",
+  "pass": true
+}

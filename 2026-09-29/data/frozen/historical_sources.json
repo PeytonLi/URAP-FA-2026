@@ -1,0 +1,47 @@
+{
+  "complete_training_history_verified": false,
+  "fairface_index_exclusion_policy": "Conservative union of indices across historical train/eval tables; split ambiguity can overexclude.",
+  "identity_overlap_verified": false,
+  "sources": [
+    {
+      "rows": 4000,
+      "sha256": "8712f7138fe7c1fe6d20a96473d2c441f2053c05f335421b520297ac71c29cf6",
+      "source": "gemma3-fairface-debiasing-august3/data/august3/raw_pool/fairface_training_pool.csv"
+    },
+    {
+      "rows": 400,
+      "sha256": "3e11646215608c4c807d0b5884a91f39b152493b931231c8062a6cc1587c05e6",
+      "source": "gemma3-fairface-debiasing-july13/results/pair_audit_research_july13_100pg_20260713_205104/artifacts/train_metadata.csv"
+    },
+    {
+      "rows": 400,
+      "sha256": "5f4c04e64c255cbc2f7107412a25443ff5785523a6c82b50e53fadfce5fc9e87",
+      "source": "gemma3-fairface-debiasing-july13/results/reference_base_gemma3_20260706/eval_metadata.csv"
+    },
+    {
+      "rows": 800,
+      "sha256": "cb4f5c65fa033f31c29c23f72c74823b7e69c2656a970254c875418f9daec673",
+      "source": "gemma3-fairface-debiasing-july19/results/research_july19_pretraining_20260719/inputs/fairface_train_eval_metadata.csv"
+    },
+    {
+      "rows": 2400,
+      "sha256": "dce3e71555a67695e45aea40a004d2bdf7d8fa9f776b62114b7ff7876086f130",
+      "source": "gemma3-fairface-debiasing-july19/results/research_july19_500pg_20260720_071215/inputs/fairface_train_eval_metadata.csv"
+    },
+    {
+      "rows": 400,
+      "sha256": "9e5f0f8b4e0b960c4597beb4cea5badbfe1bd569e852566389e6fa7e5d8766bd",
+      "source": "multimodel-bias-benchmark-august31/data/frozen/utkface/utkface_iat_evaluation_manifest.csv"
+    },
+    {
+      "rows": 400,
+      "sha256": "4cac4d616b285b20ce87684a422cd7bb1bc5dbcd52a4b170dd67bfab0d5bf7a6",
+      "source": "multimodel-bias-benchmark-august31/data/frozen/utkface/utkface_finetuning_image_manifest.csv"
+    },
+    {
+      "rows": 12,
+      "sha256": "5cd656a8c7ad3a959f6763ccb3fb0f641ddfa632a218f925ce0823c92ccf9767",
+      "source": "research-evaluation-september11/data/iat12/manifest.csv"
+    }
+  ]
+}

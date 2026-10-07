@@ -1,0 +1,74 @@
+[
+  {
+    "anti_collapse_comparison_condition_names": "frozen base vs mean_lr2e5 final",
+    "anti_collapse_existing_method_notes": "Legacy evaluator allowed 75% entropy retention; final report uses retrospective 95% entropy AND unique-response retention. Do not conflate these gates.",
+    "anti_collapse_flag_status": "failed",
+    "anti_collapse_input_data_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10/august10_first_run_neutral12_retrospective_v1",
+    "anti_collapse_interpretation": "Bias-gap movement is not sufficient; diversity preservation failed.",
+    "anti_collapse_limitations": "Output diversity/format are not a general capability or factual accuracy benchmark.",
+    "anti_collapse_measurement_timing": "post-training retrospective evaluation, not preregistered checkpoint selection",
+    "anti_collapse_metric_code_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10_code/src/august3_debiasing/evaluation_metrics.py",
+    "anti_collapse_metric_definition": "Shannon entropy over complete response strings/tuples, natural logarithm (nats).",
+    "anti_collapse_metric_formula_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10_code/src/august3_debiasing/evaluation_metrics.py",
+    "anti_collapse_metric_name": "response_entropy",
+    "anti_collapse_threshold_or_decision_rule": "adapter/base >=0.95",
+    "anti_collapse_value_by_condition_full_precision": {
+      "adapter": 3.349562515583477,
+      "base": 3.6763804903730173
+    }
+  },
+  {
+    "anti_collapse_comparison_condition_names": "frozen base vs mean_lr2e5 final",
+    "anti_collapse_existing_method_notes": "Legacy evaluator allowed 75% entropy retention; final report uses retrospective 95% entropy AND unique-response retention. Do not conflate these gates.",
+    "anti_collapse_flag_status": "failed",
+    "anti_collapse_input_data_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10/august10_first_run_neutral12_retrospective_v1",
+    "anti_collapse_interpretation": "Bias-gap movement is not sufficient; diversity preservation failed.",
+    "anti_collapse_limitations": "Output diversity/format are not a general capability or factual accuracy benchmark.",
+    "anti_collapse_measurement_timing": "post-training retrospective evaluation, not preregistered checkpoint selection",
+    "anti_collapse_metric_code_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10_code/src/august3_debiasing/evaluation_metrics.py",
+    "anti_collapse_metric_definition": "Distinct complete response strings/tuples divided by 120 responses.",
+    "anti_collapse_metric_formula_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10_code/src/august3_debiasing/evaluation_metrics.py",
+    "anti_collapse_metric_name": "unique_response_rate",
+    "anti_collapse_threshold_or_decision_rule": "adapter/base >=0.95",
+    "anti_collapse_value_by_condition_full_precision": {
+      "adapter": 0.43333333333333335,
+      "base": 0.5333333333333333
+    }
+  },
+  {
+    "anti_collapse_comparison_condition_names": "frozen base vs mean_lr2e5 final",
+    "anti_collapse_existing_method_notes": "Legacy evaluator allowed 75% entropy retention; final report uses retrospective 95% entropy AND unique-response retention. Do not conflate these gates.",
+    "anti_collapse_flag_status": "passed",
+    "anti_collapse_input_data_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10/august10_first_run_neutral12_retrospective_v1",
+    "anti_collapse_interpretation": "Bias-gap movement is not sufficient; diversity preservation failed.",
+    "anti_collapse_limitations": "Output diversity/format are not a general capability or factual accuracy benchmark.",
+    "anti_collapse_measurement_timing": "post-training retrospective evaluation, not preregistered checkpoint selection",
+    "anti_collapse_metric_code_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10_code/src/august3_debiasing/evaluation_metrics.py",
+    "anti_collapse_metric_definition": "Outputs passing the historical three-word vocabulary format validator / all 120 responses.",
+    "anti_collapse_metric_formula_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10_code/src/august3_debiasing/evaluation_metrics.py",
+    "anti_collapse_metric_name": "valid_rate",
+    "anti_collapse_threshold_or_decision_rule": "drop <=0.01",
+    "anti_collapse_value_by_condition_full_precision": {
+      "adapter": 1.0,
+      "base": 1.0
+    }
+  },
+  {
+    "anti_collapse_comparison_condition_names": "frozen base vs mean_lr2e5 final",
+    "anti_collapse_existing_method_notes": "Legacy evaluator allowed 75% entropy retention; final report uses retrospective 95% entropy AND unique-response retention. Do not conflate these gates.",
+    "anti_collapse_flag_status": "passed",
+    "anti_collapse_input_data_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10/august10_first_run_neutral12_retrospective_v1",
+    "anti_collapse_interpretation": "Bias-gap movement is not sufficient; diversity preservation failed.",
+    "anti_collapse_limitations": "Output diversity/format are not a general capability or factual accuracy benchmark.",
+    "anti_collapse_measurement_timing": "post-training retrospective evaluation, not preregistered checkpoint selection",
+    "anti_collapse_metric_code_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10_code/src/august3_debiasing/evaluation_metrics.py",
+    "anti_collapse_metric_definition": "Outputs with a match to the historical identity lexicon / all outputs.",
+    "anti_collapse_metric_formula_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10_code/src/august3_debiasing/evaluation_metrics.py",
+    "anti_collapse_metric_name": "identity_leakage_rate",
+    "anti_collapse_threshold_or_decision_rule": "no increase",
+    "anti_collapse_value_by_condition_full_precision": {
+      "adapter": 0.0,
+      "base": 0.0
+    }
+  }
+]

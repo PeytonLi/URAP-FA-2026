@@ -1,0 +1,4 @@
+# Preserve exact research-artifact bytes and their pinned checksums on every OS.
+* -text whitespace=trailing-space,space-before-tab,cr-at-eol
+*.pdf binary
+2026-08-31/data/raw/*_responses.csv whitespace=-trailing-space

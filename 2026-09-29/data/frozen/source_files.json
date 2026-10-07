@@ -1,0 +1,109 @@
+{
+  "fairface_arrow": [
+    {
+      "filename": "fair_face-train-00000-of-00002.arrow",
+      "sha256": "5c685aaabbf58099611de84652af525707061e5e5bcc15aa30f7e30de91f460b"
+    },
+    {
+      "filename": "fair_face-train-00001-of-00002.arrow",
+      "sha256": "b75cdac3bec00c58c987a6d7d26be5372fb8747e64f9ef76dfbb8b483c12b562"
+    }
+  ],
+  "fairface_dataset_info": {
+    "builder_name": "parquet",
+    "citation": "",
+    "config_name": "0.25",
+    "dataset_name": "fair_face",
+    "dataset_size": 578920834,
+    "description": "",
+    "download_checksums": {
+      "hf://datasets/HuggingFaceM4/FairFace@54d573cdb8b5af490ba8da9da2799628f6e5c496/0.25/train-00000-of-00002-d405faba4f4b9b85.parquet": {
+        "checksum": null,
+        "num_bytes": 250030031
+      },
+      "hf://datasets/HuggingFaceM4/FairFace@54d573cdb8b5af490ba8da9da2799628f6e5c496/0.25/train-00001-of-00002-dd3cb68164727418.parquet": {
+        "checksum": null,
+        "num_bytes": 250217804
+      },
+      "hf://datasets/HuggingFaceM4/FairFace@54d573cdb8b5af490ba8da9da2799628f6e5c496/0.25/validation-00000-of-00001-951dbd63c8724ee1.parquet": {
+        "checksum": null,
+        "num_bytes": 63189799
+      }
+    },
+    "download_size": 563437634,
+    "features": {
+      "age": {
+        "_type": "ClassLabel",
+        "names": [
+          "0-2",
+          "3-9",
+          "10-19",
+          "20-29",
+          "30-39",
+          "40-49",
+          "50-59",
+          "60-69",
+          "more than 70"
+        ]
+      },
+      "gender": {
+        "_type": "ClassLabel",
+        "names": [
+          "Male",
+          "Female"
+        ]
+      },
+      "image": {
+        "_type": "Image"
+      },
+      "race": {
+        "_type": "ClassLabel",
+        "names": [
+          "East Asian",
+          "Indian",
+          "Black",
+          "White",
+          "Middle Eastern",
+          "Latino_Hispanic",
+          "Southeast Asian"
+        ]
+      },
+      "service_test": {
+        "_type": "Value",
+        "dtype": "bool"
+      }
+    },
+    "homepage": "",
+    "license": "",
+    "size_in_bytes": 1142358468,
+    "splits": {
+      "train": {
+        "dataset_name": "fair_face",
+        "name": "train",
+        "num_bytes": 513910191,
+        "num_examples": 86744,
+        "shard_lengths": [
+          84472,
+          2272
+        ]
+      },
+      "validation": {
+        "dataset_name": "fair_face",
+        "name": "validation",
+        "num_bytes": 65010643,
+        "num_examples": 10954
+      }
+    },
+    "version": {
+      "major": 0,
+      "minor": 0,
+      "patch": 0,
+      "version_str": "0.0.0"
+    }
+  },
+  "source_revisions": {
+    "fairface": "54d573cdb8b5af490ba8da9da2799628f6e5c496",
+    "utkface": "e80f21fb21fa3631380c3cb634b79be3ac2f4cba"
+  },
+  "utkface_source_count": 23708
+}

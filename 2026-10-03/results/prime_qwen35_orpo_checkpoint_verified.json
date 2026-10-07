@@ -1,0 +1,59 @@
+{
+  "adapter_parameters": 9056256,
+  "all_three_checkpoint_file_hashes_match": true,
+  "checked_at": "2026-10-06T17:59:31.601371+00:00",
+  "completed_epochs": 3,
+  "development": {
+    "by_target_category": {
+      "negative": {
+        "chosen_preference_accuracy": 1.0,
+        "images": 6,
+        "response_loss": 0.18695243375744516
+      },
+      "positive": {
+        "chosen_preference_accuracy": 1.0,
+        "images": 174,
+        "response_loss": 0.062391536724459296
+      }
+    },
+    "chosen_preference_accuracy": 1.0,
+    "epoch": 3,
+    "images": 180,
+    "macro_category_preference_accuracy": 1.0,
+    "macro_category_response_loss": 0.12467198524095223,
+    "optimizer_updates_on_development": 0,
+    "response_loss": 0.06654356662555883
+  },
+  "elapsed_seconds": 6832.079165335,
+  "final_adapter_sha256": "512ea4534f555f2d1070c18772240c999f31dfa5ca8f0c0475ed65cd3df56cca",
+  "finite_adapter_tensors": 304,
+  "finite_nonzero_gradient_history": true,
+  "generation_benchmark_complete": false,
+  "gpu": "NVIDIA H100 PCIe",
+  "history_updates_verified": 507,
+  "method": "orpo",
+  "model": "Qwen/Qwen3.5-9B",
+  "native_protocol_verification_passed": true,
+  "nonzero_lora_B_tensors": 152,
+  "optimizer_step_counts": {
+    "507": 304
+  },
+  "optimizer_updates": 507,
+  "peak_gpu_memory_gib": 18.119574546813965,
+  "pilot_policy_sha256": "9994d95025e9072067a5e5f69b30b38eb21e27ef87b59e2c3af4ab7daff0dfb3",
+  "pre_training_image_control": {
+    "control": "zero_pixels_identical_text_and_native_grid",
+    "maximum_response_logprob_change": 6.401937007904053
+  },
+  "profile_targets_used": 0,
+  "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "run_sha256": "45337b4bd0506e5bcc791514aefa35d15ea0727c5cb4486c4e0eb48b2150302b",
+  "source": "data/private/prime_native/20261006T154336.936439_0000/live_verified/data/private/native_runs/qwen35_orpo_20261006T160321.186985_0000",
+  "status": "training_complete_evaluation_pending",
+  "target_approval_kinds": {
+    "ai": 856
+  },
+  "targets_sha256": "671674997fa6a9326af800e7ffb476af1e75d997bb8fb931f973d394c5497f1b",
+  "test_images_used": 0,
+  "training_complete": true
+}

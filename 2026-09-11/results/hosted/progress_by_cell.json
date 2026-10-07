@@ -1,0 +1,25 @@
+{
+  "at": "2026-09-11T08:35:41.060194+00:00",
+  "new_slots": {
+    "neutral12": {
+      "gemini36_flash": 480,
+      "gpt56_luna": 480,
+      "grok46": 110,
+      "kimi_k3": 81,
+      "mimo_v25": 600,
+      "minimax_m3": 4,
+      "qwen35_9b": 480,
+      "step37_flash": 420
+    },
+    "utkface": {
+      "gemini36_flash": 1031,
+      "gpt56_luna": 922,
+      "grok46": 141,
+      "kimi_k3": 794,
+      "mimo_v25": 728,
+      "minimax_m3": 34,
+      "qwen35_9b": 1600,
+      "step37_flash": 553
+    }
+  }
+}

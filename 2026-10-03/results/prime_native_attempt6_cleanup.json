@@ -1,0 +1,16 @@
+{
+  "attempt_folder": "data/private/prime_native/20261006T042905.614282_0000",
+  "pod_id": "0d6d6cb29b8a428c81e6418ac305a817",
+  "provider": "nebius",
+  "gpu_type": "H200_141GB",
+  "quoted_hourly_usd": 5.482,
+  "wallet_before_usd": 79.2125,
+  "wallet_after_reconciliation_usd": 79.2125,
+  "training_started": false,
+  "remote_outputs_recovered": false,
+  "provider_status_at_launcher_failure": "PROVISIONING",
+  "termination_verified": true,
+  "terminated_at_utc": "2026-10-06T04:32:53.358000",
+  "active_pod_list_after_termination": false,
+  "note": "Provider status briefly disagreed with the launcher; explicit Prime termination succeeded after the launcher exited. No credit change observed."
+}

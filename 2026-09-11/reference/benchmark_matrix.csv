@@ -1,0 +1,189 @@
+test_cell_id,benchmark_name,input_set_name,model_condition_name,test_status,not_completed_or_not_applicable_reason
+IAT61|neutral12|gemma_local|base,IAT61,neutral12,Gemma 3 12B (local pinned) base,complete,"Raw responses, parsed scores and exploratory statistics available."
+IAT61|FairFace|gemma_local|base,IAT61,FairFace,Gemma 3 12B (local pinned) base,historical_complete,July held-out baseline/adapter panels; not a September 5 rerun.
+IAT61|UTKFace|gemma_local|base,IAT61,UTKFace,Gemma 3 12B (local pinned) base,complete,"Raw responses, parsed scores and exploratory statistics available."
+IAT61|text_only|gemma_local|base,IAT61,text_only,Gemma 3 12B (local pinned) base,not_applicable,This image benchmark requires image stimuli.
+IAT61|VisBias_source84|gemma_local|base,IAT61,VisBias_source84,Gemma 3 12B (local pinned) base,not_completed,Not included in requested/frozen IAT panels.
+VisBias|neutral12|gemma_local|base,VisBias,neutral12,Gemma 3 12B (local pinned) base,complete,"September 5 adaptation, 12 descriptions and 24 comparisons per model."
+VisBias|FairFace|gemma_local|base,VisBias,FairFace,Gemma 3 12B (local pinned) base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+VisBias|UTKFace|gemma_local|base,VisBias,UTKFace,Gemma 3 12B (local pinned) base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+VisBias|text_only|gemma_local|base,VisBias,text_only,Gemma 3 12B (local pinned) base,not_applicable,This image benchmark requires image stimuli.
+VisBias|VisBias_source84|gemma_local|base,VisBias,VisBias_source84,Gemma 3 12B (local pinned) base,complete,"Seven archived hosted models plus local Gemma; adapted prompts, not full paper replication."
+DecodingTrust|neutral12|gemma_local|base,DecodingTrust,neutral12,Gemma 3 12B (local pinned) base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|FairFace|gemma_local|base,DecodingTrust,FairFace,Gemma 3 12B (local pinned) base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|UTKFace|gemma_local|base,DecodingTrust,UTKFace,Gemma 3 12B (local pinned) base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|text_only|gemma_local|base,DecodingTrust,text_only,Gemma 3 12B (local pinned) base,not_interpretable,"All48 attempted, but36 truncated at150 tokens; capped-output diagnostic, not a full-response bias estimate."
+DecodingTrust|VisBias_source84|gemma_local|base,DecodingTrust,VisBias_source84,Gemma 3 12B (local pinned) base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|neutral12|gemma_local|base,BOLD,neutral12,Gemma 3 12B (local pinned) base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|FairFace|gemma_local|base,BOLD,FairFace,Gemma 3 12B (local pinned) base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|UTKFace|gemma_local|base,BOLD,UTKFace,Gemma 3 12B (local pinned) base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|text_only|gemma_local|base,BOLD,text_only,Gemma 3 12B (local pinned) base,complete,Archived hosted data; September 5 local Gemma data.
+BOLD|VisBias_source84|gemma_local|base,BOLD,VisBias_source84,Gemma 3 12B (local pinned) base,not_applicable,Text-only benchmark: no face images are input.
+IAT61|neutral12|qwen35_9b|base,IAT61,neutral12,Qwen 3.5 9B base,complete,"Raw responses, parsed scores and exploratory statistics available."
+IAT61|FairFace|qwen35_9b|base,IAT61,FairFace,Qwen 3.5 9B base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+IAT61|UTKFace|qwen35_9b|base,IAT61,UTKFace,Qwen 3.5 9B base,complete,"Raw responses, parsed scores and exploratory statistics available."
+IAT61|text_only|qwen35_9b|base,IAT61,text_only,Qwen 3.5 9B base,not_applicable,This image benchmark requires image stimuli.
+IAT61|VisBias_source84|qwen35_9b|base,IAT61,VisBias_source84,Qwen 3.5 9B base,not_completed,Not included in requested/frozen IAT panels.
+VisBias|neutral12|qwen35_9b|base,VisBias,neutral12,Qwen 3.5 9B base,complete,"September 5 adaptation, 12 descriptions and 24 comparisons per model."
+VisBias|FairFace|qwen35_9b|base,VisBias,FairFace,Qwen 3.5 9B base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+VisBias|UTKFace|qwen35_9b|base,VisBias,UTKFace,Qwen 3.5 9B base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+VisBias|text_only|qwen35_9b|base,VisBias,text_only,Qwen 3.5 9B base,not_applicable,This image benchmark requires image stimuli.
+VisBias|VisBias_source84|qwen35_9b|base,VisBias,VisBias_source84,Qwen 3.5 9B base,complete,"Seven archived hosted models plus local Gemma; adapted prompts, not full paper replication."
+DecodingTrust|neutral12|qwen35_9b|base,DecodingTrust,neutral12,Qwen 3.5 9B base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|FairFace|qwen35_9b|base,DecodingTrust,FairFace,Qwen 3.5 9B base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|UTKFace|qwen35_9b|base,DecodingTrust,UTKFace,Qwen 3.5 9B base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|text_only|qwen35_9b|base,DecodingTrust,text_only,Qwen 3.5 9B base,complete,Archived hosted data; September 5 local Gemma data.
+DecodingTrust|VisBias_source84|qwen35_9b|base,DecodingTrust,VisBias_source84,Qwen 3.5 9B base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|neutral12|qwen35_9b|base,BOLD,neutral12,Qwen 3.5 9B base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|FairFace|qwen35_9b|base,BOLD,FairFace,Qwen 3.5 9B base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|UTKFace|qwen35_9b|base,BOLD,UTKFace,Qwen 3.5 9B base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|text_only|qwen35_9b|base,BOLD,text_only,Qwen 3.5 9B base,complete,Archived hosted data; September 5 local Gemma data.
+BOLD|VisBias_source84|qwen35_9b|base,BOLD,VisBias_source84,Qwen 3.5 9B base,not_applicable,Text-only benchmark: no face images are input.
+IAT61|neutral12|kimi_k3|base,IAT61,neutral12,Kimi K3 base,complete,"Raw responses, parsed scores and exploratory statistics available."
+IAT61|FairFace|kimi_k3|base,IAT61,FairFace,Kimi K3 base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+IAT61|UTKFace|kimi_k3|base,IAT61,UTKFace,Kimi K3 base,complete,"Raw responses, parsed scores and exploratory statistics available."
+IAT61|text_only|kimi_k3|base,IAT61,text_only,Kimi K3 base,not_applicable,This image benchmark requires image stimuli.
+IAT61|VisBias_source84|kimi_k3|base,IAT61,VisBias_source84,Kimi K3 base,not_completed,Not included in requested/frozen IAT panels.
+VisBias|neutral12|kimi_k3|base,VisBias,neutral12,Kimi K3 base,complete,"September 5 adaptation, 12 descriptions and 24 comparisons per model."
+VisBias|FairFace|kimi_k3|base,VisBias,FairFace,Kimi K3 base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+VisBias|UTKFace|kimi_k3|base,VisBias,UTKFace,Kimi K3 base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+VisBias|text_only|kimi_k3|base,VisBias,text_only,Kimi K3 base,not_applicable,This image benchmark requires image stimuli.
+VisBias|VisBias_source84|kimi_k3|base,VisBias,VisBias_source84,Kimi K3 base,complete,"Seven archived hosted models plus local Gemma; adapted prompts, not full paper replication."
+DecodingTrust|neutral12|kimi_k3|base,DecodingTrust,neutral12,Kimi K3 base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|FairFace|kimi_k3|base,DecodingTrust,FairFace,Kimi K3 base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|UTKFace|kimi_k3|base,DecodingTrust,UTKFace,Kimi K3 base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|text_only|kimi_k3|base,DecodingTrust,text_only,Kimi K3 base,complete,Archived hosted data; September 5 local Gemma data.
+DecodingTrust|VisBias_source84|kimi_k3|base,DecodingTrust,VisBias_source84,Kimi K3 base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|neutral12|kimi_k3|base,BOLD,neutral12,Kimi K3 base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|FairFace|kimi_k3|base,BOLD,FairFace,Kimi K3 base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|UTKFace|kimi_k3|base,BOLD,UTKFace,Kimi K3 base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|text_only|kimi_k3|base,BOLD,text_only,Kimi K3 base,complete,Archived hosted data; September 5 local Gemma data.
+BOLD|VisBias_source84|kimi_k3|base,BOLD,VisBias_source84,Kimi K3 base,not_applicable,Text-only benchmark: no face images are input.
+IAT61|neutral12|gpt56_luna|base,IAT61,neutral12,GPT-5.6 Luna base,complete,"Raw responses, parsed scores and exploratory statistics available."
+IAT61|FairFace|gpt56_luna|base,IAT61,FairFace,GPT-5.6 Luna base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+IAT61|UTKFace|gpt56_luna|base,IAT61,UTKFace,GPT-5.6 Luna base,complete,"Raw responses, parsed scores and exploratory statistics available."
+IAT61|text_only|gpt56_luna|base,IAT61,text_only,GPT-5.6 Luna base,not_applicable,This image benchmark requires image stimuli.
+IAT61|VisBias_source84|gpt56_luna|base,IAT61,VisBias_source84,GPT-5.6 Luna base,not_completed,Not included in requested/frozen IAT panels.
+VisBias|neutral12|gpt56_luna|base,VisBias,neutral12,GPT-5.6 Luna base,complete,"September 5 adaptation, 12 descriptions and 24 comparisons per model."
+VisBias|FairFace|gpt56_luna|base,VisBias,FairFace,GPT-5.6 Luna base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+VisBias|UTKFace|gpt56_luna|base,VisBias,UTKFace,GPT-5.6 Luna base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+VisBias|text_only|gpt56_luna|base,VisBias,text_only,GPT-5.6 Luna base,not_applicable,This image benchmark requires image stimuli.
+VisBias|VisBias_source84|gpt56_luna|base,VisBias,VisBias_source84,GPT-5.6 Luna base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+DecodingTrust|neutral12|gpt56_luna|base,DecodingTrust,neutral12,GPT-5.6 Luna base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|FairFace|gpt56_luna|base,DecodingTrust,FairFace,GPT-5.6 Luna base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|UTKFace|gpt56_luna|base,DecodingTrust,UTKFace,GPT-5.6 Luna base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|text_only|gpt56_luna|base,DecodingTrust,text_only,GPT-5.6 Luna base,complete,Archived hosted data; September 5 local Gemma data.
+DecodingTrust|VisBias_source84|gpt56_luna|base,DecodingTrust,VisBias_source84,GPT-5.6 Luna base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|neutral12|gpt56_luna|base,BOLD,neutral12,GPT-5.6 Luna base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|FairFace|gpt56_luna|base,BOLD,FairFace,GPT-5.6 Luna base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|UTKFace|gpt56_luna|base,BOLD,UTKFace,GPT-5.6 Luna base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|text_only|gpt56_luna|base,BOLD,text_only,GPT-5.6 Luna base,complete,Archived hosted data; September 5 local Gemma data.
+BOLD|VisBias_source84|gpt56_luna|base,BOLD,VisBias_source84,GPT-5.6 Luna base,not_applicable,Text-only benchmark: no face images are input.
+IAT61|neutral12|gemini36_flash|base,IAT61,neutral12,Gemini 3.6 Flash base,complete,"Raw responses, parsed scores and exploratory statistics available."
+IAT61|FairFace|gemini36_flash|base,IAT61,FairFace,Gemini 3.6 Flash base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+IAT61|UTKFace|gemini36_flash|base,IAT61,UTKFace,Gemini 3.6 Flash base,complete,"Raw responses, parsed scores and exploratory statistics available."
+IAT61|text_only|gemini36_flash|base,IAT61,text_only,Gemini 3.6 Flash base,not_applicable,This image benchmark requires image stimuli.
+IAT61|VisBias_source84|gemini36_flash|base,IAT61,VisBias_source84,Gemini 3.6 Flash base,not_completed,Not included in requested/frozen IAT panels.
+VisBias|neutral12|gemini36_flash|base,VisBias,neutral12,Gemini 3.6 Flash base,complete,"September 5 adaptation, 12 descriptions and 24 comparisons per model."
+VisBias|FairFace|gemini36_flash|base,VisBias,FairFace,Gemini 3.6 Flash base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+VisBias|UTKFace|gemini36_flash|base,VisBias,UTKFace,Gemini 3.6 Flash base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+VisBias|text_only|gemini36_flash|base,VisBias,text_only,Gemini 3.6 Flash base,not_applicable,This image benchmark requires image stimuli.
+VisBias|VisBias_source84|gemini36_flash|base,VisBias,VisBias_source84,Gemini 3.6 Flash base,complete,"Seven archived hosted models plus local Gemma; adapted prompts, not full paper replication."
+DecodingTrust|neutral12|gemini36_flash|base,DecodingTrust,neutral12,Gemini 3.6 Flash base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|FairFace|gemini36_flash|base,DecodingTrust,FairFace,Gemini 3.6 Flash base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|UTKFace|gemini36_flash|base,DecodingTrust,UTKFace,Gemini 3.6 Flash base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|text_only|gemini36_flash|base,DecodingTrust,text_only,Gemini 3.6 Flash base,complete,Archived hosted data; September 5 local Gemma data.
+DecodingTrust|VisBias_source84|gemini36_flash|base,DecodingTrust,VisBias_source84,Gemini 3.6 Flash base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|neutral12|gemini36_flash|base,BOLD,neutral12,Gemini 3.6 Flash base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|FairFace|gemini36_flash|base,BOLD,FairFace,Gemini 3.6 Flash base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|UTKFace|gemini36_flash|base,BOLD,UTKFace,Gemini 3.6 Flash base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|text_only|gemini36_flash|base,BOLD,text_only,Gemini 3.6 Flash base,complete,Archived hosted data; September 5 local Gemma data.
+BOLD|VisBias_source84|gemini36_flash|base,BOLD,VisBias_source84,Gemini 3.6 Flash base,not_applicable,Text-only benchmark: no face images are input.
+IAT61|neutral12|mimo_v25|base,IAT61,neutral12,MiMo-V2.5 base,complete,"Raw responses, parsed scores and exploratory statistics available."
+IAT61|FairFace|mimo_v25|base,IAT61,FairFace,MiMo-V2.5 base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+IAT61|UTKFace|mimo_v25|base,IAT61,UTKFace,MiMo-V2.5 base,complete,"Raw responses, parsed scores and exploratory statistics available."
+IAT61|text_only|mimo_v25|base,IAT61,text_only,MiMo-V2.5 base,not_applicable,This image benchmark requires image stimuli.
+IAT61|VisBias_source84|mimo_v25|base,IAT61,VisBias_source84,MiMo-V2.5 base,not_completed,Not included in requested/frozen IAT panels.
+VisBias|neutral12|mimo_v25|base,VisBias,neutral12,MiMo-V2.5 base,complete,"September 5 adaptation, 12 descriptions and 24 comparisons per model."
+VisBias|FairFace|mimo_v25|base,VisBias,FairFace,MiMo-V2.5 base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+VisBias|UTKFace|mimo_v25|base,VisBias,UTKFace,MiMo-V2.5 base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+VisBias|text_only|mimo_v25|base,VisBias,text_only,MiMo-V2.5 base,not_applicable,This image benchmark requires image stimuli.
+VisBias|VisBias_source84|mimo_v25|base,VisBias,VisBias_source84,MiMo-V2.5 base,complete,"Seven archived hosted models plus local Gemma; adapted prompts, not full paper replication."
+DecodingTrust|neutral12|mimo_v25|base,DecodingTrust,neutral12,MiMo-V2.5 base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|FairFace|mimo_v25|base,DecodingTrust,FairFace,MiMo-V2.5 base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|UTKFace|mimo_v25|base,DecodingTrust,UTKFace,MiMo-V2.5 base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|text_only|mimo_v25|base,DecodingTrust,text_only,MiMo-V2.5 base,complete,Archived hosted data; September 5 local Gemma data.
+DecodingTrust|VisBias_source84|mimo_v25|base,DecodingTrust,VisBias_source84,MiMo-V2.5 base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|neutral12|mimo_v25|base,BOLD,neutral12,MiMo-V2.5 base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|FairFace|mimo_v25|base,BOLD,FairFace,MiMo-V2.5 base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|UTKFace|mimo_v25|base,BOLD,UTKFace,MiMo-V2.5 base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|text_only|mimo_v25|base,BOLD,text_only,MiMo-V2.5 base,complete,Archived hosted data; September 5 local Gemma data.
+BOLD|VisBias_source84|mimo_v25|base,BOLD,VisBias_source84,MiMo-V2.5 base,not_applicable,Text-only benchmark: no face images are input.
+IAT61|neutral12|minimax_m3|base,IAT61,neutral12,MiniMax M3 base,complete,"Raw responses, parsed scores and exploratory statistics available."
+IAT61|FairFace|minimax_m3|base,IAT61,FairFace,MiniMax M3 base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+IAT61|UTKFace|minimax_m3|base,IAT61,UTKFace,MiniMax M3 base,complete,"Raw responses, parsed scores and exploratory statistics available."
+IAT61|text_only|minimax_m3|base,IAT61,text_only,MiniMax M3 base,not_applicable,This image benchmark requires image stimuli.
+IAT61|VisBias_source84|minimax_m3|base,IAT61,VisBias_source84,MiniMax M3 base,not_completed,Not included in requested/frozen IAT panels.
+VisBias|neutral12|minimax_m3|base,VisBias,neutral12,MiniMax M3 base,complete,"September 5 adaptation, 12 descriptions and 24 comparisons per model."
+VisBias|FairFace|minimax_m3|base,VisBias,FairFace,MiniMax M3 base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+VisBias|UTKFace|minimax_m3|base,VisBias,UTKFace,MiniMax M3 base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+VisBias|text_only|minimax_m3|base,VisBias,text_only,MiniMax M3 base,not_applicable,This image benchmark requires image stimuli.
+VisBias|VisBias_source84|minimax_m3|base,VisBias,VisBias_source84,MiniMax M3 base,complete,"Seven archived hosted models plus local Gemma; adapted prompts, not full paper replication."
+DecodingTrust|neutral12|minimax_m3|base,DecodingTrust,neutral12,MiniMax M3 base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|FairFace|minimax_m3|base,DecodingTrust,FairFace,MiniMax M3 base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|UTKFace|minimax_m3|base,DecodingTrust,UTKFace,MiniMax M3 base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|text_only|minimax_m3|base,DecodingTrust,text_only,MiniMax M3 base,complete,Archived hosted data; September 5 local Gemma data.
+DecodingTrust|VisBias_source84|minimax_m3|base,DecodingTrust,VisBias_source84,MiniMax M3 base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|neutral12|minimax_m3|base,BOLD,neutral12,MiniMax M3 base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|FairFace|minimax_m3|base,BOLD,FairFace,MiniMax M3 base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|UTKFace|minimax_m3|base,BOLD,UTKFace,MiniMax M3 base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|text_only|minimax_m3|base,BOLD,text_only,MiniMax M3 base,complete,Archived hosted data; September 5 local Gemma data.
+BOLD|VisBias_source84|minimax_m3|base,BOLD,VisBias_source84,MiniMax M3 base,not_applicable,Text-only benchmark: no face images are input.
+IAT61|neutral12|step37_flash|base,IAT61,neutral12,Step 3.7 Flash base,complete,"Raw responses, parsed scores and exploratory statistics available."
+IAT61|FairFace|step37_flash|base,IAT61,FairFace,Step 3.7 Flash base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+IAT61|UTKFace|step37_flash|base,IAT61,UTKFace,Step 3.7 Flash base,complete,"Raw responses, parsed scores and exploratory statistics available."
+IAT61|text_only|step37_flash|base,IAT61,text_only,Step 3.7 Flash base,not_applicable,This image benchmark requires image stimuli.
+IAT61|VisBias_source84|step37_flash|base,IAT61,VisBias_source84,Step 3.7 Flash base,not_completed,Not included in requested/frozen IAT panels.
+VisBias|neutral12|step37_flash|base,VisBias,neutral12,Step 3.7 Flash base,complete,"September 5 adaptation, 12 descriptions and 24 comparisons per model."
+VisBias|FairFace|step37_flash|base,VisBias,FairFace,Step 3.7 Flash base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+VisBias|UTKFace|step37_flash|base,VisBias,UTKFace,Step 3.7 Flash base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+VisBias|text_only|step37_flash|base,VisBias,text_only,Step 3.7 Flash base,not_applicable,This image benchmark requires image stimuli.
+VisBias|VisBias_source84|step37_flash|base,VisBias,VisBias_source84,Step 3.7 Flash base,complete,"Seven archived hosted models plus local Gemma; adapted prompts, not full paper replication."
+DecodingTrust|neutral12|step37_flash|base,DecodingTrust,neutral12,Step 3.7 Flash base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|FairFace|step37_flash|base,DecodingTrust,FairFace,Step 3.7 Flash base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|UTKFace|step37_flash|base,DecodingTrust,UTKFace,Step 3.7 Flash base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|text_only|step37_flash|base,DecodingTrust,text_only,Step 3.7 Flash base,complete,Archived hosted data; September 5 local Gemma data.
+DecodingTrust|VisBias_source84|step37_flash|base,DecodingTrust,VisBias_source84,Step 3.7 Flash base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|neutral12|step37_flash|base,BOLD,neutral12,Step 3.7 Flash base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|FairFace|step37_flash|base,BOLD,FairFace,Step 3.7 Flash base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|UTKFace|step37_flash|base,BOLD,UTKFace,Step 3.7 Flash base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|text_only|step37_flash|base,BOLD,text_only,Step 3.7 Flash base,complete,Archived hosted data; September 5 local Gemma data.
+BOLD|VisBias_source84|step37_flash|base,BOLD,VisBias_source84,Step 3.7 Flash base,not_applicable,Text-only benchmark: no face images are input.
+IAT61|neutral12|grok46|base,IAT61,neutral12,Grok 4.6 base,complete,"Raw responses, parsed scores and exploratory statistics available."
+IAT61|FairFace|grok46|base,IAT61,FairFace,Grok 4.6 base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+IAT61|UTKFace|grok46|base,IAT61,UTKFace,Grok 4.6 base,complete,"Raw responses, parsed scores and exploratory statistics available."
+IAT61|text_only|grok46|base,IAT61,text_only,Grok 4.6 base,not_applicable,This image benchmark requires image stimuli.
+IAT61|VisBias_source84|grok46|base,IAT61,VisBias_source84,Grok 4.6 base,not_completed,Not included in requested/frozen IAT panels.
+VisBias|neutral12|grok46|base,VisBias,neutral12,Grok 4.6 base,complete,"September 5 adaptation, 12 descriptions and 24 comparisons per model."
+VisBias|FairFace|grok46|base,VisBias,FairFace,Grok 4.6 base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+VisBias|UTKFace|grok46|base,VisBias,UTKFace,Grok 4.6 base,not_completed,No preserved result for this model/task/input cell; no inference from another dataset.
+VisBias|text_only|grok46|base,VisBias,text_only,Grok 4.6 base,not_applicable,This image benchmark requires image stimuli.
+VisBias|VisBias_source84|grok46|base,VisBias,VisBias_source84,Grok 4.6 base,complete,"Seven archived hosted models plus local Gemma; adapted prompts, not full paper replication."
+DecodingTrust|neutral12|grok46|base,DecodingTrust,neutral12,Grok 4.6 base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|FairFace|grok46|base,DecodingTrust,FairFace,Grok 4.6 base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|UTKFace|grok46|base,DecodingTrust,UTKFace,Grok 4.6 base,not_applicable,Text-only benchmark: no face images are input.
+DecodingTrust|text_only|grok46|base,DecodingTrust,text_only,Grok 4.6 base,complete,Archived hosted data; September 5 local Gemma data.
+DecodingTrust|VisBias_source84|grok46|base,DecodingTrust,VisBias_source84,Grok 4.6 base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|neutral12|grok46|base,BOLD,neutral12,Grok 4.6 base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|FairFace|grok46|base,BOLD,FairFace,Grok 4.6 base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|UTKFace|grok46|base,BOLD,UTKFace,Grok 4.6 base,not_applicable,Text-only benchmark: no face images are input.
+BOLD|text_only|grok46|base,BOLD,text_only,Grok 4.6 base,complete,Archived hosted data; September 5 local Gemma data.
+BOLD|VisBias_source84|grok46|base,BOLD,VisBias_source84,Grok 4.6 base,not_applicable,Text-only benchmark: no face images are input.
+IAT61|neutral12|gemma_selected_dpo,IAT61,neutral12,Gemma August10 mean_lr2e-5 LoRA,complete,Retrospective exploratory comparison; not a successful adapter
+IAT61|FairFace|gemma_selected_dpo,IAT61,FairFace,Gemma August10 mean_lr2e-5 LoRA,not_completed,This adapter was not evaluated on this full benchmark panel; development IAT is not the full FairFace holdout.
+IAT61|UTKFace|gemma_selected_dpo,IAT61,UTKFace,Gemma August10 mean_lr2e-5 LoRA,not_completed,This adapter was not evaluated on this full benchmark panel; development IAT is not the full FairFace holdout.
+VisBias|neutral12|gemma_selected_dpo,VisBias,neutral12,Gemma August10 mean_lr2e-5 LoRA,not_completed,This adapter was not evaluated on this full benchmark panel; development IAT is not the full FairFace holdout.
+VisBias|FairFace|gemma_selected_dpo,VisBias,FairFace,Gemma August10 mean_lr2e-5 LoRA,not_completed,This adapter was not evaluated on this full benchmark panel; development IAT is not the full FairFace holdout.
+VisBias|UTKFace|gemma_selected_dpo,VisBias,UTKFace,Gemma August10 mean_lr2e-5 LoRA,not_completed,This adapter was not evaluated on this full benchmark panel; development IAT is not the full FairFace holdout.
+DecodingTrust|text_only|gemma_selected_dpo,DecodingTrust,text_only,Gemma August10 mean_lr2e-5 LoRA,not_completed,This adapter was not evaluated on this full benchmark panel; development IAT is not the full FairFace holdout.
+BOLD|text_only|gemma_selected_dpo,BOLD,text_only,Gemma August10 mean_lr2e-5 LoRA,not_completed,This adapter was not evaluated on this full benchmark panel; development IAT is not the full FairFace holdout.

@@ -1,0 +1,107 @@
+[
+  {
+    "checked_at": "2026-09-11T09:30:41.616375+00:00",
+    "endpoint": "deepinfra/bf16",
+    "model_key": "qwen35_9b",
+    "panel": "neutral12",
+    "status": 0
+  },
+  {
+    "checked_at": "2026-09-11T09:30:42.183663+00:00",
+    "endpoint": "deepinfra/bf16",
+    "model_key": "kimi_k3",
+    "panel": "neutral12",
+    "status": -5
+  },
+  {
+    "checked_at": "2026-09-11T09:30:42.661859+00:00",
+    "endpoint": "azure/eu",
+    "model_key": "gpt56_luna",
+    "panel": "neutral12",
+    "status": 0
+  },
+  {
+    "checked_at": "2026-09-11T09:30:43.276723+00:00",
+    "endpoint": "google-vertex/global",
+    "model_key": "gemini36_flash",
+    "panel": "neutral12",
+    "status": 0
+  },
+  {
+    "checked_at": "2026-09-11T09:30:43.775325+00:00",
+    "endpoint": "deepinfra/fp8",
+    "model_key": "mimo_v25",
+    "panel": "neutral12",
+    "status": 0
+  },
+  {
+    "checked_at": "2026-09-11T09:30:44.403154+00:00",
+    "endpoint": "deepinfra",
+    "model_key": "step37_flash",
+    "panel": "neutral12",
+    "status": 0
+  },
+  {
+    "checked_at": "2026-09-11T09:30:44.905878+00:00",
+    "endpoint": "xai/zdr",
+    "model_key": "grok46",
+    "panel": "neutral12",
+    "status": 0
+  },
+  {
+    "checked_at": "2026-09-11T09:30:44.905931+00:00",
+    "endpoint": "deepinfra/bf16",
+    "model_key": "qwen35_9b",
+    "panel": "utkface",
+    "status": 0
+  },
+  {
+    "checked_at": "2026-09-11T09:30:45.522523+00:00",
+    "endpoint": "digitalocean",
+    "model_key": "kimi_k3",
+    "panel": "utkface",
+    "status": 0
+  },
+  {
+    "checked_at": "2026-09-11T09:30:45.522573+00:00",
+    "endpoint": "azure/eu",
+    "model_key": "gpt56_luna",
+    "panel": "utkface",
+    "status": 0
+  },
+  {
+    "checked_at": "2026-09-11T09:30:45.522580+00:00",
+    "endpoint": "google-vertex/global",
+    "model_key": "gemini36_flash",
+    "panel": "utkface",
+    "status": 0
+  },
+  {
+    "checked_at": "2026-09-11T09:30:45.522590+00:00",
+    "endpoint": "deepinfra/fp8",
+    "model_key": "mimo_v25",
+    "panel": "utkface",
+    "status": 0
+  },
+  {
+    "checked_at": "2026-09-11T09:30:45.970307+00:00",
+    "endpoint": "venice/fp8",
+    "model_key": "minimax_m3",
+    "panel": "utkface",
+    "status": -2
+  },
+  {
+    "checked_at": "2026-09-11T09:30:45.970346+00:00",
+    "endpoint": "deepinfra",
+    "model_key": "step37_flash",
+    "panel": "utkface",
+    "status": 0
+  },
+  {
+    "checked_at": "2026-09-11T09:30:45.970359+00:00",
+    "endpoint": "xai/zdr",
+    "model_key": "grok46",
+    "panel": "utkface",
+    "status": 0
+  }
+]

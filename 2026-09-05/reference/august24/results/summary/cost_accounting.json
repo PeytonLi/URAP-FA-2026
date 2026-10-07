@@ -1,0 +1,13 @@
+{
+  "session_initial_openrouter_balance_usd": 23.98464367,
+  "session_final_openrouter_balance_usd": 21.989038906,
+  "account_balance_delta_usd": 1.9956047639999994,
+  "logged_attempted_calls": 2494,
+  "logged_successful_calls": 2384,
+  "logged_failed_calls": 110,
+  "logged_response_reported_cost_usd": 1.9955981639999998,
+  "malformed_transport_records": 0,
+  "model_call_totals_csv": "results/summary/model_call_totals.csv",
+  "scope": "All August 24 API transport logs under results/; archived reused calls excluded.",
+  "note": "The account balance delta is the authoritative session-spend measure. Response-reported costs can lag or omit failed requests."
+}

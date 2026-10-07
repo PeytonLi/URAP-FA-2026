@@ -1,0 +1,8 @@
+{
+  "duplicate_slots": false,
+  "files_checked": 166,
+  "ledger_reconciled": true,
+  "note": "Private images/weights intentionally excluded; hashes are not proof of person-disjointness.",
+  "privacy_scan_passed": true,
+  "word_counts_reconciled": true
+}

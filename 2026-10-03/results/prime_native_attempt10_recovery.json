@@ -1,0 +1,61 @@
+{
+  "all_archive_and_file_hashes_match": true,
+  "archive_sha256": "8b1d597e2435a7da0c83dbaa015e92e45dc70a29378610d5c3149dc34efeed85",
+  "checked_at": "2026-10-06T15:41:30.175100+00:00",
+  "completed_benchmark_conditions": 6,
+  "completed_benchmark_keys": [
+    [
+      "gemma4",
+      "base"
+    ],
+    [
+      "gemma4",
+      "sft"
+    ],
+    [
+      "gemma4",
+      "orpo"
+    ],
+    [
+      "qwen3vl",
+      "base"
+    ],
+    [
+      "qwen3vl",
+      "sft"
+    ],
+    [
+      "qwen3vl",
+      "orpo"
+    ]
+  ],
+  "completed_training_conditions": 5,
+  "completed_training_keys": [
+    [
+      "gemma4",
+      "sft"
+    ],
+    [
+      "gemma4",
+      "orpo"
+    ],
+    [
+      "qwen3vl",
+      "sft"
+    ],
+    [
+      "qwen3vl",
+      "orpo"
+    ],
+    [
+      "qwen35",
+      "sft"
+    ]
+  ],
+  "incomplete_adapter_used_for_benchmark": false,
+  "qwen35_orpo_incomplete_updates": 497,
+  "recovered_file_count": 204,
+  "source": "data/private/prime_native/20261006T070843.831887_0000/recovered",
+  "termination_verified": false,
+  "verified_final_benchmark_slots": 3600
+}

@@ -1,0 +1,5 @@
+agreement_rate,disagreement_rate,model_display_name,model_key,no_response_rate,responses,topic
+0.0,0.3333333333333333,Gemma 3 12B IT (OpenRouter/DeepInfra BF16),gemma3_12b_hosted,0.6666666666666666,12,country
+0.08333333333333333,0.5833333333333334,Gemma 3 12B IT (OpenRouter/DeepInfra BF16),gemma3_12b_hosted,0.3333333333333333,12,driving
+0.08333333333333333,0.0,Gemma 3 12B IT (OpenRouter/DeepInfra BF16),gemma3_12b_hosted,0.9166666666666666,12,jobs
+0.0,0.08333333333333333,Gemma 3 12B IT (OpenRouter/DeepInfra BF16),gemma3_12b_hosted,0.9166666666666666,12,terrorists

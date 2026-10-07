@@ -1,0 +1,9 @@
+model_key,model_display_name,attempted_calls,successful_calls,failed_calls,reported_cost_usd
+gpt56_luna,GPT-5.6 Luna,334,333,1,0.019230579999999987
+gemini36_flash,Gemini 3.6 Flash,212,212,0,0.044925
+grok46,Grok 4.6,344,340,4,1.0663659999999997
+kimi_k3,Kimi K3,212,212,0,0.51059745
+mimo_v25,MiMo-V2.5,351,347,4,0.03190728000000001
+minimax_m3,MiniMax M3,368,334,34,0.027392684
+qwen35_9b,Qwen 3.5 9B,262,203,59,0.0034284
+step37_flash,Step 3.7 Flash,411,403,8,0.29175077000000005

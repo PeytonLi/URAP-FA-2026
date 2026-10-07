@@ -1,0 +1,191 @@
+{
+  "expression_sensitivity": {
+    "all": {
+      "mean_by_expression": {
+        "ambiguous": 0.030373831775700934,
+        "negative": 0.11896551724137931,
+        "neutral": 0.0,
+        "positive": 0.0
+      },
+      "negative_minus_positive": 0.11896551724137931
+    },
+    "available": true,
+    "black": {
+      "mean_by_expression": {
+        "ambiguous": 0.042499999999999996,
+        "negative": 0.16923076923076924,
+        "neutral": 0.0,
+        "positive": 0.0
+      },
+      "negative_minus_positive": 0.16923076923076924
+    },
+    "white": {
+      "mean_by_expression": {
+        "ambiguous": 0.014893617021276596,
+        "negative": 0.078125,
+        "neutral": 0.0,
+        "positive": 0.0
+      },
+      "negative_minus_positive": 0.078125
+    }
+  },
+  "image_level_rows": 400,
+  "standardized_race_gap": {
+    "available": true,
+    "bootstrap_95_ci": [
+      -0.01609427609427609,
+      0.06153198653198652
+    ],
+    "bootstrap_probability_gap_above_zero": 0.86353,
+    "bootstrap_samples": 100000,
+    "bootstrap_seed": 3719,
+    "eligible_images": 174,
+    "estimand": "Black-minus-White image-level negative rate standardized over gender, coarse age, and visible expression",
+    "standardized_gap_black_minus_white": 0.02195286195286195,
+    "strata": [
+      {
+        "age_band": "20_39",
+        "black_images": 9,
+        "black_mean": 0.3222222222222222,
+        "expression_class": "negative",
+        "fairface_gender": "Female",
+        "gap_black_minus_white": 0.3222222222222222,
+        "weight": 7,
+        "white_images": 7,
+        "white_mean": 0.0
+      },
+      {
+        "age_band": "20_39",
+        "black_images": 13,
+        "black_mean": 0.0,
+        "expression_class": "positive",
+        "fairface_gender": "Female",
+        "gap_black_minus_white": 0.0,
+        "weight": 13,
+        "white_images": 25,
+        "white_mean": 0.0
+      },
+      {
+        "age_band": "40_59",
+        "black_images": 6,
+        "black_mean": 0.18333333333333335,
+        "expression_class": "negative",
+        "fairface_gender": "Female",
+        "gap_black_minus_white": 0.08333333333333334,
+        "weight": 1,
+        "white_images": 1,
+        "white_mean": 0.1
+      },
+      {
+        "age_band": "40_59",
+        "black_images": 7,
+        "black_mean": 0.0,
+        "expression_class": "positive",
+        "fairface_gender": "Female",
+        "gap_black_minus_white": 0.0,
+        "weight": 7,
+        "white_images": 8,
+        "white_mean": 0.0
+      },
+      {
+        "age_band": "under_20",
+        "black_images": 1,
+        "black_mean": 0.0,
+        "expression_class": "negative",
+        "fairface_gender": "Female",
+        "gap_black_minus_white": -0.15,
+        "weight": 1,
+        "white_images": 2,
+        "white_mean": 0.15
+      },
+      {
+        "age_band": "under_20",
+        "black_images": 8,
+        "black_mean": 0.0,
+        "expression_class": "positive",
+        "fairface_gender": "Female",
+        "gap_black_minus_white": 0.0,
+        "weight": 5,
+        "white_images": 5,
+        "white_mean": 0.0
+      },
+      {
+        "age_band": "20_39",
+        "black_images": 5,
+        "black_mean": 0.0,
+        "expression_class": "negative",
+        "fairface_gender": "Male",
+        "gap_black_minus_white": -0.12,
+        "weight": 5,
+        "white_images": 10,
+        "white_mean": 0.12
+      },
+      {
+        "age_band": "20_39",
+        "black_images": 2,
+        "black_mean": 0.0,
+        "expression_class": "neutral",
+        "fairface_gender": "Male",
+        "gap_black_minus_white": 0.0,
+        "weight": 2,
+        "white_images": 2,
+        "white_mean": 0.0
+      },
+      {
+        "age_band": "20_39",
+        "black_images": 11,
+        "black_mean": 0.0,
+        "expression_class": "positive",
+        "fairface_gender": "Male",
+        "gap_black_minus_white": 0.0,
+        "weight": 11,
+        "white_images": 16,
+        "white_mean": 0.0
+      },
+      {
+        "age_band": "40_59",
+        "black_images": 3,
+        "black_mean": 0.13333333333333333,
+        "expression_class": "negative",
+        "fairface_gender": "Male",
+        "gap_black_minus_white": -0.04666666666666666,
+        "weight": 3,
+        "white_images": 5,
+        "white_mean": 0.18
+      },
+      {
+        "age_band": "40_59",
+        "black_images": 5,
+        "black_mean": 0.0,
+        "expression_class": "positive",
+        "fairface_gender": "Male",
+        "gap_black_minus_white": 0.0,
+        "weight": 5,
+        "white_images": 6,
+        "white_mean": 0.0
+      },
+      {
+        "age_band": "under_20",
+        "black_images": 2,
+        "black_mean": 0.0,
+        "expression_class": "negative",
+        "fairface_gender": "Male",
+        "gap_black_minus_white": 0.0,
+        "weight": 2,
+        "white_images": 5,
+        "white_mean": 0.0
+      },
+      {
+        "age_band": "under_20",
+        "black_images": 4,
+        "black_mean": 0.0,
+        "expression_class": "positive",
+        "fairface_gender": "Male",
+        "gap_black_minus_white": 0.0,
+        "weight": 4,
+        "white_images": 6,
+        "white_mean": 0.0
+      }
+    ]
+  }
+}

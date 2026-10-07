@@ -1,0 +1,322 @@
+{
+  "availability": {
+    "H100_80GB": {
+      "items": [
+        {
+          "cloudId": "gpu_1x_h100_pcie",
+          "country": "US",
+          "dataCenter": "us-west-3",
+          "disk": {
+            "additionalInfo": null,
+            "defaultCount": 1024,
+            "defaultIncludedInPrice": null,
+            "maxCount": null,
+            "minCount": null,
+            "pricePerUnit": null,
+            "step": null
+          },
+          "gpuCount": 1,
+          "gpuMemory": 80,
+          "gpuType": "H100_80GB",
+          "images": [
+            "ubuntu_22_cuda_12",
+            "cuda_12_1_pytorch_2_2",
+            "cuda_11_8_pytorch_2_1",
+            "cuda_12_1_pytorch_2_3",
+            "cuda_12_1_pytorch_2_4",
+            "cuda_12_4_pytorch_2_4",
+            "cuda_12_4_pytorch_2_5",
+            "cuda_12_4_pytorch_2_6",
+            "cuda_12_6_pytorch_2_7",
+            "stable_diffusion",
+            "axolotl",
+            "bittensor",
+            "vllm_llama_8b",
+            "vllm_llama_70b",
+            "vllm_llama_405b",
+            "custom_template",
+            "prime_rl"
+          ],
+          "interconnect": null,
+          "interconnectType": null,
+          "internetSpeed": null,
+          "isSpot": null,
+          "memory": {
+            "additionalInfo": null,
+            "defaultCount": 200,
+            "defaultIncludedInPrice": null,
+            "maxCount": null,
+            "minCount": null,
+            "pricePerUnit": null,
+            "step": null
+          },
+          "prepaidTime": null,
+          "prices": {
+            "communityPrice": null,
+            "currency": "USD",
+            "isVariable": null,
+            "onDemand": 3.29
+          },
+          "provider": "lambdalabs",
+          "provisioningTime": null,
+          "region": "united_states",
+          "security": "secure_cloud",
+          "sharedDisk": {
+            "additionalInfo": null,
+            "defaultCount": null,
+            "defaultIncludedInPrice": null,
+            "maxCount": null,
+            "minCount": null,
+            "pricePerUnit": null,
+            "step": null
+          },
+          "socket": "PCIe",
+          "stockStatus": "Available",
+          "vcpu": {
+            "additionalInfo": null,
+            "defaultCount": 26,
+            "defaultIncludedInPrice": null,
+            "maxCount": null,
+            "minCount": null,
+            "pricePerUnit": null,
+            "step": null
+          }
+        },
+        {
+          "cloudId": "gpu_1x_h100",
+          "country": "US",
+          "dataCenter": "us-central-3",
+          "disk": {
+            "additionalInfo": null,
+            "defaultCount": 1250,
+            "defaultIncludedInPrice": null,
+            "maxCount": null,
+            "minCount": null,
+            "pricePerUnit": null,
+            "step": null
+          },
+          "gpuCount": 1,
+          "gpuMemory": 80,
+          "gpuType": "H100_80GB",
+          "images": [
+            "ubuntu_22_cuda_12"
+          ],
+          "interconnect": null,
+          "interconnectType": null,
+          "internetSpeed": null,
+          "isSpot": null,
+          "memory": {
+            "additionalInfo": null,
+            "defaultCount": 128,
+            "defaultIncludedInPrice": null,
+            "maxCount": null,
+            "minCount": null,
+            "pricePerUnit": null,
+            "step": null
+          },
+          "prepaidTime": null,
+          "prices": {
+            "communityPrice": null,
+            "currency": "USD",
+            "isVariable": null,
+            "onDemand": 2.35
+          },
+          "provider": "massedcompute",
+          "provisioningTime": null,
+          "region": "united_states",
+          "security": "secure_cloud",
+          "sharedDisk": {
+            "additionalInfo": null,
+            "defaultCount": null,
+            "defaultIncludedInPrice": null,
+            "maxCount": null,
+            "minCount": null,
+            "pricePerUnit": null,
+            "step": null
+          },
+          "socket": "PCIe",
+          "stockStatus": "Available",
+          "vcpu": {
+            "additionalInfo": null,
+            "defaultCount": 20,
+            "defaultIncludedInPrice": null,
+            "maxCount": null,
+            "minCount": null,
+            "pricePerUnit": null,
+            "step": null
+          }
+        }
+      ],
+      "totalCount": 2
+    },
+    "H200_141GB": {
+      "items": [
+        {
+          "cloudId": "gpu-h200-sxm_1gpu-16vcpu-200gb",
+          "country": "US",
+          "dataCenter": "us-central1",
+          "disk": {
+            "additionalInfo": null,
+            "defaultCount": 1500,
+            "defaultIncludedInPrice": false,
+            "maxCount": 8192,
+            "minCount": 1500,
+            "pricePerUnit": 0.0001,
+            "step": 1
+          },
+          "gpuCount": 1,
+          "gpuMemory": 141,
+          "gpuType": "H200_141GB",
+          "images": [
+            "ubuntu_22_cuda_12",
+            "cuda_12_1_pytorch_2_2",
+            "cuda_11_8_pytorch_2_1",
+            "cuda_12_1_pytorch_2_3",
+            "cuda_12_1_pytorch_2_4",
+            "cuda_12_4_pytorch_2_4",
+            "cuda_12_4_pytorch_2_5",
+            "cuda_12_4_pytorch_2_6",
+            "cuda_12_6_pytorch_2_7",
+            "stable_diffusion",
+            "axolotl",
+            "bittensor",
+            "vllm_llama_8b",
+            "vllm_llama_70b",
+            "vllm_llama_405b",
+            "custom_template",
+            "prime_rl"
+          ],
+          "interconnect": null,
+          "interconnectType": null,
+          "internetSpeed": null,
+          "isSpot": null,
+          "memory": {
+            "additionalInfo": null,
+            "defaultCount": 200,
+            "defaultIncludedInPrice": null,
+            "maxCount": 200,
+            "minCount": 200,
+            "pricePerUnit": 0.0032,
+            "step": null
+          },
+          "prepaidTime": null,
+          "prices": {
+            "communityPrice": null,
+            "currency": "USD",
+            "isVariable": null,
+            "onDemand": 4.5
+          },
+          "provider": "nebius",
+          "provisioningTime": null,
+          "region": "united_states",
+          "security": "secure_cloud",
+          "sharedDisk": {
+            "additionalInfo": null,
+            "defaultCount": 0,
+            "defaultIncludedInPrice": false,
+            "maxCount": 8192,
+            "minCount": 0,
+            "pricePerUnit": 0.0001,
+            "step": 1
+          },
+          "socket": "SXM5",
+          "stockStatus": "Available",
+          "vcpu": {
+            "additionalInfo": null,
+            "defaultCount": 16,
+            "defaultIncludedInPrice": null,
+            "maxCount": 16,
+            "minCount": 16,
+            "pricePerUnit": 0.012,
+            "step": null
+          }
+        },
+        {
+          "cloudId": "gpu-h200-sxm_1gpu-16vcpu-200gb",
+          "country": "FI",
+          "dataCenter": "eu-north1",
+          "disk": {
+            "additionalInfo": null,
+            "defaultCount": 1500,
+            "defaultIncludedInPrice": false,
+            "maxCount": 8192,
+            "minCount": 1500,
+            "pricePerUnit": 0.0001,
+            "step": 1
+          },
+          "gpuCount": 1,
+          "gpuMemory": 141,
+          "gpuType": "H200_141GB",
+          "images": [
+            "ubuntu_22_cuda_12",
+            "cuda_12_1_pytorch_2_2",
+            "cuda_11_8_pytorch_2_1",
+            "cuda_12_1_pytorch_2_3",
+            "cuda_12_1_pytorch_2_4",
+            "cuda_12_4_pytorch_2_4",
+            "cuda_12_4_pytorch_2_5",
+            "cuda_12_4_pytorch_2_6",
+            "cuda_12_6_pytorch_2_7",
+            "stable_diffusion",
+            "axolotl",
+            "bittensor",
+            "vllm_llama_8b",
+            "vllm_llama_70b",
+            "vllm_llama_405b",
+            "custom_template",
+            "prime_rl"
+          ],
+          "interconnect": null,
+          "interconnectType": null,
+          "internetSpeed": null,
+          "isSpot": null,
+          "memory": {
+            "additionalInfo": null,
+            "defaultCount": 200,
+            "defaultIncludedInPrice": null,
+            "maxCount": 200,
+            "minCount": 200,
+            "pricePerUnit": 0.0032,
+            "step": null
+          },
+          "prepaidTime": null,
+          "prices": {
+            "communityPrice": null,
+            "currency": "USD",
+            "isVariable": null,
+            "onDemand": 4.5
+          },
+          "provider": "nebius",
+          "provisioningTime": null,
+          "region": "eu_north",
+          "security": "secure_cloud",
+          "sharedDisk": {
+            "additionalInfo": null,
+            "defaultCount": 0,
+            "defaultIncludedInPrice": false,
+            "maxCount": 8192,
+            "minCount": 0,
+            "pricePerUnit": 0.0001,
+            "step": 1
+          },
+          "socket": "SXM5",
+          "stockStatus": "Available",
+          "vcpu": {
+            "additionalInfo": null,
+            "defaultCount": 16,
+            "defaultIncludedInPrice": null,
+            "maxCount": 16,
+            "minCount": 16,
+            "pricePerUnit": 0.012,
+            "step": null
+          }
+        }
+      ],
+      "totalCount": 2
+    }
+  },
+  "checked_at": "2026-10-06T04:09:44.105271+00:00",
+  "paid_resources_created": false,
+  "spending_ceiling_usd": 59.212500000000006,
+  "wallet_usd": 79.2125
+}

@@ -1,0 +1,80 @@
+{
+  "artifacts": {
+    "evaluation_manifest": "data/frozen/utkface/utkface_iat_evaluation_manifest.csv",
+    "finetuning_image_manifest": "data/frozen/utkface/utkface_finetuning_image_manifest.csv",
+    "future_dpo_candidate_tasks": "data/frozen/utkface/utkface_future_dpo_candidate_tasks.csv"
+  },
+  "created_at": "2026-08-31T09:02:47.680471+00:00",
+  "dataset": "UTKFace aligned and cropped faces",
+  "expression_model_id": "trpakov/vit-face-expression",
+  "expression_model_revision": "ef0bc6fc34241b6587e7e009e7711357be28c024",
+  "limitations": [
+    "UTKFace demographic labels were estimated algorithmically and human checked; they may be wrong.",
+    "Visible-expression classes are automated FER model outputs, not emotion ground truth.",
+    "The FER model may itself have demographic performance disparities.",
+    "The future-DPO file contains prompts only; chosen and rejected responses are intentionally blank."
+  ],
+  "official_project": "https://github.com/aicip/UTKFace",
+  "official_use_scope": "non-commercial research",
+  "race_metadata_passed_to_model_prompts": false,
+  "selection_report": {
+    "available_matched_pairs_by_gender": {
+      "Female": 1333,
+      "Male": 1289
+    },
+    "eligible_images": 8149,
+    "eligible_images_before_content_deduplication": 8247,
+    "exact_duplicate_source_files_removed": 98,
+    "expression_counts": {
+      "evaluation|Black|negative": 47,
+      "evaluation|Black|neutral": 78,
+      "evaluation|Black|positive": 75,
+      "evaluation|White|negative": 47,
+      "evaluation|White|neutral": 78,
+      "evaluation|White|positive": 75,
+      "future_finetuning|Black|negative": 41,
+      "future_finetuning|Black|neutral": 78,
+      "future_finetuning|Black|positive": 81,
+      "future_finetuning|White|negative": 41,
+      "future_finetuning|White|neutral": 78,
+      "future_finetuning|White|positive": 81
+    },
+    "finetuning_split_counts": {
+      "development|Black|Female": 20,
+      "development|Black|Male": 20,
+      "development|White|Female": 20,
+      "development|White|Male": 20,
+      "train|Black|Female": 80,
+      "train|Black|Male": 80,
+      "train|White|Female": 80,
+      "train|White|Male": 80
+    },
+    "input_images": 11483,
+    "intersection_counts": {
+      "evaluation|Black|Female": 100,
+      "evaluation|Black|Male": 100,
+      "evaluation|White|Female": 100,
+      "evaluation|White|Male": 100,
+      "future_finetuning|Black|Female": 100,
+      "future_finetuning|Black|Male": 100,
+      "future_finetuning|White|Female": 100,
+      "future_finetuning|White|Male": 100
+    },
+    "malformed_source_filenames": [
+      "39_1_20170116174525125.jpg.chip.jpg",
+      "61_1_20170109142408075.jpg.chip.jpg",
+      "61_1_20170109150557335.jpg.chip.jpg"
+    ],
+    "min_expression_confidence": 0.6,
+    "min_quality_score": 0.5,
+    "pool_counts": {
+      "evaluation": 400,
+      "future_finetuning": 400
+    },
+    "seed": 31082026,
+    "selected_images": 800
+  },
+  "source_archive_sha256": "2c0655397b498e81b82d685ee74bee8c2e4364a5897caf3afec6ea48929024a7",
+  "transport_mirror": "https://huggingface.co/datasets/py97/UTKFace-Cropped",
+  "transport_revision": "e80f21fb21fa3631380c3cb634b79be3ac2f4cba"
+}

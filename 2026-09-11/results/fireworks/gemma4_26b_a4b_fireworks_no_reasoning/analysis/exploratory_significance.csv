@@ -1,0 +1,2 @@
+model_key,model_display_name,images_with_valid_outputs,observed_black_minus_white_gap,two_sided_permutation_p_value,permutation_method,stratified_label_permutations,bh_adjusted_p_value_across_models
+gemma4_26b_a4b_fireworks,Gemma 4 26B A4B IT (Fireworks base),12,0.2982539682539682,0.26,exact,400,0.26

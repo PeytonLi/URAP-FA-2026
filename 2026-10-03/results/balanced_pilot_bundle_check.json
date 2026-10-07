@@ -1,0 +1,13 @@
+{
+  "archive_sha256": "5cf6523a13b19843f013f8f3a12614ac350e059d011436b05dc15790bd3e336e",
+  "benchmark_images": 12,
+  "checked_at": "2026-10-07T21:48:31.095320+00:00",
+  "credentials_included": false,
+  "development_images": 180,
+  "extracted_cohort_replay_passed": true,
+  "file_count": 970,
+  "paid_resource_created": false,
+  "reserved_test_images_included": 0,
+  "study_optimizer_updates": 0,
+  "training_images": 676
+}

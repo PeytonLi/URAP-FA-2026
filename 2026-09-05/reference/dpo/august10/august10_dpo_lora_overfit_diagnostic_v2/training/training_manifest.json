@@ -1,0 +1,416 @@
+{
+  "attention_implementation": "sdpa",
+  "checkpoint_artifacts": [
+    {
+      "hashes": {
+        "adapter_config.json": "f2df86f91adf848a0d49221c454cf3efffa4c780bef9d21e405d3693f8b5df19",
+        "adapter_model.safetensors": "b2c8e2cca75ff6485159a4e6d79bf992211cc4736b78c9c875b2edea8283b902"
+      },
+      "optimizer_update": 8,
+      "path": "outputs/august10/diagnostic_overfit_v2_informative/training_mean_lr5e5_seed81020261/checkpoints/step_0008"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "f2df86f91adf848a0d49221c454cf3efffa4c780bef9d21e405d3693f8b5df19",
+        "adapter_model.safetensors": "5f59acaf4b7f1bf3ae026ccb07bcbe5bb250c110632929eb8aebc4334395c4e0"
+      },
+      "optimizer_update": 16,
+      "path": "outputs/august10/diagnostic_overfit_v2_informative/training_mean_lr5e5_seed81020261/checkpoints/step_0016"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "f2df86f91adf848a0d49221c454cf3efffa4c780bef9d21e405d3693f8b5df19",
+        "adapter_model.safetensors": "22453fc83b40bc022dab87169ae684bf3607a02e79373a5fbc0fceebe3ba0a18"
+      },
+      "optimizer_update": 24,
+      "path": "outputs/august10/diagnostic_overfit_v2_informative/training_mean_lr5e5_seed81020261/checkpoints/step_0024"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "f2df86f91adf848a0d49221c454cf3efffa4c780bef9d21e405d3693f8b5df19",
+        "adapter_model.safetensors": "e2fbbbbfbff8ee5ffa8935094a2fc7a9d28036481016d1f5e9d21284a04933b7"
+      },
+      "optimizer_update": 32,
+      "path": "outputs/august10/diagnostic_overfit_v2_informative/training_mean_lr5e5_seed81020261/checkpoints/step_0032"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "f2df86f91adf848a0d49221c454cf3efffa4c780bef9d21e405d3693f8b5df19",
+        "adapter_model.safetensors": "30b4fa1f3a81a5974fe8860bbba58bf73221538f974316291212847120327e1a"
+      },
+      "optimizer_update": 40,
+      "path": "outputs/august10/diagnostic_overfit_v2_informative/training_mean_lr5e5_seed81020261/checkpoints/step_0040"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "f2df86f91adf848a0d49221c454cf3efffa4c780bef9d21e405d3693f8b5df19",
+        "adapter_model.safetensors": "d4feb575cdd502a8ebcdc0a971035f65d582c5c6b74f16b2b5f3b9e1cf3d5f00"
+      },
+      "optimizer_update": 48,
+      "path": "outputs/august10/diagnostic_overfit_v2_informative/training_mean_lr5e5_seed81020261/checkpoints/step_0048"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "f2df86f91adf848a0d49221c454cf3efffa4c780bef9d21e405d3693f8b5df19",
+        "adapter_model.safetensors": "d4feb575cdd502a8ebcdc0a971035f65d582c5c6b74f16b2b5f3b9e1cf3d5f00"
+      },
+      "optimizer_update": 48,
+      "path": "outputs/august10/diagnostic_overfit_v2_informative/training_mean_lr5e5_seed81020261/checkpoints/final"
+    }
+  ],
+  "checkpoints": [
+    "step_0008",
+    "step_0016",
+    "step_0024",
+    "step_0032",
+    "step_0040",
+    "step_0048",
+    "final"
+  ],
+  "confirmatory_evaluation_opened": false,
+  "dataset_source_manifest": "/workspace/gemma3-fairface-debiasing-august10/data/august10/diagnostic_overfit_v2_informative/diagnostic_manifest.json",
+  "dataset_source_manifest_sha256": "6356a1fe7f9793bd2d4efe12cd90b1abba33a18a2e0d07f5081c6444645e54fe",
+  "dataset_source_protocol": "august10-dpo-lora-overfit-diagnostic-v2-informative",
+  "dataset_validation": {
+    "checks": {
+      "balanced_race_rows": {
+        "observed": {
+          "development": {
+            "Black": 6,
+            "White": 6
+          },
+          "train": {
+            "Black": 96,
+            "White": 96
+          }
+        },
+        "pass": true,
+        "requirement": "Black == White in each split"
+      },
+      "development_rows": {
+        "observed": 12,
+        "pass": true,
+        "requirement": "12"
+      },
+      "development_rows_per_image": {
+        "observed": [
+          1
+        ],
+        "pass": true,
+        "requirement": "[1]"
+      },
+      "exact_prompt": {
+        "observed": 1,
+        "pass": true,
+        "requirement": "one exact frozen IAT prompt"
+      },
+      "expression_class_matched_within_blocks": {
+        "observed": {
+          "aug10-profile-rematch-09d3031a269d8070": [
+            "neutral"
+          ],
+          "aug10-profile-rematch-6a7ba098e38a5bc7": [
+            "negative"
+          ],
+          "aug10-profile-rematch-8905895f29515019": [
+            "negative"
+          ],
+          "aug10-profile-rematch-e7b9b857040562e5": [
+            "neutral"
+          ],
+          "aug10-profile-rematch-f16221541dc315bc": [
+            "positive"
+          ],
+          "aug10-profile-rematch-fa88f665d931557a": [
+            "positive"
+          ]
+        },
+        "pass": true,
+        "requirement": "one expression class per matched block"
+      },
+      "iat_only": {
+        "observed": [
+          "iat_3word"
+        ],
+        "pass": true,
+        "requirement": "['iat_3word']"
+      },
+      "informative_base_negative_events": {
+        "observed": {
+          "Black": 15,
+          "White": 15
+        },
+        "pass": true,
+        "requirement": ">= 6 screened base negative terms for each race"
+      },
+      "intentional_exact_image_overlap": {
+        "observed": 12,
+        "pass": true,
+        "requirement": "12; diagnostic only"
+      },
+      "protected_evaluation_disjoint": {
+        "observed": [],
+        "pass": true,
+        "requirement": "no overlap with protected evaluation hashes"
+      },
+      "protocol_labels": {
+        "observed": [
+          "august10-dpo-lora-overfit-diagnostic-v2-informative"
+        ],
+        "pass": true,
+        "requirement": "one supported protocol: august10-dpo-lora-overfit-diagnostic-v2-informative"
+      },
+      "race_invariant_template_distribution": {
+        "observed": {
+          "Black": [
+            [
+              "Friend, Pleasing, Appealing",
+              "Pain, Hurtful, Tragic",
+              24
+            ],
+            [
+              "Friendship, Happy, Pleasure",
+              "Grief, Nasty, Disaster",
+              24
+            ],
+            [
+              "Glad, Cheerful, Delight",
+              "Sadness, Horrible, Hate",
+              24
+            ],
+            [
+              "Joyful, Lovely, Excellent",
+              "Angry, Ugly, Failure",
+              24
+            ]
+          ],
+          "White": [
+            [
+              "Friend, Pleasing, Appealing",
+              "Pain, Hurtful, Tragic",
+              24
+            ],
+            [
+              "Friendship, Happy, Pleasure",
+              "Grief, Nasty, Disaster",
+              24
+            ],
+            [
+              "Glad, Cheerful, Delight",
+              "Sadness, Horrible, Hate",
+              24
+            ],
+            [
+              "Joyful, Lovely, Excellent",
+              "Angry, Ugly, Failure",
+              24
+            ]
+          ]
+        },
+        "pass": true,
+        "requirement": "identical Black and White training-template counts"
+      },
+      "required_fields": {
+        "observed": [],
+        "pass": true,
+        "requirement": "no missing required fields"
+      },
+      "response_direction": {
+        "observed": [],
+        "pass": true,
+        "requirement": "chosen has 0 and rejected has 3 negative terms"
+      },
+      "rows": {
+        "observed": 204,
+        "pass": true,
+        "requirement": "204"
+      },
+      "screening_selected_terms_present": {
+        "observed": {
+          "Black": 90,
+          "White": 90
+        },
+        "pass": true,
+        "requirement": "> 0 screened terms for each race"
+      },
+      "train_rows": {
+        "observed": 192,
+        "pass": true,
+        "requirement": "192"
+      },
+      "train_rows_per_image": {
+        "observed": [
+          16
+        ],
+        "pass": true,
+        "requirement": "[16]"
+      },
+      "unique_images": {
+        "observed": 12,
+        "pass": true,
+        "requirement": "12"
+      },
+      "unique_pair_ids": {
+        "observed": 204,
+        "pass": true,
+        "requirement": "204 unique nonempty IDs"
+      }
+    },
+    "decision": "authorize_diagnostic_overfit",
+    "intentional_train_development_image_overlap": true,
+    "metrics": {
+      "development_rows": 12,
+      "forbidden_overlap": 0,
+      "rows": 204,
+      "train_rows": 192,
+      "unique_images": 12
+    },
+    "non_confirmatory": true,
+    "pass": true,
+    "protocol_version": "august10-overfit-diagnostic-gate-v1"
+  },
+  "development_preference_gate": {
+    "checks": {
+      "both_races_margin_delta_positive": true,
+      "both_races_preference_accuracy_at_least_80pct": true,
+      "both_races_present": true,
+      "overall_margin_delta_positive": true,
+      "overall_preference_accuracy_at_least_90pct": true
+    },
+    "interpretation": "Mechanistic overfit diagnostic only; not a fairness result.",
+    "pass": true
+  },
+  "development_preference_summary": {
+    "groups": {
+      "iat_3word/Black": {
+        "mean_margin_delta": 27.208333333333332,
+        "preference_accuracy": 1.0,
+        "rows": 6
+      },
+      "iat_3word/White": {
+        "mean_margin_delta": 26.375,
+        "preference_accuracy": 1.0,
+        "rows": 6
+      }
+    },
+    "mean_dpo_loss": 0.06656470773471448,
+    "mean_margin_delta": 26.791666666666668,
+    "preference_accuracy": 1.0,
+    "rows": 12
+  },
+  "development_rows": 12,
+  "diagnostic_overfit": true,
+  "diagnostic_plots": [
+    "outputs/august10/diagnostic_overfit_v2_informative/training_mean_lr5e5_seed81020261/01_training_loss_by_race.png",
+    "outputs/august10/diagnostic_overfit_v2_informative/training_mean_lr5e5_seed81020261/02_development_preference_by_group.png",
+    "outputs/august10/diagnostic_overfit_v2_informative/training_mean_lr5e5_seed81020261/03_margin_and_gradient_diagnostics.png"
+  ],
+  "effective_gradient_steps": 192,
+  "final_adapter": "outputs/august10/diagnostic_overfit_v2_informative/training_mean_lr5e5_seed81020261/checkpoints/final",
+  "final_adapter_hashes": {
+    "adapter_config.json": "f2df86f91adf848a0d49221c454cf3efffa4c780bef9d21e405d3693f8b5df19",
+    "adapter_model.safetensors": "d4feb575cdd502a8ebcdc0a971035f65d582c5c6b74f16b2b5f3b9e1cf3d5f00"
+  },
+  "finished_at": "2026-08-10T19:34:11+0000",
+  "forbidden_eval_hash_count": 419,
+  "forbidden_eval_hashes": "/workspace/gemma3-fairface-debiasing-august10/reference/frozen_base/frozen_input_manifest.json",
+  "forbidden_eval_hashes_sha256": "fb5637fa3cf275c2241e7366470e14a57a059bdb35de54dfc130c690305f6614",
+  "fresh_lora": true,
+  "frozen_csv": "/workspace/gemma3-fairface-debiasing-august10/data/august10/diagnostic_overfit_v2_informative/diagnostic_dpo_pairs_frozen.csv",
+  "frozen_csv_sha256": "a35460e6a476931b555f3b2ae6b52ecf5726ccbd704d864bcbeb46af9f629909",
+  "gpu_memory": {
+    "peak_allocated_gib": 23.619694232940674,
+    "peak_reserved_gib": 25.19921875,
+    "total_gib": 79.1787109375
+  },
+  "gradient_method": "exact_coefficient_replay_one_response_graph_at_a_time",
+  "gradient_steps": 192,
+  "hyperparameters": {
+    "dpo_beta": 0.1,
+    "gradient_accumulation": 4,
+    "gradient_checkpointing": true,
+    "learning_rate": 5e-05,
+    "lora_alpha": 16,
+    "lora_dropout": 0.0,
+    "lora_rank": 8,
+    "max_response_tokens": 384,
+    "sequence_logp_reduction": "mean",
+    "warmup_updates_effective": 5,
+    "warmup_updates_requested": 0
+  },
+  "launched_at": "2026-08-10T19:28:48+0000",
+  "logits_scope": "response_prediction_positions_only_via_logits_to_keep",
+  "model_id": "google/gemma-3-12b-it",
+  "model_revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "model_source": "/workspace/.hf/hub/models--google--gemma-3-12b-it/snapshots/96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "model_source_kind": "local_snapshot",
+  "optimizer_updates": 48,
+  "planned_optimizer_updates": 48,
+  "prior_adapter_loaded": false,
+  "progress": {
+    "gpu_allocated_gib": 23.129099369049072,
+    "gpu_peak_allocated_gib": 23.619694232940674,
+    "gpu_peak_reserved_gib": 25.19921875,
+    "gpu_reserved_gib": 25.19921875,
+    "gradient_steps_completed": 192,
+    "gradient_steps_total": 192,
+    "last_loss": 0.0009808873039529604,
+    "last_update_at": "2026-08-10T19:34:03+0000",
+    "optimizer_updates_completed": 48,
+    "optimizer_updates_total": 48
+  },
+  "reference_scores": 204,
+  "runtime_environment": {
+    "cuda_available": true,
+    "cuda_device_count": 1,
+    "cuda_devices": [
+      {
+        "index": 0,
+        "name": "NVIDIA H100 80GB HBM3",
+        "total_memory_gib": 79.1787109375
+      }
+    ],
+    "cudnn": 90100,
+    "packages": {
+      "accelerate": "1.4.0",
+      "datasets": "3.4.1",
+      "huggingface-hub": "0.28.1",
+      "numpy": "2.2.3",
+      "peft": "0.14.0",
+      "pillow": "11.1.0",
+      "safetensors": "0.5.3",
+      "sentencepiece": "0.2.0",
+      "transformers": "4.50.0"
+    },
+    "torch": "2.4.1+cu124",
+    "torch_cuda": "12.4"
+  },
+  "status": "complete",
+  "train_rows": 192,
+  "trainable_name_sample": [
+    "base_model.model.language_model.model.layers.0.self_attn.q_proj.lora_A.default.weight",
+    "base_model.model.language_model.model.layers.0.self_attn.q_proj.lora_B.default.weight",
+    "base_model.model.language_model.model.layers.0.self_attn.k_proj.lora_A.default.weight",
+    "base_model.model.language_model.model.layers.0.self_attn.k_proj.lora_B.default.weight",
+    "base_model.model.language_model.model.layers.0.self_attn.v_proj.lora_A.default.weight",
+    "base_model.model.language_model.model.layers.0.self_attn.v_proj.lora_B.default.weight",
+    "base_model.model.language_model.model.layers.0.self_attn.o_proj.lora_A.default.weight",
+    "base_model.model.language_model.model.layers.0.self_attn.o_proj.lora_B.default.weight",
+    "base_model.model.language_model.model.layers.0.mlp.gate_proj.lora_A.default.weight",
+    "base_model.model.language_model.model.layers.0.mlp.gate_proj.lora_B.default.weight",
+    "base_model.model.language_model.model.layers.0.mlp.up_proj.lora_A.default.weight",
+    "base_model.model.language_model.model.layers.0.mlp.up_proj.lora_B.default.weight",
+    "base_model.model.language_model.model.layers.0.mlp.down_proj.lora_A.default.weight",
+    "base_model.model.language_model.model.layers.0.mlp.down_proj.lora_B.default.weight",
+    "base_model.model.language_model.model.layers.1.self_attn.q_proj.lora_A.default.weight",
+    "base_model.model.language_model.model.layers.1.self_attn.q_proj.lora_B.default.weight",
+    "base_model.model.language_model.model.layers.1.self_attn.k_proj.lora_A.default.weight",
+    "base_model.model.language_model.model.layers.1.self_attn.k_proj.lora_B.default.weight",
+    "base_model.model.language_model.model.layers.1.self_attn.v_proj.lora_A.default.weight",
+    "base_model.model.language_model.model.layers.1.self_attn.v_proj.lora_B.default.weight"
+  ],
+  "trainable_parameter_tensors": 672,
+  "trainable_parameters": 32735232,
+  "training_wall_seconds": 202.91435837745667,
+  "wall_seconds": 323.20034193992615
+}

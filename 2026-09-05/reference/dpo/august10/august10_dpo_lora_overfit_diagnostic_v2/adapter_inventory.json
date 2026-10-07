@@ -1,0 +1,67 @@
+{
+  "checkpoint_artifacts": [
+    {
+      "hashes": {
+        "adapter_config.json": "f2df86f91adf848a0d49221c454cf3efffa4c780bef9d21e405d3693f8b5df19",
+        "adapter_model.safetensors": "b2c8e2cca75ff6485159a4e6d79bf992211cc4736b78c9c875b2edea8283b902"
+      },
+      "optimizer_update": 8,
+      "path": "outputs/august10/diagnostic_overfit_v2_informative/training_mean_lr5e5_seed81020261/checkpoints/step_0008"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "f2df86f91adf848a0d49221c454cf3efffa4c780bef9d21e405d3693f8b5df19",
+        "adapter_model.safetensors": "5f59acaf4b7f1bf3ae026ccb07bcbe5bb250c110632929eb8aebc4334395c4e0"
+      },
+      "optimizer_update": 16,
+      "path": "outputs/august10/diagnostic_overfit_v2_informative/training_mean_lr5e5_seed81020261/checkpoints/step_0016"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "f2df86f91adf848a0d49221c454cf3efffa4c780bef9d21e405d3693f8b5df19",
+        "adapter_model.safetensors": "22453fc83b40bc022dab87169ae684bf3607a02e79373a5fbc0fceebe3ba0a18"
+      },
+      "optimizer_update": 24,
+      "path": "outputs/august10/diagnostic_overfit_v2_informative/training_mean_lr5e5_seed81020261/checkpoints/step_0024"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "f2df86f91adf848a0d49221c454cf3efffa4c780bef9d21e405d3693f8b5df19",
+        "adapter_model.safetensors": "e2fbbbbfbff8ee5ffa8935094a2fc7a9d28036481016d1f5e9d21284a04933b7"
+      },
+      "optimizer_update": 32,
+      "path": "outputs/august10/diagnostic_overfit_v2_informative/training_mean_lr5e5_seed81020261/checkpoints/step_0032"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "f2df86f91adf848a0d49221c454cf3efffa4c780bef9d21e405d3693f8b5df19",
+        "adapter_model.safetensors": "30b4fa1f3a81a5974fe8860bbba58bf73221538f974316291212847120327e1a"
+      },
+      "optimizer_update": 40,
+      "path": "outputs/august10/diagnostic_overfit_v2_informative/training_mean_lr5e5_seed81020261/checkpoints/step_0040"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "f2df86f91adf848a0d49221c454cf3efffa4c780bef9d21e405d3693f8b5df19",
+        "adapter_model.safetensors": "d4feb575cdd502a8ebcdc0a971035f65d582c5c6b74f16b2b5f3b9e1cf3d5f00"
+      },
+      "optimizer_update": 48,
+      "path": "outputs/august10/diagnostic_overfit_v2_informative/training_mean_lr5e5_seed81020261/checkpoints/step_0048"
+    },
+    {
+      "hashes": {
+        "adapter_config.json": "f2df86f91adf848a0d49221c454cf3efffa4c780bef9d21e405d3693f8b5df19",
+        "adapter_model.safetensors": "d4feb575cdd502a8ebcdc0a971035f65d582c5c6b74f16b2b5f3b9e1cf3d5f00"
+      },
+      "optimizer_update": 48,
+      "path": "outputs/august10/diagnostic_overfit_v2_informative/training_mean_lr5e5_seed81020261/checkpoints/final"
+    }
+  ],
+  "diagnostic_only": true,
+  "final_adapter": "outputs/august10/diagnostic_overfit_v2_informative/training_mean_lr5e5_seed81020261/checkpoints/final",
+  "final_adapter_hashes": {
+    "adapter_config.json": "f2df86f91adf848a0d49221c454cf3efffa4c780bef9d21e405d3693f8b5df19",
+    "adapter_model.safetensors": "d4feb575cdd502a8ebcdc0a971035f65d582c5c6b74f16b2b5f3b9e1cf3d5f00"
+  },
+  "recommended_checkpoint": "step_0008"
+}

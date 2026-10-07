@@ -1,0 +1,34 @@
+{
+  "balance_caveat": "Estimated from this run's returned token usage; unrelated account activity, taxes, credit adjustments, and provider-side rounding are not observable.",
+  "by_model": {
+    "claude-opus-5": {
+      "calls": 260,
+      "estimated_cost_usd": 6.50516,
+      "input_tokens": 601352,
+      "output_tokens": 139936
+    },
+    "claude-sonnet-5": {
+      "calls": 695,
+      "estimated_cost_usd": 8.134582,
+      "input_tokens": 1786201,
+      "output_tokens": 456218
+    }
+  },
+  "cumulative_august10": {
+    "calls": 955,
+    "estimated_cost_usd": 14.639742,
+    "input_tokens": 2387553,
+    "output_tokens": 596154
+  },
+  "negative_expression_expansion_session": {
+    "authorized_budget_usd": 10.0,
+    "calls": 219,
+    "estimated_cost_usd": 3.367927,
+    "estimated_remaining_usd": 6.632073,
+    "input_tokens": 549355,
+    "output_tokens": 141080
+  },
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "pricing_verified_date": "2026-08-09",
+  "protocol_version": "august10-public-claude-usage-v1"
+}

@@ -1,0 +1,58 @@
+{
+  "decodingtrust_gemma_condition": {
+    "access": "OpenRouter Chat Completions API",
+    "account_usage_delta_usd": 0.001219250000000116,
+    "classifications": {
+      "AGREE": 2,
+      "DISAGREE": 12,
+      "NO_RESPONSE": 34
+    },
+    "fallback": false,
+    "finish_reasons": {
+      "length": 34,
+      "stop": 14
+    },
+    "max_tokens_per_response": 150,
+    "model_id": "google/gemma-3-12b-it",
+    "provider_endpoint": "deepinfra/bf16",
+    "remaining_credit_usd": 21.987819656,
+    "reported_cost_usd": 0.0013756499999999995,
+    "rows": 48,
+    "valid_rows": 48
+  },
+  "figures": [
+    "results/presentation/figures/01_iat_gemma_local_without_grok.png",
+    "results/presentation/figures/01_iat_gemma_local_with_grok.png",
+    "results/presentation/figures/02_decodingtrust_gemma_hosted_without_grok.png",
+    "results/presentation/figures/02_decodingtrust_gemma_hosted_with_grok.png"
+  ],
+  "minimal_v2_figures": [
+    "01_iat_gemma_local_without_grok_v2.png",
+    "01_iat_gemma_local_with_grok_v2.png",
+    "02_decodingtrust_gemma_hosted_without_grok_v2.png",
+    "02_decodingtrust_gemma_hosted_with_grok_v2.png",
+    "03_iat_black_minus_white_gap_without_grok_v2.png",
+    "03_iat_black_minus_white_gap_with_grok_v2.png"
+  ],
+  "iat_gemma_condition": {
+    "access": "local Transformers image-text pipeline",
+    "attention": "eager",
+    "revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
+    "rows": 120
+  },
+  "source_sha256": {
+    "august24_decodingtrust_prompts": "5e5c20a2d61d6488c8e0dcb0655b71c01e9146d9e6103d4277592ee5fbbfaa33",
+    "august24_decodingtrust_responses": "615756b0ee741d7954b060f3f4c5ceacae6f56f0cf5c25ee7a2cc570c04d2cf0",
+    "august24_iat_responses": "7406ddbc2f93f0d2ade646c775318cdaa301e0b2f5dfcf84d2611462512ad8b0",
+    "local_gemma_iat_responses": "c4496947930208e61380074cc49d8d35ca9b8823ca901313be4bd5f03c5fc58c",
+    "local_gemma_input_manifest": "fb5637fa3cf275c2241e7366470e14a57a059bdb35de54dfc130c690305f6614"
+  },
+  "statistical_methods": {
+    "decodingtrust_confidence_interval": "95% Wilson binomial interval",
+    "decodingtrust_test": "20,000-sample race-group range permutation within model and regime",
+    "iat_confidence_interval": "100,000-sample image-cluster bootstrap stratified by race and gender",
+    "iat_test": "two-sided exact image-label permutation stratified by gender",
+    "multiplicity": "Benjamini-Hochberg correction recomputed separately within each displayed family"
+  },
+  "study_date": "2026-08-26"
+}

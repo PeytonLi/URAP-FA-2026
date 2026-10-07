@@ -1,0 +1,62 @@
+[
+  {
+    "benchmark_aggregation_rule": "See METHODS.md: images/pairs, shared topic blocks, or repeated-subject clusters; never treat all repeated responses as independent",
+    "benchmark_exclusion_rule": "Preserve all raw outputs; parser/scorer validity controls denominator; incomplete image pairs excluded only from paired tests",
+    "benchmark_input_construction_code_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/scripts/prepare_tasks.py",
+    "benchmark_item_manifest_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/data/frozen/local_tasks.json",
+    "benchmark_name": "IAT61",
+    "benchmark_prompt_template_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/data/frozen/local_tasks.json",
+    "benchmark_protocol_notes": "Hosted/local generation contracts differ; adaptations/subsets are not full original-paper replications; no causal or mental-state inference.",
+    "benchmark_score_direction_definition": "See METHODS.md axes section and metric-specific dictionary",
+    "benchmark_scoring_code_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/scripts/analyze_evidence.py",
+    "benchmark_scoring_formula_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/report/METHODS.md",
+    "benchmark_source_url": "Local research protocol: source constants and frozen pre-DPO pipeline archive",
+    "benchmark_task_subset_names": "race-focused subset; VisBias descriptions and income/education; IAT61 three-word selection",
+    "benchmark_version": "September5 evidence revision; exact upstream commits and historical protocol IDs in frozen source manifests"
+  },
+  {
+    "benchmark_aggregation_rule": "See METHODS.md: images/pairs, shared topic blocks, or repeated-subject clusters; never treat all repeated responses as independent",
+    "benchmark_exclusion_rule": "Preserve all raw outputs; parser/scorer validity controls denominator; incomplete image pairs excluded only from paired tests",
+    "benchmark_input_construction_code_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/scripts/prepare_tasks.py",
+    "benchmark_item_manifest_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/data/frozen/local_tasks.json",
+    "benchmark_name": "VisBias",
+    "benchmark_prompt_template_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/data/frozen/local_tasks.json",
+    "benchmark_protocol_notes": "Hosted/local generation contracts differ; adaptations/subsets are not full original-paper replications; no causal or mental-state inference.",
+    "benchmark_score_direction_definition": "See METHODS.md axes section and metric-specific dictionary",
+    "benchmark_scoring_code_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/scripts/analyze_evidence.py",
+    "benchmark_scoring_formula_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/report/METHODS.md",
+    "benchmark_source_url": "https://aclanthology.org/2025.emnlp-main.908/",
+    "benchmark_task_subset_names": "race-focused subset; VisBias descriptions and income/education; IAT61 three-word selection",
+    "benchmark_version": "September5 evidence revision; exact upstream commits and historical protocol IDs in frozen source manifests"
+  },
+  {
+    "benchmark_aggregation_rule": "See METHODS.md: images/pairs, shared topic blocks, or repeated-subject clusters; never treat all repeated responses as independent",
+    "benchmark_exclusion_rule": "Preserve all raw outputs; parser/scorer validity controls denominator; incomplete image pairs excluded only from paired tests",
+    "benchmark_input_construction_code_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/scripts/prepare_tasks.py",
+    "benchmark_item_manifest_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/data/frozen/local_tasks.json",
+    "benchmark_name": "DecodingTrust",
+    "benchmark_prompt_template_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/data/frozen/local_tasks.json",
+    "benchmark_protocol_notes": "Hosted/local generation contracts differ; adaptations/subsets are not full original-paper replications; no causal or mental-state inference.",
+    "benchmark_score_direction_definition": "See METHODS.md axes section and metric-specific dictionary",
+    "benchmark_scoring_code_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/scripts/analyze_evidence.py",
+    "benchmark_scoring_formula_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/report/METHODS.md",
+    "benchmark_source_url": "https://decodingtrust.github.io/",
+    "benchmark_task_subset_names": "race-focused subset; VisBias descriptions and income/education; IAT61 three-word selection",
+    "benchmark_version": "September5 evidence revision; exact upstream commits and historical protocol IDs in frozen source manifests"
+  },
+  {
+    "benchmark_aggregation_rule": "See METHODS.md: images/pairs, shared topic blocks, or repeated-subject clusters; never treat all repeated responses as independent",
+    "benchmark_exclusion_rule": "Preserve all raw outputs; parser/scorer validity controls denominator; incomplete image pairs excluded only from paired tests",
+    "benchmark_input_construction_code_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/scripts/prepare_tasks.py",
+    "benchmark_item_manifest_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/data/frozen/local_tasks.json",
+    "benchmark_name": "BOLD",
+    "benchmark_prompt_template_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/data/frozen/local_tasks.json",
+    "benchmark_protocol_notes": "Hosted/local generation contracts differ; adaptations/subsets are not full original-paper replications; no causal or mental-state inference.",
+    "benchmark_score_direction_definition": "See METHODS.md axes section and metric-specific dictionary",
+    "benchmark_scoring_code_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/scripts/analyze_evidence.py",
+    "benchmark_scoring_formula_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/report/METHODS.md",
+    "benchmark_source_url": "https://arxiv.org/abs/2101.11718",
+    "benchmark_task_subset_names": "race-focused subset; VisBias descriptions and income/education; IAT61 three-word selection",
+    "benchmark_version": "September5 evidence revision; exact upstream commits and historical protocol IDs in frozen source manifests"
+  }
+]

@@ -1,0 +1,2185 @@
+{
+  "account_usage_delta_usd": 0.70660634,
+  "analysis": {
+    "category_significance_csv": "results/bold/bold_race_eight_model_expanded_20260824_v3/category_significance.csv",
+    "category_summary_csv": "results/bold/bold_race_eight_model_expanded_20260824_v3/category_summary.csv",
+    "domain_summary_csv": "results/bold/bold_race_eight_model_expanded_20260824_v3/domain_summary.csv",
+    "metrics_json": "results/bold/bold_race_eight_model_expanded_20260824_v3/metrics.json",
+    "model_summary_csv": "results/bold/bold_race_eight_model_expanded_20260824_v3/model_summary.csv",
+    "plots": [
+      "results/bold/bold_race_eight_model_expanded_20260824_v3/plots/comparison_01_toxicity.png",
+      "results/bold/bold_race_eight_model_expanded_20260824_v3/plots/comparison_02_sentiment.png",
+      "results/bold/bold_race_eight_model_expanded_20260824_v3/plots/comparison_03_regard.png",
+      "results/bold/bold_race_eight_model_expanded_20260824_v3/plots/race_category_01_toxicity.png",
+      "results/bold/bold_race_eight_model_expanded_20260824_v3/plots/race_category_02_sentiment.png",
+      "results/bold/bold_race_eight_model_expanded_20260824_v3/plots/race_category_03_regard.png"
+    ],
+    "scored_responses_csv": "results/bold/bold_race_eight_model_expanded_20260824_v3/scored_responses.csv",
+    "scoring_status": "complete"
+  },
+  "benchmark_version": "bold-inspect-evals-2-A",
+  "client": {
+    "max_retries": 1,
+    "timeout_seconds": 60.0
+  },
+  "config": {
+    "base_seed": 24082026,
+    "benchmark_version": "bold-inspect-evals-2-A",
+    "max_run_cost_usd": 0.5,
+    "max_workers": 3,
+    "minimum_account_balance_usd": 13.99,
+    "minimum_request_interval_seconds": 10.0,
+    "provider": {
+      "allow_fallbacks": false,
+      "data_collection": "deny",
+      "zdr": true
+    },
+    "repeats": 1,
+    "retry_empty_responses": true,
+    "temperature": 1.0,
+    "top_p": 1.0
+  },
+  "credits_after": {
+    "remaining": 22.452203178,
+    "total_credits": 25.0,
+    "total_usage": 2.547796822
+  },
+  "credits_before_latest_invocation": {
+    "remaining": 22.480636118,
+    "total_credits": 25.0,
+    "total_usage": 2.519363882
+  },
+  "credits_initial": {
+    "remaining": 23.158809517999998,
+    "total_credits": 25.0,
+    "total_usage": 1.841190482
+  },
+  "finished_at": "2026-08-24T14:17:40.559439+00:00",
+  "initial_started_at": "2026-08-24T13:50:42.173850+00:00",
+  "latest_invocation_started_at": "2026-08-24T14:15:08.117233+00:00",
+  "latest_invocation_usage_delta_usd": 0.028432940000000073,
+  "manifest_repair": {
+    "healthy_route_snapshot": "results/compatibility/openrouter_route_snapshot_20260824_azure_eu.json",
+    "healthy_route_snapshot_sha256": "c123a445caae8ddf89d1179c3f2ba7d6e6080abbfa30197015f2a4e613e54274",
+    "previous_manifest_model_keys": [
+      "qwen35_9b",
+      "step37_flash",
+      "grok46"
+    ],
+    "reason": "A subset-only retry replaced manifest model metadata; response cells were preserved and are unchanged.",
+    "repaired_at": "2026-08-24T15:01:35.086766+00:00",
+    "response_records_verified": 800,
+    "restored_model_keys": [
+      "qwen35_9b",
+      "kimi_k3",
+      "gpt56_luna",
+      "gemini36_flash",
+      "mimo_v25",
+      "minimax_m3",
+      "step37_flash",
+      "grok46"
+    ]
+  },
+  "model_catalog_snapshot": [
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Qwen3"
+      },
+      "canonical_slug": "qwen/qwen3.5-9b-20260310",
+      "context_length": 262144,
+      "created": 1773152396,
+      "id": "qwen/qwen3.5-9b",
+      "name": "Qwen: Qwen3.5-9B",
+      "pricing": {
+        "completion": "0.00000015",
+        "prompt": "0.0000001"
+      },
+      "selected_endpoint": {
+        "context_length": 262144,
+        "max_completion_tokens": 81920,
+        "max_prompt_tokens": null,
+        "name": "DeepInfra | qwen/qwen3.5-9b-20260310",
+        "pricing": {
+          "completion": "0.00000015",
+          "discount": 0,
+          "prompt": "0.0000001"
+        },
+        "provider_name": "DeepInfra",
+        "quantization": "bf16",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "tag": "deepinfra/bf16"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "canonical_slug": "moonshotai/kimi-k3-20260715",
+      "context_length": 1048576,
+      "created": 1784215858,
+      "id": "moonshotai/kimi-k3",
+      "name": "MoonshotAI: Kimi K3",
+      "pricing": {
+        "completion": "0.000015",
+        "input_cache_read": "0.0000003",
+        "prompt": "0.000003"
+      },
+      "selected_endpoint": {
+        "context_length": 1048576,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "name": "DeepInfra | moonshotai/kimi-k3-20260715",
+        "pricing": {
+          "completion": "0.00001425",
+          "discount": 0,
+          "input_cache_read": "0.000000285",
+          "prompt": "0.00000285"
+        },
+        "provider_name": "DeepInfra",
+        "quantization": "bf16",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs",
+          "reasoning_effort"
+        ],
+        "tag": "deepinfra/bf16"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "reasoning_effort",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "architecture": {
+        "input_modalities": [
+          "file",
+          "image",
+          "text"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+file->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "GPT"
+      },
+      "canonical_slug": "openai/gpt-5.6-luna-20260709",
+      "context_length": 1050000,
+      "created": 1783590864,
+      "id": "openai/gpt-5.6-luna",
+      "name": "OpenAI: GPT-5.6 Luna",
+      "pricing": {
+        "completion": "0.0000012",
+        "input_cache_read": "0.00000002",
+        "input_cache_write": "0.00000025",
+        "overrides": [
+          {
+            "completion": "0.0000018",
+            "input_cache_read": "0.00000004",
+            "input_cache_write": "0.0000005",
+            "min_prompt_tokens": 272000,
+            "prompt": "0.0000004"
+          }
+        ],
+        "prompt": "0.0000002",
+        "web_search": "0.01"
+      },
+      "selected_endpoint": {
+        "context_length": 1050000,
+        "max_completion_tokens": 128000,
+        "max_prompt_tokens": null,
+        "name": "Azure | openai/gpt-5.6-luna-20260709",
+        "pricing": {
+          "completion": "0.00000132",
+          "discount": 0,
+          "input_cache_read": "0.000000022",
+          "input_cache_write": "0.000000275",
+          "overrides": [
+            {
+              "completion": "0.00000198",
+              "input_cache_read": "0.000000044",
+              "input_cache_write": "0.00000055",
+              "min_prompt_tokens": 272000,
+              "prompt": "0.00000044"
+            }
+          ],
+          "prompt": "0.00000022",
+          "web_search": "0.01"
+        },
+        "provider_name": "Azure",
+        "quantization": "unknown",
+        "status": 0,
+        "supported_parameters": [
+          "max_completion_tokens",
+          "reasoning",
+          "include_reasoning",
+          "seed",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice",
+          "reasoning_effort"
+        ],
+        "tag": "azure/eu"
+      },
+      "supported_parameters": [
+        "include_reasoning",
+        "max_completion_tokens",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "tool_choice",
+        "tools"
+      ]
+    },
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video",
+          "file",
+          "audio"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+file+audio+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Gemini"
+      },
+      "canonical_slug": "google/gemini-3.6-flash-20260721",
+      "context_length": 1048576,
+      "created": 1784646733,
+      "id": "google/gemini-3.6-flash",
+      "name": "Google: Gemini 3.6 Flash",
+      "pricing": {
+        "audio": "0.00000075",
+        "completion": "0.00000375",
+        "image": "0.00000075",
+        "input_audio_cache": "0.000000075",
+        "input_cache_read": "0.000000075",
+        "input_cache_write": "0.0000000416666666666667",
+        "internal_reasoning": "0.00000375",
+        "prompt": "0.00000075",
+        "web_search": "0.014"
+      },
+      "selected_endpoint": {
+        "context_length": 1048576,
+        "max_completion_tokens": 65536,
+        "max_prompt_tokens": null,
+        "name": "Google | google/gemini-3.6-flash-20260721",
+        "pricing": {
+          "audio": "0.00000075",
+          "completion": "0.00000375",
+          "discount": 0,
+          "image": "0.00000075",
+          "input_audio_cache": "0.000000075",
+          "input_cache_read": "0.000000075",
+          "input_cache_write": "0.0000000416666666666667",
+          "internal_reasoning": "0.00000375",
+          "prompt": "0.00000075",
+          "web_search": "0.014"
+        },
+        "provider_name": "Google",
+        "quantization": "unknown",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "seed",
+          "response_format",
+          "stop",
+          "structured_outputs",
+          "tools",
+          "tool_choice",
+          "reasoning_effort"
+        ],
+        "tag": "google-vertex/global"
+      },
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ]
+    },
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "audio",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+audio+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "canonical_slug": "xiaomi/mimo-v2.5-20260422",
+      "context_length": 1050000,
+      "created": 1776874269,
+      "id": "xiaomi/mimo-v2.5",
+      "name": "Xiaomi: MiMo-V2.5",
+      "pricing": {
+        "completion": "0.00000028",
+        "input_cache_read": "0.0000000028",
+        "prompt": "0.00000014"
+      },
+      "selected_endpoint": {
+        "context_length": 262144,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "name": "DeepInfra | xiaomi/mimo-v2.5-20260422",
+        "pricing": {
+          "completion": "0.000002",
+          "discount": 0,
+          "input_cache_read": "0.00000008",
+          "prompt": "0.0000004"
+        },
+        "provider_name": "DeepInfra",
+        "quantization": "bf16",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice",
+          "logit_bias"
+        ],
+        "tag": "deepinfra/bf16"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "canonical_slug": "minimax/minimax-m3-20260531",
+      "context_length": 1048576,
+      "created": 1780245374,
+      "id": "minimax/minimax-m3",
+      "name": "MiniMax: MiniMax M3",
+      "pricing": {
+        "completion": "0.0000012",
+        "input_cache_read": "0.00000006",
+        "prompt": "0.0000003"
+      },
+      "selected_endpoint": {
+        "context_length": 524288,
+        "max_completion_tokens": 512000,
+        "max_prompt_tokens": null,
+        "name": "DeepInfra | minimax/minimax-m3-20260531",
+        "pricing": {
+          "completion": "0.0000011",
+          "discount": 0,
+          "input_cache_read": "0.000000056",
+          "prompt": "0.00000028"
+        },
+        "provider_name": "DeepInfra",
+        "quantization": "fp8",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "logit_bias"
+        ],
+        "tag": "deepinfra/fp8"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "canonical_slug": "stepfun/step-3.7-flash-20260528",
+      "context_length": 262144,
+      "created": 1779985069,
+      "id": "stepfun/step-3.7-flash",
+      "name": "StepFun: Step 3.7 Flash",
+      "pricing": {
+        "completion": "0.00000115",
+        "input_cache_read": "0.00000004",
+        "prompt": "0.0000002"
+      },
+      "selected_endpoint": {
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "name": "DeepInfra | stepfun/step-3.7-flash-20260528",
+        "pricing": {
+          "completion": "0.00000115",
+          "discount": 0,
+          "input_cache_read": "0.00000004",
+          "prompt": "0.0000002"
+        },
+        "provider_name": "DeepInfra",
+        "quantization": "unknown",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "logit_bias",
+          "tools",
+          "tool_choice",
+          "reasoning_effort"
+        ],
+        "tag": "deepinfra"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "reasoning_effort",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "file"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+file->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Grok"
+      },
+      "canonical_slug": "x-ai/grok-4.6-20260810",
+      "context_length": 500000,
+      "created": 1786548957,
+      "id": "x-ai/grok-4.6",
+      "name": "SpaceXAI: Grok 4.6",
+      "pricing": {
+        "completion": "0.000006",
+        "input_cache_read": "0.0000005",
+        "overrides": [
+          {
+            "completion": "0.000012",
+            "input_cache_read": "0.000001",
+            "min_prompt_tokens": 200000,
+            "prompt": "0.000004"
+          }
+        ],
+        "prompt": "0.000002",
+        "web_search": "0.005"
+      },
+      "selected_endpoint": {
+        "context_length": 500000,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "name": "xAI | x-ai/grok-4.6-20260810",
+        "pricing": {
+          "completion": "0.000006",
+          "discount": 0,
+          "input_cache_read": "0.0000005",
+          "overrides": [
+            {
+              "completion": "0.000012",
+              "input_cache_read": "0.000001",
+              "min_prompt_tokens": 200000,
+              "prompt": "0.000004"
+            }
+          ],
+          "prompt": "0.000002",
+          "web_search": "0.005"
+        },
+        "provider_name": "xAI",
+        "quantization": "unknown",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "logprobs",
+          "top_logprobs",
+          "tools",
+          "tool_choice",
+          "reasoning_effort"
+        ],
+        "tag": "xai/zdr"
+      },
+      "supported_parameters": [
+        "include_reasoning",
+        "logprobs",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "api_revision_hint": "qwen/qwen3.5-9b-20260310",
+      "display_name": "Qwen 3.5 9B",
+      "key": "qwen35_9b",
+      "max_concurrency": 1,
+      "max_tokens": 30,
+      "model_id": "qwen/qwen3.5-9b",
+      "provider_endpoint": "deepinfra/bf16",
+      "reasoning_effort": "none",
+      "release_date": "2026-03-02",
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "weight_access": "open-weight"
+    },
+    {
+      "api_revision_hint": "moonshotai/kimi-k3-20260715",
+      "display_name": "Kimi K3",
+      "key": "kimi_k3",
+      "max_concurrency": 2,
+      "max_tokens": 512,
+      "model_id": "moonshotai/kimi-k3",
+      "provider_endpoint": "deepinfra/bf16",
+      "reasoning_effort": "minimal",
+      "release_date": "2026-07-16",
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "weight_access": "open-weight"
+    },
+    {
+      "api_revision_hint": "openai/gpt-5.6-luna-20260709",
+      "display_name": "GPT-5.6 Luna",
+      "key": "gpt56_luna",
+      "max_concurrency": 3,
+      "max_tokens": 64,
+      "model_id": "openai/gpt-5.6-luna",
+      "provider_endpoint": "azure/eu",
+      "reasoning_effort": "none",
+      "release_date": "2026-07-09",
+      "supports_temperature": false,
+      "supports_top_p": false,
+      "weight_access": "closed-source"
+    },
+    {
+      "api_revision_hint": "google/gemini-3.6-flash-20260721",
+      "display_name": "Gemini 3.6 Flash",
+      "key": "gemini36_flash",
+      "max_concurrency": 3,
+      "max_tokens": 96,
+      "model_id": "google/gemini-3.6-flash",
+      "provider_endpoint": "google-vertex/global",
+      "reasoning_effort": "minimal",
+      "release_date": "2026-07-21",
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "weight_access": "closed-source"
+    },
+    {
+      "api_revision_hint": "xiaomi/mimo-v2.5-20260422",
+      "display_name": "MiMo-V2.5",
+      "key": "mimo_v25",
+      "max_concurrency": 2,
+      "max_tokens": 64,
+      "model_id": "xiaomi/mimo-v2.5",
+      "provider_endpoint": "deepinfra/bf16",
+      "reasoning_effort": "none",
+      "release_date": "2026-04-22",
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "weight_access": "open-weight"
+    },
+    {
+      "api_revision_hint": "minimax/minimax-m3-20260531",
+      "display_name": "MiniMax M3",
+      "key": "minimax_m3",
+      "max_concurrency": 2,
+      "max_tokens": 64,
+      "model_id": "minimax/minimax-m3",
+      "provider_endpoint": "deepinfra/fp8",
+      "reasoning_effort": "none",
+      "release_date": "2026-05-31",
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "weight_access": "open-weight"
+    },
+    {
+      "api_revision_hint": "stepfun/step-3.7-flash-20260528",
+      "display_name": "Step 3.7 Flash",
+      "key": "step37_flash",
+      "max_concurrency": 2,
+      "max_tokens": 2048,
+      "model_id": "stepfun/step-3.7-flash",
+      "provider_endpoint": "deepinfra",
+      "reasoning_effort": "minimal",
+      "release_date": "2026-05-28",
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "weight_access": "open-weight"
+    },
+    {
+      "api_revision_hint": "x-ai/grok-4.6-20260810",
+      "display_name": "Grok 4.6",
+      "key": "grok46",
+      "max_concurrency": 2,
+      "max_tokens": 64,
+      "model_id": "x-ai/grok-4.6",
+      "provider_endpoint": "xai/zdr",
+      "reasoning_effort": "minimal",
+      "release_date": "2026-08-12",
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "weight_access": "closed-source"
+    }
+  ],
+  "pending_records": 29,
+  "planned_records": 800,
+  "record_count": 800,
+  "reported_response_cost_usd": 0.6729923199999991,
+  "run_id": "bold_race_eight_model_expanded_20260824_v3",
+  "source_manifest": {
+    "benchmark": "BOLD (Bias in Open-ended Language Generation Dataset)",
+    "dataset_repository": "https://huggingface.co/datasets/AmazonScience/bold",
+    "dataset_revision": "be5f5a99b386a7c4fa7ea905685ee2d2c98301eb",
+    "files": {
+      "DATASET_CARD.md": "c64f024254927f4c0bedd0bda9cac8acecf716f888a38af3ceb6708442480e84",
+      "gender_prompt_wiki.json": "979a19c60341fff16870125c5b75ccb8435c8f62398346e4a50c555ec09075cf",
+      "political_ideology_prompt_wiki.json": "84ce4d58defaf372e30bf60a688bba83f4b738823962436849f5b776777d9795",
+      "profession_prompt_wiki.json": "fc20e19fd7f86111ac0796b41d84e3253fcd06df9a6ebde9c7606bbc52cfdfa6",
+      "race_prompt_wiki.json": "42a9836c31904074070c0dc59c8103eec2b82d8e2ebea5050c760f15e41de528",
+      "religious_ideology_prompt_wiki.json": "4309776de0be9976476299caaf13ba3f233eef2b50fef3584cae0657e6249122"
+    },
+    "inspect_evals_commit": "d2062b86650accd9601c9e594b9844826739ec88",
+    "inspect_evals_repository": "https://github.com/UKGovernmentBEIS/inspect_evals",
+    "inspect_evals_task_version": "2-A",
+    "license": "CC BY 4.0 (per the frozen dataset card)",
+    "retrieved_at": "2026-08-17"
+  },
+  "task_count": 100,
+  "tasks": [
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Kendrick_Lamar",
+        "task_key": "bold-race-d775e3c20be7c7874c7c"
+      },
+      "prompt_sha256": "b279253d088b6f6687a9162464f84abfbe4bd191df9c8d07db54f631827956a0",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-d775e3c20be7c7874c7c"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Denmark_Vesey",
+        "task_key": "bold-race-f6581a0e0f94c2bb3261"
+      },
+      "prompt_sha256": "05aa1926df00a1c9c064414e50dedd1b6b4c6147cea89851926ccd021e3accc5",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-f6581a0e0f94c2bb3261"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "James_Chaney",
+        "task_key": "bold-race-c2666c93f36eb3f48c5f"
+      },
+      "prompt_sha256": "23d729b540689447ee030286f681ed93c7ef0629e10964bbf3c3ca4eff94dd05",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-c2666c93f36eb3f48c5f"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Al_Bumbry",
+        "task_key": "bold-race-2001122be42f0bd65c8f"
+      },
+      "prompt_sha256": "b7f07fa1859203e75a712373aaf6ee3901642d7520f088d52e2a1d03a203c4e4",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-2001122be42f0bd65c8f"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Nikki_Giovanni",
+        "task_key": "bold-race-9787918b161dd5c9d9f3"
+      },
+      "prompt_sha256": "3447f1578a42f61dadb489a1c41e9b135d3adc22f6b72cf2ad989a9dcdd93d34",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-9787918b161dd5c9d9f3"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Jerry_Reese",
+        "task_key": "bold-race-bcb1bde4f2dbef05ad3e"
+      },
+      "prompt_sha256": "41b16d6152bc24ec0bb29b26798c09c7671c714de1f5f57a3636535c22d83cf7",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-bcb1bde4f2dbef05ad3e"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "1",
+        "subject_name": "Lucille_Clifton",
+        "task_key": "bold-race-a614288bf2c24a214d43"
+      },
+      "prompt_sha256": "37e72fbaed4f2235b89194076e03529d7765342021462761fe6711f80527f27a",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-a614288bf2c24a214d43"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Lynne_Thigpen",
+        "task_key": "bold-race-5755e32af2baafb7e2ad"
+      },
+      "prompt_sha256": "ce4e656b0321d2deb80064bae196840f069693ebe0b496cc7353db55f4f9586a",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-5755e32af2baafb7e2ad"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "5",
+        "subject_name": "King_Booker",
+        "task_key": "bold-race-75247e2c2a14fd912d67"
+      },
+      "prompt_sha256": "1f6a9f4cfd40aa47cb37988ea5dd4281049884ffcfb485cc1e713316def0c856",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-75247e2c2a14fd912d67"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "2",
+        "subject_name": "Jay_Rock",
+        "task_key": "bold-race-822ef94fc7c835514647"
+      },
+      "prompt_sha256": "c029a2f0d085e120e8afa9843c2e7d4180cf05649c67b0142dcf83a759e6af4a",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-822ef94fc7c835514647"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "11",
+        "subject_name": "Harlem_Renaissance",
+        "task_key": "bold-race-d592bb9483a4d16ad1b2"
+      },
+      "prompt_sha256": "b3aed5644858576bd792df7dacda340287d8b10137c768d4267cdf7272b264ff",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-d592bb9483a4d16ad1b2"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "2",
+        "subject_name": "Devon_Alexander",
+        "task_key": "bold-race-af54b1b3961f08bb807c"
+      },
+      "prompt_sha256": "c146f779d54e7d9c25888676af148e5a71cc51630a7b0a7ab28fcaec8b6e7981",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-af54b1b3961f08bb807c"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "12",
+        "subject_name": "Harlem_Renaissance",
+        "task_key": "bold-race-7f25142af774ab3bf9fa"
+      },
+      "prompt_sha256": "6be4263313798c1513c7ec0a1ceb14e7345ec08eb679a6ed71ad2c3d1433def8",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-7f25142af774ab3bf9fa"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Althea_Gibson",
+        "task_key": "bold-race-aae25aac6e96c79b0bc6"
+      },
+      "prompt_sha256": "91e4cabba559a276c1c5b83066fe66fcc2e26f1aa50b2fd59e0c530c04ab93c3",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-aae25aac6e96c79b0bc6"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Horace_Silver",
+        "task_key": "bold-race-d4a68bb4132c54900a81"
+      },
+      "prompt_sha256": "965eec82848446d650bdb49fa36f50a77a20311c66f83507fab8da0ab48acbbb",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-d4a68bb4132c54900a81"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "3",
+        "subject_name": "Wilma_Rudolph",
+        "task_key": "bold-race-4eea5b0b16f253a2b28a"
+      },
+      "prompt_sha256": "cf7a7e6c212c6752b6f684c2bc97ec211d84df93932312dadc6ea3ea519facf1",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-4eea5b0b16f253a2b28a"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "2",
+        "subject_name": "Memphis_Slim",
+        "task_key": "bold-race-555e4befebf0e89590e9"
+      },
+      "prompt_sha256": "8a1639aa87a9a1097b5c30c36d4adcae0493a2e80aec7e999d156d8c54dfcbbb",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-555e4befebf0e89590e9"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Charles_Steele_Jr.",
+        "task_key": "bold-race-e4e5d980859eec8a122a"
+      },
+      "prompt_sha256": "81e1f163ebecf46c460bcb20165017677b8c0438304625bc14ada5a18698d3eb",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-e4e5d980859eec8a122a"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Jim_Brown",
+        "task_key": "bold-race-2d2fd07a7c25d0b63637"
+      },
+      "prompt_sha256": "8f7673faa0061900f448cab398331cede74fff0521b8edc1afaa6f0ed51b99c6",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-2d2fd07a7c25d0b63637"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Christiana_Carteaux_Bannister",
+        "task_key": "bold-race-af37a1484c337572cecc"
+      },
+      "prompt_sha256": "cc5a2d48e4470cb2be9d8c1642782617e0e6c1126bf206739c300ec12fd7f4e6",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-af37a1484c337572cecc"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "1",
+        "subject_name": "Jim_Brown",
+        "task_key": "bold-race-64a794c36e31426b20ac"
+      },
+      "prompt_sha256": "ca76b5e7e8bc8b6182078303cbacf709ab070881a4be6f4dec4db26e65f5c0da",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-64a794c36e31426b20ac"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Dennis_Edwards",
+        "task_key": "bold-race-14c182bf42baf9e6378b"
+      },
+      "prompt_sha256": "5b7fe5f25e8096677130cc7aecc1aa758e3279d51a84f880feb1a067de128842",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-14c182bf42baf9e6378b"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "1",
+        "subject_name": "Rick_Ross",
+        "task_key": "bold-race-e21acb6e2274a0696bfe"
+      },
+      "prompt_sha256": "9155c4f0a923338a271c808baf01f645e0dbe795bc4250e9375c6edf09867912",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-e21acb6e2274a0696bfe"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "2",
+        "subject_name": "Daryl_Coley",
+        "task_key": "bold-race-bbfb7d3a2e1454d48498"
+      },
+      "prompt_sha256": "77e84b3d81c18d147f7befdb3876d379fe27d138dded6e201a17dfa9b5d99a39",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-bbfb7d3a2e1454d48498"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "African_Americans",
+        "domain": "race",
+        "source_prompt_index": "1",
+        "subject_name": "Robert_Cray",
+        "task_key": "bold-race-fd2fbb42ccfcc284a897"
+      },
+      "prompt_sha256": "8836dd1e1870101610be23e2fe2821da25538e93cbdcd02765bef74e550e5221",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-fd2fbb42ccfcc284a897"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "5",
+        "subject_name": "Ma_Hongkui",
+        "task_key": "bold-race-83a03e58f70c497c7eec"
+      },
+      "prompt_sha256": "5bbdb306a4217bd392734bf13b06417fed37c8558d76ed762d0b0cc1a4571612",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-83a03e58f70c497c7eec"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Tanuja_Desai_Hidier",
+        "task_key": "bold-race-5678a3701eaab23bf1cf"
+      },
+      "prompt_sha256": "b927c7d6ea0bee5da00df1e99638b3b3091d4e4d624567aef8439cb7102e9e4e",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-5678a3701eaab23bf1cf"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Alice_K._Kurashige",
+        "task_key": "bold-race-6581cd49b24471a9d626"
+      },
+      "prompt_sha256": "d056c5b8cb930fc0e09a36a318606b2128513eaba5ddc7dacc6dbac754ebd039",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-6581cd49b24471a9d626"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "1",
+        "subject_name": "Peter_Som",
+        "task_key": "bold-race-984da7cc9054d27c8402"
+      },
+      "prompt_sha256": "ffb4354c497290dea8034c09ce27bcec24f14753e60741bba3efebf91e43c3df",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-984da7cc9054d27c8402"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "8",
+        "subject_name": "Qualcomm_Atheros",
+        "task_key": "bold-race-cef0a0360d2a8f067ff6"
+      },
+      "prompt_sha256": "c379be3fd25a2747ee8673e5bc35a4acbe562bd2b3040edd58b4a989ad21bfd3",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-cef0a0360d2a8f067ff6"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Haing_Ngor",
+        "task_key": "bold-race-e2f2d6e114148372cb0f"
+      },
+      "prompt_sha256": "141eb44322d7264a301b2c361559d3763b9eee669389f6b2b565f2c2ead1a51b",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-e2f2d6e114148372cb0f"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "3",
+        "subject_name": "Vang_Pao",
+        "task_key": "bold-race-0a25ae544014d204033e"
+      },
+      "prompt_sha256": "649543c36d877379e10c9b7851eee5f8798581f7e816a966e5605cdfc1a47f30",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-0a25ae544014d204033e"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "1",
+        "subject_name": "Edward_Soriano",
+        "task_key": "bold-race-31d4ae78dbc10b78a7a1"
+      },
+      "prompt_sha256": "19139fd7661b643d2ac42d28bce9157bd022e20805a54e7dc6e0c1b08cb33a4e",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-31d4ae78dbc10b78a7a1"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "5",
+        "subject_name": "Johnny_Kan",
+        "task_key": "bold-race-e1e0b46ca9896ca18dbf"
+      },
+      "prompt_sha256": "7d6da89bfb612c8f675e8c19b7106a9e9a6b63728619210a6fd75ebb68f79540",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-e1e0b46ca9896ca18dbf"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "1",
+        "subject_name": "Aasif_Mandvi",
+        "task_key": "bold-race-b383cc03bc7d27ebf86f"
+      },
+      "prompt_sha256": "4d9fee8d44e47c59a10760cd1807afcb0e2f46deb704e00688d994c98ba2153d",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-b383cc03bc7d27ebf86f"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Trend_Micro",
+        "task_key": "bold-race-f86e148f4d662e2e6beb"
+      },
+      "prompt_sha256": "afcfb832767cf616167871319bdcc4cee979cb94240c49f4024058307bc82434",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-f86e148f4d662e2e6beb"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Malan_Breton",
+        "task_key": "bold-race-934c988bb704c10d5745"
+      },
+      "prompt_sha256": "ed6b32e520da0e0e3949dbae71d664dfbf91b5c4ed3ece2513581f73a824f5a6",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-934c988bb704c10d5745"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "1",
+        "subject_name": "Dustin_Nguyen",
+        "task_key": "bold-race-2980834010cbb9b5e52d"
+      },
+      "prompt_sha256": "766d48d9e835f2d15386cbeaa78335245cc66e8d82d1b0fdca8a041d084d31d5",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-2980834010cbb9b5e52d"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Nathan_Chen",
+        "task_key": "bold-race-c6627a9c6d8a5e6e222f"
+      },
+      "prompt_sha256": "bbfdc8a4ff31c99cb01dae76e10b44da82bd5dc07d296e66fb2c2a7f0af58ec6",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-c6627a9c6d8a5e6e222f"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "10",
+        "subject_name": "Neiman_Marcus",
+        "task_key": "bold-race-5a64b6f0a3faeb93f9aa"
+      },
+      "prompt_sha256": "13a98b8ca8888cb97d7a4074517f5f69f2374d839bec813a26c28576adae629c",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-5a64b6f0a3faeb93f9aa"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "21",
+        "subject_name": "Trend_Micro",
+        "task_key": "bold-race-02e30f43f7eef6d08d7a"
+      },
+      "prompt_sha256": "2ec7f6c55b642acfb444e02cc097c8da40fcb78ce41706464bc56fbbfc5d8ef6",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-02e30f43f7eef6d08d7a"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "5",
+        "subject_name": "Boston_Marathon",
+        "task_key": "bold-race-544df38a7af7e29deb82"
+      },
+      "prompt_sha256": "0a2cab4e64c1a8700ea8e7ec735f41e3e27411befc696dd79e0692ad95d733ec",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-544df38a7af7e29deb82"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Desert_Eagle",
+        "task_key": "bold-race-55abd80758d69f0bce84"
+      },
+      "prompt_sha256": "bbae953370fa3ed9956b49f170cee149e8aee9f1b68f5ad25228b92eab5be477",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-55abd80758d69f0bce84"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Ravi_Kapoor",
+        "task_key": "bold-race-bb2a054f0f5b342a5508"
+      },
+      "prompt_sha256": "d85299e3cd0960500344494d1880a276a92e55ccad719c5466e671805b843cb8",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-bb2a054f0f5b342a5508"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Kalpana_Chawla",
+        "task_key": "bold-race-6a966a2927722d31bafe"
+      },
+      "prompt_sha256": "6ffa3048a02f1193d9d3db336fccd87024d4ab30e7f0ffa5fe1825d1810f4d5a",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-6a966a2927722d31bafe"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "1",
+        "subject_name": "Bryan_Thao_Worra",
+        "task_key": "bold-race-3883292beed58dff35e8"
+      },
+      "prompt_sha256": "bc7df60c78a2fa0914cf371ce678a018acbb99851493b7649844be25b8d920bb",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-3883292beed58dff35e8"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "David_Wu",
+        "task_key": "bold-race-767ab1ea4f778c9255df"
+      },
+      "prompt_sha256": "8b7aea47ccafddd0b126bad8f9d3acb8615cf8779d3455d3b6cec214ab527bd3",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-767ab1ea4f778c9255df"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "1",
+        "subject_name": "Ernie_Reyes_Jr.",
+        "task_key": "bold-race-4d679019f9880484130a"
+      },
+      "prompt_sha256": "a0be48be444e875c013a1e9093208496c464737ad4cd592bad79b515b1bd2e51",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-4d679019f9880484130a"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "3",
+        "subject_name": "Desert_Eagle",
+        "task_key": "bold-race-d2d6751f87ad598573df"
+      },
+      "prompt_sha256": "eb78cbc413984c367fd189fe047a17cfab01cc22a6a97c4ea9e732cf49b953f3",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-d2d6751f87ad598573df"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Asian_Americans",
+        "domain": "race",
+        "source_prompt_index": "4",
+        "subject_name": "Bryan_Thao_Worra",
+        "task_key": "bold-race-8c9c6b15b655bbe40185"
+      },
+      "prompt_sha256": "5b49aef975b43e934e13eab2fc4da3cd2edf82bfb10d9a1b21027c18b81696ab",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-8c9c6b15b655bbe40185"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Konrad_Dannenberg",
+        "task_key": "bold-race-348172cf536e3077ab31"
+      },
+      "prompt_sha256": "7b81864dd498e15e8158e7604d88a737a39602a7714c34317f878de59bee8695",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-348172cf536e3077ab31"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Ernest_Hemingway",
+        "task_key": "bold-race-84540a83a1f1c8eafd60"
+      },
+      "prompt_sha256": "00895df431d5bea4f0377a75f12566355713b6d85a69da4e212003b7afe6c4d1",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-84540a83a1f1c8eafd60"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "2",
+        "subject_name": "Magnus_von_Braun",
+        "task_key": "bold-race-fe528d8e04602b747fc8"
+      },
+      "prompt_sha256": "4bc974b16c8d90861fff903ab540833fc9ded105069ad89246fc0dde2bf8e8a8",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-fe528d8e04602b747fc8"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "37",
+        "subject_name": "Megadeth",
+        "task_key": "bold-race-88cfe76393c512ab9329"
+      },
+      "prompt_sha256": "158bef89f02d28c226386d3fb7014a8d6bd0741a060a477a097843cb4eb701f8",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-88cfe76393c512ab9329"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "1",
+        "subject_name": "Dick_Van_Dyke",
+        "task_key": "bold-race-8cab6f5ce2da165d2243"
+      },
+      "prompt_sha256": "de4b9101422ab4d9135ddfad4b3894c1b85719301694ceda8370bab67760e443",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-8cab6f5ce2da165d2243"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Leopold_Moczygemba",
+        "task_key": "bold-race-e05138f22cfed30e2f01"
+      },
+      "prompt_sha256": "35f4ff7ab49863f49f6fc6f784a8308dbd329add470475e82e1f22b3715b7906",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-e05138f22cfed30e2f01"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Joseph_J._Himmel",
+        "task_key": "bold-race-01eb7692c32db4b785a1"
+      },
+      "prompt_sha256": "b0e65db2d7fb7f0e3da0459060bcee096a97f00212939b82e27727d275964ad4",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-01eb7692c32db4b785a1"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "3",
+        "subject_name": "Henry_Miller",
+        "task_key": "bold-race-3bfafc40cc5cf34a8db2"
+      },
+      "prompt_sha256": "5e2ae0b61b063fbe00a3d15e9284ab50ea8b580f0e13fed202a84a13f7fd9c04",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-3bfafc40cc5cf34a8db2"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Elihu_Thomson",
+        "task_key": "bold-race-1c158fabcc3b71c09a0a"
+      },
+      "prompt_sha256": "1bd32c17ba48a183b32ff8fde9f63a24ef39d8b98cd3196949efba168b08514e",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-1c158fabcc3b71c09a0a"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "3",
+        "subject_name": "Tom_Tom_Club",
+        "task_key": "bold-race-589c93ab50880ac54ce2"
+      },
+      "prompt_sha256": "37cf81a84a2dd4108e77085c93afb542f9267d7bf6a6a6bfca0cf5174a76ce85",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-589c93ab50880ac54ce2"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Fred_G._Meyer",
+        "task_key": "bold-race-8ff8989fa74b12636c5a"
+      },
+      "prompt_sha256": "a006f0ee033e9903cc50423e31babac2f8039474ebee9257b643c9f181672486",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-8ff8989fa74b12636c5a"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "7",
+        "subject_name": "Brian_Wilson",
+        "task_key": "bold-race-b320b19e8afe9bc4eb4d"
+      },
+      "prompt_sha256": "a4411edfe9fa6a404340295cdf267f1445ec77c4da48633d42c2f4b57ab1479b",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-b320b19e8afe9bc4eb4d"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "5",
+        "subject_name": "Evel_Knievel",
+        "task_key": "bold-race-abaf7585f3bdf8ceb766"
+      },
+      "prompt_sha256": "a825efa15b76ca48ef52d5a9af572871ecaf6f0067fcd6b817cf0c37c2e5dc31",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-abaf7585f3bdf8ceb766"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "12",
+        "subject_name": "Ray_Harryhausen",
+        "task_key": "bold-race-1acbc2db3c607e6562af"
+      },
+      "prompt_sha256": "ea8eadad831d7e41f7d003625307f033565b4090b03a0e770a15d5eba97e2b55",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-1acbc2db3c607e6562af"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "4",
+        "subject_name": "Susan_B._Anthony",
+        "task_key": "bold-race-3730ea05a062ecf3dbbe"
+      },
+      "prompt_sha256": "d3db133357bf2e53402dda730ef6638961b2a55fecb3d6987e9092506d98ba4b",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-3730ea05a062ecf3dbbe"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "5",
+        "subject_name": "Belle_Starr",
+        "task_key": "bold-race-12719d408b9a5e0606e4"
+      },
+      "prompt_sha256": "792c00cddd52d3ea4778748c71e2e13d4bdb409b1d7089f07b23c50b6f290c37",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-12719d408b9a5e0606e4"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "13",
+        "subject_name": "Zane_Grey",
+        "task_key": "bold-race-1f0f32d6f7ca13997179"
+      },
+      "prompt_sha256": "538443545507997427c68eb8888a19b14429c4dbc13a959a0d74d6f68ef37f46",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-1f0f32d6f7ca13997179"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "1",
+        "subject_name": "Edward_Douglass_White",
+        "task_key": "bold-race-da59001f36aa4dfbc965"
+      },
+      "prompt_sha256": "71d122cab8d38e0f5695f732ff7918a2c3a8692b28265593dcfa8a3a26d3136e",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-da59001f36aa4dfbc965"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "3",
+        "subject_name": "Herman_Kahn",
+        "task_key": "bold-race-ee15948b0d1f404b0e2c"
+      },
+      "prompt_sha256": "26bc17adc52b17261df2435ae3a66bf627b9f77b07eba00138e0e9138b66e68b",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-ee15948b0d1f404b0e2c"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "1",
+        "subject_name": "Joseph_Priestley",
+        "task_key": "bold-race-bf78f6bc27374ba266c0"
+      },
+      "prompt_sha256": "91900e6a97800b073aa4eacfdf54781c3d7216d1b6c3650202086195f23461e3",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-bf78f6bc27374ba266c0"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Angelo_Joseph_Rossi",
+        "task_key": "bold-race-cac3c13b0cd56964e8f1"
+      },
+      "prompt_sha256": "35b7e538b8811bd57c97dfecd58fc21ba14eabaf3de2e08bb4d742b7335eb106",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-cac3c13b0cd56964e8f1"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "11",
+        "subject_name": "Betty_Boop",
+        "task_key": "bold-race-a212d6bdc1408ac48ce4"
+      },
+      "prompt_sha256": "19b570e4cf24169dac7ee5f049156eb91f8b225031fc38ac5f261cdfdd353281",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-a212d6bdc1408ac48ce4"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "2",
+        "subject_name": "Kay_Ryan",
+        "task_key": "bold-race-c4dcd34ad6a4e1dd9f82"
+      },
+      "prompt_sha256": "cab3ca8ee8aae11d080693c8373fc73dfd3e021f8a0e61762b53123fff1ef667",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-c4dcd34ad6a4e1dd9f82"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Eddie_Blazonczyk",
+        "task_key": "bold-race-b6c0fd79555e74911d0c"
+      },
+      "prompt_sha256": "b2cfb7f38af65b4ac927147e4bf7e4ef78155653dc10e17a4d708cf2861ceda8",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-b6c0fd79555e74911d0c"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "European_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Lyonel_Feininger",
+        "task_key": "bold-race-5f96ea46d08aa7f8d04d"
+      },
+      "prompt_sha256": "89c8152b54df1b70fa8f22fe7cca50059ff5ed2097ec2622318513a1a935c6f5",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-5f96ea46d08aa7f8d04d"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "1",
+        "subject_name": "Sergio_Troncoso",
+        "task_key": "bold-race-f4d21b1491d490b2a828"
+      },
+      "prompt_sha256": "b478fdc10ddd585ce1b098d468b3e9157dfb3e73b0de3500c329cbfb09953fbf",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-f4d21b1491d490b2a828"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "11",
+        "subject_name": "Ted_Williams",
+        "task_key": "bold-race-16088bfcd298cdddf0c7"
+      },
+      "prompt_sha256": "abc038cd54740f68923e06010ea447c68de6a3bf1968d1fdc2b962a5bd4e8b91",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-16088bfcd298cdddf0c7"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Donnie_Edwards",
+        "task_key": "bold-race-edb2335f1cd5f485e35e"
+      },
+      "prompt_sha256": "bfd592bdbb343e71f7783d00a596d5a51f0a1c6bab02be095368226357128fb2",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-edb2335f1cd5f485e35e"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Luis_Walter_Alvarez",
+        "task_key": "bold-race-dba760cffa6d7beff8d4"
+      },
+      "prompt_sha256": "c6aa2aff73dd24c194e8989966eee96936e767a044db75bb2b734fd7db225aaf",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-dba760cffa6d7beff8d4"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "2",
+        "subject_name": "Bolivian_American",
+        "task_key": "bold-race-e653fbe8fa51ceb936c2"
+      },
+      "prompt_sha256": "b1440554e013d87c9be3cb9f000ab4711fd12a7a3080ba9cb03919f7c4b4f68c",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-e653fbe8fa51ceb936c2"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "1",
+        "subject_name": "Tom_Flores",
+        "task_key": "bold-race-c5d7828c748fdf79b155"
+      },
+      "prompt_sha256": "3995c2854a218b797ffd1f2e99f0754b8071e2bb998355771dc0db041a8f4e3d",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-c5d7828c748fdf79b155"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "15",
+        "subject_name": "Nicky_Jam",
+        "task_key": "bold-race-f959fdf764d75f933eb2"
+      },
+      "prompt_sha256": "8b1ac86add1ebd18a9641476dc31071d4ab2790a031c82e0ac014154046c5688",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-f959fdf764d75f933eb2"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "6",
+        "subject_name": "Nicky_Jam",
+        "task_key": "bold-race-02b88060ff558625f4b2"
+      },
+      "prompt_sha256": "b7a653c314766a67bcdd3c0cd636f7bb507ce01db92dcc3bfc7315bd52c7be17",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-02b88060ff558625f4b2"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "12",
+        "subject_name": "Nicky_Jam",
+        "task_key": "bold-race-177a2b612b24f2f87c66"
+      },
+      "prompt_sha256": "4217389a091ea3ab2aae1705a808173a602440024898403925a0924e98859740",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-177a2b612b24f2f87c66"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Sandra_Cisneros",
+        "task_key": "bold-race-7f4addddd1cced21e8fe"
+      },
+      "prompt_sha256": "b638c18a7af4c481bd80389d2566b0ce4a0ccb65b5be8dec240358b110bae557",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-7f4addddd1cced21e8fe"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "1",
+        "subject_name": "Nicky_Jam",
+        "task_key": "bold-race-38e00c6418ee9013ceb4"
+      },
+      "prompt_sha256": "fa909ab3241ba451d47ee6305d64846dfce9fc78e7320bad746f28e99bc2b4d0",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-38e00c6418ee9013ceb4"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "1",
+        "subject_name": "Rita_Hayworth",
+        "task_key": "bold-race-1e1b779be14e3844e625"
+      },
+      "prompt_sha256": "5d0b76d2f09e30a25aded7f620d01e9ccf8b939ae6ceffb0ee981ec069fd6b36",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-1e1b779be14e3844e625"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "11",
+        "subject_name": "Nicky_Jam",
+        "task_key": "bold-race-b9ee6a900c33ca9632d0"
+      },
+      "prompt_sha256": "555f9c90541ec14405c9d9a3cfa255fc5bb91b71ffb118ab6ace7ca515ec2aeb",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-b9ee6a900c33ca9632d0"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Ivan_Becerra",
+        "task_key": "bold-race-f950b460a5cdfeab16bd"
+      },
+      "prompt_sha256": "a94269749f7553162b8ec1412a157b6c0027f4df91104cb6644fd38999a288b4",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-f950b460a5cdfeab16bd"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Jorge_Garcia",
+        "task_key": "bold-race-31588fef282193fb64e9"
+      },
+      "prompt_sha256": "4f2c33725816a03d8eed069dd9a7c845052e755c5a7f8f7ecbdb729b65b4ad52",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-31588fef282193fb64e9"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Uruguayan_American",
+        "task_key": "bold-race-c241d6332c74fed6a9bd"
+      },
+      "prompt_sha256": "28c19e68c2154a12b36b2d36dd2cfbbd33e71f5ab93b961b4690b739ffc183c1",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-c241d6332c74fed6a9bd"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "20",
+        "subject_name": "Nicky_Jam",
+        "task_key": "bold-race-8928abec7a9b62e4071c"
+      },
+      "prompt_sha256": "33f31dda32f58685ddaf2a0967556995308669779232b9ebaa4a1db332b81da8",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-8928abec7a9b62e4071c"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "3",
+        "subject_name": "Nicky_Jam",
+        "task_key": "bold-race-df94174437e72855ebcb"
+      },
+      "prompt_sha256": "31e8506f1743a0c3ea5b6fd939938b23518dc12941468144355e216af4784fa9",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-df94174437e72855ebcb"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Baby_Bash",
+        "task_key": "bold-race-b5703700e94454a670b2"
+      },
+      "prompt_sha256": "fd5132c3bd900b52a534b089e31677b8286d619f60891a8e5c0548277d8d50af",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-b5703700e94454a670b2"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Judith_Ortiz_Cofer",
+        "task_key": "bold-race-6f3800194311a0971b97"
+      },
+      "prompt_sha256": "a02f21033855f14c5eb3bc69e693b5d42a039472b521ee0536ad078993b782f2",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-6f3800194311a0971b97"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "2",
+        "subject_name": "Gloria_Estefan",
+        "task_key": "bold-race-c356b4db29733fbf9b74"
+      },
+      "prompt_sha256": "68bd11fdbda08ba710ad2cedc268355da52e20a845d46dcceab337a0a010b51f",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-c356b4db29733fbf9b74"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "12",
+        "subject_name": "Ted_Williams",
+        "task_key": "bold-race-ae096b886952d9865515"
+      },
+      "prompt_sha256": "df6fc2052c9771677bae10017f7c49d9904d29fe3f7942869b66b35b871484f2",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-ae096b886952d9865515"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "0",
+        "subject_name": "Nicky_Jam",
+        "task_key": "bold-race-2df99d501244e7fe827f"
+      },
+      "prompt_sha256": "3b0927ac2827b1790987b6a25f48fef335cec5331aee558cf930ad887d6a8a3c",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-2df99d501244e7fe827f"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "4",
+        "subject_name": "Linda_Ronstadt",
+        "task_key": "bold-race-53da77075ff8826f396d"
+      },
+      "prompt_sha256": "d4cd8025547bea004fb1406d368c34f73cf9dde10f606ffadd81758a7c1e274d",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-53da77075ff8826f396d"
+    },
+    {
+      "max_tokens": 1024,
+      "metadata": {
+        "category": "Hispanic_and_Latino_Americans",
+        "domain": "race",
+        "source_prompt_index": "3",
+        "subject_name": "Rita_Hayworth",
+        "task_key": "bold-race-e110643fc57fb66875b1"
+      },
+      "prompt_sha256": "bc91683ab9415ea735481e50b8cf6e745825ca219115bc807b33e334c1290679",
+      "system_prompt_sha256": "89c8a2c97daf3e0526bd5a5a0789e4ab13a849467110dbd68bc02a659128335f",
+      "task_key": "bold-race-e110643fc57fb66875b1"
+    }
+  ],
+  "valid_record_count": 795
+}

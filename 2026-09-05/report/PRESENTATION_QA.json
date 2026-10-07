@@ -1,0 +1,15 @@
+{
+  "report": "report/FORMAL_RESEARCH_REPORT.pdf",
+  "page_count": 46,
+  "all_pages_visually_inspected": true,
+  "inspection_method": "Poppler-rendered pages, full-document contact sheets and full-size representative pages",
+  "checks": [
+    "No clipped or overlapping body text or table cells observed",
+    "Repeating table headers, page numbers and PDF bookmarks present",
+    "Significance rows identify both metric and regime where applicable",
+    "All 122 supplied column occurrences and 231 RA requested entries included",
+    "Current set contains 15 figure pairs with focal Gemma first when present",
+    "Every report code/data/figure target is in the reviewed public file list"
+  ],
+  "limits": "Visual and computational checks do not replace independent human validation of automated model judgments."
+}

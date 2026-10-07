@@ -1,0 +1,41 @@
+dataset,race,expression_bucket,display_bucket,objective,pairs
+July 19,Black,negative,Black negative,Both reductions,0
+July 19,Black,nonnegative,Black neutral/positive,Both reductions,0
+July 19,White,negative,White negative,Both reductions,0
+July 19,White,nonnegative,White neutral/positive,Both reductions,0
+July 19,Black,negative,Black negative,Identity removal,1
+July 19,Black,nonnegative,Black neutral/positive,Identity removal,14
+July 19,White,negative,White negative,Identity removal,3
+July 19,White,nonnegative,White neutral/positive,Identity removal,8
+July 19,Black,negative,Black negative,Negative-count reduction,0
+July 19,Black,nonnegative,Black neutral/positive,Negative-count reduction,5
+July 19,White,negative,White negative,Negative-count reduction,0
+July 19,White,nonnegative,White neutral/positive,Negative-count reduction,3
+July 19,Black,negative,Black negative,Fixed-count unsupported-negativity reduction,9
+July 19,Black,nonnegative,Black neutral/positive,Fixed-count unsupported-negativity reduction,0
+July 19,White,negative,White negative,Fixed-count unsupported-negativity reduction,12
+July 19,White,nonnegative,White neutral/positive,Fixed-count unsupported-negativity reduction,0
+July 19,Black,negative,Black negative,Other policy signal,0
+July 19,Black,nonnegative,Black neutral/positive,Other policy signal,0
+July 19,White,negative,White negative,Other policy signal,0
+July 19,White,nonnegative,White neutral/positive,Other policy signal,0
+July 27,Black,negative,Black negative,Both reductions,0
+July 27,Black,nonnegative,Black neutral/positive,Both reductions,0
+July 27,White,negative,White negative,Both reductions,0
+July 27,White,nonnegative,White neutral/positive,Both reductions,0
+July 27,Black,negative,Black negative,Identity removal,0
+July 27,Black,nonnegative,Black neutral/positive,Identity removal,10
+July 27,White,negative,White negative,Identity removal,3
+July 27,White,nonnegative,White neutral/positive,Identity removal,7
+July 27,Black,negative,Black negative,Negative-count reduction,0
+July 27,Black,nonnegative,Black neutral/positive,Negative-count reduction,0
+July 27,White,negative,White negative,Negative-count reduction,0
+July 27,White,nonnegative,White neutral/positive,Negative-count reduction,1
+July 27,Black,negative,Black negative,Fixed-count unsupported-negativity reduction,18
+July 27,Black,nonnegative,Black neutral/positive,Fixed-count unsupported-negativity reduction,0
+July 27,White,negative,White negative,Fixed-count unsupported-negativity reduction,11
+July 27,White,nonnegative,White neutral/positive,Fixed-count unsupported-negativity reduction,0
+July 27,Black,negative,Black negative,Other policy signal,0
+July 27,Black,nonnegative,Black neutral/positive,Other policy signal,0
+July 27,White,negative,White negative,Other policy signal,0
+July 27,White,nonnegative,White neutral/positive,Other policy signal,0

@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-06T04:08:48.055000+00:00",
+  "launch_folder": "data/private/prime_native/20261006T035949.745803_0000",
+  "owned_pod_id": "544f09051e9840f1a179af22f2165e78",
+  "owned_pod_name": "urap-balanced-pilot-20261006t035949",
+  "launch_created_paid_resource": true,
+  "ssh_endpoint_reached_by_status_endpoint": true,
+  "monitor_connection_fallback_was_missing": true,
+  "termination_requested": true,
+  "owned_pod_absent_from_list": true,
+  "terminated_at": "2026-10-06T04:08:48.055000",
+  "termination_verified": true,
+  "quoted_hourly_usd": 2.35,
+  "wallet_before_attempt_usd": 79.2125,
+  "wallet_after_termination_usd": 79.2125,
+  "observed_wallet_decrease_usd": 0.0,
+  "total_billed_price_raw": 0.0,
+  "raw_history_currency_units_verified": false,
+  "study_optimizer_updates_verified": 0,
+  "source_images_and_local_labels_preserved": true
+}

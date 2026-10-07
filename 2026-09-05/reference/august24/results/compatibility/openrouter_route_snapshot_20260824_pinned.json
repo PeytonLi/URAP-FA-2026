@@ -1,0 +1,5160 @@
+{
+  "captured_at": "2026-08-24T13:33:33.324653+00:00",
+  "catalog_entries": {
+    "google/gemini-3.6-flash": {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video",
+          "file",
+          "audio"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+file+audio+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Gemini"
+      },
+      "benchmarks": {
+        "artificial_analysis": {
+          "agentic_index": 40.5,
+          "coding_index": 69.2,
+          "intelligence_index": 51.6
+        },
+        "design_arena": [
+          {
+            "arena": "agents",
+            "category": "agenticgamedev",
+            "elo": 1181,
+            "rank": 14,
+            "win_rate": 46.5
+          },
+          {
+            "arena": "agents",
+            "category": "androidnative",
+            "elo": 1220,
+            "rank": 13,
+            "win_rate": 53.8
+          },
+          {
+            "arena": "agents",
+            "category": "fullstack",
+            "elo": 1203,
+            "rank": 18,
+            "win_rate": 45.9
+          },
+          {
+            "arena": "agents",
+            "category": "htmlslides",
+            "elo": 1155,
+            "rank": 19,
+            "win_rate": 41.1
+          },
+          {
+            "arena": "agents",
+            "category": "mobileapps",
+            "elo": 1249,
+            "rank": 8,
+            "win_rate": 53.2
+          },
+          {
+            "arena": "agents",
+            "category": "python-pptxslides",
+            "elo": 1172,
+            "rank": 16,
+            "win_rate": 39.1
+          },
+          {
+            "arena": "agents",
+            "category": "webapps",
+            "elo": 1236,
+            "rank": 14,
+            "win_rate": 48.1
+          },
+          {
+            "arena": "models",
+            "category": "3d",
+            "elo": 1323,
+            "rank": 10,
+            "win_rate": 53.7
+          },
+          {
+            "arena": "models",
+            "category": "asciiart",
+            "elo": 1288,
+            "rank": 8,
+            "win_rate": 57.6
+          },
+          {
+            "arena": "models",
+            "category": "codecategories",
+            "elo": 1319,
+            "rank": 9,
+            "win_rate": 54.2
+          },
+          {
+            "arena": "models",
+            "category": "dataviz",
+            "elo": 1322,
+            "rank": 8,
+            "win_rate": 53.4
+          },
+          {
+            "arena": "models",
+            "category": "gamedev",
+            "elo": 1297,
+            "rank": 19,
+            "win_rate": 51.8
+          },
+          {
+            "arena": "models",
+            "category": "uicomponent",
+            "elo": 1331,
+            "rank": 8,
+            "win_rate": 55.9
+          },
+          {
+            "arena": "models",
+            "category": "website",
+            "elo": 1323,
+            "rank": 5,
+            "win_rate": 56.3
+          }
+        ]
+      },
+      "canonical_slug": "google/gemini-3.6-flash-20260721",
+      "context_length": 1048576,
+      "created": 1784646733,
+      "default_parameters": {
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null,
+        "temperature": null,
+        "top_k": null,
+        "top_p": null
+      },
+      "description": "Gemini 3.6 Flash is a high-efficiency model from Google for coding, agentic workflows, and web and app development. It is designed to produce polished outputs with fewer unnecessary edits and...",
+      "expiration_date": null,
+      "hugging_face_id": null,
+      "id": "google/gemini-3.6-flash",
+      "knowledge_cutoff": null,
+      "links": {
+        "details": "/api/v1/models/google/gemini-3.6-flash-20260721/endpoints"
+      },
+      "name": "Google: Gemini 3.6 Flash",
+      "per_request_limits": null,
+      "pricing": {
+        "audio": "0.00000075",
+        "completion": "0.00000375",
+        "image": "0.00000075",
+        "input_audio_cache": "0.000000075",
+        "input_cache_read": "0.000000075",
+        "input_cache_write": "0.0000000416666666666667",
+        "internal_reasoning": "0.00000375",
+        "prompt": "0.00000075",
+        "web_search": "0.014"
+      },
+      "reasoning": {
+        "default_effort": "medium",
+        "default_enabled": true,
+        "mandatory": true,
+        "supported_efforts": [
+          "high",
+          "medium",
+          "low",
+          "minimal"
+        ]
+      },
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "supported_voices": null,
+      "top_provider": {
+        "context_length": 1048576,
+        "is_moderated": false,
+        "max_completion_tokens": 65536
+      }
+    },
+    "minimax/minimax-m3": {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "benchmarks": {
+        "artificial_analysis": {
+          "agentic_index": 36.1,
+          "coding_index": 58.6,
+          "intelligence_index": 45.4
+        },
+        "design_arena": [
+          {
+            "arena": "agents",
+            "category": "agenticgamedev",
+            "elo": 1176,
+            "rank": 17,
+            "win_rate": 47.7
+          },
+          {
+            "arena": "agents",
+            "category": "androidnative",
+            "elo": 1176,
+            "rank": 23,
+            "win_rate": 46.6
+          },
+          {
+            "arena": "agents",
+            "category": "fullstack",
+            "elo": 1225,
+            "rank": 16,
+            "win_rate": 50.1
+          },
+          {
+            "arena": "agents",
+            "category": "htmlslides",
+            "elo": 1183,
+            "rank": 12,
+            "win_rate": 45.2
+          },
+          {
+            "arena": "agents",
+            "category": "mobileapps",
+            "elo": 1212,
+            "rank": 14,
+            "win_rate": 48.4
+          },
+          {
+            "arena": "agents",
+            "category": "python-pptxslides",
+            "elo": 1241,
+            "rank": 10,
+            "win_rate": 49.5
+          },
+          {
+            "arena": "agents",
+            "category": "webapps",
+            "elo": 1231,
+            "rank": 18,
+            "win_rate": 49.1
+          },
+          {
+            "arena": "models",
+            "category": "3d",
+            "elo": 1257,
+            "rank": 31,
+            "win_rate": 52.6
+          },
+          {
+            "arena": "models",
+            "category": "asciiart",
+            "elo": 1185,
+            "rank": 26,
+            "win_rate": 47.4
+          },
+          {
+            "arena": "models",
+            "category": "codecategories",
+            "elo": 1275,
+            "rank": 26,
+            "win_rate": 52.9
+          },
+          {
+            "arena": "models",
+            "category": "dataviz",
+            "elo": 1255,
+            "rank": 29,
+            "win_rate": 51.9
+          },
+          {
+            "arena": "models",
+            "category": "gamedev",
+            "elo": 1247,
+            "rank": 34,
+            "win_rate": 47.9
+          },
+          {
+            "arena": "models",
+            "category": "svg",
+            "elo": 1211,
+            "rank": 28,
+            "win_rate": 49.2
+          },
+          {
+            "arena": "models",
+            "category": "uicomponent",
+            "elo": 1273,
+            "rank": 28,
+            "win_rate": 52.7
+          },
+          {
+            "arena": "models",
+            "category": "website",
+            "elo": 1280,
+            "rank": 25,
+            "win_rate": 53.4
+          }
+        ]
+      },
+      "canonical_slug": "minimax/minimax-m3-20260531",
+      "context_length": 1048576,
+      "created": 1780245374,
+      "default_parameters": {
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null,
+        "temperature": 1,
+        "top_k": null,
+        "top_p": 0.95
+      },
+      "description": "MiniMax-M3 is a multimodal foundation model from MiniMax. It supports text, image, and video inputs with text output, a 1M-token context window, and is suited for long-horizon agentic work, coding,...",
+      "expiration_date": null,
+      "hugging_face_id": "MiniMaxAI/Minimax-M3",
+      "id": "minimax/minimax-m3",
+      "knowledge_cutoff": null,
+      "links": {
+        "details": "/api/v1/models/minimax/minimax-m3-20260531/endpoints"
+      },
+      "name": "MiniMax: MiniMax M3",
+      "per_request_limits": null,
+      "pricing": {
+        "completion": "0.0000012",
+        "input_cache_read": "0.00000006",
+        "prompt": "0.0000003"
+      },
+      "reasoning": {
+        "mandatory": false
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "supported_voices": null,
+      "top_provider": {
+        "context_length": 524288,
+        "is_moderated": false,
+        "max_completion_tokens": 512000
+      }
+    },
+    "moonshotai/kimi-k3": {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "benchmarks": {
+        "artificial_analysis": {
+          "agentic_index": 54.3,
+          "coding_index": 76.2,
+          "intelligence_index": 59.7
+        },
+        "design_arena": [
+          {
+            "arena": "agents",
+            "category": "agenticgamedev",
+            "elo": 1280,
+            "rank": 3,
+            "win_rate": 55.7
+          },
+          {
+            "arena": "agents",
+            "category": "androidnative",
+            "elo": 1250,
+            "rank": 8,
+            "win_rate": 55.9
+          },
+          {
+            "arena": "agents",
+            "category": "fullstack",
+            "elo": 1361,
+            "rank": 2,
+            "win_rate": 68.1
+          },
+          {
+            "arena": "agents",
+            "category": "godotgamedev",
+            "elo": 1199,
+            "rank": 11,
+            "win_rate": 48.5
+          },
+          {
+            "arena": "agents",
+            "category": "htmlslides",
+            "elo": 1263,
+            "rank": 2,
+            "win_rate": 59.1
+          },
+          {
+            "arena": "agents",
+            "category": "mobileapps",
+            "elo": 1281,
+            "rank": 1,
+            "win_rate": 56.5
+          },
+          {
+            "arena": "agents",
+            "category": "python-pptxslides",
+            "elo": 1296,
+            "rank": 4,
+            "win_rate": 59.6
+          },
+          {
+            "arena": "agents",
+            "category": "webapps",
+            "elo": 1326,
+            "rank": 2,
+            "win_rate": 63.1
+          },
+          {
+            "arena": "models",
+            "category": "3d",
+            "elo": 1445,
+            "rank": 1,
+            "win_rate": 69.3
+          },
+          {
+            "arena": "models",
+            "category": "codecategories",
+            "elo": 1407,
+            "rank": 1,
+            "win_rate": 66.2
+          },
+          {
+            "arena": "models",
+            "category": "dataviz",
+            "elo": 1375,
+            "rank": 1,
+            "win_rate": 64.9
+          },
+          {
+            "arena": "models",
+            "category": "gamedev",
+            "elo": 1431,
+            "rank": 1,
+            "win_rate": 68.2
+          },
+          {
+            "arena": "models",
+            "category": "svg",
+            "elo": 1356,
+            "rank": 2,
+            "win_rate": 65.6
+          },
+          {
+            "arena": "models",
+            "category": "uicomponent",
+            "elo": 1377,
+            "rank": 1,
+            "win_rate": 63.3
+          },
+          {
+            "arena": "models",
+            "category": "website",
+            "elo": 1372,
+            "rank": 1,
+            "win_rate": 63
+          }
+        ]
+      },
+      "canonical_slug": "moonshotai/kimi-k3-20260715",
+      "context_length": 1048576,
+      "created": 1784215858,
+      "default_parameters": {
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null,
+        "temperature": null,
+        "top_k": null,
+        "top_p": 0.95
+      },
+      "description": "Kimi K3 is a 2.8T parameter open-weight multimodal reasoning model from Moonshot AI. It is suited for complex coding, knowledge work, and long-horizon agentic workflows, and is particularly strong at...",
+      "expiration_date": null,
+      "hugging_face_id": "moonshotai/Kimi-K3",
+      "id": "moonshotai/kimi-k3",
+      "knowledge_cutoff": null,
+      "links": {
+        "details": "/api/v1/models/moonshotai/kimi-k3-20260715/endpoints"
+      },
+      "name": "MoonshotAI: Kimi K3",
+      "per_request_limits": null,
+      "pricing": {
+        "completion": "0.000015",
+        "input_cache_read": "0.0000003",
+        "prompt": "0.000003"
+      },
+      "reasoning": {
+        "default_effort": "max",
+        "default_enabled": true,
+        "mandatory": false,
+        "supported_efforts": [
+          "max",
+          "high",
+          "low"
+        ]
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "reasoning_effort",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "supported_voices": null,
+      "top_provider": {
+        "context_length": 1048576,
+        "is_moderated": false,
+        "max_completion_tokens": 1048576
+      }
+    },
+    "openai/gpt-5.6-luna": {
+      "architecture": {
+        "input_modalities": [
+          "file",
+          "image",
+          "text"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+file->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "GPT"
+      },
+      "benchmarks": {
+        "artificial_analysis": {
+          "agentic_index": 46.9,
+          "coding_index": 71.4,
+          "intelligence_index": 52.3
+        },
+        "design_arena": []
+      },
+      "canonical_slug": "openai/gpt-5.6-luna-20260709",
+      "context_length": 1050000,
+      "created": 1783590864,
+      "default_parameters": {
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null,
+        "temperature": null,
+        "top_k": null,
+        "top_p": null
+      },
+      "description": "GPT-5.6 Luna is a fast, cost-efficient model in OpenAI's GPT-5.6 series. It is suited for high-volume, latency-sensitive tasks such as chat, classification, and lightweight agentic workflows, providing capable reasoning for...",
+      "expiration_date": null,
+      "hugging_face_id": null,
+      "id": "openai/gpt-5.6-luna",
+      "knowledge_cutoff": "2026-02-16",
+      "links": {
+        "details": "/api/v1/models/openai/gpt-5.6-luna-20260709/endpoints"
+      },
+      "name": "OpenAI: GPT-5.6 Luna",
+      "per_request_limits": null,
+      "pricing": {
+        "completion": "0.0000012",
+        "input_cache_read": "0.00000002",
+        "input_cache_write": "0.00000025",
+        "overrides": [
+          {
+            "completion": "0.0000018",
+            "input_cache_read": "0.00000004",
+            "input_cache_write": "0.0000005",
+            "min_prompt_tokens": 272000,
+            "prompt": "0.0000004"
+          }
+        ],
+        "prompt": "0.0000002",
+        "web_search": "0.01"
+      },
+      "reasoning": {
+        "default_effort": "medium",
+        "default_enabled": true,
+        "mandatory": false,
+        "supported_efforts": [
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low",
+          "none"
+        ]
+      },
+      "supported_parameters": [
+        "include_reasoning",
+        "max_completion_tokens",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "tool_choice",
+        "tools"
+      ],
+      "supported_voices": null,
+      "top_provider": {
+        "context_length": 1050000,
+        "is_moderated": true,
+        "max_completion_tokens": 128000
+      }
+    },
+    "qwen/qwen3.5-9b": {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Qwen3"
+      },
+      "benchmarks": {
+        "artificial_analysis": {
+          "agentic_index": 7,
+          "coding_index": 28.7,
+          "intelligence_index": 21.8
+        },
+        "design_arena": []
+      },
+      "canonical_slug": "qwen/qwen3.5-9b-20260310",
+      "context_length": 262144,
+      "created": 1773152396,
+      "default_parameters": {
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null,
+        "temperature": null,
+        "top_k": null,
+        "top_p": null
+      },
+      "description": "Qwen3.5-9B is a multimodal foundation model from the Qwen3.5 family, designed to deliver strong reasoning, coding, and visual understanding in an efficient 9B-parameter architecture. It uses a unified vision-language design...",
+      "expiration_date": null,
+      "hugging_face_id": "Qwen/Qwen3.5-9B",
+      "id": "qwen/qwen3.5-9b",
+      "knowledge_cutoff": null,
+      "links": {
+        "details": "/api/v1/models/qwen/qwen3.5-9b-20260310/endpoints"
+      },
+      "name": "Qwen: Qwen3.5-9B",
+      "per_request_limits": null,
+      "pricing": {
+        "completion": "0.00000015",
+        "prompt": "0.0000001"
+      },
+      "reasoning": {
+        "mandatory": false
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "supported_voices": null,
+      "top_provider": {
+        "context_length": 262144,
+        "is_moderated": false,
+        "max_completion_tokens": 262144
+      }
+    },
+    "stepfun/step-3.7-flash": {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "benchmarks": {
+        "artificial_analysis": {
+          "agentic_index": 21.7,
+          "coding_index": 39.6,
+          "intelligence_index": 30.9
+        },
+        "design_arena": [
+          {
+            "arena": "models",
+            "category": "3d",
+            "elo": 1170,
+            "rank": 60,
+            "win_rate": 41.8
+          },
+          {
+            "arena": "models",
+            "category": "asciiart",
+            "elo": 1181,
+            "rank": 28,
+            "win_rate": 45.8
+          },
+          {
+            "arena": "models",
+            "category": "codecategories",
+            "elo": 1203,
+            "rank": 51,
+            "win_rate": 44
+          },
+          {
+            "arena": "models",
+            "category": "dataviz",
+            "elo": 1193,
+            "rank": 55,
+            "win_rate": 44.4
+          },
+          {
+            "arena": "models",
+            "category": "gamedev",
+            "elo": 1190,
+            "rank": 55,
+            "win_rate": 40.8
+          },
+          {
+            "arena": "models",
+            "category": "svg",
+            "elo": 1113,
+            "rank": 56,
+            "win_rate": 38.2
+          },
+          {
+            "arena": "models",
+            "category": "uicomponent",
+            "elo": 1200,
+            "rank": 53,
+            "win_rate": 43.4
+          },
+          {
+            "arena": "models",
+            "category": "website",
+            "elo": 1212,
+            "rank": 50,
+            "win_rate": 45.3
+          }
+        ]
+      },
+      "canonical_slug": "stepfun/step-3.7-flash-20260528",
+      "context_length": 262144,
+      "created": 1779985069,
+      "default_parameters": {
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null,
+        "temperature": null,
+        "top_k": null,
+        "top_p": null
+      },
+      "description": "Step 3.7 Flash is StepFun's latest high-efficiency multimodal Mixture-of-Experts model. It pairs a 196B-parameter language backbone with a vision encoder for native image and video understanding, activating roughly 11B parameters...",
+      "expiration_date": null,
+      "hugging_face_id": "stepfun-ai/Step-3.7-Flash",
+      "id": "stepfun/step-3.7-flash",
+      "knowledge_cutoff": null,
+      "links": {
+        "details": "/api/v1/models/stepfun/step-3.7-flash-20260528/endpoints"
+      },
+      "name": "StepFun: Step 3.7 Flash",
+      "per_request_limits": null,
+      "pricing": {
+        "completion": "0.00000115",
+        "input_cache_read": "0.00000004",
+        "prompt": "0.0000002"
+      },
+      "reasoning": {
+        "default_effort": "medium",
+        "mandatory": true,
+        "supported_efforts": [
+          "high",
+          "medium",
+          "low"
+        ]
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "reasoning_effort",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "supported_voices": null,
+      "top_provider": {
+        "context_length": 256000,
+        "is_moderated": false,
+        "max_completion_tokens": 256000
+      }
+    },
+    "x-ai/grok-4.6": {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "file"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+file->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Grok"
+      },
+      "benchmarks": {
+        "artificial_analysis": {
+          "agentic_index": 58.7,
+          "coding_index": 76.8,
+          "intelligence_index": 60.9
+        },
+        "design_arena": [
+          {
+            "arena": "agents",
+            "category": "agenticgamedev",
+            "elo": 1204,
+            "rank": 10,
+            "win_rate": 42.4
+          },
+          {
+            "arena": "agents",
+            "category": "androidnative",
+            "elo": 1316,
+            "rank": 1,
+            "win_rate": 65.5
+          },
+          {
+            "arena": "agents",
+            "category": "fullstack",
+            "elo": 1285,
+            "rank": 6,
+            "win_rate": 55.7
+          },
+          {
+            "arena": "agents",
+            "category": "mobileapps",
+            "elo": 1277,
+            "rank": 2,
+            "win_rate": 57.9
+          },
+          {
+            "arena": "agents",
+            "category": "python-pptxslides",
+            "elo": 1253,
+            "rank": 6,
+            "win_rate": 55.5
+          },
+          {
+            "arena": "agents",
+            "category": "webapps",
+            "elo": 1275,
+            "rank": 6,
+            "win_rate": 57.2
+          },
+          {
+            "arena": "models",
+            "category": "3d",
+            "elo": 1327,
+            "rank": 9,
+            "win_rate": 53.3
+          },
+          {
+            "arena": "models",
+            "category": "asciiart",
+            "elo": 1304,
+            "rank": 4,
+            "win_rate": 61.6
+          },
+          {
+            "arena": "models",
+            "category": "codecategories",
+            "elo": 1326,
+            "rank": 7,
+            "win_rate": 53.7
+          },
+          {
+            "arena": "models",
+            "category": "dataviz",
+            "elo": 1313,
+            "rank": 9,
+            "win_rate": 51.9
+          },
+          {
+            "arena": "models",
+            "category": "gamedev",
+            "elo": 1340,
+            "rank": 6,
+            "win_rate": 55.8
+          },
+          {
+            "arena": "models",
+            "category": "svg",
+            "elo": 1278,
+            "rank": 6,
+            "win_rate": 53.1
+          },
+          {
+            "arena": "models",
+            "category": "uicomponent",
+            "elo": 1341,
+            "rank": 6,
+            "win_rate": 59
+          },
+          {
+            "arena": "models",
+            "category": "website",
+            "elo": 1322,
+            "rank": 7,
+            "win_rate": 53.8
+          }
+        ]
+      },
+      "canonical_slug": "x-ai/grok-4.6-20260810",
+      "context_length": 500000,
+      "created": 1786548957,
+      "default_parameters": {},
+      "description": "Grok 4.6 is SpaceXAI's smartest model with frontier performance on coding, knowledge work, and STEM.",
+      "expiration_date": null,
+      "hugging_face_id": null,
+      "id": "x-ai/grok-4.6",
+      "knowledge_cutoff": null,
+      "links": {
+        "details": "/api/v1/models/x-ai/grok-4.6-20260810/endpoints"
+      },
+      "name": "SpaceXAI: Grok 4.6",
+      "per_request_limits": null,
+      "pricing": {
+        "completion": "0.000006",
+        "input_cache_read": "0.0000005",
+        "overrides": [
+          {
+            "completion": "0.000012",
+            "input_cache_read": "0.000001",
+            "min_prompt_tokens": 200000,
+            "prompt": "0.000004"
+          }
+        ],
+        "prompt": "0.000002",
+        "web_search": "0.005"
+      },
+      "reasoning": {
+        "default_effort": "high",
+        "default_enabled": true,
+        "mandatory": true,
+        "supported_efforts": [
+          "xhigh",
+          "high",
+          "medium",
+          "low"
+        ]
+      },
+      "supported_parameters": [
+        "include_reasoning",
+        "logprobs",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p"
+      ],
+      "supported_voices": null,
+      "top_provider": {
+        "context_length": 500000,
+        "is_moderated": false,
+        "max_completion_tokens": null
+      }
+    },
+    "xiaomi/mimo-v2.5": {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "audio",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+audio+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "benchmarks": {
+        "artificial_analysis": {
+          "agentic_index": 24.4,
+          "coding_index": 56.8,
+          "intelligence_index": 38
+        },
+        "design_arena": [
+          {
+            "arena": "models",
+            "category": "3d",
+            "elo": 1259,
+            "rank": 30,
+            "win_rate": 51.5
+          },
+          {
+            "arena": "models",
+            "category": "asciiart",
+            "elo": 1159,
+            "rank": 40,
+            "win_rate": 45.5
+          },
+          {
+            "arena": "models",
+            "category": "codecategories",
+            "elo": 1285,
+            "rank": 23,
+            "win_rate": 54.6
+          },
+          {
+            "arena": "models",
+            "category": "dataviz",
+            "elo": 1273,
+            "rank": 21,
+            "win_rate": 55.1
+          },
+          {
+            "arena": "models",
+            "category": "gamedev",
+            "elo": 1278,
+            "rank": 25,
+            "win_rate": 54.8
+          },
+          {
+            "arena": "models",
+            "category": "svg",
+            "elo": 1215,
+            "rank": 27,
+            "win_rate": 52.3
+          },
+          {
+            "arena": "models",
+            "category": "uicomponent",
+            "elo": 1285,
+            "rank": 24,
+            "win_rate": 54.9
+          },
+          {
+            "arena": "models",
+            "category": "website",
+            "elo": 1288,
+            "rank": 23,
+            "win_rate": 54.8
+          }
+        ]
+      },
+      "canonical_slug": "xiaomi/mimo-v2.5-20260422",
+      "context_length": 1050000,
+      "created": 1776874269,
+      "default_parameters": {
+        "frequency_penalty": null,
+        "presence_penalty": null,
+        "repetition_penalty": null,
+        "temperature": 1,
+        "top_k": null,
+        "top_p": 0.95
+      },
+      "description": "MiMo-V2.5 is a native omnimodal model by Xiaomi. It delivers Pro-level agentic performance at roughly half the inference cost, while surpassing MiMo-V2-Omni in multimodal perception across image and video understanding...",
+      "expiration_date": null,
+      "hugging_face_id": "XiaomiMiMo/MiMo-V2.5",
+      "id": "xiaomi/mimo-v2.5",
+      "knowledge_cutoff": null,
+      "links": {
+        "details": "/api/v1/models/xiaomi/mimo-v2.5-20260422/endpoints"
+      },
+      "name": "Xiaomi: MiMo-V2.5",
+      "per_request_limits": null,
+      "pricing": {
+        "completion": "0.00000028",
+        "input_cache_read": "0.0000000028",
+        "prompt": "0.00000014"
+      },
+      "reasoning": {
+        "mandatory": false
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "supported_voices": null,
+      "top_provider": {
+        "context_length": 1048576,
+        "is_moderated": false,
+        "max_completion_tokens": 131072
+      }
+    }
+  },
+  "catalog_snapshot_date_declared": "2026-08-24",
+  "credits": {
+    "remaining": 23.633539818,
+    "total_credits": 25.0,
+    "total_usage": 1.366460182
+  },
+  "data_collection": "deny",
+  "endpoint_documents": {
+    "google/gemini-3.6-flash": {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video",
+          "file",
+          "audio"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+file+audio+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Gemini"
+      },
+      "created": 1784646733,
+      "description": "Gemini 3.6 Flash is a high-efficiency model from Google for coding, agentic workflows, and web and app development. It is designed to produce polished outputs with fewer unnecessary edits and...",
+      "endpoints": [
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 1783,
+            "p75": 2379,
+            "p90": 3454.800000000001,
+            "p99": 9260.730000000014
+          },
+          "max_completion_tokens": 65536,
+          "max_prompt_tokens": null,
+          "model_id": "google/gemini-3.6-flash",
+          "model_name": "Google: Gemini 3.6 Flash",
+          "name": "Google AI Studio | google/gemini-3.6-flash-20260721",
+          "pricing": {
+            "audio": "0.00000075",
+            "completion": "0.00000375",
+            "discount": 0,
+            "image": "0.00000075",
+            "input_audio_cache": "0.000000075",
+            "input_cache_read": "0.000000075",
+            "input_cache_write": "0.0000000416666666666667",
+            "internal_reasoning": "0.00000375",
+            "prompt": "0.00000075",
+            "web_search": "0.014"
+          },
+          "provider_name": "Google AI Studio",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "seed",
+            "response_format",
+            "structured_outputs",
+            "tool_choice",
+            "tools",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": true,
+          "supports_voice_cloning": false,
+          "tag": "google-ai-studio",
+          "throughput_last_30m": {
+            "p50": 124,
+            "p75": 160,
+            "p90": 189.90000000000055,
+            "p99": 236
+          },
+          "uptime_last_1d": 99.40205297415649,
+          "uptime_last_30m": 99.67679379444085,
+          "uptime_last_5m": 99.73190348525469
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 986.5,
+            "p75": 1361.25,
+            "p90": 3196.9,
+            "p99": 4722.749999999985
+          },
+          "max_completion_tokens": 65536,
+          "max_prompt_tokens": null,
+          "model_id": "google/gemini-3.6-flash",
+          "model_name": "Google: Gemini 3.6 Flash",
+          "name": "Google AI Studio | google/gemini-3.6-flash-20260721",
+          "pricing": {
+            "audio": "0.000000375",
+            "completion": "0.000001875",
+            "discount": 0,
+            "image": "0.000000375",
+            "input_audio_cache": "0.0000000375",
+            "input_cache_read": "0.0000000375",
+            "input_cache_write": "0.0000000208333333333333",
+            "internal_reasoning": "0.000001875",
+            "prompt": "0.000000375",
+            "web_search": "0.014"
+          },
+          "provider_name": "Google AI Studio",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "seed",
+            "response_format",
+            "structured_outputs",
+            "tool_choice",
+            "tools",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": true,
+          "supports_voice_cloning": false,
+          "tag": "google-ai-studio/flex",
+          "throughput_last_30m": {
+            "p50": 4,
+            "p75": 5,
+            "p90": 121,
+            "p99": 153.04999999999973
+          },
+          "uptime_last_1d": 99.40205297415649,
+          "uptime_last_30m": 99.67679379444085,
+          "uptime_last_5m": 99.73190348525469
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 916,
+            "p75": 996.5,
+            "p90": 1118,
+            "p99": 1691.6000000000001
+          },
+          "max_completion_tokens": 65536,
+          "max_prompt_tokens": null,
+          "model_id": "google/gemini-3.6-flash",
+          "model_name": "Google: Gemini 3.6 Flash",
+          "name": "Google AI Studio | google/gemini-3.6-flash-20260721",
+          "pricing": {
+            "audio": "0.00000135",
+            "completion": "0.00000675",
+            "discount": 0,
+            "image": "0.00000135",
+            "input_audio_cache": "0.000000135",
+            "input_cache_read": "0.000000135",
+            "input_cache_write": "0.000000075",
+            "internal_reasoning": "0.00000675",
+            "prompt": "0.00000135",
+            "web_search": "0.014"
+          },
+          "provider_name": "Google AI Studio",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "seed",
+            "response_format",
+            "structured_outputs",
+            "tool_choice",
+            "tools",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": true,
+          "supports_voice_cloning": false,
+          "tag": "google-ai-studio/priority",
+          "throughput_last_30m": {
+            "p50": 90,
+            "p75": 109,
+            "p90": 122,
+            "p99": 160.54000000000002
+          },
+          "uptime_last_1d": 99.40205297415649,
+          "uptime_last_30m": 99.67679379444085,
+          "uptime_last_5m": 99.73190348525469
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 1336,
+            "p75": 1582,
+            "p90": 2147.9000000000005,
+            "p99": 8259.990000000002
+          },
+          "max_completion_tokens": 65536,
+          "max_prompt_tokens": null,
+          "model_id": "google/gemini-3.6-flash",
+          "model_name": "Google: Gemini 3.6 Flash",
+          "name": "Google | google/gemini-3.6-flash-20260721",
+          "pricing": {
+            "audio": "0.00000075",
+            "completion": "0.00000375",
+            "discount": 0,
+            "image": "0.00000075",
+            "input_audio_cache": "0.000000075",
+            "input_cache_read": "0.000000075",
+            "input_cache_write": "0.0000000416666666666667",
+            "internal_reasoning": "0.00000375",
+            "prompt": "0.00000075",
+            "web_search": "0.014"
+          },
+          "provider_name": "Google",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "seed",
+            "response_format",
+            "stop",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": true,
+          "supports_voice_cloning": false,
+          "tag": "google-vertex/global",
+          "throughput_last_30m": {
+            "p50": 130,
+            "p75": 162,
+            "p90": 200,
+            "p99": 268
+          },
+          "uptime_last_1d": 99.74729306894842,
+          "uptime_last_30m": 99.92694544285673,
+          "uptime_last_5m": 99.92012779552716
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 9215,
+            "p75": 10034,
+            "p90": 11944,
+            "p99": 14728.899999999998
+          },
+          "max_completion_tokens": 65536,
+          "max_prompt_tokens": null,
+          "model_id": "google/gemini-3.6-flash",
+          "model_name": "Google: Gemini 3.6 Flash",
+          "name": "Google | google/gemini-3.6-flash-20260721",
+          "pricing": {
+            "audio": "0.000000375",
+            "completion": "0.000001875",
+            "discount": 0,
+            "image": "0.000000375",
+            "input_audio_cache": "0.0000000375",
+            "input_cache_read": "0.0000000375",
+            "input_cache_write": "0.0000000208333333333333",
+            "internal_reasoning": "0.000001875",
+            "prompt": "0.000000375",
+            "web_search": "0.014"
+          },
+          "provider_name": "Google",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "seed",
+            "response_format",
+            "stop",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": true,
+          "supports_voice_cloning": false,
+          "tag": "google-vertex/global/flex",
+          "throughput_last_30m": {
+            "p50": 112.5,
+            "p75": 181.75,
+            "p90": 208,
+            "p99": 257.2
+          },
+          "uptime_last_1d": 99.74729306894842,
+          "uptime_last_30m": 99.92694544285673,
+          "uptime_last_5m": 99.92012779552716
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 1866,
+            "p75": 2199.5,
+            "p90": 2741.9000000000005,
+            "p99": 4155.630000000002
+          },
+          "max_completion_tokens": 65536,
+          "max_prompt_tokens": null,
+          "model_id": "google/gemini-3.6-flash",
+          "model_name": "Google: Gemini 3.6 Flash",
+          "name": "Google | google/gemini-3.6-flash-20260721",
+          "pricing": {
+            "audio": "0.00000135",
+            "completion": "0.00000675",
+            "discount": 0,
+            "image": "0.00000135",
+            "input_audio_cache": "0.000000135",
+            "input_cache_read": "0.000000135",
+            "input_cache_write": "0.000000075",
+            "internal_reasoning": "0.00000675",
+            "prompt": "0.00000135",
+            "web_search": "0.014"
+          },
+          "provider_name": "Google",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "seed",
+            "response_format",
+            "stop",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": true,
+          "supports_voice_cloning": false,
+          "tag": "google-vertex/global/priority",
+          "throughput_last_30m": {
+            "p50": 3,
+            "p75": 5,
+            "p90": 16.10000000000001,
+            "p99": 33.04000000000002
+          },
+          "uptime_last_1d": 99.74729306894842,
+          "uptime_last_30m": 99.92694544285673,
+          "uptime_last_5m": 99.92012779552716
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": null,
+          "max_completion_tokens": 65536,
+          "max_prompt_tokens": null,
+          "model_id": "google/gemini-3.6-flash",
+          "model_name": "Google: Gemini 3.6 Flash",
+          "name": "Google | google/gemini-3.6-flash-20260721",
+          "pricing": {
+            "audio": "0.000000825",
+            "completion": "0.000004125",
+            "discount": 0,
+            "image": "0.000000825",
+            "input_audio_cache": "0.0000000825",
+            "input_cache_read": "0.0000000825",
+            "input_cache_write": "0.0000000416666666666667",
+            "internal_reasoning": "0.000004125",
+            "prompt": "0.000000825",
+            "web_search": "0.014"
+          },
+          "provider_name": "Google",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "seed",
+            "response_format",
+            "stop",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": true,
+          "supports_voice_cloning": false,
+          "tag": "google-vertex/us",
+          "throughput_last_30m": null,
+          "uptime_last_1d": 100,
+          "uptime_last_30m": null,
+          "uptime_last_5m": null
+        }
+      ],
+      "id": "google/gemini-3.6-flash",
+      "name": "Google: Gemini 3.6 Flash"
+    },
+    "minimax/minimax-m3": {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "created": 1780245374,
+      "description": "MiniMax-M3 is a multimodal foundation model from MiniMax. It supports text, image, and video inputs with text output, a 1M-token context window, and is suited for long-horizon agentic work, coding,...",
+      "endpoints": [
+        {
+          "context_length": 262144,
+          "latency_last_30m": {
+            "p50": 475,
+            "p75": 839.25,
+            "p90": 1717.7000000000003,
+            "p99": 5989.520000000011
+          },
+          "max_completion_tokens": 262144,
+          "max_prompt_tokens": null,
+          "model_id": "minimax/minimax-m3",
+          "model_name": "MiniMax: MiniMax M3",
+          "name": "CoreWeave | minimax/minimax-m3-20260531",
+          "pricing": {
+            "completion": "0.00000096",
+            "discount": 0,
+            "input_cache_read": "0.00000005",
+            "prompt": "0.00000023"
+          },
+          "provider_name": "CoreWeave",
+          "quantization": "fp4",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "top_k",
+            "repetition_penalty",
+            "frequency_penalty",
+            "presence_penalty",
+            "stop",
+            "seed",
+            "response_format",
+            "structured_outputs",
+            "logprobs",
+            "top_logprobs"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "coreweave/fp4",
+          "throughput_last_30m": {
+            "p50": 90,
+            "p75": 120,
+            "p90": 138,
+            "p99": 182.17000000000007
+          },
+          "uptime_last_1d": 99.74796975637076,
+          "uptime_last_30m": 99.14802981895635,
+          "uptime_last_5m": 99.27184466019418
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 3267,
+            "p75": 4051,
+            "p90": 5258.400000000001,
+            "p99": 9246.2
+          },
+          "max_completion_tokens": null,
+          "max_prompt_tokens": null,
+          "model_id": "minimax/minimax-m3",
+          "model_name": "MiniMax: MiniMax M3",
+          "name": "GMICloud | minimax/minimax-m3-20260531",
+          "pricing": {
+            "completion": "0.00000096",
+            "discount": 0.6,
+            "input_cache_read": "0.000000048",
+            "prompt": "0.00000024"
+          },
+          "provider_name": "GMICloud",
+          "quantization": "fp8",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "seed",
+            "response_format"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "gmicloud/fp8",
+          "throughput_last_30m": {
+            "p50": 32,
+            "p75": 82,
+            "p90": 101,
+            "p99": 125
+          },
+          "uptime_last_1d": 99.56622134256968,
+          "uptime_last_30m": 99.83347210657784,
+          "uptime_last_5m": 100
+        },
+        {
+          "context_length": 256000,
+          "latency_last_30m": {
+            "p50": 2020,
+            "p75": 4165,
+            "p90": 7405,
+            "p99": 15398.399999999998
+          },
+          "max_completion_tokens": 256000,
+          "max_prompt_tokens": null,
+          "model_id": "minimax/minimax-m3",
+          "model_name": "MiniMax: MiniMax M3",
+          "name": "Morph | minimax/minimax-m3-20260531",
+          "pricing": {
+            "completion": "0.00000102",
+            "discount": 0,
+            "prompt": "0.000000255"
+          },
+          "provider_name": "Morph",
+          "quantization": "fp4",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "stop",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "logprobs",
+            "top_logprobs",
+            "top_p",
+            "top_k",
+            "min_p",
+            "frequency_penalty",
+            "presence_penalty",
+            "repetition_penalty",
+            "seed",
+            "logit_bias"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "morph/fp4",
+          "throughput_last_30m": {
+            "p50": 19,
+            "p75": 25,
+            "p90": 35,
+            "p99": 61.799999999999955
+          },
+          "uptime_last_1d": 89.78697914716783,
+          "uptime_last_30m": 95.54655870445345,
+          "uptime_last_5m": 92.1875
+        },
+        {
+          "context_length": 524288,
+          "latency_last_30m": {
+            "p50": 1034,
+            "p75": 1775,
+            "p90": 3034.6000000000013,
+            "p99": 7558.540000000003
+          },
+          "max_completion_tokens": 512000,
+          "max_prompt_tokens": null,
+          "model_id": "minimax/minimax-m3",
+          "model_name": "MiniMax: MiniMax M3",
+          "name": "DeepInfra | minimax/minimax-m3-20260531",
+          "pricing": {
+            "completion": "0.0000011",
+            "discount": 0,
+            "input_cache_read": "0.000000056",
+            "prompt": "0.00000028"
+          },
+          "provider_name": "DeepInfra",
+          "quantization": "fp8",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "repetition_penalty",
+            "top_k",
+            "seed",
+            "min_p",
+            "response_format",
+            "tools",
+            "tool_choice",
+            "logit_bias"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "deepinfra/fp8",
+          "throughput_last_30m": {
+            "p50": 28,
+            "p75": 38,
+            "p90": 48,
+            "p99": 60.22000000000003
+          },
+          "uptime_last_1d": 97.10541616351357,
+          "uptime_last_30m": 97.02770780856423,
+          "uptime_last_5m": 86.83274021352312
+        },
+        {
+          "context_length": 524300,
+          "latency_last_30m": {
+            "p50": 2056,
+            "p75": 3589,
+            "p90": 10293.8,
+            "p99": 25519.71999999999
+          },
+          "max_completion_tokens": 524288,
+          "max_prompt_tokens": null,
+          "model_id": "minimax/minimax-m3",
+          "model_name": "MiniMax: MiniMax M3",
+          "name": "AtlasCloud | minimax/minimax-m3-20260531",
+          "pricing": {
+            "completion": "0.0000012",
+            "discount": 0,
+            "input_cache_read": "0.00000006",
+            "prompt": "0.0000003"
+          },
+          "provider_name": "AtlasCloud",
+          "quantization": "fp8",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "tools"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "atlas-cloud/fp8",
+          "throughput_last_30m": {
+            "p50": 54,
+            "p75": 87,
+            "p90": 116,
+            "p99": 1278.159999999989
+          },
+          "uptime_last_1d": 99.56364174247467,
+          "uptime_last_30m": 99.16142557651992,
+          "uptime_last_5m": 100
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 1685,
+            "p75": 5019,
+            "p90": 11067,
+            "p99": 62488
+          },
+          "max_completion_tokens": 524288,
+          "max_prompt_tokens": null,
+          "model_id": "minimax/minimax-m3",
+          "model_name": "MiniMax: MiniMax M3",
+          "name": "Parasail | minimax/minimax-m3-20260531",
+          "pricing": {
+            "completion": "0.0000012",
+            "discount": 0,
+            "input_cache_read": "0.00000006",
+            "prompt": "0.0000003"
+          },
+          "provider_name": "Parasail",
+          "quantization": "fp8",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "frequency_penalty",
+            "presence_penalty",
+            "repetition_penalty",
+            "seed",
+            "stop",
+            "top_k",
+            "logit_bias",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "logprobs",
+            "top_logprobs"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "parasail/fp8",
+          "throughput_last_30m": {
+            "p50": 42,
+            "p75": 59,
+            "p90": 74,
+            "p99": 122
+          },
+          "uptime_last_1d": 97.8582570091589,
+          "uptime_last_30m": 97.68196569309225,
+          "uptime_last_5m": 95.81881533101046
+        },
+        {
+          "context_length": 1000000,
+          "latency_last_30m": {
+            "p50": 2024,
+            "p75": 3293,
+            "p90": 6319.700000000002,
+            "p99": 26948.20000000001
+          },
+          "max_completion_tokens": 131072,
+          "max_prompt_tokens": null,
+          "model_id": "minimax/minimax-m3",
+          "model_name": "MiniMax: MiniMax M3",
+          "name": "Novita | minimax/minimax-m3-20260531",
+          "pricing": {
+            "completion": "0.0000012",
+            "discount": 0,
+            "input_cache_read": "0.00000006",
+            "prompt": "0.0000003"
+          },
+          "provider_name": "Novita",
+          "quantization": "fp8",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "seed",
+            "top_k",
+            "repetition_penalty",
+            "tools",
+            "tool_choice"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "novita/fp8",
+          "throughput_last_30m": {
+            "p50": 59,
+            "p75": 87,
+            "p90": 115,
+            "p99": 172.1800000000003
+          },
+          "uptime_last_1d": 99.80035725543763,
+          "uptime_last_30m": 99.88951090159104,
+          "uptime_last_5m": 100
+        },
+        {
+          "context_length": 1000000,
+          "latency_last_30m": {
+            "p50": 1678,
+            "p75": 2651.5,
+            "p90": 4822.7,
+            "p99": 13656.100000000015
+          },
+          "max_completion_tokens": 512000,
+          "max_prompt_tokens": null,
+          "model_id": "minimax/minimax-m3",
+          "model_name": "MiniMax: MiniMax M3",
+          "name": "StreamLake | minimax/minimax-m3-20260531",
+          "pricing": {
+            "completion": "0.0000012",
+            "discount": 0.5,
+            "input_cache_read": "0.00000006",
+            "prompt": "0.0000003"
+          },
+          "provider_name": "StreamLake",
+          "quantization": "fp8",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "response_format",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "streamlake/fp8",
+          "throughput_last_30m": {
+            "p50": 67,
+            "p75": 97,
+            "p90": 129,
+            "p99": 177.98000000000002
+          },
+          "uptime_last_1d": 99.55378391242266,
+          "uptime_last_30m": 98.38187702265373,
+          "uptime_last_5m": 100
+        },
+        {
+          "context_length": 524288,
+          "latency_last_30m": {
+            "p50": 1174,
+            "p75": 2028.5,
+            "p90": 3697.2000000000007,
+            "p99": 12283.750000000004
+          },
+          "max_completion_tokens": null,
+          "max_prompt_tokens": null,
+          "model_id": "minimax/minimax-m3",
+          "model_name": "MiniMax: MiniMax M3",
+          "name": "Together | minimax/minimax-m3-20260531",
+          "pricing": {
+            "completion": "0.0000012",
+            "discount": 0,
+            "input_cache_read": "0.00000006",
+            "prompt": "0.0000003"
+          },
+          "provider_name": "Together",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "top_k",
+            "repetition_penalty",
+            "logit_bias",
+            "min_p",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "together",
+          "throughput_last_30m": {
+            "p50": 46,
+            "p75": 66,
+            "p90": 91,
+            "p99": 158.21000000000004
+          },
+          "uptime_last_1d": 99.75599529861364,
+          "uptime_last_30m": 99.9198717948718,
+          "uptime_last_5m": 99.85185185185185
+        },
+        {
+          "context_length": 524288,
+          "latency_last_30m": {
+            "p50": 1180,
+            "p75": 1978.25,
+            "p90": 3398.800000000001,
+            "p99": 8794.900000000005
+          },
+          "max_completion_tokens": 65536,
+          "max_prompt_tokens": null,
+          "model_id": "minimax/minimax-m3",
+          "model_name": "MiniMax: MiniMax M3",
+          "name": "Venice | minimax/minimax-m3-20260531",
+          "pricing": {
+            "completion": "0.0000012",
+            "discount": 0,
+            "input_cache_read": "0.00000006",
+            "prompt": "0.0000003"
+          },
+          "provider_name": "Venice",
+          "quantization": "fp8",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "top_k",
+            "tools",
+            "tool_choice"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "venice/fp8",
+          "throughput_last_30m": {
+            "p50": 96,
+            "p75": 122,
+            "p90": 145,
+            "p99": 199.67000000000007
+          },
+          "uptime_last_1d": 99.95502011937903,
+          "uptime_last_30m": 99.88188976377953,
+          "uptime_last_5m": 100
+        },
+        {
+          "context_length": 524288,
+          "latency_last_30m": {
+            "p50": 1260,
+            "p75": 2040.25,
+            "p90": 3148.9000000000005,
+            "p99": 10080.09
+          },
+          "max_completion_tokens": 512000,
+          "max_prompt_tokens": 524288,
+          "model_id": "minimax/minimax-m3",
+          "model_name": "MiniMax: MiniMax M3",
+          "name": "Minimax | minimax/minimax-m3-20260531",
+          "pricing": {
+            "completion": "0.0000012",
+            "discount": 0,
+            "input_cache_read": "0.00000006",
+            "prompt": "0.0000003"
+          },
+          "provider_name": "Minimax",
+          "quantization": "fp8",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "response_format",
+            "tool_choice",
+            "tools"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "minimax/fp8",
+          "throughput_last_30m": {
+            "p50": 66,
+            "p75": 97,
+            "p90": 129,
+            "p99": 197
+          },
+          "uptime_last_1d": 99.42662912861361,
+          "uptime_last_30m": 99.03654485049834,
+          "uptime_last_5m": 98.89624724061811
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 1168.5,
+            "p75": 2051.25,
+            "p90": 2818.600000000002,
+            "p99": 38774.91
+          },
+          "max_completion_tokens": 1048576,
+          "max_prompt_tokens": null,
+          "model_id": "minimax/minimax-m3",
+          "model_name": "MiniMax: MiniMax M3",
+          "name": "SambaNova | minimax/minimax-m3-20260531",
+          "pricing": {
+            "completion": "0.0000024",
+            "discount": 0,
+            "prompt": "0.0000006"
+          },
+          "provider_name": "SambaNova",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "top_k",
+            "stop",
+            "response_format",
+            "logprobs",
+            "top_logprobs"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "sambanova",
+          "throughput_last_30m": {
+            "p50": 124,
+            "p75": 180.25,
+            "p90": 209.60000000000002,
+            "p99": 227.34000000000003
+          },
+          "uptime_last_1d": 98.92975452306125,
+          "uptime_last_30m": null,
+          "uptime_last_5m": null
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 903,
+            "p75": 1882,
+            "p90": 3022.400000000001,
+            "p99": 13018.400000000278
+          },
+          "max_completion_tokens": 1048576,
+          "max_prompt_tokens": null,
+          "model_id": "minimax/minimax-m3",
+          "model_name": "MiniMax: MiniMax M3",
+          "name": "ModelRun | minimax/minimax-m3-20260531",
+          "pricing": {
+            "completion": "0.000003",
+            "discount": 0,
+            "input_cache_read": "0.00000015",
+            "prompt": "0.00000075"
+          },
+          "provider_name": "ModelRun",
+          "quantization": "fp4",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "presence_penalty",
+            "repetition_penalty",
+            "frequency_penalty",
+            "top_p",
+            "top_k",
+            "stop",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "modelrun/fp4",
+          "throughput_last_30m": {
+            "p50": 93.5,
+            "p75": 135,
+            "p90": 168,
+            "p99": 259.43000000000006
+          },
+          "uptime_last_1d": 99.78087879137354,
+          "uptime_last_30m": 99.71724787935909,
+          "uptime_last_5m": 100
+        }
+      ],
+      "id": "minimax/minimax-m3",
+      "name": "MiniMax: MiniMax M3"
+    },
+    "moonshotai/kimi-k3": {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "created": 1784215858,
+      "description": "Kimi K3 is a 2.8T parameter open-weight multimodal reasoning model from Moonshot AI. It is suited for complex coding, knowledge work, and long-horizon agentic workflows, and is particularly strong at...",
+      "endpoints": [
+        {
+          "context_length": 974842,
+          "latency_last_30m": {
+            "p50": 2621.5,
+            "p75": 6619,
+            "p90": 15905.39999999999,
+            "p99": 137385.85000000012
+          },
+          "max_completion_tokens": 974842,
+          "max_prompt_tokens": null,
+          "model_id": "moonshotai/kimi-k3",
+          "model_name": "MoonshotAI: Kimi K3",
+          "name": "Sail Research | moonshotai/kimi-k3-20260715",
+          "pricing": {
+            "completion": "0.000013",
+            "discount": 0,
+            "input_cache_read": "0.00000029",
+            "prompt": "0.0000026"
+          },
+          "provider_name": "Sail Research",
+          "quantization": "fp4",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "temperature",
+            "top_p",
+            "top_k",
+            "frequency_penalty",
+            "presence_penalty",
+            "stop",
+            "seed",
+            "max_tokens",
+            "tools",
+            "tool_choice",
+            "response_format",
+            "structured_outputs",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "sail-research/fp4",
+          "throughput_last_30m": {
+            "p50": 37,
+            "p75": 65,
+            "p90": 87,
+            "p99": 140
+          },
+          "uptime_last_1d": 98.35553514010105,
+          "uptime_last_30m": 97.28395061728395,
+          "uptime_last_5m": 96.64179104477611
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 4437,
+            "p75": 10819.5,
+            "p90": 21346,
+            "p99": 59097.50000000006
+          },
+          "max_completion_tokens": 1048576,
+          "max_prompt_tokens": null,
+          "model_id": "moonshotai/kimi-k3",
+          "model_name": "MoonshotAI: Kimi K3",
+          "name": "Morph | moonshotai/kimi-k3-20260715",
+          "pricing": {
+            "completion": "0.000014",
+            "discount": 0,
+            "input_cache_read": "0.00000029",
+            "prompt": "0.0000028"
+          },
+          "provider_name": "Morph",
+          "quantization": "fp4",
+          "status": -2,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "stop",
+            "response_format",
+            "structured_outputs",
+            "logprobs",
+            "top_logprobs",
+            "tools",
+            "tool_choice",
+            "top_p",
+            "top_k",
+            "min_p",
+            "frequency_penalty",
+            "presence_penalty",
+            "repetition_penalty",
+            "seed",
+            "logit_bias",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "morph/fp4",
+          "throughput_last_30m": {
+            "p50": 35,
+            "p75": 53,
+            "p90": 66,
+            "p99": 78
+          },
+          "uptime_last_1d": 94.96315749215981,
+          "uptime_last_30m": 93.33333333333333,
+          "uptime_last_5m": null
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 938.5,
+            "p75": 1501.75,
+            "p90": 2645.399999999999,
+            "p99": 8441.509999999997
+          },
+          "max_completion_tokens": 16384,
+          "max_prompt_tokens": null,
+          "model_id": "moonshotai/kimi-k3",
+          "model_name": "MoonshotAI: Kimi K3",
+          "name": "DeepInfra | moonshotai/kimi-k3-20260715",
+          "pricing": {
+            "completion": "0.00001425",
+            "discount": 0,
+            "input_cache_read": "0.000000285",
+            "prompt": "0.00000285"
+          },
+          "provider_name": "DeepInfra",
+          "quantization": "bf16",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "repetition_penalty",
+            "top_k",
+            "seed",
+            "min_p",
+            "response_format",
+            "logit_bias",
+            "structured_outputs",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "deepinfra/bf16",
+          "throughput_last_30m": {
+            "p50": 30,
+            "p75": 47,
+            "p90": 79,
+            "p99": 164.05999999999995
+          },
+          "uptime_last_1d": 97.53474618038442,
+          "uptime_last_30m": 97.17586649550705,
+          "uptime_last_5m": 100
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 2218.5,
+            "p75": 4450.5,
+            "p90": 8098.399999999998,
+            "p99": 26850.64999999999
+          },
+          "max_completion_tokens": null,
+          "max_prompt_tokens": null,
+          "model_id": "moonshotai/kimi-k3",
+          "model_name": "MoonshotAI: Kimi K3",
+          "name": "DigitalOcean | moonshotai/kimi-k3-20260715",
+          "pricing": {
+            "completion": "0.00001425",
+            "discount": 0,
+            "input_cache_read": "0.000000285",
+            "prompt": "0.00000285"
+          },
+          "provider_name": "DigitalOcean",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "temperature",
+            "top_p",
+            "max_tokens",
+            "response_format",
+            "logprobs",
+            "top_logprobs",
+            "tools",
+            "tool_choice",
+            "structured_outputs",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "digitalocean",
+          "throughput_last_30m": {
+            "p50": 30,
+            "p75": 36,
+            "p90": 40,
+            "p99": 45
+          },
+          "uptime_last_1d": 99.95071508344525,
+          "uptime_last_30m": 99.88671764372698,
+          "uptime_last_5m": 100
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 12149,
+            "p75": 12149,
+            "p90": 12149,
+            "p99": 12149
+          },
+          "max_completion_tokens": 1048576,
+          "max_prompt_tokens": null,
+          "model_id": "moonshotai/kimi-k3",
+          "model_name": "MoonshotAI: Kimi K3",
+          "name": "Wafer | moonshotai/kimi-k3-20260715",
+          "pricing": {
+            "completion": "0.000015",
+            "discount": 0,
+            "input_cache_read": "0.0000003",
+            "prompt": "0.000003"
+          },
+          "provider_name": "Wafer",
+          "quantization": "unknown",
+          "status": -5,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "temperature",
+            "top_p",
+            "top_k",
+            "min_p",
+            "frequency_penalty",
+            "presence_penalty",
+            "repetition_penalty",
+            "stop",
+            "seed",
+            "max_tokens",
+            "logit_bias",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "wafer",
+          "throughput_last_30m": {
+            "p50": 14,
+            "p75": 14,
+            "p90": 14,
+            "p99": 14
+          },
+          "uptime_last_1d": 70.91016084739114,
+          "uptime_last_30m": 5.88235294117647,
+          "uptime_last_5m": null
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 2081.5,
+            "p75": 3472.25,
+            "p90": 9543.599999999999,
+            "p99": 38696.46000000001
+          },
+          "max_completion_tokens": 262144,
+          "max_prompt_tokens": null,
+          "model_id": "moonshotai/kimi-k3",
+          "model_name": "MoonshotAI: Kimi K3",
+          "name": "BaseTen | moonshotai/kimi-k3-20260715",
+          "pricing": {
+            "completion": "0.000015",
+            "discount": 0,
+            "input_cache_read": "0.0000003",
+            "prompt": "0.000003"
+          },
+          "provider_name": "BaseTen",
+          "quantization": "fp8",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "baseten/fp8",
+          "throughput_last_30m": {
+            "p50": 51,
+            "p75": 58,
+            "p90": 66,
+            "p99": 97.24000000000001
+          },
+          "uptime_last_1d": 99.55019199122326,
+          "uptime_last_30m": 99.40828402366864,
+          "uptime_last_5m": null
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 1599,
+            "p75": 2339,
+            "p90": 3692,
+            "p99": 10723.330000000005
+          },
+          "max_completion_tokens": null,
+          "max_prompt_tokens": null,
+          "model_id": "moonshotai/kimi-k3",
+          "model_name": "MoonshotAI: Kimi K3",
+          "name": "Together | moonshotai/kimi-k3-20260715",
+          "pricing": {
+            "completion": "0.000015",
+            "discount": 0,
+            "input_cache_read": "0.0000003",
+            "prompt": "0.000003"
+          },
+          "provider_name": "Together",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "top_k",
+            "repetition_penalty",
+            "logit_bias",
+            "min_p",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "together",
+          "throughput_last_30m": {
+            "p50": 39,
+            "p75": 53,
+            "p90": 65,
+            "p99": 93.09000000000015
+          },
+          "uptime_last_1d": 99.63770742709843,
+          "uptime_last_30m": 99.87472802795543,
+          "uptime_last_5m": 99.91983967935872
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 5018,
+            "p75": 8053,
+            "p90": 13910.9,
+            "p99": 40519.81000000001
+          },
+          "max_completion_tokens": null,
+          "max_prompt_tokens": null,
+          "model_id": "moonshotai/kimi-k3",
+          "model_name": "MoonshotAI: Kimi K3",
+          "name": "Moonshot AI | moonshotai/kimi-k3-20260715",
+          "pricing": {
+            "completion": "0.000015",
+            "discount": 0,
+            "input_cache_read": "0.0000003",
+            "prompt": "0.000003"
+          },
+          "provider_name": "Moonshot AI",
+          "quantization": "mxfp4",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "structured_outputs",
+            "response_format",
+            "tool_choice",
+            "tools",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "moonshotai/mxfp4",
+          "throughput_last_30m": {
+            "p50": 22,
+            "p75": 28,
+            "p90": 36,
+            "p99": 59
+          },
+          "uptime_last_1d": 99.55461314278521,
+          "uptime_last_30m": 99.57998106956933,
+          "uptime_last_5m": 99.78251413658113
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 5279,
+            "p75": 7859.75,
+            "p90": 10809.199999999997,
+            "p99": 33004.710000000094
+          },
+          "max_completion_tokens": 65535,
+          "max_prompt_tokens": null,
+          "model_id": "moonshotai/kimi-k3",
+          "model_name": "MoonshotAI: Kimi K3",
+          "name": "Phala | moonshotai/kimi-k3-20260715",
+          "pricing": {
+            "completion": "0.000015",
+            "discount": 0,
+            "input_cache_read": "0.0000003",
+            "prompt": "0.000003"
+          },
+          "provider_name": "Phala",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "seed",
+            "top_k",
+            "min_p",
+            "repetition_penalty",
+            "response_format",
+            "structured_outputs",
+            "logprobs",
+            "top_logprobs",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "phala",
+          "throughput_last_30m": {
+            "p50": 23,
+            "p75": 32,
+            "p90": 37,
+            "p99": 49
+          },
+          "uptime_last_1d": 97.62942779291554,
+          "uptime_last_30m": 99.54233409610984,
+          "uptime_last_5m": 98.79518072289156
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 2445,
+            "p75": 3601,
+            "p90": 5906.4000000000015,
+            "p99": 37252.32000000001
+          },
+          "max_completion_tokens": null,
+          "max_prompt_tokens": null,
+          "model_id": "moonshotai/kimi-k3",
+          "model_name": "MoonshotAI: Kimi K3",
+          "name": "Fireworks | moonshotai/kimi-k3-20260715",
+          "pricing": {
+            "completion": "0.000015",
+            "discount": 0,
+            "input_cache_read": "0.0000003",
+            "prompt": "0.000003"
+          },
+          "provider_name": "Fireworks",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "top_k",
+            "repetition_penalty",
+            "logit_bias",
+            "logprobs",
+            "top_logprobs",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "fireworks",
+          "throughput_last_30m": {
+            "p50": 38,
+            "p75": 46,
+            "p90": 51,
+            "p99": 70
+          },
+          "uptime_last_1d": 99.65594075627499,
+          "uptime_last_30m": 99.86033519553072,
+          "uptime_last_5m": 98.78048780487805
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 2457.5,
+            "p75": 3532,
+            "p90": 5252.800000000001,
+            "p99": 16381.080000000002
+          },
+          "max_completion_tokens": 1048576,
+          "max_prompt_tokens": null,
+          "model_id": "moonshotai/kimi-k3",
+          "model_name": "MoonshotAI: Kimi K3",
+          "name": "Modal | moonshotai/kimi-k3-20260715",
+          "pricing": {
+            "completion": "0.000015",
+            "discount": 0,
+            "input_cache_read": "0.0000003",
+            "prompt": "0.000003"
+          },
+          "provider_name": "Modal",
+          "quantization": "mxfp4",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "temperature",
+            "top_p",
+            "stop",
+            "max_tokens",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "modal/mxfp4",
+          "throughput_last_30m": {
+            "p50": 59,
+            "p75": 83,
+            "p90": 107,
+            "p99": 161
+          },
+          "uptime_last_1d": 99.7911881919561,
+          "uptime_last_30m": 99.96138623419249,
+          "uptime_last_5m": 100
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 1679,
+            "p75": 2225.5,
+            "p90": 3193.8,
+            "p99": 15905.68999999993
+          },
+          "max_completion_tokens": 65535,
+          "max_prompt_tokens": null,
+          "model_id": "moonshotai/kimi-k3",
+          "model_name": "MoonshotAI: Kimi K3",
+          "name": "Chutes | moonshotai/kimi-k3-20260715",
+          "pricing": {
+            "completion": "0.000015",
+            "discount": 0,
+            "input_cache_read": "0.0000003",
+            "prompt": "0.000003"
+          },
+          "provider_name": "Chutes",
+          "quantization": "mxfp4",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "seed",
+            "top_k",
+            "repetition_penalty",
+            "response_format",
+            "structured_outputs",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "chutes/mxfp4",
+          "throughput_last_30m": {
+            "p50": 21,
+            "p75": 24,
+            "p90": 25,
+            "p99": 28
+          },
+          "uptime_last_1d": 98.60642788087435,
+          "uptime_last_30m": 99.39353099730458,
+          "uptime_last_5m": 100
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 1414.5,
+            "p75": 2774,
+            "p90": 6723.4,
+            "p99": 43226.729999999996
+          },
+          "max_completion_tokens": null,
+          "max_prompt_tokens": null,
+          "model_id": "moonshotai/kimi-k3",
+          "model_name": "MoonshotAI: Kimi K3",
+          "name": "Fireworks | moonshotai/kimi-k3-20260715",
+          "pricing": {
+            "completion": "0.0000165",
+            "discount": 0,
+            "input_cache_read": "0.00000033",
+            "prompt": "0.0000033"
+          },
+          "provider_name": "Fireworks",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "top_k",
+            "repetition_penalty",
+            "logit_bias",
+            "logprobs",
+            "top_logprobs",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "fireworks/us",
+          "throughput_last_30m": {
+            "p50": 62,
+            "p75": 79,
+            "p90": 94,
+            "p99": 112
+          },
+          "uptime_last_1d": 97.59206798866855,
+          "uptime_last_30m": 99.76923076923076,
+          "uptime_last_5m": 100
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 10021,
+            "p75": 16455,
+            "p90": 25717.6,
+            "p99": 79035.60000000015
+          },
+          "max_completion_tokens": 1048576,
+          "max_prompt_tokens": null,
+          "model_id": "moonshotai/kimi-k3",
+          "model_name": "MoonshotAI: Kimi K3",
+          "name": "Alibaba | moonshotai/kimi-k3-20260715",
+          "pricing": {
+            "completion": "0.00001725",
+            "discount": 0,
+            "input_cache_read": "0.000000345",
+            "prompt": "0.00000345"
+          },
+          "provider_name": "Alibaba",
+          "quantization": "unknown",
+          "status": -2,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "seed",
+            "presence_penalty",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "logprobs",
+            "top_logprobs",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "alibaba",
+          "throughput_last_30m": {
+            "p50": 12,
+            "p75": 15,
+            "p90": 19,
+            "p99": 26
+          },
+          "uptime_last_1d": 91.34883720930233,
+          "uptime_last_30m": 81.4070351758794,
+          "uptime_last_5m": null
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 1343,
+            "p75": 6775.5,
+            "p90": 86464.20000000017,
+            "p99": 107934.65999999999
+          },
+          "max_completion_tokens": 1048576,
+          "max_prompt_tokens": null,
+          "model_id": "moonshotai/kimi-k3",
+          "model_name": "MoonshotAI: Kimi K3",
+          "name": "Morph | moonshotai/kimi-k3-20260715",
+          "pricing": {
+            "completion": "0.0000225",
+            "discount": 0,
+            "input_cache_read": "0.0000006",
+            "prompt": "0.000006"
+          },
+          "provider_name": "Morph",
+          "quantization": "fp4",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "stop",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "logprobs",
+            "top_logprobs",
+            "tool_choice",
+            "top_p",
+            "top_k",
+            "min_p",
+            "frequency_penalty",
+            "presence_penalty",
+            "repetition_penalty",
+            "seed",
+            "logit_bias",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "morph/fast",
+          "throughput_last_30m": {
+            "p50": 49,
+            "p75": 61,
+            "p90": 71.4,
+            "p99": 77.58
+          },
+          "uptime_last_1d": 94.5785597381342,
+          "uptime_last_30m": null,
+          "uptime_last_5m": null
+        }
+      ],
+      "id": "moonshotai/kimi-k3",
+      "name": "MoonshotAI: Kimi K3"
+    },
+    "openai/gpt-5.6-luna": {
+      "architecture": {
+        "input_modalities": [
+          "file",
+          "image",
+          "text"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+file->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "GPT"
+      },
+      "created": 1783590864,
+      "description": "GPT-5.6 Luna is a fast, cost-efficient model in OpenAI's GPT-5.6 series. It is suited for high-volume, latency-sensitive tasks such as chat, classification, and lightweight agentic workflows, providing capable reasoning for...",
+      "endpoints": [
+        {
+          "context_length": 1050000,
+          "latency_last_30m": {
+            "p50": 4076.5,
+            "p75": 6002,
+            "p90": 8733.800000000001,
+            "p99": 22166.950000000008
+          },
+          "max_completion_tokens": 128000,
+          "max_prompt_tokens": 922000,
+          "model_id": "openai/gpt-5.6-luna",
+          "model_name": "OpenAI: GPT-5.6 Luna",
+          "name": "Azure | openai/gpt-5.6-luna-20260709",
+          "pricing": {
+            "completion": "0.0000012",
+            "discount": 0,
+            "input_cache_read": "0.00000002",
+            "input_cache_write": "0.00000025",
+            "overrides": [
+              {
+                "completion": "0.0000018",
+                "input_cache_read": "0.00000004",
+                "input_cache_write": "0.0000005",
+                "min_prompt_tokens": 272000,
+                "prompt": "0.0000004"
+              }
+            ],
+            "prompt": "0.0000002",
+            "web_search": "0.01"
+          },
+          "provider_name": "Azure",
+          "quantization": "unknown",
+          "status": -5,
+          "supported_parameters": [
+            "max_completion_tokens",
+            "reasoning",
+            "include_reasoning",
+            "seed",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "azure",
+          "throughput_last_30m": {
+            "p50": 46,
+            "p75": 75,
+            "p90": 90,
+            "p99": 111
+          },
+          "uptime_last_1d": 91.03899702207944,
+          "uptime_last_30m": 76.41479384179792,
+          "uptime_last_5m": 100
+        },
+        {
+          "context_length": 1050000,
+          "latency_last_30m": {
+            "p50": 1466.5,
+            "p75": 2814,
+            "p90": 4936.500000000003,
+            "p99": 16105.260000000031
+          },
+          "max_completion_tokens": 128000,
+          "max_prompt_tokens": 922000,
+          "model_id": "openai/gpt-5.6-luna",
+          "model_name": "OpenAI: GPT-5.6 Luna",
+          "name": "OpenAI | openai/gpt-5.6-luna-20260709",
+          "pricing": {
+            "completion": "0.0000012",
+            "discount": 0,
+            "input_cache_read": "0.00000002",
+            "input_cache_write": "0.00000025",
+            "overrides": [
+              {
+                "completion": "0.0000018",
+                "input_cache_read": "0.00000004",
+                "input_cache_write": "0.0000005",
+                "min_prompt_tokens": 272000,
+                "prompt": "0.0000004"
+              }
+            ],
+            "prompt": "0.0000002",
+            "web_search": "0.01"
+          },
+          "provider_name": "OpenAI",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "seed",
+            "max_tokens",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "openai",
+          "throughput_last_30m": {
+            "p50": 52,
+            "p75": 79,
+            "p90": 96,
+            "p99": 127
+          },
+          "uptime_last_1d": 98.77199170208556,
+          "uptime_last_30m": 98.28574028799895,
+          "uptime_last_5m": 98.39219723851372
+        },
+        {
+          "context_length": 1050000,
+          "latency_last_30m": {
+            "p50": 2934,
+            "p75": 4564.25,
+            "p90": 7384.700000000002,
+            "p99": 40307.76000000007
+          },
+          "max_completion_tokens": 128000,
+          "max_prompt_tokens": 922000,
+          "model_id": "openai/gpt-5.6-luna",
+          "model_name": "OpenAI: GPT-5.6 Luna",
+          "name": "OpenAI | openai/gpt-5.6-luna-20260709",
+          "pricing": {
+            "completion": "0.0000006",
+            "discount": 0,
+            "input_cache_read": "0.00000001",
+            "input_cache_write": "0.000000125",
+            "overrides": [
+              {
+                "completion": "0.0000009",
+                "input_cache_read": "0.00000002",
+                "input_cache_write": "0.00000025",
+                "min_prompt_tokens": 272000,
+                "prompt": "0.0000002"
+              }
+            ],
+            "prompt": "0.0000001",
+            "web_search": "0.01"
+          },
+          "provider_name": "OpenAI",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "seed",
+            "max_tokens",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "openai/flex",
+          "throughput_last_30m": {
+            "p50": 33,
+            "p75": 43,
+            "p90": 55,
+            "p99": 84
+          },
+          "uptime_last_1d": 98.77199170208556,
+          "uptime_last_30m": 98.28574028799895,
+          "uptime_last_5m": 98.39219723851372
+        },
+        {
+          "context_length": 1050000,
+          "latency_last_30m": {
+            "p50": 1364,
+            "p75": 1788.25,
+            "p90": 2444,
+            "p99": 7229.620000000003
+          },
+          "max_completion_tokens": 128000,
+          "max_prompt_tokens": 922000,
+          "model_id": "openai/gpt-5.6-luna",
+          "model_name": "OpenAI: GPT-5.6 Luna",
+          "name": "OpenAI | openai/gpt-5.6-luna-20260709",
+          "pricing": {
+            "completion": "0.0000024",
+            "discount": 0,
+            "input_cache_read": "0.00000004",
+            "input_cache_write": "0.0000005",
+            "overrides": [
+              {
+                "completion": "0.0000036",
+                "input_cache_read": "0.00000008",
+                "input_cache_write": "0.000001",
+                "min_prompt_tokens": 272000,
+                "prompt": "0.0000008"
+              }
+            ],
+            "prompt": "0.0000004",
+            "web_search": "0.01"
+          },
+          "provider_name": "OpenAI",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "seed",
+            "max_tokens",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "openai/priority",
+          "throughput_last_30m": {
+            "p50": 56,
+            "p75": 83,
+            "p90": 111,
+            "p99": 165
+          },
+          "uptime_last_1d": 98.77199170208556,
+          "uptime_last_30m": 98.28574028799895,
+          "uptime_last_5m": 98.39219723851372
+        },
+        {
+          "context_length": 1050000,
+          "latency_last_30m": {
+            "p50": 972.5,
+            "p75": 1470,
+            "p90": 2325.9000000000005,
+            "p99": 5664.540000000001
+          },
+          "max_completion_tokens": 128000,
+          "max_prompt_tokens": 922000,
+          "model_id": "openai/gpt-5.6-luna",
+          "model_name": "OpenAI: GPT-5.6 Luna",
+          "name": "Amazon Bedrock | openai/gpt-5.6-luna-20260709",
+          "pricing": {
+            "completion": "0.00000132",
+            "discount": 0,
+            "input_cache_read": "0.000000022",
+            "input_cache_write": "0.000000275",
+            "overrides": [
+              {
+                "completion": "0.00000198",
+                "input_cache_read": "0.000000044",
+                "input_cache_write": "0.00000055",
+                "min_prompt_tokens": 272000,
+                "prompt": "0.00000044"
+              }
+            ],
+            "prompt": "0.00000022",
+            "web_search": "0.01"
+          },
+          "provider_name": "Amazon Bedrock",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": true,
+          "supports_voice_cloning": false,
+          "tag": "amazon-bedrock/us-east-1",
+          "throughput_last_30m": {
+            "p50": 92,
+            "p75": 125,
+            "p90": 149,
+            "p99": 210
+          },
+          "uptime_last_1d": 99.99761720378865,
+          "uptime_last_30m": 100,
+          "uptime_last_5m": 100
+        },
+        {
+          "context_length": 1050000,
+          "latency_last_30m": {
+            "p50": 2037.5,
+            "p75": 3480,
+            "p90": 5509,
+            "p99": 16468.21999999999
+          },
+          "max_completion_tokens": 128000,
+          "max_prompt_tokens": null,
+          "model_id": "openai/gpt-5.6-luna",
+          "model_name": "OpenAI: GPT-5.6 Luna",
+          "name": "Azure | openai/gpt-5.6-luna-20260709",
+          "pricing": {
+            "completion": "0.00000132",
+            "discount": 0,
+            "input_cache_read": "0.000000022",
+            "input_cache_write": "0.000000275",
+            "overrides": [
+              {
+                "completion": "0.00000198",
+                "input_cache_read": "0.000000044",
+                "input_cache_write": "0.00000055",
+                "min_prompt_tokens": 272000,
+                "prompt": "0.00000044"
+              }
+            ],
+            "prompt": "0.00000022",
+            "web_search": "0.01"
+          },
+          "provider_name": "Azure",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "max_completion_tokens",
+            "reasoning",
+            "include_reasoning",
+            "seed",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "azure/eu",
+          "throughput_last_30m": {
+            "p50": 52,
+            "p75": 68,
+            "p90": 84,
+            "p99": 114
+          },
+          "uptime_last_1d": 99.99743691609744,
+          "uptime_last_30m": 99.96789727126806,
+          "uptime_last_5m": 100
+        },
+        {
+          "context_length": 1050000,
+          "latency_last_30m": {
+            "p50": 2865.5,
+            "p75": 4819.5,
+            "p90": 7155.900000000001,
+            "p99": 17540.57000000001
+          },
+          "max_completion_tokens": 128000,
+          "max_prompt_tokens": null,
+          "model_id": "openai/gpt-5.6-luna",
+          "model_name": "OpenAI: GPT-5.6 Luna",
+          "name": "Azure | openai/gpt-5.6-luna-20260709",
+          "pricing": {
+            "completion": "0.00000132",
+            "discount": 0,
+            "input_cache_read": "0.000000022",
+            "input_cache_write": "0.000000275",
+            "overrides": [
+              {
+                "completion": "0.00000198",
+                "input_cache_read": "0.000000044",
+                "input_cache_write": "0.00000055",
+                "min_prompt_tokens": 272000,
+                "prompt": "0.00000044"
+              }
+            ],
+            "prompt": "0.00000022",
+            "web_search": "0.01"
+          },
+          "provider_name": "Azure",
+          "quantization": "unknown",
+          "status": -5,
+          "supported_parameters": [
+            "max_completion_tokens",
+            "reasoning",
+            "include_reasoning",
+            "seed",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "azure/us",
+          "throughput_last_30m": {
+            "p50": 42,
+            "p75": 61,
+            "p90": 82,
+            "p99": 97
+          },
+          "uptime_last_1d": 82.08511722731906,
+          "uptime_last_30m": 70.86515699673947,
+          "uptime_last_5m": 56.54374548083876
+        }
+      ],
+      "id": "openai/gpt-5.6-luna",
+      "name": "OpenAI: GPT-5.6 Luna"
+    },
+    "qwen/qwen3.5-9b": {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Qwen3"
+      },
+      "created": 1773152396,
+      "description": "Qwen3.5-9B is a multimodal foundation model from the Qwen3.5 family, designed to deliver strong reasoning, coding, and visual understanding in an efficient 9B-parameter architecture. It uses a unified vision-language design...",
+      "endpoints": [
+        {
+          "context_length": 262144,
+          "latency_last_30m": {
+            "p50": 451,
+            "p75": 814,
+            "p90": 1241.4,
+            "p99": 3278.159999999998
+          },
+          "max_completion_tokens": 81920,
+          "max_prompt_tokens": null,
+          "model_id": "qwen/qwen3.5-9b",
+          "model_name": "Qwen: Qwen3.5-9B",
+          "name": "DeepInfra | qwen/qwen3.5-9b-20260310",
+          "pricing": {
+            "completion": "0.00000015",
+            "discount": 0,
+            "prompt": "0.0000001"
+          },
+          "provider_name": "DeepInfra",
+          "quantization": "bf16",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "repetition_penalty",
+            "top_k",
+            "seed",
+            "min_p",
+            "response_format",
+            "logit_bias",
+            "structured_outputs",
+            "tools",
+            "tool_choice"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "deepinfra/bf16",
+          "throughput_last_30m": {
+            "p50": 20,
+            "p75": 23,
+            "p90": 25,
+            "p99": 29
+          },
+          "uptime_last_1d": 98.67201174411383,
+          "uptime_last_30m": 97.84946236559139,
+          "uptime_last_5m": 100
+        },
+        {
+          "context_length": 262144,
+          "latency_last_30m": {
+            "p50": 1664,
+            "p75": 2401,
+            "p90": 3628.9000000000005,
+            "p99": 9461.930000000026
+          },
+          "max_completion_tokens": 262144,
+          "max_prompt_tokens": null,
+          "model_id": "qwen/qwen3.5-9b",
+          "model_name": "Qwen: Qwen3.5-9B",
+          "name": "SiliconFlow | qwen/qwen3.5-9b-20260310",
+          "pricing": {
+            "completion": "0.00000015",
+            "discount": 0,
+            "prompt": "0.0000001"
+          },
+          "provider_name": "SiliconFlow",
+          "quantization": "fp8",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "temperature",
+            "top_p",
+            "top_k",
+            "frequency_penalty",
+            "repetition_penalty",
+            "presence_penalty",
+            "max_tokens",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "siliconflow/fp8",
+          "throughput_last_30m": {
+            "p50": 20,
+            "p75": 41,
+            "p90": 62,
+            "p99": 97
+          },
+          "uptime_last_1d": 98.82886859430661,
+          "uptime_last_30m": 98.95854604860118,
+          "uptime_last_5m": 96.76210864329676
+        },
+        {
+          "context_length": 256000,
+          "latency_last_30m": {
+            "p50": 847,
+            "p75": 1307,
+            "p90": 2003.1999999999998,
+            "p99": 4145.62
+          },
+          "max_completion_tokens": 32768,
+          "max_prompt_tokens": null,
+          "model_id": "qwen/qwen3.5-9b",
+          "model_name": "Qwen: Qwen3.5-9B",
+          "name": "Venice | qwen/qwen3.5-9b-20260310",
+          "pricing": {
+            "completion": "0.00000015",
+            "discount": 0,
+            "prompt": "0.0000001"
+          },
+          "provider_name": "Venice",
+          "quantization": "fp8",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "top_k",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "logprobs",
+            "top_logprobs"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "venice/fp8",
+          "throughput_last_30m": {
+            "p50": 65,
+            "p75": 116,
+            "p90": 144,
+            "p99": 160
+          },
+          "uptime_last_1d": 99.96699613627182,
+          "uptime_last_30m": 100,
+          "uptime_last_5m": 100
+        },
+        {
+          "context_length": 262144,
+          "latency_last_30m": {
+            "p50": 760,
+            "p75": 954,
+            "p90": 1290.4000000000005,
+            "p99": 3524.279999999998
+          },
+          "max_completion_tokens": 262144,
+          "max_prompt_tokens": null,
+          "model_id": "qwen/qwen3.5-9b",
+          "model_name": "Qwen: Qwen3.5-9B",
+          "name": "Parasail | qwen/qwen3.5-9b-20260310",
+          "pricing": {
+            "completion": "0.00000025",
+            "discount": 0,
+            "prompt": "0.0000001"
+          },
+          "provider_name": "Parasail",
+          "quantization": "bf16",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "frequency_penalty",
+            "presence_penalty",
+            "repetition_penalty",
+            "seed",
+            "stop",
+            "top_k",
+            "logit_bias",
+            "response_format",
+            "structured_outputs",
+            "logprobs",
+            "top_logprobs"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "parasail/bf16",
+          "throughput_last_30m": {
+            "p50": 24,
+            "p75": 34,
+            "p90": 42,
+            "p99": 51.52999999999997
+          },
+          "uptime_last_1d": 99.60435212660732,
+          "uptime_last_30m": 99.69696969696969,
+          "uptime_last_5m": 100
+        },
+        {
+          "context_length": 262144,
+          "latency_last_30m": {
+            "p50": 895.5,
+            "p75": 3304,
+            "p90": 4942.3,
+            "p99": 6699.19000000001
+          },
+          "max_completion_tokens": null,
+          "max_prompt_tokens": null,
+          "model_id": "qwen/qwen3.5-9b",
+          "model_name": "Qwen: Qwen3.5-9B",
+          "name": "Together | qwen/qwen3.5-9b-20260310",
+          "pricing": {
+            "completion": "0.00000025",
+            "discount": 0,
+            "prompt": "0.00000017"
+          },
+          "provider_name": "Together",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "top_k",
+            "repetition_penalty",
+            "logit_bias",
+            "min_p",
+            "tools",
+            "tool_choice",
+            "structured_outputs",
+            "response_format"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "together",
+          "throughput_last_30m": {
+            "p50": 38,
+            "p75": 63,
+            "p90": 83,
+            "p99": 108
+          },
+          "uptime_last_1d": 99.59733583204599,
+          "uptime_last_30m": 99.28904687847145,
+          "uptime_last_5m": 100
+        }
+      ],
+      "id": "qwen/qwen3.5-9b",
+      "name": "Qwen: Qwen3.5-9B"
+    },
+    "stepfun/step-3.7-flash": {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "created": 1779985069,
+      "description": "Step 3.7 Flash is StepFun's latest high-efficiency multimodal Mixture-of-Experts model. It pairs a 196B-parameter language backbone with a vision encoder for native image and video understanding, activating roughly 11B parameters...",
+      "endpoints": [
+        {
+          "context_length": 256000,
+          "latency_last_30m": {
+            "p50": 5035.5,
+            "p75": 6816,
+            "p90": 9442.8,
+            "p99": 18769.99
+          },
+          "max_completion_tokens": 256000,
+          "max_prompt_tokens": null,
+          "model_id": "stepfun/step-3.7-flash",
+          "model_name": "StepFun: Step 3.7 Flash",
+          "name": "StepFun | stepfun/step-3.7-flash-20260528",
+          "pricing": {
+            "completion": "0.00000115",
+            "discount": 0,
+            "input_cache_read": "0.00000004",
+            "prompt": "0.0000002"
+          },
+          "provider_name": "StepFun",
+          "quantization": "fp8",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "temperature",
+            "max_tokens",
+            "tools",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "logprobs",
+            "top_logprobs",
+            "response_format",
+            "structured_outputs",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "stepfun/fp8",
+          "throughput_last_30m": {
+            "p50": 41,
+            "p75": 65,
+            "p90": 80,
+            "p99": 110
+          },
+          "uptime_last_1d": 99.59839595667185,
+          "uptime_last_30m": 98.23874755381604,
+          "uptime_last_5m": 98.61111111111111
+        },
+        {
+          "context_length": 262144,
+          "latency_last_30m": {
+            "p50": 140,
+            "p75": 376.75,
+            "p90": 1423.100000000001,
+            "p99": 4762.180000000011
+          },
+          "max_completion_tokens": 32768,
+          "max_prompt_tokens": null,
+          "model_id": "stepfun/step-3.7-flash",
+          "model_name": "StepFun: Step 3.7 Flash",
+          "name": "DeepInfra | stepfun/step-3.7-flash-20260528",
+          "pricing": {
+            "completion": "0.00000115",
+            "discount": 0,
+            "input_cache_read": "0.00000004",
+            "prompt": "0.0000002"
+          },
+          "provider_name": "DeepInfra",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "repetition_penalty",
+            "top_k",
+            "seed",
+            "min_p",
+            "logit_bias",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "deepinfra",
+          "throughput_last_30m": {
+            "p50": 90,
+            "p75": 145,
+            "p90": 163,
+            "p99": 204.58000000000004
+          },
+          "uptime_last_1d": 99.95459798580156,
+          "uptime_last_30m": 99.29577464788733,
+          "uptime_last_5m": 100
+        },
+        {
+          "context_length": 262144,
+          "latency_last_30m": {
+            "p50": 2228,
+            "p75": 2799,
+            "p90": 5453.4000000000015,
+            "p99": 14142.079999999984
+          },
+          "max_completion_tokens": 256000,
+          "max_prompt_tokens": null,
+          "model_id": "stepfun/step-3.7-flash",
+          "model_name": "StepFun: Step 3.7 Flash",
+          "name": "Novita | stepfun/step-3.7-flash-20260528",
+          "pricing": {
+            "completion": "0.00000115",
+            "discount": 0,
+            "input_cache_read": "0.00000004",
+            "prompt": "0.0000002"
+          },
+          "provider_name": "Novita",
+          "quantization": "fp8",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "seed",
+            "top_k",
+            "repetition_penalty",
+            "tools",
+            "tool_choice",
+            "structured_outputs",
+            "logprobs",
+            "top_logprobs",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "novita/fp8",
+          "throughput_last_30m": {
+            "p50": 7,
+            "p75": 9,
+            "p90": 60,
+            "p99": 90.32
+          },
+          "uptime_last_1d": 97.76046738072056,
+          "uptime_last_30m": 99.63503649635037,
+          "uptime_last_5m": 100
+        }
+      ],
+      "id": "stepfun/step-3.7-flash",
+      "name": "StepFun: Step 3.7 Flash"
+    },
+    "x-ai/grok-4.6": {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "file"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+file->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Grok"
+      },
+      "created": 1786548957,
+      "description": "Grok 4.6 is SpaceXAI's smartest model with frontier performance on coding, knowledge work, and STEM.",
+      "endpoints": [
+        {
+          "context_length": 500000,
+          "latency_last_30m": {
+            "p50": 1342,
+            "p75": 2616,
+            "p90": 6040.499999999999,
+            "p99": 37388.930000000095
+          },
+          "max_completion_tokens": null,
+          "max_prompt_tokens": null,
+          "model_id": "x-ai/grok-4.6",
+          "model_name": "SpaceXAI: Grok 4.6",
+          "name": "xAI | x-ai/grok-4.6-20260810",
+          "pricing": {
+            "completion": "0.000006",
+            "discount": 0,
+            "input_cache_read": "0.0000005",
+            "overrides": [
+              {
+                "completion": "0.000012",
+                "input_cache_read": "0.000001",
+                "min_prompt_tokens": 200000,
+                "prompt": "0.000004"
+              }
+            ],
+            "prompt": "0.000002",
+            "web_search": "0.005"
+          },
+          "provider_name": "xAI",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "structured_outputs",
+            "response_format",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "seed",
+            "logprobs",
+            "top_logprobs",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "xai/zdr",
+          "throughput_last_30m": {
+            "p50": 50,
+            "p75": 58,
+            "p90": 68,
+            "p99": 94
+          },
+          "uptime_last_1d": 99.89131007273127,
+          "uptime_last_30m": 99.55373081042484,
+          "uptime_last_5m": 97.0873786407767
+        },
+        {
+          "context_length": 500000,
+          "latency_last_30m": {
+            "p50": 1661,
+            "p75": 3063.25,
+            "p90": 4964.400000000001,
+            "p99": 31459.45000000003
+          },
+          "max_completion_tokens": null,
+          "max_prompt_tokens": null,
+          "model_id": "x-ai/grok-4.6",
+          "model_name": "SpaceXAI: Grok 4.6",
+          "name": "xAI | x-ai/grok-4.6-20260810",
+          "pricing": {
+            "completion": "0.000012",
+            "discount": 0,
+            "input_cache_read": "0.000001",
+            "overrides": [
+              {
+                "completion": "0.000024",
+                "input_cache_read": "0.000002",
+                "min_prompt_tokens": 200000,
+                "prompt": "0.000008"
+              }
+            ],
+            "prompt": "0.000004",
+            "web_search": "0.005"
+          },
+          "provider_name": "xAI",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "structured_outputs",
+            "response_format",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "seed",
+            "logprobs",
+            "top_logprobs",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "xai/zdr/priority",
+          "throughput_last_30m": {
+            "p50": 54,
+            "p75": 64,
+            "p90": 73,
+            "p99": 95
+          },
+          "uptime_last_1d": 99.89131007273127,
+          "uptime_last_30m": 99.55373081042484,
+          "uptime_last_5m": 97.0873786407767
+        },
+        {
+          "context_length": 500000,
+          "latency_last_30m": {
+            "p50": 1587.5,
+            "p75": 3036.25,
+            "p90": 6600.900000000001,
+            "p99": 33885.270000000004
+          },
+          "max_completion_tokens": null,
+          "max_prompt_tokens": null,
+          "model_id": "x-ai/grok-4.6",
+          "model_name": "SpaceXAI: Grok 4.6",
+          "name": "xAI | x-ai/grok-4.6-20260810",
+          "pricing": {
+            "completion": "0.000006",
+            "discount": 0,
+            "input_cache_read": "0.0000005",
+            "overrides": [
+              {
+                "completion": "0.000012",
+                "input_cache_read": "0.000001",
+                "min_prompt_tokens": 200000,
+                "prompt": "0.000004"
+              }
+            ],
+            "prompt": "0.000002",
+            "web_search": "0.005"
+          },
+          "provider_name": "xAI",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "structured_outputs",
+            "response_format",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "seed",
+            "logprobs",
+            "top_logprobs",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "xai",
+          "throughput_last_30m": {
+            "p50": 49,
+            "p75": 59,
+            "p90": 70,
+            "p99": 100
+          },
+          "uptime_last_1d": 99.80426431187729,
+          "uptime_last_30m": 99.57007738607051,
+          "uptime_last_5m": 97.93608521970705
+        },
+        {
+          "context_length": 500000,
+          "latency_last_30m": {
+            "p50": 2605,
+            "p75": 3605.5,
+            "p90": 3952.2000000000003,
+            "p99": 14529.200000000015
+          },
+          "max_completion_tokens": null,
+          "max_prompt_tokens": null,
+          "model_id": "x-ai/grok-4.6",
+          "model_name": "SpaceXAI: Grok 4.6",
+          "name": "xAI | x-ai/grok-4.6-20260810",
+          "pricing": {
+            "completion": "0.000012",
+            "discount": 0,
+            "input_cache_read": "0.000001",
+            "overrides": [
+              {
+                "completion": "0.000024",
+                "input_cache_read": "0.000002",
+                "min_prompt_tokens": 200000,
+                "prompt": "0.000008"
+              }
+            ],
+            "prompt": "0.000004",
+            "web_search": "0.005"
+          },
+          "provider_name": "xAI",
+          "quantization": "unknown",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "structured_outputs",
+            "response_format",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "seed",
+            "logprobs",
+            "top_logprobs",
+            "tools",
+            "tool_choice",
+            "reasoning_effort"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "xai/priority",
+          "throughput_last_30m": {
+            "p50": 46,
+            "p75": 54.5,
+            "p90": 59.6,
+            "p99": 62.56
+          },
+          "uptime_last_1d": 99.80426431187729,
+          "uptime_last_30m": 99.57007738607051,
+          "uptime_last_5m": 97.93608521970705
+        }
+      ],
+      "id": "x-ai/grok-4.6",
+      "name": "SpaceXAI: Grok 4.6"
+    },
+    "xiaomi/mimo-v2.5": {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "audio",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+audio+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "created": 1776874269,
+      "description": "MiMo-V2.5 is a native omnimodal model by Xiaomi. It delivers Pro-level agentic performance at roughly half the inference cost, while surpassing MiMo-V2-Omni in multimodal perception across image and video understanding...",
+      "endpoints": [
+        {
+          "context_length": 1050000,
+          "latency_last_30m": {
+            "p50": 3611,
+            "p75": 4625.25,
+            "p90": 6045.5,
+            "p99": 13685.75
+          },
+          "max_completion_tokens": null,
+          "max_prompt_tokens": null,
+          "model_id": "xiaomi/mimo-v2.5",
+          "model_name": "Xiaomi: MiMo-V2.5",
+          "name": "GMICloud | xiaomi/mimo-v2.5-20260422",
+          "pricing": {
+            "completion": "0.000000238",
+            "discount": 0.15,
+            "input_cache_read": "0.00000000255",
+            "prompt": "0.000000119"
+          },
+          "provider_name": "GMICloud",
+          "quantization": "fp8",
+          "status": -2,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "seed",
+            "tools",
+            "tool_choice"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "gmicloud/fp8",
+          "throughput_last_30m": {
+            "p50": 24.5,
+            "p75": 43,
+            "p90": 55,
+            "p99": 77
+          },
+          "uptime_last_1d": 88.49070004030942,
+          "uptime_last_30m": 94.47878038730944,
+          "uptime_last_5m": 93.99759903961584
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 3484,
+            "p75": 5807.25,
+            "p90": 9593.500000000004,
+            "p99": 37020.140000000014
+          },
+          "max_completion_tokens": 131072,
+          "max_prompt_tokens": null,
+          "model_id": "xiaomi/mimo-v2.5",
+          "model_name": "Xiaomi: MiMo-V2.5",
+          "name": "Xiaomi | xiaomi/mimo-v2.5-20260422",
+          "pricing": {
+            "completion": "0.00000028",
+            "discount": 0,
+            "input_cache_read": "0.0000000028",
+            "prompt": "0.00000014"
+          },
+          "provider_name": "Xiaomi",
+          "quantization": "fp8",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "response_format",
+            "tools",
+            "tool_choice",
+            "frequency_penalty",
+            "presence_penalty"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "xiaomi/fp8",
+          "throughput_last_30m": {
+            "p50": 30,
+            "p75": 46,
+            "p90": 61,
+            "p99": 88.09000000000015
+          },
+          "uptime_last_1d": 99.45460861800647,
+          "uptime_last_30m": 99.37016375742307,
+          "uptime_last_5m": 99.37873637322706
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 1541,
+            "p75": 3905,
+            "p90": 6896.400000000008,
+            "p99": 31578.459999999945
+          },
+          "max_completion_tokens": 1048576,
+          "max_prompt_tokens": null,
+          "model_id": "xiaomi/mimo-v2.5",
+          "model_name": "Xiaomi: MiMo-V2.5",
+          "name": "Parasail | xiaomi/mimo-v2.5-20260422",
+          "pricing": {
+            "completion": "0.00000028",
+            "discount": 0,
+            "input_cache_read": "0.00000005",
+            "prompt": "0.00000014"
+          },
+          "provider_name": "Parasail",
+          "quantization": "fp8",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "frequency_penalty",
+            "presence_penalty",
+            "repetition_penalty",
+            "seed",
+            "stop",
+            "top_k",
+            "logit_bias",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "logprobs",
+            "top_logprobs"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "parasail/fp8",
+          "throughput_last_30m": {
+            "p50": 36,
+            "p75": 55,
+            "p90": 67,
+            "p99": 89.97999999999956
+          },
+          "uptime_last_1d": 99.47083623087622,
+          "uptime_last_30m": 99.31389365351629,
+          "uptime_last_5m": 100
+        },
+        {
+          "context_length": 1048576,
+          "latency_last_30m": {
+            "p50": 2728,
+            "p75": 4383.5,
+            "p90": 6905.6,
+            "p99": 19020.379999999757
+          },
+          "max_completion_tokens": 131072,
+          "max_prompt_tokens": null,
+          "model_id": "xiaomi/mimo-v2.5",
+          "model_name": "Xiaomi: MiMo-V2.5",
+          "name": "Novita | xiaomi/mimo-v2.5-20260422",
+          "pricing": {
+            "completion": "0.000000336",
+            "discount": 0,
+            "input_cache_read": "0.0000000034",
+            "prompt": "0.000000168"
+          },
+          "provider_name": "Novita",
+          "quantization": "fp8",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "seed",
+            "top_k",
+            "repetition_penalty",
+            "response_format",
+            "tools",
+            "tool_choice"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "novita/fp8",
+          "throughput_last_30m": {
+            "p50": 39,
+            "p75": 60,
+            "p90": 79,
+            "p99": 98
+          },
+          "uptime_last_1d": 98.88711705098675,
+          "uptime_last_30m": 99.84621836991472,
+          "uptime_last_5m": 99.87908101571948
+        },
+        {
+          "context_length": 262144,
+          "latency_last_30m": {
+            "p50": 724,
+            "p75": 1045,
+            "p90": 1703.0000000000005,
+            "p99": 7236.189999999973
+          },
+          "max_completion_tokens": 16384,
+          "max_prompt_tokens": null,
+          "model_id": "xiaomi/mimo-v2.5",
+          "model_name": "Xiaomi: MiMo-V2.5",
+          "name": "DeepInfra | xiaomi/mimo-v2.5-20260422",
+          "pricing": {
+            "completion": "0.000002",
+            "discount": 0,
+            "input_cache_read": "0.00000008",
+            "prompt": "0.0000004"
+          },
+          "provider_name": "DeepInfra",
+          "quantization": "bf16",
+          "status": 0,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "stop",
+            "frequency_penalty",
+            "presence_penalty",
+            "repetition_penalty",
+            "top_k",
+            "seed",
+            "min_p",
+            "response_format",
+            "structured_outputs",
+            "tools",
+            "tool_choice",
+            "logit_bias"
+          ],
+          "supports_implicit_caching": false,
+          "supports_voice_cloning": false,
+          "tag": "deepinfra/bf16",
+          "throughput_last_30m": {
+            "p50": 22,
+            "p75": 28,
+            "p90": 38,
+            "p99": 52.069999999999936
+          },
+          "uptime_last_1d": 98.27100169141139,
+          "uptime_last_30m": 98.87566137566137,
+          "uptime_last_5m": 100
+        }
+      ],
+      "id": "xiaomi/mimo-v2.5",
+      "name": "Xiaomi: MiMo-V2.5"
+    }
+  },
+  "key_metadata": {
+    "byok_usage": 0,
+    "byok_usage_daily": 0,
+    "byok_usage_monthly": 0,
+    "byok_usage_weekly": 0,
+    "expires_at": null,
+    "include_byok_in_limit": false,
+    "is_free_tier": false,
+    "is_management_key": false,
+    "is_provisioning_key": false,
+    "limit": null,
+    "limit_remaining": null,
+    "limit_reset": null,
+    "rate_limit": {
+      "interval": "10s",
+      "note": "This field is deprecated and safe to ignore.",
+      "requests": -1
+    },
+    "usage": 1.366460182,
+    "usage_daily": 0.352595402,
+    "usage_monthly": 1.366460182,
+    "usage_weekly": 0.352595402
+  },
+  "model_config": "config/models_explicit_aug24.json",
+  "models": [
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Qwen3"
+      },
+      "canonical_slug": "qwen/qwen3.5-9b-20260310",
+      "context_length": 262144,
+      "created": 1773152396,
+      "id": "qwen/qwen3.5-9b",
+      "name": "Qwen: Qwen3.5-9B",
+      "pricing": {
+        "completion": "0.00000015",
+        "prompt": "0.0000001"
+      },
+      "selected_endpoint": {
+        "context_length": 262144,
+        "max_completion_tokens": 81920,
+        "max_prompt_tokens": null,
+        "name": "DeepInfra | qwen/qwen3.5-9b-20260310",
+        "pricing": {
+          "completion": "0.00000015",
+          "discount": 0,
+          "prompt": "0.0000001"
+        },
+        "provider_name": "DeepInfra",
+        "quantization": "bf16",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "tag": "deepinfra/bf16"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "canonical_slug": "moonshotai/kimi-k3-20260715",
+      "context_length": 1048576,
+      "created": 1784215858,
+      "id": "moonshotai/kimi-k3",
+      "name": "MoonshotAI: Kimi K3",
+      "pricing": {
+        "completion": "0.000015",
+        "input_cache_read": "0.0000003",
+        "prompt": "0.000003"
+      },
+      "selected_endpoint": {
+        "context_length": 1048576,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "name": "DeepInfra | moonshotai/kimi-k3-20260715",
+        "pricing": {
+          "completion": "0.00001425",
+          "discount": 0,
+          "input_cache_read": "0.000000285",
+          "prompt": "0.00000285"
+        },
+        "provider_name": "DeepInfra",
+        "quantization": "bf16",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs",
+          "reasoning_effort"
+        ],
+        "tag": "deepinfra/bf16"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "reasoning_effort",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "architecture": {
+        "input_modalities": [
+          "file",
+          "image",
+          "text"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+file->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "GPT"
+      },
+      "canonical_slug": "openai/gpt-5.6-luna-20260709",
+      "context_length": 1050000,
+      "created": 1783590864,
+      "id": "openai/gpt-5.6-luna",
+      "name": "OpenAI: GPT-5.6 Luna",
+      "pricing": {
+        "completion": "0.0000012",
+        "input_cache_read": "0.00000002",
+        "input_cache_write": "0.00000025",
+        "overrides": [
+          {
+            "completion": "0.0000018",
+            "input_cache_read": "0.00000004",
+            "input_cache_write": "0.0000005",
+            "min_prompt_tokens": 272000,
+            "prompt": "0.0000004"
+          }
+        ],
+        "prompt": "0.0000002",
+        "web_search": "0.01"
+      },
+      "selected_endpoint": {
+        "context_length": 1050000,
+        "max_completion_tokens": 128000,
+        "max_prompt_tokens": 922000,
+        "name": "OpenAI | openai/gpt-5.6-luna-20260709",
+        "pricing": {
+          "completion": "0.0000012",
+          "discount": 0,
+          "input_cache_read": "0.00000002",
+          "input_cache_write": "0.00000025",
+          "overrides": [
+            {
+              "completion": "0.0000018",
+              "input_cache_read": "0.00000004",
+              "input_cache_write": "0.0000005",
+              "min_prompt_tokens": 272000,
+              "prompt": "0.0000004"
+            }
+          ],
+          "prompt": "0.0000002",
+          "web_search": "0.01"
+        },
+        "provider_name": "OpenAI",
+        "quantization": "unknown",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "seed",
+          "max_tokens",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice",
+          "reasoning_effort"
+        ],
+        "tag": "openai"
+      },
+      "supported_parameters": [
+        "include_reasoning",
+        "max_completion_tokens",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "tool_choice",
+        "tools"
+      ]
+    },
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video",
+          "file",
+          "audio"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+file+audio+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Gemini"
+      },
+      "canonical_slug": "google/gemini-3.6-flash-20260721",
+      "context_length": 1048576,
+      "created": 1784646733,
+      "id": "google/gemini-3.6-flash",
+      "name": "Google: Gemini 3.6 Flash",
+      "pricing": {
+        "audio": "0.00000075",
+        "completion": "0.00000375",
+        "image": "0.00000075",
+        "input_audio_cache": "0.000000075",
+        "input_cache_read": "0.000000075",
+        "input_cache_write": "0.0000000416666666666667",
+        "internal_reasoning": "0.00000375",
+        "prompt": "0.00000075",
+        "web_search": "0.014"
+      },
+      "selected_endpoint": {
+        "context_length": 1048576,
+        "max_completion_tokens": 65536,
+        "max_prompt_tokens": null,
+        "name": "Google | google/gemini-3.6-flash-20260721",
+        "pricing": {
+          "audio": "0.00000075",
+          "completion": "0.00000375",
+          "discount": 0,
+          "image": "0.00000075",
+          "input_audio_cache": "0.000000075",
+          "input_cache_read": "0.000000075",
+          "input_cache_write": "0.0000000416666666666667",
+          "internal_reasoning": "0.00000375",
+          "prompt": "0.00000075",
+          "web_search": "0.014"
+        },
+        "provider_name": "Google",
+        "quantization": "unknown",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "seed",
+          "response_format",
+          "stop",
+          "structured_outputs",
+          "tools",
+          "tool_choice",
+          "reasoning_effort"
+        ],
+        "tag": "google-vertex/global"
+      },
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ]
+    },
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "audio",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+audio+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "canonical_slug": "xiaomi/mimo-v2.5-20260422",
+      "context_length": 1050000,
+      "created": 1776874269,
+      "id": "xiaomi/mimo-v2.5",
+      "name": "Xiaomi: MiMo-V2.5",
+      "pricing": {
+        "completion": "0.00000028",
+        "input_cache_read": "0.0000000028",
+        "prompt": "0.00000014"
+      },
+      "selected_endpoint": {
+        "context_length": 262144,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "name": "DeepInfra | xiaomi/mimo-v2.5-20260422",
+        "pricing": {
+          "completion": "0.000002",
+          "discount": 0,
+          "input_cache_read": "0.00000008",
+          "prompt": "0.0000004"
+        },
+        "provider_name": "DeepInfra",
+        "quantization": "bf16",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice",
+          "logit_bias"
+        ],
+        "tag": "deepinfra/bf16"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "canonical_slug": "minimax/minimax-m3-20260531",
+      "context_length": 1048576,
+      "created": 1780245374,
+      "id": "minimax/minimax-m3",
+      "name": "MiniMax: MiniMax M3",
+      "pricing": {
+        "completion": "0.0000012",
+        "input_cache_read": "0.00000006",
+        "prompt": "0.0000003"
+      },
+      "selected_endpoint": {
+        "context_length": 524288,
+        "max_completion_tokens": 512000,
+        "max_prompt_tokens": null,
+        "name": "DeepInfra | minimax/minimax-m3-20260531",
+        "pricing": {
+          "completion": "0.0000011",
+          "discount": 0,
+          "input_cache_read": "0.000000056",
+          "prompt": "0.00000028"
+        },
+        "provider_name": "DeepInfra",
+        "quantization": "fp8",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "tools",
+          "tool_choice",
+          "logit_bias"
+        ],
+        "tag": "deepinfra/fp8"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "canonical_slug": "stepfun/step-3.7-flash-20260528",
+      "context_length": 262144,
+      "created": 1779985069,
+      "id": "stepfun/step-3.7-flash",
+      "name": "StepFun: Step 3.7 Flash",
+      "pricing": {
+        "completion": "0.00000115",
+        "input_cache_read": "0.00000004",
+        "prompt": "0.0000002"
+      },
+      "selected_endpoint": {
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "name": "DeepInfra | stepfun/step-3.7-flash-20260528",
+        "pricing": {
+          "completion": "0.00000115",
+          "discount": 0,
+          "input_cache_read": "0.00000004",
+          "prompt": "0.0000002"
+        },
+        "provider_name": "DeepInfra",
+        "quantization": "unknown",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "logit_bias",
+          "tools",
+          "tool_choice",
+          "reasoning_effort"
+        ],
+        "tag": "deepinfra"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "reasoning_effort",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "file"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+file->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Grok"
+      },
+      "canonical_slug": "x-ai/grok-4.6-20260810",
+      "context_length": 500000,
+      "created": 1786548957,
+      "id": "x-ai/grok-4.6",
+      "name": "SpaceXAI: Grok 4.6",
+      "pricing": {
+        "completion": "0.000006",
+        "input_cache_read": "0.0000005",
+        "overrides": [
+          {
+            "completion": "0.000012",
+            "input_cache_read": "0.000001",
+            "min_prompt_tokens": 200000,
+            "prompt": "0.000004"
+          }
+        ],
+        "prompt": "0.000002",
+        "web_search": "0.005"
+      },
+      "selected_endpoint": {
+        "context_length": 500000,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "name": "xAI | x-ai/grok-4.6-20260810",
+        "pricing": {
+          "completion": "0.000006",
+          "discount": 0,
+          "input_cache_read": "0.0000005",
+          "overrides": [
+            {
+              "completion": "0.000012",
+              "input_cache_read": "0.000001",
+              "min_prompt_tokens": 200000,
+              "prompt": "0.000004"
+            }
+          ],
+          "prompt": "0.000002",
+          "web_search": "0.005"
+        },
+        "provider_name": "xAI",
+        "quantization": "unknown",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "logprobs",
+          "top_logprobs",
+          "tools",
+          "tool_choice",
+          "reasoning_effort"
+        ],
+        "tag": "xai/zdr"
+      },
+      "supported_parameters": [
+        "include_reasoning",
+        "logprobs",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p"
+      ]
+    }
+  ],
+  "provider_fallback_allowed": false,
+  "validation_status": "passed",
+  "zero_data_retention_required": true
+}

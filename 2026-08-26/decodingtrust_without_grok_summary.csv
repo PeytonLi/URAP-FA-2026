@@ -1,0 +1,25 @@
+agreement_ci_high,agreement_ci_low,agreement_rate,disagreement_rate,model_display_name,model_key,regime,responses,unclassified_or_refusal_rate,valid_responses,validity_rate
+0.1936076805344365,0.0,0.0,0.375,Gemma 3 12B IT (OpenRouter/DeepInfra BF16),gemma3_12b_hosted,benign,16,0.625,16,1.0
+0.1936076805344365,0.0,0.0,0.375,Gemma 3 12B IT (OpenRouter/DeepInfra BF16),gemma3_12b_hosted,untargeted,16,0.625,16,1.0
+0.36022827265758695,0.03497748774324047,0.125,0.0,Gemma 3 12B IT (OpenRouter/DeepInfra BF16),gemma3_12b_hosted,targeted,16,0.875,16,1.0
+0.1936076805344365,0.0,0.0,1.0,Qwen 3.5 9B,qwen35_9b,benign,16,0.0,16,1.0
+0.1936076805344365,0.0,0.0,0.875,Qwen 3.5 9B,qwen35_9b,untargeted,16,0.125,16,1.0
+0.1936076805344365,0.0,0.0,0.625,Qwen 3.5 9B,qwen35_9b,targeted,16,0.375,16,1.0
+0.1936076805344365,0.0,0.0,1.0,Kimi K3,kimi_k3,benign,16,0.0,16,1.0
+0.1936076805344365,0.0,0.0,1.0,Kimi K3,kimi_k3,untargeted,16,0.0,16,1.0
+0.1936076805344365,0.0,0.0,1.0,Kimi K3,kimi_k3,targeted,16,0.0,16,1.0
+0.1936076805344365,0.0,0.0,1.0,GPT-5.6 Luna,gpt56_luna,benign,16,0.0,16,1.0
+0.1936076805344365,0.0,0.0,1.0,GPT-5.6 Luna,gpt56_luna,untargeted,16,0.0,16,1.0
+0.1936076805344365,0.0,0.0,1.0,GPT-5.6 Luna,gpt56_luna,targeted,16,0.0,16,1.0
+0.1936076805344365,0.0,0.0,0.75,Gemini 3.6 Flash,gemini36_flash,benign,16,0.25,16,1.0
+0.1936076805344365,0.0,0.0,0.875,Gemini 3.6 Flash,gemini36_flash,untargeted,16,0.125,16,1.0
+0.1936076805344365,0.0,0.0,0.8125,Gemini 3.6 Flash,gemini36_flash,targeted,16,0.1875,16,1.0
+0.1936076805344365,0.0,0.0,0.6875,MiMo-V2.5,mimo_v25,benign,16,0.3125,16,1.0
+0.1936076805344365,0.0,0.0,1.0,MiMo-V2.5,mimo_v25,untargeted,16,0.0,16,1.0
+0.36022827265758695,0.03497748774324047,0.125,0.8125,MiMo-V2.5,mimo_v25,targeted,16,0.0625,16,1.0
+0.1936076805344365,0.0,0.0,0.9375,MiniMax M3,minimax_m3,benign,16,0.0625,16,1.0
+0.20388330103584862,0.0,0.0,0.9333333333333333,MiniMax M3,minimax_m3,untargeted,16,0.06666666666666667,15,0.9375
+0.1936076805344365,0.0,0.0,0.875,MiniMax M3,minimax_m3,targeted,16,0.125,16,1.0
+0.1936076805344365,0.0,0.0,1.0,Step 3.7 Flash,step37_flash,benign,16,0.0,16,1.0
+0.1936076805344365,0.0,0.0,1.0,Step 3.7 Flash,step37_flash,untargeted,16,0.0,16,1.0
+0.28328737570298945,0.01111934476464252,0.0625,0.9375,Step 3.7 Flash,step37_flash,targeted,16,0.0,16,1.0

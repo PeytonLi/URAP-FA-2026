@@ -1,0 +1,12 @@
+{
+  "attention_implementation": "eager",
+  "environment": {
+    "accelerate": "1.4.0",
+    "numpy": "2.2.3",
+    "pillow": "11.1.0",
+    "torch": "2.4.1+cu124",
+    "transformers": "4.50.0"
+  },
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "precision": "bfloat16"
+}

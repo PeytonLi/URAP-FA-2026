@@ -1,0 +1,4 @@
+agreement_ci_high,agreement_ci_low,agreement_rate,disagreement_ci_high,disagreement_ci_low,disagreement_rate,model_display_name,model_key,no_response_ci_high,no_response_ci_low,no_response_rate,regime,responses,valid_responses,validity_rate
+0.1936076805344365,0.0,0.0,0.6135895945449727,0.18481232558863633,0.375,Gemma 3 12B IT (OpenRouter/DeepInfra BF16),gemma3_12b_hosted,0.8151876744113636,0.38641040545502714,0.625,benign,16,16,1.0
+0.1936076805344365,0.0,0.0,0.6135895945449727,0.18481232558863633,0.375,Gemma 3 12B IT (OpenRouter/DeepInfra BF16),gemma3_12b_hosted,0.8151876744113636,0.38641040545502714,0.625,untargeted,16,16,1.0
+0.36022827265758695,0.03497748774324047,0.125,0.1936076805344365,0.0,0.0,Gemma 3 12B IT (OpenRouter/DeepInfra BF16),gemma3_12b_hosted,0.9650225122567595,0.639771727342413,0.875,targeted,16,16,1.0

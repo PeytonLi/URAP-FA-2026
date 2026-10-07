@@ -1,0 +1,264 @@
+file,column,definition
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,image_id,Stable manifest image identifier; join image metadata by this key.
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,filename,Source image filename.
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,race,"Recorded dataset race group, Black or White; not an inference by this agent."
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,gender,"Recorded dataset gender category, Female or Male; labels may be imperfect."
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,age,UTKFace recorded age in years; not verified by this study.
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,age_band,Age-matching bin assigned by the preserved dataset preparation code.
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,race_code,"UTKFace source code: 0 White, 1 Black in this selected panel; other source groups were not selected here."
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,gender_code,"UTKFace source coding: 0 Male, 1 Female; not a complete model of gender identity."
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,expression_class,Coarse expression-matching class such as negative/neutral/positive from the automated classifier.
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,expression_label,"Classifier's fine expression label, such as angry or sad; labels are fallible."
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,expression_confidence,"Model probability assigned to the predicted expression, not human-verified confidence."
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,expression_model_id,Hugging Face identifier of the expression classifier used in dataset construction.
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,expression_model_revision,Pinned expression-classifier source revision.
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,quality_score,Heuristic 0.30*exposure + 0.30*contrast + 0.40*sharpness score on grayscale pixels; components are normalized/clipped in utkface.py. Not a validated fairness or perceptual-quality score.
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,quality_bin,"High for quality_score >=0.65, medium for >=0.40, otherwise low; used for approximate matching."
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,width,Width of the stored cropped image in pixels.
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,height,Height of the stored cropped image in pixels.
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,sha256,SHA-256 of the manifest image file.
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,match_pair_id,Identifier connecting one Black and one White UTKFace image in the matched evaluation pool.
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,pool_role,Evaluation versus future fine-tuning pool designation; this manifest contains evaluation images.
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,finetuning_split,Training/development assignment when relevant; not_applicable for this evaluation pool.
+data/frozen/utkface/utkface_iat_evaluation_manifest.csv,source_relative_path,Private image path relative to its manifest directory; not an embedded image.
+data/iat12/manifest.csv,image_id,Stable manifest image identifier; join image metadata by this key.
+data/iat12/manifest.csv,filename,Source image filename.
+data/iat12/manifest.csv,race,"Recorded dataset race group, Black or White; not an inference by this agent."
+data/iat12/manifest.csv,gender,"Recorded dataset gender category, Female or Male; labels may be imperfect."
+data/iat12/manifest.csv,width,Width of the stored cropped image in pixels.
+data/iat12/manifest.csv,height,Height of the stored cropped image in pixels.
+data/iat12/manifest.csv,sha256,SHA-256 of the manifest image file.
+data/iat12/manifest.csv,source_relative_path,Private image path relative to its manifest directory; not an embedded image.
+results/analysis/gemma_paired_effect.csv,panel,Image panel: neutral12 or utkface; analyses are separate.
+results/analysis/gemma_paired_effect.csv,metric,Name of the measured outcome; distinguishes a race gap from a tuned-minus-base change.
+results/analysis/gemma_paired_effect.csv,effect,Signed point estimate in fractional rate units. Multiply by 100 for percentage points.
+results/analysis/gemma_paired_effect.csv,ci_low,Lower 95% percentile-bootstrap bound in the same units as effect.
+results/analysis/gemma_paired_effect.csv,ci_high,Upper 95% percentile-bootstrap bound in the same units as effect.
+results/analysis/gemma_paired_effect.csv,raw_p_value,Exploratory two-sided permutation/sign-flip p value under the stated exchangeability null; not a probability the null is true.
+results/analysis/gemma_paired_effect.csv,sample_count,Number of statistical units: images for Neutral12 or complete matched image pairs for UTKFace.
+results/analysis/gemma_paired_effect.csv,sample_unit,Definition of the independent unit used by the stated test.
+results/analysis/gemma_paired_effect.csv,test,Statistical procedure used to compute raw_p_value.
+results/analysis/gemma_paired_effect.csv,bh_adjusted_q_value,Benjamini-Hochberg adjusted p value within the declared family; q<0.05 is the exploratory false-discovery threshold.
+results/analysis/gemma_paired_effect.csv,correction_family,Which collection of tests is included in the multiple-comparison adjustment.
+results/analysis/gemma_paired_effect.csv,family_tests,Number of finite p values adjusted together.
+results/analysis/gemma_paired_effect.csv,exploratory,True: these tests are not preregistered confirmatory evidence.
+results/analysis/gemma_paired_image_changes.csv,image_id,Stable manifest image identifier; join image metadata by this key.
+results/analysis/gemma_paired_image_changes.csv,race,"Recorded dataset race group, Black or White; not an inference by this agent."
+results/analysis/gemma_paired_image_changes.csv,gender,"Recorded dataset gender category, Female or Male; labels may be imperfect."
+results/analysis/gemma_paired_image_changes.csv,negative_rate,"Per-image mean negative-word fraction; in gemma_paired_image_changes.csv this is tuned minus base, as specified by metric."
+results/analysis/gemma_paired_image_changes.csv,paired_valid_repetitions,Image/repetition tasks valid in both Gemma conditions and sharing the same image hash and seed.
+results/analysis/gemma_paired_image_changes.csv,panel,Image panel: neutral12 or utkface; analyses are separate.
+results/analysis/gemma_paired_image_changes.csv,metric,Name of the measured outcome; distinguishes a race gap from a tuned-minus-base change.
+results/analysis/model_call_costs.csv,model_key,Stable condition identifier; gemma_base and gemma_tuned use the same pinned local base.
+results/analysis/model_call_costs.csv,new_api_call_attempts,"New model HTTP calls, including recorded errors and parsing fallback calls."
+results/analysis/model_call_costs.csv,reported_cost_usd,Sum of provider-reported call costs in USD; compare account reconciliation for lag or unknown outcomes.
+results/analysis/neutral12_image_scores.csv,image_id,Stable manifest image identifier; join image metadata by this key.
+results/analysis/neutral12_image_scores.csv,race,"Recorded dataset race group, Black or White; not an inference by this agent."
+results/analysis/neutral12_image_scores.csv,gender,"Recorded dataset gender category, Female or Male; labels may be imperfect."
+results/analysis/neutral12_image_scores.csv,negative_rate,"Per-image mean negative-word fraction; in gemma_paired_image_changes.csv this is tuned minus base, as specified by metric."
+results/analysis/neutral12_image_scores.csv,valid_repetitions,Valid answers averaged into this image score; does not increase independent-image count.
+results/analysis/neutral12_image_scores.csv,panel,Image panel: neutral12 or utkface; analyses are separate.
+results/analysis/neutral12_image_scores.csv,model_key,Stable condition identifier; gemma_base and gemma_tuned use the same pinned local base.
+results/analysis/neutral12_responses.csv,api_model_returned,Model identifier returned by OpenRouter; checked against the pinned catalog ID/revision.
+results/analysis/neutral12_responses.csv,benchmark_version,Protocol identifier for the IAT runner.
+results/analysis/neutral12_responses.csv,completion_tokens,"Reported generated token count, including provider-specific reasoning accounting."
+results/analysis/neutral12_responses.csv,cost_usd,Original reported per-slot inference cost in USD; local GPU inference does not have a per-response API price.
+results/analysis/neutral12_responses.csv,created_at,UTC response-record timestamp.
+results/analysis/neutral12_responses.csv,error_message,Sanitized technical error explanation; no API credential or image payload.
+results/analysis/neutral12_responses.csv,error_status,HTTP status or originating error code; blank means no recorded error.
+results/analysis/neutral12_responses.csv,error_type,"Recorded technical exception category, when available."
+results/analysis/neutral12_responses.csv,exact_format,"True when the visible final answer equals the parsed comma-separated sequence, ignoring case/spacing around commas."
+results/analysis/neutral12_responses.csv,fallback_raw,"Visible text from the deterministic parsing fallback, if used."
+results/analysis/neutral12_responses.csv,final_call_retry_count,"Client retry count reported for the last generation call, not all historical attempts."
+results/analysis/neutral12_responses.csv,finish_reason,Provider stop/length/error termination label; backend meanings can differ.
+results/analysis/neutral12_responses.csv,gender,"Recorded dataset gender category, Female or Male; labels may be imperfect."
+results/analysis/neutral12_responses.csv,image_filename,Original image filename from the stimulus manifest.
+results/analysis/neutral12_responses.csv,image_id,Stable manifest image identifier; join image metadata by this key.
+results/analysis/neutral12_responses.csv,image_sha256,SHA-256 of actual image bytes used for the response.
+results/analysis/neutral12_responses.csv,image_tokens,Provider-reported image-token count when available; zero/blank need not mean no image was sent.
+results/analysis/neutral12_responses.csv,iteration,One-based repetition index for a given image.
+results/analysis/neutral12_responses.csv,latency_seconds,"Elapsed generation time in seconds, as recorded by the runner."
+results/analysis/neutral12_responses.csv,max_tokens,Configured hosted sampled-output budget; some providers account for reasoning separately.
+results/analysis/neutral12_responses.csv,model_display_name,Human-readable model label saved by the generation runner.
+results/analysis/neutral12_responses.csv,model_id_requested,"Model identifier sent to the API, or local base model ID."
+results/analysis/neutral12_responses.csv,model_key,Stable condition identifier; gemma_base and gemma_tuned use the same pinned local base.
+results/analysis/neutral12_responses.csv,negative_count,Number of parsed words in the fixed negative lexicon; primary rates use valid answers only.
+results/analysis/neutral12_responses.csv,positive_count,Number of parsed words in the fixed positive lexicon.
+results/analysis/neutral12_responses.csv,prompt_tokens,Reported input tokens across this response slot's calls; image representation depends on provider.
+results/analysis/neutral12_responses.csv,provider,"Actual serving provider reported by OpenRouter, or recorded local runtime."
+results/analysis/neutral12_responses.csv,race,"Recorded dataset race group, Black or White; not an inference by this agent."
+results/analysis/neutral12_responses.csv,reasoning_effort,Provider-specific requested reasoning setting; not comparable as a fixed token count.
+results/analysis/neutral12_responses.csv,reasoning_tokens,Provider-reported reasoning token count when available.
+results/analysis/neutral12_responses.csv,record_origin,"Earlier consolidation provenance, preserved from the archive."
+results/analysis/neutral12_responses.csv,response,Comma-separated parsed words from the final selected answer; inspect raw text for extra prose.
+results/analysis/neutral12_responses.csv,response_source,"sampled/fallback for model outputs, api_error for failed requests, budget_stopped for halted tasks; historical variants are retained."
+results/analysis/neutral12_responses.csv,run_id,Saved inference run identifier.
+results/analysis/neutral12_responses.csv,sampled_raw,"Unmodified visible text of the sampled answer, excluding image payloads."
+results/analysis/neutral12_responses.csv,seed,Requested generation RNG seed; local seeds reset Python/NumPy/Torch/CUDA per image and repetition.
+results/analysis/neutral12_responses.csv,source_run_id,Earlier source run identifier retained during consolidation.
+results/analysis/neutral12_responses.csv,status,Recorded completion/invalid/runtime status from the originating runner; use valid_three for common parsing analysis.
+results/analysis/neutral12_responses.csv,task_id,Deterministic hosted task identifier.
+results/analysis/neutral12_responses.csv,temperature_effective,"Temperature actually sent when supported; omission/blank means unsupported or unrecorded, not zero."
+results/analysis/neutral12_responses.csv,temperature_requested,Sampling temperature requested by the protocol.
+results/analysis/neutral12_responses.csv,top_p_effective,Nucleus threshold actually sent when supported; blank does not mean zero.
+results/analysis/neutral12_responses.csv,top_p_requested,Requested nucleus sampling probability threshold.
+results/analysis/neutral12_responses.csv,valid_three,"True when the legacy parser retained three matches; not proof of exact format, uniqueness, accuracy, or absence of refusal prose."
+results/analysis/neutral12_responses.csv,word_count,Number of permitted word matches retained by the legacy parser (at most three).
+results/analysis/neutral12_responses.csv,words,Pipe-separated legacy parsed word matches in order; non-consecutive duplicate words can remain.
+results/analysis/neutral12_responses.csv,panel,Image panel: neutral12 or utkface; analyses are separate.
+results/analysis/neutral12_responses.csv,provenance,"archived, new, or new_local generation source for this study."
+results/analysis/neutral12_responses.csv,new_cost_usd,API cost attributed to the new session for this retained slot; zero for reused archives. Use the call ledger for retries and full billed costs.
+results/analysis/neutral12_responses.csv,adapter_sha256,SHA-256 of the adapter weights; blank for the base condition.
+results/analysis/neutral12_responses.csv,generation_calls,"Number of local generate calls for the answer, including a parsing fallback."
+results/analysis/neutral12_responses.csv,model_revision,Pinned Hugging Face commit for local Gemma or the Qwen probe.
+results/analysis/significance.csv,panel,Image panel: neutral12 or utkface; analyses are separate.
+results/analysis/significance.csv,model_key,Stable condition identifier; gemma_base and gemma_tuned use the same pinned local base.
+results/analysis/significance.csv,model_name,Human-readable condition label.
+results/analysis/significance.csv,metric,Name of the measured outcome; distinguishes a race gap from a tuned-minus-base change.
+results/analysis/significance.csv,effect,Signed point estimate in fractional rate units. Multiply by 100 for percentage points.
+results/analysis/significance.csv,ci_low,Lower 95% percentile-bootstrap bound in the same units as effect.
+results/analysis/significance.csv,ci_high,Upper 95% percentile-bootstrap bound in the same units as effect.
+results/analysis/significance.csv,raw_p_value,Exploratory two-sided permutation/sign-flip p value under the stated exchangeability null; not a probability the null is true.
+results/analysis/significance.csv,sample_count,Number of statistical units: images for Neutral12 or complete matched image pairs for UTKFace.
+results/analysis/significance.csv,sample_unit,Definition of the independent unit used by the stated test.
+results/analysis/significance.csv,test,Statistical procedure used to compute raw_p_value.
+results/analysis/significance.csv,bh_adjusted_q_value,Benjamini-Hochberg adjusted p value within the declared family; q<0.05 is the exploratory false-discovery threshold.
+results/analysis/significance.csv,correction_family,Which collection of tests is included in the multiple-comparison adjustment.
+results/analysis/significance.csv,family_tests,Number of finite p values adjusted together.
+results/analysis/significance.csv,exploratory,True: these tests are not preregistered confirmatory evidence.
+results/analysis/summary.csv,panel,Image panel: neutral12 or utkface; analyses are separate.
+results/analysis/summary.csv,model_key,Stable condition identifier; gemma_base and gemma_tuned use the same pinned local base.
+results/analysis/summary.csv,model_name,Human-readable condition label.
+results/analysis/summary.csv,planned_responses,Target response slots: 600 for neutral12 and 2000 for utkface per full condition.
+results/analysis/summary.csv,attempted_slots,"Unique retained image/repetition slots including technical failures, not the number of API requests."
+results/analysis/summary.csv,responses,Slots with a model answer rather than api_error/budget_stopped; invalid model answers can be included.
+results/analysis/summary.csv,valid_responses,Number of slots with three parsed permitted word matches.
+results/analysis/summary.csv,validity_rate,"Valid slots divided by attempted_slots, as a fraction from 0 to 1."
+results/analysis/summary.csv,distinct_images,Distinct images with at least one valid response in this summary/test.
+results/analysis/summary.csv,exact_format_rate,"Exact-format slots divided by attempted_slots, as a fraction from 0 to 1."
+results/analysis/summary.csv,repeated_word_response_rate,Fraction of valid responses containing fewer than three globally unique words.
+results/analysis/summary.csv,complete,Whether answered slots reached the target; a false value must not be presented as full sampling.
+results/analysis/summary.csv,archived_responses,"Retained historical slots (including archived failures/invalidity), not new API calls."
+results/analysis/summary.csv,unique_response_tuples,Distinct ordered parsed three-word sequences among valid answers; sample-size dependent.
+results/analysis/summary.csv,distinct_iat_words,Number of the 61 permitted words occurring in valid responses.
+results/analysis/summary.csv,word_entropy_bits,"Shannon entropy of pooled selected-word frequencies, using log base 2."
+results/analysis/summary.csv,normalized_word_entropy,Word entropy divided by log2(61); 0 is maximal concentration and 1 is uniform use of all permitted words.
+results/analysis/summary.csv,top_three_word_share,"Share of all selected word occurrences occupied by the three most frequent words, from 0 to 1."
+results/analysis/summary.csv,api_error_slots,Final retained slots ending in an API error; full call attempts including retries are in calls.jsonl.
+results/analysis/summary.csv,new_inference_cost_usd,"Sum of new_cost_usd for retained slots only; excludes some retried/failed attempts, so not the session bill."
+results/analysis/summary.csv,black_rate,Equal-image mean negative-word fraction for Black images; UTK uses complete matched pairs.
+results/analysis/summary.csv,black_ci_low,"Lower 95% image-bootstrap bound for black_rate, expressed as a fraction."
+results/analysis/summary.csv,black_ci_high,"Upper 95% image-bootstrap bound for black_rate, expressed as a fraction."
+results/analysis/summary.csv,black_fallback_rate,"Fraction of Black-image slots whose final source is a parsing fallback, including fallback_invalid."
+results/analysis/summary.csv,white_rate,Equal-image mean negative-word fraction for White images; UTK uses complete matched pairs.
+results/analysis/summary.csv,white_ci_low,"Lower 95% image-bootstrap bound for white_rate, expressed as a fraction."
+results/analysis/summary.csv,white_ci_high,"Upper 95% image-bootstrap bound for white_rate, expressed as a fraction."
+results/analysis/summary.csv,white_fallback_rate,"Fraction of White-image slots whose final source is a parsing fallback, including fallback_invalid."
+results/analysis/utkface_image_scores.csv,image_id,Stable manifest image identifier; join image metadata by this key.
+results/analysis/utkface_image_scores.csv,race,"Recorded dataset race group, Black or White; not an inference by this agent."
+results/analysis/utkface_image_scores.csv,gender,"Recorded dataset gender category, Female or Male; labels may be imperfect."
+results/analysis/utkface_image_scores.csv,negative_rate,"Per-image mean negative-word fraction; in gemma_paired_image_changes.csv this is tuned minus base, as specified by metric."
+results/analysis/utkface_image_scores.csv,valid_repetitions,Valid answers averaged into this image score; does not increase independent-image count.
+results/analysis/utkface_image_scores.csv,panel,Image panel: neutral12 or utkface; analyses are separate.
+results/analysis/utkface_image_scores.csv,model_key,Stable condition identifier; gemma_base and gemma_tuned use the same pinned local base.
+results/analysis/utkface_responses.csv,api_model_returned,Model identifier returned by OpenRouter; checked against the pinned catalog ID/revision.
+results/analysis/utkface_responses.csv,benchmark_version,Protocol identifier for the IAT runner.
+results/analysis/utkface_responses.csv,completion_tokens,"Reported generated token count, including provider-specific reasoning accounting."
+results/analysis/utkface_responses.csv,cost_usd,Original reported per-slot inference cost in USD; local GPU inference does not have a per-response API price.
+results/analysis/utkface_responses.csv,created_at,UTC response-record timestamp.
+results/analysis/utkface_responses.csv,error_status,HTTP status or originating error code; blank means no recorded error.
+results/analysis/utkface_responses.csv,exact_format,"True when the visible final answer equals the parsed comma-separated sequence, ignoring case/spacing around commas."
+results/analysis/utkface_responses.csv,fallback_raw,"Visible text from the deterministic parsing fallback, if used."
+results/analysis/utkface_responses.csv,final_call_retry_count,"Client retry count reported for the last generation call, not all historical attempts."
+results/analysis/utkface_responses.csv,finish_reason,Provider stop/length/error termination label; backend meanings can differ.
+results/analysis/utkface_responses.csv,gender,"Recorded dataset gender category, Female or Male; labels may be imperfect."
+results/analysis/utkface_responses.csv,image_filename,Original image filename from the stimulus manifest.
+results/analysis/utkface_responses.csv,image_id,Stable manifest image identifier; join image metadata by this key.
+results/analysis/utkface_responses.csv,image_sha256,SHA-256 of actual image bytes used for the response.
+results/analysis/utkface_responses.csv,image_tokens,Provider-reported image-token count when available; zero/blank need not mean no image was sent.
+results/analysis/utkface_responses.csv,iteration,One-based repetition index for a given image.
+results/analysis/utkface_responses.csv,latency_seconds,"Elapsed generation time in seconds, as recorded by the runner."
+results/analysis/utkface_responses.csv,max_tokens,Configured hosted sampled-output budget; some providers account for reasoning separately.
+results/analysis/utkface_responses.csv,model_display_name,Human-readable model label saved by the generation runner.
+results/analysis/utkface_responses.csv,model_id_requested,"Model identifier sent to the API, or local base model ID."
+results/analysis/utkface_responses.csv,model_key,Stable condition identifier; gemma_base and gemma_tuned use the same pinned local base.
+results/analysis/utkface_responses.csv,negative_count,Number of parsed words in the fixed negative lexicon; primary rates use valid answers only.
+results/analysis/utkface_responses.csv,positive_count,Number of parsed words in the fixed positive lexicon.
+results/analysis/utkface_responses.csv,prompt_tokens,Reported input tokens across this response slot's calls; image representation depends on provider.
+results/analysis/utkface_responses.csv,provider,"Actual serving provider reported by OpenRouter, or recorded local runtime."
+results/analysis/utkface_responses.csv,race,"Recorded dataset race group, Black or White; not an inference by this agent."
+results/analysis/utkface_responses.csv,reasoning_effort,Provider-specific requested reasoning setting; not comparable as a fixed token count.
+results/analysis/utkface_responses.csv,reasoning_tokens,Provider-reported reasoning token count when available.
+results/analysis/utkface_responses.csv,response,Comma-separated parsed words from the final selected answer; inspect raw text for extra prose.
+results/analysis/utkface_responses.csv,response_source,"sampled/fallback for model outputs, api_error for failed requests, budget_stopped for halted tasks; historical variants are retained."
+results/analysis/utkface_responses.csv,run_id,Saved inference run identifier.
+results/analysis/utkface_responses.csv,sampled_raw,"Unmodified visible text of the sampled answer, excluding image payloads."
+results/analysis/utkface_responses.csv,seed,Requested generation RNG seed; local seeds reset Python/NumPy/Torch/CUDA per image and repetition.
+results/analysis/utkface_responses.csv,status,Recorded completion/invalid/runtime status from the originating runner; use valid_three for common parsing analysis.
+results/analysis/utkface_responses.csv,task_id,Deterministic hosted task identifier.
+results/analysis/utkface_responses.csv,temperature_effective,"Temperature actually sent when supported; omission/blank means unsupported or unrecorded, not zero."
+results/analysis/utkface_responses.csv,temperature_requested,Sampling temperature requested by the protocol.
+results/analysis/utkface_responses.csv,top_p_effective,Nucleus threshold actually sent when supported; blank does not mean zero.
+results/analysis/utkface_responses.csv,top_p_requested,Requested nucleus sampling probability threshold.
+results/analysis/utkface_responses.csv,valid_three,"True when the legacy parser retained three matches; not proof of exact format, uniqueness, accuracy, or absence of refusal prose."
+results/analysis/utkface_responses.csv,word_count,Number of permitted word matches retained by the legacy parser (at most three).
+results/analysis/utkface_responses.csv,words,Pipe-separated legacy parsed word matches in order; non-consecutive duplicate words can remain.
+results/analysis/utkface_responses.csv,model_revision,Pinned Hugging Face commit for local Gemma or the Qwen probe.
+results/analysis/utkface_responses.csv,generation_calls,"Number of local generate calls for the answer, including a parsing fallback."
+results/analysis/utkface_responses.csv,panel,Image panel: neutral12 or utkface; analyses are separate.
+results/analysis/utkface_responses.csv,provenance,"archived, new, or new_local generation source for this study."
+results/analysis/utkface_responses.csv,new_cost_usd,API cost attributed to the new session for this retained slot; zero for reused archives. Use the call ledger for retries and full billed costs.
+results/analysis/utkface_responses.csv,adapter_sha256,SHA-256 of the adapter weights; blank for the base condition.
+results/analysis/word_counts.csv,panel,Image panel: neutral12 or utkface; analyses are separate.
+results/analysis/word_counts.csv,model_key,Stable condition identifier; gemma_base and gemma_tuned use the same pinned local base.
+results/analysis/word_counts.csv,race,"Recorded dataset race group, Black or White; not an inference by this agent."
+results/analysis/word_counts.csv,word,One canonical word from the fixed IAT61 list.
+results/analysis/word_counts.csv,count,Number of selections of this word in valid answers for the model/panel/race.
+results/analysis/word_counts.csv,negative,Whether word belongs to the fixed negative list (otherwise it belongs to the positive list).
+results/local/qwen_probe.csv,panel,Image panel: neutral12 or utkface; analyses are separate.
+results/local/qwen_probe.csv,image_id,Stable manifest image identifier; join image metadata by this key.
+results/local/qwen_probe.csv,image_sha256,SHA-256 of actual image bytes used for the response.
+results/local/qwen_probe.csv,race,"Recorded dataset race group, Black or White; not an inference by this agent."
+results/local/qwen_probe.csv,gender,"Recorded dataset gender category, Female or Male; labels may be imperfect."
+results/local/qwen_probe.csv,iteration,One-based repetition index for a given image.
+results/local/qwen_probe.csv,seed,Requested generation RNG seed; local seeds reset Python/NumPy/Torch/CUDA per image and repetition.
+results/local/qwen_probe.csv,model_key,Stable condition identifier; gemma_base and gemma_tuned use the same pinned local base.
+results/local/qwen_probe.csv,sampled_raw,"Unmodified visible text of the sampled answer, excluding image payloads."
+results/local/qwen_probe.csv,fallback_raw,"Visible text from the deterministic parsing fallback, if used."
+results/local/qwen_probe.csv,words,Pipe-separated legacy parsed word matches in order; non-consecutive duplicate words can remain.
+results/local/qwen_probe.csv,response,Comma-separated parsed words from the final selected answer; inspect raw text for extra prose.
+results/local/qwen_probe.csv,valid_three,"True when the legacy parser retained three matches; not proof of exact format, uniqueness, accuracy, or absence of refusal prose."
+results/local/qwen_probe.csv,word_count,Number of permitted word matches retained by the legacy parser (at most three).
+results/local/qwen_probe.csv,negative_count,Number of parsed words in the fixed negative lexicon; primary rates use valid answers only.
+results/local/qwen_probe.csv,positive_count,Number of parsed words in the fixed positive lexicon.
+results/local/qwen_probe.csv,exact_format,"True when the visible final answer equals the parsed comma-separated sequence, ignoring case/spacing around commas."
+results/local/qwen_probe.csv,response_source,"sampled/fallback for model outputs, api_error for failed requests, budget_stopped for halted tasks; historical variants are retained."
+results/local/qwen_probe.csv,generation_calls,"Number of local generate calls for the answer, including a parsing fallback."
+results/local/qwen_probe.csv,created_at,UTC response-record timestamp.
+results/local/qwen_probe.csv,provenance,"archived, new, or new_local generation source for this study."
+results/local/qwen_probe.csv,provider,"Actual serving provider reported by OpenRouter, or recorded local runtime."
+results/local/responses.csv,panel,Image panel: neutral12 or utkface; analyses are separate.
+results/local/responses.csv,image_id,Stable manifest image identifier; join image metadata by this key.
+results/local/responses.csv,image_sha256,SHA-256 of actual image bytes used for the response.
+results/local/responses.csv,race,"Recorded dataset race group, Black or White; not an inference by this agent."
+results/local/responses.csv,gender,"Recorded dataset gender category, Female or Male; labels may be imperfect."
+results/local/responses.csv,iteration,One-based repetition index for a given image.
+results/local/responses.csv,seed,Requested generation RNG seed; local seeds reset Python/NumPy/Torch/CUDA per image and repetition.
+results/local/responses.csv,model_key,Stable condition identifier; gemma_base and gemma_tuned use the same pinned local base.
+results/local/responses.csv,sampled_raw,"Unmodified visible text of the sampled answer, excluding image payloads."
+results/local/responses.csv,fallback_raw,"Visible text from the deterministic parsing fallback, if used."
+results/local/responses.csv,words,Pipe-separated legacy parsed word matches in order; non-consecutive duplicate words can remain.
+results/local/responses.csv,response,Comma-separated parsed words from the final selected answer; inspect raw text for extra prose.
+results/local/responses.csv,valid_three,"True when the legacy parser retained three matches; not proof of exact format, uniqueness, accuracy, or absence of refusal prose."
+results/local/responses.csv,word_count,Number of permitted word matches retained by the legacy parser (at most three).
+results/local/responses.csv,negative_count,Number of parsed words in the fixed negative lexicon; primary rates use valid answers only.
+results/local/responses.csv,positive_count,Number of parsed words in the fixed positive lexicon.
+results/local/responses.csv,exact_format,"True when the visible final answer equals the parsed comma-separated sequence, ignoring case/spacing around commas."
+results/local/responses.csv,response_source,"sampled/fallback for model outputs, api_error for failed requests, budget_stopped for halted tasks; historical variants are retained."
+results/local/responses.csv,generation_calls,"Number of local generate calls for the answer, including a parsing fallback."
+results/local/responses.csv,created_at,UTC response-record timestamp.
+results/local/responses.csv,provenance,"archived, new, or new_local generation source for this study."
+results/local/responses.csv,provider,"Actual serving provider reported by OpenRouter, or recorded local runtime."
+results/local/responses.csv,latency_seconds,"Elapsed generation time in seconds, as recorded by the runner."
+results/local/responses.csv,model_revision,Pinned Hugging Face commit for local Gemma or the Qwen probe.
+results/local/responses.csv,adapter_sha256,SHA-256 of the adapter weights; blank for the base condition.

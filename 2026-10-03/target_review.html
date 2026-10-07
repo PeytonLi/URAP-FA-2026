@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>URAP · Photo draft review</title>
+<style>
+:root{--paper:#f5f2e9;--card:#fffdf7;--ink:#20332c;--muted:#606d61;--line:#d3d7cc;--accent:#226548;--warn:#9b4f20;--wash:#efe1c6}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px "Trebuchet MS",Verdana,sans-serif}main{max-width:1220px;margin:auto;padding:26px 30px 50px}
+header{display:flex;gap:28px;justify-content:space-between;align-items:center;border-bottom:2px solid var(--ink);padding-bottom:20px}.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase}h1{font:normal 38px Georgia,"Book Antiqua",serif;margin:10px 0}h2{font:normal 23px Georgia,serif;margin:0 0 10px}p{line-height:1.5;margin:8px 0}header p{color:var(--muted);max-width:650px}.status{min-width:200px;background:var(--ink);color:var(--paper);padding:17px 22px}.status strong{font:normal 28px Georgia,serif;display:block}.status p{font-size:12px;color:#dae2d7}
+progress{width:100%;height:6px;accent-color:var(--accent)}.summary{display:flex;gap:18px;flex-wrap:wrap;margin:16px 0;font-size:12px;color:var(--muted)}.summary strong{color:var(--ink)}
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:end;padding-bottom:18px}.toolbar label{display:grid;gap:6px;font-size:12px;color:var(--muted)}.toolbar .spacer{flex:1}
+input,select,textarea,button{font:inherit}input,select,textarea{background:var(--card);border:1px solid var(--line);padding:10px;color:var(--ink);border-radius:3px}input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #759b83;outline-offset:3px}
+button{border:1px solid var(--ink);padding:10px 14px;background:transparent;color:var(--ink);cursor:pointer;border-radius:3px}button:hover{background:#e5e9df}button.primary{background:var(--accent);border-color:var(--accent);color:white}button:disabled{opacity:.45;cursor:not-allowed}.toolbar input{width:170px}.toolbar select{max-width:250px}
+.page-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding:15px 0}.page-nav span{font-size:13px;color:var(--muted)}.jump{display:flex;align-items:center;gap:7px;font-size:12px}.jump input{width:72px;padding:8px}.jump button{padding:8px 12px}
+.workbench{display:grid;grid-template-columns:minmax(260px,.9fr) minmax(350px,1.3fr);border:1px solid var(--line);background:var(--card)}.photo-panel{padding:26px;background:#ebe9df;border-right:1px solid var(--line)}.photo-panel img{display:block;width:100%;max-width:360px;aspect-ratio:1;object-fit:contain;margin:0 auto 15px;background:#dedfd7}.photo-panel a{font-size:12px;color:var(--accent)}.photo-panel .identity{font-size:11px;color:var(--muted);overflow-wrap:anywhere}.photo-panel h2{margin-top:22px;font-size:20px}.evidence{font-size:14px}.review-panel{padding:24px 28px}
+.badge{display:inline-block;font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:5px 8px;margin:0 6px 12px 0;background:#e4ebe2}.badge.warning{background:#f0dfc4;color:var(--warn)}.notice{background:var(--wash);border-left:3px solid var(--warn);padding:11px 14px;font-size:13px;margin:0 0 16px}.word-field{border:0;padding:0;margin:0 0 16px;min-width:0}.word-field legend{font-size:13px;font-weight:bold;margin-bottom:8px}.word-picks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.word-picks select{width:100%;min-width:0}.hint{font-size:12px;color:var(--muted)}.review-panel textarea{width:100%;min-height:60px;resize:vertical;margin-top:7px}.notes-label{display:block;font-size:12px;margin-top:14px}
+.flags{display:flex;gap:5px;flex-wrap:wrap;margin:12px 0}.flag{font-size:11px;color:var(--warn);background:#f3ebda;padding:4px 7px}.checks{display:grid;gap:8px;font-size:13px;margin:16px 0}.checks label{display:flex;gap:8px;align-items:start}.checks input{margin:2px 0}.actions{display:flex;gap:9px;flex-wrap:wrap}.save-state{font-size:12px;min-height:18px;color:var(--muted);margin-top:12px}.save-state.unsaved{color:var(--warn)}.error{color:#8b3321;background:#f7e3da;padding:12px 16px;margin:12px 0}.empty{padding:60px 20px;text-align:center;border:1px solid var(--line);color:var(--muted)}
+details{font-size:13px;line-height:1.6;margin-top:18px}summary{cursor:pointer}.wordlist{padding:10px 0;color:var(--muted)}footer{margin-top:22px;font-size:12px;color:var(--muted);line-height:1.6}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);max-width:90vw;background:var(--ink);color:white;padding:14px 22px;border-radius:3px;z-index:5} [hidden]{display:none!important}
+@media(max-width:850px){main{padding:20px 18px}header{align-items:start}h1{font-size:30px}.status{min-width:160px;padding:14px}.workbench{grid-template-columns:1fr}.photo-panel{border-right:0;border-bottom:1px solid var(--line);padding:20px}.photo-panel img{max-width:300px}.review-panel{padding:22px}.toolbar .spacer{display:none}}
+@media(max-width:530px){header{display:block}.status{margin-top:16px}.status strong{display:inline;font-size:24px}.status p{margin:4px 0}.toolbar label{flex:1;min-width:145px}.toolbar input,.toolbar select{width:100%;max-width:none}.page-nav{flex-wrap:wrap}.jump{width:100%;justify-content:center}.word-picks{gap:5px}.word-picks select{font-size:13px;padding:9px 5px}.actions button{width:100%}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+</head>
+<body><main>
+<header><div><div class="eyebrow">URAP / 61-word study / transparent target review</div><h1>One photo. One decision.</h1><p>Look at the photo first. Then accept the proposed words, edit them, or mark the case as unsure. AI self-approvals and human reviews are shown separately. Neither establishes facts about the person.</p></div><aside class="status"><strong id="count">Loading…</strong><p id="progress">Loading approval sources…</p><progress id="approvalProgress" max="1920" value="0" aria-label="Approved targets, including authorized AI self-approvals"></progress></aside></header>
+<div class="summary" id="summary" aria-live="polite"></div>
+<div class="toolbar">
+<label>Your reviewer name<input id="reviewer" placeholder="Enter your name" autocomplete="name"></label>
+<label>Show<select id="filter"><option value="pending">All not yet approved</option><option value="unreviewed">Not yet reviewed</option><option value="proposed">Proposed words only</option><option value="unresolved">Blank / unresolved targets</option><option value="revision">Marked as unsure</option><option value="approved">Approved</option><option value="all">All photos</option></select></label>
+<label>Research split<select id="split"><option value="all">Train + development</option><option value="train">Training</option><option value="development">Development</option></select></label>
+<label>Find photo<input id="search" placeholder="Photo ID · press Enter" type="search"></label>
+<div class="spacer"></div><button id="refresh" disabled>Refresh</button>
+</div>
+<div id="error" class="error" role="alert" hidden></div>
+<div class="page-nav"><button id="previous" disabled>← Previous</button><span id="pageLabel" aria-live="polite">Loading photos…</span><button id="next" disabled>Next / skip →</button><form id="jumpForm" class="jump"><label for="jump">Go to photo</label><input id="jump" type="number" min="1" value="1" aria-label="Photo number in this view"><button id="go" disabled>Go</button></form></div>
+<section id="review" aria-label="Current photo and draft"></section>
+<details><summary>How to review · allowed words</summary><p>Preferred words are the response SFT should learn. Rejected words are the less-supported alternative used by ORPO—not a statement about this person. Each answer needs three different allowed words; the two answers must use different word sets.</p><p>The vocabulary has no neutral category. Leave a case unsure when the photo does not justify a target. Do not infer identity, demographic attributes, personality, health or morality from a face. Draft confidence is subjective, not a measured probability.</p><div id="words" class="wordlist"></div></details>
+<footer>Your decisions are saved on this computer when you press a save button. Your name and place are remembered in this browser. Next / skip records no decision. Test and benchmark photos are excluded. <button id="export" disabled>Export all approved targets</button><br>Export requires all 1,920 approvals. User-authorized AI self-approvals are not human validation. Export does not start training or upload photos.</footer>
+</main><div class="toast" id="toast" role="status" hidden></div>
+<script>
+'use strict';
+let data={drafts:[],decisions:{},words:[],required:1920},page=0,dirty=false,busy=false,photoReady=false,updateActions=()=>{};
+const $=id=>document.getElementById(id),text=(tag,value,cls)=>{const e=document.createElement(tag);e.textContent=value;if(cls)e.className=cls;return e;};
+const controls=['filter','split','search'];
+const remember=(key,value)=>{try{localStorage.setItem('urap-review-'+key,JSON.stringify(value));}catch{}};
+const recall=key=>{try{return JSON.parse(localStorage.getItem('urap-review-'+key));}catch{return null;}};
+let view={filter:'pending',split:'all',search:''};
+let toastTimer;
+function toast(message){$('toast').textContent=message;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,5500);}
+function discardEdits(){return !dirty||confirm('Leave this photo without saving your edits?');}
+function selection(){return data.drafts.filter(d=>{
+ const decision=data.decisions[d.image_id],approved=decision?.status==='approved',filter=$('filter').value;
+ const matches=filter==='all'||filter==='pending'&&!approved||filter==='unreviewed'&&!decision||filter==='approved'&&approved||filter==='revision'&&decision?.status==='needs_revision'||filter==='unresolved'&&d.target_unresolved&&!approved||filter==='proposed'&&!d.target_unresolved&&!approved;
+ return matches&&($('split').value==='all'||d.split===$('split').value)&&d.image_id.toLowerCase().includes($('search').value.trim().toLowerCase());
+});}
+function validateAnswers(chosen,rejected,status,words){
+ for(const [label,answer] of [['Preferred',chosen],['Rejected',rejected]]){
+  if(status==='needs_revision'&&answer==='')continue;
+  const parts=answer.split(', ');
+  if(parts.length!==3||new Set(parts).size!==3||parts.some(w=>!words.includes(w)))throw Error(label+' answer needs three different allowed words. Leave both blank and use “Save as unsure” if no target is defensible.');
+ }
+ if(chosen&&new Set(chosen.split(', ')).size===3&&chosen.split(', ').every(w=>rejected.split(', ').includes(w)))throw Error('Preferred and rejected answers must use different word sets.');
+}
+function wordField(label,value,prefix){
+ const field=document.createElement('fieldset');field.className='word-field';field.append(text('legend',label));
+ const picks=document.createElement('div');picks.className='word-picks';const parts=(value||'').split(', ');
+ const selects=[0,1,2].map(i=>{const select=document.createElement('select');select.setAttribute('aria-label',prefix+' word '+(i+1));select.append(new Option('Choose word…',''));data.words.forEach(w=>select.append(new Option(w,w)));select.value=parts[i]||'';picks.append(select);return select;});
+ field.append(picks);return [field,()=>selects.every(s=>!s.value)?'':selects.map(s=>s.value).join(', ')];
+}
+async function post(route,body){const response=await fetch(route,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const value=await response.json();if(!response.ok)throw Error(value.error||'Could not save');return value;}
+function move(index){if(busy||index<0||index>=selection().length||!discardEdits())return;page=index;render();}
+function card(d){
+ const decision=data.decisions[d.image_id],c=document.createElement('article');c.className='workbench';
+ const photo=document.createElement('div');photo.className='photo-panel';const image=document.createElement('img');
+ image.alt='Research photo '+d.image_id;image.src='/image/'+encodeURIComponent(d.image_id);
+ image.onload=()=>{if(c.isConnected){photoReady=true;updateActions();}};image.onerror=()=>{if(c.isConnected){photoReady=false;updateActions();toast('The photo could not load. Do not save a review until it is visible.');}};
+ const original=text('a','Open original photo');original.href=image.src;original.target='_blank';original.rel='noopener';
+ photo.append(image,original,text('p',d.image_id,'identity'),text('h2','What the draft noticed'),text('p',d.visible_evidence,'evidence'));
+ const details=document.createElement('details');details.append(text('summary','Draft details'),text('p','Source: '+(d.draft_source==='codex_direct_visual_review'?'Codex direct photo inspection':'Earlier draft — see provenance')),text('p','Tentative expression association: '+d.teacher_expression+' · subjective confidence: '+d.subjective_confidence));
+ photo.append(details);
+ const panel=document.createElement('div');panel.className='review-panel';panel.append(text('span',d.split==='train'?'Training photo':'Development photo','badge'),text('span',decision?.status==='approved'?(decision.reviewer_kind==='ai'?'AI self-approved':'Human approved'):decision?.status==='needs_revision'?'Marked as unsure':d.target_unresolved?'Unresolved target':'Proposed words','badge '+(decision?.status==='approved'?'':'warning')));
+ if(decision?.reviewer_kind==='ai')panel.append(text('p','Accepted by Codex under your authorization, with the draft uncertainty retained. Not independently human-reviewed. A decision you save here overrides the AI decision.','notice'));
+ if(d.target_unresolved)panel.append(text('p','No words were proposed for this photo. The evidence is too ambiguous or neutral for the fixed vocabulary. You can leave the words blank and save it as unsure.','notice'));
+ const [chosenField,chosen]=wordField('Preferred · words the model should learn',decision?.chosen??d.chosen,'Preferred'),[rejectedField,rejected]=wordField('Rejected · less-supported alternative',decision?.rejected??d.rejected,'Rejected');
+ panel.append(chosenField,rejectedField,text('p',d.rejected_reason,'hint'));
+ const labels={emotion_words_are_tentative:'Emotion words are tentative',still_image_not_inner_state:'Inner feelings cannot be verified',low_image_quality:'Limited image detail',no_neutral_vocabulary:'No neutral category',neutral_vocabulary_gap:'No neutral category',insufficiently_grounded_three_word_target:'No defensible target yet'};
+ if(d.review_flags.length){const flags=document.createElement('div');flags.className='flags';new Set(d.review_flags.map(v=>labels[v]||v.replaceAll('_',' '))).forEach(v=>flags.append(text('span',v,'flag')));panel.append(flags);}
+ const notesLabel=text('label','Your correction or reason for uncertainty (optional)','notes-label'),notes=document.createElement('textarea');notes.placeholder='For example: mouth could be mid-speech; no defensible three-word target.';notes.value=decision?.notes||'';notesLabel.append(notes);panel.append(notesLabel);
+ const checks=document.createElement('div');checks.className='checks';const seen=document.createElement('input');seen.type='checkbox';const seenLabel=text('label','I examined the actual photo.');seenLabel.prepend(seen);checks.append(seenLabel);
+ const flagsSeen=document.createElement('input');flagsSeen.type='checkbox';const flagsLabel=text('label','I considered the justification and uncertainty flags.');flagsLabel.prepend(flagsSeen);if(d.review_flags.length)checks.append(flagsLabel);panel.append(checks);
+ const actions=document.createElement('div');actions.className='actions';const approve=text('button','Approve & next','primary'),revise=text('button','Save as unsure & next');actions.append(approve,revise);panel.append(actions);
+ const state=text('p',decision?'Last saved by '+decision.reviewer+' · '+new Date(decision.reviewed_at).toLocaleString():'Enter your name and confirm you examined the photo before saving.','save-state');panel.append(state);
+ updateActions=()=>{let valid=true;try{validateAnswers(chosen(),rejected(),'approved',data.words);}catch{valid=false;}
+  approve.disabled=busy||!photoReady||!$('reviewer').value.trim()||!seen.checked||(d.review_flags.length>0&&!flagsSeen.checked)||!valid||!!d.direct_review_pending;
+  revise.disabled=busy||!photoReady||!$('reviewer').value.trim()||!seen.checked;
+ };
+ panel.addEventListener('input',()=>{dirty=true;state.textContent='Unsaved edits — use a save button to keep this review.';state.className='save-state unsaved';updateActions();});
+ panel.addEventListener('change',updateActions);
+ async function save(status){
+  if(busy)return;
+  try{
+   validateAnswers(chosen(),rejected(),status,data.words);busy=true;updateActions();$('refresh').disabled=true;$('export').disabled=true;
+   const before=selection(),index=before.findIndex(row=>row.image_id===d.image_id);
+   const value=await post('/api/decision',{image_id:d.image_id,status,reviewer:$('reviewer').value.trim(),chosen:chosen(),rejected:rejected(),notes:notes.value,image_seen:seen.checked,flags_reviewed:flagsSeen.checked,draft_revision_sha256:d.draft_revision_sha256??null});
+   data.decisions[d.image_id]=value;dirty=false;busy=false;
+   const after=selection(),position=after.findIndex(row=>row.image_id===d.image_id);page=position<0?Math.min(index,Math.max(0,after.length-1)):Math.min(position+1,Math.max(0,after.length-1));
+   render();toast(status==='approved'?'Approval saved locally. No training started.':'Saved as unsure. This photo remains in the study.');
+  }catch(error){busy=false;toast(error.message);updateActions();$('refresh').disabled=false;}
+ }
+ approve.onclick=()=>save('approved');revise.onclick=()=>save('needs_revision');c.append(photo,panel);return c;
+}
+function render(){
+ dirty=false;photoReady=false;updateActions=()=>{};
+ const decisions=Object.values(data.decisions),approved=decisions.filter(v=>v.status==='approved').length,revision=decisions.filter(v=>v.status==='needs_revision').length,unresolved=data.drafts.filter(d=>d.target_unresolved&&data.decisions[d.image_id]?.status!=='approved').length,untouched=data.drafts.filter(d=>!data.decisions[d.image_id]).length;
+ const aiApproved=decisions.filter(v=>v.status==='approved'&&v.reviewer_kind==='ai').length;
+ $('count').textContent=approved.toLocaleString()+' / '+data.required.toLocaleString();$('progress').textContent=aiApproved.toLocaleString()+' AI-approved · '+(approved-aiApproved).toLocaleString()+' human-approved';$('approvalProgress').max=data.required;$('approvalProgress').value=approved;
+ $('summary').replaceChildren(...[['Not yet reviewed',untouched],['Marked as unsure',revision],['Blank targets',unresolved]].map(([label,count])=>{const e=text('span',label+': ');e.append(text('strong',count.toLocaleString()));return e;}));
+ $('export').disabled=busy||approved!==data.required||data.drafts.length!==data.required||data.drafts.some(d=>d.direct_review_pending);
+ const rows=selection();page=Math.max(0,Math.min(page,rows.length-1));$('pageLabel').textContent=rows.length?'Photo '+(page+1).toLocaleString()+' of '+rows.length.toLocaleString()+' in this view':'No photos in this view';
+ $('previous').disabled=page===0||!rows.length;$('next').disabled=page>=rows.length-1||!rows.length;$('go').disabled=!rows.length;$('jump').max=Math.max(1,rows.length);$('jump').value=page+1;
+ $('review').replaceChildren(rows.length?card(rows[page]):text('div','No photos match this view. Try another filter.','empty'));
+ $('words').textContent=data.words.join(', ');$('refresh').disabled=false;view=Object.fromEntries(controls.map(id=>[id,$(id).value]));remember('place',{...view,image_id:rows[page]?.image_id});updateActions();
+}
+async function load(){
+ if(busy||!discardEdits())return;busy=true;$('refresh').disabled=true;$('error').hidden=true;
+ const current=selection()[page]?.image_id||recall('place')?.image_id;
+ try{const response=await fetch('/api/targets');if(!response.ok)throw Error('Review data unavailable. Make sure the local reviewer is running.');data=await response.json();const position=selection().findIndex(d=>d.image_id===current);if(position>=0)page=position;busy=false;render();}
+ catch(error){busy=false;$('refresh').disabled=false;$('error').textContent=error.message;$('error').hidden=false;}
+}
+function changeView(){if(busy||!discardEdits()){controls.forEach(id=>$(id).value=view[id]);return;}page=0;render();}
+controls.forEach(id=>$(id).addEventListener('change',changeView));
+$('search').addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();changeView();}});
+$('reviewer').value=recall('reviewer')||'';$('reviewer').addEventListener('input',()=>{remember('reviewer',$('reviewer').value);updateActions();});
+const place=recall('place');if(place)controls.forEach(id=>{if(typeof place[id]==='string')$(id).value=place[id];});view=Object.fromEntries(controls.map(id=>[id,$(id).value]));
+$('previous').onclick=()=>move(page-1);$('next').onclick=()=>move(page+1);$('refresh').onclick=load;
+$('jumpForm').onsubmit=event=>{event.preventDefault();const number=Number($('jump').value);if(!Number.isInteger(number)||number<1||number>selection().length){toast('Choose a photo number in this view.');return;}move(number-1);};
+document.addEventListener('keydown',event=>{if(event.target.closest('input,textarea,select,button,summary')||event.altKey||event.ctrlKey||event.metaKey)return;if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();move(page+(event.key==='ArrowRight'?1:-1));}});
+window.addEventListener('beforeunload',event=>{if(dirty||busy){event.preventDefault();event.returnValue='';}});
+$('export').onclick=async()=>{if(busy||!discardEdits()||!confirm('Export all 1,920 approved targets, retaining AI versus human provenance? This does not start training.'))return;try{busy=true;$('export').disabled=true;const value=await post('/api/export',{confirm_all_reviewed:true});toast(value.approved_records+' approved targets exported. No training started.');}catch(error){toast(error.message);}finally{busy=false;updateActions();}};
+load();
+</script>
+</body>
+</html>

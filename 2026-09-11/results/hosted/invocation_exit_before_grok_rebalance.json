@@ -1,0 +1,12 @@
+{
+  "action": "run",
+  "blocked_routes": [],
+  "elapsed_seconds": 1940.5343339443207,
+  "finished_at": "2026-09-11T09:29:30.291063+00:00",
+  "new_rows": 2787,
+  "stopped": false,
+  "unavailable_cells": {
+    "neutral12/kimi_k3": "OpenRouter endpoint 'deepinfra/bf16' for moonshotai/kimi-k3 is unavailable (status=-2)",
+    "neutral12/minimax_m3": "Eleven HTTP 429 errors across three probes, including after the catalog recovered to status 0. Catalog availability did not imply a functional endpoint. Preserve this cell as incomplete; do not retry again in this session."
+  }
+}

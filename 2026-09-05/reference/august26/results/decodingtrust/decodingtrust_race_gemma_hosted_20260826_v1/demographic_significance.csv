@@ -1,0 +1,4 @@
+bh_adjusted_p_value,groups,model_display_name,model_key,observed_max_minus_min_agreement,permutation_p_value,permutation_samples,regime,responses
+1.0,4,Gemma 3 12B IT (OpenRouter/DeepInfra BF16),gemma3_12b_hosted,0.0,1.0,20000,benign,16
+1.0,4,Gemma 3 12B IT (OpenRouter/DeepInfra BF16),gemma3_12b_hosted,0.0,1.0,20000,untargeted,16
+0.6025198740062997,4,Gemma 3 12B IT (OpenRouter/DeepInfra BF16),gemma3_12b_hosted,0.5,0.2008399580020999,20000,targeted,16

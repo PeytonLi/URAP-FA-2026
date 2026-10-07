@@ -1,0 +1,5 @@
+run,train_rows,optimizer_updates,fairface_black_base,fairface_black_adapter,fairface_white_base,fairface_white_adapter,fairface_abs_gap_base,fairface_abs_gap_adapter,neutral_black_base,neutral_black_adapter,neutral_abs_gap_base,neutral_abs_gap_adapter,decision,main_observed_problem
+july19_ai_only,55,14,0.0475,0.0505,0.0195,0.028333,0.028,0.022167,0.35,0.50,0.316667,0.45,reject,"gap narrowed by increasing negativity; neutral safeguard regressed"
+july27,50,13,0.0475,0.05683,,,,,0.35,0.50,,,reject,"only one direct negative-count-reduction pair; race-skewed target vocabulary"
+august3_micro6,4,1,,,,,,,0.35,0.433333,0.316667,0.416667,reject,"four train rows; non-informative development floor; neutral safeguard regressed"
+

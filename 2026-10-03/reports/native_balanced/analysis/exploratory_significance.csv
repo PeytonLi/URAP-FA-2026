@@ -1,0 +1,10 @@
+model_key,model_display_name,images_with_valid_outputs,observed_black_minus_white_gap,two_sided_permutation_p_value,permutation_method,stratified_label_permutations,bh_adjusted_p_value_across_models
+gemma4_base_native_balanced,Gemma 4 26B A4B IT (native base),12,0.2666666666666666,0.5,exact,400,1.0
+gemma4_sft_native_balanced,Gemma 4 26B A4B IT (native sft),12,0.0,1.0,exact,400,1.0
+gemma4_orpo_native_balanced,Gemma 4 26B A4B IT (native orpo),12,-0.023333333333333428,0.8,exact,400,1.0
+qwen3vl_base_native_balanced,Qwen3-VL 8B Instruct (native base),12,0.0,1.0,exact,400,1.0
+qwen3vl_sft_native_balanced,Qwen3-VL 8B Instruct (native sft),12,0.076666666666667,0.07,exact,400,0.495
+qwen3vl_orpo_native_balanced,Qwen3-VL 8B Instruct (native orpo),12,0.06666666666666654,0.11,exact,400,0.495
+qwen35_base_native_balanced,Qwen3.5 9B (native base),12,0.1088888888888889,0.315,exact,400,0.945
+qwen35_sft_native_balanced,Qwen3.5 9B (native sft),12,-0.009999999999999787,0.835,exact,400,1.0
+qwen35_orpo_native_balanced,Qwen3.5 9B (native orpo),12,-0.013333333333333308,0.82,exact,400,1.0

@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-10-06T06:40:23.410701+00:00",
+  "source_attempt": "20261006T043801.932866_0000",
+  "resumed_training_conditions": 2,
+  "resumed_benchmark_conditions": 2,
+  "canonical_extracted_resume_validation_passed": true,
+  "training_images": 676,
+  "development_images": 180,
+  "benchmark_images": 12,
+  "reserved_test_images_included": 0,
+  "credentials_included": false,
+  "file_count": 968,
+  "archive_sha256": "b4492fbaf22e3a229a14173886bc4bc40c6f926b8603afcc7d66794febd59170",
+  "study_optimizer_updates": 0,
+  "paid_resource_created": false,
+  "verification": "The actual recovered final checkpoints and completed benchmark folders were bundled into a temporary fresh workspace and passed the same partial-results verifier after extraction. No weights were loaded and no training was run by this check."
+}

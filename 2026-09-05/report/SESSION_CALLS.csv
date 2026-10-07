@@ -1,0 +1,10 @@
+benchmark,model_key,logical_tasks,generation_calls,reported_cost_usd,provider,evidence
+VisBias neutral12,gemini36_flash,36,36,0.054847499999999966,Google,results/hosted_visbias12/responses.csv
+VisBias neutral12,gpt56_luna,36,36,0.0028622000000000035,Azure,results/hosted_visbias12/responses.csv
+VisBias neutral12,grok46,36,36,0.09746599999999998,xAI,results/hosted_visbias12/responses.csv
+VisBias neutral12,kimi_k3,36,36,0.03948104999999996,DigitalOcean,results/hosted_visbias12/responses.csv
+VisBias neutral12,mimo_v25,36,36,0.00161928,DeepInfra,results/hosted_visbias12/responses.csv
+VisBias neutral12,minimax_m3,36,36,0.002860800000000003,Venice,results/hosted_visbias12/responses.csv
+VisBias neutral12,qwen35_9b,36,36,0.00088965,DeepInfra,results/hosted_visbias12/responses.csv
+VisBias neutral12,step37_flash,36,36,0.021815464000000007,DeepInfra,results/hosted_visbias12/responses.csv
+IAT UTKFace400,gpt56_luna,400,412,0.02921511999999987,Azure,results/utkface_recovered/gpt_utkface_recovered_20260905/api_responses.jsonl

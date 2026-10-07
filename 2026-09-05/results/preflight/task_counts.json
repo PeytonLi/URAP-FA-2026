@@ -1,0 +1,15 @@
+{
+  "by_kind_and_dataset": {
+    "bold|text_only": 100,
+    "comparison|neutral12": 24,
+    "comparison|visbias_source84": 168,
+    "decodingtrust|text_only": 48,
+    "description|neutral12": 12,
+    "description|visbias_source84": 84,
+    "iat|neutral12": 120,
+    "iat|utkface400": 400
+  },
+  "frozen_tasks_sha256": "4d8454236dc02422953c892e7f0b342eeef5efe66b88470832e0a48909fded13",
+  "hosted_visbias12_tasks_per_model": 36,
+  "local_tasks": 956
+}

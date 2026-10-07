@@ -1,0 +1,20 @@
+{
+  "confirmatory_evaluation_opened": false,
+  "forbidden_eval_hashes": "/workspace/gemma3-fairface-debiasing-august10/reference/frozen_base/frozen_input_manifest.json",
+  "forbidden_eval_hashes_sha256": "fb5637fa3cf275c2241e7366470e14a57a059bdb35de54dfc130c690305f6614",
+  "non_confirmatory": true,
+  "protected_evaluation_overlap": [],
+  "protocol_version": "august10-training-only-base-screen-v1",
+  "race_counts": {
+    "Black": 40,
+    "White": 40
+  },
+  "rows": 80,
+  "screening_csv": "/workspace/gemma3-fairface-debiasing-august10/data/august10/diagnostic_screening_v1/screening_panel.csv",
+  "screening_csv_sha256": "17068647dc520ff38bba5514b7078fe05ecefdab554357c134cfb66d9499eeae",
+  "source_csv": "/workspace/gemma3-fairface-debiasing-august10/results/august10_negative_expression_pilot_v4/dataset/mixed_dpo_pairs_frozen.csv",
+  "source_csv_sha256": "589db3c850b383be7c848f15f3fa26e48d9d44af36ea6b6ee947fe69225d67c9",
+  "source_split": "train",
+  "status": "ready_for_base_screen",
+  "unique_images": 80
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "base_model": "accounts/fireworks/models/gemma-4-26b-a4b-it",
+    "checked_at": "2026-10-03T19:55:58.094967+00:00",
+    "display_name": "Gemma 4 26B A4B IT",
+    "endpoint_usable": true,
+    "image_sha256": "09eaa4af7310266e5ae8e1b8109f6c6833d82f097ef630f8da63b17ee0659bc5",
+    "model_id": "accounts/peli/deployments/urap-iat-gemma4-20261003",
+    "model_key": "gemma4",
+    "response": {
+      "_client": {
+        "elapsed_seconds": 0.9237663000822067,
+        "retry_count": 0
+      },
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "content": "Sadness, Grief, Pain",
+            "role": "assistant",
+            "tools": null
+          }
+        }
+      ],
+      "created": 1791057359,
+      "id": "chatcmpl-ba96633a014242a698a6aa4879b16e77",
+      "model": "accounts/fireworks/models/gemma-4-26b-a4b-it",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 7,
+        "completion_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "prompt_tokens": 475,
+        "prompt_tokens_details": {
+          "cached_tokens": 2
+        },
+        "total_tokens": 482
+      }
+    },
+    "training_performed": false
+  }
+]

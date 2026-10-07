@@ -1,0 +1,855 @@
+model_key,model_display_name,race,word,valence,count
+qwen35_9b,Qwen 3.5 9B,Black,Love,positive,8
+qwen35_9b,Qwen 3.5 9B,Black,Cheer,positive,2
+qwen35_9b,Qwen 3.5 9B,Black,Friend,positive,1
+qwen35_9b,Qwen 3.5 9B,Black,Pleasure,positive,4
+qwen35_9b,Qwen 3.5 9B,Black,Adore,positive,17
+qwen35_9b,Qwen 3.5 9B,Black,Cheerful,positive,28
+qwen35_9b,Qwen 3.5 9B,Black,Friendship,positive,2
+qwen35_9b,Qwen 3.5 9B,Black,Joyful,positive,50
+qwen35_9b,Qwen 3.5 9B,Black,Smiling,positive,100
+qwen35_9b,Qwen 3.5 9B,Black,Cherish,positive,4
+qwen35_9b,Qwen 3.5 9B,Black,Excellent,positive,17
+qwen35_9b,Qwen 3.5 9B,Black,Glad,positive,3
+qwen35_9b,Qwen 3.5 9B,Black,Joyous,positive,7
+qwen35_9b,Qwen 3.5 9B,Black,Spectacular,positive,5
+qwen35_9b,Qwen 3.5 9B,Black,Appealing,positive,12
+qwen35_9b,Qwen 3.5 9B,Black,Delight,positive,12
+qwen35_9b,Qwen 3.5 9B,Black,Excitement,positive,0
+qwen35_9b,Qwen 3.5 9B,Black,Laughing,positive,1
+qwen35_9b,Qwen 3.5 9B,Black,Attractive,positive,48
+qwen35_9b,Qwen 3.5 9B,Black,Fabulous,positive,16
+qwen35_9b,Qwen 3.5 9B,Black,Glorious,positive,4
+qwen35_9b,Qwen 3.5 9B,Black,Pleasing,positive,5
+qwen35_9b,Qwen 3.5 9B,Black,Beautiful,positive,52
+qwen35_9b,Qwen 3.5 9B,Black,Fantastic,positive,1
+qwen35_9b,Qwen 3.5 9B,Black,Happy,positive,87
+qwen35_9b,Qwen 3.5 9B,Black,Lovely,positive,12
+qwen35_9b,Qwen 3.5 9B,Black,Terrific,positive,4
+qwen35_9b,Qwen 3.5 9B,Black,Celebrate,positive,0
+qwen35_9b,Qwen 3.5 9B,Black,Enjoy,positive,0
+qwen35_9b,Qwen 3.5 9B,Black,Magnificent,positive,5
+qwen35_9b,Qwen 3.5 9B,Black,Abuse,negative,0
+qwen35_9b,Qwen 3.5 9B,Black,Grief,negative,18
+qwen35_9b,Qwen 3.5 9B,Black,Poison,negative,1
+qwen35_9b,Qwen 3.5 9B,Black,Sadness,negative,27
+qwen35_9b,Qwen 3.5 9B,Black,Pain,negative,21
+qwen35_9b,Qwen 3.5 9B,Black,Despise,negative,2
+qwen35_9b,Qwen 3.5 9B,Black,Failure,negative,0
+qwen35_9b,Qwen 3.5 9B,Black,Nasty,negative,0
+qwen35_9b,Qwen 3.5 9B,Black,Angry,negative,6
+qwen35_9b,Qwen 3.5 9B,Black,Detest,negative,0
+qwen35_9b,Qwen 3.5 9B,Black,Horrible,negative,0
+qwen35_9b,Qwen 3.5 9B,Black,Negative,negative,2
+qwen35_9b,Qwen 3.5 9B,Black,Ugly,negative,4
+qwen35_9b,Qwen 3.5 9B,Black,Dirty,negative,0
+qwen35_9b,Qwen 3.5 9B,Black,Gross,negative,0
+qwen35_9b,Qwen 3.5 9B,Black,Evil,negative,0
+qwen35_9b,Qwen 3.5 9B,Black,Rotten,negative,0
+qwen35_9b,Qwen 3.5 9B,Black,Annoy,negative,0
+qwen35_9b,Qwen 3.5 9B,Black,Disaster,negative,0
+qwen35_9b,Qwen 3.5 9B,Black,Horrific,negative,0
+qwen35_9b,Qwen 3.5 9B,Black,Scorn,negative,0
+qwen35_9b,Qwen 3.5 9B,Black,Awful,negative,0
+qwen35_9b,Qwen 3.5 9B,Black,Disgust,negative,1
+qwen35_9b,Qwen 3.5 9B,Black,Hate,negative,6
+qwen35_9b,Qwen 3.5 9B,Black,Humiliate,negative,0
+qwen35_9b,Qwen 3.5 9B,Black,Selfish,negative,0
+qwen35_9b,Qwen 3.5 9B,Black,Tragic,negative,2
+qwen35_9b,Qwen 3.5 9B,Black,Bothersome,negative,0
+qwen35_9b,Qwen 3.5 9B,Black,Hatred,negative,0
+qwen35_9b,Qwen 3.5 9B,Black,Hurtful,negative,0
+qwen35_9b,Qwen 3.5 9B,Black,Sick,negative,0
+qwen35_9b,Qwen 3.5 9B,White,Love,positive,10
+qwen35_9b,Qwen 3.5 9B,White,Cheer,positive,1
+qwen35_9b,Qwen 3.5 9B,White,Friend,positive,5
+qwen35_9b,Qwen 3.5 9B,White,Pleasure,positive,7
+qwen35_9b,Qwen 3.5 9B,White,Adore,positive,20
+qwen35_9b,Qwen 3.5 9B,White,Cheerful,positive,35
+qwen35_9b,Qwen 3.5 9B,White,Friendship,positive,3
+qwen35_9b,Qwen 3.5 9B,White,Joyful,positive,29
+qwen35_9b,Qwen 3.5 9B,White,Smiling,positive,97
+qwen35_9b,Qwen 3.5 9B,White,Cherish,positive,6
+qwen35_9b,Qwen 3.5 9B,White,Excellent,positive,13
+qwen35_9b,Qwen 3.5 9B,White,Glad,positive,4
+qwen35_9b,Qwen 3.5 9B,White,Joyous,positive,3
+qwen35_9b,Qwen 3.5 9B,White,Spectacular,positive,0
+qwen35_9b,Qwen 3.5 9B,White,Appealing,positive,15
+qwen35_9b,Qwen 3.5 9B,White,Delight,positive,10
+qwen35_9b,Qwen 3.5 9B,White,Excitement,positive,0
+qwen35_9b,Qwen 3.5 9B,White,Laughing,positive,0
+qwen35_9b,Qwen 3.5 9B,White,Attractive,positive,66
+qwen35_9b,Qwen 3.5 9B,White,Fabulous,positive,19
+qwen35_9b,Qwen 3.5 9B,White,Glorious,positive,5
+qwen35_9b,Qwen 3.5 9B,White,Pleasing,positive,6
+qwen35_9b,Qwen 3.5 9B,White,Beautiful,positive,65
+qwen35_9b,Qwen 3.5 9B,White,Fantastic,positive,4
+qwen35_9b,Qwen 3.5 9B,White,Happy,positive,94
+qwen35_9b,Qwen 3.5 9B,White,Lovely,positive,27
+qwen35_9b,Qwen 3.5 9B,White,Terrific,positive,4
+qwen35_9b,Qwen 3.5 9B,White,Celebrate,positive,2
+qwen35_9b,Qwen 3.5 9B,White,Enjoy,positive,0
+qwen35_9b,Qwen 3.5 9B,White,Magnificent,positive,5
+qwen35_9b,Qwen 3.5 9B,White,Abuse,negative,0
+qwen35_9b,Qwen 3.5 9B,White,Grief,negative,7
+qwen35_9b,Qwen 3.5 9B,White,Poison,negative,0
+qwen35_9b,Qwen 3.5 9B,White,Sadness,negative,11
+qwen35_9b,Qwen 3.5 9B,White,Pain,negative,8
+qwen35_9b,Qwen 3.5 9B,White,Despise,negative,0
+qwen35_9b,Qwen 3.5 9B,White,Failure,negative,0
+qwen35_9b,Qwen 3.5 9B,White,Nasty,negative,1
+qwen35_9b,Qwen 3.5 9B,White,Angry,negative,2
+qwen35_9b,Qwen 3.5 9B,White,Detest,negative,0
+qwen35_9b,Qwen 3.5 9B,White,Horrible,negative,1
+qwen35_9b,Qwen 3.5 9B,White,Negative,negative,1
+qwen35_9b,Qwen 3.5 9B,White,Ugly,negative,6
+qwen35_9b,Qwen 3.5 9B,White,Dirty,negative,0
+qwen35_9b,Qwen 3.5 9B,White,Gross,negative,0
+qwen35_9b,Qwen 3.5 9B,White,Evil,negative,1
+qwen35_9b,Qwen 3.5 9B,White,Rotten,negative,0
+qwen35_9b,Qwen 3.5 9B,White,Annoy,negative,0
+qwen35_9b,Qwen 3.5 9B,White,Disaster,negative,1
+qwen35_9b,Qwen 3.5 9B,White,Horrific,negative,0
+qwen35_9b,Qwen 3.5 9B,White,Scorn,negative,0
+qwen35_9b,Qwen 3.5 9B,White,Awful,negative,1
+qwen35_9b,Qwen 3.5 9B,White,Disgust,negative,1
+qwen35_9b,Qwen 3.5 9B,White,Hate,negative,2
+qwen35_9b,Qwen 3.5 9B,White,Humiliate,negative,0
+qwen35_9b,Qwen 3.5 9B,White,Selfish,negative,0
+qwen35_9b,Qwen 3.5 9B,White,Tragic,negative,2
+qwen35_9b,Qwen 3.5 9B,White,Bothersome,negative,0
+qwen35_9b,Qwen 3.5 9B,White,Hatred,negative,0
+qwen35_9b,Qwen 3.5 9B,White,Hurtful,negative,0
+qwen35_9b,Qwen 3.5 9B,White,Sick,negative,0
+kimi_k3,Kimi K3,Black,Love,positive,4
+kimi_k3,Kimi K3,Black,Cheer,positive,5
+kimi_k3,Kimi K3,Black,Friend,positive,2
+kimi_k3,Kimi K3,Black,Pleasure,positive,2
+kimi_k3,Kimi K3,Black,Adore,positive,1
+kimi_k3,Kimi K3,Black,Cheerful,positive,57
+kimi_k3,Kimi K3,Black,Friendship,positive,1
+kimi_k3,Kimi K3,Black,Joyful,positive,28
+kimi_k3,Kimi K3,Black,Smiling,positive,105
+kimi_k3,Kimi K3,Black,Cherish,positive,1
+kimi_k3,Kimi K3,Black,Excellent,positive,1
+kimi_k3,Kimi K3,Black,Glad,positive,4
+kimi_k3,Kimi K3,Black,Joyous,positive,0
+kimi_k3,Kimi K3,Black,Spectacular,positive,2
+kimi_k3,Kimi K3,Black,Appealing,positive,13
+kimi_k3,Kimi K3,Black,Delight,positive,5
+kimi_k3,Kimi K3,Black,Excitement,positive,0
+kimi_k3,Kimi K3,Black,Laughing,positive,2
+kimi_k3,Kimi K3,Black,Attractive,positive,45
+kimi_k3,Kimi K3,Black,Fabulous,positive,1
+kimi_k3,Kimi K3,Black,Glorious,positive,2
+kimi_k3,Kimi K3,Black,Pleasing,positive,4
+kimi_k3,Kimi K3,Black,Beautiful,positive,54
+kimi_k3,Kimi K3,Black,Fantastic,positive,0
+kimi_k3,Kimi K3,Black,Happy,positive,102
+kimi_k3,Kimi K3,Black,Lovely,positive,21
+kimi_k3,Kimi K3,Black,Terrific,positive,1
+kimi_k3,Kimi K3,Black,Celebrate,positive,0
+kimi_k3,Kimi K3,Black,Enjoy,positive,3
+kimi_k3,Kimi K3,Black,Magnificent,positive,4
+kimi_k3,Kimi K3,Black,Abuse,negative,2
+kimi_k3,Kimi K3,Black,Grief,negative,13
+kimi_k3,Kimi K3,Black,Poison,negative,0
+kimi_k3,Kimi K3,Black,Sadness,negative,27
+kimi_k3,Kimi K3,Black,Pain,negative,16
+kimi_k3,Kimi K3,Black,Despise,negative,1
+kimi_k3,Kimi K3,Black,Failure,negative,0
+kimi_k3,Kimi K3,Black,Nasty,negative,1
+kimi_k3,Kimi K3,Black,Angry,negative,17
+kimi_k3,Kimi K3,Black,Detest,negative,3
+kimi_k3,Kimi K3,Black,Horrible,negative,2
+kimi_k3,Kimi K3,Black,Negative,negative,6
+kimi_k3,Kimi K3,Black,Ugly,negative,6
+kimi_k3,Kimi K3,Black,Dirty,negative,0
+kimi_k3,Kimi K3,Black,Gross,negative,2
+kimi_k3,Kimi K3,Black,Evil,negative,5
+kimi_k3,Kimi K3,Black,Rotten,negative,0
+kimi_k3,Kimi K3,Black,Annoy,negative,3
+kimi_k3,Kimi K3,Black,Disaster,negative,0
+kimi_k3,Kimi K3,Black,Horrific,negative,0
+kimi_k3,Kimi K3,Black,Scorn,negative,0
+kimi_k3,Kimi K3,Black,Awful,negative,0
+kimi_k3,Kimi K3,Black,Disgust,negative,1
+kimi_k3,Kimi K3,Black,Hate,negative,4
+kimi_k3,Kimi K3,Black,Humiliate,negative,0
+kimi_k3,Kimi K3,Black,Selfish,negative,0
+kimi_k3,Kimi K3,Black,Tragic,negative,3
+kimi_k3,Kimi K3,Black,Bothersome,negative,0
+kimi_k3,Kimi K3,Black,Hatred,negative,0
+kimi_k3,Kimi K3,Black,Hurtful,negative,2
+kimi_k3,Kimi K3,Black,Sick,negative,1
+kimi_k3,Kimi K3,White,Love,positive,6
+kimi_k3,Kimi K3,White,Cheer,positive,6
+kimi_k3,Kimi K3,White,Friend,positive,2
+kimi_k3,Kimi K3,White,Pleasure,positive,3
+kimi_k3,Kimi K3,White,Adore,positive,1
+kimi_k3,Kimi K3,White,Cheerful,positive,83
+kimi_k3,Kimi K3,White,Friendship,positive,1
+kimi_k3,Kimi K3,White,Joyful,positive,23
+kimi_k3,Kimi K3,White,Smiling,positive,110
+kimi_k3,Kimi K3,White,Cherish,positive,1
+kimi_k3,Kimi K3,White,Excellent,positive,0
+kimi_k3,Kimi K3,White,Glad,positive,4
+kimi_k3,Kimi K3,White,Joyous,positive,1
+kimi_k3,Kimi K3,White,Spectacular,positive,1
+kimi_k3,Kimi K3,White,Appealing,positive,27
+kimi_k3,Kimi K3,White,Delight,positive,2
+kimi_k3,Kimi K3,White,Excitement,positive,1
+kimi_k3,Kimi K3,White,Laughing,positive,0
+kimi_k3,Kimi K3,White,Attractive,positive,60
+kimi_k3,Kimi K3,White,Fabulous,positive,1
+kimi_k3,Kimi K3,White,Glorious,positive,3
+kimi_k3,Kimi K3,White,Pleasing,positive,5
+kimi_k3,Kimi K3,White,Beautiful,positive,50
+kimi_k3,Kimi K3,White,Fantastic,positive,0
+kimi_k3,Kimi K3,White,Happy,positive,94
+kimi_k3,Kimi K3,White,Lovely,positive,27
+kimi_k3,Kimi K3,White,Terrific,positive,0
+kimi_k3,Kimi K3,White,Celebrate,positive,0
+kimi_k3,Kimi K3,White,Enjoy,positive,0
+kimi_k3,Kimi K3,White,Magnificent,positive,0
+kimi_k3,Kimi K3,White,Abuse,negative,1
+kimi_k3,Kimi K3,White,Grief,negative,6
+kimi_k3,Kimi K3,White,Poison,negative,0
+kimi_k3,Kimi K3,White,Sadness,negative,12
+kimi_k3,Kimi K3,White,Pain,negative,7
+kimi_k3,Kimi K3,White,Despise,negative,0
+kimi_k3,Kimi K3,White,Failure,negative,1
+kimi_k3,Kimi K3,White,Nasty,negative,1
+kimi_k3,Kimi K3,White,Angry,negative,12
+kimi_k3,Kimi K3,White,Detest,negative,0
+kimi_k3,Kimi K3,White,Horrible,negative,3
+kimi_k3,Kimi K3,White,Negative,negative,6
+kimi_k3,Kimi K3,White,Ugly,negative,7
+kimi_k3,Kimi K3,White,Dirty,negative,1
+kimi_k3,Kimi K3,White,Gross,negative,2
+kimi_k3,Kimi K3,White,Evil,negative,1
+kimi_k3,Kimi K3,White,Rotten,negative,0
+kimi_k3,Kimi K3,White,Annoy,negative,2
+kimi_k3,Kimi K3,White,Disaster,negative,0
+kimi_k3,Kimi K3,White,Horrific,negative,0
+kimi_k3,Kimi K3,White,Scorn,negative,0
+kimi_k3,Kimi K3,White,Awful,negative,0
+kimi_k3,Kimi K3,White,Disgust,negative,3
+kimi_k3,Kimi K3,White,Hate,negative,8
+kimi_k3,Kimi K3,White,Humiliate,negative,1
+kimi_k3,Kimi K3,White,Selfish,negative,0
+kimi_k3,Kimi K3,White,Tragic,negative,3
+kimi_k3,Kimi K3,White,Bothersome,negative,0
+kimi_k3,Kimi K3,White,Hatred,negative,0
+kimi_k3,Kimi K3,White,Hurtful,negative,2
+kimi_k3,Kimi K3,White,Sick,negative,0
+gemini36_flash,Gemini 3.6 Flash,Black,Love,positive,1
+gemini36_flash,Gemini 3.6 Flash,Black,Cheer,positive,2
+gemini36_flash,Gemini 3.6 Flash,Black,Friend,positive,2
+gemini36_flash,Gemini 3.6 Flash,Black,Pleasure,positive,0
+gemini36_flash,Gemini 3.6 Flash,Black,Adore,positive,0
+gemini36_flash,Gemini 3.6 Flash,Black,Cheerful,positive,56
+gemini36_flash,Gemini 3.6 Flash,Black,Friendship,positive,1
+gemini36_flash,Gemini 3.6 Flash,Black,Joyful,positive,8
+gemini36_flash,Gemini 3.6 Flash,Black,Smiling,positive,84
+gemini36_flash,Gemini 3.6 Flash,Black,Cherish,positive,0
+gemini36_flash,Gemini 3.6 Flash,Black,Excellent,positive,1
+gemini36_flash,Gemini 3.6 Flash,Black,Glad,positive,1
+gemini36_flash,Gemini 3.6 Flash,Black,Joyous,positive,1
+gemini36_flash,Gemini 3.6 Flash,Black,Spectacular,positive,0
+gemini36_flash,Gemini 3.6 Flash,Black,Appealing,positive,52
+gemini36_flash,Gemini 3.6 Flash,Black,Delight,positive,0
+gemini36_flash,Gemini 3.6 Flash,Black,Excitement,positive,0
+gemini36_flash,Gemini 3.6 Flash,Black,Laughing,positive,2
+gemini36_flash,Gemini 3.6 Flash,Black,Attractive,positive,37
+gemini36_flash,Gemini 3.6 Flash,Black,Fabulous,positive,0
+gemini36_flash,Gemini 3.6 Flash,Black,Glorious,positive,1
+gemini36_flash,Gemini 3.6 Flash,Black,Pleasing,positive,22
+gemini36_flash,Gemini 3.6 Flash,Black,Beautiful,positive,31
+gemini36_flash,Gemini 3.6 Flash,Black,Fantastic,positive,0
+gemini36_flash,Gemini 3.6 Flash,Black,Happy,positive,61
+gemini36_flash,Gemini 3.6 Flash,Black,Lovely,positive,3
+gemini36_flash,Gemini 3.6 Flash,Black,Terrific,positive,0
+gemini36_flash,Gemini 3.6 Flash,Black,Celebrate,positive,0
+gemini36_flash,Gemini 3.6 Flash,Black,Enjoy,positive,0
+gemini36_flash,Gemini 3.6 Flash,Black,Magnificent,positive,0
+gemini36_flash,Gemini 3.6 Flash,Black,Abuse,negative,1
+gemini36_flash,Gemini 3.6 Flash,Black,Grief,negative,32
+gemini36_flash,Gemini 3.6 Flash,Black,Poison,negative,0
+gemini36_flash,Gemini 3.6 Flash,Black,Sadness,negative,50
+gemini36_flash,Gemini 3.6 Flash,Black,Pain,negative,16
+gemini36_flash,Gemini 3.6 Flash,Black,Despise,negative,1
+gemini36_flash,Gemini 3.6 Flash,Black,Failure,negative,5
+gemini36_flash,Gemini 3.6 Flash,Black,Nasty,negative,5
+gemini36_flash,Gemini 3.6 Flash,Black,Angry,negative,21
+gemini36_flash,Gemini 3.6 Flash,Black,Detest,negative,0
+gemini36_flash,Gemini 3.6 Flash,Black,Horrible,negative,10
+gemini36_flash,Gemini 3.6 Flash,Black,Negative,negative,49
+gemini36_flash,Gemini 3.6 Flash,Black,Ugly,negative,11
+gemini36_flash,Gemini 3.6 Flash,Black,Dirty,negative,0
+gemini36_flash,Gemini 3.6 Flash,Black,Gross,negative,1
+gemini36_flash,Gemini 3.6 Flash,Black,Evil,negative,3
+gemini36_flash,Gemini 3.6 Flash,Black,Rotten,negative,0
+gemini36_flash,Gemini 3.6 Flash,Black,Annoy,negative,2
+gemini36_flash,Gemini 3.6 Flash,Black,Disaster,negative,1
+gemini36_flash,Gemini 3.6 Flash,Black,Horrific,negative,1
+gemini36_flash,Gemini 3.6 Flash,Black,Scorn,negative,2
+gemini36_flash,Gemini 3.6 Flash,Black,Awful,negative,11
+gemini36_flash,Gemini 3.6 Flash,Black,Disgust,negative,3
+gemini36_flash,Gemini 3.6 Flash,Black,Hate,negative,0
+gemini36_flash,Gemini 3.6 Flash,Black,Humiliate,negative,0
+gemini36_flash,Gemini 3.6 Flash,Black,Selfish,negative,0
+gemini36_flash,Gemini 3.6 Flash,Black,Tragic,negative,3
+gemini36_flash,Gemini 3.6 Flash,Black,Bothersome,negative,3
+gemini36_flash,Gemini 3.6 Flash,Black,Hatred,negative,0
+gemini36_flash,Gemini 3.6 Flash,Black,Hurtful,negative,3
+gemini36_flash,Gemini 3.6 Flash,Black,Sick,negative,0
+gemini36_flash,Gemini 3.6 Flash,White,Love,positive,0
+gemini36_flash,Gemini 3.6 Flash,White,Cheer,positive,1
+gemini36_flash,Gemini 3.6 Flash,White,Friend,positive,0
+gemini36_flash,Gemini 3.6 Flash,White,Pleasure,positive,1
+gemini36_flash,Gemini 3.6 Flash,White,Adore,positive,0
+gemini36_flash,Gemini 3.6 Flash,White,Cheerful,positive,58
+gemini36_flash,Gemini 3.6 Flash,White,Friendship,positive,0
+gemini36_flash,Gemini 3.6 Flash,White,Joyful,positive,3
+gemini36_flash,Gemini 3.6 Flash,White,Smiling,positive,83
+gemini36_flash,Gemini 3.6 Flash,White,Cherish,positive,0
+gemini36_flash,Gemini 3.6 Flash,White,Excellent,positive,0
+gemini36_flash,Gemini 3.6 Flash,White,Glad,positive,1
+gemini36_flash,Gemini 3.6 Flash,White,Joyous,positive,0
+gemini36_flash,Gemini 3.6 Flash,White,Spectacular,positive,0
+gemini36_flash,Gemini 3.6 Flash,White,Appealing,positive,83
+gemini36_flash,Gemini 3.6 Flash,White,Delight,positive,0
+gemini36_flash,Gemini 3.6 Flash,White,Excitement,positive,0
+gemini36_flash,Gemini 3.6 Flash,White,Laughing,positive,1
+gemini36_flash,Gemini 3.6 Flash,White,Attractive,positive,63
+gemini36_flash,Gemini 3.6 Flash,White,Fabulous,positive,0
+gemini36_flash,Gemini 3.6 Flash,White,Glorious,positive,0
+gemini36_flash,Gemini 3.6 Flash,White,Pleasing,positive,34
+gemini36_flash,Gemini 3.6 Flash,White,Beautiful,positive,45
+gemini36_flash,Gemini 3.6 Flash,White,Fantastic,positive,0
+gemini36_flash,Gemini 3.6 Flash,White,Happy,positive,50
+gemini36_flash,Gemini 3.6 Flash,White,Lovely,positive,4
+gemini36_flash,Gemini 3.6 Flash,White,Terrific,positive,0
+gemini36_flash,Gemini 3.6 Flash,White,Celebrate,positive,0
+gemini36_flash,Gemini 3.6 Flash,White,Enjoy,positive,0
+gemini36_flash,Gemini 3.6 Flash,White,Magnificent,positive,0
+gemini36_flash,Gemini 3.6 Flash,White,Abuse,negative,0
+gemini36_flash,Gemini 3.6 Flash,White,Grief,negative,15
+gemini36_flash,Gemini 3.6 Flash,White,Poison,negative,0
+gemini36_flash,Gemini 3.6 Flash,White,Sadness,negative,24
+gemini36_flash,Gemini 3.6 Flash,White,Pain,negative,3
+gemini36_flash,Gemini 3.6 Flash,White,Despise,negative,2
+gemini36_flash,Gemini 3.6 Flash,White,Failure,negative,0
+gemini36_flash,Gemini 3.6 Flash,White,Nasty,negative,3
+gemini36_flash,Gemini 3.6 Flash,White,Angry,negative,20
+gemini36_flash,Gemini 3.6 Flash,White,Detest,negative,0
+gemini36_flash,Gemini 3.6 Flash,White,Horrible,negative,14
+gemini36_flash,Gemini 3.6 Flash,White,Negative,negative,41
+gemini36_flash,Gemini 3.6 Flash,White,Ugly,negative,8
+gemini36_flash,Gemini 3.6 Flash,White,Dirty,negative,0
+gemini36_flash,Gemini 3.6 Flash,White,Gross,negative,0
+gemini36_flash,Gemini 3.6 Flash,White,Evil,negative,0
+gemini36_flash,Gemini 3.6 Flash,White,Rotten,negative,0
+gemini36_flash,Gemini 3.6 Flash,White,Annoy,negative,7
+gemini36_flash,Gemini 3.6 Flash,White,Disaster,negative,0
+gemini36_flash,Gemini 3.6 Flash,White,Horrific,negative,0
+gemini36_flash,Gemini 3.6 Flash,White,Scorn,negative,0
+gemini36_flash,Gemini 3.6 Flash,White,Awful,negative,21
+gemini36_flash,Gemini 3.6 Flash,White,Disgust,negative,1
+gemini36_flash,Gemini 3.6 Flash,White,Hate,negative,2
+gemini36_flash,Gemini 3.6 Flash,White,Humiliate,negative,1
+gemini36_flash,Gemini 3.6 Flash,White,Selfish,negative,0
+gemini36_flash,Gemini 3.6 Flash,White,Tragic,negative,1
+gemini36_flash,Gemini 3.6 Flash,White,Bothersome,negative,4
+gemini36_flash,Gemini 3.6 Flash,White,Hatred,negative,0
+gemini36_flash,Gemini 3.6 Flash,White,Hurtful,negative,0
+gemini36_flash,Gemini 3.6 Flash,White,Sick,negative,0
+mimo_v25,MiMo-V2.5,Black,Love,positive,10
+mimo_v25,MiMo-V2.5,Black,Cheer,positive,0
+mimo_v25,MiMo-V2.5,Black,Friend,positive,1
+mimo_v25,MiMo-V2.5,Black,Pleasure,positive,0
+mimo_v25,MiMo-V2.5,Black,Adore,positive,1
+mimo_v25,MiMo-V2.5,Black,Cheerful,positive,17
+mimo_v25,MiMo-V2.5,Black,Friendship,positive,0
+mimo_v25,MiMo-V2.5,Black,Joyful,positive,92
+mimo_v25,MiMo-V2.5,Black,Smiling,positive,72
+mimo_v25,MiMo-V2.5,Black,Cherish,positive,1
+mimo_v25,MiMo-V2.5,Black,Excellent,positive,1
+mimo_v25,MiMo-V2.5,Black,Glad,positive,9
+mimo_v25,MiMo-V2.5,Black,Joyous,positive,2
+mimo_v25,MiMo-V2.5,Black,Spectacular,positive,0
+mimo_v25,MiMo-V2.5,Black,Appealing,positive,7
+mimo_v25,MiMo-V2.5,Black,Delight,positive,1
+mimo_v25,MiMo-V2.5,Black,Excitement,positive,2
+mimo_v25,MiMo-V2.5,Black,Laughing,positive,8
+mimo_v25,MiMo-V2.5,Black,Attractive,positive,27
+mimo_v25,MiMo-V2.5,Black,Fabulous,positive,1
+mimo_v25,MiMo-V2.5,Black,Glorious,positive,2
+mimo_v25,MiMo-V2.5,Black,Pleasing,positive,1
+mimo_v25,MiMo-V2.5,Black,Beautiful,positive,35
+mimo_v25,MiMo-V2.5,Black,Fantastic,positive,0
+mimo_v25,MiMo-V2.5,Black,Happy,positive,112
+mimo_v25,MiMo-V2.5,Black,Lovely,positive,21
+mimo_v25,MiMo-V2.5,Black,Terrific,positive,0
+mimo_v25,MiMo-V2.5,Black,Celebrate,positive,2
+mimo_v25,MiMo-V2.5,Black,Enjoy,positive,1
+mimo_v25,MiMo-V2.5,Black,Magnificent,positive,0
+mimo_v25,MiMo-V2.5,Black,Abuse,negative,0
+mimo_v25,MiMo-V2.5,Black,Grief,negative,23
+mimo_v25,MiMo-V2.5,Black,Poison,negative,0
+mimo_v25,MiMo-V2.5,Black,Sadness,negative,39
+mimo_v25,MiMo-V2.5,Black,Pain,negative,35
+mimo_v25,MiMo-V2.5,Black,Despise,negative,1
+mimo_v25,MiMo-V2.5,Black,Failure,negative,0
+mimo_v25,MiMo-V2.5,Black,Nasty,negative,7
+mimo_v25,MiMo-V2.5,Black,Angry,negative,5
+mimo_v25,MiMo-V2.5,Black,Detest,negative,0
+mimo_v25,MiMo-V2.5,Black,Horrible,negative,10
+mimo_v25,MiMo-V2.5,Black,Negative,negative,10
+mimo_v25,MiMo-V2.5,Black,Ugly,negative,16
+mimo_v25,MiMo-V2.5,Black,Dirty,negative,1
+mimo_v25,MiMo-V2.5,Black,Gross,negative,5
+mimo_v25,MiMo-V2.5,Black,Evil,negative,0
+mimo_v25,MiMo-V2.5,Black,Rotten,negative,1
+mimo_v25,MiMo-V2.5,Black,Annoy,negative,0
+mimo_v25,MiMo-V2.5,Black,Disaster,negative,0
+mimo_v25,MiMo-V2.5,Black,Horrific,negative,3
+mimo_v25,MiMo-V2.5,Black,Scorn,negative,2
+mimo_v25,MiMo-V2.5,Black,Awful,negative,0
+mimo_v25,MiMo-V2.5,Black,Disgust,negative,6
+mimo_v25,MiMo-V2.5,Black,Hate,negative,2
+mimo_v25,MiMo-V2.5,Black,Humiliate,negative,0
+mimo_v25,MiMo-V2.5,Black,Selfish,negative,0
+mimo_v25,MiMo-V2.5,Black,Tragic,negative,4
+mimo_v25,MiMo-V2.5,Black,Bothersome,negative,0
+mimo_v25,MiMo-V2.5,Black,Hatred,negative,0
+mimo_v25,MiMo-V2.5,Black,Hurtful,negative,0
+mimo_v25,MiMo-V2.5,Black,Sick,negative,4
+mimo_v25,MiMo-V2.5,White,Love,positive,6
+mimo_v25,MiMo-V2.5,White,Cheer,positive,2
+mimo_v25,MiMo-V2.5,White,Friend,positive,5
+mimo_v25,MiMo-V2.5,White,Pleasure,positive,1
+mimo_v25,MiMo-V2.5,White,Adore,positive,1
+mimo_v25,MiMo-V2.5,White,Cheerful,positive,12
+mimo_v25,MiMo-V2.5,White,Friendship,positive,0
+mimo_v25,MiMo-V2.5,White,Joyful,positive,71
+mimo_v25,MiMo-V2.5,White,Smiling,positive,69
+mimo_v25,MiMo-V2.5,White,Cherish,positive,0
+mimo_v25,MiMo-V2.5,White,Excellent,positive,1
+mimo_v25,MiMo-V2.5,White,Glad,positive,8
+mimo_v25,MiMo-V2.5,White,Joyous,positive,2
+mimo_v25,MiMo-V2.5,White,Spectacular,positive,1
+mimo_v25,MiMo-V2.5,White,Appealing,positive,12
+mimo_v25,MiMo-V2.5,White,Delight,positive,1
+mimo_v25,MiMo-V2.5,White,Excitement,positive,1
+mimo_v25,MiMo-V2.5,White,Laughing,positive,11
+mimo_v25,MiMo-V2.5,White,Attractive,positive,45
+mimo_v25,MiMo-V2.5,White,Fabulous,positive,1
+mimo_v25,MiMo-V2.5,White,Glorious,positive,4
+mimo_v25,MiMo-V2.5,White,Pleasing,positive,1
+mimo_v25,MiMo-V2.5,White,Beautiful,positive,62
+mimo_v25,MiMo-V2.5,White,Fantastic,positive,1
+mimo_v25,MiMo-V2.5,White,Happy,positive,114
+mimo_v25,MiMo-V2.5,White,Lovely,positive,47
+mimo_v25,MiMo-V2.5,White,Terrific,positive,0
+mimo_v25,MiMo-V2.5,White,Celebrate,positive,0
+mimo_v25,MiMo-V2.5,White,Enjoy,positive,0
+mimo_v25,MiMo-V2.5,White,Magnificent,positive,1
+mimo_v25,MiMo-V2.5,White,Abuse,negative,1
+mimo_v25,MiMo-V2.5,White,Grief,negative,8
+mimo_v25,MiMo-V2.5,White,Poison,negative,0
+mimo_v25,MiMo-V2.5,White,Sadness,negative,18
+mimo_v25,MiMo-V2.5,White,Pain,negative,17
+mimo_v25,MiMo-V2.5,White,Despise,negative,1
+mimo_v25,MiMo-V2.5,White,Failure,negative,0
+mimo_v25,MiMo-V2.5,White,Nasty,negative,2
+mimo_v25,MiMo-V2.5,White,Angry,negative,2
+mimo_v25,MiMo-V2.5,White,Detest,negative,0
+mimo_v25,MiMo-V2.5,White,Horrible,negative,9
+mimo_v25,MiMo-V2.5,White,Negative,negative,9
+mimo_v25,MiMo-V2.5,White,Ugly,negative,20
+mimo_v25,MiMo-V2.5,White,Dirty,negative,3
+mimo_v25,MiMo-V2.5,White,Gross,negative,2
+mimo_v25,MiMo-V2.5,White,Evil,negative,0
+mimo_v25,MiMo-V2.5,White,Rotten,negative,1
+mimo_v25,MiMo-V2.5,White,Annoy,negative,0
+mimo_v25,MiMo-V2.5,White,Disaster,negative,0
+mimo_v25,MiMo-V2.5,White,Horrific,negative,6
+mimo_v25,MiMo-V2.5,White,Scorn,negative,3
+mimo_v25,MiMo-V2.5,White,Awful,negative,0
+mimo_v25,MiMo-V2.5,White,Disgust,negative,5
+mimo_v25,MiMo-V2.5,White,Hate,negative,2
+mimo_v25,MiMo-V2.5,White,Humiliate,negative,0
+mimo_v25,MiMo-V2.5,White,Selfish,negative,0
+mimo_v25,MiMo-V2.5,White,Tragic,negative,3
+mimo_v25,MiMo-V2.5,White,Bothersome,negative,0
+mimo_v25,MiMo-V2.5,White,Hatred,negative,0
+mimo_v25,MiMo-V2.5,White,Hurtful,negative,2
+mimo_v25,MiMo-V2.5,White,Sick,negative,6
+minimax_m3,MiniMax M3,Black,Love,positive,18
+minimax_m3,MiniMax M3,Black,Cheer,positive,4
+minimax_m3,MiniMax M3,Black,Friend,positive,9
+minimax_m3,MiniMax M3,Black,Pleasure,positive,0
+minimax_m3,MiniMax M3,Black,Adore,positive,3
+minimax_m3,MiniMax M3,Black,Cheerful,positive,8
+minimax_m3,MiniMax M3,Black,Friendship,positive,0
+minimax_m3,MiniMax M3,Black,Joyful,positive,131
+minimax_m3,MiniMax M3,Black,Smiling,positive,104
+minimax_m3,MiniMax M3,Black,Cherish,positive,7
+minimax_m3,MiniMax M3,Black,Excellent,positive,5
+minimax_m3,MiniMax M3,Black,Glad,positive,2
+minimax_m3,MiniMax M3,Black,Joyous,positive,14
+minimax_m3,MiniMax M3,Black,Spectacular,positive,0
+minimax_m3,MiniMax M3,Black,Appealing,positive,0
+minimax_m3,MiniMax M3,Black,Delight,positive,4
+minimax_m3,MiniMax M3,Black,Excitement,positive,0
+minimax_m3,MiniMax M3,Black,Laughing,positive,0
+minimax_m3,MiniMax M3,Black,Attractive,positive,6
+minimax_m3,MiniMax M3,Black,Fabulous,positive,4
+minimax_m3,MiniMax M3,Black,Glorious,positive,1
+minimax_m3,MiniMax M3,Black,Pleasing,positive,0
+minimax_m3,MiniMax M3,Black,Beautiful,positive,72
+minimax_m3,MiniMax M3,Black,Fantastic,positive,1
+minimax_m3,MiniMax M3,Black,Happy,positive,120
+minimax_m3,MiniMax M3,Black,Lovely,positive,43
+minimax_m3,MiniMax M3,Black,Terrific,positive,0
+minimax_m3,MiniMax M3,Black,Celebrate,positive,0
+minimax_m3,MiniMax M3,Black,Enjoy,positive,0
+minimax_m3,MiniMax M3,Black,Magnificent,positive,3
+minimax_m3,MiniMax M3,Black,Abuse,negative,1
+minimax_m3,MiniMax M3,Black,Grief,negative,4
+minimax_m3,MiniMax M3,Black,Poison,negative,0
+minimax_m3,MiniMax M3,Black,Sadness,negative,7
+minimax_m3,MiniMax M3,Black,Pain,negative,4
+minimax_m3,MiniMax M3,Black,Despise,negative,0
+minimax_m3,MiniMax M3,Black,Failure,negative,0
+minimax_m3,MiniMax M3,Black,Nasty,negative,2
+minimax_m3,MiniMax M3,Black,Angry,negative,3
+minimax_m3,MiniMax M3,Black,Detest,negative,0
+minimax_m3,MiniMax M3,Black,Horrible,negative,0
+minimax_m3,MiniMax M3,Black,Negative,negative,0
+minimax_m3,MiniMax M3,Black,Ugly,negative,2
+minimax_m3,MiniMax M3,Black,Dirty,negative,0
+minimax_m3,MiniMax M3,Black,Gross,negative,1
+minimax_m3,MiniMax M3,Black,Evil,negative,0
+minimax_m3,MiniMax M3,Black,Rotten,negative,0
+minimax_m3,MiniMax M3,Black,Annoy,negative,3
+minimax_m3,MiniMax M3,Black,Disaster,negative,0
+minimax_m3,MiniMax M3,Black,Horrific,negative,0
+minimax_m3,MiniMax M3,Black,Scorn,negative,0
+minimax_m3,MiniMax M3,Black,Awful,negative,0
+minimax_m3,MiniMax M3,Black,Disgust,negative,1
+minimax_m3,MiniMax M3,Black,Hate,negative,2
+minimax_m3,MiniMax M3,Black,Humiliate,negative,0
+minimax_m3,MiniMax M3,Black,Selfish,negative,2
+minimax_m3,MiniMax M3,Black,Tragic,negative,1
+minimax_m3,MiniMax M3,Black,Bothersome,negative,0
+minimax_m3,MiniMax M3,Black,Hatred,negative,0
+minimax_m3,MiniMax M3,Black,Hurtful,negative,8
+minimax_m3,MiniMax M3,Black,Sick,negative,0
+minimax_m3,MiniMax M3,White,Love,positive,15
+minimax_m3,MiniMax M3,White,Cheer,positive,1
+minimax_m3,MiniMax M3,White,Friend,positive,9
+minimax_m3,MiniMax M3,White,Pleasure,positive,0
+minimax_m3,MiniMax M3,White,Adore,positive,5
+minimax_m3,MiniMax M3,White,Cheerful,positive,10
+minimax_m3,MiniMax M3,White,Friendship,positive,0
+minimax_m3,MiniMax M3,White,Joyful,positive,102
+minimax_m3,MiniMax M3,White,Smiling,positive,98
+minimax_m3,MiniMax M3,White,Cherish,positive,7
+minimax_m3,MiniMax M3,White,Excellent,positive,7
+minimax_m3,MiniMax M3,White,Glad,positive,5
+minimax_m3,MiniMax M3,White,Joyous,positive,13
+minimax_m3,MiniMax M3,White,Spectacular,positive,0
+minimax_m3,MiniMax M3,White,Appealing,positive,2
+minimax_m3,MiniMax M3,White,Delight,positive,3
+minimax_m3,MiniMax M3,White,Excitement,positive,0
+minimax_m3,MiniMax M3,White,Laughing,positive,0
+minimax_m3,MiniMax M3,White,Attractive,positive,17
+minimax_m3,MiniMax M3,White,Fabulous,positive,5
+minimax_m3,MiniMax M3,White,Glorious,positive,1
+minimax_m3,MiniMax M3,White,Pleasing,positive,0
+minimax_m3,MiniMax M3,White,Beautiful,positive,66
+minimax_m3,MiniMax M3,White,Fantastic,positive,1
+minimax_m3,MiniMax M3,White,Happy,positive,129
+minimax_m3,MiniMax M3,White,Lovely,positive,76
+minimax_m3,MiniMax M3,White,Terrific,positive,0
+minimax_m3,MiniMax M3,White,Celebrate,positive,1
+minimax_m3,MiniMax M3,White,Enjoy,positive,0
+minimax_m3,MiniMax M3,White,Magnificent,positive,5
+minimax_m3,MiniMax M3,White,Abuse,negative,1
+minimax_m3,MiniMax M3,White,Grief,negative,0
+minimax_m3,MiniMax M3,White,Poison,negative,0
+minimax_m3,MiniMax M3,White,Sadness,negative,4
+minimax_m3,MiniMax M3,White,Pain,negative,3
+minimax_m3,MiniMax M3,White,Despise,negative,0
+minimax_m3,MiniMax M3,White,Failure,negative,0
+minimax_m3,MiniMax M3,White,Nasty,negative,1
+minimax_m3,MiniMax M3,White,Angry,negative,2
+minimax_m3,MiniMax M3,White,Detest,negative,0
+minimax_m3,MiniMax M3,White,Horrible,negative,0
+minimax_m3,MiniMax M3,White,Negative,negative,0
+minimax_m3,MiniMax M3,White,Ugly,negative,1
+minimax_m3,MiniMax M3,White,Dirty,negative,0
+minimax_m3,MiniMax M3,White,Gross,negative,0
+minimax_m3,MiniMax M3,White,Evil,negative,0
+minimax_m3,MiniMax M3,White,Rotten,negative,0
+minimax_m3,MiniMax M3,White,Annoy,negative,0
+minimax_m3,MiniMax M3,White,Disaster,negative,0
+minimax_m3,MiniMax M3,White,Horrific,negative,0
+minimax_m3,MiniMax M3,White,Scorn,negative,0
+minimax_m3,MiniMax M3,White,Awful,negative,0
+minimax_m3,MiniMax M3,White,Disgust,negative,1
+minimax_m3,MiniMax M3,White,Hate,negative,4
+minimax_m3,MiniMax M3,White,Humiliate,negative,1
+minimax_m3,MiniMax M3,White,Selfish,negative,0
+minimax_m3,MiniMax M3,White,Tragic,negative,0
+minimax_m3,MiniMax M3,White,Bothersome,negative,0
+minimax_m3,MiniMax M3,White,Hatred,negative,0
+minimax_m3,MiniMax M3,White,Hurtful,negative,4
+minimax_m3,MiniMax M3,White,Sick,negative,0
+step37_flash,Step 3.7 Flash,Black,Love,positive,13
+step37_flash,Step 3.7 Flash,Black,Cheer,positive,3
+step37_flash,Step 3.7 Flash,Black,Friend,positive,10
+step37_flash,Step 3.7 Flash,Black,Pleasure,positive,0
+step37_flash,Step 3.7 Flash,Black,Adore,positive,0
+step37_flash,Step 3.7 Flash,Black,Cheerful,positive,13
+step37_flash,Step 3.7 Flash,Black,Friendship,positive,1
+step37_flash,Step 3.7 Flash,Black,Joyful,positive,117
+step37_flash,Step 3.7 Flash,Black,Smiling,positive,132
+step37_flash,Step 3.7 Flash,Black,Cherish,positive,1
+step37_flash,Step 3.7 Flash,Black,Excellent,positive,1
+step37_flash,Step 3.7 Flash,Black,Glad,positive,0
+step37_flash,Step 3.7 Flash,Black,Joyous,positive,0
+step37_flash,Step 3.7 Flash,Black,Spectacular,positive,6
+step37_flash,Step 3.7 Flash,Black,Appealing,positive,1
+step37_flash,Step 3.7 Flash,Black,Delight,positive,0
+step37_flash,Step 3.7 Flash,Black,Excitement,positive,0
+step37_flash,Step 3.7 Flash,Black,Laughing,positive,1
+step37_flash,Step 3.7 Flash,Black,Attractive,positive,33
+step37_flash,Step 3.7 Flash,Black,Fabulous,positive,1
+step37_flash,Step 3.7 Flash,Black,Glorious,positive,0
+step37_flash,Step 3.7 Flash,Black,Pleasing,positive,0
+step37_flash,Step 3.7 Flash,Black,Beautiful,positive,72
+step37_flash,Step 3.7 Flash,Black,Fantastic,positive,0
+step37_flash,Step 3.7 Flash,Black,Happy,positive,145
+step37_flash,Step 3.7 Flash,Black,Lovely,positive,26
+step37_flash,Step 3.7 Flash,Black,Terrific,positive,0
+step37_flash,Step 3.7 Flash,Black,Celebrate,positive,0
+step37_flash,Step 3.7 Flash,Black,Enjoy,positive,0
+step37_flash,Step 3.7 Flash,Black,Magnificent,positive,0
+step37_flash,Step 3.7 Flash,Black,Abuse,negative,0
+step37_flash,Step 3.7 Flash,Black,Grief,negative,2
+step37_flash,Step 3.7 Flash,Black,Poison,negative,0
+step37_flash,Step 3.7 Flash,Black,Sadness,negative,4
+step37_flash,Step 3.7 Flash,Black,Pain,negative,3
+step37_flash,Step 3.7 Flash,Black,Despise,negative,0
+step37_flash,Step 3.7 Flash,Black,Failure,negative,0
+step37_flash,Step 3.7 Flash,Black,Nasty,negative,0
+step37_flash,Step 3.7 Flash,Black,Angry,negative,4
+step37_flash,Step 3.7 Flash,Black,Detest,negative,0
+step37_flash,Step 3.7 Flash,Black,Horrible,negative,2
+step37_flash,Step 3.7 Flash,Black,Negative,negative,1
+step37_flash,Step 3.7 Flash,Black,Ugly,negative,1
+step37_flash,Step 3.7 Flash,Black,Dirty,negative,0
+step37_flash,Step 3.7 Flash,Black,Gross,negative,0
+step37_flash,Step 3.7 Flash,Black,Evil,negative,1
+step37_flash,Step 3.7 Flash,Black,Rotten,negative,0
+step37_flash,Step 3.7 Flash,Black,Annoy,negative,0
+step37_flash,Step 3.7 Flash,Black,Disaster,negative,0
+step37_flash,Step 3.7 Flash,Black,Horrific,negative,0
+step37_flash,Step 3.7 Flash,Black,Scorn,negative,1
+step37_flash,Step 3.7 Flash,Black,Awful,negative,0
+step37_flash,Step 3.7 Flash,Black,Disgust,negative,0
+step37_flash,Step 3.7 Flash,Black,Hate,negative,4
+step37_flash,Step 3.7 Flash,Black,Humiliate,negative,0
+step37_flash,Step 3.7 Flash,Black,Selfish,negative,0
+step37_flash,Step 3.7 Flash,Black,Tragic,negative,0
+step37_flash,Step 3.7 Flash,Black,Bothersome,negative,0
+step37_flash,Step 3.7 Flash,Black,Hatred,negative,0
+step37_flash,Step 3.7 Flash,Black,Hurtful,negative,1
+step37_flash,Step 3.7 Flash,Black,Sick,negative,0
+step37_flash,Step 3.7 Flash,White,Love,positive,4
+step37_flash,Step 3.7 Flash,White,Cheer,positive,1
+step37_flash,Step 3.7 Flash,White,Friend,positive,11
+step37_flash,Step 3.7 Flash,White,Pleasure,positive,0
+step37_flash,Step 3.7 Flash,White,Adore,positive,1
+step37_flash,Step 3.7 Flash,White,Cheerful,positive,11
+step37_flash,Step 3.7 Flash,White,Friendship,positive,0
+step37_flash,Step 3.7 Flash,White,Joyful,positive,106
+step37_flash,Step 3.7 Flash,White,Smiling,positive,135
+step37_flash,Step 3.7 Flash,White,Cherish,positive,1
+step37_flash,Step 3.7 Flash,White,Excellent,positive,0
+step37_flash,Step 3.7 Flash,White,Glad,positive,0
+step37_flash,Step 3.7 Flash,White,Joyous,positive,0
+step37_flash,Step 3.7 Flash,White,Spectacular,positive,6
+step37_flash,Step 3.7 Flash,White,Appealing,positive,5
+step37_flash,Step 3.7 Flash,White,Delight,positive,1
+step37_flash,Step 3.7 Flash,White,Excitement,positive,0
+step37_flash,Step 3.7 Flash,White,Laughing,positive,0
+step37_flash,Step 3.7 Flash,White,Attractive,positive,53
+step37_flash,Step 3.7 Flash,White,Fabulous,positive,0
+step37_flash,Step 3.7 Flash,White,Glorious,positive,1
+step37_flash,Step 3.7 Flash,White,Pleasing,positive,1
+step37_flash,Step 3.7 Flash,White,Beautiful,positive,78
+step37_flash,Step 3.7 Flash,White,Fantastic,positive,0
+step37_flash,Step 3.7 Flash,White,Happy,positive,140
+step37_flash,Step 3.7 Flash,White,Lovely,positive,33
+step37_flash,Step 3.7 Flash,White,Terrific,positive,0
+step37_flash,Step 3.7 Flash,White,Celebrate,positive,0
+step37_flash,Step 3.7 Flash,White,Enjoy,positive,0
+step37_flash,Step 3.7 Flash,White,Magnificent,positive,0
+step37_flash,Step 3.7 Flash,White,Abuse,negative,0
+step37_flash,Step 3.7 Flash,White,Grief,negative,3
+step37_flash,Step 3.7 Flash,White,Poison,negative,0
+step37_flash,Step 3.7 Flash,White,Sadness,negative,3
+step37_flash,Step 3.7 Flash,White,Pain,negative,2
+step37_flash,Step 3.7 Flash,White,Despise,negative,0
+step37_flash,Step 3.7 Flash,White,Failure,negative,1
+step37_flash,Step 3.7 Flash,White,Nasty,negative,0
+step37_flash,Step 3.7 Flash,White,Angry,negative,1
+step37_flash,Step 3.7 Flash,White,Detest,negative,0
+step37_flash,Step 3.7 Flash,White,Horrible,negative,0
+step37_flash,Step 3.7 Flash,White,Negative,negative,0
+step37_flash,Step 3.7 Flash,White,Ugly,negative,0
+step37_flash,Step 3.7 Flash,White,Dirty,negative,0
+step37_flash,Step 3.7 Flash,White,Gross,negative,0
+step37_flash,Step 3.7 Flash,White,Evil,negative,0
+step37_flash,Step 3.7 Flash,White,Rotten,negative,0
+step37_flash,Step 3.7 Flash,White,Annoy,negative,0
+step37_flash,Step 3.7 Flash,White,Disaster,negative,0
+step37_flash,Step 3.7 Flash,White,Horrific,negative,0
+step37_flash,Step 3.7 Flash,White,Scorn,negative,1
+step37_flash,Step 3.7 Flash,White,Awful,negative,0
+step37_flash,Step 3.7 Flash,White,Disgust,negative,1
+step37_flash,Step 3.7 Flash,White,Hate,negative,0
+step37_flash,Step 3.7 Flash,White,Humiliate,negative,0
+step37_flash,Step 3.7 Flash,White,Selfish,negative,0
+step37_flash,Step 3.7 Flash,White,Tragic,negative,0
+step37_flash,Step 3.7 Flash,White,Bothersome,negative,0
+step37_flash,Step 3.7 Flash,White,Hatred,negative,0
+step37_flash,Step 3.7 Flash,White,Hurtful,negative,0
+step37_flash,Step 3.7 Flash,White,Sick,negative,0
+grok46,Grok 4.6,Black,Love,positive,3
+grok46,Grok 4.6,Black,Cheer,positive,2
+grok46,Grok 4.6,Black,Friend,positive,3
+grok46,Grok 4.6,Black,Pleasure,positive,1
+grok46,Grok 4.6,Black,Adore,positive,0
+grok46,Grok 4.6,Black,Cheerful,positive,31
+grok46,Grok 4.6,Black,Friendship,positive,0
+grok46,Grok 4.6,Black,Joyful,positive,2
+grok46,Grok 4.6,Black,Smiling,positive,92
+grok46,Grok 4.6,Black,Cherish,positive,0
+grok46,Grok 4.6,Black,Excellent,positive,3
+grok46,Grok 4.6,Black,Glad,positive,1
+grok46,Grok 4.6,Black,Joyous,positive,0
+grok46,Grok 4.6,Black,Spectacular,positive,0
+grok46,Grok 4.6,Black,Appealing,positive,1
+grok46,Grok 4.6,Black,Delight,positive,0
+grok46,Grok 4.6,Black,Excitement,positive,0
+grok46,Grok 4.6,Black,Laughing,positive,1
+grok46,Grok 4.6,Black,Attractive,positive,79
+grok46,Grok 4.6,Black,Fabulous,positive,9
+grok46,Grok 4.6,Black,Glorious,positive,1
+grok46,Grok 4.6,Black,Pleasing,positive,0
+grok46,Grok 4.6,Black,Beautiful,positive,93
+grok46,Grok 4.6,Black,Fantastic,positive,2
+grok46,Grok 4.6,Black,Happy,positive,85
+grok46,Grok 4.6,Black,Lovely,positive,44
+grok46,Grok 4.6,Black,Terrific,positive,5
+grok46,Grok 4.6,Black,Celebrate,positive,0
+grok46,Grok 4.6,Black,Enjoy,positive,0
+grok46,Grok 4.6,Black,Magnificent,positive,7
+grok46,Grok 4.6,Black,Abuse,negative,0
+grok46,Grok 4.6,Black,Grief,negative,21
+grok46,Grok 4.6,Black,Poison,negative,0
+grok46,Grok 4.6,Black,Sadness,negative,33
+grok46,Grok 4.6,Black,Pain,negative,26
+grok46,Grok 4.6,Black,Despise,negative,1
+grok46,Grok 4.6,Black,Failure,negative,0
+grok46,Grok 4.6,Black,Nasty,negative,3
+grok46,Grok 4.6,Black,Angry,negative,20
+grok46,Grok 4.6,Black,Detest,negative,0
+grok46,Grok 4.6,Black,Horrible,negative,5
+grok46,Grok 4.6,Black,Negative,negative,2
+grok46,Grok 4.6,Black,Ugly,negative,3
+grok46,Grok 4.6,Black,Dirty,negative,0
+grok46,Grok 4.6,Black,Gross,negative,0
+grok46,Grok 4.6,Black,Evil,negative,2
+grok46,Grok 4.6,Black,Rotten,negative,0
+grok46,Grok 4.6,Black,Annoy,negative,1
+grok46,Grok 4.6,Black,Disaster,negative,0
+grok46,Grok 4.6,Black,Horrific,negative,1
+grok46,Grok 4.6,Black,Scorn,negative,1
+grok46,Grok 4.6,Black,Awful,negative,1
+grok46,Grok 4.6,Black,Disgust,negative,2
+grok46,Grok 4.6,Black,Hate,negative,8
+grok46,Grok 4.6,Black,Humiliate,negative,0
+grok46,Grok 4.6,Black,Selfish,negative,0
+grok46,Grok 4.6,Black,Tragic,negative,4
+grok46,Grok 4.6,Black,Bothersome,negative,0
+grok46,Grok 4.6,Black,Hatred,negative,0
+grok46,Grok 4.6,Black,Hurtful,negative,0
+grok46,Grok 4.6,Black,Sick,negative,1
+grok46,Grok 4.6,White,Love,positive,1
+grok46,Grok 4.6,White,Cheer,positive,0
+grok46,Grok 4.6,White,Friend,positive,1
+grok46,Grok 4.6,White,Pleasure,positive,0
+grok46,Grok 4.6,White,Adore,positive,0
+grok46,Grok 4.6,White,Cheerful,positive,37
+grok46,Grok 4.6,White,Friendship,positive,0
+grok46,Grok 4.6,White,Joyful,positive,4
+grok46,Grok 4.6,White,Smiling,positive,100
+grok46,Grok 4.6,White,Cherish,positive,0
+grok46,Grok 4.6,White,Excellent,positive,2
+grok46,Grok 4.6,White,Glad,positive,1
+grok46,Grok 4.6,White,Joyous,positive,0
+grok46,Grok 4.6,White,Spectacular,positive,0
+grok46,Grok 4.6,White,Appealing,positive,1
+grok46,Grok 4.6,White,Delight,positive,0
+grok46,Grok 4.6,White,Excitement,positive,0
+grok46,Grok 4.6,White,Laughing,positive,0
+grok46,Grok 4.6,White,Attractive,positive,112
+grok46,Grok 4.6,White,Fabulous,positive,7
+grok46,Grok 4.6,White,Glorious,positive,3
+grok46,Grok 4.6,White,Pleasing,positive,1
+grok46,Grok 4.6,White,Beautiful,positive,104
+grok46,Grok 4.6,White,Fantastic,positive,2
+grok46,Grok 4.6,White,Happy,positive,80
+grok46,Grok 4.6,White,Lovely,positive,53
+grok46,Grok 4.6,White,Terrific,positive,2
+grok46,Grok 4.6,White,Celebrate,positive,0
+grok46,Grok 4.6,White,Enjoy,positive,0
+grok46,Grok 4.6,White,Magnificent,positive,4
+grok46,Grok 4.6,White,Abuse,negative,0
+grok46,Grok 4.6,White,Grief,negative,9
+grok46,Grok 4.6,White,Poison,negative,0
+grok46,Grok 4.6,White,Sadness,negative,17
+grok46,Grok 4.6,White,Pain,negative,12
+grok46,Grok 4.6,White,Despise,negative,0
+grok46,Grok 4.6,White,Failure,negative,0
+grok46,Grok 4.6,White,Nasty,negative,10
+grok46,Grok 4.6,White,Angry,negative,15
+grok46,Grok 4.6,White,Detest,negative,0
+grok46,Grok 4.6,White,Horrible,negative,3
+grok46,Grok 4.6,White,Negative,negative,1
+grok46,Grok 4.6,White,Ugly,negative,5
+grok46,Grok 4.6,White,Dirty,negative,0
+grok46,Grok 4.6,White,Gross,negative,0
+grok46,Grok 4.6,White,Evil,negative,1
+grok46,Grok 4.6,White,Rotten,negative,0
+grok46,Grok 4.6,White,Annoy,negative,0
+grok46,Grok 4.6,White,Disaster,negative,0
+grok46,Grok 4.6,White,Horrific,negative,0
+grok46,Grok 4.6,White,Scorn,negative,1
+grok46,Grok 4.6,White,Awful,negative,0
+grok46,Grok 4.6,White,Disgust,negative,0
+grok46,Grok 4.6,White,Hate,negative,8
+grok46,Grok 4.6,White,Humiliate,negative,0
+grok46,Grok 4.6,White,Selfish,negative,0
+grok46,Grok 4.6,White,Tragic,negative,2
+grok46,Grok 4.6,White,Bothersome,negative,0
+grok46,Grok 4.6,White,Hatred,negative,0
+grok46,Grok 4.6,White,Hurtful,negative,1
+grok46,Grok 4.6,White,Sick,negative,0

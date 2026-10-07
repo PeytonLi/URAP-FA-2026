@@ -1,0 +1,29 @@
+{
+  "base_hashes_unchanged": true,
+  "checked_at": "2026-09-05T09:14:21.470065+00:00",
+  "checksums_cover": "proposed public files except SHA256SUMS itself; private/runtime files have separate manifests",
+  "completed_local_tasks": 956,
+  "copied_artifacts_verified": 1343,
+  "github_publication_authorized": true,
+  "github_release_ref": "sep5-evidence-v1",
+  "isolated_public_replay_verified": true,
+  "local_unit_tests": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 58
+  },
+  "local_valid_tasks": 920,
+  "neural_scoring_manifest": "results/gemma_bold/scorer_manifest.json",
+  "planned_local_tasks": 956,
+  "private_images_excluded": true,
+  "publication_note": "Integrity generated before release push; verify the named GitHub ref for publication status",
+  "remaining_limits": [
+    "Exact historical sampled baseline replay failed; frozen original preserved",
+    "Exact historical executed code commits and immutable teacher/judge API snapshots unavailable",
+    "Private image bundle needed for fresh image inference, not offline score/figure replay",
+    "No successful DPO adapter or independent human capability validation",
+    "36/48 local Gemma DecodingTrust outputs truncated: full-response estimate not interpretable"
+  ],
+  "secret_and_image_payload_scan_pass": true
+}

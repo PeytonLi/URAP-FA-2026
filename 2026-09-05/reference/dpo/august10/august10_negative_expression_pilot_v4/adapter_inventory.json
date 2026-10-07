@@ -1,0 +1,27 @@
+{
+  "mean_lr2e-5": {
+    "local_ignored_path": "/workspace/gemma3-fairface-debiasing-august10/outputs/august10/training_v4e_meanlogp_lr2e5_rank8_seed8102026/checkpoints/final/adapter_model.safetensors",
+    "sha256": "aa869029c73588c2cb5ff1bf805466f78e995de3e888ac7ff7eb567f8d421053",
+    "tracked_in_git": false
+  },
+  "mean_lr5e-6": {
+    "local_ignored_path": "/workspace/gemma3-fairface-debiasing-august10/outputs/august10/training_v4d_meanlogp_lr5e6_rank8_seed8102026/checkpoints/final/adapter_model.safetensors",
+    "sha256": "35842767d76c3fd3acf19800d2a5a747adb12ebf998da6513582199f792e2038",
+    "tracked_in_git": false
+  },
+  "sum_lr1e-5": {
+    "local_ignored_path": "/workspace/gemma3-fairface-debiasing-august10/outputs/august10/training_v4c_lr1e5_rank8_seed8102026/checkpoints/final/adapter_model.safetensors",
+    "sha256": "f6ec10b3aead409d1898ef005a32c572055011ae05e93c173754f95cf6be1753",
+    "tracked_in_git": false
+  },
+  "sum_lr2e-6": {
+    "local_ignored_path": "/workspace/gemma3-fairface-debiasing-august10/outputs/august10/training_v4_rank8_seed8102026/checkpoints/final/adapter_model.safetensors",
+    "sha256": "ac72d4b457d3100409150d5ae15cfdb2c5fbbd01f55b59ef0a6bd42837b2cffe",
+    "tracked_in_git": false
+  },
+  "sum_lr5e-6": {
+    "local_ignored_path": "/workspace/gemma3-fairface-debiasing-august10/outputs/august10/training_v4b_lr5e6_rank8_seed8102026/checkpoints/final/adapter_model.safetensors",
+    "sha256": "4584fefdc7ad37cc05c4c877c1abe444ed2f58e66bdb562a08846bd09429a48a",
+    "tracked_in_git": false
+  }
+}

@@ -1,0 +1,21 @@
+[
+  {
+    "post_dpo_benchmark_names": "IAT61 neutral12; separate 20-row development task",
+    "post_dpo_checkpoint_path": "/workspace/gemma3-fairface-debiasing-august10/outputs/august10/training_v4e_meanlogp_lr2e5_rank8_seed8102026/checkpoints/final",
+    "post_dpo_code_commit_sha": "not recorded; copied source checksummed",
+    "post_dpo_comparison_model_names": "frozen pinned base vs mean-token DPO LR2e-5 rank8 final (selected retrospectively among five)",
+    "post_dpo_evaluation_config_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10/august10_first_run_neutral12_retrospective_v1/research_summary.json",
+    "post_dpo_evaluation_id": "august10_first_run_neutral12_retrospective_v1",
+    "post_dpo_evaluation_seed": 7192026,
+    "post_dpo_execution_command": "See REPRODUCIBILITY.md; python scripts/plot_evidence.py replays retained comparison",
+    "post_dpo_input_set_names": "12 protected neutral faces; 20 FairFace development images",
+    "post_dpo_interpretation_limitations": "No full UTKFace/VisBias/DT/BOLD post-DPO evaluation; no independent human accuracy test or untouched confirmatory holdout.",
+    "post_dpo_primary_metric_names": "Black negative rate, signed/absolute race gap, validity, response entropy, unique response rate, identity leakage",
+    "post_dpo_protocol_change_description": "No intended within-comparison generation change; retrospective diversity decision threshold tightened to 95%. Cross-model hosted serving differs from local pipeline.",
+    "post_dpo_protocol_same_as_pre_dpo_status": "Archived paired base/adapter protocol specified same images, prompt, parsing, repeats and generation seed; base was reused, not regenerated.",
+    "post_dpo_raw_output_root_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10/august10_first_run_neutral12_retrospective_v1/evaluations",
+    "post_dpo_result_summary": "Lower 12-face negative gap with failed diversity preservation; no accepted successful adapter.",
+    "post_dpo_row_level_result_root_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10/august10_first_run_neutral12_retrospective_v1",
+    "post_dpo_test_matrix_manifest_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/report/benchmark_matrix.csv"
+  }
+]

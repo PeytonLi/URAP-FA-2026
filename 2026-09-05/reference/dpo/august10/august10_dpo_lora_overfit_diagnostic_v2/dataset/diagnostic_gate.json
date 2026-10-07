@@ -1,0 +1,198 @@
+{
+  "checks": {
+    "balanced_race_rows": {
+      "observed": {
+        "development": {
+          "Black": 6,
+          "White": 6
+        },
+        "train": {
+          "Black": 96,
+          "White": 96
+        }
+      },
+      "pass": true,
+      "requirement": "Black == White in each split"
+    },
+    "development_rows": {
+      "observed": 12,
+      "pass": true,
+      "requirement": "12"
+    },
+    "development_rows_per_image": {
+      "observed": [
+        1
+      ],
+      "pass": true,
+      "requirement": "[1]"
+    },
+    "exact_prompt": {
+      "observed": 1,
+      "pass": true,
+      "requirement": "one exact frozen IAT prompt"
+    },
+    "expression_class_matched_within_blocks": {
+      "observed": {
+        "aug10-profile-rematch-09d3031a269d8070": [
+          "neutral"
+        ],
+        "aug10-profile-rematch-6a7ba098e38a5bc7": [
+          "negative"
+        ],
+        "aug10-profile-rematch-8905895f29515019": [
+          "negative"
+        ],
+        "aug10-profile-rematch-e7b9b857040562e5": [
+          "neutral"
+        ],
+        "aug10-profile-rematch-f16221541dc315bc": [
+          "positive"
+        ],
+        "aug10-profile-rematch-fa88f665d931557a": [
+          "positive"
+        ]
+      },
+      "pass": true,
+      "requirement": "one expression class per matched block"
+    },
+    "iat_only": {
+      "observed": [
+        "iat_3word"
+      ],
+      "pass": true,
+      "requirement": "['iat_3word']"
+    },
+    "informative_base_negative_events": {
+      "observed": {
+        "Black": 15,
+        "White": 15
+      },
+      "pass": true,
+      "requirement": ">= 6 screened base negative terms for each race"
+    },
+    "intentional_exact_image_overlap": {
+      "observed": 12,
+      "pass": true,
+      "requirement": "12; diagnostic only"
+    },
+    "protected_evaluation_disjoint": {
+      "observed": [],
+      "pass": true,
+      "requirement": "no overlap with protected evaluation hashes"
+    },
+    "protocol_labels": {
+      "observed": [
+        "august10-dpo-lora-overfit-diagnostic-v2-informative"
+      ],
+      "pass": true,
+      "requirement": "one supported protocol: august10-dpo-lora-overfit-diagnostic-v2-informative"
+    },
+    "race_invariant_template_distribution": {
+      "observed": {
+        "Black": [
+          [
+            "Friend, Pleasing, Appealing",
+            "Pain, Hurtful, Tragic",
+            24
+          ],
+          [
+            "Friendship, Happy, Pleasure",
+            "Grief, Nasty, Disaster",
+            24
+          ],
+          [
+            "Glad, Cheerful, Delight",
+            "Sadness, Horrible, Hate",
+            24
+          ],
+          [
+            "Joyful, Lovely, Excellent",
+            "Angry, Ugly, Failure",
+            24
+          ]
+        ],
+        "White": [
+          [
+            "Friend, Pleasing, Appealing",
+            "Pain, Hurtful, Tragic",
+            24
+          ],
+          [
+            "Friendship, Happy, Pleasure",
+            "Grief, Nasty, Disaster",
+            24
+          ],
+          [
+            "Glad, Cheerful, Delight",
+            "Sadness, Horrible, Hate",
+            24
+          ],
+          [
+            "Joyful, Lovely, Excellent",
+            "Angry, Ugly, Failure",
+            24
+          ]
+        ]
+      },
+      "pass": true,
+      "requirement": "identical Black and White training-template counts"
+    },
+    "required_fields": {
+      "observed": [],
+      "pass": true,
+      "requirement": "no missing required fields"
+    },
+    "response_direction": {
+      "observed": [],
+      "pass": true,
+      "requirement": "chosen has 0 and rejected has 3 negative terms"
+    },
+    "rows": {
+      "observed": 204,
+      "pass": true,
+      "requirement": "204"
+    },
+    "screening_selected_terms_present": {
+      "observed": {
+        "Black": 90,
+        "White": 90
+      },
+      "pass": true,
+      "requirement": "> 0 screened terms for each race"
+    },
+    "train_rows": {
+      "observed": 192,
+      "pass": true,
+      "requirement": "192"
+    },
+    "train_rows_per_image": {
+      "observed": [
+        16
+      ],
+      "pass": true,
+      "requirement": "[16]"
+    },
+    "unique_images": {
+      "observed": 12,
+      "pass": true,
+      "requirement": "12"
+    },
+    "unique_pair_ids": {
+      "observed": 204,
+      "pass": true,
+      "requirement": "204 unique nonempty IDs"
+    }
+  },
+  "decision": "authorize_diagnostic_overfit",
+  "intentional_train_development_image_overlap": true,
+  "metrics": {
+    "development_rows": 12,
+    "forbidden_overlap": 0,
+    "rows": 204,
+    "train_rows": 192,
+    "unique_images": 12
+  },
+  "non_confirmatory": true,
+  "pass": true,
+  "protocol_version": "august10-overfit-diagnostic-gate-v1"
+}

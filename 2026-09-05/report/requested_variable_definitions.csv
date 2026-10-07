@@ -1,0 +1,232 @@
+table,variable_name,definition
+1,source_artifact_path,Full file or directory path to source artifact; also provide a repository or data link when available.
+1,field_name,"Exact column name, JSON key, configuration key, or code variable being defined."
+1,field_definition,Plain-language meaning of the field and what one recorded value represents.
+1,field_data_type,"Data type of the field, such as string, integer, float, Boolean, list, or object."
+1,field_allowed_values,"Complete set of permitted categorical or coded values, with the meaning of each value."
+1,field_unit,Measurement unit for numeric values; state unitless when no unit applies.
+1,field_missing_value_meaning,"Meaning of blank, null, NA, sentinel, or otherwise missing values for this field."
+1,field_source_names,"Original source columns, files, or code variables from which this field was copied or derived."
+1,field_derivation_formula,Exact formula or transformation used to derive this field; state not derived for source fields.
+1,field_derivation_code_path,Full file or directory path to field derivation code; also provide a repository or data link when available.
+2,required_benchmark_names,"Exact benchmark list: IAT 60-word test, VisBias, DecodingTrust, and BOLD."
+2,required_input_set_names,"Exact input-set list: 12-image set, FairFace, and UTKFace."
+2,test_matrix_manifest_path,Full file or directory path to test matrix manifest; also provide a repository or data link when available.
+2,completed_test_cell_ids,"Identifiers for benchmark-by-input-set test cells that have complete, interpretable results."
+2,not_completed_test_cell_ids,Identifiers for required test cells that have not been run or finished.
+2,not_applicable_test_cell_ids,Identifiers for matrix cells that cannot logically be run; give the reason in the cell record.
+2,not_interpretable_test_cell_ids,Identifiers for completed cells whose outputs or scores cannot be interpreted reliably.
+3,benchmark_name,Exact human-readable name of benchmark.
+3,benchmark_source_url,Direct URL for benchmark source.
+3,benchmark_version,Exact version or immutable revision of benchmark.
+3,benchmark_task_subset_names,Exact benchmark tasks or subsets used; do not report only the parent benchmark name.
+3,benchmark_item_manifest_path,Full file or directory path to benchmark item manifest; also provide a repository or data link when available.
+3,benchmark_prompt_template_path,Full file or directory path to benchmark prompt template; also provide a repository or data link when available.
+3,benchmark_input_construction_code_path,Full file or directory path to benchmark input construction code; also provide a repository or data link when available.
+3,benchmark_scoring_formula_path,Full file or directory path to benchmark scoring formula; also provide a repository or data link when available.
+3,benchmark_scoring_code_path,Full file or directory path to benchmark scoring code; also provide a repository or data link when available.
+3,benchmark_score_direction_definition,"Meaning of larger, smaller, positive, negative, and zero scores for this benchmark."
+3,benchmark_exclusion_rule,"Exact rule that removes benchmark items, model outputs, or runs from analysis."
+3,benchmark_aggregation_rule,Exact rule used to combine item-level scores into the reported benchmark result.
+3,benchmark_protocol_notes,Only protocol details needed to interpret or reproduce this benchmark implementation.
+4,iat_word_count,Number of attribute words used in the IAT evaluation; confirm whether this is exactly 60.
+4,iat_positive_word_list_path,Full file or directory path to iat positive word list; also provide a repository or data link when available.
+4,iat_negative_word_list_path,Full file or directory path to iat negative word list; also provide a repository or data link when available.
+4,iat_target_group_definition,Exact demographic target groups and contrast direction used in the IAT score.
+4,iat_prompt_template_path,Full file or directory path to iat prompt template; also provide a repository or data link when available.
+4,iat_score_formula_path,Full file or directory path to iat score formula; also provide a repository or data link when available.
+4,iat_score_sign_definition,"Plain-language interpretation of positive, negative, and zero IAT scores."
+4,iat_image_pairing_rule,Rule used to pair or balance images across the IAT target groups.
+4,iat_item_order_rule,"Rule or seed controlling the order of IAT words, prompts, and images."
+4,iat_exclusion_rule,"Exact condition under which an IAT response, image, or item is excluded."
+4,iat_protocol_frozen_before_final_analysis,Whether all IAT protocol choices were fixed before inspecting the final comparison results.
+4,iat_task_used_in_dpo_training,Whether the IAT task itself was used as a DPO training objective or example source.
+4,iat_examples_used_in_dpo_training,Whether any examples from the IAT evaluation set appeared in DPO training data.
+5,input_set_name,Exact human-readable name of input set.
+5,input_set_source_url,Direct URL for input set source.
+5,input_set_version,Exact version or immutable revision of input set.
+5,input_set_source_manifest_path,Full file or directory path to input set source manifest; also provide a repository or data link when available.
+5,input_set_local_root_path,Full root-directory path containing input set local; also provide a repository or data link when available.
+5,input_set_included_example_count,Number of examples in the final input set after documented exclusions.
+5,input_set_exclusion_rule,Exact rule determining which source examples are omitted from this input set.
+5,input_set_final_test_manifest_path,Full file or directory path to input set final test manifest; also provide a repository or data link when available.
+5,input_set_demographic_label_fields,Names and meanings of the demographic label columns used from this input set.
+5,input_set_label_mapping_path,Full file or directory path to input set label mapping; also provide a repository or data link when available.
+5,input_set_image_preprocessing_config_path,Full file or directory path to input set image preprocessing config; also provide a repository or data link when available.
+5,input_set_train_test_overlap_status,"Whether any image or person appears in both relevant training and evaluation data, and how this was checked."
+5,input_set_notes,Only limitations or construction details needed to interpret this input set.
+6,test_cell_id,Stable identifier for one benchmark × input-set × model-condition result.
+6,benchmark_name,Exact human-readable name of benchmark.
+6,input_set_name,Exact human-readable name of input set.
+6,model_condition_name,"Exact condition name, such as base model, prompted model, or selected DPO checkpoint."
+6,model_checkpoint_path_or_api_version,"Full checkpoint path for a local model, or exact hosted-model and API version for a remote model."
+6,test_status,"Status of this test cell: complete, not completed, not applicable, or not interpretable."
+6,not_completed_or_not_applicable_reason,Reason a test cell is unfinished or inapplicable; leave blank only for completed cells.
+6,test_sample_count,Number of evaluated units contributing to this reported test result.
+6,test_prompt_path,Full file or directory path to test prompt; also provide a repository or data link when available.
+6,test_evaluation_config_path,Full file or directory path to test evaluation config; also provide a repository or data link when available.
+6,test_execution_command,Exact executable command used for test execution.
+6,test_code_commit_sha,Exact Git commit SHA for test code.
+6,test_seed,"Random seed controlling sampling, generation, or evaluation for this test cell."
+6,test_metric_name,Exact name of the reported metric for this test cell.
+6,test_metric_definition,Operational definition and calculation of the reported test metric.
+6,test_metric_direction_definition,"Meaning of higher, lower, positive, negative, and zero values for this metric."
+6,test_metric_value_full_precision,Unrounded reported metric value for this test cell.
+6,test_uncertainty_definition,"Method used to quantify uncertainty, including interval level and resampling unit if applicable."
+6,test_uncertainty_value_full_precision,"Unrounded confidence interval, standard error, or other uncertainty result."
+6,test_raw_model_output_path,Full file or directory path to test raw model output; also provide a repository or data link when available.
+6,test_row_level_score_path,Full file or directory path to test row level score; also provide a repository or data link when available.
+6,test_result_summary,One-sentence factual summary of the result without adding an unsupported causal claim.
+6,test_interpretation_limitations,Limits on what this test result can support or compare.
+7,dpo_preference_dataset_id,Stable identifier for dpo preference dataset.
+7,dpo_source_dataset_name,Exact human-readable name of dpo source dataset.
+7,dpo_source_dataset_url,Direct URL for dpo source dataset.
+7,dpo_source_dataset_version,Exact version or immutable revision of dpo source dataset.
+7,dpo_source_image_manifest_path,Full file or directory path to dpo source image manifest; also provide a repository or data link when available.
+7,dpo_source_image_count,Number of source FairFace images considered before DPO-data exclusions.
+7,dpo_included_image_count,Number of FairFace images retained to create the DPO preference data.
+7,dpo_excluded_image_count,Number of candidate FairFace images excluded from DPO-data construction.
+7,dpo_exclusion_rule,Exact rule determining which FairFace images or preference examples were excluded.
+7,dpo_group_composition_path,Full file or directory path to dpo group composition; also provide a repository or data link when available.
+7,dpo_demographic_label_mapping_path,Full file or directory path to dpo demographic label mapping; also provide a repository or data link when available.
+7,dpo_prompt_family_names,Names and purposes of the prompt families used to generate DPO candidate responses.
+7,dpo_prompt_template_path,Full file or directory path to dpo prompt template; also provide a repository or data link when available.
+7,dpo_response_generator_model_names,Exact models used to produce candidate responses before preference selection.
+7,dpo_response_generation_config_path,Full file or directory path to dpo response generation config; also provide a repository or data link when available.
+7,dpo_candidate_responses_per_image,Number of candidate responses generated for each source image and prompt condition.
+7,dpo_preference_label_method,"Procedure used to decide which response was preferred, including whether it was human, model, rule, or hybrid based."
+7,dpo_chosen_response_rule,Exact criterion used to assign the chosen response in each preference pair.
+7,dpo_rejected_response_rule,Exact criterion used to assign the rejected response in each preference pair.
+7,dpo_human_annotation_status,"Whether humans contributed preference labels, review, correction, or adjudication."
+7,dpo_annotator_instruction_path,Full file or directory path to dpo annotator instruction; also provide a repository or data link when available.
+7,dpo_preference_pair_count,Total number of retained chosen–rejected preference pairs.
+7,dpo_train_pair_count,Number of preference pairs used for DPO parameter updates.
+7,dpo_validation_pair_count,Number of held-out preference pairs used during DPO validation or checkpoint selection.
+7,dpo_training_manifest_path,Full file or directory path to dpo training manifest; also provide a repository or data link when available.
+7,dpo_validation_manifest_path,Full file or directory path to dpo validation manifest; also provide a repository or data link when available.
+7,dpo_row_level_preference_data_path,Full file or directory path to dpo row level preference data; also provide a repository or data link when available.
+7,dpo_preference_data_schema_path,Full file or directory path to dpo preference data schema; also provide a repository or data link when available.
+7,dpo_preference_data_sha256,SHA-256 checksum verifying the exact bytes of dpo preference data.
+7,dpo_data_creation_code_path,Full file or directory path to dpo data creation code; also provide a repository or data link when available.
+7,dpo_data_creation_command,Exact executable command that recreates the DPO preference dataset from its recorded inputs.
+8,dpo_run_id,Stable identifier for the one successful DPO run selected for reporting.
+8,dpo_run_selection_rule,Rule used to select this run over other successful versions; do not provide the excluded versions unless they are relevant failures.
+8,dpo_base_model_id,Stable identifier for dpo base model.
+8,dpo_base_model_revision,Exact version or immutable revision of dpo base model.
+8,dpo_tokenizer_id,Stable identifier for dpo tokenizer.
+8,dpo_tokenizer_revision,Exact version or immutable revision of dpo tokenizer.
+8,dpo_processor_id,Stable identifier for dpo processor.
+8,dpo_processor_revision,Exact version or immutable revision of dpo processor.
+8,dpo_reference_model_id,Stable identifier for dpo reference model.
+8,dpo_training_objective,Exact optimization objective implemented for the selected DPO run.
+8,dpo_framework_versions_path,Full file or directory path to dpo framework versions; also provide a repository or data link when available.
+8,dpo_training_code_path,Full file or directory path to dpo training code; also provide a repository or data link when available.
+8,dpo_code_commit_sha,Exact Git commit SHA for dpo code.
+8,dpo_training_config_path,Full file or directory path to dpo training config; also provide a repository or data link when available.
+8,dpo_launch_command,Exact executable command used to launch the selected DPO run.
+8,dpo_random_seed,Primary random seed supplied to the selected DPO training run.
+8,dpo_beta,DPO beta value controlling preference-objective strength relative to the reference model.
+8,dpo_optimizer_name,Exact optimizer implementation used for parameter updates.
+8,dpo_learning_rate,Optimizer learning rate used for the selected DPO run.
+8,dpo_learning_rate_schedule,Rule used to change the learning rate over DPO training steps.
+8,dpo_warmup_ratio,Fraction of training steps allocated to learning-rate warmup.
+8,dpo_weight_decay,Weight-decay coefficient applied by the optimizer.
+8,dpo_epoch_count,Number of full passes over the DPO training pairs.
+8,dpo_training_step_count,Total optimizer-update steps completed in the selected DPO run.
+8,dpo_per_device_batch_size,Examples processed per device before gradient accumulation.
+8,dpo_gradient_accumulation_steps,Number of microbatches accumulated before one optimizer update.
+8,dpo_effective_batch_size,Total examples contributing to one optimizer update across devices and accumulation steps.
+8,dpo_max_sequence_length,Maximum token sequence length accepted during DPO training.
+8,dpo_gradient_clipping_value,Maximum gradient norm or value permitted before clipping.
+8,dpo_mixed_precision_mode,"Numeric precision used during training, such as BF16 or FP16."
+8,dpo_lora_target_modules,Model modules to which LoRA adapters were applied.
+8,dpo_lora_rank,Rank of the low-rank LoRA matrices.
+8,dpo_lora_alpha,LoRA scaling parameter used for adapter updates.
+8,dpo_lora_dropout,Dropout probability applied within LoRA adapters.
+8,dpo_accelerator_type,Exact accelerator type and model used for the selected run.
+8,dpo_accelerator_count,Number of accelerators used simultaneously.
+8,dpo_environment_lock_path,Full file or directory path to dpo environment lock; also provide a repository or data link when available.
+8,dpo_tracking_dashboard_url,Direct URL for dpo tracking dashboard.
+8,dpo_training_metric_export_path,Full file or directory path to dpo training metric export; also provide a repository or data link when available.
+8,dpo_final_checkpoint_path,Full file or directory path to dpo final checkpoint; also provide a repository or data link when available.
+8,dpo_final_checkpoint_sha256,SHA-256 checksum verifying the exact bytes of dpo final checkpoint.
+8,dpo_checkpoint_selection_rule,Predefined rule used to select the reported final checkpoint.
+8,dpo_run_duration,"Elapsed wall-clock duration of the selected DPO run, including the unit."
+8,dpo_success_definition,Explicit criteria used to classify the selected run as successful.
+8,dpo_success_evidence_path,Full file or directory path to dpo success evidence; also provide a repository or data link when available.
+9,dpo_metric_name,Exact name of one training metric that was actually monitored or used.
+9,dpo_metric_definition,"Operational definition of the DPO training metric, not only its display label."
+9,dpo_metric_formula_or_source,"Formula, library definition, or code location that produces the training metric."
+9,dpo_metric_direction_definition,Meaning of increasing or decreasing values for the training metric.
+9,dpo_metric_unit,"Measurement unit of the training metric, or unitless if applicable."
+9,dpo_metric_logging_frequency,Training-step or epoch frequency at which the metric was recorded.
+9,dpo_metric_history_path,Full file or directory path to dpo metric history; also provide a repository or data link when available.
+9,dpo_metric_final_value_full_precision,Unrounded final value of the metric for the selected run.
+9,dpo_metric_best_value_full_precision,"Unrounded best value and the step at which it occurred, if used for selection."
+9,dpo_metric_interpretation,What this metric shows about the selected run and what it does not establish.
+10,anti_collapse_metric_name,"Exact name of one metric the RA actually used to detect generic, repetitive, invalid, or otherwise collapsed outputs."
+10,anti_collapse_metric_definition,"Operational definition of the collapse indicator, including preprocessing and denominator."
+10,anti_collapse_metric_formula_path,Full file or directory path to anti collapse metric formula; also provide a repository or data link when available.
+10,anti_collapse_metric_code_path,Full file or directory path to anti collapse metric code; also provide a repository or data link when available.
+10,anti_collapse_input_data_path,Full file or directory path to anti collapse input data; also provide a repository or data link when available.
+10,anti_collapse_comparison_condition_names,"Model conditions compared by this metric, such as base versus selected DPO checkpoint."
+10,anti_collapse_measurement_timing,"When the metric was measured: during training, during checkpoint selection, or after training."
+10,anti_collapse_value_by_condition_full_precision,Unrounded metric value for each compared model condition.
+10,anti_collapse_threshold_or_decision_rule,Threshold or qualitative rule used to flag collapse or reject a checkpoint; state none if no rule existed.
+10,anti_collapse_flag_status,"Whether this metric flagged the selected checkpoint as collapsed, borderline, or acceptable."
+10,anti_collapse_interpretation,Evidence-based interpretation of the metric for the selected checkpoint.
+10,anti_collapse_limitations,Known behaviors this metric cannot detect or distinguish.
+10,anti_collapse_existing_method_notes,Description of the RA's existing anti-collapse method when it differs from the requested fields; preserve its original terminology.
+11,post_dpo_evaluation_id,Stable identifier for the evaluation campaign run after DPO.
+11,post_dpo_checkpoint_path,Full file or directory path to post dpo checkpoint; also provide a repository or data link when available.
+11,post_dpo_comparison_model_names,Exact model conditions included in post-DPO comparisons.
+11,post_dpo_benchmark_names,Benchmarks rerun after DPO.
+11,post_dpo_input_set_names,Input sets rerun after DPO.
+11,post_dpo_test_matrix_manifest_path,Full file or directory path to post dpo test matrix manifest; also provide a repository or data link when available.
+11,post_dpo_protocol_same_as_pre_dpo_status,"Whether post-DPO evaluation used exactly the same prompts, items, scoring, and exclusions as pre-DPO evaluation."
+11,post_dpo_protocol_change_description,"Every protocol change made between pre-DPO and post-DPO evaluation, with its reason."
+11,post_dpo_evaluation_config_path,Full file or directory path to post dpo evaluation config; also provide a repository or data link when available.
+11,post_dpo_code_commit_sha,Exact Git commit SHA for post dpo code.
+11,post_dpo_execution_command,Exact executable command used for post dpo execution.
+11,post_dpo_evaluation_seed,Random seed used for the post-DPO evaluation campaign.
+11,post_dpo_raw_output_root_path,Full root-directory path containing post dpo raw output; also provide a repository or data link when available.
+11,post_dpo_row_level_result_root_path,Full root-directory path containing post dpo row level result; also provide a repository or data link when available.
+11,post_dpo_primary_metric_names,Small set of metrics used for the main post-DPO conclusions.
+11,post_dpo_result_summary,Short factual summary of the main post-DPO results across the reported test matrix.
+11,post_dpo_interpretation_limitations,Limits on comparing post-DPO results with pre-DPO or other model conditions.
+12,comparison_id,Stable identifier for one pre-DPO versus post-DPO primary comparison.
+12,comparison_benchmark_name,Exact human-readable name of comparison benchmark.
+12,comparison_input_set_name,Exact human-readable name of comparison input set.
+12,comparison_unit,"Independent unit used in the comparison, such as image, person, prompt, or run."
+12,comparison_base_model_value_full_precision,Unrounded result for the designated pre-DPO or base model condition.
+12,comparison_dpo_model_value_full_precision,Unrounded result for the selected post-DPO checkpoint.
+12,comparison_direction_of_improvement,Which numerical direction represents improvement for this comparison.
+12,comparison_statistical_method,Exact paired or unpaired statistical comparison and uncertainty method used.
+12,comparison_uncertainty_or_test_result_full_precision,"Unrounded interval, standard error, test statistic, and p-value when applicable."
+12,comparison_result_path,Full file or directory path to comparison result; also provide a repository or data link when available.
+12,comparison_code_path,Full file or directory path to comparison code; also provide a repository or data link when available.
+12,comparison_execution_command,Exact executable command that recreates this comparison from row-level results.
+12,comparison_interpretation,Evidence-supported interpretation of the comparison without overstating causality.
+12,comparison_anti_collapse_tradeoff_summary,"Whether the change in the target result coincided with worse output diversity, validity, refusal, or another monitored collapse indicator."
+13,failed_trial_id,Stable identifier for a failed trial included because it explains the selected pipeline.
+13,failed_trial_objective,What the failed trial was intended to improve or test.
+13,failed_trial_change_from_reference_run,Single most relevant change from the successful or parent run.
+13,failed_trial_observed_failure,Directly observed behavior that made the trial unsuccessful.
+13,failed_trial_failure_definition,Criterion used to label the trial unsuccessful.
+13,failed_trial_evidence_path,Full file or directory path to failed trial evidence; also provide a repository or data link when available.
+13,failed_trial_relevant_metric_names,Only the metrics needed to demonstrate the reported failure.
+13,failed_trial_relevant_metric_values_full_precision,Unrounded values of the metrics used to demonstrate the failure.
+13,failed_trial_best_supported_explanation,"Best current explanation supported by available evidence, clearly distinguished from a proven cause."
+13,failed_trial_explanation_confidence,Confidence in the proposed explanation and the evidence basis for that confidence.
+13,failed_trial_lesson_for_successful_dpo,Specific change or decision in the selected pipeline that was informed by this failed trial.
+13,failed_trial_code_or_config_path,Full file or directory path to failed trial code or config; also provide a repository or data link when available.
+13,failed_trial_inclusion_reason,Why this failure is necessary to understand the successful pipeline; omit the trial if no clear reason exists.
+13,failed_trial_unknown_information,Relevant failure details that are genuinely unknown or were not recorded.
+14,plot_id,Stable identifier for a plot that is actually included in the RA report.
+14,plot_purpose,Result or comparison the plot is intended to communicate.
+14,plot_code_path,Full file or directory path to plot code; also provide a repository or data link when available.
+14,plot_input_data_paths,Full file paths to plot input data; also provide repository or data links when available.
+14,plot_config_path,Full file or directory path to plot config; also provide a repository or data link when available.
+14,plot_reproduction_command,Exact executable command that recreates the plot from the recorded input files.
+14,plot_output_path,Full file or directory path to plot output; also provide a repository or data link when available.
+14,plot_code_commit_sha,Exact Git commit SHA for plot code.

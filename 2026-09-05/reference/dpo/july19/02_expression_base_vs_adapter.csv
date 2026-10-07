@@ -1,0 +1,9 @@
+expression_class,fairface_race,images,base_negative_rate,adapter_negative_rate,paired_change
+ambiguous,Black,120,0.042499999999999996,0.0475,0.005
+ambiguous,White,94,0.014893617021276595,0.02092198581560284,0.006028368794326241
+negative,Black,26,0.16923076923076924,0.16923076923076924,-2.135044278125301e-18
+negative,White,32,0.078125,0.11562499999999999,0.0375
+neutral,Black,3,0.0,0.0,0.0
+neutral,White,6,0.0,0.0,0.0
+positive,Black,51,0.0,0.0,0.0
+positive,White,68,0.0,0.0,0.0

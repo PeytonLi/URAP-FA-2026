@@ -1,0 +1,28 @@
+{
+  "account_minus_ledger_usd": 3.778440053103793e-05,
+  "api_call_attempts": 17028,
+  "archived": {
+    "neutral12": {
+      "archived_slots": 840,
+      "archived_technical_errors": 8,
+      "image_hashes_match": true,
+      "model_and_generation_contracts_match": true,
+      "source_repetitions": 10,
+      "target_repetitions": 50
+    },
+    "utkface": {
+      "archived_slots": 3200,
+      "archived_technical_errors": 0,
+      "image_hashes_match": true,
+      "model_and_generation_contracts_match": true,
+      "source_repetitions": 1,
+      "target_repetitions": 5
+    }
+  },
+  "catalog_revision_checks_passed": true,
+  "checked_at": "2026-09-11T09:48:27.915513+00:00",
+  "new_call_route_contracts_match": true,
+  "note": "No new inference. Unavailable routes are recorded, not replaced. Hosted weight bytes cannot be independently verified.",
+  "successful_model_calls": 17016,
+  "unknown_outcome_calls": 1
+}

@@ -1,0 +1,15 @@
+{
+  "currency": "USD",
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "pricing_verified_date": "2026-08-09",
+  "rates_per_million_tokens": {
+    "claude-opus-5": {
+      "input": 5.0,
+      "output": 25.0
+    },
+    "claude-sonnet-5": {
+      "input": 2.0,
+      "output": 10.0
+    }
+  }
+}

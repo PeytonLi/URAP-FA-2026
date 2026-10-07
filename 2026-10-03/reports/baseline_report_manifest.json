@@ -1,0 +1,34 @@
+{
+  "analysis": {
+    "exploratory_significance_csv": "C:\\Users\\lipey\\Code\\URAP\\2026-10-03\\reports\\analysis\\exploratory_significance.csv",
+    "intersectional_metrics_csv": "C:\\Users\\lipey\\Code\\URAP\\2026-10-03\\reports\\analysis\\intersectional_metrics.csv",
+    "metrics_json": "C:\\Users\\lipey\\Code\\URAP\\2026-10-03\\reports\\analysis\\metrics.json",
+    "model_summary_csv": "C:\\Users\\lipey\\Code\\URAP\\2026-10-03\\reports\\analysis\\model_summary.csv",
+    "plots": [
+      "C:\\Users\\lipey\\Code\\URAP\\2026-10-03\\reports\\analysis\\plots\\gemma4_base_01_word_counts.png",
+      "C:\\Users\\lipey\\Code\\URAP\\2026-10-03\\reports\\analysis\\plots\\gemma4_base_02_negative_rates.png",
+      "C:\\Users\\lipey\\Code\\URAP\\2026-10-03\\reports\\analysis\\plots\\qwen3vl_base_01_word_counts.png",
+      "C:\\Users\\lipey\\Code\\URAP\\2026-10-03\\reports\\analysis\\plots\\qwen3vl_base_02_negative_rates.png",
+      "C:\\Users\\lipey\\Code\\URAP\\2026-10-03\\reports\\analysis\\plots\\qwen35_base_01_word_counts.png",
+      "C:\\Users\\lipey\\Code\\URAP\\2026-10-03\\reports\\analysis\\plots\\qwen35_base_02_negative_rates.png",
+      "C:\\Users\\lipey\\Code\\URAP\\2026-10-03\\reports\\analysis\\plots\\comparison_01_negative_rates.png",
+      "C:\\Users\\lipey\\Code\\URAP\\2026-10-03\\reports\\analysis\\plots\\comparison_02_race_gaps.png",
+      "C:\\Users\\lipey\\Code\\URAP\\2026-10-03\\reports\\analysis\\plots\\comparison_03_validity_diversity.png"
+    ],
+    "word_counts_csv": "C:\\Users\\lipey\\Code\\URAP\\2026-10-03\\reports\\analysis\\word_counts.csv"
+  },
+  "benchmark_slots": 1800,
+  "created_at": "2026-10-03T20:24:56.882672+00:00",
+  "goal_complete": false,
+  "models": [
+    "gemma4_base",
+    "qwen3vl_base",
+    "qwen35_base"
+  ],
+  "response_file_sha256": {
+    "gemma4": "3db0dedc392bd3ded72f810e99e77097deced9324f99e1de40dc35be56e13a01",
+    "qwen35": "824289a243decb148cea022129e774f086db8d47b77fd0095abc106ec13621ec",
+    "qwen3vl": "2a4c371e45323639a361f13996fb023cd35615b76395953f1d34f56808af18c7"
+  },
+  "training_performed": false
+}

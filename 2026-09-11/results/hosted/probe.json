@@ -1,0 +1,66 @@
+{
+  "completed_at": "2026-09-11T08:56:26.675370+00:00",
+  "excluded_cells": {
+    "neutral12/kimi_k3": "OpenRouter endpoint 'deepinfra/bf16' for moonshotai/kimi-k3 is unavailable (status=-2)",
+    "neutral12/minimax_m3": "Eleven HTTP 429 errors across three probes, including after the catalog recovered to status 0. Catalog availability did not imply a functional endpoint. Preserve this cell as incomplete; do not retry again in this session."
+  },
+  "groups": {
+    "neutral12/gemini36_flash": {
+      "rows": 4,
+      "valid": 4
+    },
+    "neutral12/gpt56_luna": {
+      "rows": 4,
+      "valid": 4
+    },
+    "neutral12/grok46": {
+      "rows": 4,
+      "valid": 4
+    },
+    "neutral12/mimo_v25": {
+      "rows": 4,
+      "valid": 4
+    },
+    "neutral12/qwen35_9b": {
+      "rows": 4,
+      "valid": 4
+    },
+    "neutral12/step37_flash": {
+      "rows": 4,
+      "valid": 4
+    },
+    "utkface/gemini36_flash": {
+      "rows": 4,
+      "valid": 4
+    },
+    "utkface/gpt56_luna": {
+      "rows": 4,
+      "valid": 4
+    },
+    "utkface/grok46": {
+      "rows": 4,
+      "valid": 4
+    },
+    "utkface/kimi_k3": {
+      "rows": 4,
+      "valid": 4
+    },
+    "utkface/mimo_v25": {
+      "rows": 4,
+      "valid": 4
+    },
+    "utkface/minimax_m3": {
+      "rows": 4,
+      "valid": 4
+    },
+    "utkface/qwen35_9b": {
+      "rows": 4,
+      "valid": 4
+    },
+    "utkface/step37_flash": {
+      "rows": 4,
+      "valid": 4
+    }
+  },
+  "technically_valid": true
+}

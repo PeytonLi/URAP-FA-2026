@@ -1,0 +1,42 @@
+{
+  "adapter": {
+    "negative": {
+      "negative_rate": 0.0,
+      "negative_terms": 0,
+      "responses": 40,
+      "selected_terms": 120
+    },
+    "neutral": {
+      "negative_rate": 0.0,
+      "negative_terms": 0,
+      "responses": 40,
+      "selected_terms": 120
+    },
+    "positive": {
+      "negative_rate": 0.0,
+      "negative_terms": 0,
+      "responses": 40,
+      "selected_terms": 120
+    }
+  },
+  "base": {
+    "negative": {
+      "negative_rate": 0.275,
+      "negative_terms": 33,
+      "responses": 40,
+      "selected_terms": 120
+    },
+    "neutral": {
+      "negative_rate": 0.225,
+      "negative_terms": 27,
+      "responses": 40,
+      "selected_terms": 120
+    },
+    "positive": {
+      "negative_rate": 0.0,
+      "negative_terms": 0,
+      "responses": 40,
+      "selected_terms": 120
+    }
+  }
+}

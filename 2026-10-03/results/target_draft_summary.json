@@ -1,0 +1,42 @@
+{
+  "approved_records": 0,
+  "catalog_or_reported_charge_upper_estimate_usd": "5.210072",
+  "checked_at": "2026-10-04T04:07:02.833983+00:00",
+  "dataset_id": "image-curation-2026-09-29-v1",
+  "distinct_chosen_triples": 125,
+  "distinct_rejected_triples": 103,
+  "draft_budget_cap_usd": "20",
+  "draft_records": 1920,
+  "failed_images_this_invocation": 0,
+  "gateway_external_provider": true,
+  "human_review_required": true,
+  "labels_are_ground_truth": false,
+  "manifest_sha256": "7b08c31122f624e733ac279b87882c9138a05ea4c9dc7a16596105a5d4637d13",
+  "missing_records": 0,
+  "policy_id": "visible_expression_61word_draft_v2",
+  "policy_sha256": "d92c60a945446017fc4d26c34c412815628a3fbbb6432e4c2f7b6cd692b919b2",
+  "profiles_used": 0,
+  "required_draft_records": 1920,
+  "review_flag_counts": {
+    "ambiguous_expression": 443,
+    "appearance_subjectivity": 1600,
+    "automated_expression_disagreement": 637,
+    "image_cropping": 17,
+    "low_image_quality": 382,
+    "low_subjective_confidence": 451,
+    "neutral_vocabulary_gap": 424,
+    "weak_grounding": 754
+  },
+  "split_counts": {
+    "development": 480,
+    "train": 1440
+  },
+  "teacher": "anthropic/claude-haiku-4.5",
+  "teacher_expression_counts": {
+    "negative": 340,
+    "neutral": 409,
+    "positive": 1171
+  },
+  "test_or_benchmark_images_sent": 0,
+  "training_performed": false
+}

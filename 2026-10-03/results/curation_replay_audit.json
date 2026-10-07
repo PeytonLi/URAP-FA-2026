@@ -1,0 +1,44 @@
+{
+  "byte_identical": false,
+  "checked_at": "2026-10-04T02:47:25.418238+00:00",
+  "committed_sha256": "7b08c31122f624e733ac279b87882c9138a05ea4c9dc7a16596105a5d4637d13",
+  "committed_source_rewritten": false,
+  "dependency_versions": {
+    "Pillow": "11.3.0",
+    "huggingface_hub": "1.21.0",
+    "numpy": "2.4.4",
+    "pyarrow": "24.0.0",
+    "scipy": "1.17.1"
+  },
+  "examples": [
+    {
+      "committed": "images/fairface/fa_005fcc4fc865e3ef03a5.png",
+      "field": "image_path",
+      "image_id": "fa_005fcc4fc865e3ef03a5",
+      "replayed": "images\\fairface\\fa_005fcc4fc865e3ef03a5.png"
+    },
+    {
+      "committed": "images/fairface/fa_01bdf07b48a02af812b4.png",
+      "field": "image_path",
+      "image_id": "fa_01bdf07b48a02af812b4",
+      "replayed": "images\\fairface\\fa_01bdf07b48a02af812b4.png"
+    },
+    {
+      "committed": "images/fairface/fa_022adaf852ffe98560dd.png",
+      "field": "image_path",
+      "image_id": "fa_022adaf852ffe98560dd",
+      "replayed": "images\\fairface\\fa_022adaf852ffe98560dd.png"
+    }
+  ],
+  "expected_rows": 2400,
+  "fields_changed": {
+    "image_path": 2400
+  },
+  "membership_and_splits_match": true,
+  "ordered_rows_identical_after_image_path_separator_normalization": true,
+  "platform": "Windows",
+  "python": "3.13.11",
+  "replayed_rows": 2400,
+  "replayed_sha256": "9650c5e8b107139ada9ceb8adfec2b8242af2bd8be7b69eaa4747a85b5075711",
+  "source_commit": "e4ac7a506f97e855f78ce79cc9d42b508193f76c"
+}

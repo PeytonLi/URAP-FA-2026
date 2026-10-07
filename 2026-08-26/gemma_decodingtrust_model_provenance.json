@@ -1,0 +1,21 @@
+{
+  "catalog_snapshot_date": "2026-08-26",
+  "access_method": "OpenRouter Chat Completions API",
+  "selection_scope": "Gemma-only DecodingTrust addition for the August 26 presentation",
+  "models": [
+    {
+      "key": "gemma3_12b_hosted",
+      "display_name": "Gemma 3 12B IT (OpenRouter/DeepInfra BF16)",
+      "model_id": "google/gemma-3-12b-it",
+      "api_revision_hint": "google/gemma-3-12b-it",
+      "release_date": "2025-03-12",
+      "weight_access": "open-weight",
+      "provider_endpoint": "deepinfra/bf16",
+      "max_concurrency": 1,
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "reasoning_effort": null,
+      "max_tokens": 150
+    }
+  ]
+}

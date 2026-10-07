@@ -1,0 +1,28 @@
+{
+  "groups": {
+    "grounded_profile/Black": {
+      "mean_margin_delta": 0.5563616071428571,
+      "preference_accuracy": 1.0,
+      "rows": 7
+    },
+    "grounded_profile/White": {
+      "mean_margin_delta": 0.5446428571428571,
+      "preference_accuracy": 1.0,
+      "rows": 7
+    },
+    "iat_3word/Black": {
+      "mean_margin_delta": 0.020833333333333332,
+      "preference_accuracy": 0.6666666666666666,
+      "rows": 3
+    },
+    "iat_3word/White": {
+      "mean_margin_delta": 0.041666666666666664,
+      "preference_accuracy": 0.3333333333333333,
+      "rows": 3
+    }
+  },
+  "mean_dpo_loss": 0.683349283480694,
+  "mean_margin_delta": 0.3947265625,
+  "preference_accuracy": 0.85,
+  "rows": 20
+}

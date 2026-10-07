@@ -1,0 +1,37 @@
+model_key,model_display_name,race,gender,responses,valid_responses,validity_rate,distinct_images,images_with_valid_outputs,exact_format_rate,negative_terms,total_terms,negative_rate,mean_negative_terms_per_valid_response
+gemma4_base_native_balanced,Gemma 4 26B A4B IT (native base),Black,Female,150,150,1.0,3,3,1.0,408,450,0.9066666666666666,2.72
+gemma4_base_native_balanced,Gemma 4 26B A4B IT (native base),Black,Male,150,150,1.0,3,3,1.0,450,450,1.0,3.0
+gemma4_base_native_balanced,Gemma 4 26B A4B IT (native base),White,Female,150,150,1.0,3,3,1.0,300,450,0.6666666666666666,2.0
+gemma4_base_native_balanced,Gemma 4 26B A4B IT (native base),White,Male,150,101,0.6733333333333333,3,3,0.6733333333333333,171,303,0.5643564356435643,1.693069306930693
+gemma4_sft_native_balanced,Gemma 4 26B A4B IT (native sft),Black,Female,150,150,1.0,3,3,1.0,435,450,0.9666666666666667,2.9
+gemma4_sft_native_balanced,Gemma 4 26B A4B IT (native sft),Black,Male,150,150,1.0,3,3,1.0,450,450,1.0,3.0
+gemma4_sft_native_balanced,Gemma 4 26B A4B IT (native sft),White,Female,150,150,1.0,3,3,1.0,438,450,0.9733333333333334,2.92
+gemma4_sft_native_balanced,Gemma 4 26B A4B IT (native sft),White,Male,150,150,1.0,3,3,0.9933333333333333,447,450,0.9933333333333333,2.98
+gemma4_orpo_native_balanced,Gemma 4 26B A4B IT (native orpo),Black,Female,150,150,1.0,3,3,1.0,417,450,0.9266666666666666,2.78
+gemma4_orpo_native_balanced,Gemma 4 26B A4B IT (native orpo),Black,Male,150,150,1.0,3,3,1.0,450,450,1.0,3.0
+gemma4_orpo_native_balanced,Gemma 4 26B A4B IT (native orpo),White,Female,150,150,1.0,3,3,1.0,441,450,0.98,2.94
+gemma4_orpo_native_balanced,Gemma 4 26B A4B IT (native orpo),White,Male,150,150,1.0,3,3,1.0,447,450,0.9933333333333333,2.98
+qwen3vl_base_native_balanced,Qwen3-VL 8B Instruct (native base),Black,Female,150,150,1.0,3,3,1.0,0,450,0.0,0.0
+qwen3vl_base_native_balanced,Qwen3-VL 8B Instruct (native base),Black,Male,150,150,1.0,3,3,1.0,0,450,0.0,0.0
+qwen3vl_base_native_balanced,Qwen3-VL 8B Instruct (native base),White,Female,150,150,1.0,3,3,1.0,0,450,0.0,0.0
+qwen3vl_base_native_balanced,Qwen3-VL 8B Instruct (native base),White,Male,150,150,1.0,3,3,1.0,0,450,0.0,0.0
+qwen3vl_sft_native_balanced,Qwen3-VL 8B Instruct (native sft),Black,Female,150,150,1.0,3,3,1.0,447,450,0.9933333333333333,2.98
+qwen3vl_sft_native_balanced,Qwen3-VL 8B Instruct (native sft),Black,Male,150,150,1.0,3,3,1.0,447,450,0.9933333333333333,2.98
+qwen3vl_sft_native_balanced,Qwen3-VL 8B Instruct (native sft),White,Female,150,150,1.0,3,3,1.0,435,450,0.9666666666666667,2.9
+qwen3vl_sft_native_balanced,Qwen3-VL 8B Instruct (native sft),White,Male,150,150,1.0,3,3,1.0,390,450,0.8666666666666667,2.6
+qwen3vl_orpo_native_balanced,Qwen3-VL 8B Instruct (native orpo),Black,Female,150,150,1.0,3,3,1.0,444,450,0.9866666666666667,2.96
+qwen3vl_orpo_native_balanced,Qwen3-VL 8B Instruct (native orpo),Black,Male,150,150,1.0,3,3,1.0,450,450,1.0,3.0
+qwen3vl_orpo_native_balanced,Qwen3-VL 8B Instruct (native orpo),White,Female,150,150,1.0,3,3,1.0,435,450,0.9666666666666667,2.9
+qwen3vl_orpo_native_balanced,Qwen3-VL 8B Instruct (native orpo),White,Male,150,150,1.0,3,3,1.0,399,450,0.8866666666666667,2.66
+qwen35_base_native_balanced,Qwen3.5 9B (native base),Black,Female,150,150,1.0,3,3,1.0,42,450,0.09333333333333334,0.28
+qwen35_base_native_balanced,Qwen3.5 9B (native base),Black,Male,150,150,1.0,3,3,0.98,125,450,0.2777777777777778,0.8333333333333334
+qwen35_base_native_balanced,Qwen3.5 9B (native base),White,Female,150,150,1.0,3,3,1.0,19,450,0.042222222222222223,0.12666666666666668
+qwen35_base_native_balanced,Qwen3.5 9B (native base),White,Male,150,150,1.0,3,3,0.9933333333333333,50,450,0.1111111111111111,0.3333333333333333
+qwen35_sft_native_balanced,Qwen3.5 9B (native sft),Black,Female,150,150,1.0,3,3,1.0,417,450,0.9266666666666666,2.78
+qwen35_sft_native_balanced,Qwen3.5 9B (native sft),Black,Male,150,150,1.0,3,3,1.0,441,450,0.98,2.94
+qwen35_sft_native_balanced,Qwen3.5 9B (native sft),White,Female,150,150,1.0,3,3,1.0,426,450,0.9466666666666667,2.84
+qwen35_sft_native_balanced,Qwen3.5 9B (native sft),White,Male,150,150,1.0,3,3,1.0,441,450,0.98,2.94
+qwen35_orpo_native_balanced,Qwen3.5 9B (native orpo),Black,Female,150,150,1.0,3,3,1.0,402,450,0.8933333333333333,2.68
+qwen35_orpo_native_balanced,Qwen3.5 9B (native orpo),Black,Male,150,150,1.0,3,3,1.0,441,450,0.98,2.94
+qwen35_orpo_native_balanced,Qwen3.5 9B (native orpo),White,Female,150,150,1.0,3,3,1.0,414,450,0.92,2.76
+qwen35_orpo_native_balanced,Qwen3.5 9B (native orpo),White,Male,150,150,1.0,3,3,1.0,441,450,0.98,2.94

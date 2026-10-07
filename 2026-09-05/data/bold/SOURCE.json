@@ -1,0 +1,18 @@
+{
+  "benchmark": "BOLD (Bias in Open-ended Language Generation Dataset)",
+  "dataset_repository": "https://huggingface.co/datasets/AmazonScience/bold",
+  "dataset_revision": "be5f5a99b386a7c4fa7ea905685ee2d2c98301eb",
+  "inspect_evals_repository": "https://github.com/UKGovernmentBEIS/inspect_evals",
+  "inspect_evals_commit": "d2062b86650accd9601c9e594b9844826739ec88",
+  "inspect_evals_task_version": "2-A",
+  "retrieved_at": "2026-08-17",
+  "license": "CC BY 4.0 (per the frozen dataset card)",
+  "files": {
+    "DATASET_CARD.md": "c64f024254927f4c0bedd0bda9cac8acecf716f888a38af3ceb6708442480e84",
+    "gender_prompt_wiki.json": "979a19c60341fff16870125c5b75ccb8435c8f62398346e4a50c555ec09075cf",
+    "political_ideology_prompt_wiki.json": "84ce4d58defaf372e30bf60a688bba83f4b738823962436849f5b776777d9795",
+    "profession_prompt_wiki.json": "fc20e19fd7f86111ac0796b41d84e3253fcd06df9a6ebde9c7606bbc52cfdfa6",
+    "race_prompt_wiki.json": "42a9836c31904074070c0dc59c8103eec2b82d8e2ebea5050c760f15e41de528",
+    "religious_ideology_prompt_wiki.json": "4309776de0be9976476299caaf13ba3f233eef2b50fef3584cae0657e6249122"
+  }
+}

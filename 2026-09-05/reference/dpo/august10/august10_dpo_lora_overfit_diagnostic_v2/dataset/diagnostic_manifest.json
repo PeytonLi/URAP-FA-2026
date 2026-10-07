@@ -1,0 +1,104 @@
+{
+  "confirmatory_evaluation_opened": false,
+  "development_template": {
+    "chosen": "Cheer, Enjoy, Terrific",
+    "rejected": "Poison, Gross, Sick"
+  },
+  "forbidden_eval_hashes": "/workspace/gemma3-fairface-debiasing-august10/reference/frozen_base/frozen_input_manifest.json",
+  "forbidden_eval_hashes_sha256": "fb5637fa3cf275c2241e7366470e14a57a059bdb35de54dfc130c690305f6614",
+  "images": [
+    {
+      "path": "data/august10/diagnostic_overfit_v2_informative/images/0f88bb783419003e24de341c98f743fd65b37cf1f290a0d45e3b379b2c20796b.png",
+      "sha256": "0f88bb783419003e24de341c98f743fd65b37cf1f290a0d45e3b379b2c20796b"
+    },
+    {
+      "path": "data/august10/diagnostic_overfit_v2_informative/images/2d6ed4f9e723308720f5afec796ef8e158e8ce07d5a8fb5bfb4ca8579645b859.png",
+      "sha256": "2d6ed4f9e723308720f5afec796ef8e158e8ce07d5a8fb5bfb4ca8579645b859"
+    },
+    {
+      "path": "data/august10/diagnostic_overfit_v2_informative/images/722c96afd6df6bd048ca1d7d700cf485e6bfa9c5661c69c622fe80917a30945c.png",
+      "sha256": "722c96afd6df6bd048ca1d7d700cf485e6bfa9c5661c69c622fe80917a30945c"
+    },
+    {
+      "path": "data/august10/diagnostic_overfit_v2_informative/images/89c66013b5da1b00adfea161a00523b7bc3d3342a5a3c9297c7ef7159bf8f6c1.png",
+      "sha256": "89c66013b5da1b00adfea161a00523b7bc3d3342a5a3c9297c7ef7159bf8f6c1"
+    },
+    {
+      "path": "data/august10/diagnostic_overfit_v2_informative/images/8e44c06c0a3cc67df7963e4f2aad439e5f438ab6c3bfdf88eee3d06c2f9e5f02.png",
+      "sha256": "8e44c06c0a3cc67df7963e4f2aad439e5f438ab6c3bfdf88eee3d06c2f9e5f02"
+    },
+    {
+      "path": "data/august10/diagnostic_overfit_v2_informative/images/9d7800e78f71a6b926196c5475965fc1da686f2c222df57e63b6e3eb422171b2.png",
+      "sha256": "9d7800e78f71a6b926196c5475965fc1da686f2c222df57e63b6e3eb422171b2"
+    },
+    {
+      "path": "data/august10/diagnostic_overfit_v2_informative/images/a98051f0c2d638607487678a84715d207be89ee8350651cfbbff34b9e1f45a1d.png",
+      "sha256": "a98051f0c2d638607487678a84715d207be89ee8350651cfbbff34b9e1f45a1d"
+    },
+    {
+      "path": "data/august10/diagnostic_overfit_v2_informative/images/be751ec10bcd073a5dc66640f3020260be41f0dada8907c552e5e8d575835751.png",
+      "sha256": "be751ec10bcd073a5dc66640f3020260be41f0dada8907c552e5e8d575835751"
+    },
+    {
+      "path": "data/august10/diagnostic_overfit_v2_informative/images/d2b6c2327aa8a1c0117d7b4bd37454a357fb6c060f18a9949d4cab4e890b07bb.png",
+      "sha256": "d2b6c2327aa8a1c0117d7b4bd37454a357fb6c060f18a9949d4cab4e890b07bb"
+    },
+    {
+      "path": "data/august10/diagnostic_overfit_v2_informative/images/e6cb664e2d977fd9f39d25c2700fb1ac5caeddc20163116db70ab42e8b2cf1fd.png",
+      "sha256": "e6cb664e2d977fd9f39d25c2700fb1ac5caeddc20163116db70ab42e8b2cf1fd"
+    },
+    {
+      "path": "data/august10/diagnostic_overfit_v2_informative/images/facdd0a05cc3d6c64c3a793df52d2c58cc45e4a8fd7bbb84fa0957b7335c2384.png",
+      "sha256": "facdd0a05cc3d6c64c3a793df52d2c58cc45e4a8fd7bbb84fa0957b7335c2384"
+    },
+    {
+      "path": "data/august10/diagnostic_overfit_v2_informative/images/fdedcdc59568a7dc6d27666cd05b6b696c75f34ac131d9733758421b94b05172.png",
+      "sha256": "fdedcdc59568a7dc6d27666cd05b6b696c75f34ac131d9733758421b94b05172"
+    }
+  ],
+  "intentional_train_development_image_overlap": true,
+  "model_id": "google/gemma-3-12b-it",
+  "model_revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "non_confirmatory": true,
+  "outputs": {
+    "diagnostic_dpo_pairs_frozen.csv": {
+      "rows": 204,
+      "sha256": "a35460e6a476931b555f3b2ae6b52ecf5726ccbd704d864bcbeb46af9f629909"
+    },
+    "diagnostic_gate.json": {
+      "sha256": "8af1738ed88a989b56762b8313f2b478a81b5fa57c2f1cbc4561183138f1869a"
+    }
+  },
+  "protocol_version": "august10-dpo-lora-overfit-diagnostic-v2-informative",
+  "screening_responses_csv": "/workspace/gemma3-fairface-debiasing-august10/outputs/august10/diagnostic_overfit_v1/base_training_pool_screen/development_generation_responses.csv",
+  "screening_responses_csv_sha256": "e53398838b67c00b44f8a793aedb7c51380a0fbfa744b36432004205f193def2",
+  "selected_source_blocks": [
+    "aug10-profile-rematch-6a7ba098e38a5bc7",
+    "aug10-profile-rematch-09d3031a269d8070",
+    "aug10-profile-rematch-8905895f29515019",
+    "aug10-profile-rematch-fa88f665d931557a",
+    "aug10-profile-rematch-f16221541dc315bc",
+    "aug10-profile-rematch-e7b9b857040562e5"
+  ],
+  "source_csv": "/workspace/gemma3-fairface-debiasing-august10/results/august10_negative_expression_pilot_v4/dataset/mixed_dpo_pairs_frozen.csv",
+  "source_csv_sha256": "589db3c850b383be7c848f15f3fa26e48d9d44af36ea6b6ee947fe69225d67c9",
+  "status": "ready_for_diagnostic",
+  "train_templates": [
+    {
+      "chosen": "Friend, Pleasing, Appealing",
+      "rejected": "Pain, Hurtful, Tragic"
+    },
+    {
+      "chosen": "Glad, Cheerful, Delight",
+      "rejected": "Sadness, Horrible, Hate"
+    },
+    {
+      "chosen": "Joyful, Lovely, Excellent",
+      "rejected": "Angry, Ugly, Failure"
+    },
+    {
+      "chosen": "Friendship, Happy, Pleasure",
+      "rejected": "Grief, Nasty, Disaster"
+    }
+  ]
+}

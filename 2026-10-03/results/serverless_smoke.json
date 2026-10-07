@@ -1,0 +1,32 @@
+[
+  {
+    "checked_at": "2026-10-03T19:43:05.105027+00:00",
+    "display_name": "Gemma 4 26B A4B IT",
+    "endpoint_usable": false,
+    "error": "OpenRouter HTTP 404: Model not found, inaccessible, and/or not deployed",
+    "image_sha256": "09eaa4af7310266e5ae8e1b8109f6c6833d82f097ef630f8da63b17ee0659bc5",
+    "model_id": "accounts/fireworks/models/gemma-4-26b-a4b-it",
+    "model_key": "gemma4",
+    "training_performed": false
+  },
+  {
+    "checked_at": "2026-10-03T19:43:05.437196+00:00",
+    "display_name": "Qwen3-VL 8B Instruct",
+    "endpoint_usable": false,
+    "error": "OpenRouter HTTP 404: Model not found, inaccessible, and/or not deployed",
+    "image_sha256": "09eaa4af7310266e5ae8e1b8109f6c6833d82f097ef630f8da63b17ee0659bc5",
+    "model_id": "accounts/fireworks/models/qwen3-vl-8b-instruct",
+    "model_key": "qwen3vl",
+    "training_performed": false
+  },
+  {
+    "checked_at": "2026-10-03T19:43:05.580975+00:00",
+    "display_name": "Qwen3.5 9B",
+    "endpoint_usable": false,
+    "error": "OpenRouter HTTP 404: Model not found, inaccessible, and/or not deployed",
+    "image_sha256": "09eaa4af7310266e5ae8e1b8109f6c6833d82f097ef630f8da63b17ee0659bc5",
+    "model_id": "accounts/fireworks/models/qwen3p5-9b",
+    "model_key": "qwen35",
+    "training_performed": false
+  }
+]

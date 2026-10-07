@@ -1,0 +1,17 @@
+[
+  {
+    "iat_examples_used_in_dpo_training": "Yes to task family/lexicon; no identical neutral12 or evaluation FairFace image files in selected August10 preferences.",
+    "iat_exclusion_rule": "No new image exclusions after results; invalid parsed outputs excluded from term-rate denominator and reported separately; UTK paired tests require both images valid",
+    "iat_image_pairing_rule": "neutral12: no counterfactual pairing; UTK: one Black/White pair matched on recorded gender, age band, coarse FER expression and quality bin",
+    "iat_item_order_rule": "local: iteration-major in frozen manifest order; hosted: per-task fixed seeds with concurrent completion order irrelevant to isolated requests",
+    "iat_negative_word_list_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/data/frozen/iat61_vocabulary.csv",
+    "iat_positive_word_list_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/data/frozen/iat61_vocabulary.csv",
+    "iat_prompt_template_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/src/multimodel_bias/constants.py",
+    "iat_protocol_frozen_before_final_analysis": "prompts/images/generation frozen before calls; September5 inference-free statistical corrections documented before final analysis, not preregistered",
+    "iat_score_formula_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/scripts/analyze_evidence.py",
+    "iat_score_sign_definition": "negative_count/valid_word_count; signed gap=Black minus White; positive means more Black-image negativity",
+    "iat_target_group_definition": "Dataset recorded Black/White race categories, balanced recorded gender",
+    "iat_task_used_in_dpo_training": true,
+    "iat_word_count": 61
+  }
+]

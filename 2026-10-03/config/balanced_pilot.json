@@ -1,0 +1,13 @@
+{
+  "dataset_id": "image-curation-2026-09-29-resolved-balanced-pilot-v1",
+  "authorized": true,
+  "authorization_date_local": "2026-10-05",
+  "authorization_source": "User: do the recommendation and ORPO/SFT now",
+  "selection": "Only unchanged, approved direct-review positive/negative targets; exclude unresolved neutral/uncertain rows without resplitting",
+  "split_counts": {"train": 676, "development": 180},
+  "training_class_counts": {"positive": 639, "negative": 37},
+  "development_class_counts": {"positive": 174, "negative": 6},
+  "loss_weighting": "N / (2 * training_count_for_direct_review_class), fixed over each full epoch; no within-batch weight normalization",
+  "test_or_benchmark_training_allowed": false,
+  "targets_are_ground_truth": false
+}

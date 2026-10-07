@@ -1,0 +1,17 @@
+{
+  "attempt_folder": "data/private/prime_native/20261006T041859.123776_0000",
+  "pod_id": "48a292c745ed40c4a99f2200f993401e",
+  "provider": "nebius",
+  "gpu_type": "H200_141GB",
+  "quoted_hourly_usd": 5.482,
+  "wallet_before_usd": 79.2125,
+  "wallet_latest_usd": 79.2125,
+  "training_started": false,
+  "remote_outputs_recovered": false,
+  "provider_status_at_reconciliation": "terminated_history",
+  "active_pod_list_at_reconciliation": false,
+  "termination_verified": true,
+  "terminated_at_utc": "2026-10-06T04:25:27.020000",
+  "cleanup_requires_attention": false,
+  "note": "Provisioning exposed no SSH; provider returned HTTP 400 during the first terminate request. A later terminate request moved the pod to DELETING; wallet remained unchanged."
+}

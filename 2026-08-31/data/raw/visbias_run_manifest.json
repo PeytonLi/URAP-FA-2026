@@ -1,0 +1,720 @@
+{
+  "account_usage_delta_usd": 2.957367146,
+  "benchmark_version": "visbias-race-api-adaptation-v1",
+  "comparison_tasks_per_model": 168,
+  "config": {
+    "base_seed": 31082026,
+    "benchmark_version": "visbias-race-api-adaptation-v1",
+    "bootstrap_samples": 20000,
+    "max_comparison_tokens": 32,
+    "max_description_tokens": 220,
+    "max_run_cost_usd": 4.0,
+    "max_workers": 1,
+    "minimum_account_balance_usd": 10.0,
+    "minimum_request_interval_seconds": 0.75,
+    "provider": {
+      "allow_fallbacks": false,
+      "data_collection": "deny",
+      "zdr": true
+    },
+    "temperature": 0.0,
+    "top_p": 1.0
+  },
+  "credits_after": {
+    "remaining": 17.119716438,
+    "total_credits": 25.0,
+    "total_usage": 7.880283562
+  },
+  "credits_before_latest_invocation": {
+    "remaining": 17.127680087999998,
+    "total_credits": 25.0,
+    "total_usage": 7.872319912
+  },
+  "credits_initial": {
+    "remaining": 20.077083584,
+    "total_credits": 25.0,
+    "total_usage": 4.922916416
+  },
+  "description_tasks_per_model": 84,
+  "finished_at": "2026-08-31T10:38:26.969585+00:00",
+  "initial_started_at": "2026-08-31T09:35:34.380292+00:00",
+  "latest_invocation_started_at": "2026-08-31T10:38:18.967868+00:00",
+  "latest_invocation_usage_delta_usd": 0.007963649999999767,
+  "model_catalog_snapshot": [
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Qwen3"
+      },
+      "canonical_slug": "qwen/qwen3.5-9b-20260310",
+      "context_length": 262144,
+      "created": 1773152396,
+      "id": "qwen/qwen3.5-9b",
+      "name": "Qwen: Qwen3.5-9B",
+      "pricing": {
+        "completion": "0.00000015",
+        "prompt": "0.0000001"
+      },
+      "selected_endpoint": {
+        "context_length": 262144,
+        "max_completion_tokens": 81920,
+        "max_prompt_tokens": null,
+        "name": "DeepInfra | qwen/qwen3.5-9b-20260310",
+        "pricing": {
+          "completion": "0.00000015",
+          "discount": 0,
+          "prompt": "0.0000001"
+        },
+        "provider_name": "DeepInfra",
+        "quantization": "bf16",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "logit_bias",
+          "structured_outputs",
+          "tools",
+          "tool_choice"
+        ],
+        "tag": "deepinfra/bf16"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "canonical_slug": "moonshotai/kimi-k3-20260715",
+      "context_length": 1048576,
+      "created": 1784215858,
+      "id": "moonshotai/kimi-k3",
+      "name": "MoonshotAI: Kimi K3",
+      "pricing": {
+        "completion": "0.000015",
+        "input_cache_read": "0.0000003",
+        "prompt": "0.000003"
+      },
+      "selected_endpoint": {
+        "context_length": 1048576,
+        "max_completion_tokens": 943718,
+        "max_prompt_tokens": null,
+        "name": "DigitalOcean | moonshotai/kimi-k3-20260715",
+        "pricing": {
+          "completion": "0.00001425",
+          "discount": 0,
+          "input_cache_read": "0.000000285",
+          "prompt": "0.00000285"
+        },
+        "provider_name": "DigitalOcean",
+        "quantization": "unknown",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "temperature",
+          "top_p",
+          "max_tokens",
+          "response_format",
+          "logprobs",
+          "top_logprobs",
+          "tools",
+          "tool_choice",
+          "structured_outputs",
+          "reasoning_effort"
+        ],
+        "tag": "digitalocean"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "reasoning_effort",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video",
+          "file",
+          "audio"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+file+audio+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Gemini"
+      },
+      "canonical_slug": "google/gemini-3.6-flash-20260721",
+      "context_length": 1048576,
+      "created": 1784646733,
+      "id": "google/gemini-3.6-flash",
+      "name": "Google: Gemini 3.6 Flash",
+      "pricing": {
+        "audio": "0.00000075",
+        "completion": "0.00000375",
+        "image": "0.00000075",
+        "input_audio_cache": "0.000000075",
+        "input_cache_read": "0.000000075",
+        "input_cache_write": "0.0000000416666666666667",
+        "internal_reasoning": "0.00000375",
+        "prompt": "0.00000075",
+        "web_search": "0.014"
+      },
+      "selected_endpoint": {
+        "context_length": 1048576,
+        "max_completion_tokens": 65536,
+        "max_prompt_tokens": null,
+        "name": "Google | google/gemini-3.6-flash-20260721",
+        "pricing": {
+          "audio": "0.00000075",
+          "completion": "0.00000375",
+          "discount": 0,
+          "image": "0.00000075",
+          "input_audio_cache": "0.000000075",
+          "input_cache_read": "0.000000075",
+          "input_cache_write": "0.0000000416666666666667",
+          "internal_reasoning": "0.00000375",
+          "prompt": "0.00000075",
+          "web_search": "0.014"
+        },
+        "provider_name": "Google",
+        "quantization": "unknown",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "seed",
+          "response_format",
+          "stop",
+          "structured_outputs",
+          "tools",
+          "tool_choice",
+          "reasoning_effort"
+        ],
+        "tag": "google-vertex/global"
+      },
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ]
+    },
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "audio",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+audio+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "canonical_slug": "xiaomi/mimo-v2.5-20260422",
+      "context_length": 1050000,
+      "created": 1776874269,
+      "id": "xiaomi/mimo-v2.5",
+      "name": "Xiaomi: MiMo-V2.5",
+      "pricing": {
+        "completion": "0.00000028",
+        "input_cache_read": "0.0000000028",
+        "prompt": "0.00000014"
+      },
+      "selected_endpoint": {
+        "context_length": 262144,
+        "max_completion_tokens": 131072,
+        "max_prompt_tokens": null,
+        "name": "DeepInfra | xiaomi/mimo-v2.5-20260422",
+        "pricing": {
+          "completion": "0.00000065",
+          "discount": 0.675,
+          "input_cache_read": "0.000000026",
+          "prompt": "0.00000013"
+        },
+        "provider_name": "DeepInfra",
+        "quantization": "fp8",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "response_format",
+          "structured_outputs",
+          "tools",
+          "tool_choice",
+          "logit_bias"
+        ],
+        "tag": "deepinfra/fp8"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "canonical_slug": "minimax/minimax-m3-20260531",
+      "context_length": 1048576,
+      "created": 1780245374,
+      "id": "minimax/minimax-m3",
+      "name": "MiniMax: MiniMax M3",
+      "pricing": {
+        "completion": "0.0000012",
+        "input_cache_read": "0.00000006",
+        "prompt": "0.0000003"
+      },
+      "selected_endpoint": {
+        "context_length": 524288,
+        "max_completion_tokens": 65536,
+        "max_prompt_tokens": null,
+        "name": "Venice | minimax/minimax-m3-20260531",
+        "pricing": {
+          "completion": "0.0000012",
+          "discount": 0,
+          "input_cache_read": "0.00000006",
+          "prompt": "0.0000003"
+        },
+        "provider_name": "Venice",
+        "quantization": "fp8",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "top_k",
+          "tools",
+          "tool_choice"
+        ],
+        "tag": "venice/fp8"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+video->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other"
+      },
+      "canonical_slug": "stepfun/step-3.7-flash-20260528",
+      "context_length": 262144,
+      "created": 1779985069,
+      "id": "stepfun/step-3.7-flash",
+      "name": "StepFun: Step 3.7 Flash",
+      "pricing": {
+        "completion": "0.00000115",
+        "input_cache_read": "0.00000004",
+        "prompt": "0.0000002"
+      },
+      "selected_endpoint": {
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "name": "DeepInfra | stepfun/step-3.7-flash-20260528",
+        "pricing": {
+          "completion": "0.00000115",
+          "discount": 0,
+          "input_cache_read": "0.00000004",
+          "prompt": "0.0000002"
+        },
+        "provider_name": "DeepInfra",
+        "quantization": "unknown",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "stop",
+          "frequency_penalty",
+          "presence_penalty",
+          "repetition_penalty",
+          "top_k",
+          "seed",
+          "min_p",
+          "logit_bias",
+          "tools",
+          "tool_choice",
+          "reasoning_effort"
+        ],
+        "tag": "deepinfra"
+      },
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "reasoning_effort",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
+    {
+      "architecture": {
+        "input_modalities": [
+          "text",
+          "image",
+          "file"
+        ],
+        "instruct_type": null,
+        "modality": "text+image+file->text",
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Grok"
+      },
+      "canonical_slug": "x-ai/grok-4.6-20260810",
+      "context_length": 500000,
+      "created": 1786548957,
+      "id": "x-ai/grok-4.6",
+      "name": "SpaceXAI: Grok 4.6",
+      "pricing": {
+        "completion": "0.000006",
+        "input_cache_read": "0.0000005",
+        "overrides": [
+          {
+            "completion": "0.000012",
+            "input_cache_read": "0.000001",
+            "min_prompt_tokens": 200000,
+            "prompt": "0.000004"
+          }
+        ],
+        "prompt": "0.000002",
+        "web_search": "0.005"
+      },
+      "selected_endpoint": {
+        "context_length": 500000,
+        "max_completion_tokens": 450000,
+        "max_prompt_tokens": null,
+        "name": "xAI | x-ai/grok-4.6-20260810",
+        "pricing": {
+          "completion": "0.000006",
+          "discount": 0,
+          "input_cache_read": "0.0000005",
+          "overrides": [
+            {
+              "completion": "0.000012",
+              "input_cache_read": "0.000001",
+              "min_prompt_tokens": 200000,
+              "prompt": "0.000004"
+            }
+          ],
+          "prompt": "0.000002",
+          "web_search": "0.005"
+        },
+        "provider_name": "xAI",
+        "quantization": "unknown",
+        "status": 0,
+        "supported_parameters": [
+          "reasoning",
+          "include_reasoning",
+          "structured_outputs",
+          "response_format",
+          "max_tokens",
+          "temperature",
+          "top_p",
+          "seed",
+          "logprobs",
+          "top_logprobs",
+          "tools",
+          "tool_choice",
+          "reasoning_effort"
+        ],
+        "tag": "xai/zdr"
+      },
+      "supported_parameters": [
+        "include_reasoning",
+        "logprobs",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ]
+    }
+  ],
+  "models": [
+    {
+      "api_revision_hint": "qwen/qwen3.5-9b-20260310",
+      "display_name": "Qwen 3.5 9B",
+      "key": "qwen35_9b",
+      "max_concurrency": 2,
+      "max_tokens": 30,
+      "model_id": "qwen/qwen3.5-9b",
+      "provider_endpoint": "deepinfra/bf16",
+      "reasoning_effort": "none",
+      "release_date": "2026-03-02",
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "weight_access": "open-weight"
+    },
+    {
+      "api_revision_hint": "moonshotai/kimi-k3-20260715",
+      "display_name": "Kimi K3",
+      "key": "kimi_k3",
+      "max_concurrency": 2,
+      "max_tokens": 1024,
+      "model_id": "moonshotai/kimi-k3",
+      "provider_endpoint": "digitalocean",
+      "reasoning_effort": "none",
+      "release_date": "2026-07-16",
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "weight_access": "open-weight"
+    },
+    {
+      "api_revision_hint": "google/gemini-3.6-flash-20260721",
+      "display_name": "Gemini 3.6 Flash",
+      "key": "gemini36_flash",
+      "max_concurrency": 3,
+      "max_tokens": 96,
+      "model_id": "google/gemini-3.6-flash",
+      "provider_endpoint": "google-vertex/global",
+      "reasoning_effort": "minimal",
+      "release_date": "2026-07-21",
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "weight_access": "closed-source"
+    },
+    {
+      "api_revision_hint": "xiaomi/mimo-v2.5-20260422",
+      "display_name": "MiMo-V2.5",
+      "key": "mimo_v25",
+      "max_concurrency": 2,
+      "max_tokens": 64,
+      "model_id": "xiaomi/mimo-v2.5",
+      "provider_endpoint": "deepinfra/fp8",
+      "reasoning_effort": "none",
+      "release_date": "2026-04-22",
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "weight_access": "open-weight"
+    },
+    {
+      "api_revision_hint": "minimax/minimax-m3-20260531",
+      "display_name": "MiniMax M3",
+      "key": "minimax_m3",
+      "max_concurrency": 1,
+      "max_tokens": 64,
+      "model_id": "minimax/minimax-m3",
+      "provider_endpoint": "venice/fp8",
+      "reasoning_effort": "none",
+      "release_date": "2026-05-31",
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "weight_access": "open-weight"
+    },
+    {
+      "api_revision_hint": "stepfun/step-3.7-flash-20260528",
+      "display_name": "Step 3.7 Flash",
+      "key": "step37_flash",
+      "max_concurrency": 2,
+      "max_tokens": 4096,
+      "model_id": "stepfun/step-3.7-flash",
+      "provider_endpoint": "deepinfra",
+      "reasoning_effort": "minimal",
+      "release_date": "2026-05-28",
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "weight_access": "open-weight"
+    },
+    {
+      "api_revision_hint": "x-ai/grok-4.6-20260810",
+      "display_name": "Grok 4.6",
+      "key": "grok46",
+      "max_concurrency": 2,
+      "max_tokens": 64,
+      "model_id": "x-ai/grok-4.6",
+      "provider_endpoint": "xai/zdr",
+      "reasoning_effort": "minimal",
+      "release_date": "2026-08-12",
+      "supports_temperature": true,
+      "supports_top_p": true,
+      "weight_access": "closed-source"
+    }
+  ],
+  "pending_tasks": 5,
+  "planned_tasks": 1764,
+  "records": 1764,
+  "reported_response_cost_usd": 2.0576990759999982,
+  "resumed_records": 1852,
+  "run_id": "visbias_race_eight_model_pilot_20260831_v1",
+  "seed_contract": "base-plus-sha256-model-offset-mod-1e9-plus-task-v1",
+  "task_contract_sha256": "ab8998240fac32a10d6624288c8cfba45c436ea4f764d6486d39051cbb00e24c",
+  "valid_records": 1762
+}

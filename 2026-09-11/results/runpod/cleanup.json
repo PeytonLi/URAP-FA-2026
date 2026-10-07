@@ -1,0 +1,15 @@
+{
+  "account": {
+    "myself": {
+      "clientBalance": 11.9437789794,
+      "currentSpendPerHr": 0.008
+    }
+  },
+  "elapsed_seconds": 4209.893650770187,
+  "estimated_compute_usd": 4.081258018143972,
+  "network_volume_preserved": true,
+  "pod_absent": true,
+  "pod_id": "f0pigmwsmvy4i6",
+  "reason": "worker_finished_and_results_verified",
+  "terminated_at": "2026-09-11T09:23:38.904946+00:00"
+}

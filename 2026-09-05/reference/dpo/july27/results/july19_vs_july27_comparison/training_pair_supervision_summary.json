@@ -1,0 +1,112 @@
+{
+  "july19": {
+    "black": {
+      "chosen_negative_term_slot_rate": 1.0,
+      "chosen_negative_terms": 30,
+      "chosen_negative_word_counts": {
+        "angry": 3,
+        "annoy": 1,
+        "failure": 1,
+        "grief": 6,
+        "hatred": 1,
+        "hurtful": 1,
+        "pain": 9,
+        "sadness": 7,
+        "ugly": 1
+      },
+      "fine_expression_counts": {
+        "anger": 2,
+        "angry": 2,
+        "sad": 6
+      },
+      "mean_chosen_negative_terms_per_pair": 3.0,
+      "negative_expression_pairs": 10
+    },
+    "black_minus_white_mean_chosen_negative_terms_per_pair": 0.6000000000000001,
+    "direct_objective_counts": {
+      "Fixed-count unsupported-negativity reduction": 21,
+      "Identity removal": 26,
+      "Negative-count reduction": 8
+    },
+    "white": {
+      "chosen_negative_term_slot_rate": 0.8,
+      "chosen_negative_terms": 36,
+      "chosen_negative_word_counts": {
+        "abuse": 1,
+        "angry": 5,
+        "disgust": 4,
+        "failure": 2,
+        "gross": 1,
+        "hate": 4,
+        "horrific": 2,
+        "hurtful": 2,
+        "nasty": 3,
+        "pain": 7,
+        "sadness": 4,
+        "ugly": 1
+      },
+      "fine_expression_counts": {
+        "angry": 5,
+        "disgust": 4,
+        "fear": 4,
+        "sad": 2
+      },
+      "mean_chosen_negative_terms_per_pair": 2.4,
+      "negative_expression_pairs": 15
+    }
+  },
+  "july27": {
+    "black": {
+      "chosen_negative_term_slot_rate": 1.0,
+      "chosen_negative_terms": 54,
+      "chosen_negative_word_counts": {
+        "angry": 2,
+        "failure": 1,
+        "grief": 15,
+        "hatred": 1,
+        "hurtful": 1,
+        "pain": 18,
+        "sadness": 16
+      },
+      "fine_expression_counts": {
+        "anger": 2,
+        "angry": 1,
+        "distress": 1,
+        "sad": 14
+      },
+      "mean_chosen_negative_terms_per_pair": 3.0,
+      "negative_expression_pairs": 18
+    },
+    "black_minus_white_mean_chosen_negative_terms_per_pair": 0.6428571428571428,
+    "direct_objective_counts": {
+      "Fixed-count unsupported-negativity reduction": 29,
+      "Identity removal": 20,
+      "Negative-count reduction": 1
+    },
+    "white": {
+      "chosen_negative_term_slot_rate": 0.7857142857142857,
+      "chosen_negative_terms": 33,
+      "chosen_negative_word_counts": {
+        "abuse": 1,
+        "angry": 3,
+        "disgust": 1,
+        "failure": 1,
+        "grief": 4,
+        "gross": 1,
+        "hate": 3,
+        "horrific": 2,
+        "nasty": 1,
+        "pain": 10,
+        "sadness": 6
+      },
+      "fine_expression_counts": {
+        "angry": 3,
+        "disgust": 1,
+        "fear": 4,
+        "sad": 6
+      },
+      "mean_chosen_negative_terms_per_pair": 2.357142857142857,
+      "negative_expression_pairs": 14
+    }
+  }
+}

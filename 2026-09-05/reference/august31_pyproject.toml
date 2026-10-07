@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multimodel-bias-benchmark-august31"
+version = "0.3.0"
+description = "Reproducible text and image race-bias benchmarks for eight hosted models"
+requires-python = ">=3.11"
+dependencies = [
+  "certifi==2026.7.22",
+  "matplotlib==3.10.5",
+  "numpy==2.2.6",
+  "pillow==11.3.0",
+  "vaderSentiment==3.3.2",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest==8.4.1",
+  "ruff==0.12.8",
+]
+utkface = [
+  "pandas==2.2.3",
+  "torch==2.8.0",
+  "transformers==4.50.0",
+]
+
+[project.scripts]
+run-iat12 = "multimodel_bias.cli_iat:main"
+run-decodingtrust = "multimodel_bias.cli_decodingtrust:main"
+run-bold = "multimodel_bias.cli_bold:main"
+run-bold-score = "multimodel_bias.cli_bold_score:main"
+build-bias-summary = "multimodel_bias.cli_summary:main"
+reanalyze-bias-results = "multimodel_bias.cli_reanalyze:main"
+prepare-utkface = "multimodel_bias.cli_utkface:main"
+build-significance-figures = "multimodel_bias.cli_significance:main"
+run-visbias-pilot = "multimodel_bias.cli_visbias:main"
+reanalyze-aug31 = "multimodel_bias.cli_aug31_reanalyze:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["data/private"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]

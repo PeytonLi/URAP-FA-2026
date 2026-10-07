@@ -1,0 +1,105 @@
+{
+  "catalog_snapshot": {
+    "architecture": {
+      "input_modalities": [
+        "text",
+        "image",
+        "video"
+      ],
+      "instruct_type": null,
+      "modality": "text+image+video->text",
+      "output_modalities": [
+        "text"
+      ],
+      "tokenizer": "Qwen3"
+    },
+    "canonical_slug": "qwen/qwen3.5-9b-20260310",
+    "context_length": 262144,
+    "created": 1773152396,
+    "id": "qwen/qwen3.5-9b",
+    "name": "Qwen: Qwen3.5-9B",
+    "pricing": {
+      "completion": "0.00000015",
+      "prompt": "0.0000001"
+    },
+    "selected_endpoint": {
+      "context_length": 262144,
+      "max_completion_tokens": 81920,
+      "max_prompt_tokens": null,
+      "name": "DeepInfra | qwen/qwen3.5-9b-20260310",
+      "pricing": {
+        "completion": "0.00000015",
+        "discount": 0,
+        "prompt": "0.0000001"
+      },
+      "provider_name": "DeepInfra",
+      "quantization": "bf16",
+      "status": 0,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "stop",
+        "frequency_penalty",
+        "presence_penalty",
+        "repetition_penalty",
+        "top_k",
+        "seed",
+        "min_p",
+        "response_format",
+        "logit_bias",
+        "structured_outputs",
+        "tools",
+        "tool_choice"
+      ],
+      "tag": "deepinfra/bf16"
+    },
+    "supported_parameters": [
+      "frequency_penalty",
+      "include_reasoning",
+      "logit_bias",
+      "logprobs",
+      "max_tokens",
+      "min_p",
+      "presence_penalty",
+      "reasoning",
+      "repetition_penalty",
+      "response_format",
+      "seed",
+      "stop",
+      "structured_outputs",
+      "temperature",
+      "tool_choice",
+      "tools",
+      "top_k",
+      "top_logprobs",
+      "top_p"
+    ]
+  },
+  "finished_at": "2026-09-05T07:35:30.351021+00:00",
+  "model": {
+    "api_revision_hint": "qwen/qwen3.5-9b-20260310",
+    "display_name": "Qwen 3.5 9B",
+    "key": "qwen35_9b",
+    "max_concurrency": 3,
+    "max_tokens": 30,
+    "model_id": "qwen/qwen3.5-9b",
+    "provider_endpoint": "deepinfra/bf16",
+    "reasoning_effort": "none",
+    "release_date": "2026-03-02",
+    "supports_temperature": true,
+    "supports_top_p": true,
+    "weight_access": "open-weight"
+  },
+  "planned_tasks": 36,
+  "probe": false,
+  "provider_fallback": false,
+  "recorded_calls": 36,
+  "response_cost_usd": 0.00088965,
+  "started_at": "2026-09-05T07:33:15.340771+00:00",
+  "status": "complete",
+  "task_contract_sha256": "e858fe45a4ad1ff8cbdad49e276a92c8119a1cf1b714d0180e69f56b16d9ae3e",
+  "valid_responses": 36
+}

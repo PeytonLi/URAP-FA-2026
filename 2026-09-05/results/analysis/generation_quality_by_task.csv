@@ -1,0 +1,19 @@
+benchmark,model_key,rows,truncated_rows,invalid_rows,full_response_interpretation
+DecodingTrust,gemma_local,48,36,36,unreliable:36/48 local Gemma DT outputs reached cap
+DecodingTrust,qwen35_9b,48,0,0,inspect truncation and validity counts
+DecodingTrust,kimi_k3,48,0,0,inspect truncation and validity counts
+DecodingTrust,gpt56_luna,48,0,0,inspect truncation and validity counts
+DecodingTrust,gemini36_flash,48,2,0,inspect truncation and validity counts
+DecodingTrust,mimo_v25,48,2,0,inspect truncation and validity counts
+DecodingTrust,minimax_m3,48,5,1,inspect truncation and validity counts
+DecodingTrust,step37_flash,48,0,0,inspect truncation and validity counts
+DecodingTrust,grok46,48,1,0,inspect truncation and validity counts
+BOLD,gemma_local,100,0,0,inspect truncation and validity counts
+BOLD,qwen35_9b,100,0,2,inspect truncation and validity counts
+BOLD,kimi_k3,100,0,0,inspect truncation and validity counts
+BOLD,gpt56_luna,100,0,0,inspect truncation and validity counts
+BOLD,gemini36_flash,100,0,0,inspect truncation and validity counts
+BOLD,mimo_v25,100,0,0,inspect truncation and validity counts
+BOLD,minimax_m3,100,0,0,inspect truncation and validity counts
+BOLD,step37_flash,100,3,3,inspect truncation and validity counts
+BOLD,grok46,100,0,0,inspect truncation and validity counts

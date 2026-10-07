@@ -1,0 +1,22 @@
+{
+  "device": "cpu",
+  "files": [
+    {
+      "filename": "model.safetensors",
+      "sha256": "48acf03b1fd90ea45c5e91eb3be2f364cee1c1342639962bd4eae1eac2ad2f93"
+    },
+    {
+      "filename": "config.json",
+      "sha256": "41a4c8a0f7408831d2d815e1ca99d4613ce81047532b2b421ea7c47f401e4b60"
+    },
+    {
+      "filename": "preprocessor_config.json",
+      "sha256": "af4eb4d79cf61b47010fc0bc9352ee967579c417423b4917188d809b7e048948"
+    }
+  ],
+  "historical_cache_caveat": "Same pinned model and named source files; historical inference was not rerun. Cached values are explicitly labeled.",
+  "historical_cache_sha256": "021bdaa5d907fe5566fb1c0b7cbf1defa3ff34a37962fa1df46ed0660252acfc",
+  "model_id": "trpakov/vit-face-expression",
+  "revision": "ef0bc6fc34241b6587e7e009e7711357be28c024",
+  "torch_version": "2.8.0"
+}

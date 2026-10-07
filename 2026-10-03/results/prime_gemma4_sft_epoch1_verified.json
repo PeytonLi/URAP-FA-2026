@@ -1,0 +1,43 @@
+{
+  "adapter_sha256": "727597cd56798aac7010acd155f8b0e8f25cf08d5c8194f60e8eed27c416efb5",
+  "adapter_tensors_finite": true,
+  "benchmark_performed": false,
+  "checked_at": "2026-10-06T00:40:02.523391+00:00",
+  "checkpoint_files": 8,
+  "checkpoint_hashes_verified": true,
+  "checkpoint_optimizer_updates": 169,
+  "completed_checkpoint_epoch": 1,
+  "development": {
+    "by_target_category": {
+      "negative": {
+        "chosen_preference_accuracy": 0.8333333333333334,
+        "images": 6,
+        "response_loss": 0.8785476100941499
+      },
+      "positive": {
+        "chosen_preference_accuracy": 1.0,
+        "images": 174,
+        "response_loss": 0.12568841800066888
+      }
+    },
+    "chosen_preference_accuracy": 0.9944444444444445,
+    "epoch": 1,
+    "images": 180,
+    "macro_category_preference_accuracy": 0.9166666666666667,
+    "macro_category_response_loss": 0.5021180140474094,
+    "optimizer_updates_on_development": 0,
+    "response_loss": 0.15078372440378493
+  },
+  "final_epoch_checkpoint_selected": false,
+  "latest_snapshot_optimizer_updates": 202,
+  "lora_B_tensors": 115,
+  "lora_B_tensors_nonzero": 115,
+  "method": "sft",
+  "model": "google/gemma-4-26B-A4B-it",
+  "optimizer_parameter_states": 230,
+  "optimizer_state_steps_verified": [
+    169
+  ],
+  "snapshot_status": "running",
+  "trainable_adapter_parameters": 5744640
+}

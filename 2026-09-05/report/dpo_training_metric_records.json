@@ -1,0 +1,50 @@
+[
+  {
+    "dpo_metric_best_value_full_precision": "not used for checkpoint selection",
+    "dpo_metric_definition": "-log sigmoid(beta*(policy_margin-reference_margin)); beta=0.05",
+    "dpo_metric_direction_definition": "Lower loss / higher policy-minus-reference margin means preference objective learned, not necessarily better sampled bias metrics.",
+    "dpo_metric_final_value_full_precision": 0.6835259458917915,
+    "dpo_metric_formula_or_source": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10_code/src/august3_debiasing/training_core.py",
+    "dpo_metric_history_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10/august10_negative_expression_pilot_v4/training/mean_lr2e-5/training_loss_history.csv",
+    "dpo_metric_interpretation": "Last value describes last training example, not corpus mean or held-out efficacy.",
+    "dpo_metric_logging_frequency": "each gradient microstep (80 rows, 10 optimizer updates)",
+    "dpo_metric_name": "loss",
+    "dpo_metric_unit": "unitless"
+  },
+  {
+    "dpo_metric_best_value_full_precision": "not used for checkpoint selection",
+    "dpo_metric_definition": "Mean response-token log probability chosen minus rejected with trainable adapter",
+    "dpo_metric_direction_definition": "Lower loss / higher policy-minus-reference margin means preference objective learned, not necessarily better sampled bias metrics.",
+    "dpo_metric_final_value_full_precision": -1.46875,
+    "dpo_metric_formula_or_source": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10_code/src/august3_debiasing/training_core.py",
+    "dpo_metric_history_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10/august10_negative_expression_pilot_v4/training/mean_lr2e-5/training_loss_history.csv",
+    "dpo_metric_interpretation": "Last value describes last training example, not corpus mean or held-out efficacy.",
+    "dpo_metric_logging_frequency": "each gradient microstep (80 rows, 10 optimizer updates)",
+    "dpo_metric_name": "policy_margin",
+    "dpo_metric_unit": "unitless"
+  },
+  {
+    "dpo_metric_best_value_full_precision": "not used for checkpoint selection",
+    "dpo_metric_definition": "Same chosen-minus-rejected margin with frozen base, adapter disabled",
+    "dpo_metric_direction_definition": "Lower loss / higher policy-minus-reference margin means preference objective learned, not necessarily better sampled bias metrics.",
+    "dpo_metric_final_value_full_precision": -1.85546875,
+    "dpo_metric_formula_or_source": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10_code/src/august3_debiasing/training_core.py",
+    "dpo_metric_history_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10/august10_negative_expression_pilot_v4/training/mean_lr2e-5/training_loss_history.csv",
+    "dpo_metric_interpretation": "Last value describes last training example, not corpus mean or held-out efficacy.",
+    "dpo_metric_logging_frequency": "each gradient microstep (80 rows, 10 optimizer updates)",
+    "dpo_metric_name": "reference_margin",
+    "dpo_metric_unit": "unitless"
+  },
+  {
+    "dpo_metric_best_value_full_precision": "not used for checkpoint selection",
+    "dpo_metric_definition": "Derivative of DPO loss with respect to policy margin: -beta*sigmoid(-beta*(policy_margin-reference_margin))",
+    "dpo_metric_direction_definition": "Lower loss / higher policy-minus-reference margin means preference objective learned, not necessarily better sampled bias metrics.",
+    "dpo_metric_final_value_full_precision": -0.02475830831147982,
+    "dpo_metric_formula_or_source": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10_code/src/august3_debiasing/training_core.py",
+    "dpo_metric_history_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10/august10_negative_expression_pilot_v4/training/mean_lr2e-5/training_loss_history.csv",
+    "dpo_metric_interpretation": "Last value describes last training example, not corpus mean or held-out efficacy.",
+    "dpo_metric_logging_frequency": "each gradient microstep (80 rows, 10 optimizer updates)",
+    "dpo_metric_name": "gradient_coefficient",
+    "dpo_metric_unit": "unitless"
+  }
+]

@@ -1,0 +1,117 @@
+{
+  "catalog_snapshot": {
+    "architecture": {
+      "input_modalities": [
+        "text",
+        "image",
+        "file"
+      ],
+      "instruct_type": null,
+      "modality": "text+image+file->text",
+      "output_modalities": [
+        "text"
+      ],
+      "tokenizer": "Grok"
+    },
+    "canonical_slug": "x-ai/grok-4.6-20260810",
+    "context_length": 500000,
+    "created": 1786548957,
+    "id": "x-ai/grok-4.6",
+    "name": "SpaceXAI: Grok 4.6",
+    "pricing": {
+      "completion": "0.000006",
+      "input_cache_read": "0.0000005",
+      "overrides": [
+        {
+          "completion": "0.000012",
+          "input_cache_read": "0.000001",
+          "min_prompt_tokens": 200000,
+          "prompt": "0.000004"
+        }
+      ],
+      "prompt": "0.000002",
+      "web_search": "0.005"
+    },
+    "selected_endpoint": {
+      "context_length": 500000,
+      "max_completion_tokens": 450000,
+      "max_prompt_tokens": null,
+      "name": "xAI | x-ai/grok-4.6-20260810",
+      "pricing": {
+        "completion": "0.000006",
+        "discount": 0,
+        "input_cache_read": "0.0000005",
+        "overrides": [
+          {
+            "completion": "0.000012",
+            "input_cache_read": "0.000001",
+            "min_prompt_tokens": 200000,
+            "prompt": "0.000004"
+          }
+        ],
+        "prompt": "0.000002",
+        "web_search": "0.005"
+      },
+      "provider_name": "xAI",
+      "quantization": "unknown",
+      "status": 0,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "structured_outputs",
+        "response_format",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "seed",
+        "logprobs",
+        "top_logprobs",
+        "tools",
+        "tool_choice",
+        "reasoning_effort"
+      ],
+      "tag": "xai/zdr"
+    },
+    "supported_parameters": [
+      "include_reasoning",
+      "logprobs",
+      "max_tokens",
+      "reasoning",
+      "reasoning_effort",
+      "response_format",
+      "seed",
+      "stop",
+      "structured_outputs",
+      "temperature",
+      "tool_choice",
+      "tools",
+      "top_k",
+      "top_logprobs",
+      "top_p"
+    ]
+  },
+  "finished_at": "2026-09-05T07:40:25.706879+00:00",
+  "model": {
+    "api_revision_hint": "x-ai/grok-4.6-20260810",
+    "display_name": "Grok 4.6",
+    "key": "grok46",
+    "max_concurrency": 2,
+    "max_tokens": 64,
+    "model_id": "x-ai/grok-4.6",
+    "provider_endpoint": "xai/zdr",
+    "reasoning_effort": "minimal",
+    "release_date": "2026-08-12",
+    "supports_temperature": true,
+    "supports_top_p": true,
+    "weight_access": "closed-source"
+  },
+  "planned_tasks": 36,
+  "probe": false,
+  "provider_fallback": false,
+  "recorded_calls": 36,
+  "response_cost_usd": 0.09746599999999998,
+  "started_at": "2026-09-05T07:35:30.352091+00:00",
+  "status": "complete",
+  "task_contract_sha256": "e858fe45a4ad1ff8cbdad49e276a92c8119a1cf1b714d0180e69f56b16d9ae3e",
+  "valid_responses": 36
+}

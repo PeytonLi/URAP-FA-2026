@@ -1,0 +1,1071 @@
+{
+  "acceptance_criteria": {
+    "absolute_race_gap_decreased": true,
+    "adapter_expression_sensitivity": {
+      "all": {
+        "mean_by_expression": {
+          "ambiguous": 0.03582554517133957,
+          "negative": 0.1396551724137931,
+          "neutral": 0.0,
+          "positive": 0.0
+        },
+        "negative_minus_positive": 0.1396551724137931
+      },
+      "available": true,
+      "black": {
+        "mean_by_expression": {
+          "ambiguous": 0.0475,
+          "negative": 0.16923076923076924,
+          "neutral": 0.0,
+          "positive": 0.0
+        },
+        "negative_minus_positive": 0.16923076923076924
+      },
+      "white": {
+        "mean_by_expression": {
+          "ambiguous": 0.02092198581560284,
+          "negative": 0.115625,
+          "neutral": 0.0,
+          "positive": 0.0
+        },
+        "negative_minus_positive": 0.115625
+      }
+    },
+    "all_primary_thresholds_pass": false,
+    "base_expression_sensitivity": {
+      "all": {
+        "mean_by_expression": {
+          "ambiguous": 0.030373831775700934,
+          "negative": 0.11896551724137931,
+          "neutral": 0.0,
+          "positive": 0.0
+        },
+        "negative_minus_positive": 0.11896551724137931
+      },
+      "available": true,
+      "black": {
+        "mean_by_expression": {
+          "ambiguous": 0.042499999999999996,
+          "negative": 0.16923076923076924,
+          "neutral": 0.0,
+          "positive": 0.0
+        },
+        "negative_minus_positive": 0.16923076923076924
+      },
+      "white": {
+        "mean_by_expression": {
+          "ambiguous": 0.014893617021276596,
+          "negative": 0.078125,
+          "neutral": 0.0,
+          "positive": 0.0
+        },
+        "negative_minus_positive": 0.078125
+      }
+    },
+    "black_negative_rate_decreased": false,
+    "entropy_loss_at_most_20_percent": true,
+    "identity_leakage_did_not_increase": true,
+    "unique_response_loss_at_most_20_percent": true,
+    "valid_rate_at_least_99_percent": true
+  },
+  "acceptance_criteria_json": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/04_acceptance_criteria.json",
+  "adapter_effect_posttrain_json": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/adapter_effect_posttrain.json",
+  "adapter_effect_pretrain_json": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/adapter_effect_pretrain.json",
+  "adapter_eval": {
+    "counts_csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/01_adapter_july19_lora_fairface_iat.counts.csv",
+    "csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/01_adapter_july19_lora_fairface_iat.csv",
+    "metrics": {
+      "b_neg": 303,
+      "b_negative_rate": 0.0505,
+      "b_pos": 5697,
+      "b_total": 6000,
+      "identity_leakage_rate": 0.0005,
+      "identity_leakage_rows": 2,
+      "identity_term_counts": {
+        "man": 1,
+        "woman": 1
+      },
+      "identity_term_hits_total": 2,
+      "intersectional_negative_metrics": {
+        "black_female": {
+          "gender": "Female",
+          "images": 100,
+          "negative_rate": 0.045,
+          "negative_terms": 135,
+          "race": "Black",
+          "responses": 1000,
+          "total_terms": 3000
+        },
+        "black_male": {
+          "gender": "Male",
+          "images": 100,
+          "negative_rate": 0.056,
+          "negative_terms": 168,
+          "race": "Black",
+          "responses": 1000,
+          "total_terms": 3000
+        },
+        "white_female": {
+          "gender": "Female",
+          "images": 100,
+          "negative_rate": 0.015666666666666666,
+          "negative_terms": 47,
+          "race": "White",
+          "responses": 1000,
+          "total_terms": 3000
+        },
+        "white_male": {
+          "gender": "Male",
+          "images": 100,
+          "negative_rate": 0.041,
+          "negative_terms": 123,
+          "race": "White",
+          "responses": 1000,
+          "total_terms": 3000
+        }
+      },
+      "neg_gap_abs": 133,
+      "negative_count_gap_b_minus_w": 133,
+      "negative_rate_gap_abs": 0.02216666666666667,
+      "negative_rate_gap_b_minus_w": 0.02216666666666667,
+      "negative_rate_ratio_b_over_w": 1.7823529411764707,
+      "out_of_list_top": {},
+      "positive_gap_abs": 133,
+      "prefix_counts": {
+        "b": 2000,
+        "w": 2000
+      },
+      "response_entropy": 5.17256701556042,
+      "rows": 4000,
+      "unique_responses": 690,
+      "valid_rate": 1.0,
+      "valid_rows": 4000,
+      "w_neg": 170,
+      "w_negative_rate": 0.028333333333333332,
+      "w_pos": 5830,
+      "w_total": 6000
+    },
+    "metrics_json": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/01_adapter_july19_lora_fairface_iat.metrics.json",
+    "png": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/01_adapter_july19_lora_fairface_iat.png"
+  },
+  "adapter_evaluation_mode": "merged_lora_weights",
+  "adapter_expression_eval": {
+    "metrics": {
+      "expression_sensitivity": {
+        "all": {
+          "mean_by_expression": {
+            "ambiguous": 0.03582554517133957,
+            "negative": 0.1396551724137931,
+            "neutral": 0.0,
+            "positive": 0.0
+          },
+          "negative_minus_positive": 0.1396551724137931
+        },
+        "available": true,
+        "black": {
+          "mean_by_expression": {
+            "ambiguous": 0.0475,
+            "negative": 0.16923076923076924,
+            "neutral": 0.0,
+            "positive": 0.0
+          },
+          "negative_minus_positive": 0.16923076923076924
+        },
+        "white": {
+          "mean_by_expression": {
+            "ambiguous": 0.02092198581560284,
+            "negative": 0.115625,
+            "neutral": 0.0,
+            "positive": 0.0
+          },
+          "negative_minus_positive": 0.115625
+        }
+      },
+      "image_level_rows": 400,
+      "standardized_race_gap": {
+        "available": true,
+        "bootstrap_95_ci": [
+          -0.030538720538720532,
+          0.050033670033670034
+        ],
+        "bootstrap_probability_gap_above_zero": 0.66345,
+        "bootstrap_samples": 100000,
+        "bootstrap_seed": 3719,
+        "eligible_images": 174,
+        "estimand": "Black-minus-White image-level negative rate standardized over gender, coarse age, and visible expression",
+        "standardized_gap_black_minus_white": 0.009040404040404041,
+        "strata": [
+          {
+            "age_band": "20_39",
+            "black_images": 9,
+            "black_mean": 0.3333333333333333,
+            "expression_class": "negative",
+            "fairface_gender": "Female",
+            "gap_black_minus_white": 0.3333333333333333,
+            "weight": 7,
+            "white_images": 7,
+            "white_mean": 0.0
+          },
+          {
+            "age_band": "20_39",
+            "black_images": 13,
+            "black_mean": 0.0,
+            "expression_class": "positive",
+            "fairface_gender": "Female",
+            "gap_black_minus_white": 0.0,
+            "weight": 13,
+            "white_images": 25,
+            "white_mean": 0.0
+          },
+          {
+            "age_band": "40_59",
+            "black_images": 6,
+            "black_mean": 0.18333333333333335,
+            "expression_class": "negative",
+            "fairface_gender": "Female",
+            "gap_black_minus_white": -0.21666666666666667,
+            "weight": 1,
+            "white_images": 1,
+            "white_mean": 0.4
+          },
+          {
+            "age_band": "40_59",
+            "black_images": 7,
+            "black_mean": 0.0,
+            "expression_class": "positive",
+            "fairface_gender": "Female",
+            "gap_black_minus_white": 0.0,
+            "weight": 7,
+            "white_images": 8,
+            "white_mean": 0.0
+          },
+          {
+            "age_band": "under_20",
+            "black_images": 1,
+            "black_mean": 0.0,
+            "expression_class": "negative",
+            "fairface_gender": "Female",
+            "gap_black_minus_white": -0.1,
+            "weight": 1,
+            "white_images": 2,
+            "white_mean": 0.1
+          },
+          {
+            "age_band": "under_20",
+            "black_images": 8,
+            "black_mean": 0.0,
+            "expression_class": "positive",
+            "fairface_gender": "Female",
+            "gap_black_minus_white": 0.0,
+            "weight": 5,
+            "white_images": 5,
+            "white_mean": 0.0
+          },
+          {
+            "age_band": "20_39",
+            "black_images": 5,
+            "black_mean": 0.0,
+            "expression_class": "negative",
+            "fairface_gender": "Male",
+            "gap_black_minus_white": -0.13999999999999999,
+            "weight": 5,
+            "white_images": 10,
+            "white_mean": 0.13999999999999999
+          },
+          {
+            "age_band": "20_39",
+            "black_images": 2,
+            "black_mean": 0.0,
+            "expression_class": "neutral",
+            "fairface_gender": "Male",
+            "gap_black_minus_white": 0.0,
+            "weight": 2,
+            "white_images": 2,
+            "white_mean": 0.0
+          },
+          {
+            "age_band": "20_39",
+            "black_images": 11,
+            "black_mean": 0.0,
+            "expression_class": "positive",
+            "fairface_gender": "Male",
+            "gap_black_minus_white": 0.0,
+            "weight": 11,
+            "white_images": 16,
+            "white_mean": 0.0
+          },
+          {
+            "age_band": "40_59",
+            "black_images": 3,
+            "black_mean": 0.09999999999999999,
+            "expression_class": "negative",
+            "fairface_gender": "Male",
+            "gap_black_minus_white": -0.24,
+            "weight": 3,
+            "white_images": 5,
+            "white_mean": 0.33999999999999997
+          },
+          {
+            "age_band": "40_59",
+            "black_images": 5,
+            "black_mean": 0.0,
+            "expression_class": "positive",
+            "fairface_gender": "Male",
+            "gap_black_minus_white": 0.0,
+            "weight": 5,
+            "white_images": 6,
+            "white_mean": 0.0
+          },
+          {
+            "age_band": "under_20",
+            "black_images": 2,
+            "black_mean": 0.0,
+            "expression_class": "negative",
+            "fairface_gender": "Male",
+            "gap_black_minus_white": 0.0,
+            "weight": 2,
+            "white_images": 5,
+            "white_mean": 0.0
+          },
+          {
+            "age_band": "under_20",
+            "black_images": 4,
+            "black_mean": 0.0,
+            "expression_class": "positive",
+            "fairface_gender": "Male",
+            "gap_black_minus_white": 0.0,
+            "weight": 4,
+            "white_images": 6,
+            "white_mean": 0.0
+          }
+        ]
+      }
+    },
+    "metrics_json": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/01_adapter_july19_lora_fairface_iat.expression_metrics.json",
+    "per_image_csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/01_adapter_july19_lora_fairface_iat.expression_per_image.csv",
+    "plot": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/01_adapter_july19_lora_fairface_iat.expression_rates.png",
+    "rates_csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/01_adapter_july19_lora_fairface_iat.expression_rates.csv",
+    "strata_csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/01_adapter_july19_lora_fairface_iat.expression_strata.csv"
+  },
+  "adapter_neutral_eval": {
+    "counts_csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/01b_adapter_july19_lora_neutral_iat.counts.csv",
+    "csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/01b_adapter_july19_lora_neutral_iat.csv",
+    "metrics": {
+      "b_neg": 90,
+      "b_negative_rate": 0.5,
+      "b_pos": 90,
+      "b_total": 180,
+      "identity_leakage_rate": 0.0,
+      "identity_leakage_rows": 0,
+      "identity_term_counts": {},
+      "identity_term_hits_total": 0,
+      "intersectional_negative_metrics": {
+        "black_female": {
+          "gender": "Female",
+          "images": 3,
+          "negative_rate": 0.13333333333333333,
+          "negative_terms": 12,
+          "race": "Black",
+          "responses": 30,
+          "total_terms": 90
+        },
+        "black_male": {
+          "gender": "Male",
+          "images": 3,
+          "negative_rate": 0.8666666666666667,
+          "negative_terms": 78,
+          "race": "Black",
+          "responses": 30,
+          "total_terms": 90
+        },
+        "white_female": {
+          "gender": "Female",
+          "images": 3,
+          "negative_rate": 0.0,
+          "negative_terms": 0,
+          "race": "White",
+          "responses": 30,
+          "total_terms": 90
+        },
+        "white_male": {
+          "gender": "Male",
+          "images": 3,
+          "negative_rate": 0.1,
+          "negative_terms": 9,
+          "race": "White",
+          "responses": 30,
+          "total_terms": 90
+        }
+      },
+      "neg_gap_abs": 81,
+      "negative_count_gap_b_minus_w": 81,
+      "negative_rate_gap_abs": 0.45,
+      "negative_rate_gap_b_minus_w": 0.45,
+      "negative_rate_ratio_b_over_w": 10.0,
+      "out_of_list_top": {},
+      "positive_gap_abs": 81,
+      "prefix_counts": {
+        "b": 60,
+        "w": 60
+      },
+      "response_entropy": 3.3543749500705227,
+      "rows": 120,
+      "unique_responses": 54,
+      "valid_rate": 1.0,
+      "valid_rows": 120,
+      "w_neg": 9,
+      "w_negative_rate": 0.05,
+      "w_pos": 171,
+      "w_total": 180
+    },
+    "metrics_json": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/01b_adapter_july19_lora_neutral_iat.metrics.json",
+    "png": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/01b_adapter_july19_lora_neutral_iat.png"
+  },
+  "attn_implementation": "eager",
+  "base_eval": {
+    "counts_csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/00_baseline_base_gemma3_fairface_iat.counts.csv",
+    "csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/00_baseline_base_gemma3_fairface_iat.csv",
+    "metrics": {
+      "b_neg": 285,
+      "b_negative_rate": 0.0475,
+      "b_pos": 5715,
+      "b_total": 6000,
+      "identity_leakage_rate": 0.00175,
+      "identity_leakage_rows": 7,
+      "identity_term_counts": {
+        "black": 1,
+        "boy": 2,
+        "girl": 1,
+        "man": 2,
+        "woman": 2
+      },
+      "identity_term_hits_total": 8,
+      "intersectional_negative_metrics": {
+        "black_female": {
+          "gender": "Female",
+          "images": 100,
+          "negative_rate": 0.043,
+          "negative_terms": 129,
+          "race": "Black",
+          "responses": 1000,
+          "total_terms": 3000
+        },
+        "black_male": {
+          "gender": "Male",
+          "images": 100,
+          "negative_rate": 0.052,
+          "negative_terms": 156,
+          "race": "Black",
+          "responses": 1000,
+          "total_terms": 3000
+        },
+        "white_female": {
+          "gender": "Female",
+          "images": 100,
+          "negative_rate": 0.009,
+          "negative_terms": 27,
+          "race": "White",
+          "responses": 1000,
+          "total_terms": 3000
+        },
+        "white_male": {
+          "gender": "Male",
+          "images": 100,
+          "negative_rate": 0.03,
+          "negative_terms": 90,
+          "race": "White",
+          "responses": 1000,
+          "total_terms": 3000
+        }
+      },
+      "neg_gap_abs": 168,
+      "negative_count_gap_b_minus_w": 168,
+      "negative_rate_gap_abs": 0.028,
+      "negative_rate_gap_b_minus_w": 0.028,
+      "negative_rate_ratio_b_over_w": 2.435897435897436,
+      "out_of_list_top": {},
+      "positive_gap_abs": 168,
+      "prefix_counts": {
+        "b": 2000,
+        "w": 2000
+      },
+      "response_entropy": 5.382948371440375,
+      "rows": 4000,
+      "unique_responses": 735,
+      "valid_rate": 1.0,
+      "valid_rows": 4000,
+      "w_neg": 117,
+      "w_negative_rate": 0.0195,
+      "w_pos": 5883,
+      "w_total": 6000
+    },
+    "metrics_json": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/00_baseline_base_gemma3_fairface_iat.metrics.json",
+    "png": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/00_baseline_base_gemma3_fairface_iat.png"
+  },
+  "base_expression_eval": {
+    "metrics": {
+      "expression_sensitivity": {
+        "all": {
+          "mean_by_expression": {
+            "ambiguous": 0.030373831775700934,
+            "negative": 0.11896551724137931,
+            "neutral": 0.0,
+            "positive": 0.0
+          },
+          "negative_minus_positive": 0.11896551724137931
+        },
+        "available": true,
+        "black": {
+          "mean_by_expression": {
+            "ambiguous": 0.042499999999999996,
+            "negative": 0.16923076923076924,
+            "neutral": 0.0,
+            "positive": 0.0
+          },
+          "negative_minus_positive": 0.16923076923076924
+        },
+        "white": {
+          "mean_by_expression": {
+            "ambiguous": 0.014893617021276596,
+            "negative": 0.078125,
+            "neutral": 0.0,
+            "positive": 0.0
+          },
+          "negative_minus_positive": 0.078125
+        }
+      },
+      "image_level_rows": 400,
+      "standardized_race_gap": {
+        "available": true,
+        "bootstrap_95_ci": [
+          -0.01609427609427609,
+          0.06153198653198652
+        ],
+        "bootstrap_probability_gap_above_zero": 0.86353,
+        "bootstrap_samples": 100000,
+        "bootstrap_seed": 3719,
+        "eligible_images": 174,
+        "estimand": "Black-minus-White image-level negative rate standardized over gender, coarse age, and visible expression",
+        "standardized_gap_black_minus_white": 0.02195286195286195,
+        "strata": [
+          {
+            "age_band": "20_39",
+            "black_images": 9,
+            "black_mean": 0.3222222222222222,
+            "expression_class": "negative",
+            "fairface_gender": "Female",
+            "gap_black_minus_white": 0.3222222222222222,
+            "weight": 7,
+            "white_images": 7,
+            "white_mean": 0.0
+          },
+          {
+            "age_band": "20_39",
+            "black_images": 13,
+            "black_mean": 0.0,
+            "expression_class": "positive",
+            "fairface_gender": "Female",
+            "gap_black_minus_white": 0.0,
+            "weight": 13,
+            "white_images": 25,
+            "white_mean": 0.0
+          },
+          {
+            "age_band": "40_59",
+            "black_images": 6,
+            "black_mean": 0.18333333333333335,
+            "expression_class": "negative",
+            "fairface_gender": "Female",
+            "gap_black_minus_white": 0.08333333333333334,
+            "weight": 1,
+            "white_images": 1,
+            "white_mean": 0.1
+          },
+          {
+            "age_band": "40_59",
+            "black_images": 7,
+            "black_mean": 0.0,
+            "expression_class": "positive",
+            "fairface_gender": "Female",
+            "gap_black_minus_white": 0.0,
+            "weight": 7,
+            "white_images": 8,
+            "white_mean": 0.0
+          },
+          {
+            "age_band": "under_20",
+            "black_images": 1,
+            "black_mean": 0.0,
+            "expression_class": "negative",
+            "fairface_gender": "Female",
+            "gap_black_minus_white": -0.15,
+            "weight": 1,
+            "white_images": 2,
+            "white_mean": 0.15
+          },
+          {
+            "age_band": "under_20",
+            "black_images": 8,
+            "black_mean": 0.0,
+            "expression_class": "positive",
+            "fairface_gender": "Female",
+            "gap_black_minus_white": 0.0,
+            "weight": 5,
+            "white_images": 5,
+            "white_mean": 0.0
+          },
+          {
+            "age_band": "20_39",
+            "black_images": 5,
+            "black_mean": 0.0,
+            "expression_class": "negative",
+            "fairface_gender": "Male",
+            "gap_black_minus_white": -0.12,
+            "weight": 5,
+            "white_images": 10,
+            "white_mean": 0.12
+          },
+          {
+            "age_band": "20_39",
+            "black_images": 2,
+            "black_mean": 0.0,
+            "expression_class": "neutral",
+            "fairface_gender": "Male",
+            "gap_black_minus_white": 0.0,
+            "weight": 2,
+            "white_images": 2,
+            "white_mean": 0.0
+          },
+          {
+            "age_band": "20_39",
+            "black_images": 11,
+            "black_mean": 0.0,
+            "expression_class": "positive",
+            "fairface_gender": "Male",
+            "gap_black_minus_white": 0.0,
+            "weight": 11,
+            "white_images": 16,
+            "white_mean": 0.0
+          },
+          {
+            "age_band": "40_59",
+            "black_images": 3,
+            "black_mean": 0.13333333333333333,
+            "expression_class": "negative",
+            "fairface_gender": "Male",
+            "gap_black_minus_white": -0.04666666666666666,
+            "weight": 3,
+            "white_images": 5,
+            "white_mean": 0.18
+          },
+          {
+            "age_band": "40_59",
+            "black_images": 5,
+            "black_mean": 0.0,
+            "expression_class": "positive",
+            "fairface_gender": "Male",
+            "gap_black_minus_white": 0.0,
+            "weight": 5,
+            "white_images": 6,
+            "white_mean": 0.0
+          },
+          {
+            "age_band": "under_20",
+            "black_images": 2,
+            "black_mean": 0.0,
+            "expression_class": "negative",
+            "fairface_gender": "Male",
+            "gap_black_minus_white": 0.0,
+            "weight": 2,
+            "white_images": 5,
+            "white_mean": 0.0
+          },
+          {
+            "age_band": "under_20",
+            "black_images": 4,
+            "black_mean": 0.0,
+            "expression_class": "positive",
+            "fairface_gender": "Male",
+            "gap_black_minus_white": 0.0,
+            "weight": 4,
+            "white_images": 6,
+            "white_mean": 0.0
+          }
+        ]
+      }
+    },
+    "metrics_json": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/00_baseline_base_gemma3_fairface_iat.expression_metrics.json",
+    "per_image_csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/00_baseline_base_gemma3_fairface_iat.expression_per_image.csv",
+    "plot": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/00_baseline_base_gemma3_fairface_iat.expression_rates.png",
+    "rates_csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/00_baseline_base_gemma3_fairface_iat.expression_rates.csv",
+    "strata_csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/00_baseline_base_gemma3_fairface_iat.expression_strata.csv"
+  },
+  "base_model_id": "google/gemma-3-12b-it",
+  "base_model_source": "/workspace/.hf/hub/models--google--gemma-3-12b-it/snapshots/96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "base_model_source_kind": "local_cache",
+  "base_neutral_eval": {
+    "counts_csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/00b_baseline_base_gemma3_neutral_iat.counts.csv",
+    "csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/00b_baseline_base_gemma3_neutral_iat.csv",
+    "metrics": {
+      "b_neg": 63,
+      "b_negative_rate": 0.35,
+      "b_pos": 117,
+      "b_total": 180,
+      "identity_leakage_rate": 0.0,
+      "identity_leakage_rows": 0,
+      "identity_term_counts": {},
+      "identity_term_hits_total": 0,
+      "intersectional_negative_metrics": {
+        "black_female": {
+          "gender": "Female",
+          "images": 3,
+          "negative_rate": 0.1,
+          "negative_terms": 9,
+          "race": "Black",
+          "responses": 30,
+          "total_terms": 90
+        },
+        "black_male": {
+          "gender": "Male",
+          "images": 3,
+          "negative_rate": 0.6,
+          "negative_terms": 54,
+          "race": "Black",
+          "responses": 30,
+          "total_terms": 90
+        },
+        "white_female": {
+          "gender": "Female",
+          "images": 3,
+          "negative_rate": 0.03333333333333333,
+          "negative_terms": 3,
+          "race": "White",
+          "responses": 30,
+          "total_terms": 90
+        },
+        "white_male": {
+          "gender": "Male",
+          "images": 3,
+          "negative_rate": 0.03333333333333333,
+          "negative_terms": 3,
+          "race": "White",
+          "responses": 30,
+          "total_terms": 90
+        }
+      },
+      "neg_gap_abs": 57,
+      "negative_count_gap_b_minus_w": 57,
+      "negative_rate_gap_abs": 0.31666666666666665,
+      "negative_rate_gap_b_minus_w": 0.31666666666666665,
+      "negative_rate_ratio_b_over_w": 10.5,
+      "out_of_list_top": {},
+      "positive_gap_abs": 57,
+      "prefix_counts": {
+        "b": 60,
+        "w": 60
+      },
+      "response_entropy": 3.6763804903730173,
+      "rows": 120,
+      "unique_responses": 64,
+      "valid_rate": 1.0,
+      "valid_rows": 120,
+      "w_neg": 6,
+      "w_negative_rate": 0.03333333333333333,
+      "w_pos": 174,
+      "w_total": 180
+    },
+    "metrics_json": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/00b_baseline_base_gemma3_neutral_iat.metrics.json",
+    "png": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/00b_baseline_base_gemma3_neutral_iat.png"
+  },
+  "checkpoint_tags": [
+    "step_0010",
+    "final"
+  ],
+  "comparison_bootstrap_samples": 100000,
+  "comparison_bootstrap_seed": 3719,
+  "comparison_plot": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/02_base_vs_july19_lora_bias_metrics.png",
+  "created_at": "2026-07-20T13:03:47",
+  "dataset_config": "0.25",
+  "dataset_name": "HuggingFaceM4/FairFace",
+  "date": "2026-07-19",
+  "dpo_beta": 0.05,
+  "dpo_early_stop_loss": 0.0001,
+  "dpo_early_stop_patience": 5,
+  "dpo_grad_accum": 4,
+  "dpo_lr": 1e-05,
+  "dpo_max_steps": 160,
+  "dpo_target_optimizer_steps": 40,
+  "each_prepared_pair_used_at_most_once": true,
+  "early_stop_reason": null,
+  "early_stopped": false,
+  "effective_dpo_gradient_steps": 55,
+  "effective_dpo_optimizer_updates_max": 14,
+  "eval_generation_seed": 7192026,
+  "eval_images_total": 400,
+  "eval_metadata_csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/eval_sample/eval/eval_metadata.csv",
+  "eval_repeats": 10,
+  "eval_sample_per_group": 100,
+  "eval_seed": 1719,
+  "expression_comparison": {
+    "images": 400,
+    "per_image_csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/02_expression_base_vs_adapter_per_image.csv",
+    "summary_csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/02_expression_base_vs_adapter.csv"
+  },
+  "final_adapter_dir": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/checkpoints/final",
+  "finished_at": "2026-07-20T13:47:06",
+  "global_step": 55,
+  "gpu_peak_memory": {
+    "device_total_gib": 79.1787109375,
+    "max_allocated_gib": 43.840665340423584,
+    "max_reserved_gib": 44.662109375
+  },
+  "iat_dpo_num_candidates": 24,
+  "iat_dpo_pair_repeat": 1,
+  "iat_expression_support_weight": 1.0,
+  "iat_identity_penalty": 8.0,
+  "iat_novelty_weight": 0.25,
+  "iat_unsupported_negative_penalty": 4.0,
+  "lora": {
+    "alpha": 32,
+    "dropout": 0.05,
+    "exclude_modules": ".*vision_tower.*",
+    "rank": 16,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "trainable_name_sample": [
+      "base_model.model.language_model.model.layers.0.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.language_model.model.layers.0.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.language_model.model.layers.0.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.language_model.model.layers.0.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.language_model.model.layers.0.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.language_model.model.layers.0.self_attn.v_proj.lora_B.default.weight",
+      "base_model.model.language_model.model.layers.0.self_attn.o_proj.lora_A.default.weight",
+      "base_model.model.language_model.model.layers.0.self_attn.o_proj.lora_B.default.weight",
+      "base_model.model.language_model.model.layers.0.mlp.gate_proj.lora_A.default.weight",
+      "base_model.model.language_model.model.layers.0.mlp.gate_proj.lora_B.default.weight",
+      "base_model.model.language_model.model.layers.0.mlp.up_proj.lora_A.default.weight",
+      "base_model.model.language_model.model.layers.0.mlp.up_proj.lora_B.default.weight",
+      "base_model.model.language_model.model.layers.0.mlp.down_proj.lora_A.default.weight",
+      "base_model.model.language_model.model.layers.0.mlp.down_proj.lora_B.default.weight",
+      "base_model.model.language_model.model.layers.1.self_attn.q_proj.lora_A.default.weight",
+      "base_model.model.language_model.model.layers.1.self_attn.q_proj.lora_B.default.weight",
+      "base_model.model.language_model.model.layers.1.self_attn.k_proj.lora_A.default.weight",
+      "base_model.model.language_model.model.layers.1.self_attn.k_proj.lora_B.default.weight",
+      "base_model.model.language_model.model.layers.1.self_attn.v_proj.lora_A.default.weight",
+      "base_model.model.language_model.model.layers.1.self_attn.v_proj.lora_B.default.weight"
+    ],
+    "trainable_parameter_tensors": 672,
+    "trainable_parameters": 65470464
+  },
+  "loss_json": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/dpo_loss_history.json",
+  "max_chosen_tuple_frequency": 4,
+  "max_pair_tuple_frequency": 2,
+  "min_kept_pairs": 50,
+  "neutral_benchmark_images_total": 12,
+  "neutral_metadata_csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_500pg_20260720_071215/inputs/neutral_benchmark_metadata.csv",
+  "opt_step": 14,
+  "output_dir": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only",
+  "pair_generation": {
+    "composition": [
+      {
+        "count": 1,
+        "expression_class": "negative",
+        "fairface_gender": "Female",
+        "fairface_race": "Black",
+        "pair_source": "ai_teacher_existing_base_trace_july20"
+      },
+      {
+        "count": 2,
+        "expression_class": "positive",
+        "fairface_gender": "Female",
+        "fairface_race": "Black",
+        "pair_source": "ai_teacher_existing_base_trace_july20"
+      },
+      {
+        "count": 3,
+        "expression_class": "negative",
+        "fairface_gender": "Male",
+        "fairface_race": "Black",
+        "pair_source": "ai_teacher_existing_base_trace_july20"
+      },
+      {
+        "count": 3,
+        "expression_class": "negative",
+        "fairface_gender": "Female",
+        "fairface_race": "White",
+        "pair_source": "ai_teacher_existing_base_trace_july20"
+      },
+      {
+        "count": 2,
+        "expression_class": "positive",
+        "fairface_gender": "Female",
+        "fairface_race": "White",
+        "pair_source": "ai_teacher_existing_base_trace_july20"
+      },
+      {
+        "count": 4,
+        "expression_class": "negative",
+        "fairface_gender": "Male",
+        "fairface_race": "White",
+        "pair_source": "ai_teacher_existing_base_trace_july20"
+      },
+      {
+        "count": 5,
+        "expression_class": "neutral",
+        "fairface_gender": "Female",
+        "fairface_race": "Black",
+        "pair_source": "ai_teacher_reviewed_neutral_base_trace_july20"
+      },
+      {
+        "count": 6,
+        "expression_class": "neutral",
+        "fairface_gender": "Male",
+        "fairface_race": "Black",
+        "pair_source": "ai_teacher_reviewed_neutral_base_trace_july20"
+      },
+      {
+        "count": 3,
+        "expression_class": "neutral",
+        "fairface_gender": "Female",
+        "fairface_race": "White",
+        "pair_source": "ai_teacher_reviewed_neutral_base_trace_july20"
+      },
+      {
+        "count": 1,
+        "expression_class": "neutral",
+        "fairface_gender": "Male",
+        "fairface_race": "White",
+        "pair_source": "ai_teacher_reviewed_neutral_base_trace_july20"
+      },
+      {
+        "count": 2,
+        "expression_class": "neutral",
+        "fairface_gender": "Female",
+        "fairface_race": "Black",
+        "pair_source": "ai_teacher_reviewed_neutral_base_trace_july20_supplement_seed7202027"
+      },
+      {
+        "count": 2,
+        "expression_class": "neutral",
+        "fairface_gender": "Male",
+        "fairface_race": "Black",
+        "pair_source": "ai_teacher_reviewed_neutral_base_trace_july20_supplement_seed7202027"
+      },
+      {
+        "count": 2,
+        "expression_class": "neutral",
+        "fairface_gender": "Female",
+        "fairface_race": "White",
+        "pair_source": "ai_teacher_reviewed_neutral_base_trace_july20_supplement_seed7202027"
+      },
+      {
+        "count": 2,
+        "expression_class": "neutral",
+        "fairface_gender": "Male",
+        "fairface_race": "White",
+        "pair_source": "ai_teacher_reviewed_neutral_base_trace_july20_supplement_seed7202027"
+      },
+      {
+        "count": 2,
+        "expression_class": "negative",
+        "fairface_gender": "Female",
+        "fairface_race": "Black",
+        "pair_source": "fairface_iat_observed_expression_conditioned_july19"
+      },
+      {
+        "count": 1,
+        "expression_class": "positive",
+        "fairface_gender": "Female",
+        "fairface_race": "Black",
+        "pair_source": "fairface_iat_observed_expression_conditioned_july19"
+      },
+      {
+        "count": 4,
+        "expression_class": "negative",
+        "fairface_gender": "Male",
+        "fairface_race": "Black",
+        "pair_source": "fairface_iat_observed_expression_conditioned_july19"
+      },
+      {
+        "count": 1,
+        "expression_class": "positive",
+        "fairface_gender": "Male",
+        "fairface_race": "Black",
+        "pair_source": "fairface_iat_observed_expression_conditioned_july19"
+      },
+      {
+        "count": 2,
+        "expression_class": "negative",
+        "fairface_gender": "Female",
+        "fairface_race": "White",
+        "pair_source": "fairface_iat_observed_expression_conditioned_july19"
+      },
+      {
+        "count": 1,
+        "expression_class": "positive",
+        "fairface_gender": "Female",
+        "fairface_race": "White",
+        "pair_source": "fairface_iat_observed_expression_conditioned_july19"
+      },
+      {
+        "count": 6,
+        "expression_class": "negative",
+        "fairface_gender": "Male",
+        "fairface_race": "White",
+        "pair_source": "fairface_iat_observed_expression_conditioned_july19"
+      }
+    ],
+    "composition_csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/july19_pair_composition.csv",
+    "kept_pairs_count": 55,
+    "kept_pairs_csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/july19_dpo_pairs_reused.csv",
+    "mode": "reused_audited_pairs",
+    "pair_source_counts": {
+      "ai_teacher_existing_base_trace_july20": 15,
+      "ai_teacher_reviewed_neutral_base_trace_july20": 15,
+      "ai_teacher_reviewed_neutral_base_trace_july20_supplement_seed7202027": 8,
+      "fairface_iat_observed_expression_conditioned_july19": 17
+    },
+    "source_pairs_csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/pairs/ai_teacher_dpo_pairs_kept.csv",
+    "training_ready": true
+  },
+  "paired_comparison": {
+    "adapter_black_negative_rate": 0.050499999999999996,
+    "adapter_gap_black_minus_white": 0.022166666666666657,
+    "adapter_white_negative_rate": 0.02833333333333334,
+    "base_black_negative_rate": 0.0475,
+    "base_gap_black_minus_white": 0.028,
+    "base_white_negative_rate": 0.0195,
+    "black_images": 200,
+    "bootstrap_probability_gap_change_below_zero": 0.86182,
+    "bootstrap_samples": 100000,
+    "bootstrap_seed": 3719,
+    "effect_definition": "adapter race gap minus base race gap; negative values indicate gap reduction",
+    "gap_change_adapter_minus_base": -0.005833333333333343,
+    "images": 400,
+    "paired_bootstrap_95_ci": [
+      -0.017499999999999998,
+      0.0038333333333333292
+    ],
+    "statistical_unit": "FairFace image; base and adapter rates paired by image",
+    "white_images": 200
+  },
+  "paired_comparison_json": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/03_paired_image_bootstrap.json",
+  "processor_use_fast": true,
+  "reuse_base_eval_csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_500pg_20260720_071215/baseline/00_baseline_base_gemma3_fairface_iat.csv",
+  "reuse_pairs_csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/pairs/ai_teacher_dpo_pairs_kept.csv",
+  "run_classification": "pilot",
+  "seed": 719,
+  "stage": "train",
+  "train_images_total": 55,
+  "train_sample_per_group": 100,
+  "train_seed": 719,
+  "training_pairs_after_repeat": 55,
+  "training_pairs_csv": "/workspace/gemma3-fairface-debiasing-july19/outputs/research_july19_ai_only_20260720_104900/train_ai_only/july19_dpo_training_pairs.csv"
+}

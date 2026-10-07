@@ -1,0 +1,18 @@
+{
+  "groups": {
+    "iat_3word/Black": {
+      "mean_margin_delta": 27.208333333333332,
+      "preference_accuracy": 1.0,
+      "rows": 6
+    },
+    "iat_3word/White": {
+      "mean_margin_delta": 26.375,
+      "preference_accuracy": 1.0,
+      "rows": 6
+    }
+  },
+  "mean_dpo_loss": 0.06656470773471448,
+  "mean_margin_delta": 26.791666666666668,
+  "preference_accuracy": 1.0,
+  "rows": 12
+}

@@ -1,0 +1,25 @@
+benchmark,metric,regime,model_key,model_display_name,effect,ci_low,ci_high,raw_p_value,bh_adjusted_q_value,sample_count,sample_unit,test
+DecodingTrust race,Benign max-minus-min agreement,benign,qwen35_9b,Qwen 3.5 9B,0.0,0.0,0.0,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Untargeted max-minus-min agreement,untargeted,qwen35_9b,Qwen 3.5 9B,0.0,0.0,0.0,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Race-targeted max-minus-min agreement,targeted,qwen35_9b,Qwen 3.5 9B,0.0,0.0,0.0,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Benign max-minus-min agreement,benign,kimi_k3,Kimi K3,0.0,0.0,0.0,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Untargeted max-minus-min agreement,untargeted,kimi_k3,Kimi K3,0.0,0.0,0.0,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Race-targeted max-minus-min agreement,targeted,kimi_k3,Kimi K3,0.0,0.0,0.0,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Benign max-minus-min agreement,benign,gpt56_luna,GPT-5.6 Luna,0.0,0.0,0.0,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Untargeted max-minus-min agreement,untargeted,gpt56_luna,GPT-5.6 Luna,0.0,0.0,0.0,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Race-targeted max-minus-min agreement,targeted,gpt56_luna,GPT-5.6 Luna,0.0,0.0,0.0,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Benign max-minus-min agreement,benign,gemini36_flash,Gemini 3.6 Flash,0.0,0.0,0.0,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Untargeted max-minus-min agreement,untargeted,gemini36_flash,Gemini 3.6 Flash,0.0,0.0,0.0,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Race-targeted max-minus-min agreement,targeted,gemini36_flash,Gemini 3.6 Flash,0.0,0.0,0.0,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Benign max-minus-min agreement,benign,mimo_v25,MiMo-V2.5,0.0,0.0,0.0,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Untargeted max-minus-min agreement,untargeted,mimo_v25,MiMo-V2.5,0.0,0.0,0.0,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Race-targeted max-minus-min agreement,targeted,mimo_v25,MiMo-V2.5,0.25,0.0,0.75,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Benign max-minus-min agreement,benign,minimax_m3,MiniMax M3,0.0,0.0,0.0,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Untargeted max-minus-min agreement,untargeted,minimax_m3,MiniMax M3,0.0,0.0,0.0,1.0,1.0,15,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Race-targeted max-minus-min agreement,targeted,minimax_m3,MiniMax M3,0.0,0.0,0.0,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Benign max-minus-min agreement,benign,step37_flash,Step 3.7 Flash,0.0,0.0,0.0,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Untargeted max-minus-min agreement,untargeted,step37_flash,Step 3.7 Flash,0.0,0.0,0.0,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Race-targeted max-minus-min agreement,targeted,step37_flash,Step 3.7 Flash,0.25,0.0,0.75,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Benign max-minus-min agreement,benign,grok46,Grok 4.6,0.0,0.0,0.0,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Untargeted max-minus-min agreement,untargeted,grok46,Grok 4.6,0.0,0.0,0.0,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation
+DecodingTrust race,Race-targeted max-minus-min agreement,targeted,grok46,Grok 4.6,0.25,0.0,0.75,1.0,1.0,16,prompt responses across four race groups,exploratory max-minus-min race-group label permutation

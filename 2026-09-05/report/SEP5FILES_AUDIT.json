@@ -1,0 +1,110 @@
+[
+  {
+    "benchmark": "IAT",
+    "canonical_path": "reference/august24/results/iat12/responses.csv",
+    "canonical_sha256": "7406ddbc2f93f0d2ade646c775318cdaa301e0b2f5dfcf84d2611462512ad8b0",
+    "columns": 46,
+    "differences": {
+      "boolean_case": 1920,
+      "numeric_format": 3704,
+      "numeric_precision_changed": 1304
+    },
+    "exact_input_text_replay": "Use canonical_path; uploaded spreadsheet exports are not byte-identical",
+    "filename": "Significance Tests - IATresponses.csv",
+    "models": [
+      "gemini36_flash",
+      "gpt56_luna",
+      "grok46",
+      "kimi_k3",
+      "mimo_v25",
+      "minimax_m3",
+      "qwen35_9b",
+      "step37_flash"
+    ],
+    "original_absolute_path": "/Users/eliaswu/Desktop/Junior/Research/sep5files/Significance Tests - IATresponses.csv",
+    "package_path": "data/sep5files/Significance Tests - IATresponses.csv",
+    "prompt_hash_mismatches": "prompt omitted; see frozen protocol",
+    "rows": 960,
+    "run_ids": [
+      "iat12_eight_model_expanded_10x_20260824_v1"
+    ],
+    "source_sha256": "f4913dccf3fccf4cbcf46e384cbeb1d4f802ae6c2d0f077de3094b4db56ed559",
+    "status_counts": {
+      "completed": 952,
+      "invalid": 8
+    },
+    "unique_task_ids": 960
+  },
+  {
+    "benchmark": "DecodingTrust",
+    "canonical_path": "reference/august24/results/decodingtrust/responses.csv",
+    "canonical_sha256": "615756b0ee741d7954b060f3f4c5ceacae6f56f0cf5c25ee7a2cc570c04d2cf0",
+    "columns": 38,
+    "differences": {
+      "numeric_format": 1481,
+      "numeric_precision_changed": 459
+    },
+    "exact_input_text_replay": "Use canonical_path; uploaded spreadsheet exports are not byte-identical",
+    "filename": "Significance Tests - DecodingTrustresponses.csv",
+    "models": [
+      "gemini36_flash",
+      "gpt56_luna",
+      "grok46",
+      "kimi_k3",
+      "mimo_v25",
+      "minimax_m3",
+      "qwen35_9b",
+      "step37_flash"
+    ],
+    "original_absolute_path": "/Users/eliaswu/Desktop/Junior/Research/sep5files/Significance Tests - DecodingTrustresponses.csv",
+    "package_path": "data/sep5files/Significance Tests - DecodingTrustresponses.csv",
+    "prompt_hash_mismatches": 0,
+    "rows": 384,
+    "run_ids": [
+      "decodingtrust_race_eight_model_pilot_20260824_v2"
+    ],
+    "source_sha256": "b4fdd860d20cb8e7aa37a15eda60cdddf807bc4f2cfaddfebbe6408ecdcfeafd",
+    "status_counts": {
+      "completed": 383,
+      "invalid": 1
+    },
+    "unique_task_ids": 384
+  },
+  {
+    "benchmark": "BOLD",
+    "canonical_path": "reference/august24/results/bold/responses.csv",
+    "canonical_sha256": "c0efee8871c1ac061937259307b383ec742d2109cc6f54c186a084e7036c1986",
+    "columns": 38,
+    "differences": {
+      "leading_apostrophe_removed": 2,
+      "numeric_format": 3208,
+      "numeric_precision_changed": 1013,
+      "whitespace_changed": 448
+    },
+    "exact_input_text_replay": "Use canonical_path; uploaded spreadsheet exports are not byte-identical",
+    "filename": "Significance Tests - BOLDresponses.csv",
+    "models": [
+      "gemini36_flash",
+      "gpt56_luna",
+      "grok46",
+      "kimi_k3",
+      "mimo_v25",
+      "minimax_m3",
+      "qwen35_9b",
+      "step37_flash"
+    ],
+    "original_absolute_path": "/Users/eliaswu/Desktop/Junior/Research/sep5files/Significance Tests - BOLDresponses.csv",
+    "package_path": "data/sep5files/Significance Tests - BOLDresponses.csv",
+    "prompt_hash_mismatches": 448,
+    "rows": 800,
+    "run_ids": [
+      "bold_race_eight_model_expanded_20260824_v3"
+    ],
+    "source_sha256": "52f21e3c3c4869823ad19994426c40f7f32e1feb7c6106734272ef51438768a7",
+    "status_counts": {
+      "completed": 795,
+      "invalid": 5
+    },
+    "unique_task_ids": 800
+  }
+]

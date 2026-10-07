@@ -1,0 +1,101 @@
+{
+  "catalog_snapshot": {
+    "architecture": {
+      "input_modalities": [
+        "text",
+        "image",
+        "video"
+      ],
+      "instruct_type": null,
+      "modality": "text+image+video->text",
+      "output_modalities": [
+        "text"
+      ],
+      "tokenizer": "Other"
+    },
+    "canonical_slug": "minimax/minimax-m3-20260531",
+    "context_length": 1048576,
+    "created": 1780245374,
+    "id": "minimax/minimax-m3",
+    "name": "MiniMax: MiniMax M3",
+    "pricing": {
+      "completion": "0.0000012",
+      "input_cache_read": "0.00000006",
+      "prompt": "0.0000003"
+    },
+    "selected_endpoint": {
+      "context_length": 524288,
+      "max_completion_tokens": 65536,
+      "max_prompt_tokens": null,
+      "name": "Venice | minimax/minimax-m3-20260531",
+      "pricing": {
+        "completion": "0.0000012",
+        "discount": 0,
+        "input_cache_read": "0.00000006",
+        "prompt": "0.0000003"
+      },
+      "provider_name": "Venice",
+      "quantization": "fp8",
+      "status": 0,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "stop",
+        "frequency_penalty",
+        "presence_penalty",
+        "top_k",
+        "tools",
+        "tool_choice"
+      ],
+      "tag": "venice/fp8"
+    },
+    "supported_parameters": [
+      "frequency_penalty",
+      "include_reasoning",
+      "logit_bias",
+      "logprobs",
+      "max_tokens",
+      "min_p",
+      "presence_penalty",
+      "reasoning",
+      "repetition_penalty",
+      "response_format",
+      "seed",
+      "stop",
+      "structured_outputs",
+      "temperature",
+      "tool_choice",
+      "tools",
+      "top_k",
+      "top_logprobs",
+      "top_p"
+    ]
+  },
+  "finished_at": "2026-09-05T07:36:42.071637+00:00",
+  "model": {
+    "api_revision_hint": "minimax/minimax-m3-20260531",
+    "display_name": "MiniMax M3",
+    "key": "minimax_m3",
+    "max_concurrency": 2,
+    "max_tokens": 64,
+    "model_id": "minimax/minimax-m3",
+    "provider_endpoint": "venice/fp8",
+    "reasoning_effort": "none",
+    "release_date": "2026-05-31",
+    "supports_temperature": true,
+    "supports_top_p": true,
+    "weight_access": "open-weight"
+  },
+  "planned_tasks": 36,
+  "probe": false,
+  "provider_fallback": false,
+  "recorded_calls": 36,
+  "response_cost_usd": 0.002860800000000003,
+  "started_at": "2026-09-05T07:35:05.226297+00:00",
+  "status": "complete",
+  "task_contract_sha256": "e858fe45a4ad1ff8cbdad49e276a92c8119a1cf1b714d0180e69f56b16d9ae3e",
+  "valid_responses": 36
+}

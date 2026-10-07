@@ -1,0 +1,31 @@
+{
+  "accelerator_count": 4,
+  "accelerator_type": "NVIDIA_B200_180GB",
+  "auto_tune": {},
+  "autoscaling_policy": {
+    "load_targets": {
+      "default": 0.8
+    },
+    "scale_down_window": "600s",
+    "scale_to_zero_window": "3600s",
+    "scale_up_window": "30s"
+  },
+  "base_model": "accounts/fireworks/models/gemma-4-26b-a4b-it",
+  "create_time": "2026-10-03T19:47:24.195357050Z",
+  "deployment_shape": "accounts/fireworks/deploymentShapes/rft-gemma-4-26b-a4b-it/versions/zo4a3z1a",
+  "desired_replica_count": 1,
+  "disable_deployment_size_validation": true,
+  "enable_session_affinity": true,
+  "max_context_length": 262144,
+  "max_replica_count": 1,
+  "min_replica_count": 1,
+  "name": "accounts/peli/deployments/urap-iat-gemma4-20261003",
+  "placement": {
+    "multi_region": "GLOBAL"
+  },
+  "replica_stats": {},
+  "state": "CREATING",
+  "status": {},
+  "supports_autoscaling": true,
+  "update_time": "2026-10-03T19:47:24.195357050Z"
+}

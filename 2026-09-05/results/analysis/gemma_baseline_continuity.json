@@ -1,0 +1,8 @@
+{
+  "archive_sha256": "c4496947930208e61380074cc49d8d35ca9b8823ca901313be4bd5f03c5fc58c",
+  "archived_rows": 120,
+  "baseline_replaced": false,
+  "matched_response_tuples": 28,
+  "new_rows": 120,
+  "reason": "New inference is a continuity audit, never a replacement for the frozen pre-DPO baseline."
+}

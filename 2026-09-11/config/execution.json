@@ -1,0 +1,7 @@
+{
+  "operational_concurrency": {"utkface/minimax_m3": 8, "neutral12/grok46": 3, "utkface/grok46": 6,
+                              "neutral12/kimi_k3": 4, "utkface/kimi_k3": 4},
+  "excluded_cells": {
+    "neutral12/minimax_m3": "Eleven HTTP 429 errors across three probes, including after the catalog recovered to status 0. Catalog availability did not imply a functional endpoint. Preserve this cell as incomplete; do not retry again in this session."
+  }
+}

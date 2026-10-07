@@ -1,0 +1,52 @@
+{
+  "study_id": "eight-model-race-bias-20260824",
+  "wall_clock_started_at": "2026-08-24T06:26:53-07:00",
+  "wall_clock_deadline": "2026-08-24T12:26:53-07:00",
+  "openrouter_session_initial_remaining_usd": 23.98464367,
+  "openrouter_session_max_spend_usd": 10.0,
+  "openrouter_required_reserve_usd": 10.0,
+  "effective_stop_balance_usd": 13.98464367,
+  "primary_model_config": "config/models_explicit_aug24.json",
+  "iat_pilot": {
+    "benchmark_version": "iat12-pipeline-reference-v1",
+    "base_seed": 17082026,
+    "repetitions_per_image": 1,
+    "distinct_images": 12,
+    "tasks_per_model": 12,
+    "bootstrap_samples": 20000
+  },
+  "iat_expansion": {
+    "benchmark_version": "iat12-pipeline-reference-v1",
+    "base_seed": 17082026,
+    "repetitions_per_image": 10,
+    "distinct_images": 12,
+    "tasks_per_model": 120,
+    "bootstrap_samples": 100000
+  },
+  "decodingtrust_pilot": {
+    "base_seed": 24082026,
+    "topics_per_race_group": 4,
+    "race_groups": 4,
+    "prompt_regimes": 3,
+    "tasks_per_model": 48
+  },
+  "decodingtrust_expansion": {
+    "base_seed": 24082026,
+    "topics_per_race_group": 8,
+    "race_groups": 4,
+    "prompt_regimes": 3,
+    "tasks_per_model": 96
+  },
+  "bold_pilot": {
+    "base_seed": 24082026,
+    "prompts_per_race_category": 4,
+    "race_categories": 4,
+    "tasks_per_model": 16
+  },
+  "bold_expansion": {
+    "base_seed": 24082026,
+    "prompts_per_race_category": 25,
+    "race_categories": 4,
+    "tasks_per_model": 100
+  }
+}

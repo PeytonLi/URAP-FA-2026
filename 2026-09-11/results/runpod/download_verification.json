@@ -1,0 +1,12 @@
+{
+  "all_match": true,
+  "checked_at": "2026-09-11T09:23:37.105127+00:00",
+  "files": {
+    "results/local/environment.json": "81c6cb3657a7ea1666bf267db0eb8ae41a23b9722e7b21541c6694d3dd3d3ec2",
+    "results/local/manifest.json": "995c369daa31c9a3b3525be18e7a31df0a3dfa58d1a1311843fe76f1d509c035",
+    "results/local/qwen_probe.csv": "b2062ddccc2aeec09615e7a860eeb7a35846829b640cbf90ace6661c3b6e23b2",
+    "results/local/qwen_probe.json": "7701926d8c9baf68d8b3c1618dc448b3883fa4a1f87f3a1f17675ab461885bda",
+    "results/local/responses.csv": "23c44a543856cad040b9818184b6f1c58a5dfd01bf8cc58a062d9bf97a70229b",
+    "results/local/responses.jsonl": "f8ae3422d9e993ddcb3d1160fe06bb3508a9b753fa55343a5381827002ca400e"
+  }
+}

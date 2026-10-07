@@ -1,0 +1,71 @@
+{
+  "asset_root": "C:\\Users\\lipey\\Code\\URAP\\2026-09-29\\private\\dataset",
+  "backend_verification_required": true,
+  "benchmark_images_used_for_training": 0,
+  "checked_at": "2026-10-05T10:19:25.363546+00:00",
+  "data_ready": false,
+  "dataset_counts": {
+    "fairface": 1400,
+    "utkface": 1000
+  },
+  "dataset_id": "image-curation-2026-09-29-v1",
+  "limitations": [
+    "Publisher demographic annotations, not inferred identities",
+    "Expression labels are automated, not human-approved IAT targets",
+    "Image-disjoint splits do not establish person-disjointness",
+    "Exact benchmark checksum exclusion is not an identity-overlap guarantee"
+  ],
+  "mismatched_images": [],
+  "missing_images": [],
+  "profile_rows_used": 0,
+  "prompt_sha256": "427f09c21a3fd30765904b95e8a80b864567028453dcf00d408ee0a9396a9280",
+  "published_splits_preserved": true,
+  "reconstruction_receipt": {
+    "path": "C:\\Users\\lipey\\Code\\URAP\\2026-09-29\\private\\dataset\\rebuild_verification.json",
+    "reported_result": {
+      "source_images_and_exported_png_hashes_match": true,
+      "verified_images": 2400,
+      "which": "selected"
+    },
+    "sha256": "844192ae0eea6f47b6ac4978ca6d23605a4a92f99affc782a6d8391ac88a8333"
+  },
+  "selected_rows": 2400,
+  "source_commit": "e4ac7a506f97e855f78ce79cc9d42b508193f76c",
+  "source_file": "2026-09-29/data/selected_images.csv",
+  "source_sha256": "7b08c31122f624e733ac279b87882c9138a05ea4c9dc7a16596105a5d4637d13",
+  "split_counts": {
+    "development": 480,
+    "test": 480,
+    "train": 1440
+  },
+  "superseded_pairs": "2026-10-03/data/pairs.csv",
+  "target_audit": {
+    "approved_records": 0,
+    "errors": [],
+    "file_present": false,
+    "missing_records": 1920,
+    "ready": false,
+    "required_records": 1920
+  },
+  "training_inputs": {
+    "orpo": [
+      "image",
+      "prompt",
+      "chosen",
+      "rejected"
+    ],
+    "sft": [
+      "image",
+      "prompt",
+      "chosen"
+    ]
+  },
+  "training_performed": false,
+  "training_ready": false,
+  "verified_images": 2400,
+  "verified_split_counts": {
+    "development": 480,
+    "test": 480,
+    "train": 1440
+  }
+}

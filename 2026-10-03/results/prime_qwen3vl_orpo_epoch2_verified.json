@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-10-06T08:19:59.085499+00:00",
+  "checkpoint_kind": "intermediate_epoch_2_not_final",
+  "source": "data/private/prime_native/20261006T070843.831887_0000/live_verified/data/private/native_runs/qwen3vl_orpo_20261006T075343.837920_0000/epoch_2",
+  "run_snapshot": "data/private/prime_native/20261006T070843.831887_0000/qwen3vl_orpo_epoch2_run.json",
+  "files_hash_verified": 8,
+  "adapter_parameters": 7667712,
+  "finite_adapter_tensors": 288,
+  "nonzero_lora_B_tensors": 144,
+  "optimizer_step_counts": {"338": 288},
+  "run_snapshot_updates": 352,
+  "completed_epochs": 2,
+  "development": {
+    "images": 180,
+    "optimizer_updates_on_development": 0,
+    "response_loss": 0.08382091596205202,
+    "chosen_preference_accuracy": 1.0,
+    "macro_category_preference_accuracy": 1.0,
+    "positive_preference_accuracy": 1.0,
+    "positive_images": 174,
+    "negative_preference_accuracy": 1.0,
+    "negative_images": 6,
+    "negative_response_loss": 0.30315145751228556
+  },
+  "adapter_sha256": "89a0d0830bfb17d8229576e7b69bf2015f1206a1aa7ab2c63ca180b541d176db",
+  "run_snapshot_sha256": "6ffacf26a36bab66e5ff6d8e85527d48a7edf302721f9a48876b873ea3af49b5",
+  "final_comparison_eligibility": false,
+  "checkpoint_selection_unchanged": "Only the predeclared final epoch-three checkpoint is eligible for the study benchmark."
+}

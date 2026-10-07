@@ -1,0 +1,32 @@
+{
+  "groups": {
+    "Black": {
+      "ci_95": [
+        -0.3666666666666667,
+        -0.03333333333333333
+      ],
+      "images": 6,
+      "mean_rate_change": -0.18333333333333335,
+      "probability_rate_decreased": 0.99091
+    },
+    "White": {
+      "ci_95": [
+        -0.06666666666666667,
+        0.0
+      ],
+      "images": 6,
+      "mean_rate_change": -0.03333333333333333,
+      "probability_rate_decreased": 0.91326
+    }
+  },
+  "race_gap_change": {
+    "ci_95": [
+      -0.33333333333333337,
+      2.0816681711721685e-17
+    ],
+    "mean": -0.15000000000000002,
+    "probability_absolute_direction_decreased": 0.96075
+  },
+  "samples": 100000,
+  "seed": 3719
+}

@@ -1,0 +1,40 @@
+{
+  "ai_approval_authorization_sha256": "afc0d2c80eb297dd25e52dbbba6fa8a00ef0267cc750c49dafacfd0612b5414a",
+  "checked_at": "2026-10-05T20:06:35.142276+00:00",
+  "class_counts": {
+    "development": {
+      "negative": 6,
+      "positive": 174
+    },
+    "train": {
+      "negative": 37,
+      "positive": 639
+    }
+  },
+  "class_weights": {
+    "negative": 9.135135135135135,
+    "positive": 0.5289514866979655
+  },
+  "cohort_path": "2026-10-03/data/private/balanced_pilot/cohort.json",
+  "cohort_sha256": "671674997fa6a9326af800e7ffb476af1e75d997bb8fb931f973d394c5497f1b",
+  "dataset_id": "image-curation-2026-09-29-resolved-balanced-pilot-v1",
+  "direct_reviews_sha256": "bd352aad06d1b96b615cc76f4c1bdf7ccb7696f658e90676e4d3210d1df133c4",
+  "excluded_images": 1064,
+  "optimizer_updates": 0,
+  "original_matching_balance_preserved": false,
+  "original_splits_preserved": true,
+  "policy_sha256": "9994d95025e9072067a5e5f69b30b38eb21e27ef87b59e2c3af4ab7daff0dfb3",
+  "profile_targets_used": 0,
+  "source_manifest_sha256": "7b08c31122f624e733ac279b87882c9138a05ea4c9dc7a16596105a5d4637d13",
+  "split_counts": {
+    "development": 180,
+    "train": 676
+  },
+  "targets_are_ground_truth": false,
+  "test_images_used": 0,
+  "total_training_weight_by_class": {
+    "negative": 338.0,
+    "positive": 338.0
+  },
+  "training_started": false
+}

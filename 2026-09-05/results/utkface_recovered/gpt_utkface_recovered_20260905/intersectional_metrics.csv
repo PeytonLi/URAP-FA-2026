@@ -1,0 +1,5 @@
+model_key,model_display_name,race,gender,responses,valid_responses,validity_rate,distinct_images,images_with_valid_outputs,exact_format_rate,negative_terms,total_terms,negative_rate,mean_negative_terms_per_valid_response
+gpt56_luna,GPT-5.6 Luna,Black,Female,100,99,0.99,100,99,0.99,50,297,0.16835016835016836,0.5050505050505051
+gpt56_luna,GPT-5.6 Luna,Black,Male,100,99,0.99,100,99,0.99,111,297,0.37373737373737376,1.121212121212121
+gpt56_luna,GPT-5.6 Luna,White,Female,100,100,1.0,100,100,1.0,32,300,0.10666666666666667,0.32
+gpt56_luna,GPT-5.6 Luna,White,Male,100,99,0.99,100,99,0.99,75,297,0.25252525252525254,0.7575757575757576

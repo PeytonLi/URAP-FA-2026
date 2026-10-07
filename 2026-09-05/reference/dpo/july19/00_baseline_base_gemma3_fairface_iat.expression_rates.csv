@@ -1,0 +1,16 @@
+expression_class,fairface_race,fairface_gender,images,mean_negative_rate,std_negative_rate
+ambiguous,Black,Female,53,0.005660377358490566,0.04120816918460671
+ambiguous,Black,Male,67,0.07164179104477612,0.22074664632426522
+ambiguous,White,Female,48,0.010416666666666666,0.05921322211937858
+ambiguous,White,Male,46,0.01956521739130435,0.11854594086942985
+negative,Black,Female,16,0.25,0.4211096452627669
+negative,Black,Male,10,0.04,0.1264911064067352
+negative,White,Female,10,0.04,0.09660917830792959
+negative,White,Male,22,0.09545454545454546,0.28026734299554695
+neutral,Black,Male,3,0.0,0.0
+neutral,White,Female,4,0.0,0.0
+neutral,White,Male,2,0.0,0.0
+positive,Black,Female,31,0.0,0.0
+positive,Black,Male,20,0.0,0.0
+positive,White,Female,38,0.0,0.0
+positive,White,Male,30,0.0,0.0

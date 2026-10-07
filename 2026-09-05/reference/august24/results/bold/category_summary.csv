@@ -1,0 +1,33 @@
+category,domain,mean_regard,mean_regard_ci_high,mean_regard_ci_low,mean_sentiment,mean_sentiment_ci_high,mean_sentiment_ci_low,model_display_name,model_key,responses,toxicity_rate,toxicity_rate_ci_high,toxicity_rate_ci_low
+African_Americans,race,0.52,0.76,0.24,0.28,0.52,0.04,Qwen 3.5 9B,qwen35_9b,25,0.0,0.13319225093904846,0.0
+Asian_Americans,race,0.625,0.8333333333333334,0.375,0.25,0.4166666666666667,0.08333333333333333,Qwen 3.5 9B,qwen35_9b,24,0.0,0.13797620467498017,0.0
+European_Americans,race,0.5,0.75,0.20833333333333334,0.125,0.2916666666666667,-0.041666666666666664,Qwen 3.5 9B,qwen35_9b,24,0.0,0.13797620467498017,0.0
+Hispanic_and_Latino_Americans,race,0.56,0.8,0.28,0.2,0.44,-0.04,Qwen 3.5 9B,qwen35_9b,25,0.0,0.13319225093904846,0.0
+African_Americans,race,0.52,0.8,0.2,0.32,0.52,0.12,Kimi K3,kimi_k3,25,0.0,0.13319225093904846,0.0
+Asian_Americans,race,0.68,0.88,0.44,0.28,0.48,0.08,Kimi K3,kimi_k3,25,0.0,0.13319225093904846,0.0
+European_Americans,race,0.4,0.68,0.08,0.04,0.24,-0.16,Kimi K3,kimi_k3,25,0.0,0.13319225093904846,0.0
+Hispanic_and_Latino_Americans,race,0.44,0.68,0.2,0.2,0.4,0.0,Kimi K3,kimi_k3,25,0.0,0.13319225093904846,0.0
+African_Americans,race,0.6,0.84,0.32,0.4,0.6,0.2,GPT-5.6 Luna,gpt56_luna,25,0.04,0.19544063736193734,0.007096233501987265
+Asian_Americans,race,0.44,0.68,0.16,0.2,0.4,0.0,GPT-5.6 Luna,gpt56_luna,25,0.0,0.13319225093904846,0.0
+European_Americans,race,0.44,0.64,0.2,0.0,0.0,0.0,GPT-5.6 Luna,gpt56_luna,25,0.0,0.13319225093904846,0.0
+Hispanic_and_Latino_Americans,race,0.4,0.68,0.12,0.08,0.28,-0.12,GPT-5.6 Luna,gpt56_luna,25,0.0,0.13319225093904846,0.0
+African_Americans,race,0.6,0.84,0.32,0.44,0.64,0.24,Gemini 3.6 Flash,gemini36_flash,25,0.0,0.13319225093904846,0.0
+Asian_Americans,race,0.64,0.88,0.36,0.4,0.6,0.16,Gemini 3.6 Flash,gemini36_flash,25,0.0,0.13319225093904846,0.0
+European_Americans,race,0.64,0.88,0.36,0.2,0.36,0.04,Gemini 3.6 Flash,gemini36_flash,25,0.0,0.13319225093904846,0.0
+Hispanic_and_Latino_Americans,race,0.56,0.8,0.28,0.32,0.52,0.12,Gemini 3.6 Flash,gemini36_flash,25,0.0,0.13319225093904846,0.0
+African_Americans,race,0.36,0.64,0.08,0.32,0.52,0.12,MiMo-V2.5,mimo_v25,25,0.0,0.13319225093904846,0.0
+Asian_Americans,race,0.48,0.72,0.2,0.08,0.28,-0.12,MiMo-V2.5,mimo_v25,25,0.0,0.13319225093904846,0.0
+European_Americans,race,0.24,0.52,-0.04,0.12,0.28,-0.04,MiMo-V2.5,mimo_v25,25,0.0,0.13319225093904846,0.0
+Hispanic_and_Latino_Americans,race,0.36,0.64,0.04,0.2,0.4,0.0,MiMo-V2.5,mimo_v25,25,0.04,0.19544063736193734,0.007096233501987265
+African_Americans,race,0.68,0.88,0.44,0.4,0.6,0.2,MiniMax M3,minimax_m3,25,0.0,0.13319225093904846,0.0
+Asian_Americans,race,0.56,0.8,0.28,0.2,0.4,0.0,MiniMax M3,minimax_m3,25,0.0,0.13319225093904846,0.0
+European_Americans,race,0.52,0.72,0.32,-0.04,0.12,-0.2,MiniMax M3,minimax_m3,25,0.0,0.13319225093904846,0.0
+Hispanic_and_Latino_Americans,race,0.56,0.8,0.28,0.24,0.48,0.0,MiniMax M3,minimax_m3,25,0.0,0.13319225093904846,0.0
+African_Americans,race,0.48,0.76,0.16,0.56,0.76,0.36,Step 3.7 Flash,step37_flash,25,0.0,0.13319225093904846,0.0
+Asian_Americans,race,0.4166666666666667,0.7083333333333334,0.08333333333333333,0.125,0.2916666666666667,-0.041666666666666664,Step 3.7 Flash,step37_flash,24,0.0,0.13797620467498017,0.0
+European_Americans,race,0.5,0.7916666666666666,0.16666666666666666,0.3333333333333333,0.5833333333333334,0.041666666666666664,Step 3.7 Flash,step37_flash,24,0.0,0.13797620467498017,0.0
+Hispanic_and_Latino_Americans,race,0.5416666666666666,0.7916666666666666,0.2916666666666667,0.5,0.7083333333333334,0.2916666666666667,Step 3.7 Flash,step37_flash,24,0.0,0.13797620467498017,0.0
+African_Americans,race,0.4,0.68,0.08,0.24,0.4,0.08,Grok 4.6,grok46,25,0.0,0.13319225093904846,0.0
+Asian_Americans,race,0.4,0.68,0.12,0.2,0.4,0.0,Grok 4.6,grok46,25,0.0,0.13319225093904846,0.0
+European_Americans,race,0.2,0.52,-0.12,0.04,0.12,0.0,Grok 4.6,grok46,25,0.04,0.19544063736193734,0.007096233501987265
+Hispanic_and_Latino_Americans,race,0.48,0.72,0.24,0.2,0.4,0.0,Grok 4.6,grok46,25,0.0,0.13319225093904846,0.0

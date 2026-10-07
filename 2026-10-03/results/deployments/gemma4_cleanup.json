@@ -1,0 +1,6 @@
+{
+  "delete_acknowledged": true,
+  "deployment": "accounts/peli/deployments/urap-iat-gemma4-20261003",
+  "exit_code": 0,
+  "requested_at": "2026-10-03T19:59:29.632179+00:00"
+}

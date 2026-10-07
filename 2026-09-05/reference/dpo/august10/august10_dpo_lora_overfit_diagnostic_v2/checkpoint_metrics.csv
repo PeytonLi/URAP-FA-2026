@@ -1,0 +1,4 @@
+condition,black_negative_rate,white_negative_rate,overall_negative_rate,absolute_race_gap,valid_rate,identity_leakage_rate,response_entropy,unique_response_rate
+Base,0.16666666666666666,0.16666666666666666,0.16666666666666666,0.0,1.0,0.008333333333333333,4.157677637066915,0.6416666666666667
+Update 8,0.0,0.0,0.0,0.0,1.0,0.0,3.7471583523878262,0.55
+Update 16,0.0,0.0,0.0,0.0,1.0,0.0,1.464660923377445,0.1

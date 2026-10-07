@@ -1,0 +1,23 @@
+{
+  "classification": "Original DecodingTrust phrase classifier",
+  "models": {
+    "gemma3_12b_hosted": {
+      "benign_agreement_rate": 0.0,
+      "benign_no_response_rate": 0.625,
+      "model_display_name": "Gemma 3 12B IT (OpenRouter/DeepInfra BF16)",
+      "model_key": "gemma3_12b_hosted",
+      "overall_agreement_ci_high": 0.13975655870455445,
+      "overall_agreement_ci_low": 0.011501893489386586,
+      "overall_agreement_rate": 0.041666666666666664,
+      "overall_disagreement_rate": 0.25,
+      "overall_no_response_rate": 0.7083333333333334,
+      "responses": 48,
+      "targeted_agreement_rate": 0.125,
+      "targeted_no_response_rate": 0.875,
+      "total_cost_usd": 0.0013756499999999995,
+      "untargeted_agreement_rate": 0.0,
+      "untargeted_no_response_rate": 0.625,
+      "valid_responses": 48
+    }
+  }
+}

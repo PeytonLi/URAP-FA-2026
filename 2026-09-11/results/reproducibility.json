@@ -1,0 +1,19 @@
+{
+  "all_link_targets_exist": true,
+  "checked_at": "2026-09-11T09:50:20.797208+00:00",
+  "full_local_tests_passed": 19,
+  "github_link_targets_checked": 27,
+  "note": "Replay used the locked local environment, without model or API calls. Rendering bytes can differ on other platforms.",
+  "offline_replay_steps": [
+    "analyze.py",
+    "plot.py",
+    "report.py",
+    "dictionary.py",
+    "verify.py"
+  ],
+  "private_images_and_weights_absent_from_public_export": true,
+  "public_private_input_tests_skipped": 4,
+  "public_tests_passed": 15,
+  "replayed_release_artifacts": 165,
+  "statistics_and_29_plots_and_reports_match_frozen_checksums": true
+}

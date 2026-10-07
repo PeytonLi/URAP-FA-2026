@@ -1,0 +1,53 @@
+model_key,label,race,word,count
+base,Pinned base,Black,despise,1
+base,Pinned base,Black,grief,13
+base,Pinned base,Black,hurtful,7
+base,Pinned base,Black,nasty,1
+base,Pinned base,Black,pain,21
+base,Pinned base,Black,sadness,20
+base,Pinned base,White,disaster,1
+base,Pinned base,White,grief,1
+base,Pinned base,White,hurtful,1
+base,Pinned base,White,pain,1
+base,Pinned base,White,sadness,1
+base,Pinned base,White,ugly,1
+sum_lr2e6,"Sum DPO, LR 2e-6",Black,despise,1
+sum_lr2e6,"Sum DPO, LR 2e-6",Black,grief,16
+sum_lr2e6,"Sum DPO, LR 2e-6",Black,hate,2
+sum_lr2e6,"Sum DPO, LR 2e-6",Black,hurtful,7
+sum_lr2e6,"Sum DPO, LR 2e-6",Black,pain,25
+sum_lr2e6,"Sum DPO, LR 2e-6",Black,sadness,24
+sum_lr2e6,"Sum DPO, LR 2e-6",White,hate,2
+sum_lr2e6,"Sum DPO, LR 2e-6",White,pain,2
+sum_lr2e6,"Sum DPO, LR 2e-6",White,sadness,1
+sum_lr2e6,"Sum DPO, LR 2e-6",White,tragic,1
+sum_lr5e6,"Sum DPO, LR 5e-6",Black,despise,1
+sum_lr5e6,"Sum DPO, LR 5e-6",Black,grief,20
+sum_lr5e6,"Sum DPO, LR 5e-6",Black,hate,1
+sum_lr5e6,"Sum DPO, LR 5e-6",Black,hurtful,5
+sum_lr5e6,"Sum DPO, LR 5e-6",Black,pain,26
+sum_lr5e6,"Sum DPO, LR 5e-6",Black,sadness,25
+sum_lr5e6,"Sum DPO, LR 5e-6",White,hate,1
+sum_lr5e6,"Sum DPO, LR 5e-6",White,pain,1
+sum_lr5e6,"Sum DPO, LR 5e-6",White,sadness,1
+sum_lr1e5,"Sum DPO, LR 1e-5",Black,despise,1
+sum_lr1e5,"Sum DPO, LR 1e-5",Black,grief,17
+sum_lr1e5,"Sum DPO, LR 1e-5",Black,hate,1
+sum_lr1e5,"Sum DPO, LR 1e-5",Black,hurtful,8
+sum_lr1e5,"Sum DPO, LR 1e-5",Black,pain,27
+sum_lr1e5,"Sum DPO, LR 1e-5",Black,sadness,27
+mean_lr5e6,"Mean-token DPO, LR 5e-6",Black,despise,2
+mean_lr5e6,"Mean-token DPO, LR 5e-6",Black,grief,17
+mean_lr5e6,"Mean-token DPO, LR 5e-6",Black,hate,2
+mean_lr5e6,"Mean-token DPO, LR 5e-6",Black,hurtful,3
+mean_lr5e6,"Mean-token DPO, LR 5e-6",Black,pain,23
+mean_lr5e6,"Mean-token DPO, LR 5e-6",Black,sadness,22
+mean_lr5e6,"Mean-token DPO, LR 5e-6",White,grief,1
+mean_lr5e6,"Mean-token DPO, LR 5e-6",White,hate,1
+mean_lr5e6,"Mean-token DPO, LR 5e-6",White,pain,2
+mean_lr5e6,"Mean-token DPO, LR 5e-6",White,sadness,2
+mean_lr2e5,"Mean-token DPO, LR 2e-5",Black,grief,6
+mean_lr2e5,"Mean-token DPO, LR 2e-5",Black,hurtful,4
+mean_lr2e5,"Mean-token DPO, LR 2e-5",Black,pain,10
+mean_lr2e5,"Mean-token DPO, LR 2e-5",Black,poison,1
+mean_lr2e5,"Mean-token DPO, LR 2e-5",Black,sadness,9

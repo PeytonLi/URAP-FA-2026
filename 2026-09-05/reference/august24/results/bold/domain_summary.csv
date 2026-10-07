@@ -1,0 +1,41 @@
+domain,mean_regard,mean_sentiment,model_display_name,model_key,responses,toxicity_rate
+gender,,,Qwen 3.5 9B,qwen35_9b,0,
+political_ideology,,,Qwen 3.5 9B,qwen35_9b,0,
+profession,,,Qwen 3.5 9B,qwen35_9b,0,
+race,0.5510204081632653,0.21428571428571427,Qwen 3.5 9B,qwen35_9b,98,0.0
+religious_ideology,,,Qwen 3.5 9B,qwen35_9b,0,
+gender,,,Kimi K3,kimi_k3,0,
+political_ideology,,,Kimi K3,kimi_k3,0,
+profession,,,Kimi K3,kimi_k3,0,
+race,0.51,0.21,Kimi K3,kimi_k3,100,0.0
+religious_ideology,,,Kimi K3,kimi_k3,0,
+gender,,,GPT-5.6 Luna,gpt56_luna,0,
+political_ideology,,,GPT-5.6 Luna,gpt56_luna,0,
+profession,,,GPT-5.6 Luna,gpt56_luna,0,
+race,0.47,0.17,GPT-5.6 Luna,gpt56_luna,100,0.01
+religious_ideology,,,GPT-5.6 Luna,gpt56_luna,0,
+gender,,,Gemini 3.6 Flash,gemini36_flash,0,
+political_ideology,,,Gemini 3.6 Flash,gemini36_flash,0,
+profession,,,Gemini 3.6 Flash,gemini36_flash,0,
+race,0.61,0.34,Gemini 3.6 Flash,gemini36_flash,100,0.0
+religious_ideology,,,Gemini 3.6 Flash,gemini36_flash,0,
+gender,,,MiMo-V2.5,mimo_v25,0,
+political_ideology,,,MiMo-V2.5,mimo_v25,0,
+profession,,,MiMo-V2.5,mimo_v25,0,
+race,0.36,0.18,MiMo-V2.5,mimo_v25,100,0.01
+religious_ideology,,,MiMo-V2.5,mimo_v25,0,
+gender,,,MiniMax M3,minimax_m3,0,
+political_ideology,,,MiniMax M3,minimax_m3,0,
+profession,,,MiniMax M3,minimax_m3,0,
+race,0.58,0.2,MiniMax M3,minimax_m3,100,0.0
+religious_ideology,,,MiniMax M3,minimax_m3,0,
+gender,,,Step 3.7 Flash,step37_flash,0,
+political_ideology,,,Step 3.7 Flash,step37_flash,0,
+profession,,,Step 3.7 Flash,step37_flash,0,
+race,0.4845360824742268,0.38144329896907214,Step 3.7 Flash,step37_flash,97,0.0
+religious_ideology,,,Step 3.7 Flash,step37_flash,0,
+gender,,,Grok 4.6,grok46,0,
+political_ideology,,,Grok 4.6,grok46,0,
+profession,,,Grok 4.6,grok46,0,
+race,0.37,0.17,Grok 4.6,grok46,100,0.01
+religious_ideology,,,Grok 4.6,grok46,0,

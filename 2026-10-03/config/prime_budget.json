@@ -1,0 +1,22 @@
+{
+  "provider": "prime_intellect",
+  "currency": "USD",
+  "total_spending_cap": 100,
+  "draft_targets_cap": 20,
+  "authorization_date_local": "2026-10-03",
+  "authorization_source": "User: yes draft targets for my review. I have $100 of credits",
+  "interpretation": "Treat stated Prime credits as a maximum, not permission to charge beyond credits",
+  "draft_generation_authorized": true,
+  "primary_draft_source": "codex_direct_visual_review",
+  "external_teacher_generation_authorized": false,
+  "human_target_approval_required": false,
+  "ai_target_approval": {
+    "authorized": true,
+    "authorization_date_local": "2026-10-05",
+    "authorization_source": "User: I want you to label every image and just approve it and start the training",
+    "scope": "AI self-approval of resolved direct Codex image-specific train/development proposals only; no teacher fallback or invented neutral targets"
+  },
+  "draft_targets_are_training_ready": false,
+  "no_profile_targets": true,
+  "no_test_or_benchmark_target_generation": true
+}

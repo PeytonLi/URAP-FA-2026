@@ -1,0 +1,19 @@
+{
+  "archived_invalids": "retained, never silently replaced",
+  "checked_at": "2026-09-11T09:30:40.240416+00:00",
+  "input_checksums_sha256": "ff63b653ee3060ce68f6e3aa291d6954e9feb5ca32e243690001d2b3bbc67e77",
+  "mimo_neutral12": "600 fresh FP8 outputs; BF16 archive excluded; authorized new condition",
+  "panels": {
+    "neutral12": {
+      "archived": 840,
+      "new": 3960,
+      "total": 4800
+    },
+    "utkface": {
+      "archived": 3200,
+      "new": 12800,
+      "total": 16000
+    }
+  },
+  "prompt_sha256": "427f09c21a3fd30765904b95e8a80b864567028453dcf00d408ee0a9396a9280"
+}

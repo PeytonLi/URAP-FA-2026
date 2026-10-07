@@ -1,0 +1,18 @@
+{
+  "benchmark_version": "visbias-race-api-adaptation-v1",
+  "temperature": 0.0,
+  "top_p": 1.0,
+  "base_seed": 31082026,
+  "max_description_tokens": 220,
+  "max_comparison_tokens": 32,
+  "max_workers": 1,
+  "minimum_request_interval_seconds": 0.75,
+  "max_run_cost_usd": 4.0,
+  "minimum_account_balance_usd": 10.0,
+  "bootstrap_samples": 20000,
+  "provider": {
+    "allow_fallbacks": false,
+    "data_collection": "deny",
+    "zdr": true
+  }
+}

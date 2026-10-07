@@ -1,0 +1,40 @@
+[
+  {
+    "base_model": "accounts/fireworks/models/qwen3-vl-8b-instruct",
+    "checked_at": "2026-10-03T19:54:41.929633+00:00",
+    "display_name": "Qwen3-VL 8B Instruct",
+    "endpoint_usable": true,
+    "image_sha256": "09eaa4af7310266e5ae8e1b8109f6c6833d82f097ef630f8da63b17ee0659bc5",
+    "model_id": "accounts/peli/deployments/urap-iat-qwen3vl-20261003",
+    "model_key": "qwen3vl",
+    "response": {
+      "_client": {
+        "elapsed_seconds": 1.600721099996008,
+        "retry_count": 0
+      },
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": 0,
+          "message": {
+            "content": "Joyful, Happy, Delight",
+            "role": "assistant"
+          }
+        }
+      ],
+      "created": 1791057283,
+      "id": "chatcmpl-6866108aba4044d696c4bdf1065f062d",
+      "model": "accounts/fireworks/models/qwen3-vl-8b-instruct",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": 8,
+        "prompt_tokens": 285,
+        "prompt_tokens_details": {
+          "cached_tokens": 4
+        },
+        "total_tokens": 293
+      }
+    },
+    "training_performed": false
+  }
+]

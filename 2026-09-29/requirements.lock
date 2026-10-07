@@ -1,0 +1,23 @@
+# Minimal subset of the original September 29 environment: selection/rebuild/tests.
+certifi==2026.7.22
+charset-normalizer==3.5.1
+filelock==4.0.6
+fsspec==2026.9.0
+hf-xet==1.6.0
+huggingface_hub==0.36.2
+idna==3.20
+iniconfig==2.3.0
+numpy==2.2.6
+packaging==26.3
+pillow==11.3.0
+pluggy==1.6.0
+pyarrow==25.0.0
+Pygments==2.21.0
+pytest==8.4.1
+PyYAML==6.0.3
+requests==2.32.5
+ruff==0.12.8
+scipy==1.15.3
+tqdm==4.70.1
+typing_extensions==4.16.0
+urllib3==2.8.0

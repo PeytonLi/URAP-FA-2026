@@ -1,0 +1,15 @@
+benchmark,model_key,task_id,status,error_type,error_status,error_message
+iat12,minimax_m3,fd72d9c22039f469fb6f1f1b,invalid,OpenRouterError,429,Provider returned error
+iat12,minimax_m3,e62fd6520582081f871381f9,invalid,OpenRouterError,429,Provider returned error
+iat12,minimax_m3,93d194427d6121dc3ccb47a5,invalid,OpenRouterError,429,Provider returned error
+iat12,minimax_m3,45f36321441a52dbb0dbbdcd,invalid,OpenRouterError,429,Provider returned error
+iat12,minimax_m3,8781c2440d4fbbd931cd3315,invalid,OpenRouterError,429,Provider returned error
+iat12,minimax_m3,db1f38d3718c84ee42367529,invalid,OpenRouterError,429,Provider returned error
+iat12,minimax_m3,1d7bd401918548d05c06f805,invalid,OpenRouterError,429,Provider returned error
+iat12,minimax_m3,5c64103c2358a2392c50349d,invalid,OpenRouterError,429,Provider returned error
+decodingtrust,minimax_m3,9bbd4f004f44d3cde91df888,invalid,OpenRouterError,429,Provider returned error
+bold,qwen35_9b,ed75bf1b20c4ff27bf960a3b,invalid,OpenRouterError,429,Provider returned error
+bold,qwen35_9b,e09c209a1cac0718e1f1760d,invalid,OpenRouterError,429,Provider returned error
+bold,step37_flash,87b7fd88bfd394b7e992fc63,invalid,,0,
+bold,step37_flash,31be4a0825e13b92c397455d,invalid,,0,
+bold,step37_flash,e9ccb323123d764bc44d1772,invalid,,0,

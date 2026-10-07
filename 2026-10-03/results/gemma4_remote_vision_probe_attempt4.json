@@ -1,0 +1,347 @@
+{
+  "accelerator_count": 4,
+  "accelerator_type": "NVIDIA_B200_180GB",
+  "backend_image_support_verified": false,
+  "benchmark_images_used": 0,
+  "checkpoint_promoted": false,
+  "cleanup_verified": true,
+  "cleanup_verified_after_exit_at": "2026-10-03T21:08:56+00:00",
+  "deployment_created": false,
+  "error_type": "ValueError",
+  "finished_at": "2026-10-03T21:07:06.963962+00:00",
+  "forward_transport_returned": true,
+  "http_status": null,
+  "job_id": "urap-gemma4-visioncheck-20261003-a4",
+  "last_owned_trainer_state": "JOB_STATE_DELETING_CLEANING_UP",
+  "logical_base_model": "accounts/fireworks/models/gemma-4-26b-a4b-it",
+  "native_delete_acknowledged": true,
+  "optimizer_updates": 0,
+  "original_forward_dimensions": [
+    {
+      "index": 0,
+      "logprobs": {
+        "dense_values": 473,
+        "shape": null,
+        "sparse": false,
+        "storage_values": 473
+      },
+      "model_input_positions": 471,
+      "output_keys": [
+        "logprobs"
+      ],
+      "response_positions": [
+        463,
+        464,
+        465,
+        466,
+        467,
+        468,
+        469,
+        470
+      ],
+      "target_positions": 471,
+      "weight_positions": 471
+    },
+    {
+      "index": 1,
+      "logprobs": {
+        "dense_values": 473,
+        "shape": null,
+        "sparse": false,
+        "storage_values": 473
+      },
+      "model_input_positions": 471,
+      "output_keys": [
+        "logprobs"
+      ],
+      "response_positions": [
+        463,
+        464,
+        465,
+        466,
+        467,
+        468,
+        469,
+        470
+      ],
+      "target_positions": 471,
+      "weight_positions": 471
+    },
+    {
+      "index": 2,
+      "logprobs": {
+        "dense_values": 473,
+        "shape": null,
+        "sparse": false,
+        "storage_values": 473
+      },
+      "model_input_positions": 471,
+      "output_keys": [
+        "logprobs"
+      ],
+      "response_positions": [
+        463,
+        464,
+        465,
+        466,
+        467,
+        468,
+        469,
+        470
+      ],
+      "target_positions": 471,
+      "weight_positions": 471
+    },
+    {
+      "index": 3,
+      "logprobs": {
+        "dense_values": 473,
+        "shape": null,
+        "sparse": false,
+        "storage_values": 473
+      },
+      "model_input_positions": 471,
+      "output_keys": [
+        "logprobs"
+      ],
+      "response_positions": [
+        463,
+        464,
+        465,
+        466,
+        467,
+        468,
+        469,
+        470
+      ],
+      "target_positions": 471,
+      "weight_positions": 471
+    },
+    {
+      "index": 4,
+      "logprobs": {
+        "dense_values": 474,
+        "shape": null,
+        "sparse": false,
+        "storage_values": 474
+      },
+      "model_input_positions": 472,
+      "output_keys": [
+        "logprobs"
+      ],
+      "response_positions": [
+        463,
+        464,
+        465,
+        466,
+        467,
+        468,
+        469,
+        470,
+        471
+      ],
+      "target_positions": 472,
+      "weight_positions": 472
+    },
+    {
+      "index": 5,
+      "logprobs": {
+        "dense_values": 475,
+        "shape": null,
+        "sparse": false,
+        "storage_values": 475
+      },
+      "model_input_positions": 473,
+      "output_keys": [
+        "logprobs"
+      ],
+      "response_positions": [
+        463,
+        464,
+        465,
+        466,
+        467,
+        468,
+        469,
+        470,
+        471,
+        472
+      ],
+      "target_positions": 473,
+      "weight_positions": 473
+    },
+    {
+      "index": 6,
+      "logprobs": {
+        "dense_values": 474,
+        "shape": null,
+        "sparse": false,
+        "storage_values": 474
+      },
+      "model_input_positions": 472,
+      "output_keys": [
+        "logprobs"
+      ],
+      "response_positions": [
+        463,
+        464,
+        465,
+        466,
+        467,
+        468,
+        469,
+        470,
+        471
+      ],
+      "target_positions": 472,
+      "weight_positions": 472
+    },
+    {
+      "index": 7,
+      "logprobs": {
+        "dense_values": 475,
+        "shape": null,
+        "sparse": false,
+        "storage_values": 475
+      },
+      "model_input_positions": 473,
+      "output_keys": [
+        "logprobs"
+      ],
+      "response_positions": [
+        463,
+        464,
+        465,
+        466,
+        467,
+        468,
+        469,
+        470,
+        471,
+        472
+      ],
+      "target_positions": 473,
+      "weight_positions": 473
+    },
+    {
+      "index": 8,
+      "logprobs": {
+        "dense_values": 473,
+        "shape": null,
+        "sparse": false,
+        "storage_values": 473
+      },
+      "model_input_positions": 471,
+      "output_keys": [
+        "logprobs"
+      ],
+      "response_positions": [
+        463,
+        464,
+        465,
+        466,
+        467,
+        468,
+        469,
+        470
+      ],
+      "target_positions": 471,
+      "weight_positions": 471
+    },
+    {
+      "index": 9,
+      "logprobs": {
+        "dense_values": 474,
+        "shape": null,
+        "sparse": false,
+        "storage_values": 474
+      },
+      "model_input_positions": 472,
+      "output_keys": [
+        "logprobs"
+      ],
+      "response_positions": [
+        463,
+        464,
+        465,
+        466,
+        467,
+        468,
+        469,
+        470,
+        471
+      ],
+      "target_positions": 472,
+      "weight_positions": 472
+    },
+    {
+      "index": 10,
+      "logprobs": {
+        "dense_values": 473,
+        "shape": null,
+        "sparse": false,
+        "storage_values": 473
+      },
+      "model_input_positions": 471,
+      "output_keys": [
+        "logprobs"
+      ],
+      "response_positions": [
+        463,
+        464,
+        465,
+        466,
+        467,
+        468,
+        469,
+        470
+      ],
+      "target_positions": 471,
+      "weight_positions": 471
+    },
+    {
+      "index": 11,
+      "logprobs": {
+        "dense_values": 474,
+        "shape": null,
+        "sparse": false,
+        "storage_values": 474
+      },
+      "model_input_positions": 472,
+      "output_keys": [
+        "logprobs"
+      ],
+      "response_positions": [
+        463,
+        464,
+        465,
+        466,
+        467,
+        468,
+        469,
+        470,
+        471
+      ],
+      "target_positions": 472,
+      "weight_positions": 472
+    }
+  ],
+  "pair_ids": [
+    "iat-controlled-b7b0ffbee9ea68d0f24b",
+    "iat-controlled-bdebf6b1f6d04af5caed",
+    "iat-controlled-8fa00f0f096d3f7dd14b",
+    "iat-controlled-9fab202b44028066fb61",
+    "iat-controlled-c6328dc31c44343aada4",
+    "iat-controlled-a7a7273f55a0ff6af43f"
+  ],
+  "processor_revision": "4d7ae4984b7db7de8f8457170b3f1a419ee76d52",
+  "requested_training_shape": "accounts/fireworks/trainingShapes/gemma-4-26b-a4b-256k-b200-lora",
+  "sanitized_error": "Remote token scores and response mask do not align: 473 scores vs 471 weights",
+  "scope": "Image-bearing forward-only modality validation; not the full SFT/ORPO study",
+  "source_pairs_sha256": "354617a13513748a03be5c3454d71444ef3497762fb8965c0c23d24d420a1642",
+  "started_at": "2026-10-03T21:00:50.736907+00:00",
+  "status": "failed",
+  "trainer_job_id": "urap-gemma4-visioncheck-20261003-a4",
+  "training_split_only": true,
+  "transport": "v1"
+}

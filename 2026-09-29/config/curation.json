@@ -1,0 +1,41 @@
+{
+  "release_id": "image-curation-2026-09-29-v1",
+  "seed": "20260929-image-curation-v1",
+  "target_per_race_gender": 100,
+  "candidate_per_age_race_gender": 100,
+  "age_bands": ["20-29", "30-39", "40-49", "50-59", "60-69"],
+  "genders": ["Female", "Male"],
+  "race_labels": {
+    "utkface": ["White", "Black", "Asian", "Indian", "Other"],
+    "fairface": ["White", "Black", "East Asian", "Southeast Asian", "Indian", "Middle Eastern", "Latino_Hispanic"]
+  },
+  "min_side_pixels": 64,
+  "expression_confidence_for_class": 0.6,
+  "expression_model_id": "trpakov/vit-face-expression",
+  "expression_model_revision": "ef0bc6fc34241b6587e7e009e7711357be28c024",
+  "expression_batch_size": 16,
+  "perceptual_hash_max_distance": 4,
+  "difference_hash_max_distance": 6,
+  "split_fractions": {"train": 0.6, "development": 0.2, "test": 0.2},
+  "selection_variables": ["source_race", "source_gender", "age_band", "expression_class"],
+  "diagnostic_only_variables": ["brightness", "contrast", "edge_energy", "clipped_dark_fraction", "clipped_light_fraction", "expression_confidence"],
+  "no_new_demographic_inference": true,
+  "no_model_bias_tests": true,
+  "independent_human_review": false,
+  "utkface_revision": "e80f21fb21fa3631380c3cb634b79be3ac2f4cba",
+  "utkface_archive_sha256": "2c0655397b498e81b82d685ee74bee8c2e4364a5897caf3afec6ea48929024a7",
+  "fairface_revision": "54d573cdb8b5af490ba8da9da2799628f6e5c496",
+  "fairface_config": "0.25",
+  "fairface_source_split": "train",
+  "notes": [
+    "Race/gender/age are publisher-provided annotations, not verified personal identities.",
+    "The 100-per-cell target is conditional on common age-expression support after screening.",
+    "Uncertain/surprise expression outputs are retained as uncertain, not silently relabeled.",
+    "Brightness and classifier confidence do not independently cause image exclusion.",
+    "Selection is independent of any language-model bias output.",
+    "Train/development/test are new image-disjoint research allocations, not publisher split names.",
+    "No claim of person-disjointness is possible without identity annotations.",
+    "All historical source files are read-only."
+  ]
+}
+

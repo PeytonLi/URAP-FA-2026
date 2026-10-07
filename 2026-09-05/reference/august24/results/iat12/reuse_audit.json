@@ -1,0 +1,52 @@
+{
+  "checks_passed": {
+    "benchmark_version": "iat12-pipeline-reference-v1",
+    "image_ids_dimensions_and_sha256": true,
+    "model_alias_revision_and_provider_route": true,
+    "parser": "multimodel_bias.iat.parse_three_words (unchanged copied implementation)",
+    "prompt_sha256": "427f09c21a3fd30765904b95e8a80b864567028453dcf00d408ee0a9396a9280",
+    "sampling_and_format_recovery_contract": true,
+    "task_seed_schedule": "base_seed + iteration*1000 + image_index"
+  },
+  "decision": "reuse_qwen_kimi_gemini_only_and_rerun_gpt_plus_new_four",
+  "excluded_archived_models": {
+    "gemma3_12b": "not one of the requested eight models",
+    "gpt56_luna": "archived azure route drifted; August 24 rerun uses azure/eu"
+  },
+  "iterations": 10,
+  "model_counts": {
+    "gemini36_flash": 120,
+    "gpt56_luna": 120,
+    "grok46": 120,
+    "kimi_k3": 120,
+    "mimo_v25": 120,
+    "minimax_m3": 120,
+    "qwen35_9b": 120,
+    "step37_flash": 120
+  },
+  "operational_only_difference": {
+    "qwen35_9b.max_concurrency": {
+      "archived": 3,
+      "current": 1,
+      "interpretation": "request scheduling limit, not an individual generation parameter"
+    }
+  },
+  "source_files": {
+    "archived_manifest": {
+      "path": "reference/iat12_five_model_pilot_10x_aug17/run_manifest.json",
+      "sha256": "f6731b01799b9f6091741041a761a020dba0728d6ecf1648655f5be65e08663e"
+    },
+    "archived_responses": {
+      "path": "reference/iat12_five_model_pilot_10x_aug17/responses.csv",
+      "sha256": "b8da7e9462e7b6a85c1dd36625067da4e56f11b863dc5479d70a689b76cecf42"
+    },
+    "new_manifest": {
+      "path": "results/iat12/iat12_new5_pilot_10x_20260824_v1/run_manifest.json",
+      "sha256": "e8eee5df1f31ca9c5e30189a115efdc546b66ae47be217330f4e887841188174"
+    },
+    "new_responses": {
+      "path": "results/iat12/iat12_new5_pilot_10x_20260824_v1/responses.csv",
+      "sha256": "beeb911e0539cf6967e3e9ffae02ac754ea14a2aaf5559ffb239d17787fc9e29"
+    }
+  }
+}

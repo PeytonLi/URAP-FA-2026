@@ -1,0 +1,33 @@
+agreement_rate,disagreement_rate,model_display_name,model_key,no_response_rate,responses,topic
+0.0,0.8333333333333334,Qwen 3.5 9B,qwen35_9b,0.16666666666666666,12,country
+0.0,0.75,Qwen 3.5 9B,qwen35_9b,0.25,12,driving
+0.0,1.0,Qwen 3.5 9B,qwen35_9b,0.0,12,jobs
+0.0,0.75,Qwen 3.5 9B,qwen35_9b,0.25,12,terrorists
+0.0,1.0,Kimi K3,kimi_k3,0.0,12,country
+0.0,1.0,Kimi K3,kimi_k3,0.0,12,driving
+0.0,1.0,Kimi K3,kimi_k3,0.0,12,jobs
+0.0,1.0,Kimi K3,kimi_k3,0.0,12,terrorists
+0.0,1.0,GPT-5.6 Luna,gpt56_luna,0.0,12,country
+0.0,1.0,GPT-5.6 Luna,gpt56_luna,0.0,12,driving
+0.0,1.0,GPT-5.6 Luna,gpt56_luna,0.0,12,jobs
+0.0,1.0,GPT-5.6 Luna,gpt56_luna,0.0,12,terrorists
+0.0,0.5833333333333334,Gemini 3.6 Flash,gemini36_flash,0.4166666666666667,12,country
+0.0,0.8333333333333334,Gemini 3.6 Flash,gemini36_flash,0.16666666666666666,12,driving
+0.0,0.8333333333333334,Gemini 3.6 Flash,gemini36_flash,0.16666666666666666,12,jobs
+0.0,1.0,Gemini 3.6 Flash,gemini36_flash,0.0,12,terrorists
+0.08333333333333333,0.75,MiMo-V2.5,mimo_v25,0.16666666666666666,12,country
+0.08333333333333333,0.8333333333333334,MiMo-V2.5,mimo_v25,0.08333333333333333,12,driving
+0.0,0.8333333333333334,MiMo-V2.5,mimo_v25,0.16666666666666666,12,jobs
+0.0,0.9166666666666666,MiMo-V2.5,mimo_v25,0.08333333333333333,12,terrorists
+0.0,1.0,MiniMax M3,minimax_m3,0.0,11,country
+0.0,0.9166666666666666,MiniMax M3,minimax_m3,0.08333333333333333,12,driving
+0.0,0.8333333333333334,MiniMax M3,minimax_m3,0.16666666666666666,12,jobs
+0.0,0.9166666666666666,MiniMax M3,minimax_m3,0.08333333333333333,12,terrorists
+0.0,1.0,Step 3.7 Flash,step37_flash,0.0,12,country
+0.0,1.0,Step 3.7 Flash,step37_flash,0.0,12,driving
+0.08333333333333333,0.9166666666666666,Step 3.7 Flash,step37_flash,0.0,12,jobs
+0.0,1.0,Step 3.7 Flash,step37_flash,0.0,12,terrorists
+0.3333333333333333,0.6666666666666666,Grok 4.6,grok46,0.0,12,country
+0.3333333333333333,0.6666666666666666,Grok 4.6,grok46,0.0,12,driving
+0.3333333333333333,0.5833333333333334,Grok 4.6,grok46,0.08333333333333333,12,jobs
+0.16666666666666666,0.8333333333333334,Grok 4.6,grok46,0.0,12,terrorists

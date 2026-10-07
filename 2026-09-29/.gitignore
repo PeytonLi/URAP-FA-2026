@@ -1,0 +1,12 @@
+.venv/
+private/
+runtime/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.env
+.env.*
+data/common_support_quotas.csv
+data/selection_decisions.csv
+data/selection_report.json
+data/validation.json

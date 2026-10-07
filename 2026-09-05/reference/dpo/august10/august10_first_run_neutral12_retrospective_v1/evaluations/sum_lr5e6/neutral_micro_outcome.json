@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "absolute_race_gap_nonincrease": false,
+    "black_bootstrap_mean_nonpositive": false,
+    "black_negative_rate_nonincrease": false,
+    "entropy_retained_75pct": true,
+    "identity_leakage_nonincrease": true,
+    "validity_drop_at_most_1pp": true
+  },
+  "directional_checks": {
+    "absolute_race_gap_decreased": false,
+    "black_negative_rate_decreased": false
+  },
+  "directional_improvement_pass": false,
+  "guardrail_pass": false,
+  "interpretation": "Exploratory reuse of the neutral safeguard; not a confirmatory fairness result."
+}

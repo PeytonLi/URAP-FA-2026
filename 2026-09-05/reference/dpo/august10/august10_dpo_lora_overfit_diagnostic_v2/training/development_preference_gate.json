@@ -1,0 +1,11 @@
+{
+  "checks": {
+    "both_races_margin_delta_positive": true,
+    "both_races_preference_accuracy_at_least_80pct": true,
+    "both_races_present": true,
+    "overall_margin_delta_positive": true,
+    "overall_preference_accuracy_at_least_90pct": true
+  },
+  "interpretation": "Mechanistic overfit diagnostic only; not a fairness result.",
+  "pass": true
+}

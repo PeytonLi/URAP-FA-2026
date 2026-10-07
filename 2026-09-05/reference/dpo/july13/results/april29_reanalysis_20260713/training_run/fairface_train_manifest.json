@@ -1,0 +1,92 @@
+{
+  "created_at": "2026-04-29T10:53:25",
+  "output_dir": "/workspace/fairface_latest_code/outputs/fairface_dpo_default_20260429_104946",
+  "base_model_id": "google/gemma-3-12b-it",
+  "base_model_source": "/workspace/.hf/hub/models--google--gemma-3-12b-it/snapshots/96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "base_model_source_kind": "local_cache",
+  "processor_use_fast": true,
+  "dataset_name": "HuggingFaceM4/FairFace",
+  "dataset_config": "0.25",
+  "training_mode": "fairface_iat_only",
+  "pair_sources_used": [
+    "fairface_iat_auto"
+  ],
+  "train_split": "train",
+  "eval_split": "validation",
+  "seed": 7,
+  "train_seed": 7,
+  "eval_seed": 1007,
+  "train_sample_per_group": 2,
+  "eval_sample_per_group": 2,
+  "reuse_train_metadata_csv": null,
+  "reuse_eval_metadata_csv": null,
+  "train_metadata_csv": "/workspace/fairface_latest_code/outputs/fairface_dpo_default_20260429_104946/train_sample/train/train_metadata.csv",
+  "eval_metadata_csv": "/workspace/fairface_latest_code/outputs/fairface_dpo_default_20260429_104946/eval_sample/eval/eval_metadata.csv",
+  "raw_pairs_csv": "/workspace/fairface_latest_code/outputs/fairface_dpo_default_20260429_104946/fairface_iat_dpo_pairs_raw.csv",
+  "kept_pairs_csv": "/workspace/fairface_latest_code/outputs/fairface_dpo_default_20260429_104946/fairface_iat_dpo_pairs_kept.csv",
+  "training_pairs_csv": "/workspace/fairface_latest_code/outputs/fairface_dpo_default_20260429_104946/fairface_dpo_training_pairs.csv",
+  "raw_pairs_count": 8,
+  "kept_pairs_count": 1,
+  "training_pairs_after_repeat": 4,
+  "iat_dpo_pair_repeat": 4,
+  "iat_dpo_num_candidates": 8,
+  "iat_dpo_require_score_margin": 0.25,
+  "iat_forbidden_penalty": 5.0,
+  "iat_novelty_weight": 2.0,
+  "iat_valence_center_penalty": 0.4,
+  "dpo_beta": 0.05,
+  "dpo_lr": 5e-05,
+  "dpo_warmup_steps": 8,
+  "dpo_grad_accum": 4,
+  "dpo_max_steps": 16,
+  "global_step": 16,
+  "opt_step": 4,
+  "checkpoint_tags": [
+    "final"
+  ],
+  "precompute_dpo_reference": true,
+  "reference_cache_path": "/workspace/fairface_latest_code/outputs/fairface_dpo_default_20260429_104946/fairface_dpo_reference_scores.pt",
+  "adapter_effect_pretrain_json": "/workspace/fairface_latest_code/outputs/fairface_dpo_default_20260429_104946/adapter_effect_pretrain.json",
+  "adapter_effect_posttrain_json": "/workspace/fairface_latest_code/outputs/fairface_dpo_default_20260429_104946/adapter_effect_posttrain.json",
+  "eval_repeats": 10,
+  "conditions": "both",
+  "base_eval": {
+    "csv": "/workspace/fairface_latest_code/outputs/fairface_dpo_default_20260429_104946/fairface_eval_base.csv",
+    "counts_csv": "/workspace/fairface_latest_code/outputs/fairface_dpo_default_20260429_104946/fairface_eval_base.counts.csv",
+    "png": "/workspace/fairface_latest_code/outputs/fairface_dpo_default_20260429_104946/fairface_eval_base.png",
+    "rows": 80
+  },
+  "base_eval_metrics": {
+    "b_neg": 0,
+    "w_neg": 0,
+    "b_pos": 120,
+    "w_pos": 120,
+    "b_total": 120,
+    "w_total": 120,
+    "neg_gap_abs": 0,
+    "positive_gap_abs": 0
+  },
+  "adapter_eval": {
+    "csv": "/workspace/fairface_latest_code/outputs/fairface_dpo_default_20260429_104946/fairface_eval_adapter.csv",
+    "counts_csv": "/workspace/fairface_latest_code/outputs/fairface_dpo_default_20260429_104946/fairface_eval_adapter.counts.csv",
+    "png": "/workspace/fairface_latest_code/outputs/fairface_dpo_default_20260429_104946/fairface_eval_adapter.png",
+    "rows": 80
+  },
+  "adapter_eval_metrics": {
+    "b_neg": 0,
+    "w_neg": 0,
+    "b_pos": 120,
+    "w_pos": 120,
+    "b_total": 120,
+    "w_total": 120,
+    "neg_gap_abs": 0,
+    "positive_gap_abs": 0
+  },
+  "iat_word_distribution_csv": "/workspace/fairface_latest_code/outputs/fairface_dpo_default_20260429_104946/fairface_iat_word_distribution_base_vs_adapter.csv",
+  "plots": [
+    "/workspace/fairface_latest_code/outputs/fairface_dpo_default_20260429_104946/plot_dpo_loss.png",
+    "/workspace/fairface_latest_code/outputs/fairface_dpo_default_20260429_104946/plot_pair_diagnostics.png",
+    "/workspace/fairface_latest_code/outputs/fairface_dpo_default_20260429_104946/plot_eval_base_vs_adapter_counts.png",
+    "/workspace/fairface_latest_code/outputs/fairface_dpo_default_20260429_104946/plot_fairface_iat_word_distribution_base_vs_adapter.png"
+  ]
+}

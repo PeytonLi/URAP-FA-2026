@@ -1,0 +1,15 @@
+{
+  "account_usage_delta_usd": 0.20861194400000027,
+  "final": {
+    "remaining": 16.910260414,
+    "total_credits": 25.0,
+    "total_usage": 8.089739586
+  },
+  "finished_at": "2026-09-05T07:40:25.943189+00:00",
+  "initial": {
+    "remaining": 17.118872358,
+    "total_credits": 25.0,
+    "total_usage": 7.881127642
+  },
+  "model_calls_recorded": 288
+}

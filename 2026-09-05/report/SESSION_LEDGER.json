@@ -1,0 +1,30 @@
+{
+  "account_snapshot_at": "2026-09-05T08:17:51.912580+00:00",
+  "billing_caveat": "Account deltas include delayed billing/other account activity and storage; not a per-run invoice. GPU wall time uses deployment-to-termination-request timestamps, not exact provider billable seconds.",
+  "gpu_terminated": true,
+  "local_full_run_elapsed_seconds": 1416.0398951284587,
+  "local_full_run_generation_calls": 961,
+  "local_full_run_tasks": 956,
+  "local_probe_generation_calls": 8,
+  "local_valid_full_run_tasks": 920,
+  "network_volume_preserved": true,
+  "new_training": false,
+  "no_direct_calls_to": [
+    "Anthropic",
+    "OpenAI",
+    "Gemini"
+  ],
+  "openrouter_account_minus_reported_usd": 4.996003610813204e-16,
+  "openrouter_account_usage_delta_usd": 0.2510570640000003,
+  "openrouter_generation_calls": 700,
+  "openrouter_logical_tasks": 688,
+  "openrouter_remaining_usd": 16.867815294,
+  "openrouter_reported_call_cost_usd": 0.2510570639999998,
+  "remaining_runpod_storage_spend_usd_per_hour": 0.008,
+  "runpod_account_balance_delta_usd": 2.072830595300001,
+  "runpod_deployment_to_termination_hours": 0.5912348238888888,
+  "runpod_list_rate_usd_per_hour": 3.49,
+  "runpod_remaining_usd": 17.0629664033,
+  "runpod_walltime_estimate_usd": 2.063409535372222,
+  "total_observed_account_deltas_usd": 2.3238876593000013
+}

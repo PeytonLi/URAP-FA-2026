@@ -1,0 +1,208 @@
+{
+  "checks": {
+    "all_blocks_valid": {
+      "observed": 0,
+      "pass": true,
+      "requirement": "0 invalid blocks"
+    },
+    "controlled_iat_fraction": {
+      "observed": 0.3,
+      "pass": true,
+      "requirement": "<= 0.3"
+    },
+    "development_blocks": {
+      "observed": 10,
+      "pass": true,
+      "requirement": ">= 10"
+    },
+    "development_iat_blocks": {
+      "observed": 3,
+      "pass": true,
+      "requirement": ">= 3"
+    },
+    "development_negative_expression_blocks": {
+      "observed": 5,
+      "pass": true,
+      "requirement": ">= 5"
+    },
+    "development_negative_iat_blocks": {
+      "observed": 3,
+      "pass": true,
+      "requirement": ">= 3"
+    },
+    "development_profile_blocks": {
+      "observed": 7,
+      "pass": true,
+      "requirement": ">= 7"
+    },
+    "development_rows": {
+      "observed": 20,
+      "pass": true,
+      "requirement": ">= 20"
+    },
+    "equal_race_rows": {
+      "observed": {
+        "Black": 50,
+        "White": 50
+      },
+      "pass": true,
+      "requirement": "Black == White"
+    },
+    "iat_direct_reduction_fraction": {
+      "observed": 1.0,
+      "pass": true,
+      "requirement": "1.0"
+    },
+    "iat_tuple_cap": {
+      "observed": {
+        "cap": 3,
+        "largest": 3
+      },
+      "pass": true,
+      "requirement": "largest tuple count <= rounded 15% cap"
+    },
+    "negative_expression_blocks": {
+      "observed": 7,
+      "pass": true,
+      "requirement": ">= 7"
+    },
+    "negative_iat_blocks": {
+      "observed": 3,
+      "pass": true,
+      "requirement": ">= 3"
+    },
+    "negative_profile_blocks": {
+      "observed": 4,
+      "pass": true,
+      "requirement": ">= 4"
+    },
+    "one_row_per_image": {
+      "observed": 1,
+      "pass": true,
+      "requirement": "<= 1"
+    },
+    "profile_chosen_unique": {
+      "observed": 0,
+      "pass": true,
+      "requirement": "0 duplicate chosen profiles"
+    },
+    "profile_direct_harm_reduction_fraction": {
+      "observed": 0.9428571428571428,
+      "pass": true,
+      "requirement": ">= 0.5"
+    },
+    "profile_rows_mechanically_valid": {
+      "observed": {
+        "total": 70,
+        "valid": 70
+      },
+      "pass": true,
+      "requirement": "all profile rows"
+    },
+    "required_columns": {
+      "observed": [],
+      "pass": true,
+      "requirement": "no required column may be missing"
+    },
+    "total_blocks": {
+      "observed": 50,
+      "pass": true,
+      "requirement": ">= 50"
+    },
+    "total_rows": {
+      "observed": 100,
+      "pass": true,
+      "requirement": ">= 100"
+    },
+    "train_blocks": {
+      "observed": 40,
+      "pass": true,
+      "requirement": ">= 40"
+    },
+    "train_development_image_disjoint": {
+      "observed": 0,
+      "pass": true,
+      "requirement": "0 shared image hashes"
+    },
+    "train_iat_blocks": {
+      "observed": 12,
+      "pass": true,
+      "requirement": ">= 12"
+    },
+    "train_negative_expression_blocks": {
+      "observed": 2,
+      "pass": true,
+      "requirement": ">= 2"
+    },
+    "train_negative_iat_blocks": {
+      "observed": 0,
+      "pass": false,
+      "requirement": ">= 3"
+    },
+    "train_profile_blocks": {
+      "observed": 28,
+      "pass": true,
+      "requirement": ">= 28"
+    },
+    "train_rows": {
+      "observed": 80,
+      "pass": true,
+      "requirement": ">= 80"
+    },
+    "unique_iat_chosen_tuples": {
+      "observed": 7,
+      "pass": true,
+      "requirement": ">= 5"
+    },
+    "unique_images": {
+      "observed": 100,
+      "pass": true,
+      "requirement": ">= 100"
+    }
+  },
+  "config": "config/pilot_gate.json",
+  "decision": "do_not_train",
+  "input_dataset": "outputs/august10/frozen_pilot_v4_negative_expression/mixed_dpo_pairs_frozen.csv",
+  "invalid_blocks": {},
+  "issues": [
+    "train_negative_iat_blocks"
+  ],
+  "metrics": {
+    "iat_chosen_tuple_counts": {
+      "cheerful|glad|delight": 3,
+      "cheer|delight|pleasing": 2,
+      "friendship|appealing|glad": 1,
+      "friend|pleasing|excellent": 2,
+      "laughing|joyous|pleasure": 2,
+      "sadness|friendship|glad": 3,
+      "smiling|happy|joyful": 2
+    },
+    "negative_blocks_by_split": {
+      "development": 5,
+      "train": 2
+    },
+    "negative_iat_blocks_by_split": {
+      "development": 3
+    },
+    "rows": 100,
+    "rows_by_race": {
+      "Black": 50,
+      "White": 50
+    },
+    "rows_by_split": {
+      "development": 20,
+      "train": 80
+    },
+    "rows_by_task": {
+      "grounded_profile": 70,
+      "iat_3word": 30
+    },
+    "valid_blocks": 50,
+    "valid_blocks_by_split": {
+      "development": 10,
+      "train": 40
+    }
+  },
+  "pass": false,
+  "protocol_version": "august10-dataset-gate-v2"
+}

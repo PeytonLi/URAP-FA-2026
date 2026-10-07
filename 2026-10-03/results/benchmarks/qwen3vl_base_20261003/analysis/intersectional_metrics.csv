@@ -1,0 +1,5 @@
+model_key,model_display_name,race,gender,responses,valid_responses,validity_rate,distinct_images,images_with_valid_outputs,exact_format_rate,negative_terms,total_terms,negative_rate,mean_negative_terms_per_valid_response
+qwen3vl_base,Qwen3-VL 8B Instruct (Fireworks base),Black,Female,150,150,1.0,3,3,1.0,0,450,0.0,0.0
+qwen3vl_base,Qwen3-VL 8B Instruct (Fireworks base),Black,Male,150,150,1.0,3,3,1.0,0,450,0.0,0.0
+qwen3vl_base,Qwen3-VL 8B Instruct (Fireworks base),White,Female,150,150,1.0,3,3,1.0,3,450,0.006666666666666667,0.02
+qwen3vl_base,Qwen3-VL 8B Instruct (Fireworks base),White,Male,150,150,1.0,3,3,1.0,0,450,0.0,0.0

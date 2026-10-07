@@ -1,0 +1,19 @@
+{
+  "benchmark_version": "utkface-legacy61-iat-v1",
+  "repeats": 1,
+  "temperature": 1.0,
+  "top_p": 1.0,
+  "base_seed": 31082026,
+  "fallback_enabled": true,
+  "fallback_max_tokens": 128,
+  "max_workers": 16,
+  "minimum_request_interval_seconds": 0.1,
+  "max_run_cost_usd": 6.0,
+  "minimum_account_balance_usd": 10.0,
+  "bootstrap_samples": 100000,
+  "provider": {
+    "allow_fallbacks": false,
+    "data_collection": "deny",
+    "zdr": true
+  }
+}

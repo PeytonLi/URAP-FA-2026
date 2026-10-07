@@ -1,0 +1,30 @@
+{
+  "study_id": "multimodel-race-bias-20260831",
+  "scope": "Eight hosted models; no new Gemma inference or fine-tuning",
+  "model_config": "config/models_aug31.json",
+  "openrouter_session_max_spend_usd": 12.0,
+  "openrouter_required_reserve_usd": 10.0,
+  "utkface": {
+    "official_project": "https://github.com/aicip/UTKFace",
+    "transport_mirror": "py97/UTKFace-Cropped",
+    "transport_revision": "e80f21fb21fa3631380c3cb634b79be3ac2f4cba",
+    "archive_sha256": "2c0655397b498e81b82d685ee74bee8c2e4364a5897caf3afec6ea48929024a7",
+    "license_scope": "non-commercial research",
+    "adult_age_min": 18,
+    "adult_age_max": 70,
+    "evaluation_images_per_race_gender": 100,
+    "future_training_images_per_race_gender": 100,
+    "minimum_expression_confidence": 0.60,
+    "minimum_quality_score": 0.50,
+    "expression_model": "trpakov/vit-face-expression",
+    "expression_model_revision": "ef0bc6fc34241b6587e7e009e7711357be28c024"
+  },
+  "visbias": {
+    "repository": "https://github.com/uscnlp-lime/VisBias",
+    "revision": "6a129c5d6e0d2278325811196ac33a1bc522408d",
+    "adaptation": "race-focused image-description plus order-balanced unsupported-comparison pilot",
+    "images_per_occupation_gender_race": 3,
+    "normalized_max_dimension": 512,
+    "normalized_jpeg_quality": 90
+  }
+}

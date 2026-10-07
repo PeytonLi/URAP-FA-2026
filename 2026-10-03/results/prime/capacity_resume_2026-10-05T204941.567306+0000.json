@@ -1,0 +1,2074 @@
+{
+  "availability": {
+    "items": [
+      {
+        "cloudId": "gpu_1x_h100_sxm5",
+        "country": "US",
+        "dataCenter": "us-southeast-1",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 2816,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "gpuCount": 1,
+        "gpuMemory": 80,
+        "gpuType": "H100_80GB",
+        "images": [
+          "ubuntu_22_cuda_12",
+          "cuda_12_1_pytorch_2_2",
+          "cuda_11_8_pytorch_2_1",
+          "cuda_12_1_pytorch_2_3",
+          "cuda_12_1_pytorch_2_4",
+          "cuda_12_4_pytorch_2_4",
+          "cuda_12_4_pytorch_2_5",
+          "cuda_12_4_pytorch_2_6",
+          "cuda_12_6_pytorch_2_7",
+          "stable_diffusion",
+          "axolotl",
+          "bittensor",
+          "vllm_llama_8b",
+          "vllm_llama_70b",
+          "vllm_llama_405b",
+          "custom_template",
+          "prime_rl"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 225,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 4.29
+        },
+        "provider": "lambdalabs",
+        "provisioningTime": null,
+        "region": "united_states",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": null,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "socket": "SXM5",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 26,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "gpu_1x_h100_pcie",
+        "country": "US",
+        "dataCenter": "us-west-3",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 1024,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "gpuCount": 1,
+        "gpuMemory": 80,
+        "gpuType": "H100_80GB",
+        "images": [
+          "ubuntu_22_cuda_12",
+          "cuda_12_1_pytorch_2_2",
+          "cuda_11_8_pytorch_2_1",
+          "cuda_12_1_pytorch_2_3",
+          "cuda_12_1_pytorch_2_4",
+          "cuda_12_4_pytorch_2_4",
+          "cuda_12_4_pytorch_2_5",
+          "cuda_12_4_pytorch_2_6",
+          "cuda_12_6_pytorch_2_7",
+          "stable_diffusion",
+          "axolotl",
+          "bittensor",
+          "vllm_llama_8b",
+          "vllm_llama_70b",
+          "vllm_llama_405b",
+          "custom_template",
+          "prime_rl"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 200,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 3.29
+        },
+        "provider": "lambdalabs",
+        "provisioningTime": null,
+        "region": "united_states",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": null,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 26,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "gpu_1x_a10",
+        "country": "US",
+        "dataCenter": "us-east-1",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 1400,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "gpuCount": 1,
+        "gpuMemory": 24,
+        "gpuType": "A10_24GB",
+        "images": [
+          "ubuntu_22_cuda_12",
+          "cuda_12_1_pytorch_2_2",
+          "cuda_11_8_pytorch_2_1",
+          "cuda_12_1_pytorch_2_3",
+          "cuda_12_1_pytorch_2_4",
+          "cuda_12_4_pytorch_2_4",
+          "cuda_12_4_pytorch_2_5",
+          "cuda_12_4_pytorch_2_6",
+          "cuda_12_6_pytorch_2_7",
+          "stable_diffusion",
+          "axolotl",
+          "bittensor",
+          "vllm_llama_8b",
+          "vllm_llama_70b",
+          "vllm_llama_405b",
+          "custom_template",
+          "prime_rl"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 200,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 1.29
+        },
+        "provider": "lambdalabs",
+        "provisioningTime": null,
+        "region": "united_states",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": null,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 30,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "gpu_1x_a100_sxm4",
+        "country": "US",
+        "dataCenter": "us-east-1",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 512,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "gpuCount": 1,
+        "gpuMemory": 40,
+        "gpuType": "A100_40GB",
+        "images": [
+          "ubuntu_22_cuda_12",
+          "cuda_12_1_pytorch_2_2",
+          "cuda_11_8_pytorch_2_1",
+          "cuda_12_1_pytorch_2_3",
+          "cuda_12_1_pytorch_2_4",
+          "cuda_12_4_pytorch_2_4",
+          "cuda_12_4_pytorch_2_5",
+          "cuda_12_4_pytorch_2_6",
+          "cuda_12_6_pytorch_2_7",
+          "stable_diffusion",
+          "axolotl",
+          "bittensor",
+          "vllm_llama_8b",
+          "vllm_llama_70b",
+          "vllm_llama_405b",
+          "custom_template",
+          "prime_rl"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 200,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 1.99
+        },
+        "provider": "lambdalabs",
+        "provisioningTime": null,
+        "region": "united_states",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": null,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "socket": "SXM4",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 30,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "CPU.4V.16G",
+        "country": "FI",
+        "dataCenter": "FIN-01",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 4000,
+          "minCount": 50,
+          "pricePerUnit": 0.000274,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": false,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 16,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.048
+        },
+        "provider": "datacrunch",
+        "provisioningTime": null,
+        "region": "eu_north",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": null,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 4,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "CPU.4V.16G_SPOT",
+        "country": "FI",
+        "dataCenter": "FIN-01",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 4000,
+          "minCount": 50,
+          "pricePerUnit": 0.000274,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": true,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 16,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.0192
+        },
+        "provider": "datacrunch",
+        "provisioningTime": null,
+        "region": "eu_north",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": null,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 4,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "CPU.4V.16G",
+        "country": "FI",
+        "dataCenter": "FIN-02",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 4000,
+          "minCount": 50,
+          "pricePerUnit": 0.000274,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": false,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 16,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.048
+        },
+        "provider": "datacrunch",
+        "provisioningTime": null,
+        "region": "eu_north",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": null,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 4,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "CPU.4V.16G_SPOT",
+        "country": "FI",
+        "dataCenter": "FIN-02",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 4000,
+          "minCount": 50,
+          "pricePerUnit": 0.000274,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": true,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 16,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.0192
+        },
+        "provider": "datacrunch",
+        "provisioningTime": null,
+        "region": "eu_north",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": null,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 4,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "CPU.4V.16G",
+        "country": "FI",
+        "dataCenter": "FIN-03",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 4000,
+          "minCount": 50,
+          "pricePerUnit": 0.000274,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": false,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 16,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.048
+        },
+        "provider": "datacrunch",
+        "provisioningTime": null,
+        "region": "eu_north",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": null,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 4,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "CPU.4V.16G_SPOT",
+        "country": "FI",
+        "dataCenter": "FIN-03",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 4000,
+          "minCount": 50,
+          "pricePerUnit": 0.000274,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": true,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 16,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.0192
+        },
+        "provider": "datacrunch",
+        "provisioningTime": null,
+        "region": "eu_north",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": null,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 4,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "CPU.8V.32G",
+        "country": "FI",
+        "dataCenter": "FIN-01",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 4000,
+          "minCount": 50,
+          "pricePerUnit": 0.000274,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": false,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 32,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.096
+        },
+        "provider": "datacrunch",
+        "provisioningTime": null,
+        "region": "eu_north",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": null,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 8,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "CPU.8V.32G_SPOT",
+        "country": "FI",
+        "dataCenter": "FIN-01",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 4000,
+          "minCount": 50,
+          "pricePerUnit": 0.000274,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": true,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 32,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.0384
+        },
+        "provider": "datacrunch",
+        "provisioningTime": null,
+        "region": "eu_north",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": null,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 8,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "CPU.8V.32G",
+        "country": "FI",
+        "dataCenter": "FIN-03",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 4000,
+          "minCount": 50,
+          "pricePerUnit": 0.000274,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": false,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 32,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.096
+        },
+        "provider": "datacrunch",
+        "provisioningTime": null,
+        "region": "eu_north",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": null,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 8,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "CPU.8V.32G_SPOT",
+        "country": "FI",
+        "dataCenter": "FIN-03",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 4000,
+          "minCount": 50,
+          "pricePerUnit": 0.000274,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": true,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 32,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.0384
+        },
+        "provider": "datacrunch",
+        "provisioningTime": null,
+        "region": "eu_north",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": null,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 8,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "cpu-d3_2vcpu-8gb",
+        "country": "US",
+        "dataCenter": "us-central1",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 40,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 8,
+          "defaultIncludedInPrice": null,
+          "maxCount": 8,
+          "minCount": 8,
+          "pricePerUnit": 0.0,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.049600000000000005
+        },
+        "provider": "nebius",
+        "provisioningTime": null,
+        "region": "united_states",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": 0,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 0,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 2,
+          "defaultIncludedInPrice": null,
+          "maxCount": 2,
+          "minCount": 2,
+          "pricePerUnit": 0.0,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "cpu-d3_2vcpu-8gb",
+        "country": "FR",
+        "dataCenter": "eu-west1",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 40,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 8,
+          "defaultIncludedInPrice": null,
+          "maxCount": 8,
+          "minCount": 8,
+          "pricePerUnit": 0.0,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.049600000000000005
+        },
+        "provider": "nebius",
+        "provisioningTime": null,
+        "region": "eu_west",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": 0,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 0,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 2,
+          "defaultIncludedInPrice": null,
+          "maxCount": 2,
+          "minCount": 2,
+          "pricePerUnit": 0.0,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "cpu-d3_4vcpu-16gb",
+        "country": "FR",
+        "dataCenter": "eu-west1",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 40,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 16,
+          "defaultIncludedInPrice": null,
+          "maxCount": 16,
+          "minCount": 16,
+          "pricePerUnit": 0.0,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.0992
+        },
+        "provider": "nebius",
+        "provisioningTime": null,
+        "region": "eu_west",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": 0,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 0,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 4,
+          "defaultIncludedInPrice": null,
+          "maxCount": 4,
+          "minCount": 4,
+          "pricePerUnit": 0.0,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "cpu-d3_8vcpu-32gb",
+        "country": "FR",
+        "dataCenter": "eu-west1",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 40,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 32,
+          "defaultIncludedInPrice": null,
+          "maxCount": 32,
+          "minCount": 32,
+          "pricePerUnit": 0.0,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.1984
+        },
+        "provider": "nebius",
+        "provisioningTime": null,
+        "region": "eu_west",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": 0,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 0,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 8,
+          "defaultIncludedInPrice": null,
+          "maxCount": 8,
+          "minCount": 8,
+          "pricePerUnit": 0.0,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "cpu-d3_16vcpu-64gb",
+        "country": "FR",
+        "dataCenter": "eu-west1",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 40,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 64,
+          "defaultIncludedInPrice": null,
+          "maxCount": 64,
+          "minCount": 64,
+          "pricePerUnit": 0.0,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.3968
+        },
+        "provider": "nebius",
+        "provisioningTime": null,
+        "region": "eu_west",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": 0,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 0,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 16,
+          "defaultIncludedInPrice": null,
+          "maxCount": 16,
+          "minCount": 16,
+          "pricePerUnit": 0.0,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "cpu-d3_32vcpu-128gb",
+        "country": "FR",
+        "dataCenter": "eu-west1",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 40,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 128,
+          "defaultIncludedInPrice": null,
+          "maxCount": 128,
+          "minCount": 128,
+          "pricePerUnit": 0.0,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.7936000000000001
+        },
+        "provider": "nebius",
+        "provisioningTime": null,
+        "region": "eu_west",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": 0,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 0,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 32,
+          "defaultIncludedInPrice": null,
+          "maxCount": 32,
+          "minCount": 32,
+          "pricePerUnit": 0.0,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "cpu-d3_48vcpu-192gb",
+        "country": "FR",
+        "dataCenter": "eu-west1",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 40,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 192,
+          "defaultIncludedInPrice": null,
+          "maxCount": 192,
+          "minCount": 192,
+          "pricePerUnit": 0.0,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 1.1904
+        },
+        "provider": "nebius",
+        "provisioningTime": null,
+        "region": "eu_west",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": 0,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 0,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 48,
+          "defaultIncludedInPrice": null,
+          "maxCount": 48,
+          "minCount": 48,
+          "pricePerUnit": 0.0,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "cpu-d3_2vcpu-8gb",
+        "country": "FI",
+        "dataCenter": "eu-north1",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 40,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 8,
+          "defaultIncludedInPrice": null,
+          "maxCount": 8,
+          "minCount": 8,
+          "pricePerUnit": 0.0,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.049600000000000005
+        },
+        "provider": "nebius",
+        "provisioningTime": null,
+        "region": "eu_north",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": 0,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 0,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 2,
+          "defaultIncludedInPrice": null,
+          "maxCount": 2,
+          "minCount": 2,
+          "pricePerUnit": 0.0,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "cpu-d3_4vcpu-16gb",
+        "country": "FI",
+        "dataCenter": "eu-north1",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 40,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 16,
+          "defaultIncludedInPrice": null,
+          "maxCount": 16,
+          "minCount": 16,
+          "pricePerUnit": 0.0,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.0992
+        },
+        "provider": "nebius",
+        "provisioningTime": null,
+        "region": "eu_north",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": 0,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 0,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 4,
+          "defaultIncludedInPrice": null,
+          "maxCount": 4,
+          "minCount": 4,
+          "pricePerUnit": 0.0,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "cpu-d3_8vcpu-32gb",
+        "country": "FI",
+        "dataCenter": "eu-north1",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 40,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 32,
+          "defaultIncludedInPrice": null,
+          "maxCount": 32,
+          "minCount": 32,
+          "pricePerUnit": 0.0,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.1984
+        },
+        "provider": "nebius",
+        "provisioningTime": null,
+        "region": "eu_north",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": 0,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 0,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 8,
+          "defaultIncludedInPrice": null,
+          "maxCount": 8,
+          "minCount": 8,
+          "pricePerUnit": 0.0,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "cpu-d3_16vcpu-64gb",
+        "country": "FI",
+        "dataCenter": "eu-north1",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 40,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 64,
+          "defaultIncludedInPrice": null,
+          "maxCount": 64,
+          "minCount": 64,
+          "pricePerUnit": 0.0,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.3968
+        },
+        "provider": "nebius",
+        "provisioningTime": null,
+        "region": "eu_north",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": 0,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 0,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 16,
+          "defaultIncludedInPrice": null,
+          "maxCount": 16,
+          "minCount": 16,
+          "pricePerUnit": 0.0,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "cpu-e2_2vcpu-8gb",
+        "country": "FI",
+        "dataCenter": "eu-north1",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 40,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 8,
+          "defaultIncludedInPrice": null,
+          "maxCount": 8,
+          "minCount": 8,
+          "pricePerUnit": 0.0,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.049600000000000005
+        },
+        "provider": "nebius",
+        "provisioningTime": null,
+        "region": "eu_north",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": 0,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 0,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 2,
+          "defaultIncludedInPrice": null,
+          "maxCount": 2,
+          "minCount": 2,
+          "pricePerUnit": 0.0,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "cpu-e2_4vcpu-16gb",
+        "country": "FI",
+        "dataCenter": "eu-north1",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 40,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 16,
+          "defaultIncludedInPrice": null,
+          "maxCount": 16,
+          "minCount": 16,
+          "pricePerUnit": 0.0,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.0992
+        },
+        "provider": "nebius",
+        "provisioningTime": null,
+        "region": "eu_north",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": 0,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 0,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 4,
+          "defaultIncludedInPrice": null,
+          "maxCount": 4,
+          "minCount": 4,
+          "pricePerUnit": 0.0,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "cpu-e2_8vcpu-32gb",
+        "country": "FI",
+        "dataCenter": "eu-north1",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 40,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 32,
+          "defaultIncludedInPrice": null,
+          "maxCount": 32,
+          "minCount": 32,
+          "pricePerUnit": 0.0,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.1984
+        },
+        "provider": "nebius",
+        "provisioningTime": null,
+        "region": "eu_north",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": 0,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 0,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 8,
+          "defaultIncludedInPrice": null,
+          "maxCount": 8,
+          "minCount": 8,
+          "pricePerUnit": 0.0,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "cpu-e2_16vcpu-64gb",
+        "country": "FI",
+        "dataCenter": "eu-north1",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 100,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 40,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 0,
+        "gpuType": "CPU_NODE",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 64,
+          "defaultIncludedInPrice": null,
+          "maxCount": 64,
+          "minCount": 64,
+          "pricePerUnit": 0.0,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.3968
+        },
+        "provider": "nebius",
+        "provisioningTime": null,
+        "region": "eu_north",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": 0,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 0,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 16,
+          "defaultIncludedInPrice": null,
+          "maxCount": 16,
+          "minCount": 16,
+          "pricePerUnit": 0.0,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "gpu_1x_a6000",
+        "country": "US",
+        "dataCenter": "us-central-1",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 256,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "gpuCount": 1,
+        "gpuMemory": 48,
+        "gpuType": "A6000_48GB",
+        "images": [
+          "ubuntu_22_cuda_12"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 48,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 0.54
+        },
+        "provider": "massedcompute",
+        "provisioningTime": null,
+        "region": "united_states",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": null,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        },
+        "socket": "PCIe",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 6,
+          "defaultIncludedInPrice": null,
+          "maxCount": null,
+          "minCount": null,
+          "pricePerUnit": null,
+          "step": null
+        }
+      },
+      {
+        "cloudId": "gpu-h200-sxm_1gpu-16vcpu-200gb",
+        "country": "US",
+        "dataCenter": "us-central1",
+        "disk": {
+          "additionalInfo": null,
+          "defaultCount": 1500,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 1500,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "gpuCount": 1,
+        "gpuMemory": 141,
+        "gpuType": "H200_141GB",
+        "images": [
+          "ubuntu_22_cuda_12",
+          "cuda_12_1_pytorch_2_2",
+          "cuda_11_8_pytorch_2_1",
+          "cuda_12_1_pytorch_2_3",
+          "cuda_12_1_pytorch_2_4",
+          "cuda_12_4_pytorch_2_4",
+          "cuda_12_4_pytorch_2_5",
+          "cuda_12_4_pytorch_2_6",
+          "cuda_12_6_pytorch_2_7",
+          "stable_diffusion",
+          "axolotl",
+          "bittensor",
+          "vllm_llama_8b",
+          "vllm_llama_70b",
+          "vllm_llama_405b",
+          "custom_template",
+          "prime_rl"
+        ],
+        "interconnect": null,
+        "interconnectType": null,
+        "internetSpeed": null,
+        "isSpot": null,
+        "memory": {
+          "additionalInfo": null,
+          "defaultCount": 200,
+          "defaultIncludedInPrice": null,
+          "maxCount": 200,
+          "minCount": 200,
+          "pricePerUnit": 0.0032,
+          "step": null
+        },
+        "prepaidTime": null,
+        "prices": {
+          "communityPrice": null,
+          "currency": "USD",
+          "isVariable": null,
+          "onDemand": 4.5
+        },
+        "provider": "nebius",
+        "provisioningTime": null,
+        "region": "united_states",
+        "security": "secure_cloud",
+        "sharedDisk": {
+          "additionalInfo": null,
+          "defaultCount": 0,
+          "defaultIncludedInPrice": false,
+          "maxCount": 8192,
+          "minCount": 0,
+          "pricePerUnit": 0.0001,
+          "step": 1
+        },
+        "socket": "SXM5",
+        "stockStatus": "Available",
+        "vcpu": {
+          "additionalInfo": null,
+          "defaultCount": 16,
+          "defaultIncludedInPrice": null,
+          "maxCount": 16,
+          "minCount": 16,
+          "pricePerUnit": 0.012,
+          "step": null
+        }
+      }
+    ],
+    "totalCount": 31
+  },
+  "checked_at": "2026-10-05T20:49:41.567306+00:00",
+  "pods": [],
+  "wallet_usd": 94.0857
+}

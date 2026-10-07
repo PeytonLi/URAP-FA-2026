@@ -1,0 +1,25 @@
+bh_adjusted_p_value_within_figure_family,groups,model_display_name,model_key,observed_max_minus_min_agreement,permutation_p_value,permutation_samples,regime,responses
+1.0,4,Gemma 3 12B IT (OpenRouter/DeepInfra BF16),gemma3_12b_hosted,0.0,1.0,20000,benign,16
+1.0,4,Gemma 3 12B IT (OpenRouter/DeepInfra BF16),gemma3_12b_hosted,0.0,1.0,20000,untargeted,16
+1.0,4,Gemma 3 12B IT (OpenRouter/DeepInfra BF16),gemma3_12b_hosted,0.5,0.19944002799860008,20000,targeted,16
+1.0,4,Qwen 3.5 9B,qwen35_9b,0.0,1.0,20000,benign,16
+1.0,4,Qwen 3.5 9B,qwen35_9b,0.0,1.0,20000,untargeted,16
+1.0,4,Qwen 3.5 9B,qwen35_9b,0.0,1.0,20000,targeted,16
+1.0,4,Kimi K3,kimi_k3,0.0,1.0,20000,benign,16
+1.0,4,Kimi K3,kimi_k3,0.0,1.0,20000,untargeted,16
+1.0,4,Kimi K3,kimi_k3,0.0,1.0,20000,targeted,16
+1.0,4,GPT-5.6 Luna,gpt56_luna,0.0,1.0,20000,benign,16
+1.0,4,GPT-5.6 Luna,gpt56_luna,0.0,1.0,20000,untargeted,16
+1.0,4,GPT-5.6 Luna,gpt56_luna,0.0,1.0,20000,targeted,16
+1.0,4,Gemini 3.6 Flash,gemini36_flash,0.0,1.0,20000,benign,16
+1.0,4,Gemini 3.6 Flash,gemini36_flash,0.0,1.0,20000,untargeted,16
+1.0,4,Gemini 3.6 Flash,gemini36_flash,0.0,1.0,20000,targeted,16
+1.0,4,MiMo-V2.5,mimo_v25,0.0,1.0,20000,benign,16
+1.0,4,MiMo-V2.5,mimo_v25,0.0,1.0,20000,untargeted,16
+1.0,4,MiMo-V2.5,mimo_v25,0.25,1.0,20000,targeted,16
+1.0,4,MiniMax M3,minimax_m3,0.0,1.0,20000,benign,16
+1.0,4,MiniMax M3,minimax_m3,0.0,1.0,20000,untargeted,15
+1.0,4,MiniMax M3,minimax_m3,0.0,1.0,20000,targeted,16
+1.0,4,Step 3.7 Flash,step37_flash,0.0,1.0,20000,benign,16
+1.0,4,Step 3.7 Flash,step37_flash,0.0,1.0,20000,untargeted,16
+1.0,4,Step 3.7 Flash,step37_flash,0.25,1.0,20000,targeted,16

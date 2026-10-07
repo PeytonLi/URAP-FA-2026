@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-10-06T18:00:06.604907+00:00",
+  "checkpoint_promoted": false,
+  "completed_epochs": 3,
+  "development_images": 180,
+  "final_checkpoint_evidence": "results/prime_qwen35_orpo_checkpoint_verified.json",
+  "final_checkpoint_verified": true,
+  "finite_nonzero_gradient_history": true,
+  "generation_benchmark_complete": false,
+  "max_seconds": 10800.0,
+  "method": "orpo",
+  "model": "Qwen/Qwen3.5-9B",
+  "optimizer_updates_observed": 507,
+  "pilot_policy_sha256": "9994d95025e9072067a5e5f69b30b38eb21e27ef87b59e2c3af4ab7daff0dfb3",
+  "planned_optimizer_updates": 507,
+  "pre_training_image_control": {
+    "control": "zero_pixels_identical_text_and_native_grid",
+    "maximum_response_logprob_change": 6.401937007904053
+  },
+  "profile_targets_used": 0,
+  "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "source": "data/private/prime_native/20261006T154336.936439_0000/qwen35_orpo_progress.json",
+  "source_sha256": "45337b4bd0506e5bcc791514aefa35d15ea0727c5cb4486c4e0eb48b2150302b",
+  "status": "training_complete_evaluation_pending",
+  "targets_sha256": "671674997fa6a9326af800e7ffb476af1e75d997bb8fb931f973d394c5497f1b",
+  "test_images_used": 0,
+  "training_complete": true,
+  "training_images": 676,
+  "versions": {
+    "accelerate": "1.15.0",
+    "peft": "0.21.0",
+    "torch": "2.11.0+cu128",
+    "transformers": "5.14.0"
+  }
+}

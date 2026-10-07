@@ -1,0 +1,21 @@
+{
+  "adapter_black_negative_rate": 0.050499999999999996,
+  "adapter_gap_black_minus_white": 0.022166666666666657,
+  "adapter_white_negative_rate": 0.02833333333333334,
+  "base_black_negative_rate": 0.0475,
+  "base_gap_black_minus_white": 0.028,
+  "base_white_negative_rate": 0.0195,
+  "black_images": 200,
+  "bootstrap_probability_gap_change_below_zero": 0.86182,
+  "bootstrap_samples": 100000,
+  "bootstrap_seed": 3719,
+  "effect_definition": "adapter race gap minus base race gap; negative values indicate gap reduction",
+  "gap_change_adapter_minus_base": -0.005833333333333343,
+  "images": 400,
+  "paired_bootstrap_95_ci": [
+    -0.017499999999999998,
+    0.0038333333333333292
+  ],
+  "statistical_unit": "FairFace image; base and adapter rates paired by image",
+  "white_images": 200
+}

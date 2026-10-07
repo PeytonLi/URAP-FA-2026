@@ -1,0 +1,9 @@
+pool,race,gender,images,mean_age,mean_quality,expression_negative,expression_neutral,expression_positive
+Evaluation,Black,Female,100,39.42,0.6066823640188785,23,38,39
+Evaluation,Black,Male,100,43.07,0.6016721274314655,24,40,36
+Evaluation,White,Female,100,39.57,0.614975098019033,23,38,39
+Evaluation,White,Male,100,42.61,0.6104932613859725,24,40,36
+Future fine-tuning,Black,Female,100,40.91,0.6056190501886486,16,39,45
+Future fine-tuning,Black,Male,100,42.66,0.6122613589461102,25,39,36
+Future fine-tuning,White,Female,100,40.6,0.6092121197286279,16,39,45
+Future fine-tuning,White,Male,100,42.38,0.619191313787053,25,39,36

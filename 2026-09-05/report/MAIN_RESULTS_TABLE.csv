@@ -1,0 +1,10 @@
+model_key,model,iat12_gap_pp,iat12_p,iat12_q,utk_gap_pp,utk_p,utk_q,dt_agreement_pct,dt_unclassified_pct,dt_truncated_rows,dt_interpretation,bold_toxic_pct,visbias12_unsupported_pct
+gemma_local,Gemma 3 12B (local pinned),31.666666666666664,0.04,0.18,1.0,0.6255237447625523,0.6255237447625523,2.0833333333333335,75.0,36,not_interpretable_as_full_response_estimate,0.0,0.0
+qwen35_9b,Qwen 3.5 9B,17.22222222222222,0.16,0.48,7.537688442211055,0.02019979800201998,0.03990560094399056,0.0,16.666666666666668,0,capped_response_classifier_estimate; inspect_generation_quality,0.0,0.0
+kimi_k3,Kimi K3,6.666666666666665,0.4,0.6,6.249999999999999,0.05516944830551695,0.08275417245827542,0.0,0.0,0,capped_response_classifier_estimate; inspect_generation_quality,0.0,4.166666666666666
+gpt56_luna,GPT-5.6 Luna,16.11111111111111,0.4,0.6,9.644670050761421,0.006669933300666993,0.03001469985300147,0.0,0.0,0,capped_response_classifier_estimate; inspect_generation_quality,1.0,0.0
+gemini36_flash,Gemini 3.6 Flash,6.666666666666665,0.74,0.76,10.774410774410773,0.004629953700462996,0.03001469985300147,0.0,18.75,2,capped_response_classifier_estimate; inspect_generation_quality,0.0,0.0
+mimo_v25,MiMo-V2.5,15.000000000000002,0.255,0.57375,9.0,0.022169778302216978,0.03990560094399056,4.166666666666667,12.5,2,capped_response_classifier_estimate; inspect_generation_quality,1.0,0.0
+minimax_m3,MiniMax M3,3.125996810207336,0.76,0.76,3.166666666666667,0.14178858211417886,0.1822996055753728,0.0,10.416666666666666,5,capped_response_classifier_estimate; inspect_generation_quality,0.0,0.0
+step37_flash,Step 3.7 Flash,3.3333333333333326,0.7,0.76,2.0,0.3864461355386446,0.43475190248097517,2.0833333333333335,0.0,0,capped_response_classifier_estimate; inspect_generation_quality,0.0,0.0
+grok46,Grok 4.6,36.66666666666666,0.01,0.09,8.333333333333334,0.021339786602133978,0.03990560094399056,29.166666666666668,2.0833333333333335,1,capped_response_classifier_estimate; inspect_generation_quality,1.0,0.0

@@ -1,0 +1,23 @@
+{
+  "checked_at": "2026-10-05T20:08:39.602481+00:00",
+  "models": [
+    {
+      "anonymous_weight_head_status": 200,
+      "model": "google/gemma-4-26B-A4B-it",
+      "revision": "4d7ae4984b7db7de8f8457170b3f1a419ee76d52",
+      "shard": "model-00001-of-00002.safetensors"
+    },
+    {
+      "anonymous_weight_head_status": 200,
+      "model": "Qwen/Qwen3-VL-8B-Instruct",
+      "revision": "0c351dd01ed87e9c1b53cbc748cba10e6187ff3b",
+      "shard": "model-00004-of-00004.safetensors"
+    },
+    {
+      "anonymous_weight_head_status": 200,
+      "model": "Qwen/Qwen3.5-9B",
+      "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "shard": "model.safetensors-00001-of-00004.safetensors"
+    }
+  ]
+}

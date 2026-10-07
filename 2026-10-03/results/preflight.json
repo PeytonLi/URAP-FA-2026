@@ -1,0 +1,278 @@
+{
+  "checked_at": "2026-10-03T19:23:31.373775+00:00",
+  "credential_source": "official_firectl_login",
+  "models": [
+    {
+      "base_model_details": {
+        "model_type": "gemma4",
+        "moe": true,
+        "parameter_count": "26000000000"
+      },
+      "hugging_face_url": "https://huggingface.co/google/gemma-4-26B-A4B-it",
+      "name": "accounts/fireworks/models/gemma-4-26b-a4b-it",
+      "requested_model": "gemma-4-26b-a4b-it",
+      "state": "READY",
+      "supervised_lora_tunable": true,
+      "supports_image_input": true,
+      "supports_lora": true,
+      "training_context_length": 131072,
+      "use_training_v2": true
+    },
+    {
+      "error": "firectl model get failed (exit 1)",
+      "requested_model": "gemma-4-e4b-it"
+    },
+    {
+      "base_model_details": {
+        "model_type": "qwen3_vl",
+        "parameter_count": "8767123696",
+        "tunable": true
+      },
+      "hugging_face_url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+      "name": "accounts/fireworks/models/qwen3-vl-8b-instruct",
+      "requested_model": "qwen3-vl-8b-instruct",
+      "state": "READY",
+      "supervised_lora_tunable": true,
+      "supports_image_input": true,
+      "supports_lora": true,
+      "training_context_length": 131072
+    },
+    {
+      "base_model_details": {
+        "model_type": "qwen3_5",
+        "parameter_count": "9409813744"
+      },
+      "hugging_face_url": "https://huggingface.co/Qwen/Qwen3.5-9B",
+      "name": "accounts/fireworks/models/qwen3p5-9b",
+      "requested_model": "qwen3p5-9b",
+      "state": "READY",
+      "supervised_lora_tunable": true,
+      "supports_image_input": true,
+      "supports_lora": true,
+      "training_context_length": 131072,
+      "use_training_v2": true
+    },
+    {
+      "base_model_details": {
+        "model_type": "gemma3_text",
+        "parameter_count": "12772912896"
+      },
+      "hugging_face_url": "https://huggingface.co/google/gemma-3-12b-it",
+      "name": "accounts/fireworks/models/gemma-3-12b-it",
+      "requested_model": "gemma-3-12b-it",
+      "state": "READY",
+      "supports_lora": true,
+      "training_context_length": 131072
+    },
+    {
+      "base_model_details": {
+        "model_type": "qwen2_5_vl",
+        "parameter_count": "8292166656",
+        "tunable": true
+      },
+      "hugging_face_url": "https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct",
+      "name": "accounts/fireworks/models/qwen2p5-vl-7b-instruct",
+      "requested_model": "qwen2p5-vl-7b-instruct",
+      "state": "READY",
+      "supports_image_input": true,
+      "supports_lora": true,
+      "training_context_length": 131072
+    }
+  ],
+  "paid_resources_created": false,
+  "training_shapes": [
+    {
+      "accelerator_count": 2,
+      "accelerator_type": "NVIDIA_B200_180GB",
+      "base_model": "accounts/fireworks/models/qwen3p5-9b",
+      "create_time": "2026-04-06T06:18:51.966080Z",
+      "deployment_shape_version": "accounts/fireworks/deploymentShapes/rft-qwen3p5-9b-v2/versions/pcxyecdg",
+      "display_name": "Numerics validated qwen3p5-9b",
+      "max_supported_context_length": 262144,
+      "model_type": "qwen3_5",
+      "name": "accounts/fireworks/trainingShapes/qwen3p5-9b-256k",
+      "node_count": 1,
+      "parameter_count": "9409813744",
+      "trainer_image_tag": "0.638.517",
+      "trainer_mode": "POLICY_TRAINER",
+      "trainer_sharding_scheme": {
+        "context_parallelism": 2,
+        "expert_parallelism": 1,
+        "pipeline_parallelism": 1,
+        "tensor_parallelism": 1
+      },
+      "update_time": "2026-09-28T13:10:19.070261Z"
+    },
+    {
+      "accelerator_count": 2,
+      "accelerator_type": "NVIDIA_B200_180GB",
+      "base_model": "accounts/fireworks/models/qwen3p5-9b",
+      "create_time": "2026-04-06T06:55:47.238355Z",
+      "deployment_shape_version": "accounts/fireworks/deploymentShapes/rft-qwen3p5-9b-v2/versions/pcxyecdg",
+      "display_name": "Numerics validated qwen3p5-9b",
+      "max_supported_context_length": 262144,
+      "model_type": "qwen3_5",
+      "name": "accounts/fireworks/trainingShapes/qwen3p5-9b-256k-lora",
+      "node_count": 1,
+      "parameter_count": "9409813744",
+      "trainer_image_tag": "0.638.517",
+      "trainer_mode": "LORA_TRAINER",
+      "trainer_sharding_scheme": {
+        "context_parallelism": 2,
+        "expert_parallelism": 1,
+        "pipeline_parallelism": 1,
+        "tensor_parallelism": 1
+      },
+      "update_time": "2026-09-28T13:10:19.924293Z"
+    },
+    {
+      "accelerator_count": 4,
+      "accelerator_type": "NVIDIA_B200_180GB",
+      "base_model": "accounts/fireworks/models/gemma-4-31b-it",
+      "create_time": "2026-04-20T04:36:14.772516Z",
+      "deployment_shape_version": "accounts/fireworks/deploymentShapes/rft-gemma-4-31b-it/versions/d5voqc32",
+      "max_supported_context_length": 262144,
+      "model_type": "gemma4",
+      "name": "accounts/fireworks/trainingShapes/gemma-4-31b-256k-b200",
+      "node_count": 1,
+      "parameter_count": "31000000000",
+      "trainer_image_tag": "0.638.539",
+      "trainer_mode": "POLICY_TRAINER",
+      "trainer_sharding_scheme": {
+        "context_parallelism": 4,
+        "expert_parallelism": 1,
+        "pipeline_parallelism": 1,
+        "tensor_parallelism": 1
+      },
+      "update_time": "2026-10-01T22:59:06.081379Z"
+    },
+    {
+      "accelerator_count": 8,
+      "accelerator_type": "NVIDIA_H200_141GB",
+      "base_model": "accounts/fireworks/models/qwen3-vl-8b-instruct",
+      "create_time": "2026-04-22T20:15:09.283495Z",
+      "deployment_shape_version": "accounts/fireworks/deploymentShapes/qwen3-vl-8b-instruct-throughput/versions/bffb3z98",
+      "max_supported_context_length": 262144,
+      "model_type": "qwen3_vl",
+      "name": "accounts/fireworks/trainingShapes/qwen3-vl-8b-256k-h200-lora",
+      "node_count": 1,
+      "parameter_count": "8767123696",
+      "trainer_image_tag": "0.638.179",
+      "trainer_mode": "LORA_TRAINER",
+      "trainer_sharding_scheme": {
+        "context_parallelism": 2,
+        "expert_parallelism": 1,
+        "pipeline_parallelism": 1,
+        "tensor_parallelism": 1
+      },
+      "update_time": "2026-08-15T04:39:46.659563Z"
+    },
+    {
+      "accelerator_count": 4,
+      "accelerator_type": "NVIDIA_B200_180GB",
+      "base_model": "accounts/fireworks/models/gemma-4-31b-it",
+      "create_time": "2026-04-24T16:40:31.892854Z",
+      "deployment_shape_version": "accounts/fireworks/deploymentShapes/rft-gemma-4-31b-it/versions/d5voqc32",
+      "max_supported_context_length": 262144,
+      "model_type": "gemma4",
+      "name": "accounts/fireworks/trainingShapes/gemma-4-31b-256k-b200-lora",
+      "node_count": 1,
+      "parameter_count": "31000000000",
+      "trainer_image_tag": "0.638.536",
+      "trainer_mode": "LORA_TRAINER",
+      "trainer_sharding_scheme": {
+        "context_parallelism": 4,
+        "expert_parallelism": 1,
+        "pipeline_parallelism": 1,
+        "tensor_parallelism": 1
+      },
+      "update_time": "2026-10-01T13:11:18.137006Z"
+    },
+    {
+      "accelerator_count": 4,
+      "accelerator_type": "NVIDIA_B200_180GB",
+      "base_model": "accounts/fireworks/models/gemma-4-26b-a4b-it",
+      "create_time": "2026-04-24T16:40:33.843964Z",
+      "deployment_shape_version": "accounts/fireworks/deploymentShapes/rft-gemma-4-26b-a4b-it/versions/zo4a3z1a",
+      "max_supported_context_length": 262144,
+      "model_type": "gemma4",
+      "name": "accounts/fireworks/trainingShapes/gemma-4-26b-a4b-256k-b200",
+      "node_count": 1,
+      "parameter_count": "26000000000",
+      "trainer_image_tag": "0.638.261-tranle-gemma4-moe-pr44653-image-build.0",
+      "trainer_mode": "POLICY_TRAINER",
+      "trainer_sharding_scheme": {
+        "context_parallelism": 4,
+        "expert_parallelism": 4,
+        "pipeline_parallelism": 1,
+        "tensor_parallelism": 1
+      },
+      "update_time": "2026-08-27T16:59:56.435061Z"
+    },
+    {
+      "accelerator_count": 4,
+      "accelerator_type": "NVIDIA_B200_180GB",
+      "base_model": "accounts/fireworks/models/gemma-4-26b-a4b-it",
+      "create_time": "2026-04-24T16:40:37.693434Z",
+      "deployment_shape_version": "accounts/fireworks/deploymentShapes/rft-gemma-4-26b-a4b-it/versions/zo4a3z1a",
+      "max_supported_context_length": 262144,
+      "model_type": "gemma4",
+      "name": "accounts/fireworks/trainingShapes/gemma-4-26b-a4b-256k-b200-lora",
+      "node_count": 1,
+      "parameter_count": "26000000000",
+      "trainer_image_tag": "0.638.261-tranle-gemma4-moe-pr44653-image-build.0",
+      "trainer_mode": "LORA_TRAINER",
+      "trainer_sharding_scheme": {
+        "context_parallelism": 4,
+        "expert_parallelism": 4,
+        "pipeline_parallelism": 1,
+        "tensor_parallelism": 1
+      },
+      "update_time": "2026-08-27T16:59:56.312838Z"
+    },
+    {
+      "accelerator_count": 2,
+      "accelerator_type": "NVIDIA_B200_180GB",
+      "base_model": "accounts/fireworks/models/qwen3p5-9b",
+      "create_time": "2026-06-08T17:14:34.756586Z",
+      "deployment_shape_version": "accounts/fireworks/deploymentShapes/rft-qwen3p5-9b-v2/versions/gcr1owmp",
+      "display_name": "Numerics validated qwen3p5-9b",
+      "max_supported_context_length": 65536,
+      "model_type": "qwen3_5",
+      "name": "accounts/fireworks/trainingShapes/qwen3p5-9b-65k-lora",
+      "node_count": 1,
+      "parameter_count": "9409813744",
+      "trainer_image_tag": "0.638.517",
+      "trainer_mode": "LORA_TRAINER",
+      "trainer_sharding_scheme": {
+        "context_parallelism": 2,
+        "expert_parallelism": 1,
+        "pipeline_parallelism": 1,
+        "tensor_parallelism": 1
+      },
+      "update_time": "2026-09-28T13:10:20.833830Z"
+    },
+    {
+      "accelerator_count": 8,
+      "accelerator_type": "NVIDIA_H200_141GB",
+      "base_model": "accounts/fireworks/models/qwen3-vl-8b-instruct",
+      "create_time": "2026-06-11T21:09:53.646759Z",
+      "deployment_shape_version": "accounts/fireworks/deploymentShapes/qwen3-vl-8b-instruct-throughput/versions/bffb3z98",
+      "max_supported_context_length": 32768,
+      "model_type": "qwen3_vl",
+      "name": "accounts/fireworks/trainingShapes/qwen3-vl-8b-vision-lora",
+      "node_count": 1,
+      "parameter_count": "8767123696",
+      "trainer_image_tag": "0.638.413",
+      "trainer_mode": "LORA_TRAINER",
+      "trainer_sharding_scheme": {
+        "context_parallelism": 1,
+        "expert_parallelism": 1,
+        "pipeline_parallelism": 1,
+        "tensor_parallelism": 1
+      },
+      "update_time": "2026-09-17T21:16:27.362179Z"
+    }
+  ],
+  "training_shapes_next_page_token": ""
+}

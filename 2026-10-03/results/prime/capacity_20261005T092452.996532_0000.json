@@ -1,0 +1,129 @@
+{
+  "catalogs": {
+    "a10080_single_gpu": {
+      "payload": {
+        "filters": {
+          "gpu_count": 1,
+          "gpu_type": "A100_80GB",
+          "group_similar": true,
+          "provider": null,
+          "regions": null,
+          "socket": null
+        },
+        "gpu_resources": [],
+        "total_count": 0
+      },
+      "query": [
+        "availability",
+        "list",
+        "--gpu-type",
+        "A100_80GB",
+        "--gpu-count",
+        "1",
+        "--output",
+        "json"
+      ],
+      "status": "ok"
+    },
+    "all_single_gpu": {
+      "payload": {
+        "filters": {
+          "gpu_count": 1,
+          "gpu_type": "CPU_NODE",
+          "group_similar": true,
+          "provider": null,
+          "regions": null,
+          "socket": null
+        },
+        "gpu_resources": [
+          {
+            "cloud_id": "cpu-d3_2vcpu-8gb",
+            "disk_gb": "100+",
+            "gpu_count": 1,
+            "gpu_memory": 0,
+            "gpu_type": "CPU NODE",
+            "id": "02e3b0",
+            "is_spot": null,
+            "location": "FR",
+            "memory_gb": "8",
+            "price_per_hour": "$0.05",
+            "price_value": 0.049600000000000005,
+            "provider": "nebius",
+            "security": "datacenter",
+            "socket": "PCIe",
+            "stock_status": "Available",
+            "vcpus": "2"
+          },
+          {
+            "cloud_id": "cpu-d3_2vcpu-8gb",
+            "disk_gb": "100+",
+            "gpu_count": 1,
+            "gpu_memory": 0,
+            "gpu_type": "CPU NODE",
+            "id": "2642ac",
+            "is_spot": null,
+            "location": "US",
+            "memory_gb": "8",
+            "price_per_hour": "$0.05",
+            "price_value": 0.049600000000000005,
+            "provider": "nebius",
+            "security": "datacenter",
+            "socket": "PCIe",
+            "stock_status": "Available",
+            "vcpus": "2"
+          },
+          {
+            "cloud_id": "gpu_1x_a10",
+            "disk_gb": "1400",
+            "gpu_count": 1,
+            "gpu_memory": 24,
+            "gpu_type": "A10 24GB",
+            "id": "655392",
+            "is_spot": null,
+            "location": "US",
+            "memory_gb": "200",
+            "price_per_hour": "$1.29",
+            "price_value": 1.29,
+            "provider": "lambdalabs",
+            "security": "datacenter",
+            "socket": "PCIe",
+            "stock_status": "Available",
+            "vcpus": "30"
+          },
+          {
+            "cloud_id": "gpu_1x_a100_sxm4",
+            "disk_gb": "512",
+            "gpu_count": 1,
+            "gpu_memory": 40,
+            "gpu_type": "A100 40GB",
+            "id": "7b42cb",
+            "is_spot": null,
+            "location": "IN",
+            "memory_gb": "200",
+            "price_per_hour": "$1.99",
+            "price_value": 1.99,
+            "provider": "lambdalabs",
+            "security": "datacenter",
+            "socket": "SXM4",
+            "stock_status": "Available",
+            "vcpus": "30"
+          }
+        ],
+        "total_count": 4
+      },
+      "query": [
+        "availability",
+        "list",
+        "--gpu-count",
+        "1",
+        "--output",
+        "json"
+      ],
+      "status": "ok"
+    }
+  },
+  "checked_at": "2026-10-05T09:24:52.996532+00:00",
+  "images_uploaded": false,
+  "resources_created": false,
+  "scope": "Supplementary read-only single-GPU availability, not reservations or training feasibility"
+}

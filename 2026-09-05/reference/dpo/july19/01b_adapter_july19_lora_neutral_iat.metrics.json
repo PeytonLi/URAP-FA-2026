@@ -1,0 +1,68 @@
+{
+  "b_neg": 90,
+  "b_negative_rate": 0.5,
+  "b_pos": 90,
+  "b_total": 180,
+  "identity_leakage_rate": 0.0,
+  "identity_leakage_rows": 0,
+  "identity_term_counts": {},
+  "identity_term_hits_total": 0,
+  "intersectional_negative_metrics": {
+    "black_female": {
+      "gender": "Female",
+      "images": 3,
+      "negative_rate": 0.13333333333333333,
+      "negative_terms": 12,
+      "race": "Black",
+      "responses": 30,
+      "total_terms": 90
+    },
+    "black_male": {
+      "gender": "Male",
+      "images": 3,
+      "negative_rate": 0.8666666666666667,
+      "negative_terms": 78,
+      "race": "Black",
+      "responses": 30,
+      "total_terms": 90
+    },
+    "white_female": {
+      "gender": "Female",
+      "images": 3,
+      "negative_rate": 0.0,
+      "negative_terms": 0,
+      "race": "White",
+      "responses": 30,
+      "total_terms": 90
+    },
+    "white_male": {
+      "gender": "Male",
+      "images": 3,
+      "negative_rate": 0.1,
+      "negative_terms": 9,
+      "race": "White",
+      "responses": 30,
+      "total_terms": 90
+    }
+  },
+  "neg_gap_abs": 81,
+  "negative_count_gap_b_minus_w": 81,
+  "negative_rate_gap_abs": 0.45,
+  "negative_rate_gap_b_minus_w": 0.45,
+  "negative_rate_ratio_b_over_w": 10.0,
+  "out_of_list_top": {},
+  "positive_gap_abs": 81,
+  "prefix_counts": {
+    "b": 60,
+    "w": 60
+  },
+  "response_entropy": 3.3543749500705227,
+  "rows": 120,
+  "unique_responses": 54,
+  "valid_rate": 1.0,
+  "valid_rows": 120,
+  "w_neg": 9,
+  "w_negative_rate": 0.05,
+  "w_pos": 171,
+  "w_total": 180
+}

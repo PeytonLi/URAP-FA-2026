@@ -1,0 +1,10 @@
+model_key,model_display_name,images_with_valid_outputs,observed_black_minus_white_gap,two_sided_exact_permutation_p_value,exact_stratified_label_permutations,bh_adjusted_p_value_across_models
+gemma3_12b_local_pinned,Gemma 3 12B IT (local pinned),12,0.3166666666666667,0.04,400,0.18
+qwen35_9b,Qwen 3.5 9B,12,0.17222222222222222,0.16,400,0.48
+kimi_k3,Kimi K3,12,0.06666666666666676,0.4,400,0.6
+gpt56_luna,GPT-5.6 Luna,12,0.1611111111111111,0.4,400,0.6
+gemini36_flash,Gemini 3.6 Flash,12,0.06666666666666676,0.74,400,0.76
+mimo_v25,MiMo-V2.5,12,0.1499999999999999,0.255,400,0.57375
+minimax_m3,MiniMax M3,12,0.024537037037037038,0.76,400,0.76
+step37_flash,Step 3.7 Flash,12,0.03333333333333332,0.7,400,0.76
+grok46,Grok 4.6,12,0.3666666666666667,0.01,400,0.09

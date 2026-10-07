@@ -1,0 +1,58 @@
+{
+  "candidate_images": 12,
+  "checked_at": "2026-10-03T20:51:15.015148+00:00",
+  "match_rule": "Exact source PNG SHA-256; no approximate replacement",
+  "matches": [],
+  "notebooks": [
+    {
+      "embedded_images": 0,
+      "path": "2026-03-04\\URAP_Gemma3_Debias_MVP_FULL (4).ipynb"
+    },
+    {
+      "embedded_images": 3,
+      "path": "2026-03-11\\URAP_MVP_IAT_and_Summary_Debias AUTOTrained.ipynb"
+    },
+    {
+      "embedded_images": 3,
+      "path": "2026-03-11\\URAP_MVP_IAT_and_Summary_Debias March11AS_ISTrained.ipynb"
+    },
+    {
+      "embedded_images": 0,
+      "path": "2026-03-20\\URAP_Adapter_Comparison_and_Amazon_Eval.ipynb"
+    },
+    {
+      "embedded_images": 0,
+      "path": "2026-03-20\\URAP_Posthoc_Amazon_Eval_Analysis.ipynb"
+    },
+    {
+      "embedded_images": 6,
+      "path": "2026-04-01\\URAP_MVP_IAT_and_Summary_Debias (3).ipynb"
+    },
+    {
+      "embedded_images": 0,
+      "path": "2026-04-29\\01_train_fairface_dpo_lora.ipynb"
+    },
+    {
+      "embedded_images": 0,
+      "path": "2026-04-29\\02_compare_fairface_iat_adapters.ipynb"
+    },
+    {
+      "embedded_images": 0,
+      "path": "colab\\neutral12_base_colab.ipynb"
+    }
+  ],
+  "remaining_missing_hashes": [
+    "0cfec20e3abd217c0d610f1579e8775185f9a84d2ca24c2e544b3cc1d4304b45",
+    "2c3bf84fdd1dc8b241b655bb8ada6cbecb20f67687b7519ad37448a3b6940d5f",
+    "3f2e66a7660881505a132c274a67ae53df381d4ba0afa96f5ffb63633694b3a0",
+    "4de5bf74d661cbabffae00fed238a95fec75e1f7c57f0821bf1ef5a049048ab5",
+    "60010a202528728e222510e22ca2352292db89a6473eba1ac19390522a03c770",
+    "71776fc4c45d3a278429a8c078e08b5f18cd7de49775f7ffe93baca933abbdc8",
+    "90546729905209c35046f255745a92f65a8f5b515850d9b3c7287ff63e0765b2",
+    "b51dda555514add30492da9336577ff535c54d04fdee9d18a05d22bdf05d3ea5",
+    "b66ff061dfbba72fa0a6f428efd48e96b075f5ddd9db2d1be840e624c0dd723f",
+    "d6324aae5dc4abce7ecbfe6778754e793e4b15452b9696ab487db61df4aaaa85",
+    "fdedcdc59568a7dc6d27666cd05b6b696c75f34ac131d9733758421b94b05172"
+  ],
+  "scope": "Existing repository notebook image outputs only"
+}

@@ -1,0 +1,4 @@
+model,black_negative,black_total,black_negative_rate_pct,white_negative,white_total,white_negative_rate_pct,total_negative,total_terms,overall_negative_rate_pct,total_positive,signed_black_minus_white_gap_pp,absolute_gap_pp
+base,69,1440,4.791667,75,1440,5.208333,144,2880,5.000000,2736,-0.416667,0.416667
+adapter,75,1440,5.208333,57,1440,3.958333,132,2880,4.583333,2748,1.250000,1.250000
+

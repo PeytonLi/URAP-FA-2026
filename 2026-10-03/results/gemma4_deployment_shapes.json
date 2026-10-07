@@ -1,0 +1,109 @@
+[
+  {
+    "create_time": "2026-08-26T10:37:43.608909Z",
+    "latest_validated": true,
+    "load_test_input": {
+      "concurrency_levels": [
+        1,
+        2,
+        4,
+        8,
+        12,
+        16
+      ],
+      "duration": "1min",
+      "spawn_rate": 10,
+      "test_parameters": {
+        "output_length": 200,
+        "prompt_cache_max_len": 500,
+        "prompt_length": 5000
+      }
+    },
+    "load_test_summary": {
+      "metrics": {
+        "concurrency": 16,
+        "latency_average_ms": 3824.902659497925,
+        "latency_p50_ms": 3800,
+        "latency_p90_ms": 4000,
+        "latency_p95_ms": 4100,
+        "latency_p99_9_ms": 4300,
+        "latency_p99_ms": 4300,
+        "lpt_average_ms": 11.55452274551179,
+        "lpt_p50_ms": 10,
+        "lpt_p90_ms": 15,
+        "lpt_p95_ms": 17,
+        "lpt_p99_9_ms": 210,
+        "lpt_p99_ms": 17,
+        "requests_per_second": 4.154104950474607,
+        "ttft_average_ms": 1704.0004859004175,
+        "ttft_p50_ms": 1900,
+        "ttft_p90_ms": 2500,
+        "ttft_p95_ms": 2600,
+        "ttft_p99_9_ms": 3000,
+        "ttft_p99_ms": 2900
+      },
+      "target_tokens_per_second": 50
+    },
+    "name": "accounts/fireworks/deploymentShapes/rft-gemma-4-26b-a4b-it/versions/zo4a3z1a",
+    "public": true,
+    "snapshot": {
+      "accelerator_count": 4,
+      "accelerator_type": "NVIDIA_B200_180GB",
+      "base_model": "accounts/fireworks/models/gemma-4-26b-a4b-it",
+      "create_time": "2026-05-11T22:16:34.889460Z",
+      "disable_deployment_size_validation": true,
+      "enable_session_affinity": true,
+      "max_context_length": 262144,
+      "model_type": "gemma4",
+      "name": "accounts/fireworks/deploymentShapes/rft-gemma-4-26b-a4b-it",
+      "parameter_count": "26000000000",
+      "preset_type": "FULL_PRECISION",
+      "supports_autoscaling": true,
+      "update_time": "2026-08-26T10:56:22.288393Z"
+    },
+    "validated": true
+  },
+  {
+    "create_time": "2026-07-20T22:36:53.885196Z",
+    "latest_validated": true,
+    "name": "accounts/fireworks/deploymentShapes/gemma4-26b-a4b-it/versions/d2pny12w",
+    "public": true,
+    "snapshot": {
+      "accelerator_count": 4,
+      "accelerator_type": "NVIDIA_H200_141GB",
+      "base_model": "accounts/fireworks/models/gemma-4-26b-a4b-it",
+      "create_time": "2026-04-03T18:37:55.498277Z",
+      "disable_deployment_size_validation": true,
+      "disable_speculative_decoding": true,
+      "enable_session_affinity": true,
+      "model_type": "gemma4",
+      "name": "accounts/fireworks/deploymentShapes/gemma4-26b-a4b-it",
+      "parameter_count": "26000000000",
+      "preset_type": "MINIMAL",
+      "supports_autoscaling": true,
+      "update_time": "2026-07-20T22:41:18.939144Z"
+    },
+    "validated": true
+  },
+  {
+    "create_time": "2026-04-10T21:36:08.515811Z",
+    "latest_validated": true,
+    "name": "accounts/fireworks/deploymentShapes/gemma4-26b-a4b-it-fast-b200/versions/o2mw8fcg",
+    "public": true,
+    "snapshot": {
+      "accelerator_count": 4,
+      "accelerator_type": "NVIDIA_B200_180GB",
+      "base_model": "accounts/fireworks/models/gemma-4-26b-a4b-it",
+      "create_time": "2026-04-10T21:36:08.514590Z",
+      "disable_speculative_decoding": true,
+      "enable_session_affinity": true,
+      "model_type": "gemma4",
+      "name": "accounts/fireworks/deploymentShapes/gemma4-26b-a4b-it-fast-b200",
+      "parameter_count": "26000000000",
+      "preset_type": "FAST",
+      "supports_autoscaling": true,
+      "update_time": "2026-04-10T23:02:21.846257Z"
+    },
+    "validated": true
+  }
+]

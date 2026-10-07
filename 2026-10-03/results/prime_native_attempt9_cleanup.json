@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-10-06T07:29:03.766081+00:00",
+  "pod_id": "97d543adb5754ccf964c59b732b79911",
+  "pod_name": "urap-balanced-pilot-20261006t064658",
+  "status": "remote_failed",
+  "new_training_conditions": 0,
+  "new_optimizer_updates": 0,
+  "new_benchmark_conditions": 0,
+  "reused_verified_training_conditions": 2,
+  "reused_verified_benchmark_conditions": 2,
+  "failure": "ImportError during resume validation under system Python before new study work. The underlying dependency traceback was not retained; the environment-selection error was identified in the worker code.",
+  "fix": "Execute resume validation in the same pinned Python environment as training and evaluation; retain exception traceback before archiving.",
+  "outputs_recovered_and_verified": true,
+  "termination_requested_at": "2026-10-06T06:59:16.124978+00:00",
+  "terminated_at": "2026-10-06T06:59:16.963000",
+  "termination_verified": true,
+  "owned_pod_absent_from_active_list": true,
+  "wallet_before_usd": 75.1946,
+  "wallet_usd_at_subsequent_check": 75.038,
+  "wallet_note": "The subsequent balance includes the next active attempt and is not an isolated invoice for this failed attempt."
+}

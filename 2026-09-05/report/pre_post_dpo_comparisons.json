@@ -1,0 +1,44 @@
+[
+  {
+    "comparison_anti_collapse_tradeoff_summary": "Response entropy retention 91.11033323005203%; unique-response retention 81.25%; preservation gate fails.",
+    "comparison_base_model_value_full_precision": 0.35,
+    "comparison_benchmark_name": "IAT61",
+    "comparison_code_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10_code/scripts/compile_neutral12_retrospective.py",
+    "comparison_direction_of_improvement": "decrease, without degraded diversity/validity/grounding or worse other-group outcomes",
+    "comparison_dpo_model_value_full_precision": 0.16666666666666666,
+    "comparison_execution_command": "Historical compiler requires archived layout; selected table/figure replay: python scripts/plot_evidence.py",
+    "comparison_id": "aug10-retrospective-Black negative rate",
+    "comparison_input_set_name": "neutral12",
+    "comparison_interpretation": "Directional improvement on repeatedly inspected 12 faces; not confirmation of population-level debiasing.",
+    "comparison_result_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10/august10_first_run_neutral12_retrospective_v1/research_summary.json",
+    "comparison_statistical_method": "100,000 paired image-level bootstrap draws; no confirmatory p-value claimed after five-model retrospective selection",
+    "comparison_uncertainty_or_test_result_full_precision": {
+      "change_ci95": [
+        -0.3666666666666667,
+        -0.03333333333333333
+      ]
+    },
+    "comparison_unit": "same image in base and adapter, bootstrap stratified by race"
+  },
+  {
+    "comparison_anti_collapse_tradeoff_summary": "Response entropy retention 91.11033323005203%; unique-response retention 81.25%; preservation gate fails.",
+    "comparison_base_model_value_full_precision": 0.31666666666666665,
+    "comparison_benchmark_name": "IAT61",
+    "comparison_code_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10_code/scripts/compile_neutral12_retrospective.py",
+    "comparison_direction_of_improvement": "decrease, without degraded diversity/validity/grounding or worse other-group outcomes",
+    "comparison_dpo_model_value_full_precision": 0.16666666666666666,
+    "comparison_execution_command": "Historical compiler requires archived layout; selected table/figure replay: python scripts/plot_evidence.py",
+    "comparison_id": "aug10-retrospective-Black-minus-White negative rate gap",
+    "comparison_input_set_name": "neutral12",
+    "comparison_interpretation": "Directional improvement on repeatedly inspected 12 faces; not confirmation of population-level debiasing.",
+    "comparison_result_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/reference/dpo/august10/august10_first_run_neutral12_retrospective_v1/research_summary.json",
+    "comparison_statistical_method": "100,000 paired image-level bootstrap draws; no confirmatory p-value claimed after five-model retrospective selection",
+    "comparison_uncertainty_or_test_result_full_precision": {
+      "change_ci95": [
+        -0.33333333333333337,
+        2.0816681711721685e-17
+      ]
+    },
+    "comparison_unit": "same image in base and adapter, bootstrap stratified by race"
+  }
+]

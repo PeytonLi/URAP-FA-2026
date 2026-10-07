@@ -1,0 +1,32 @@
+{
+  "accelerator_count": 1,
+  "accelerator_type": "NVIDIA_H200_141GB",
+  "auto_tune": {},
+  "autoscaling_policy": {
+    "load_targets": {
+      "default": 0.8
+    },
+    "scale_down_window": "600s",
+    "scale_to_zero_window": "3600s",
+    "scale_up_window": "30s"
+  },
+  "base_model": "accounts/fireworks/models/qwen3p5-9b",
+  "create_time": "2026-10-03T19:45:54.033353417Z",
+  "deployment_shape": "accounts/fireworks/deploymentShapes/qwen3p5-9b-fast/versions/rzep6gmq",
+  "desired_replica_count": 1,
+  "disable_deployment_size_validation": true,
+  "draft_token_count": 3,
+  "enable_session_affinity": true,
+  "max_replica_count": 1,
+  "min_replica_count": 1,
+  "name": "accounts/peli/deployments/urap-iat-qwen35-20261003",
+  "placement": {
+    "multi_region": "GLOBAL"
+  },
+  "precision": "FP8",
+  "replica_stats": {},
+  "state": "CREATING",
+  "status": {},
+  "supports_autoscaling": true,
+  "update_time": "2026-10-03T19:45:54.033353417Z"
+}

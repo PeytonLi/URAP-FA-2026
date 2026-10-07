@@ -1,0 +1,21 @@
+{
+  "additional_session_limit_usd": 12.0,
+  "authoritative_account_usage_delta_usd": 4.868790898,
+  "final_credits": {
+    "remaining": 17.118872358,
+    "total_credits": 25.0,
+    "total_usage": 7.881127642
+  },
+  "initial_credits": {
+    "remaining": 21.987663256,
+    "total_credits": 25.0,
+    "total_usage": 3.012336744
+  },
+  "logical_records": 4602,
+  "note": "The account usage delta is authoritative. Saved API-attempt counts omit transport retries internal to the client and some failed VisBias requests.",
+  "reported_response_cost_sum_usd": 4.540644468000031,
+  "required_reserve_usd": 10.0,
+  "saved_api_attempt_records": 4849,
+  "scope": "All August 31 compatibility, UTKFace, and VisBias calls after preflight",
+  "valid_records": 4582
+}

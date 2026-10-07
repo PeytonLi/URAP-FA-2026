@@ -1,0 +1,103 @@
+{
+  "catalog_snapshot": {
+    "architecture": {
+      "input_modalities": [
+        "text",
+        "image",
+        "video"
+      ],
+      "instruct_type": null,
+      "modality": "text+image+video->text",
+      "output_modalities": [
+        "text"
+      ],
+      "tokenizer": "Other"
+    },
+    "canonical_slug": "moonshotai/kimi-k3-20260715",
+    "context_length": 1048576,
+    "created": 1784215858,
+    "id": "moonshotai/kimi-k3",
+    "name": "MoonshotAI: Kimi K3",
+    "pricing": {
+      "completion": "0.000015",
+      "input_cache_read": "0.0000003",
+      "prompt": "0.000003"
+    },
+    "selected_endpoint": {
+      "context_length": 1048576,
+      "max_completion_tokens": 943718,
+      "max_prompt_tokens": null,
+      "name": "DigitalOcean | moonshotai/kimi-k3-20260715",
+      "pricing": {
+        "completion": "0.00001425",
+        "discount": 0,
+        "input_cache_read": "0.000000285",
+        "prompt": "0.00000285"
+      },
+      "provider_name": "DigitalOcean",
+      "quantization": "unknown",
+      "status": 0,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "temperature",
+        "top_p",
+        "max_tokens",
+        "response_format",
+        "logprobs",
+        "top_logprobs",
+        "tools",
+        "tool_choice",
+        "structured_outputs",
+        "reasoning_effort"
+      ],
+      "tag": "digitalocean"
+    },
+    "supported_parameters": [
+      "frequency_penalty",
+      "include_reasoning",
+      "logit_bias",
+      "logprobs",
+      "max_tokens",
+      "min_p",
+      "presence_penalty",
+      "reasoning",
+      "reasoning_effort",
+      "repetition_penalty",
+      "response_format",
+      "seed",
+      "stop",
+      "structured_outputs",
+      "temperature",
+      "tool_choice",
+      "tools",
+      "top_k",
+      "top_logprobs",
+      "top_p"
+    ]
+  },
+  "finished_at": "2026-09-05T07:35:25.062236+00:00",
+  "model": {
+    "api_revision_hint": "moonshotai/kimi-k3-20260715",
+    "display_name": "Kimi K3",
+    "key": "kimi_k3",
+    "max_concurrency": 2,
+    "max_tokens": 1024,
+    "model_id": "moonshotai/kimi-k3",
+    "provider_endpoint": "digitalocean",
+    "reasoning_effort": "none",
+    "release_date": "2026-07-16",
+    "supports_temperature": true,
+    "supports_top_p": true,
+    "weight_access": "open-weight"
+  },
+  "planned_tasks": 36,
+  "probe": false,
+  "provider_fallback": false,
+  "recorded_calls": 36,
+  "response_cost_usd": 0.03948104999999996,
+  "started_at": "2026-09-05T07:33:15.340982+00:00",
+  "status": "complete",
+  "task_contract_sha256": "e858fe45a4ad1ff8cbdad49e276a92c8119a1cf1b714d0180e69f56b16d9ae3e",
+  "valid_responses": 36
+}

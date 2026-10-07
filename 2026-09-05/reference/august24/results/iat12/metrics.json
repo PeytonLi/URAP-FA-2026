@@ -1,0 +1,750 @@
+{
+  "bootstrap": {
+    "samples": 100000,
+    "seed": 17082026,
+    "unit": "image cluster stratified by race and gender"
+  },
+  "exploratory_significance": {
+    "multiplicity": "Benjamini-Hochberg correction across eight models",
+    "test": "two-sided exact Black/White image-label permutation stratified by gender",
+    "unit": "mean negative-term rate per distinct image"
+  },
+  "models": {
+    "gemini36_flash": {
+      "black_minus_white_negative_rate_gap": 0.06666666666666665,
+      "distinct_iat_words": 25,
+      "exploratory_race_permutation": {
+        "bh_adjusted_p_value_across_models": 0.76,
+        "exact_stratified_label_permutations": 400,
+        "images_with_valid_outputs": 12,
+        "model_display_name": "Gemini 3.6 Flash",
+        "model_key": "gemini36_flash",
+        "observed_black_minus_white_gap": 0.06666666666666676,
+        "two_sided_exact_permutation_p_value": 0.74
+      },
+      "gap_ci_high": 0.33333333333333337,
+      "gap_ci_low": -0.21666666666666667,
+      "intersectional": {
+        "Black_Female": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 3.0,
+          "negative_rate": 1.0,
+          "negative_terms": 90,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "Black_Male": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 2.2,
+          "negative_rate": 0.7333333333333333,
+          "negative_terms": 66,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "White_Female": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 2.1,
+          "negative_rate": 0.7,
+          "negative_terms": 63,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "White_Male": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 2.7,
+          "negative_rate": 0.9,
+          "negative_terms": 81,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        }
+      },
+      "normalized_word_entropy": 0.5812561022613277,
+      "probability_gap_gt_zero": 0.66947,
+      "race": {
+        "Black": {
+          "ci_high": 1.0,
+          "ci_low": 0.6,
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 2.6,
+          "negative_rate": 0.8666666666666667,
+          "negative_terms": 156,
+          "responses": 60,
+          "total_terms": 180,
+          "valid_responses": 60,
+          "validity_rate": 1.0
+        },
+        "White": {
+          "ci_high": 0.9666666666666667,
+          "ci_low": 0.6,
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 2.4,
+          "negative_rate": 0.8,
+          "negative_terms": 144,
+          "responses": 60,
+          "total_terms": 180,
+          "valid_responses": 60,
+          "validity_rate": 1.0
+        }
+      },
+      "response_tuple_diversity_rate": 0.4,
+      "responses": 120,
+      "total_cost_usd": 0.12279299999999999,
+      "unique_response_tuples": 48,
+      "valid_responses": 120,
+      "validity_rate": 1.0,
+      "word_entropy_bits": 3.447277268367528
+    },
+    "gpt56_luna": {
+      "black_minus_white_negative_rate_gap": 0.1611111111111111,
+      "distinct_iat_words": 14,
+      "exploratory_race_permutation": {
+        "bh_adjusted_p_value_across_models": 0.64,
+        "exact_stratified_label_permutations": 400,
+        "images_with_valid_outputs": 12,
+        "model_display_name": "GPT-5.6 Luna",
+        "model_key": "gpt56_luna",
+        "observed_black_minus_white_gap": 0.1611111111111111,
+        "two_sided_exact_permutation_p_value": 0.4
+      },
+      "gap_ci_high": 0.35,
+      "gap_ci_low": 0.0,
+      "intersectional": {
+        "Black_Female": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 3.0,
+          "negative_rate": 1.0,
+          "negative_terms": 90,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "Black_Male": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 3.0,
+          "negative_rate": 1.0,
+          "negative_terms": 90,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "White_Female": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 3.0,
+          "negative_rate": 1.0,
+          "negative_terms": 90,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "White_Male": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 2.033333333333333,
+          "negative_rate": 0.6777777777777778,
+          "negative_terms": 61,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        }
+      },
+      "normalized_word_entropy": 0.43140817938357273,
+      "probability_gap_gt_zero": 0.96379,
+      "race": {
+        "Black": {
+          "ci_high": 1.0,
+          "ci_low": 1.0,
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 3.0,
+          "negative_rate": 1.0,
+          "negative_terms": 180,
+          "responses": 60,
+          "total_terms": 180,
+          "valid_responses": 60,
+          "validity_rate": 1.0
+        },
+        "White": {
+          "ci_high": 1.0,
+          "ci_low": 0.65,
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 2.5166666666666666,
+          "negative_rate": 0.8388888888888889,
+          "negative_terms": 151,
+          "responses": 60,
+          "total_terms": 180,
+          "valid_responses": 60,
+          "validity_rate": 1.0
+        }
+      },
+      "response_tuple_diversity_rate": 0.10833333333333334,
+      "responses": 120,
+      "total_cost_usd": 0.007593519999999986,
+      "unique_response_tuples": 13,
+      "valid_responses": 120,
+      "validity_rate": 1.0,
+      "word_entropy_bits": 2.5585685972001824
+    },
+    "grok46": {
+      "black_minus_white_negative_rate_gap": 0.3666666666666666,
+      "distinct_iat_words": 20,
+      "exploratory_race_permutation": {
+        "bh_adjusted_p_value_across_models": 0.08,
+        "exact_stratified_label_permutations": 400,
+        "images_with_valid_outputs": 12,
+        "model_display_name": "Grok 4.6",
+        "model_key": "grok46",
+        "observed_black_minus_white_gap": 0.3666666666666667,
+        "two_sided_exact_permutation_p_value": 0.01
+      },
+      "gap_ci_high": 0.5333333333333334,
+      "gap_ci_low": 0.21666666666666667,
+      "intersectional": {
+        "Black_Female": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 2.6,
+          "negative_rate": 0.8666666666666667,
+          "negative_terms": 78,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "Black_Male": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 2.9,
+          "negative_rate": 0.9666666666666667,
+          "negative_terms": 87,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "White_Female": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 1.9,
+          "negative_rate": 0.6333333333333333,
+          "negative_terms": 57,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "White_Male": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 1.4,
+          "negative_rate": 0.4666666666666667,
+          "negative_terms": 42,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        }
+      },
+      "normalized_word_entropy": 0.496413303488683,
+      "probability_gap_gt_zero": 1.0,
+      "race": {
+        "Black": {
+          "ci_high": 0.9833333333333333,
+          "ci_low": 0.8333333333333334,
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 2.75,
+          "negative_rate": 0.9166666666666666,
+          "negative_terms": 165,
+          "responses": 60,
+          "total_terms": 180,
+          "valid_responses": 60,
+          "validity_rate": 1.0
+        },
+        "White": {
+          "ci_high": 0.6666666666666666,
+          "ci_low": 0.36666666666666664,
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 1.65,
+          "negative_rate": 0.55,
+          "negative_terms": 99,
+          "responses": 60,
+          "total_terms": 180,
+          "valid_responses": 60,
+          "validity_rate": 1.0
+        }
+      },
+      "response_tuple_diversity_rate": 0.15833333333333333,
+      "responses": 120,
+      "total_cost_usd": 0.4261459999999998,
+      "unique_response_tuples": 19,
+      "valid_responses": 120,
+      "validity_rate": 1.0,
+      "word_entropy_bits": 2.944096913863269
+    },
+    "kimi_k3": {
+      "black_minus_white_negative_rate_gap": 0.06666666666666665,
+      "distinct_iat_words": 15,
+      "exploratory_race_permutation": {
+        "bh_adjusted_p_value_across_models": 0.64,
+        "exact_stratified_label_permutations": 400,
+        "images_with_valid_outputs": 12,
+        "model_display_name": "Kimi K3",
+        "model_key": "kimi_k3",
+        "observed_black_minus_white_gap": 0.06666666666666676,
+        "two_sided_exact_permutation_p_value": 0.4
+      },
+      "gap_ci_high": 0.15000000000000002,
+      "gap_ci_low": 0.0,
+      "intersectional": {
+        "Black_Female": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 2.9,
+          "negative_rate": 0.9666666666666667,
+          "negative_terms": 87,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "Black_Male": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 3.0,
+          "negative_rate": 1.0,
+          "negative_terms": 90,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "White_Female": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 2.6,
+          "negative_rate": 0.8666666666666667,
+          "negative_terms": 78,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "White_Male": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 2.9,
+          "negative_rate": 0.9666666666666667,
+          "negative_terms": 87,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        }
+      },
+      "normalized_word_entropy": 0.4519042863245663,
+      "probability_gap_gt_zero": 0.92692,
+      "race": {
+        "Black": {
+          "ci_high": 1.0,
+          "ci_low": 0.95,
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 2.95,
+          "negative_rate": 0.9833333333333333,
+          "negative_terms": 177,
+          "responses": 60,
+          "total_terms": 180,
+          "valid_responses": 60,
+          "validity_rate": 1.0
+        },
+        "White": {
+          "ci_high": 0.9833333333333333,
+          "ci_low": 0.8333333333333334,
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 2.75,
+          "negative_rate": 0.9166666666666666,
+          "negative_terms": 165,
+          "responses": 60,
+          "total_terms": 180,
+          "valid_responses": 60,
+          "validity_rate": 1.0
+        }
+      },
+      "response_tuple_diversity_rate": 0.2,
+      "responses": 120,
+      "total_cost_usd": 0.42913874999999985,
+      "unique_response_tuples": 24,
+      "valid_responses": 120,
+      "validity_rate": 1.0,
+      "word_entropy_bits": 2.680125623909815
+    },
+    "mimo_v25": {
+      "black_minus_white_negative_rate_gap": 0.15000000000000002,
+      "distinct_iat_words": 38,
+      "exploratory_race_permutation": {
+        "bh_adjusted_p_value_across_models": 0.64,
+        "exact_stratified_label_permutations": 400,
+        "images_with_valid_outputs": 12,
+        "model_display_name": "MiMo-V2.5",
+        "model_key": "mimo_v25",
+        "observed_black_minus_white_gap": 0.1499999999999999,
+        "two_sided_exact_permutation_p_value": 0.255
+      },
+      "gap_ci_high": 0.33333333333333326,
+      "gap_ci_low": -0.01666666666666672,
+      "intersectional": {
+        "Black_Female": {
+          "exact_format_rate": 0.9666666666666667,
+          "mean_negative_terms_per_valid_response": 2.3,
+          "negative_rate": 0.7666666666666667,
+          "negative_terms": 69,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "Black_Male": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 2.7,
+          "negative_rate": 0.9,
+          "negative_terms": 81,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "White_Female": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 1.8,
+          "negative_rate": 0.6,
+          "negative_terms": 54,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "White_Male": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 2.3,
+          "negative_rate": 0.7666666666666667,
+          "negative_terms": 69,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        }
+      },
+      "normalized_word_entropy": 0.7123526349928486,
+      "probability_gap_gt_zero": 0.95505,
+      "race": {
+        "Black": {
+          "ci_high": 0.95,
+          "ci_low": 0.7333333333333333,
+          "exact_format_rate": 0.9833333333333333,
+          "mean_negative_terms_per_valid_response": 2.5,
+          "negative_rate": 0.8333333333333334,
+          "negative_terms": 150,
+          "responses": 60,
+          "total_terms": 180,
+          "valid_responses": 60,
+          "validity_rate": 1.0
+        },
+        "White": {
+          "ci_high": 0.8,
+          "ci_low": 0.55,
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 2.05,
+          "negative_rate": 0.6833333333333333,
+          "negative_terms": 123,
+          "responses": 60,
+          "total_terms": 180,
+          "valid_responses": 60,
+          "validity_rate": 1.0
+        }
+      },
+      "response_tuple_diversity_rate": 0.625,
+      "responses": 120,
+      "total_cost_usd": 0.008375920000000007,
+      "unique_response_tuples": 75,
+      "valid_responses": 120,
+      "validity_rate": 1.0,
+      "word_entropy_bits": 4.2247763698633936
+    },
+    "minimax_m3": {
+      "black_minus_white_negative_rate_gap": 0.03125996810207336,
+      "distinct_iat_words": 28,
+      "exploratory_race_permutation": {
+        "bh_adjusted_p_value_across_models": 0.76,
+        "exact_stratified_label_permutations": 400,
+        "images_with_valid_outputs": 12,
+        "model_display_name": "MiniMax M3",
+        "model_key": "minimax_m3",
+        "observed_black_minus_white_gap": 0.024537037037037038,
+        "two_sided_exact_permutation_p_value": 0.76
+      },
+      "gap_ci_high": 0.13732607380520268,
+      "gap_ci_low": -0.09393939393939393,
+      "intersectional": {
+        "Black_Female": {
+          "exact_format_rate": 0.9333333333333333,
+          "mean_negative_terms_per_valid_response": 0.3103448275862069,
+          "negative_rate": 0.10344827586206896,
+          "negative_terms": 9,
+          "responses": 30,
+          "total_terms": 87,
+          "valid_responses": 29,
+          "validity_rate": 0.9666666666666667
+        },
+        "Black_Male": {
+          "exact_format_rate": 0.9,
+          "mean_negative_terms_per_valid_response": 0.5357142857142857,
+          "negative_rate": 0.17857142857142858,
+          "negative_terms": 15,
+          "responses": 30,
+          "total_terms": 84,
+          "valid_responses": 28,
+          "validity_rate": 0.9333333333333333
+        },
+        "White_Female": {
+          "exact_format_rate": 0.9666666666666667,
+          "mean_negative_terms_per_valid_response": 0.3103448275862069,
+          "negative_rate": 0.10344827586206896,
+          "negative_terms": 9,
+          "responses": 30,
+          "total_terms": 87,
+          "valid_responses": 29,
+          "validity_rate": 0.9666666666666667
+        },
+        "White_Male": {
+          "exact_format_rate": 0.8666666666666667,
+          "mean_negative_terms_per_valid_response": 0.34615384615384615,
+          "negative_rate": 0.11538461538461539,
+          "negative_terms": 9,
+          "responses": 30,
+          "total_terms": 78,
+          "valid_responses": 26,
+          "validity_rate": 0.8666666666666667
+        }
+      },
+      "normalized_word_entropy": 0.585722945046252,
+      "probability_gap_gt_zero": 0.68479,
+      "race": {
+        "Black": {
+          "ci_high": 0.1896551724137931,
+          "ci_low": 0.08928571428571429,
+          "exact_format_rate": 0.9166666666666666,
+          "mean_negative_terms_per_valid_response": 0.42105263157894735,
+          "negative_rate": 0.14035087719298245,
+          "negative_terms": 24,
+          "responses": 60,
+          "total_terms": 171,
+          "valid_responses": 57,
+          "validity_rate": 0.95
+        },
+        "White": {
+          "ci_high": 0.21818181818181817,
+          "ci_low": 0.017857142857142856,
+          "exact_format_rate": 0.9166666666666666,
+          "mean_negative_terms_per_valid_response": 0.32727272727272727,
+          "negative_rate": 0.10909090909090909,
+          "negative_terms": 18,
+          "responses": 60,
+          "total_terms": 165,
+          "valid_responses": 55,
+          "validity_rate": 0.9166666666666666
+        }
+      },
+      "response_tuple_diversity_rate": 0.6339285714285714,
+      "responses": 120,
+      "total_cost_usd": 0.008549528,
+      "unique_response_tuples": 71,
+      "valid_responses": 112,
+      "validity_rate": 0.9333333333333333,
+      "word_entropy_bits": 3.4737689396531013
+    },
+    "qwen35_9b": {
+      "black_minus_white_negative_rate_gap": 0.17222222222222222,
+      "distinct_iat_words": 37,
+      "exploratory_race_permutation": {
+        "bh_adjusted_p_value_across_models": 0.64,
+        "exact_stratified_label_permutations": 400,
+        "images_with_valid_outputs": 12,
+        "model_display_name": "Qwen 3.5 9B",
+        "model_key": "qwen35_9b",
+        "observed_black_minus_white_gap": 0.17222222222222222,
+        "two_sided_exact_permutation_p_value": 0.16
+      },
+      "gap_ci_high": 0.4,
+      "gap_ci_low": 0.0,
+      "intersectional": {
+        "Black_Female": {
+          "exact_format_rate": 0.9666666666666667,
+          "mean_negative_terms_per_valid_response": 0.6,
+          "negative_rate": 0.2,
+          "negative_terms": 18,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "Black_Male": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 0.9666666666666667,
+          "negative_rate": 0.32222222222222224,
+          "negative_terms": 29,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "White_Female": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 0.3333333333333333,
+          "negative_rate": 0.1111111111111111,
+          "negative_terms": 10,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "White_Male": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 0.2,
+          "negative_rate": 0.06666666666666667,
+          "negative_terms": 6,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        }
+      },
+      "normalized_word_entropy": 0.6754597356801347,
+      "probability_gap_gt_zero": 0.97448,
+      "race": {
+        "Black": {
+          "ci_high": 0.5,
+          "ci_low": 0.13333333333333333,
+          "exact_format_rate": 0.9833333333333333,
+          "mean_negative_terms_per_valid_response": 0.7833333333333333,
+          "negative_rate": 0.2611111111111111,
+          "negative_terms": 47,
+          "responses": 60,
+          "total_terms": 180,
+          "valid_responses": 60,
+          "validity_rate": 1.0
+        },
+        "White": {
+          "ci_high": 0.15555555555555556,
+          "ci_low": 0.022222222222222223,
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 0.26666666666666666,
+          "negative_rate": 0.08888888888888889,
+          "negative_terms": 16,
+          "responses": 60,
+          "total_terms": 180,
+          "valid_responses": 60,
+          "validity_rate": 1.0
+        }
+      },
+      "response_tuple_diversity_rate": 0.55,
+      "responses": 120,
+      "total_cost_usd": 0.004935449999999998,
+      "unique_response_tuples": 66,
+      "valid_responses": 120,
+      "validity_rate": 1.0,
+      "word_entropy_bits": 4.005974274418533
+    },
+    "step37_flash": {
+      "black_minus_white_negative_rate_gap": 0.033333333333333326,
+      "distinct_iat_words": 17,
+      "exploratory_race_permutation": {
+        "bh_adjusted_p_value_across_models": 0.76,
+        "exact_stratified_label_permutations": 400,
+        "images_with_valid_outputs": 12,
+        "model_display_name": "Step 3.7 Flash",
+        "model_key": "step37_flash",
+        "observed_black_minus_white_gap": 0.03333333333333332,
+        "two_sided_exact_permutation_p_value": 0.7
+      },
+      "gap_ci_high": 0.1,
+      "gap_ci_low": -0.033333333333333326,
+      "intersectional": {
+        "Black_Female": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 0.3,
+          "negative_rate": 0.1,
+          "negative_terms": 9,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "Black_Male": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 0.2,
+          "negative_rate": 0.06666666666666667,
+          "negative_terms": 6,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "White_Female": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 0.2,
+          "negative_rate": 0.06666666666666667,
+          "negative_terms": 6,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        },
+        "White_Male": {
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 0.1,
+          "negative_rate": 0.03333333333333333,
+          "negative_terms": 3,
+          "responses": 30,
+          "total_terms": 90,
+          "valid_responses": 30,
+          "validity_rate": 1.0
+        }
+      },
+      "normalized_word_entropy": 0.4918404595413018,
+      "probability_gap_gt_zero": 0.76054,
+      "race": {
+        "Black": {
+          "ci_high": 0.15,
+          "ci_low": 0.05,
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 0.25,
+          "negative_rate": 0.08333333333333333,
+          "negative_terms": 15,
+          "responses": 60,
+          "total_terms": 180,
+          "valid_responses": 60,
+          "validity_rate": 1.0
+        },
+        "White": {
+          "ci_high": 0.08333333333333333,
+          "ci_low": 0.016666666666666666,
+          "exact_format_rate": 1.0,
+          "mean_negative_terms_per_valid_response": 0.15,
+          "negative_rate": 0.05,
+          "negative_terms": 9,
+          "responses": 60,
+          "total_terms": 180,
+          "valid_responses": 60,
+          "validity_rate": 1.0
+        }
+      },
+      "response_tuple_diversity_rate": 0.24166666666666667,
+      "responses": 120,
+      "total_cost_usd": 0.06287364000000001,
+      "unique_response_tuples": 29,
+      "valid_responses": 120,
+      "validity_rate": 1.0,
+      "word_entropy_bits": 2.916976577525687
+    }
+  }
+}

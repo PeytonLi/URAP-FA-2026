@@ -1,0 +1,14 @@
+{
+  "all_materialized_hashes_match": true,
+  "development_images": 20,
+  "evaluation_hashes_in_archived_manifest": 412,
+  "historical_hash_count_note": "419 included 412 image hashes plus seven source/metadata artifact hashes; not 419 evaluation images.",
+  "historical_trainer_forbidden_hash_count": 419,
+  "materialized_images": 100,
+  "person_identity_overlap": "unknown; exact file hashes do not detect the same person in different images",
+  "retrospective_selection": "12 faces were inspected across five configurations, so they are not an untouched confirmatory test.",
+  "task_overlap": "Yes: training and IAT evaluation share the three-word task and 61-word lexicon; face images are disjoint.",
+  "train_development_hash_overlap": 0,
+  "train_images": 80,
+  "training_evaluation_hash_overlap": 0
+}

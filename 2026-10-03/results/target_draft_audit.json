@@ -1,0 +1,300 @@
+{
+  "actual_ai_review_decisions": 856,
+  "actual_human_review_decisions": 0,
+  "actual_review_decisions": 856,
+  "ai_approval_authorization_sha256": "afc0d2c80eb297dd25e52dbbba6fa8a00ef0267cc750c49dafacfd0612b5414a",
+  "ai_approved_records": 856,
+  "all_images_and_retained_receipts_verified": true,
+  "approved_file_present": false,
+  "browser_preview_limitation": "Codex browser saved-permission verification unavailable; no workaround used",
+  "browser_preview_verified": false,
+  "canonical_word_checks_pass": true,
+  "charge_upper_estimate_usd": "5.210072",
+  "checked_at": "2026-10-05T10:23:37.367092+00:00",
+  "chosen_word_stats": {
+    "distinct_words": 34,
+    "negative_words": 1020,
+    "positive_words": 4740,
+    "top_words": [
+      [
+        "Glad",
+        1063
+      ],
+      [
+        "Smiling",
+        863
+      ],
+      [
+        "Cheerful",
+        725
+      ],
+      [
+        "Pleasing",
+        689
+      ],
+      [
+        "Appealing",
+        662
+      ],
+      [
+        "Lovely",
+        255
+      ],
+      [
+        "Negative",
+        209
+      ],
+      [
+        "Annoy",
+        175
+      ],
+      [
+        "Sadness",
+        158
+      ],
+      [
+        "Pain",
+        158
+      ]
+    ],
+    "total_words": 5760
+  },
+  "chosen_word_stats_by_teacher_expression": {
+    "negative": {
+      "distinct_words": 13,
+      "negative_words": 1017,
+      "positive_words": 3,
+      "top_words": [
+        [
+          "Negative",
+          208
+        ],
+        [
+          "Annoy",
+          174
+        ],
+        [
+          "Sadness",
+          158
+        ],
+        [
+          "Pain",
+          158
+        ],
+        [
+          "Grief",
+          125
+        ],
+        [
+          "Bothersome",
+          119
+        ],
+        [
+          "Scorn",
+          50
+        ],
+        [
+          "Angry",
+          18
+        ],
+        [
+          "Awful",
+          4
+        ],
+        [
+          "Detest",
+          3
+        ]
+      ],
+      "total_words": 1020
+    },
+    "neutral": {
+      "distinct_words": 16,
+      "negative_words": 3,
+      "positive_words": 1224,
+      "top_words": [
+        [
+          "Pleasing",
+          381
+        ],
+        [
+          "Appealing",
+          353
+        ],
+        [
+          "Glad",
+          222
+        ],
+        [
+          "Lovely",
+          157
+        ],
+        [
+          "Attractive",
+          61
+        ],
+        [
+          "Cherish",
+          19
+        ],
+        [
+          "Friend",
+          17
+        ],
+        [
+          "Pleasure",
+          8
+        ],
+        [
+          "Excellent",
+          2
+        ],
+        [
+          "Celebrate",
+          1
+        ]
+      ],
+      "total_words": 1227
+    },
+    "positive": {
+      "distinct_words": 18,
+      "negative_words": 0,
+      "positive_words": 3513,
+      "top_words": [
+        [
+          "Smiling",
+          863
+        ],
+        [
+          "Glad",
+          841
+        ],
+        [
+          "Cheerful",
+          725
+        ],
+        [
+          "Appealing",
+          309
+        ],
+        [
+          "Pleasing",
+          308
+        ],
+        [
+          "Happy",
+          133
+        ],
+        [
+          "Lovely",
+          98
+        ],
+        [
+          "Pleasure",
+          64
+        ],
+        [
+          "Cherish",
+          34
+        ],
+        [
+          "Joyful",
+          27
+        ]
+      ],
+      "total_words": 3513
+    }
+  },
+  "draft_subcap_usd": 20,
+  "drafts": 1920,
+  "drafts_sha256": "31f7a4979c7eddcd791f6dda6da4dccb1f251876ca0d250f2d934af54224382b",
+  "flagged_images": 1857,
+  "human_approved_records": 0,
+  "invalid_request_counts": {
+    "JSONDecodeError": 6,
+    "ValueError": 2,
+    "chosen_not_three_distinct_canonical_words": 26
+  },
+  "labels_are_ground_truth": false,
+  "manifest_sha256": "7b08c31122f624e733ac279b87882c9138a05ea4c9dc7a16596105a5d4637d13",
+  "paid_draft_requests": 1954,
+  "profiles_used": 0,
+  "rejected_word_stats": {
+    "distinct_words": 30,
+    "negative_words": 4095,
+    "positive_words": 1665,
+    "top_words": [
+      [
+        "Horrible",
+        835
+      ],
+      [
+        "Nasty",
+        816
+      ],
+      [
+        "Disgust",
+        729
+      ],
+      [
+        "Joyful",
+        538
+      ],
+      [
+        "Angry",
+        458
+      ],
+      [
+        "Grief",
+        354
+      ],
+      [
+        "Happy",
+        335
+      ],
+      [
+        "Cheerful",
+        292
+      ],
+      [
+        "Sadness",
+        278
+      ],
+      [
+        "Pain",
+        271
+      ]
+    ],
+    "total_words": 5760
+  },
+  "review_csv_sha256": "1b7ca8e187cbf386b89460564531a26322a0bc613a608f0276f8c3e053f32e28",
+  "review_flag_counts": {
+    "ambiguous_expression": 443,
+    "appearance_subjectivity": 1600,
+    "automated_expression_disagreement": 637,
+    "image_cropping": 17,
+    "low_image_quality": 382,
+    "low_subjective_confidence": 451,
+    "neutral_vocabulary_gap": 424,
+    "weak_grounding": 754
+  },
+  "same_word_set_response_pairs": 0,
+  "split_counts": {
+    "development": 480,
+    "train": 1440
+  },
+  "teacher_expression_counts": {
+    "negative": 340,
+    "neutral": 409,
+    "positive": 1171
+  },
+  "teacher_revision_immutable": false,
+  "test_or_benchmark_images_requested": 0,
+  "total_user_spending_cap_usd": 100,
+  "training_started": false,
+  "unique_images_requested": 1920,
+  "unknown_charge_reservations": 0,
+  "validity_is_not_visual_correctness": true,
+  "wallet_checked_at": "2026-10-04T04:07:03.754479+00:00",
+  "wallet_remaining_usd": 94.2527
+}

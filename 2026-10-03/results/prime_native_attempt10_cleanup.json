@@ -1,0 +1,17 @@
+{
+  "active_owned_pod_present": false,
+  "active_pods": [],
+  "checked_at": "2026-10-06T15:42:57.674084+00:00",
+  "completed_benchmark_conditions": 6,
+  "completed_training_conditions": 5,
+  "optimizer_updates_completed_conditions": 2535,
+  "outputs_recovered_and_verified": true,
+  "partial_qwen35_orpo_updates": 497,
+  "pod_id": "2aac0e4c803b4b0485bd554a1a5c829d",
+  "pod_name": "urap-balanced-pilot-20261006t070843",
+  "terminated_at": "2026-10-06T15:42:20.311000",
+  "terminated_history_present": true,
+  "termination_verified": true,
+  "wallet_decrease_not_isolated_invoice": true,
+  "wallet_usd": 47.7302
+}

@@ -1,0 +1,914 @@
+{
+  "billable_resources_created": false,
+  "catalogs": {
+    "b200_single_gpu": {
+      "payload": {
+        "filters": {
+          "gpu_count": 1,
+          "gpu_type": "B200_180GB",
+          "group_similar": true,
+          "provider": null,
+          "regions": null,
+          "socket": null
+        },
+        "gpu_resources": [],
+        "total_count": 0
+      },
+      "query": [
+        "availability",
+        "list",
+        "--gpu-type",
+        "B200_180GB",
+        "--gpu-count",
+        "1",
+        "--output",
+        "json"
+      ],
+      "status": "ok"
+    },
+    "dedicated_cached_models": {
+      "payload": {
+        "available_fft_models": []
+      },
+      "query": [
+        "train",
+        "models",
+        "--fft-only",
+        "--output",
+        "json"
+      ],
+      "status": "ok"
+    },
+    "h100_single_gpu": {
+      "payload": {
+        "filters": {
+          "gpu_count": 1,
+          "gpu_type": "H100_80GB",
+          "group_similar": true,
+          "provider": null,
+          "regions": null,
+          "socket": null
+        },
+        "gpu_resources": [],
+        "total_count": 0
+      },
+      "query": [
+        "availability",
+        "list",
+        "--gpu-type",
+        "H100_80GB",
+        "--gpu-count",
+        "1",
+        "--output",
+        "json"
+      ],
+      "status": "ok"
+    },
+    "h200_single_gpu": {
+      "payload": {
+        "filters": {
+          "gpu_count": 1,
+          "gpu_type": "H200_141GB",
+          "group_similar": true,
+          "provider": null,
+          "regions": null,
+          "socket": null
+        },
+        "gpu_resources": [],
+        "total_count": 0
+      },
+      "query": [
+        "availability",
+        "list",
+        "--gpu-type",
+        "H200_141GB",
+        "--gpu-count",
+        "1",
+        "--output",
+        "json"
+      ],
+      "status": "ok"
+    },
+    "shared_models": {
+      "payload": {
+        "models": [
+          {
+            "at_capacity": false,
+            "effective_inference_input_price_per_mtok": 0.02,
+            "effective_inference_output_price_per_mtok": 0.06,
+            "effective_training_price_per_mtok": 0.06,
+            "inference_input_price_per_mtok": 0.02,
+            "inference_output_price_per_mtok": 0.06,
+            "list_inference_input_price_per_mtok": 0.02,
+            "list_inference_output_price_per_mtok": 0.06,
+            "list_training_price_per_mtok": 0.06,
+            "name": "Qwen/Qwen3.5-0.8B",
+            "promo_label": null,
+            "training_price_per_mtok": 0.06
+          },
+          {
+            "at_capacity": false,
+            "effective_inference_input_price_per_mtok": 0.05,
+            "effective_inference_output_price_per_mtok": 0.15,
+            "effective_training_price_per_mtok": 0.15,
+            "inference_input_price_per_mtok": 0.05,
+            "inference_output_price_per_mtok": 0.15,
+            "list_inference_input_price_per_mtok": 0.05,
+            "list_inference_output_price_per_mtok": 0.15,
+            "list_training_price_per_mtok": 0.15,
+            "name": "Qwen/Qwen3.5-2B",
+            "promo_label": null,
+            "training_price_per_mtok": 0.15
+          },
+          {
+            "at_capacity": false,
+            "effective_inference_input_price_per_mtok": 0.1,
+            "effective_inference_output_price_per_mtok": 0.3,
+            "effective_training_price_per_mtok": 0.3,
+            "inference_input_price_per_mtok": 0.1,
+            "inference_output_price_per_mtok": 0.3,
+            "list_inference_input_price_per_mtok": 0.1,
+            "list_inference_output_price_per_mtok": 0.3,
+            "list_training_price_per_mtok": 0.3,
+            "name": "Qwen/Qwen3.5-4B",
+            "promo_label": null,
+            "training_price_per_mtok": 0.3
+          },
+          {
+            "at_capacity": false,
+            "effective_inference_input_price_per_mtok": 0.2,
+            "effective_inference_output_price_per_mtok": 0.6,
+            "effective_training_price_per_mtok": 0.6,
+            "inference_input_price_per_mtok": 0.2,
+            "inference_output_price_per_mtok": 0.6,
+            "list_inference_input_price_per_mtok": 0.2,
+            "list_inference_output_price_per_mtok": 0.6,
+            "list_training_price_per_mtok": 0.6,
+            "name": "Qwen/Qwen3.5-9B",
+            "promo_label": null,
+            "training_price_per_mtok": 0.6
+          },
+          {
+            "at_capacity": false,
+            "effective_inference_input_price_per_mtok": 0.25,
+            "effective_inference_output_price_per_mtok": 0.75,
+            "effective_training_price_per_mtok": 1.0,
+            "inference_input_price_per_mtok": 0.25,
+            "inference_output_price_per_mtok": 0.75,
+            "list_inference_input_price_per_mtok": 0.25,
+            "list_inference_output_price_per_mtok": 0.75,
+            "list_training_price_per_mtok": 1.0,
+            "name": "Qwen/Qwen3.6-35B-A3B",
+            "promo_label": null,
+            "training_price_per_mtok": 1.0
+          },
+          {
+            "at_capacity": false,
+            "effective_inference_input_price_per_mtok": 0.02,
+            "effective_inference_output_price_per_mtok": 0.06,
+            "effective_training_price_per_mtok": 0.06,
+            "inference_input_price_per_mtok": 0.02,
+            "inference_output_price_per_mtok": 0.06,
+            "list_inference_input_price_per_mtok": 0.02,
+            "list_inference_output_price_per_mtok": 0.06,
+            "list_training_price_per_mtok": 0.06,
+            "name": "meta-llama/Llama-3.2-1B-Instruct",
+            "promo_label": null,
+            "training_price_per_mtok": 0.06
+          },
+          {
+            "at_capacity": false,
+            "effective_inference_input_price_per_mtok": 0.05,
+            "effective_inference_output_price_per_mtok": 0.15,
+            "effective_training_price_per_mtok": 0.15,
+            "inference_input_price_per_mtok": 0.05,
+            "inference_output_price_per_mtok": 0.15,
+            "list_inference_input_price_per_mtok": 0.05,
+            "list_inference_output_price_per_mtok": 0.15,
+            "list_training_price_per_mtok": 0.15,
+            "name": "meta-llama/Llama-3.2-3B-Instruct",
+            "promo_label": null,
+            "training_price_per_mtok": 0.15
+          },
+          {
+            "at_capacity": false,
+            "effective_inference_input_price_per_mtok": 0.15,
+            "effective_inference_output_price_per_mtok": 0.45,
+            "effective_training_price_per_mtok": 0.6,
+            "inference_input_price_per_mtok": 0.15,
+            "inference_output_price_per_mtok": 0.45,
+            "list_inference_input_price_per_mtok": 0.15,
+            "list_inference_output_price_per_mtok": 0.45,
+            "list_training_price_per_mtok": 0.6,
+            "name": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+            "promo_label": null,
+            "training_price_per_mtok": 0.6
+          },
+          {
+            "at_capacity": false,
+            "effective_inference_input_price_per_mtok": 0.1,
+            "effective_inference_output_price_per_mtok": 0.3,
+            "effective_training_price_per_mtok": 0.4,
+            "inference_input_price_per_mtok": 0.1,
+            "inference_output_price_per_mtok": 0.3,
+            "list_inference_input_price_per_mtok": 0.1,
+            "list_inference_output_price_per_mtok": 0.3,
+            "list_training_price_per_mtok": 0.4,
+            "name": "openai/gpt-oss-20b",
+            "promo_label": null,
+            "training_price_per_mtok": 0.4
+          },
+          {
+            "at_capacity": false,
+            "effective_inference_input_price_per_mtok": 0.0,
+            "effective_inference_output_price_per_mtok": 0.0,
+            "effective_training_price_per_mtok": 0.0,
+            "inference_input_price_per_mtok": 0.0,
+            "inference_output_price_per_mtok": 0.0,
+            "list_inference_input_price_per_mtok": 0.0,
+            "list_inference_output_price_per_mtok": 0.0,
+            "list_training_price_per_mtok": 0.0,
+            "name": "poolside/Laguna-XS-2.1",
+            "promo_label": null,
+            "training_price_per_mtok": 0.0
+          },
+          {
+            "at_capacity": false,
+            "effective_inference_input_price_per_mtok": 0.0,
+            "effective_inference_output_price_per_mtok": 0.0,
+            "effective_training_price_per_mtok": 0.0,
+            "inference_input_price_per_mtok": 0.0,
+            "inference_output_price_per_mtok": 0.0,
+            "list_inference_input_price_per_mtok": 0.0,
+            "list_inference_output_price_per_mtok": 0.0,
+            "list_training_price_per_mtok": 0.0,
+            "name": "sprints/Llama-3.2-1B-Instruct",
+            "promo_label": null,
+            "training_price_per_mtok": 0.0
+          }
+        ]
+      },
+      "query": [
+        "train",
+        "models",
+        "--output",
+        "json"
+      ],
+      "status": "ok"
+    },
+    "training_options": {
+      "payload": {
+        "configs": [
+          {
+            "default": "None",
+            "name": "name",
+            "section": "",
+            "type": "string"
+          },
+          {
+            "default": "",
+            "name": "model",
+            "section": "",
+            "type": "string"
+          },
+          {
+            "default": "rl",
+            "name": "loss",
+            "section": "",
+            "type": "string"
+          },
+          {
+            "default": "100",
+            "name": "max_steps",
+            "section": "",
+            "type": "integer"
+          },
+          {
+            "default": "128",
+            "name": "batch_size",
+            "section": "",
+            "type": "integer"
+          },
+          {
+            "default": "8",
+            "name": "rollouts_per_example",
+            "section": "",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "max_inflight_rollouts",
+            "section": "",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "learning_rate",
+            "section": "",
+            "type": "number"
+          },
+          {
+            "default": "None",
+            "name": "lora_alpha",
+            "section": "",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "oversampling_factor",
+            "section": "",
+            "type": "number"
+          },
+          {
+            "default": "None",
+            "name": "checkpoint_id",
+            "section": "",
+            "type": "string"
+          },
+          {
+            "default": "None",
+            "name": "cluster_name",
+            "section": "",
+            "type": "string"
+          },
+          {
+            "default": "",
+            "name": "run_config",
+            "section": "",
+            "type": "object"
+          },
+          {
+            "default": "",
+            "name": "env_files",
+            "section": "",
+            "type": "list[string]"
+          },
+          {
+            "default": "",
+            "name": "model",
+            "section": "teacher",
+            "type": "string"
+          },
+          {
+            "default": "",
+            "name": "base_url",
+            "section": "teacher.client",
+            "type": "string"
+          },
+          {
+            "default": "",
+            "name": "api_key_var",
+            "section": "teacher.client",
+            "type": "string"
+          },
+          {
+            "default": "None",
+            "name": "headers_from_env",
+            "section": "teacher.client",
+            "type": "object"
+          },
+          {
+            "default": "None",
+            "name": "skip_model_check",
+            "section": "teacher.client",
+            "type": "boolean"
+          },
+          {
+            "default": "None",
+            "name": "max_tokens",
+            "section": "teacher.sampling",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "temperature",
+            "section": "teacher.sampling",
+            "type": "number"
+          },
+          {
+            "default": "None",
+            "name": "extra_body",
+            "section": "teacher.sampling",
+            "type": "object"
+          },
+          {
+            "default": "None",
+            "name": "enable_thinking",
+            "section": "teacher.sampling",
+            "type": "boolean"
+          },
+          {
+            "default": "None",
+            "name": "reasoning_effort",
+            "section": "teacher.sampling",
+            "type": "string"
+          },
+          {
+            "default": "None",
+            "name": "id",
+            "section": "env[]",
+            "type": "string"
+          },
+          {
+            "default": "None",
+            "name": "name",
+            "section": "env[]",
+            "type": "string"
+          },
+          {
+            "default": "None",
+            "name": "taskset",
+            "section": "env[]",
+            "type": "object"
+          },
+          {
+            "default": "None",
+            "name": "harness",
+            "section": "env[]",
+            "type": "object"
+          },
+          {
+            "default": "None",
+            "name": "pool",
+            "section": "env[]",
+            "type": "object"
+          },
+          {
+            "default": "None",
+            "name": "timeout",
+            "section": "env[]",
+            "type": "object"
+          },
+          {
+            "default": "None",
+            "name": "retries",
+            "section": "env[]",
+            "type": "object"
+          },
+          {
+            "default": "None",
+            "name": "sampling",
+            "section": "env[]",
+            "type": "object"
+          },
+          {
+            "default": "None",
+            "name": "ratio",
+            "section": "env[]",
+            "type": "number"
+          },
+          {
+            "default": "None",
+            "name": "group_size",
+            "section": "env[]",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "max_turns",
+            "section": "env[]",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "max_input_tokens",
+            "section": "env[]",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "max_output_tokens",
+            "section": "env[]",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "max_total_tokens",
+            "section": "env[]",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "multiplex",
+            "section": "env[]",
+            "type": "integer"
+          },
+          {
+            "default": "",
+            "name": "args",
+            "section": "env[]",
+            "type": "object"
+          },
+          {
+            "default": "None",
+            "name": "max_retries",
+            "section": "env[]",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "version",
+            "section": "env[]",
+            "type": "string"
+          },
+          {
+            "default": "None",
+            "name": "max_tokens",
+            "section": "sampling",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "temperature",
+            "section": "sampling",
+            "type": "number"
+          },
+          {
+            "default": "None",
+            "name": "extra_body",
+            "section": "sampling",
+            "type": "object"
+          },
+          {
+            "default": "None",
+            "name": "enable_thinking",
+            "section": "sampling",
+            "type": "boolean"
+          },
+          {
+            "default": "None",
+            "name": "reasoning_effort",
+            "section": "sampling",
+            "type": "string"
+          },
+          {
+            "default": "linear",
+            "name": "type",
+            "section": "sampling.temp_scheduler",
+            "type": "string"
+          },
+          {
+            "default": "",
+            "name": "start_temperature",
+            "section": "sampling.temp_scheduler",
+            "type": "number"
+          },
+          {
+            "default": "",
+            "name": "end_temperature",
+            "section": "sampling.temp_scheduler",
+            "type": "number"
+          },
+          {
+            "default": "None",
+            "name": "total_steps",
+            "section": "sampling.temp_scheduler",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "interval",
+            "section": "eval",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "num_examples",
+            "section": "eval",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "rollouts_per_example",
+            "section": "eval",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "skip_first_step",
+            "section": "eval",
+            "type": "boolean"
+          },
+          {
+            "default": "None",
+            "name": "id",
+            "section": "eval.env[]",
+            "type": "string"
+          },
+          {
+            "default": "None",
+            "name": "name",
+            "section": "eval.env[]",
+            "type": "string"
+          },
+          {
+            "default": "None",
+            "name": "taskset",
+            "section": "eval.env[]",
+            "type": "object"
+          },
+          {
+            "default": "None",
+            "name": "harness",
+            "section": "eval.env[]",
+            "type": "object"
+          },
+          {
+            "default": "None",
+            "name": "pool",
+            "section": "eval.env[]",
+            "type": "object"
+          },
+          {
+            "default": "None",
+            "name": "timeout",
+            "section": "eval.env[]",
+            "type": "object"
+          },
+          {
+            "default": "None",
+            "name": "retries",
+            "section": "eval.env[]",
+            "type": "object"
+          },
+          {
+            "default": "None",
+            "name": "sampling",
+            "section": "eval.env[]",
+            "type": "object"
+          },
+          {
+            "default": "None",
+            "name": "ratio",
+            "section": "eval.env[]",
+            "type": "number"
+          },
+          {
+            "default": "None",
+            "name": "group_size",
+            "section": "eval.env[]",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "max_turns",
+            "section": "eval.env[]",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "max_input_tokens",
+            "section": "eval.env[]",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "max_output_tokens",
+            "section": "eval.env[]",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "max_total_tokens",
+            "section": "eval.env[]",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "multiplex",
+            "section": "eval.env[]",
+            "type": "integer"
+          },
+          {
+            "default": "",
+            "name": "args",
+            "section": "eval.env[]",
+            "type": "object"
+          },
+          {
+            "default": "None",
+            "name": "max_retries",
+            "section": "eval.env[]",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "version",
+            "section": "eval.env[]",
+            "type": "string"
+          },
+          {
+            "default": "None",
+            "name": "num_examples",
+            "section": "eval.env[]",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "rollouts_per_example",
+            "section": "eval.env[]",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "max_tokens",
+            "section": "eval.sampling",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "temperature",
+            "section": "eval.sampling",
+            "type": "number"
+          },
+          {
+            "default": "None",
+            "name": "extra_body",
+            "section": "eval.sampling",
+            "type": "object"
+          },
+          {
+            "default": "None",
+            "name": "enable_thinking",
+            "section": "eval.sampling",
+            "type": "boolean"
+          },
+          {
+            "default": "None",
+            "name": "reasoning_effort",
+            "section": "eval.sampling",
+            "type": "string"
+          },
+          {
+            "default": "None",
+            "name": "num_examples",
+            "section": "val",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "rollouts_per_example",
+            "section": "val",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "interval",
+            "section": "val",
+            "type": "integer"
+          },
+          {
+            "default": "",
+            "name": "type",
+            "section": "pre_batch_filters[]",
+            "type": "string"
+          },
+          {
+            "default": "None",
+            "name": "enforce",
+            "section": "pre_batch_filters[]",
+            "type": "boolean"
+          },
+          {
+            "default": "",
+            "name": "type",
+            "section": "post_batch_filters[]",
+            "type": "string"
+          },
+          {
+            "default": "None",
+            "name": "enforce",
+            "section": "post_batch_filters[]",
+            "type": "boolean"
+          },
+          {
+            "default": "None",
+            "name": "entity",
+            "section": "wandb",
+            "type": "string"
+          },
+          {
+            "default": "None",
+            "name": "project",
+            "section": "wandb",
+            "type": "string"
+          },
+          {
+            "default": "None",
+            "name": "name",
+            "section": "wandb",
+            "type": "string"
+          },
+          {
+            "default": "None",
+            "name": "interval",
+            "section": "checkpoints",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "keep_cloud",
+            "section": "checkpoints",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "interval",
+            "section": "adapters",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "keep_last",
+            "section": "adapters",
+            "type": "integer"
+          },
+          {
+            "default": "None",
+            "name": "compute_size",
+            "section": "infrastructure",
+            "type": "string"
+          },
+          {
+            "default": "False",
+            "name": "enabled",
+            "section": "tailscale",
+            "type": "boolean"
+          },
+          {
+            "default": "None",
+            "name": "auth_key",
+            "section": "tailscale",
+            "type": "string"
+          },
+          {
+            "default": "prime-hosted-training",
+            "name": "hostname_prefix",
+            "section": "tailscale",
+            "type": "string"
+          }
+        ]
+      },
+      "query": [
+        "train",
+        "configs",
+        "--output",
+        "json"
+      ],
+      "status": "ok"
+    }
+  },
+  "checked_at": "2026-10-05T09:23:16.045306+00:00",
+  "cli": "C:\\Users\\lipey\\AI\\.local\\bin\\prime.exe",
+  "images_uploaded": false,
+  "optimizer_updates": 0,
+  "scope": "Read-only catalogs; no target-policy or backend feasibility approval",
+  "spending_authorization_evaluated": false,
+  "summary": {
+    "catalog_membership_is_not_algorithm_or_image_support": true,
+    "gpu_quotes": {
+      "b200_single_gpu": {
+        "available_resource_count": 0,
+        "minimum_available_quoted_price_usd_per_hour": null,
+        "resource_count": 0,
+        "status": "ok"
+      },
+      "h100_single_gpu": {
+        "available_resource_count": 0,
+        "minimum_available_quoted_price_usd_per_hour": null,
+        "resource_count": 0,
+        "status": "ok"
+      },
+      "h200_single_gpu": {
+        "available_resource_count": 0,
+        "minimum_available_quoted_price_usd_per_hour": null,
+        "resource_count": 0,
+        "status": "ok"
+      }
+    },
+    "models": [
+      {
+        "image_orpo_verified": false,
+        "image_sft_verified": false,
+        "listed_in_dedicated_cache_catalog": false,
+        "listed_in_shared_catalog": false,
+        "model": "google/gemma-4-26B-A4B-it"
+      },
+      {
+        "image_orpo_verified": false,
+        "image_sft_verified": false,
+        "listed_in_dedicated_cache_catalog": false,
+        "listed_in_shared_catalog": false,
+        "model": "Qwen/Qwen3-VL-8B-Instruct"
+      },
+      {
+        "image_orpo_verified": false,
+        "image_sft_verified": false,
+        "listed_in_dedicated_cache_catalog": false,
+        "listed_in_shared_catalog": true,
+        "model": "Qwen/Qwen3.5-9B"
+      }
+    ]
+  },
+  "training_performed": false
+}

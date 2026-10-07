@@ -1,0 +1,2 @@
+model_key,model_display_name,images_with_valid_outputs,observed_black_minus_white_gap,two_sided_permutation_p_value,permutation_method,stratified_label_permutations,bh_adjusted_p_value_across_models
+qwen3vl_base,Qwen3-VL 8B Instruct (Fireworks base),12,-0.0033333333333333335,1.0,exact,400,1.0

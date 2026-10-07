@@ -1,0 +1,20 @@
+{
+  "all_numeric_csv_and_figure_hashes_match": true,
+  "compared_artifacts": 64,
+  "dependency_consistency_check_passed": true,
+  "fresh_virtual_environment": true,
+  "independent_public_copy": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/runtime/public-replay-pq3fluwb",
+  "log_path": "/Users/eliaswu/Desktop/Junior/Research/research-evidence-september5/runtime/public_replay.log",
+  "mismatched_paths": [],
+  "model_calls": 0,
+  "module_import_verified_inside_public_copy": true,
+  "original_request_docx_present": false,
+  "private_images_present": false,
+  "relocation_note": "Absolute-path metadata/glossary files intentionally record the clone root and are not hash-compared. Image verification receipts retain their historical meaning.",
+  "unit_tests": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 2,
+    "tests": 58
+  }
+}
