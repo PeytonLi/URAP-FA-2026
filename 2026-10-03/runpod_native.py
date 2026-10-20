@@ -102,7 +102,7 @@ def terminate_pod(pod_id):
     return api("DELETE", "/pods/" + pod_id, timeout=30)
 
 
-def launch(resume_from=None):
+def launch(resume_from=None, attach_pod=None, attach_key=None):
     if resume_from:
         resume_results(resume_from)  # Validate before cloud calls or purchases.
     curated.training_rows(study.dataset_config())  # Fail before any billable provisioning or upload.
@@ -111,23 +111,37 @@ def launch(resume_from=None):
     if wallet_before <= BALANCE_RESERVE_USD:
         raise ValueError(f"RunPod balance ${wallet_before:.2f} below reserve ${BALANCE_RESERVE_USD:.2f}")
     spending_ceiling = min(SPEND_CEILING_USD, wallet_before - BALANCE_RESERVE_USD)
-    # Capacity flickers; poll up to 30 min for an eligible on-demand offer.
-    poll_deadline = time.monotonic() + 30 * 60
-    while True:
-        offers = gpu_offers()
-        checked_at = study.now()
-        capacity = {"checked_at": checked_at, "provider": "runpod",
-                    "availability": [{"gpu": o["gpu"]["id"], "price": o["price"],
-                                      "stock": o["stock"]} for o in offers],
-                    "wallet_usd": wallet_before,
-                    "spending_ceiling_usd": spending_ceiling, "paid_resources_created": False}
-        study.save_json(study.ROOT / "results" / "prime" /
-                        ("runpod_capacity_" + checked_at.replace(":", "") + ".json"), capacity)
-        if offers:
-            break
-        if time.monotonic() >= poll_deadline:
-            raise ValueError("No eligible on-demand RunPod GPU offer; no paid resource created")
-        time.sleep(60)
+    attached = None
+    if attach_pod:
+        # Drive a pod that already exists (created outside this launcher, e.g. a
+        # manual probe while stock flapped) through the identical flow. The pod
+        # must carry the matching PUBLIC_KEY for attach_key.
+        attached = get_pod(attach_pod)
+        if not attached.get("id"):
+            raise ValueError("attach target pod not found: " + str(attach_pod))
+        price = float(attached.get("costPerHr") or 0)
+        gpu_id = (attached.get("machine") or {}).get("gpuTypeId") or "attached"
+        if not math.isfinite(price) or price <= 0 or price > MAX_HOURLY_USD:
+            raise ValueError(f"Attached pod costs ${price}/hr — outside the $0-{MAX_HOURLY_USD} guard")
+        offers = [{"price": price, "stock": "attached", "gpu": {"id": gpu_id}}]
+    else:
+        # Capacity flickers; poll up to 30 min for an eligible on-demand offer.
+        poll_deadline = time.monotonic() + 30 * 60
+        while True:
+            offers = gpu_offers()
+            checked_at = study.now()
+            capacity = {"checked_at": checked_at, "provider": "runpod",
+                        "availability": [{"gpu": o["gpu"]["id"], "price": o["price"],
+                                          "stock": o["stock"]} for o in offers],
+                        "wallet_usd": wallet_before,
+                        "spending_ceiling_usd": spending_ceiling, "paid_resources_created": False}
+            study.save_json(study.ROOT / "results" / "prime" /
+                            ("runpod_capacity_" + checked_at.replace(":", "") + ".json"), capacity)
+            if offers:
+                break
+            if time.monotonic() >= poll_deadline:
+                raise ValueError("No eligible on-demand RunPod GPU offer; no paid resource created")
+            time.sleep(60)
     offer_index = 0
     offer = offers[offer_index]
     price = float(offer["price"])
@@ -138,11 +152,21 @@ def launch(resume_from=None):
     archive = folder / "inputs.tar.gz"
     bundle = package_inputs(archive, resume_from=resume_from)
     study.save_json(folder / "input_checksums.json", bundle)
-    key = folder / "pod_key"
-    command(["ssh-keygen", "-t", "ed25519", "-N", "", "-C", "urap-native-pilot", "-f", key],
-            capture_output=True, timeout=30)
+    if attach_key:
+        key = Path(attach_key)
+        if not key.is_file():
+            raise ValueError("attach key not found: " + str(attach_key))
+    else:
+        key = folder / "pod_key"
+        command(["ssh-keygen", "-t", "ed25519", "-N", "", "-C", "urap-native-pilot", "-f", key],
+                capture_output=True, timeout=30)
     public = key.with_suffix(".pub").read_text().strip()
     name = "urap-balanced-pilot-" + stamp.split(".")[0].lower()
+    if attached:
+        name = str(attached.get("name") or name)  # keep reconcile-by-name working
+        injected = (attached.get("env") or {}).get("PUBLIC_KEY") or ""
+        if public.split()[:2] != injected.split()[:2]:
+            raise ValueError("attach key does not match the pod's injected PUBLIC_KEY")
     body = {"name": name, "imageName": IMAGE, "gpuTypeIds": [gpu_id],
             "cloudType": "SECURE", "computeType": "GPU", "gpuCount": 1,
             "containerDiskInGb": 60, "volumeInGb": 0,
@@ -172,7 +196,7 @@ def launch(resume_from=None):
     try:
         while True:
             try:
-                raw = api("POST", "/pods", body=body)
+                raw = attached if attached else api("POST", "/pods", body=body)
                 break
             except urllib.error.HTTPError as exc:
                 # Out-of-stock or host-constraint rejections: try the next
@@ -457,8 +481,12 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("launch",))
     parser.add_argument("--resume-from", type=Path)
+    parser.add_argument("--attach-pod", help="existing pod id to drive instead of creating one")
+    parser.add_argument("--attach-key", type=Path,
+                        help="private key matching the attached pod's injected PUBLIC_KEY")
     args = parser.parse_args()
-    result = launch(resume_from=args.resume_from)
+    result = launch(resume_from=args.resume_from,
+                    attach_pod=args.attach_pod, attach_key=args.attach_key)
     raise SystemExit(0 if result["status"] == "worker_complete_reports_pending"
                      and result.get("outputs_recovered_and_verified")
                      and result.get("termination_verified") else 1)
