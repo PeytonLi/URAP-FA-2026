@@ -5,6 +5,7 @@ import math
 import os
 import re
 import shlex
+import shutil
 import subprocess
 import tarfile
 import time
@@ -25,7 +26,8 @@ def terminated(pods, owned):
 
 
 def command(args, **kwargs):
-    return subprocess.run(["rtk", "proxy", *map(str, args)], check=True, **kwargs)
+    prefix = ["rtk", "proxy"] if shutil.which("rtk") else []
+    return subprocess.run([*prefix, *map(str, args)], check=True, **kwargs)
 
 
 def transfer_hub_token(ssh_args, remote, token):
@@ -277,7 +279,7 @@ def launch(resume_from=None):
                           "-o", "StrictHostKeyChecking=accept-new", "-o", "UserKnownHostsFile=" + str(folder / "known_hosts")]
                 ssh_args = ["ssh", *common, "-p", port, host]
                 scp_args = ["scp", *common, "-P", port]
-                probe = subprocess.run(["rtk", "proxy", *ssh_args, "true"], capture_output=True, timeout=30)
+                probe = command([*ssh_args, "true"], capture_output=True, timeout=30)
                 if probe.returncode == 0:
                     break
             if current.status in ("STOPPED", "TERMINATED", "FAILED", "ERROR"):
@@ -348,7 +350,7 @@ def launch(resume_from=None):
                 receipt["cleanup_requires_attention"] = True
                 receipt["ambiguous_owned_pods"] = [p.id for p in matches]
         if owned and ssh_args and remote:
-            subprocess.run(["rtk", "proxy", *ssh_args, "python3", remote + "/2026-10-03/remote_native.py", "--stop"],
+            command([*ssh_args, "python3", remote + "/2026-10-03/remote_native.py", "--stop"],
                            capture_output=True, timeout=30)
             if worker_pid:
                 for _ in range(9):
@@ -366,7 +368,7 @@ def launch(resume_from=None):
         try:
             if owned and ssh_args and receipt.get("remote_workspace"):
                 # Package partial work as well as complete runs before deleting.
-                packaged = subprocess.run(["rtk", "proxy", *ssh_args, "test", "-f",
+                packaged = command([*ssh_args, "test", "-f",
                     remote + "/2026-10-03/data/private/remote_outputs_checksums.json"],
                     capture_output=True, timeout=30)
                 if packaged.returncode:
