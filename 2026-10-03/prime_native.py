@@ -6,6 +6,7 @@ import os
 import re
 import shlex
 import shutil
+import signal
 import subprocess
 import tarfile
 import time
@@ -54,6 +55,9 @@ def retry(operation, attempts=12, delay=5):
             error = exc
             time.sleep(delay)
     raise error
+
+
+DEAD_MANS_MINUTES = 45  # pod-side shutdown horizon; launcher keeps postponing
 
 
 def pod_ssh_connection(pods, owned, current):
@@ -255,6 +259,10 @@ def launch(resume_from=None):
     owned, ssh_args, remote = None, None, None
     worker_pid = None
     started = time.monotonic()
+    # SIGTERM's default disposition kills without running finally — convert it
+    # so the cleanup path below always gets to delete the owned pod.
+    signal.signal(signal.SIGTERM, lambda signum, frame: (_ for _ in ()).throw(
+        SystemExit(f"launcher received signal {signum}")))
     try:
         # Keep the raw successful creation response before SDK validation, so
         # unexpected schema drift cannot lose ownership of a billable pod.
@@ -268,12 +276,19 @@ def launch(resume_from=None):
         deadline = started + min(16 * 3600, spending_ceiling / price * 3600)
         ready_deadline = time.monotonic() + 900
         while time.monotonic() < ready_deadline:
-            current = pods.get(owned)
+            try:
+                current = pods.get(owned)
+            except Exception:
+                time.sleep(15)
+                continue
             if current.name != name or current.gpu_count != 1:
                 raise ValueError("Owned pod identity mismatch")
             if current.price_hr is not None and current.price_hr > price + 0.01:
                 raise ValueError("Created pod costs more than the checked all-in quote")
-            connection = pod_ssh_connection(pods, owned, current)
+            try:
+                connection = pod_ssh_connection(pods, owned, current)
+            except Exception:
+                connection = None
             if isinstance(connection, list):
                 connection = next((value for value in connection if value), None)
             if connection:
@@ -287,9 +302,11 @@ def launch(resume_from=None):
                           "-o", "StrictHostKeyChecking=accept-new", "-o", "UserKnownHostsFile=" + str(folder / "known_hosts")]
                 ssh_args = ["ssh", *common, "-p", port, host]
                 scp_args = ["scp", *common, "-P", port]
-                probe = command([*ssh_args, "true"], capture_output=True, timeout=30)
-                if probe.returncode == 0:
+                try:
+                    command([*ssh_args, "true"], capture_output=True, timeout=30)
                     break
+                except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
+                    pass  # sshd still booting; keep polling
             if current.status in ("STOPPED", "TERMINATED", "FAILED", "ERROR"):
                 raise RuntimeError("Owned pod failed before training")
             time.sleep(15)
@@ -297,7 +314,8 @@ def launch(resume_from=None):
             raise TimeoutError("Owned pod SSH never became usable within 15 minutes")
         remote = "/tmp/" + name
         command([*ssh_args, "mkdir", "-p", remote], capture_output=True, timeout=30)
-        command([*scp_args, archive, host + ":" + remote + "/inputs.tar.gz"], capture_output=True, timeout=180)
+        retry(lambda: command([*scp_args, archive, host + ":" + remote + "/inputs.tar.gz"],
+                              capture_output=True, timeout=180), attempts=3, delay=10)
         command([*ssh_args, "tar", "-xzf", remote + "/inputs.tar.gz", "-C", remote], capture_output=True, timeout=60)
         hub_token_path = transfer_hub_token(ssh_args, remote, hub_api.token)
         receipt.update(status="running_remote_worker", remote_workspace=remote, deadline_monotonic_seconds=deadline,
@@ -311,10 +329,35 @@ def launch(resume_from=None):
             raise ValueError("Owned remote worker PID missing")
         receipt["remote_worker_pid"] = worker_pid
         study.save_json(folder / "launch.json", receipt)
+        # Dead-man's switch: a pod-side shutdown the monitor keeps postponing.
+        # If the launcher dies (SIGKILL, host reboot, VM sleep), the last
+        # scheduled shutdown still fires and billing stops on the pod itself.
+        command([*ssh_args, "shutdown -h +" + str(DEAD_MANS_MINUTES)],
+                capture_output=True, timeout=30)
         last_wallet = 0.0
+        last_liveness = 0.0
+        last_deadman = time.monotonic()
         while True:
             if time.monotonic() >= deadline:
                 raise TimeoutError("Owned pod wall-time/spending guard reached")
+            if time.monotonic() - last_deadman >= DEAD_MANS_MINUTES * 60 // 4:
+                try:
+                    command([*ssh_args, "shutdown -c >/dev/null 2>&1 || true; "
+                                        "shutdown -h +" + str(DEAD_MANS_MINUTES)],
+                            capture_output=True, timeout=30)
+                except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
+                    pass  # the previously scheduled shutdown remains as backstop
+                last_deadman = time.monotonic()
+            if time.monotonic() - last_liveness >= 300:
+                try:
+                    current = retry(lambda: pods.get(owned), attempts=3, delay=5)
+                except Exception as exc:
+                    receipt["monitor_warning"] = "pod_liveness_unavailable:" + type(exc).__name__
+                    study.save_json(folder / "launch.json", receipt)
+                else:
+                    if current.status in ("STOPPED", "TERMINATED", "FAILED", "ERROR"):
+                        raise RuntimeError("Owned pod died during monitoring: " + str(current.status))
+                last_liveness = time.monotonic()
             if time.monotonic() - last_wallet >= 60:
                 try:
                     balance = retry(lambda: WalletClient(client).get(limit=1), attempts=3, delay=5)
@@ -349,8 +392,17 @@ def launch(resume_from=None):
         receipt.update(status="incomplete", error_type=type(exc).__name__)
         if owned is None:
             # A timed-out POST may still have created the named pod. Reconcile
-            # ownership once; never retry provisioning as a purchase.
-            matches = [p for p in pods.list().data if p.name == name]
+            # ownership with retries (indexing lag can hide a fresh pod); never
+            # retry provisioning as a purchase.
+            matches = []
+            for _ in range(6):
+                try:
+                    matches = [p for p in pods.list().data if p.name == name]
+                except Exception:
+                    matches = []
+                if matches:
+                    break
+                time.sleep(10)
             if len(matches) == 1:
                 owned = matches[0].id
                 receipt["pod_id"] = owned
@@ -376,16 +428,20 @@ def launch(resume_from=None):
         try:
             if owned and ssh_args and receipt.get("remote_workspace"):
                 # Package partial work as well as complete runs before deleting.
-                packaged = command([*ssh_args, "test", "-f",
-                    remote + "/2026-10-03/data/private/remote_outputs_checksums.json"],
-                    capture_output=True, timeout=30)
-                if packaged.returncode:
-                    command([*ssh_args, "python3", remote + "/2026-10-03/remote_native.py", "--package"],
-                            capture_output=True, timeout=180)
-                command([*scp_args, host + ":" + remote + "/2026-10-03/data/private/remote_outputs.tar.gz", folder],
-                        capture_output=True, timeout=600)
-                command([*scp_args, host + ":" + remote + "/2026-10-03/data/private/remote_outputs_checksums.json", folder],
+                try:
+                    command([*ssh_args, "test", "-f",
+                        remote + "/2026-10-03/data/private/remote_outputs_checksums.json"],
                         capture_output=True, timeout=30)
+                except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
+                    retry(lambda: command([*ssh_args, "python3",
+                        remote + "/2026-10-03/remote_native.py", "--package"],
+                        capture_output=True, timeout=180), attempts=2, delay=10)
+                retry(lambda: command([*scp_args, host + ":" + remote +
+                        "/2026-10-03/data/private/remote_outputs.tar.gz", folder],
+                        capture_output=True, timeout=600), attempts=3, delay=10)
+                retry(lambda: command([*scp_args, host + ":" + remote +
+                        "/2026-10-03/data/private/remote_outputs_checksums.json", folder],
+                        capture_output=True, timeout=30), attempts=3, delay=5)
                 hashes = json.loads((folder / "remote_outputs_checksums.json").read_text())
                 recovered = folder / "remote_outputs.tar.gz"
                 if study.sha(recovered) != hashes["archive_sha256"]:
@@ -413,24 +469,37 @@ def launch(resume_from=None):
                     "stderr": exc.stderr.decode("utf-8", errors="replace") if isinstance(exc.stderr, bytes) else exc.stderr})
         finally:
             if owned:
-                current = retry(lambda: pods.get(owned))
-                if current.name != name:
-                    raise ValueError("Cleanup refused: not this launch's owned pod")
+                # Delete by provider-issued pod ID unconditionally; a get() or
+                # name mismatch must never block it (billing-leak audit fixes).
                 try:
-                    retry(lambda: pods.delete(owned))
+                    current = pods.get(owned)
+                    if getattr(current, "name", name) != name:
+                        receipt["cleanup_name_mismatch"] = True
+                except Exception:
+                    pass
+                try:
+                    retry(lambda: pods.delete(owned), attempts=4, delay=5)
                 except Exception as exc:
                     receipt.update(cleanup_requires_attention=True,
                                    cleanup_error_type=type(exc).__name__,
                                    cleanup_error=str(exc))
                 else:
                     receipt["termination_requested_at"] = study.now()
-                    for _ in range(20):
-                        if retry(lambda: terminated(pods, owned), attempts=3, delay=3):
-                            receipt["termination_verified"] = True
-                            break
-                        time.sleep(10)
+                    try:
+                        for _ in range(20):
+                            if retry(lambda: terminated(pods, owned), attempts=3, delay=3):
+                                receipt["termination_verified"] = True
+                                break
+                            time.sleep(10)
+                    except Exception:
+                        pass
                     if not receipt.get("termination_verified"):
                         receipt["cleanup_requires_attention"] = True
+            if key_id:
+                try:
+                    client.request("DELETE", "/ssh_keys/" + str(key_id))
+                except Exception:
+                    pass  # non-billing cruft at worst
             receipt["finished_at"] = study.now()
             receipt["elapsed_seconds"] = time.monotonic() - started
             study.save_json(folder / "launch.json", receipt)

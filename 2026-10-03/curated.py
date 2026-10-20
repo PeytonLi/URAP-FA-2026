@@ -50,7 +50,10 @@ def selected_rows(config):
 
 def ai_approval_authorization():
     """Fingerprint the user's explicit waiver; never treat it as human review."""
-    permission = json.loads((study.ROOT / "config/prime_budget.json").read_text(encoding="utf-8"))
+    try:
+        permission = json.loads((study.ROOT / "config/prime_budget.json").read_text(encoding="utf-8"))
+    except FileNotFoundError:
+        return None  # fail closed: no waiver file, no AI approval
     if permission.get("human_target_approval_required") is not False:
         return None
     authorization = permission.get("ai_target_approval_gated_two_pass") \
@@ -169,7 +172,7 @@ def prepare(asset_root=None):
             verified.append(row)
     _, target_audit = reviewed_targets(rows, study.REPO / config["targets_path"])
     report = {"checked_at": study.now(), "dataset_id": config["dataset_id"],
-              "source_commit": config["source_commit"], "source_file": config["manifest_path"],
+              "source_commit": config.get("source_commit"), "source_file": config["manifest_path"],
               "source_sha256": config["manifest_sha256"], "asset_root": str(asset_root),
               "selected_rows": len(rows), "split_counts": config["split_counts"],
               "dataset_counts": config["dataset_counts"],

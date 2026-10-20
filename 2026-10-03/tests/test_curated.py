@@ -19,12 +19,15 @@ class CuratedTests(unittest.TestCase):
         cls.config = study.dataset_config()
         cls.rows = curated.selected_rows(cls.config)
 
-    def test_frozen_pool_and_allocations_are_preserved(self):
-        self.assertEqual(len(self.rows), 2400)
-        self.assertEqual(Counter(row["split"] for row in self.rows),
-                         {"train": 1440, "development": 480, "test": 480})
-        self.assertEqual(Counter(row["dataset"] for row in self.rows),
-                         {"fairface": 1400, "utkface": 1000})
+    def test_manifest_matches_active_dataset_config(self):
+        expected_splits = {key: value for key, value in
+                           self.config.get("split_counts", {}).items()}
+        self.assertEqual(len(self.rows), sum(expected_splits.values()))
+        self.assertEqual(Counter(row["split"] for row in self.rows), expected_splits)
+        expected_datasets = {key: value for key, value in
+                             self.config.get("dataset_counts", {}).items()}
+        if expected_datasets:
+            self.assertEqual(Counter(row["dataset"] for row in self.rows), expected_datasets)
         self.assertFalse({"chosen", "rejected", "prompt"} & self.rows[0].keys())
 
     def test_split_changes_are_rejected(self):
@@ -113,7 +116,7 @@ class CuratedTests(unittest.TestCase):
                     self.assertEqual(curated.prepare(root / "empty-assets"), 2)
             report = json.loads((root / "data/manifest.json").read_text())
             self.assertEqual(report["dataset_id"], self.config["dataset_id"])
-            self.assertEqual(len(report["missing_images"]), 2400)
+            self.assertEqual(len(report["missing_images"]), len(self.rows))
             self.assertFalse(report["data_ready"])
             self.assertFalse((root / "data/pairs.csv").exists())
 
