@@ -215,8 +215,8 @@ def main():
                 if STOP.exists():
                     raise InterruptedError("Owned run stopped before extra evaluation")
                 command = [python, "-u", str(ROOT / "native_extra_benchmarks.py"), "--model", model,
-                           "--method", method, "--dt-samples-per-regime", "128",
-                           "--bold-sample-count", "256"]
+                           "--method", method, "--dt-samples-per-regime", "96",
+                           "--bold-sample-count", "192"]
                 if method != "base":
                     folders = list((ROOT / "data/private/native_runs").glob(model + "_" + method + "_*"))
                     if len(folders) != 1:

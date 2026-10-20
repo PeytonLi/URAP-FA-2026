@@ -223,7 +223,7 @@ def launch(resume_from=None):
             price = safe_hourly_quote(offer)
         except ValueError:
             continue
-        if price <= 6.0 and "ubuntu_22_cuda_12" in offer.get("images", []):
+        if price <= 7.5 and "ubuntu_22_cuda_12" in offer.get("images", []):
             candidates.append((price, offer))
     if not candidates:
         raise ValueError("No eligible fixed-price H100/H200 launch offer; no paid resource created")
