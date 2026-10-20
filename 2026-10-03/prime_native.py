@@ -113,6 +113,7 @@ def package_inputs(destination, resume_from=None):
                  "objectives.py", "hub_backup.py", "native_train.py", "native_benchmark.py", "remote_native.py",
                  "benchmark.py", "vision.py", "curated_vision_check.py", "qwen_vision_check.py",
                  "gemma3_vision_check.py", "native_extra_benchmarks.py",
+                 "prime_native.py",
                  "native_report.py", "report.py"):
         paths.add(study.ROOT / name)
     paths.update((study.ROOT / "config").glob("*.json"))
@@ -215,7 +216,7 @@ def launch(resume_from=None):
     poll_deadline = time.monotonic() + 45 * 60
     while True:
         catalog = {gpu: client.get("/availability/gpus", params={"gpu_type": gpu, "gpu_count": 1,
-                   "page": 1, "page_size": 100}) for gpu in ("H100_80GB", "H200_141GB")}
+                   "page": 1, "page_size": 100}) for gpu in ("A100_80GB", "H100_80GB", "H200_141GB")}
         checked_at = study.now()
         capacity = {"checked_at": checked_at, "availability": catalog, "wallet_usd": wallet.balance_usd,
                     "spending_ceiling_usd": spending_ceiling, "paid_resources_created": False}
