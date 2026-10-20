@@ -222,11 +222,15 @@ def launch(resume_from=None):
                     "spending_ceiling_usd": spending_ceiling, "paid_resources_created": False}
         study.save_json(study.ROOT / "results/prime" / ("native_capacity_" + checked_at.replace(":", "") + ".json"), capacity)
         offers = [offer for result in catalog.values() for offer in result.get("items", [])]
+        excluded = {p.strip().lower() for p in
+                    os.environ.get("PRIME_EXCLUDE_PROVIDERS", "").split(",") if p.strip()}
         candidates = []
         for offer in offers:
             try:
                 price = safe_hourly_quote(offer)
             except ValueError:
+                continue
+            if str(offer.get("provider") or "").lower() in excluded:
                 continue
             if price <= 7.5 and "ubuntu_22_cuda_12" in offer.get("images", []):
                 candidates.append((price, offer))
