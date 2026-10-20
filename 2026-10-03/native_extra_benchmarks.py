@@ -211,12 +211,12 @@ def main():
     print(json.dumps({"condition": f"{args.model}_{args.method}", "finished": sorted(results)}))
 
 
-if __name__ == "__main__":
-    main()
-
-
 def _jsonl(path):
     if not path.exists():
         return []
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()
             if line.strip()]
+
+
+if __name__ == "__main__":
+    main()
