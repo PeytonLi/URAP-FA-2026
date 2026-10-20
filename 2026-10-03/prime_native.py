@@ -210,23 +210,30 @@ def launch(resume_from=None):
     # Leave a substantial reserve for asynchronous billing, artifact retrieval,
     # termination delays and a failed local monitor. Never enable credit top-ups.
     spending_ceiling = min(40.0, wallet.balance_usd - 4.0)
-    catalog = {gpu: client.get("/availability/gpus", params={"gpu_type": gpu, "gpu_count": 1,
-               "page": 1, "page_size": 100}) for gpu in ("H100_80GB", "H200_141GB")}
-    checked_at = study.now()
-    capacity = {"checked_at": checked_at, "availability": catalog, "wallet_usd": wallet.balance_usd,
-                "spending_ceiling_usd": spending_ceiling, "paid_resources_created": False}
-    study.save_json(study.ROOT / "results/prime" / ("native_capacity_" + checked_at.replace(":", "") + ".json"), capacity)
-    offers = [offer for result in catalog.values() for offer in result.get("items", [])]
-    candidates = []
-    for offer in offers:
-        try:
-            price = safe_hourly_quote(offer)
-        except ValueError:
-            continue
-        if price <= 7.5 and "ubuntu_22_cuda_12" in offer.get("images", []):
-            candidates.append((price, offer))
-    if not candidates:
-        raise ValueError("No eligible fixed-price H100/H200 launch offer; no paid resource created")
+    # Capacity flickers minute-to-minute; poll up to 45 min for an eligible
+    # fixed-price offer before giving up. Nothing billable exists yet.
+    poll_deadline = time.monotonic() + 45 * 60
+    while True:
+        catalog = {gpu: client.get("/availability/gpus", params={"gpu_type": gpu, "gpu_count": 1,
+                   "page": 1, "page_size": 100}) for gpu in ("H100_80GB", "H200_141GB")}
+        checked_at = study.now()
+        capacity = {"checked_at": checked_at, "availability": catalog, "wallet_usd": wallet.balance_usd,
+                    "spending_ceiling_usd": spending_ceiling, "paid_resources_created": False}
+        study.save_json(study.ROOT / "results/prime" / ("native_capacity_" + checked_at.replace(":", "") + ".json"), capacity)
+        offers = [offer for result in catalog.values() for offer in result.get("items", [])]
+        candidates = []
+        for offer in offers:
+            try:
+                price = safe_hourly_quote(offer)
+            except ValueError:
+                continue
+            if price <= 7.5 and "ubuntu_22_cuda_12" in offer.get("images", []):
+                candidates.append((price, offer))
+        if candidates:
+            break
+        if time.monotonic() >= poll_deadline:
+            raise ValueError("No eligible fixed-price H100/H200 launch offer; no paid resource created")
+        time.sleep(60)
     price, offer = min(candidates, key=lambda item: item[0])
     stamp = study.now().replace(":", "").replace("-", "").replace("+", "_")
     folder = ATTEMPTS / stamp
