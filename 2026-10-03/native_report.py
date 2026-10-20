@@ -9,7 +9,6 @@ from pathlib import Path
 
 import benchmark
 import native_train
-import pilot
 import report
 import study
 
@@ -34,19 +33,26 @@ def verified_results(recovered, require_all=True):
             run = json.loads(runs[0].read_text(encoding="utf-8"))
             if not require_all and run["status"] != "training_complete_evaluation_pending":
                 continue
-            if (run["status"] != "training_complete_evaluation_pending" or run["optimizer_updates"] != 507
-                    or run["completed_epochs"] != 3 or run["cohort"] != "resolved-balanced"
+            dataset = study.dataset_config()
+            if not dataset:
+                raise ValueError("Active curated dataset required for report validation")
+            expected_train = dataset["split_counts"]["train"]
+            expected_dev = dataset["split_counts"]["development"]
+            if (run["status"] != "training_complete_evaluation_pending"
+                    or run["optimizer_updates"] != run["planned_optimizer_updates"]
+                    or run["planned_optimizer_updates"] != 3 * -(-expected_train // 4)
+                    or run["completed_epochs"] != 3 or run.get("cohort") != "full"
                     or run["model"] != settings["model"] or run["method"] != method
                     or run["weight_and_processor_revision"] != settings["revision"]
-                    or run["targets_sha256"] != study.sha(pilot.FROZEN)
-                    or run["pilot_policy_sha256"] != study.sha(pilot.POLICY)
-                    or run["training_images"] != 676 or run["development_images"] != 180
+                    or run["targets_sha256"] != study.sha(study.REPO / dataset["targets_path"])
+                    or run["manifest_sha256"] != dataset["manifest_sha256"]
+                    or run["training_images"] != expected_train or run["development_images"] != expected_dev
                     or run["test_images_used"] != 0 or run["profile_targets_used"] != 0):
                 raise ValueError(f"Incomplete or mismatched training evidence: {name}/{method}")
             recipe = {"seed": 0, "logical_batch_size": 4, "requested_epochs": 3,
                       "optimizer": "AdamW", "learning_rate": 1e-5, "weight_decay": 0,
                       "orpo_coefficient": 0.1 if method == "orpo" else None,
-                      "loss_weighting": "fixed_dataset_weights_then_logical_batch_mean"}
+                      "loss_weighting": "equal_examples"}
             if any(run.get(field) != value for field, value in recipe.items()):
                 raise ValueError("Actual training recipe differs from the reported protocol")
             checkpoint = runs[0].parent / "epoch_3"
@@ -69,7 +75,7 @@ def verified_results(recovered, require_all=True):
                     or contract["weight_and_processor_revision"] != settings["revision"]
                     or contract["precision"] != "bfloat16_unquantized"
                     or contract["prompt"] != study.IAT_PROMPT or contract["stimuli"] != expected_images
-                    or contract["pilot_policy_sha256"] != study.sha(pilot.POLICY)
+                    or contract["pilot_policy_sha256"] != dataset.get("pilot_policy_sha256")
                     or contract["config"] != asdict(benchmark.fw.run_config(1))):
                 raise ValueError(f"Unmatched or incomplete benchmark contract: {key}")
             if method != "base" and (name, method) not in training:
@@ -99,11 +105,12 @@ def verified_results(recovered, require_all=True):
 def main(recovered):
     training, conditions = verified_results(recovered)
     dataset = study.dataset_config()
-    cohort = json.loads(pilot.FROZEN.read_text(encoding="utf-8"))
-    example = next(row for row in cohort["rows"] if row["split"] == "train")
-    source_counts = Counter((row["dataset"], row["split"]) for row in cohort["rows"])
-    target_counts = Counter(row["chosen"] for row in cohort["rows"] if row["split"] == "train")
-    rejected_counts = Counter(row["rejected"] for row in cohort["rows"] if row["split"] == "train")
+    cohort = json.loads((study.REPO / dataset["targets_path"]).read_text(encoding="utf-8"))
+    cohort_sha = study.sha(study.REPO / dataset["targets_path"])
+    example = next(row for row in cohort if row["split"] == "train")
+    source_counts = Counter((row["dataset"], row["split"]) for row in cohort)
+    target_counts = Counter(row["chosen"] for row in cohort if row["split"] == "train")
+    rejected_counts = Counter(row["rejected"] for row in cohort if row["split"] == "train")
     target_words = {word.strip() for target in target_counts for word in target.split(",")}
     top_targets = "; ".join(f"`{target}`: {count} images" for target, count in target_counts.most_common(2))
     top_rejected, top_rejected_count = rejected_counts.most_common(1)[0]
@@ -120,7 +127,7 @@ def main(recovered):
                "| --- | ---: | ---: | ---: | ---: | ---: |"]
     provenance = {"created_at": study.now(), "benchmark_slots": len(records), "training_conditions": 6,
                   "optimizer_updates": sum(r[0]["optimizer_updates"] for r in training.values()),
-                  "policy_sha256": study.sha(pilot.POLICY), "cohort_sha256": study.sha(pilot.FROZEN),
+                  "policy_sha256": dataset.get("pilot_policy_sha256"), "cohort_sha256": cohort_sha,
                   "source_manifest_sha256": dataset["manifest_sha256"], "source_commit": dataset["source_commit"],
                   "training_implementation_sha256": study.sha(Path(native_train.__file__)),
                   "chosen_training_triple_counts": dict(target_counts),
@@ -132,17 +139,18 @@ def main(recovered):
             f"Pinned weights and processor: `{settings['model']}@{settings['revision']}`. BF16, native Transformers.", "",
             f"[Official model card at the tested revision](https://huggingface.co/{settings['model']}/blob/{settings['revision']}/README.md).", "",
             "## Training data and procedure", "",
-            f"Source: [selected_images.csv](../../../{dataset['manifest_path']}) from FairFace and UTKFace; "
-            f"repository commit `{dataset['source_commit']}`, manifest SHA-256 `{dataset['manifest_sha256']}`. "
-            f"Frozen target-cohort SHA-256 `{study.sha(pilot.FROZEN)}`; policy SHA-256 `{study.sha(pilot.POLICY)}`.", "",
-            "The September 29 selected-image pool supplied 676 training images (639 positive / 37 negative targets) "
-            "and 180 development images (174 / 6). The 1,064 unresolved targets were excluded under the user's "
-            "approved pilot policy. Original splits were retained. The 480 reserved test photos and original "
-            "12 benchmark photos supplied no training targets. There are no profile targets.", "",
+            f"Source: [manifest](../../../{dataset['manifest_path']}) gated from the September 29 "
+            f"FairFace/UTKFace pool; repository commit `{dataset['source_commit']}`, "
+            f"manifest SHA-256 `{dataset['manifest_sha256']}`. "
+            f"Targets file SHA-256 `{cohort_sha}`.", "",
+            f"The confidence-gated cohort supplied {dataset['split_counts']['train']} training images and "
+            f"{dataset['split_counts']['development']} development images. Unresolved images under the two-pass "
+            "0.8-confidence gate were excluded per the recorded authorization. Original splits were retained; "
+            "the 480 reserved test photos and 12 benchmark photos supplied no training targets. "
+            "There are no profile targets.", "",
             "Each input contains the image and unchanged 61-word prompt. SFT learns the chosen three-word "
             "answer; ORPO additionally compares its rejected answer. Response tokens and native turn endings "
-            "receive loss. Fixed weights are 0.5289514867 for positive and 9.1351351351 for negative training "
-            "examples: total loss weight 338 per category per epoch.", "",
+            "receive loss. All examples carry equal loss weight in this cohort.", "",
             "ORPO adds an odds-ratio preference term to chosen-response likelihood and uses no separate "
             "frozen reference model. [Original ORPO paper](https://arxiv.org/abs/2403.07691).", "",
             "### Exact prompt and an actual training record", "",
@@ -159,12 +167,11 @@ def main(recovered):
             f"training images ({percent(top_rejected_count/sum(target_counts.values()))}). "
             "These AI-proposed counterexamples are not observed human preferences or necessarily subtle "
             "expression distinctions. Their repetition limits what high development preference accuracy establishes.", "",
-            "Targets are direct AI visual proposals with user-authorized AI self-approval, with zero independent "
-            "human approvals. They express proposed associations, not objective emotion or personality truth. "
-            "Earlier gateway-model drafts are retained as comparison material, not substituted for these "
-            "direct chosen/rejected targets. The labeling assistant's exact model revision is unavailable. "
-            "Filtering breaks the original demographic matching balance. The 37 negative training targets "
-            "mainly cover anger/disgust; strong weighting can overfit that narrow subset.", "",
+            "Targets are gated two-pass AI proposals with adjudication and user-authorized AI approval, "
+            "with zero independent human approvals. They express proposed associations, not objective emotion "
+            "or personality truth. A per-triple variety cap limits answer concentration; gating and capping "
+            "break the original demographic matching balance. The labeling assistant's exact model revision "
+            "is unavailable.", "",
             "Both methods start independently from the untouched base. Language-attention LoRA rank 8, "
             "alpha 16, dropout zero; AdamW learning rate 1e-5, logical batch four, three epochs, seed zero; "
             "ORPO coefficient 0.1; gradient-norm clipping at 1.0 before each optimizer step. "
@@ -174,20 +181,17 @@ def main(recovered):
             "| Source | Retained training images | Retained development images |",
             "| --- | ---: | ---: |",
             *[f"| {source} | {source_counts[source, 'train']} | {source_counts[source, 'development']} |"
-              for source in sorted({row['dataset'] for row in cohort['rows']})], "",
-            "| Method | Updates | Dev chosen loss | Dev macro preference accuracy | Positive / negative preference accuracy |",
-            "| --- | ---: | ---: | ---: | --- |"]
+              for source in sorted({row['dataset'] for row in cohort})], "",
+            "| Method | Updates | Dev chosen loss | Dev macro preference accuracy |",
+            "| --- | ---: | ---: | ---: |"]
         for method in ("sft", "orpo"):
             run, checkpoint = training[name, method]
             dev = run["development"][-1]
-            categories = dev["by_target_category"]
             lines.append(f"| {method.upper()} | {run['optimizer_updates']} | {dev['response_loss']:.4f} | "
-                         f"{percent(dev['macro_category_preference_accuracy'])} | "
-                         f"{percent(categories['positive']['chosen_preference_accuracy'])} / "
-                         f"{percent(categories['negative']['chosen_preference_accuracy'])} |")
+                         f"{percent(dev['macro_category_preference_accuracy'])} |")
         lines += ["", "Preference accuracy asks whether the chosen response receives higher mean conditional "
-                  "log probability than the rejected response. It is not free-generation accuracy. The negative "
-                  "development result has only six images.", "", "### Actual execution evidence", ""]
+                  "log probability than the rejected response. It is not free-generation accuracy.", "",
+                  "### Actual execution evidence", ""]
         for method in ("sft", "orpo"):
             run, checkpoint = training[name, method]
             lines += [f"{method.upper()}: `{run['gpu']}`; {run['adapter']['trainable_parameters']:,} trainable "
