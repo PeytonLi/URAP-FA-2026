@@ -163,7 +163,7 @@ def prepare(asset_root=None):
             raise ValueError("Selected image path escapes the asset root")
         if not image.is_file():
             missing.append(row["image_id"])
-        elif study.sha(image) != row["image_sha256"]:
+        elif not study.image_matches_manifest(row, image):
             mismatched.append(row["image_id"])
         else:
             verified.append(row)
