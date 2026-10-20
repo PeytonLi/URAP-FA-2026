@@ -1,0 +1,59 @@
+{
+  "availability": [
+    {
+      "gpu": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+      "price": 0.5,
+      "stock": ""
+    },
+    {
+      "gpu": "NVIDIA A40",
+      "price": 0.59,
+      "stock": "low"
+    },
+    {
+      "gpu": "NVIDIA RTX A6000",
+      "price": 0.59,
+      "stock": "low"
+    },
+    {
+      "gpu": "NVIDIA L40",
+      "price": 0.82,
+      "stock": "low"
+    },
+    {
+      "gpu": "NVIDIA RTX PRO 5000 Blackwell",
+      "price": 0.96,
+      "stock": ""
+    },
+    {
+      "gpu": "NVIDIA RTX 6000 Ada Generation",
+      "price": 0.99,
+      "stock": ""
+    },
+    {
+      "gpu": "NVIDIA L40S",
+      "price": 1.09,
+      "stock": "low"
+    },
+    {
+      "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition MIG 2g.48gb",
+      "price": 1.29,
+      "stock": ""
+    },
+    {
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "price": 1.79,
+      "stock": "low"
+    },
+    {
+      "gpu": "NVIDIA A100 80GB PCIe",
+      "price": 1.79,
+      "stock": ""
+    }
+  ],
+  "checked_at": "2026-10-20T16:15:36.762229+00:00",
+  "paid_resources_created": false,
+  "provider": "runpod",
+  "spending_ceiling_usd": 4.0,
+  "wallet_usd": 4.6273035572
+}

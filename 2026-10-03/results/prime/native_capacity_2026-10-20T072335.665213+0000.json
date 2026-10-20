@@ -1,0 +1,478 @@
+{
+  "availability": {
+    "A100_80GB": {
+      "items": [
+        {
+          "cloudId": "NVIDIA A100-SXM4-80GB",
+          "country": "US",
+          "dataCenter": "US-KS-2",
+          "disk": {
+            "additionalInfo": "Runpod uses 40GB of disk size for the filesystem. Only additional disk size is available for the user. If you order 80GB you'll only get 40GB of volume size, 100GB -> 60GB of volume size etc.",
+            "defaultCount": 120,
+            "defaultIncludedInPrice": false,
+            "maxCount": 3000,
+            "minCount": 120,
+            "pricePerUnit": 0.00014,
+            "step": 1
+          },
+          "gpuCount": 1,
+          "gpuMemory": 80,
+          "gpuType": "A100_80GB",
+          "images": [
+            "ubuntu_22_cuda_12",
+            "cuda_12_1_pytorch_2_2",
+            "cuda_11_8_pytorch_2_1",
+            "cuda_12_4_pytorch_2_4",
+            "stable_diffusion",
+            "axolotl",
+            "bittensor",
+            "vllm_llama_8b",
+            "vllm_llama_70b",
+            "vllm_llama_405b",
+            "prime_rl"
+          ],
+          "interconnect": null,
+          "interconnectType": null,
+          "internetSpeed": null,
+          "isSpot": null,
+          "memory": {
+            "additionalInfo": null,
+            "defaultCount": 251,
+            "defaultIncludedInPrice": null,
+            "maxCount": null,
+            "minCount": null,
+            "pricePerUnit": null,
+            "step": null
+          },
+          "prepaidTime": null,
+          "prices": {
+            "communityPrice": null,
+            "currency": "USD",
+            "isVariable": null,
+            "onDemand": 1.8068
+          },
+          "provider": "runpod",
+          "provisioningTime": null,
+          "region": "united_states",
+          "security": "secure_cloud",
+          "sharedDisk": {
+            "additionalInfo": null,
+            "defaultCount": null,
+            "defaultIncludedInPrice": null,
+            "maxCount": null,
+            "minCount": null,
+            "pricePerUnit": null,
+            "step": null
+          },
+          "socket": "SXM4",
+          "stockStatus": "Low",
+          "vcpu": {
+            "additionalInfo": null,
+            "defaultCount": 16,
+            "defaultIncludedInPrice": null,
+            "maxCount": null,
+            "minCount": null,
+            "pricePerUnit": null,
+            "step": null
+          }
+        },
+        {
+          "cloudId": "NVIDIA A100-SXM4-80GB",
+          "country": "US",
+          "dataCenter": "US-WA-1",
+          "disk": {
+            "additionalInfo": "Runpod uses 40GB of disk size for the filesystem. Only additional disk size is available for the user. If you order 80GB you'll only get 40GB of volume size, 100GB -> 60GB of volume size etc.",
+            "defaultCount": 120,
+            "defaultIncludedInPrice": false,
+            "maxCount": 3000,
+            "minCount": 120,
+            "pricePerUnit": 0.00014,
+            "step": 1
+          },
+          "gpuCount": 1,
+          "gpuMemory": 80,
+          "gpuType": "A100_80GB",
+          "images": [
+            "ubuntu_22_cuda_12",
+            "cuda_12_1_pytorch_2_2",
+            "cuda_11_8_pytorch_2_1",
+            "cuda_12_4_pytorch_2_4",
+            "stable_diffusion",
+            "axolotl",
+            "bittensor",
+            "vllm_llama_8b",
+            "vllm_llama_70b",
+            "vllm_llama_405b",
+            "prime_rl"
+          ],
+          "interconnect": null,
+          "interconnectType": null,
+          "internetSpeed": null,
+          "isSpot": null,
+          "memory": {
+            "additionalInfo": null,
+            "defaultCount": 250,
+            "defaultIncludedInPrice": null,
+            "maxCount": null,
+            "minCount": null,
+            "pricePerUnit": null,
+            "step": null
+          },
+          "prepaidTime": null,
+          "prices": {
+            "communityPrice": null,
+            "currency": "USD",
+            "isVariable": null,
+            "onDemand": 1.8068
+          },
+          "provider": "runpod",
+          "provisioningTime": null,
+          "region": "united_states",
+          "security": "secure_cloud",
+          "sharedDisk": {
+            "additionalInfo": null,
+            "defaultCount": null,
+            "defaultIncludedInPrice": null,
+            "maxCount": null,
+            "minCount": null,
+            "pricePerUnit": null,
+            "step": null
+          },
+          "socket": "SXM4",
+          "stockStatus": "Low",
+          "vcpu": {
+            "additionalInfo": null,
+            "defaultCount": 32,
+            "defaultIncludedInPrice": null,
+            "maxCount": null,
+            "minCount": null,
+            "pricePerUnit": null,
+            "step": null
+          }
+        },
+        {
+          "cloudId": "NVIDIA A100 80GB PCIe",
+          "country": "CA",
+          "dataCenter": "CA-MTL-3",
+          "disk": {
+            "additionalInfo": "Runpod uses 40GB of disk size for the filesystem. Only additional disk size is available for the user. If you order 80GB you'll only get 40GB of volume size, 100GB -> 60GB of volume size etc.",
+            "defaultCount": 120,
+            "defaultIncludedInPrice": false,
+            "maxCount": 3000,
+            "minCount": 120,
+            "pricePerUnit": 0.00014,
+            "step": 1
+          },
+          "gpuCount": 1,
+          "gpuMemory": 80,
+          "gpuType": "A100_80GB",
+          "images": [
+            "ubuntu_22_cuda_12",
+            "cuda_12_1_pytorch_2_2",
+            "cuda_11_8_pytorch_2_1",
+            "cuda_12_4_pytorch_2_4",
+            "stable_diffusion",
+            "axolotl",
+            "bittensor",
+            "vllm_llama_8b",
+            "vllm_llama_70b",
+            "vllm_llama_405b",
+            "prime_rl"
+          ],
+          "interconnect": null,
+          "interconnectType": null,
+          "internetSpeed": null,
+          "isSpot": null,
+          "memory": {
+            "additionalInfo": null,
+            "defaultCount": 117,
+            "defaultIncludedInPrice": null,
+            "maxCount": null,
+            "minCount": null,
+            "pricePerUnit": null,
+            "step": null
+          },
+          "prepaidTime": null,
+          "prices": {
+            "communityPrice": null,
+            "currency": "USD",
+            "isVariable": null,
+            "onDemand": 1.8068
+          },
+          "provider": "runpod",
+          "provisioningTime": null,
+          "region": "canada",
+          "security": "secure_cloud",
+          "sharedDisk": {
+            "additionalInfo": null,
+            "defaultCount": null,
+            "defaultIncludedInPrice": null,
+            "maxCount": null,
+            "minCount": null,
+            "pricePerUnit": null,
+            "step": null
+          },
+          "socket": "PCIe",
+          "stockStatus": "Low",
+          "vcpu": {
+            "additionalInfo": null,
+            "defaultCount": 31,
+            "defaultIncludedInPrice": null,
+            "maxCount": null,
+            "minCount": null,
+            "pricePerUnit": null,
+            "step": null
+          }
+        },
+        {
+          "cloudId": "NVIDIA A100-SXM4-80GB",
+          "country": "IS",
+          "dataCenter": "EUR-IS-1",
+          "disk": {
+            "additionalInfo": "Runpod uses 40GB of disk size for the filesystem. Only additional disk size is available for the user. If you order 80GB you'll only get 40GB of volume size, 100GB -> 60GB of volume size etc.",
+            "defaultCount": 120,
+            "defaultIncludedInPrice": false,
+            "maxCount": 3000,
+            "minCount": 120,
+            "pricePerUnit": 0.00014,
+            "step": 1
+          },
+          "gpuCount": 1,
+          "gpuMemory": 80,
+          "gpuType": "A100_80GB",
+          "images": [
+            "ubuntu_22_cuda_12",
+            "cuda_12_1_pytorch_2_2",
+            "cuda_11_8_pytorch_2_1",
+            "cuda_12_4_pytorch_2_4",
+            "stable_diffusion",
+            "axolotl",
+            "bittensor",
+            "vllm_llama_8b",
+            "vllm_llama_70b",
+            "vllm_llama_405b",
+            "prime_rl"
+          ],
+          "interconnect": null,
+          "interconnectType": null,
+          "internetSpeed": null,
+          "isSpot": null,
+          "memory": {
+            "additionalInfo": null,
+            "defaultCount": 125,
+            "defaultIncludedInPrice": null,
+            "maxCount": null,
+            "minCount": null,
+            "pricePerUnit": null,
+            "step": null
+          },
+          "prepaidTime": null,
+          "prices": {
+            "communityPrice": null,
+            "currency": "USD",
+            "isVariable": null,
+            "onDemand": 1.8068
+          },
+          "provider": "runpod",
+          "provisioningTime": null,
+          "region": "eu_north",
+          "security": "secure_cloud",
+          "sharedDisk": {
+            "additionalInfo": null,
+            "defaultCount": null,
+            "defaultIncludedInPrice": null,
+            "maxCount": null,
+            "minCount": null,
+            "pricePerUnit": null,
+            "step": null
+          },
+          "socket": "SXM4",
+          "stockStatus": "Low",
+          "vcpu": {
+            "additionalInfo": null,
+            "defaultCount": 32,
+            "defaultIncludedInPrice": null,
+            "maxCount": null,
+            "minCount": null,
+            "pricePerUnit": null,
+            "step": null
+          }
+        }
+      ],
+      "totalCount": 4
+    },
+    "H100_80GB": {
+      "items": [],
+      "totalCount": 0
+    },
+    "H200_141GB": {
+      "items": [
+        {
+          "cloudId": "gpu-h200-sxm_1gpu-16vcpu-200gb",
+          "country": "US",
+          "dataCenter": "us-central1",
+          "disk": {
+            "additionalInfo": null,
+            "defaultCount": 1500,
+            "defaultIncludedInPrice": false,
+            "maxCount": 8192,
+            "minCount": 1500,
+            "pricePerUnit": 0.0001,
+            "step": 1
+          },
+          "gpuCount": 1,
+          "gpuMemory": 141,
+          "gpuType": "H200_141GB",
+          "images": [
+            "ubuntu_22_cuda_12",
+            "cuda_12_1_pytorch_2_2",
+            "cuda_11_8_pytorch_2_1",
+            "cuda_12_1_pytorch_2_3",
+            "cuda_12_1_pytorch_2_4",
+            "cuda_12_4_pytorch_2_4",
+            "cuda_12_4_pytorch_2_5",
+            "cuda_12_4_pytorch_2_6",
+            "cuda_12_6_pytorch_2_7",
+            "stable_diffusion",
+            "axolotl",
+            "bittensor",
+            "vllm_llama_8b",
+            "vllm_llama_70b",
+            "vllm_llama_405b",
+            "custom_template",
+            "prime_rl"
+          ],
+          "interconnect": null,
+          "interconnectType": null,
+          "internetSpeed": null,
+          "isSpot": null,
+          "memory": {
+            "additionalInfo": null,
+            "defaultCount": 200,
+            "defaultIncludedInPrice": null,
+            "maxCount": 200,
+            "minCount": 200,
+            "pricePerUnit": 0.0045,
+            "step": null
+          },
+          "prepaidTime": null,
+          "prices": {
+            "communityPrice": null,
+            "currency": "USD",
+            "isVariable": null,
+            "onDemand": 5.4
+          },
+          "provider": "nebius",
+          "provisioningTime": null,
+          "region": "united_states",
+          "security": "secure_cloud",
+          "sharedDisk": {
+            "additionalInfo": null,
+            "defaultCount": 0,
+            "defaultIncludedInPrice": false,
+            "maxCount": 8192,
+            "minCount": 0,
+            "pricePerUnit": 0.0001,
+            "step": 1
+          },
+          "socket": "SXM5",
+          "stockStatus": "Available",
+          "vcpu": {
+            "additionalInfo": null,
+            "defaultCount": 16,
+            "defaultIncludedInPrice": null,
+            "maxCount": 16,
+            "minCount": 16,
+            "pricePerUnit": 0.015,
+            "step": null
+          }
+        },
+        {
+          "cloudId": "gpu-h200-sxm_1gpu-16vcpu-200gb",
+          "country": "FI",
+          "dataCenter": "eu-north1",
+          "disk": {
+            "additionalInfo": null,
+            "defaultCount": 1500,
+            "defaultIncludedInPrice": false,
+            "maxCount": 8192,
+            "minCount": 1500,
+            "pricePerUnit": 0.0001,
+            "step": 1
+          },
+          "gpuCount": 1,
+          "gpuMemory": 141,
+          "gpuType": "H200_141GB",
+          "images": [
+            "ubuntu_22_cuda_12",
+            "cuda_12_1_pytorch_2_2",
+            "cuda_11_8_pytorch_2_1",
+            "cuda_12_1_pytorch_2_3",
+            "cuda_12_1_pytorch_2_4",
+            "cuda_12_4_pytorch_2_4",
+            "cuda_12_4_pytorch_2_5",
+            "cuda_12_4_pytorch_2_6",
+            "cuda_12_6_pytorch_2_7",
+            "stable_diffusion",
+            "axolotl",
+            "bittensor",
+            "vllm_llama_8b",
+            "vllm_llama_70b",
+            "vllm_llama_405b",
+            "custom_template",
+            "prime_rl"
+          ],
+          "interconnect": null,
+          "interconnectType": null,
+          "internetSpeed": null,
+          "isSpot": null,
+          "memory": {
+            "additionalInfo": null,
+            "defaultCount": 200,
+            "defaultIncludedInPrice": null,
+            "maxCount": 200,
+            "minCount": 200,
+            "pricePerUnit": 0.0045,
+            "step": null
+          },
+          "prepaidTime": null,
+          "prices": {
+            "communityPrice": null,
+            "currency": "USD",
+            "isVariable": null,
+            "onDemand": 5.4
+          },
+          "provider": "nebius",
+          "provisioningTime": null,
+          "region": "eu_north",
+          "security": "secure_cloud",
+          "sharedDisk": {
+            "additionalInfo": null,
+            "defaultCount": 0,
+            "defaultIncludedInPrice": false,
+            "maxCount": 8192,
+            "minCount": 0,
+            "pricePerUnit": 0.0001,
+            "step": 1
+          },
+          "socket": "SXM5",
+          "stockStatus": "Available",
+          "vcpu": {
+            "additionalInfo": null,
+            "defaultCount": 16,
+            "defaultIncludedInPrice": null,
+            "maxCount": 16,
+            "minCount": 16,
+            "pricePerUnit": 0.015,
+            "step": null
+          }
+        }
+      ],
+      "totalCount": 2
+    }
+  },
+  "checked_at": "2026-10-20T07:23:35.665213+00:00",
+  "paid_resources_created": false,
+  "spending_ceiling_usd": 33.3573,
+  "wallet_usd": 37.3573
+}

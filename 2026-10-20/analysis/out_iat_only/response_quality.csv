@@ -1,0 +1,4 @@
+benchmark,condition,responses,valid_responses,invalid_or_refusal,exact_format_rate,distinct_words,unique_response_tuples,normalized_word_entropy,errors
+iat12,base,600,600,0,1.0,13,23,0.515660304956015,0
+iat12,sft,600,600,0,1.0,35,104,0.5379099988641644,0
+iat12,orpo,600,600,0,1.0,35,101,0.5417847005025751,0
