@@ -138,7 +138,7 @@ def image_control(model, inputs):
 
 def encode_row(processor, model_name, row, asset_root, method):
     image = (asset_root / row["image_path"]).resolve()
-    if not image.is_relative_to(asset_root) or study.sha(image) != row["image_sha256"]:
+    if not image.is_relative_to(asset_root) or not study.image_matches_manifest(row, image):
         raise ValueError("Native training image hash mismatch")
     def render(branch):
         if model_name == "gemma4":
@@ -167,7 +167,7 @@ def approved_cohort(cohort="full"):
     asset_root = (study.REPO / config["asset_root"]).resolve()
     for row in rows:
         image = (asset_root / row["image_path"]).resolve()
-        if not image.is_relative_to(asset_root) or study.sha(image) != row["image_sha256"]:
+        if not image.is_relative_to(asset_root) or not study.image_matches_manifest(row, image):
             raise ValueError("Approved cohort image hash mismatch")
     return config, train, dev, asset_root
 

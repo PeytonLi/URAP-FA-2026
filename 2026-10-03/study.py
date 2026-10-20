@@ -40,6 +40,35 @@ def sha(path):
     return digest.hexdigest()
 
 
+def pixel_sha(path):
+    """Decoded-pixel digest: sha256(f"{w}x{h}|RGB|" + RGB bytes), matching
+    2026-09-29/src/curation.py::pixel_sha256."""
+    from PIL import Image
+    with Image.open(path) as im:
+        rgb = im.convert("RGB")
+        return hashlib.sha256(
+            f"{rgb.width}x{rgb.height}|RGB|".encode() + rgb.tobytes()).hexdigest()
+
+
+def image_matches_manifest(row, image):
+    """Identity proof for a stored face image. Accepts either the PNG byte
+    digest (image_sha256) or, when the file was re-encoded on another
+    platform (byte-different, pixel-identical), the decoded-pixel digest
+    (pixel_sha256) recorded by the September-29 manifest."""
+    image = Path(image)
+    if not image.is_file():
+        return False
+    if sha(image) == row["image_sha256"]:
+        return True
+    expected = row.get("pixel_sha256")
+    if not expected:
+        return False
+    try:
+        return pixel_sha(image) == expected
+    except Exception:
+        return False
+
+
 def save_json(path, value):
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + ".tmp")
@@ -294,7 +323,7 @@ def prepare_legacy(asset_root=None):
     missing, verified = [], []
     for row in prepared:
         image = asset_root / row["image_path"]
-        if image.is_file() and sha(image) == row["image_sha256"]:
+        if image_matches_manifest(row, image):
             verified.append(row["image_sha256"])
         else:
             missing.append({"pair_id": row["pair_id"], "image_path": row["image_path"],
