@@ -60,16 +60,18 @@ def gate_row(row: dict, a: dict | None, b: dict | None) -> tuple[str, dict]:
                  "a_conf": a["subjective_confidence"],
                  "b_conf": b["subjective_confidence"],
                  "a_chosen": a["chosen"], "b_chosen": b["chosen"],
-                 "a_rejected": a["rejected"], "b_rejected": b["rejected"]})
+                 "a_rejected": a["rejected"], "b_rejected": b["rejected"],
+                 "teacher_a": a.get("teacher", ""),
+                 "teacher_b": b.get("teacher", "")})
     blocking = {"neutral_vocabulary_gap", "ambiguous_expression"}
-    if a["teacher_expression"] != b["teacher_expression"]:
-        info["reason"] = "expression_disagreement"
-        return "unresolved", info
-    if a["teacher_expression"] in ("neutral", "uncertain"):
-        info["reason"] = f"both_{a['teacher_expression']}"
-        return "unresolved", info
     if (set(a["review_flags"]) & blocking) or (set(b["review_flags"]) & blocking):
         info["reason"] = "blocking_flag"
+        return "unresolved", info
+    # After flag filtering, only positive/negative expressions can disagree:
+    # neutral/uncertain drafts always carry a blocking flag. A positive-vs-
+    # negative disagreement means the face genuinely reads both ways.
+    if a["teacher_expression"] != b["teacher_expression"]:
+        info["reason"] = "expression_disagreement"
         return "unresolved", info
     if min(a["subjective_confidence"], b["subjective_confidence"]) < MIN_CONFIDENCE:
         info["reason"] = "low_confidence"

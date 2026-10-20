@@ -18,5 +18,11 @@
   },
   "draft_targets_are_training_ready": false,
   "no_profile_targets": true,
-  "no_test_or_benchmark_target_generation": true
+  "no_test_or_benchmark_target_generation": true,
+  "ai_target_approval_gated_two_pass": {
+    "authorized": true,
+    "authorization_date_local": "2026-10-20",
+    "authorization_source": "User: Pick 3 words but only when there it passes a specific confidence level. Maybe 80-90%? / Full AI Labeling but again only if its confident in its answer.",
+    "scope": "AI approval of image-specific train/development targets only when two independent teacher passes agree on the chosen triple at confidence >= 0.8 with no ambiguity flags; Devin adjudicates two-of-three overlaps; unresolved images stay unlabeled."
+  }
 }

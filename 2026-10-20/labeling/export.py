@@ -15,6 +15,17 @@ import policy
 TARGET_VERSION = "iat-gated-v1"
 
 
+def approval_sha() -> str:
+    """SHA-256 fingerprint of the recorded two-pass gating authorization in
+    2026-10-03/config/prime_budget.json (mirrors curated.ai_approval_authorization)."""
+    import hashlib
+    permission = json.loads((common.REPO / "2026-10-03/config/prime_budget.json").read_text())
+    auth = permission.get("ai_target_approval_gated_two_pass")
+    if not auth or auth.get("authorized") is not True:
+        raise SystemExit("recorded gated two-pass AI-approval authorization missing")
+    return hashlib.sha256(json.dumps(auth, sort_keys=True).encode()).hexdigest()
+
+
 def load_resolved() -> list[dict]:
     out = []
     path = common.PRIVATE / "resolved.jsonl"
@@ -33,9 +44,11 @@ def load_resolved() -> list[dict]:
     return out
 
 
-def export(name: str = "curated_iat_targets") -> dict:
+def export(name: str = "curated_iat_targets",
+           cap_share: float = 0.08) -> dict:
     manifest = {r["image_id"]: r for r in common.load_manifest()}
     resolved = load_resolved()
+    auth_sha = approval_sha()
     errors = []
     records = []
     for item in resolved:
@@ -50,9 +63,6 @@ def export(name: str = "curated_iat_targets") -> dict:
         if not policy.exact_target(chosen) or not policy.exact_target(rejected):
             errors.append((item["image_id"], "bad_triple"))
             continue
-        if set(policy.word_set(chosen)) & set(policy.word_set(rejected)):
-            # chosen and rejected must be different words, not just reordered
-            pass  # shared words allowed only if sets differ — enforce below
         if policy.word_set(chosen) == policy.word_set(rejected):
             errors.append((item["image_id"], "chosen_equals_rejected_set"))
             continue
@@ -66,6 +76,9 @@ def export(name: str = "curated_iat_targets") -> dict:
             "rejected": rejected,
             "review_status": "approved",
             "reviewer": "devin-ai-gated-two-pass",
+            "reviewer_kind": "ai",
+            "draft_source": "two_pass_gated_teachers",
+            "approval_authorization_sha256": auth_sha,
             "target_provenance": (
                 f"{TARGET_VERSION}; passA={item.get('teacher_a','')}; "
                 f"passB={item.get('teacher_b','')}; gate=identity+conf>={0.8}"),
@@ -74,15 +87,38 @@ def export(name: str = "curated_iat_targets") -> dict:
         }
         records.append(rec)
 
+    # Variety cap: no single chosen triple may cover more than cap_share of
+    # the cohort. Deterministic keep: lowest image_ids first. Capped-out
+    # records are reported, not exported — a dominant generic triple is the
+    # October collapse mode.
+    by_triple = defaultdict(list)
+    for r in records:
+        by_triple[r["chosen"]].append(r)
+    cap = max(3, int(cap_share * len(records)))
+    kept, demoted = [], []
+    for triple, group in by_triple.items():
+        group.sort(key=lambda r: r["image_id"])
+        kept.extend(group[:cap])
+        demoted.extend(group[cap:])
+    records = kept
     audit = {
         "records": len(records),
+        "demoted_by_variety_cap": [r["image_id"] for r in demoted],
+        "cap_share": cap_share,
+        "cap_per_triple": cap,
         "errors": errors,
         "by_split": dict(Counter(r["split"] for r in records)),
         "by_dataset": dict(Counter(r["dataset"] for r in records)),
         "chosen_words": dict(Counter(
             w for r in records for w in policy.word_set(r["chosen"]))),
+        "chosen_triples": dict(Counter(r["chosen"] for r in records)),
         "distinct_chosen_triples": len({r["chosen"] for r in records}),
         "distinct_rejected_triples": len({r["rejected"] for r in records}),
+        "distinct_chosen_words": len({
+            w for r in records for w in policy.word_set(r["chosen"])}),
+        "top_triple_share": (round(
+            max(Counter(r["chosen"] for r in records).values())
+            / len(records), 4) if records else 0),
     }
     # demographic resolution coverage
     by_race = defaultdict(lambda: [0, 0])
@@ -106,6 +142,7 @@ def export(name: str = "curated_iat_targets") -> dict:
     out_path = common.WORKDIR / "data" / "private" / f"{name}.json"
     if records and not errors:
         common.write_json(out_path, records)
+        emit_gated_cohort(records, manifest)
     audit_path = common.PRIVATE / f"{name}_audit.json"
     common.write_json(audit_path, audit)
     print(json.dumps({k: v for k, v in audit.items() if k != "chosen_words"},
@@ -115,8 +152,62 @@ def export(name: str = "curated_iat_targets") -> dict:
     return audit
 
 
+def emit_gated_cohort(records: list[dict], manifest: dict) -> None:
+    """Declared gated cohort: a filtered manifest containing only rows with
+    approved targets, plus a draft active_dataset.json pointing at it. The
+    frozen September-29 manifest is never modified. Activation copies the
+    draft config to 2026-10-03/config/active_dataset.json."""
+    import csv as _csv
+    import hashlib
+    source = common.MANIFEST
+    resolved_ids = {r["image_id"] for r in records}
+    fieldnames = None
+    kept = []
+    with source.open(newline="", encoding="utf-8") as fh:
+        reader = _csv.DictReader(fh)
+        fieldnames = reader.fieldnames
+        for row in reader:
+            if row["image_id"] in resolved_ids:
+                kept.append(row)
+    gated_csv = common.WORKDIR / "data" / "selected_images_gated.csv"
+    gated_csv.parent.mkdir(parents=True, exist_ok=True)
+    with gated_csv.open("w", encoding="utf-8", newline="") as fh:
+        writer = _csv.DictWriter(fh, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerows(kept)
+    counts = Counter(r["split"] for r in kept)
+    datasets = Counter(r["dataset"] for r in kept)
+    config = {
+        "dataset_id": "image-curation-2026-09-29-v1",
+        "cohort_note": "confidence-gated two-pass subset of the frozen pool",
+        "parent_manifest_path": "2026-09-29/data/selected_images.csv",
+        "manifest_path": "2026-10-20/data/selected_images_gated.csv",
+        "manifest_sha256": hashlib.sha256(gated_csv.read_bytes()).hexdigest(),
+        "asset_root": "2026-09-29/private/dataset",
+        "targets_path": "2026-10-20/data/private/curated_iat_targets.json",
+        "dataset_counts": dict(datasets),
+        "split_counts": dict(counts),
+        "preserve_published_splits": True,
+        "target_splits": ["train", "development"],
+        "test_preference_generation_allowed": False,
+        "profile_targets_used": 0,
+        "training_inputs": {"sft": ["image", "prompt", "chosen"],
+                            "orpo": ["image", "prompt", "chosen", "rejected"]},
+        "primary_benchmark": "2026-09-11/data/iat12/manifest.csv",
+        "benchmark_images_training_allowed": False,
+        "additional_test_pool": "Reserved; do not activate a new benchmark without defining its protocol",
+        "superseded_pairs": "2026-10-03/data/pairs.csv",
+        "target_policy": "Two-pass gated AI approval under recorded authorization; unresolved images carry no targets",
+    }
+    common.write_json(
+        common.WORKDIR / "config" / "active_dataset_gated_draft.json", config)
+    print(f"gated cohort: {len(kept)} manifest rows -> {gated_csv}")
+    print("draft config -> 2026-10-20/config/active_dataset_gated_draft.json")
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--name", default="curated_iat_targets")
+    ap.add_argument("--cap-share", type=float, default=0.08)
     args = ap.parse_args()
-    export(args.name)
+    export(args.name, args.cap_share)

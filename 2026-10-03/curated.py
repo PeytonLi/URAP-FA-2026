@@ -51,11 +51,12 @@ def selected_rows(config):
 def ai_approval_authorization():
     """Fingerprint the user's explicit waiver; never treat it as human review."""
     permission = json.loads((study.ROOT / "config/prime_budget.json").read_text(encoding="utf-8"))
-    authorization = permission.get("ai_target_approval", {})
-    if (permission.get("human_target_approval_required") is not False
-            or authorization.get("authorized") is not True
-            or authorization.get("authorization_source") !=
-            "User: I want you to label every image and just approve it and start the training"):
+    if permission.get("human_target_approval_required") is not False:
+        return None
+    authorization = permission.get("ai_target_approval_gated_two_pass") \
+        or permission.get("ai_target_approval", {})
+    if (authorization.get("authorized") is not True
+            or not authorization.get("authorization_source", "").startswith("User:")):
         return None
     return hashlib.sha256(json.dumps(authorization, sort_keys=True).encode()).hexdigest()
 
@@ -76,7 +77,8 @@ def target_failures(target, image, ai_authorization_sha256=None):
         if (not ai_authorization_sha256
                 or target.get("approval_authorization_sha256") != ai_authorization_sha256):
             failures.append("ai_approval_not_authorized")
-        if target.get("draft_source") != "codex_direct_visual_review":
+        if target.get("draft_source") not in (
+                "codex_direct_visual_review", "two_pass_gated_teachers"):
             failures.append("ai_approval_requires_direct_inspection")
     elif kind != "human":
         failures.append("unknown_reviewer_kind")

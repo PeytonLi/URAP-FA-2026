@@ -96,6 +96,10 @@ SCHEMA_SHA = hashlib.sha256(
 WORD_SET = set(IAT_WORDS)
 
 
+def word_set(text: str) -> set[str]:
+    return {w.strip() for w in text.split(",") if w.strip()}
+
+
 def exact_target(text: str) -> bool:
     words = [w.strip() for w in text.split(",")]
     return len(words) == 3 and len(set(words)) == 3 and all(
