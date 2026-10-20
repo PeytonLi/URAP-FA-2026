@@ -10,6 +10,7 @@ import base64
 import io
 import json
 import sys
+import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -68,7 +69,6 @@ class LocalGemmaClient:
     def chat_completion(self, payload):
         import torch
         from transformers import set_seed
-        images = []
         messages = []
         for message in payload["messages"]:
             parts = message["content"]
@@ -81,15 +81,16 @@ class LocalGemmaClient:
                         content.append({"type": "text", "text": part["text"]})
                     elif part["type"] == "image_url":
                         image = self._decode_image(part["image_url"]["url"])
-                        images.append(image)
-                        content.append({"type": "image"})
+                        tmp = tempfile.NamedTemporaryFile(
+                            prefix="urap_extra_", suffix=".png", delete=False)
+                        image.save(tmp.name)
+                        content.append({"type": "image", "path": tmp.name})
                     else:
                         raise ValueError(f"Unsupported content part {part['type']}")
             messages.append({"role": message["role"], "content": content})
         options = {"tokenize": True, "return_dict": True, "return_tensors": "pt",
                    "add_generation_prompt": True}
-        inputs = self._processor.apply_chat_template(
-            messages, images=images or None, **options)
+        inputs = self._processor.apply_chat_template(messages, **options)
         inputs = {k: v.to(self._model.device, dtype=self._model.dtype if v.is_floating_point() else v.dtype)
                   for k, v in inputs.items()}
         set_seed(int(payload.get("seed") or 0))
