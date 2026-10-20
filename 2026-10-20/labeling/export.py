@@ -59,7 +59,8 @@ def export(name: str = "curated_iat_targets",
         if row["split"] not in common.LABEL_SPLITS:
             errors.append((item["image_id"], "forbidden_split"))
             continue
-        chosen, rejected = item["chosen"], item["rejected"]
+        chosen = ", ".join(sorted(policy.word_set(item["chosen"])))
+        rejected = ", ".join(sorted(policy.word_set(item["rejected"])))
         if not policy.exact_target(chosen) or not policy.exact_target(rejected):
             errors.append((item["image_id"], "bad_triple"))
             continue
