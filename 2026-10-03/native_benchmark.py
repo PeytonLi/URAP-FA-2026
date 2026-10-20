@@ -88,9 +88,9 @@ def run(model_name, method, image_dir, max_seconds, checkpoint=None):
             raise ValueError("Adapter/processor checkpoint checksum mismatch")
     elif checkpoint is not None:
         raise ValueError("Untouched base must not load an adapter")
-    processor = AutoProcessor.from_pretrained(settings["model"], revision=settings["revision"], token=False)
+    processor = AutoProcessor.from_pretrained(settings["model"], revision=settings["revision"])
     native = AutoModelForImageTextToText.from_pretrained(settings["model"], revision=settings["revision"],
-        dtype=torch.bfloat16, device_map={"": 0}, attn_implementation="sdpa", token=False)
+        dtype=torch.bfloat16, device_map={"": 0}, attn_implementation="sdpa")
     if checkpoint is not None:
         from peft import PeftModel
         native = PeftModel.from_pretrained(native, checkpoint)

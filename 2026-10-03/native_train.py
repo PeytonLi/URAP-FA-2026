@@ -209,10 +209,10 @@ def train(model_name, method, max_seconds, cohort="full"):
           study.now().replace(":", "").replace("-", "").replace("+", "_"))
     run.mkdir(parents=True, exist_ok=False)
     destination = hub_backup.create(run, hub_api, hub_account)
-    processor = AutoProcessor.from_pretrained(settings["model"], revision=settings["revision"], token=False)
+    processor = AutoProcessor.from_pretrained(settings["model"], revision=settings["revision"])
     base = AutoModelForImageTextToText.from_pretrained(
         settings["model"], revision=settings["revision"], dtype=torch.bfloat16,
-        device_map={"": 0}, attn_implementation="sdpa", token=False)
+        device_map={"": 0}, attn_implementation="sdpa")
     model, adapter = attach_lora(base)
     optimizer = torch.optim.AdamW([p for p in model.parameters() if p.requires_grad], lr=1e-5, weight_decay=0)
     control = image_control(model, encode_row(processor, model_name, train_rows[0], asset_root, method)[0])

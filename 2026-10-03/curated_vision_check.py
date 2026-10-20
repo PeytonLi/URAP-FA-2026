@@ -141,7 +141,7 @@ def main():
     rows = curated.selected_rows(config)
     selected = probe_blocks(rows)
     asset_root = study.REPO / config["asset_root"]
-    processor = AutoProcessor.from_pretrained(GEMMA_HF, revision=GEMMA_REVISION, token=False)
+    processor = AutoProcessor.from_pretrained(GEMMA_HF, revision=GEMMA_REVISION)
     report = {"checked_at": study.now(), "dataset_id": config["dataset_id"],
               "manifest_sha256": config["manifest_sha256"], "model": GEMMA_HF,
               "processor_revision": GEMMA_REVISION,

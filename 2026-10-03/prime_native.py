@@ -164,8 +164,10 @@ def package_inputs(destination, resume_from=None):
                     name = "2026-10-03/results/native_benchmarks/" + path.relative_to(folder.parent).as_posix()
                     archive.add(path, arcname=name)
                     checksums[name] = study.sha(path)
-    return {"files": checksums, "archive_sha256": study.sha(destination), "training_images": 676,
-            "development_images": 180, "benchmark_images": 12, "credentials_included": False,
+    return {"files": checksums, "archive_sha256": study.sha(destination),
+            "training_images": sum(1 for r in rows if r["split"] == "train"),
+            "development_images": sum(1 for r in rows if r["split"] == "development"),
+            "benchmark_images": len(stimuli), "credentials_included": False,
             "benchmark_training_allowed": False, "resumed_training_conditions": len(resumed[0]),
             "resumed_benchmark_conditions": len(resumed[1])}
 
