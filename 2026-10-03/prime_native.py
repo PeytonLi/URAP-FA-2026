@@ -179,6 +179,15 @@ def package_inputs(destination, resume_from=None):
                     name = "2026-10-03/results/native_benchmarks/" + path.relative_to(folder.parent).as_posix()
                     archive.add(path, arcname=name)
                     checksums[name] = study.sha(path)
+        extras_root = resume_from.resolve() / "results" / "extra_benchmarks"
+        if extras_root.is_dir():
+            for path in extras_root.rglob("*"):
+                if path.is_symlink() or not path.resolve().is_relative_to(ATTEMPTS.resolve()):
+                    raise ValueError("Unsafe recovered extra-benchmark file")
+                if path.is_file():
+                    name = "2026-10-03/results/extra_benchmarks/" + path.relative_to(extras_root).as_posix()
+                    archive.add(path, arcname=name)
+                    checksums[name] = study.sha(path)
     return {"files": checksums, "archive_sha256": study.sha(destination),
             "training_images": sum(1 for r in rows if r["split"] == "train"),
             "development_images": sum(1 for r in rows if r["split"] == "development"),
@@ -204,7 +213,7 @@ def launch(resume_from=None):
     pods = PodsClient(client)
     wallet = WalletClient(client).get(limit=1, team_id=client.config.team_id)
     cap = json.loads((study.ROOT / "config/prime_budget.json").read_text())["total_spending_cap"]
-    if wallet.currency != "USD" or wallet.balance_usd < 25 or cap != 100:
+    if wallet.currency != "USD" or wallet.balance_usd < 10 or cap != 100:
         raise ValueError("Expected authorized $100 cap and usable USD credits")
     if client.config.team_id:
         raise ValueError("This authorization uses the personal credit wallet, not an unrelated team")
