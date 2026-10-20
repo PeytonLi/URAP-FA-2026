@@ -142,7 +142,7 @@ def main():
         worker_log = (ROOT / "data/private/remote_worker.log").open("a", encoding="utf-8")
         # The bootstrap parent is system Python; scientific imports belong in the pinned venv.
         ready_training, ready_benchmarks = verify_resume(python, worker_log)
-        for model in ("gemma4", "qwen3vl", "qwen35"):
+        for model in ("gemma3_12b",):
             for method in ("sft", "orpo"):
                 if STOP.exists():
                     raise InterruptedError("Owned run stopped before the next condition")
@@ -151,7 +151,7 @@ def main():
                                                   "exit_code": 0, "reused_verified_checkpoint": True})
                     study.save_json(outputs, summary)
                     continue
-                command = [python, "-u", str(ROOT / "native_train.py"), "train", "--cohort", "resolved-balanced",
+                command = [python, "-u", str(ROOT / "native_train.py"), "train", "--cohort", "full",
                            "--model", model, "--method", method, "--max-seconds", "10800"]
                 # Keep child output on the pod so a dropped SSH monitor cannot
                 # turn a valid optimizer run into BrokenPipeError.

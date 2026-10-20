@@ -10,6 +10,7 @@ import tarfile
 import time
 from pathlib import Path, PurePosixPath
 
+import curated
 import pilot
 import hub_backup
 import study
@@ -97,11 +98,15 @@ def resume_results(recovered):
 
 def package_inputs(destination, resume_from=None):
     resumed = resume_results(resume_from) if resume_from else ({}, {})
-    _, rows = pilot.training_rows()
+    config = study.dataset_config()
+    if not config:
+        raise ValueError("Active curated dataset is required")
+    rows = curated.training_rows(config)
     paths = set()
     for name in ("study.py", "curated.py", "review_targets.py", "draft_targets.py", "pilot.py",
                  "objectives.py", "hub_backup.py", "native_train.py", "native_benchmark.py", "remote_native.py",
                  "benchmark.py", "vision.py", "curated_vision_check.py", "qwen_vision_check.py",
+                 "gemma3_vision_check.py",
                  "native_report.py", "report.py"):
         paths.add(study.ROOT / name)
     paths.update((study.ROOT / "config").glob("*.json"))
@@ -112,11 +117,16 @@ def package_inputs(destination, resume_from=None):
     paths.add(study.ROOT / "tests/test_hub_backup.py")
     config = study.dataset_config()
     paths.add(study.REPO / config["manifest_path"])
-    paths.add(pilot.FROZEN)
+    if pilot.FROZEN.is_file():
+        paths.add(pilot.FROZEN)
     for name in ("draft_targets.json", "codex_direct_reviews.json", "ai_review_decisions.json", "human_review_decisions.json"):
         path = study.ROOT / "data/private/target_review" / name
         if path.exists():
             paths.add(path)
+    targets = study.REPO / config["targets_path"]
+    if not targets.is_file():
+        raise ValueError("Approved targets file missing: " + config["targets_path"])
+    paths.add(targets)
     paths.update(study.REPO / config["asset_root"] / row["image_path"] for row in rows)
     stimuli = study.read_csv(study.REPO / "2026-09-11/data/iat12/manifest.csv")
     checksums = {}
@@ -127,10 +137,11 @@ def package_inputs(destination, resume_from=None):
             name = path.relative_to(study.REPO).as_posix()
             archive.add(path, arcname=name)
             checksums[name] = study.sha(path)
+        benchmark_dir = study.ROOT / "data/private/benchmark_images"
         for stimulus in stimuli:
-            path = Path("C:/Users/lipey/Downloads/12_images/race") / stimulus["filename"]
-            if study.sha(path) != stimulus["sha256"]:
-                raise ValueError("Reference benchmark JPEG hash mismatch")
+            path = benchmark_dir / stimulus["filename"]
+            if not path.is_file() or study.sha(path) != stimulus["sha256"]:
+                raise ValueError("Reference benchmark JPEG hash mismatch: " + stimulus["filename"])
             name = "2026-10-03/data/private/benchmark_images/" + path.name
             archive.add(path, arcname=name)
             checksums[name] = study.sha(path)
@@ -165,7 +176,7 @@ def launch(resume_from=None):
     from prime_cli.core import APIClient
     from prime_cli.api.pods import PodsClient
     from prime_cli.api.wallet import WalletClient
-    pilot.training_rows()  # Fail before any billable provisioning or upload.
+    curated.training_rows(study.dataset_config())  # Fail before any billable provisioning or upload.
     hub_api, hub_account = hub_backup.connect()  # No paid pod without a usable Hub login.
     client = APIClient()
     request = client.request
@@ -225,8 +236,7 @@ def launch(resume_from=None):
     receipt = {"started_at": study.now(), "pod_name": name, "quote": offer, "quoted_hourly_usd": price,
                "spending_ceiling_usd": spending_ceiling, "wallet_before_usd": wallet.balance_usd,
                "credit_top_up_enabled_by_this_work": False, "input_bundle": bundle,
-               "requested_conditions": [m + "_" + method for m in ("gemma4", "qwen3vl", "qwen35")
-                                        for method in ("sft", "orpo")], "status": "provisioning",
+               "requested_conditions": ["gemma3_12b_sft", "gemma3_12b_orpo"], "status": "provisioning",
                "optimizer_updates_verified": 0, "ssh_key_id": key_id,
                "hugging_face_account": hub_account, "hub_backups_required": True}
     study.save_json(folder / "launch.json", receipt)

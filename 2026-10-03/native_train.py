@@ -22,6 +22,9 @@ from qwen_vision_check import MODELS as QWEN_MODELS, checked_inputs
 from vision import GEMMA_HF, GEMMA_REVISION
 
 MODELS = {"gemma4": {"model": GEMMA_HF, "revision": GEMMA_REVISION, "enable_thinking": False},
+          "gemma3_12b": {"model": "google/gemma-3-12b-it",
+                         "revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
+                         "enable_thinking": None},
           **QWEN_MODELS}
 
 
@@ -143,6 +146,9 @@ def encode_row(processor, model_name, row, asset_root, method):
     def render(branch):
         if model_name == "gemma4":
             return continuation_inputs(processor, image, row[branch])[0]
+        if model_name == "gemma3_12b":
+            from gemma3_vision_check import checked_inputs as g3_inputs
+            return g3_inputs(processor, image, row[branch])[0]
         return checked_inputs(processor, image, row[branch],
                               enable_thinking=MODELS[model_name]["enable_thinking"])[0]
     return render("chosen"), render("rejected") if method == "orpo" else None

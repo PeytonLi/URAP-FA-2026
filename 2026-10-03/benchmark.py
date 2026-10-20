@@ -16,6 +16,7 @@ from multimodel_bias.iat import image_data_url
 
 MODELS = {
     "gemma4": ("gemma-4-26b-a4b-it", "Gemma 4 26B A4B IT"),
+    "gemma3_12b": ("gemma-3-12b-it", "Gemma 3 12B IT"),
     "qwen3vl": ("qwen3-vl-8b-instruct", "Qwen3-VL 8B Instruct"),
     "qwen35": ("qwen3p5-9b", "Qwen3.5 9B"),
 }

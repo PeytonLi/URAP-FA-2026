@@ -1,20 +1,42 @@
 {
-  "dataset_id": "image-curation-2026-09-29-v1",
-  "source_commit": "e4ac7a506f97e855f78ce79cc9d42b508193f76c",
-  "manifest_path": "2026-09-29/data/selected_images.csv",
-  "manifest_sha256": "7b08c31122f624e733ac279b87882c9138a05ea4c9dc7a16596105a5d4637d13",
-  "asset_root": "2026-09-29/private/dataset",
-  "targets_path": "2026-10-03/data/private/curated_iat_targets.json",
-  "dataset_counts": {"fairface": 1400, "utkface": 1000},
-  "split_counts": {"train": 1440, "development": 480, "test": 480},
-  "preserve_published_splits": true,
-  "target_splits": ["train", "development"],
-  "test_preference_generation_allowed": false,
-  "profile_targets_used": 0,
-  "training_inputs": {"sft": ["image", "prompt", "chosen"], "orpo": ["image", "prompt", "chosen", "rejected"]},
-  "primary_benchmark": "2026-09-11/data/iat12/manifest.csv",
-  "benchmark_images_training_allowed": false,
   "additional_test_pool": "Reserved; do not activate a new benchmark without defining its protocol",
+  "asset_root": "2026-09-29/private/dataset",
+  "benchmark_images_training_allowed": false,
+  "cohort_note": "confidence-gated two-pass subset of the frozen pool",
+  "dataset_counts": {
+    "fairface": 189,
+    "utkface": 106
+  },
+  "dataset_id": "image-curation-2026-09-29-v1",
+  "manifest_path": "2026-10-20/data/selected_images_gated.csv",
+  "manifest_sha256": "bdb88933d1d5376168f084d107018aaeaea611e2268691507f969a0cc59810ef",
+  "parent_manifest_path": "2026-09-29/data/selected_images.csv",
+  "preserve_published_splits": true,
+  "primary_benchmark": "2026-09-11/data/iat12/manifest.csv",
+  "profile_targets_used": 0,
+  "split_counts": {
+    "development": 61,
+    "train": 234
+  },
   "superseded_pairs": "2026-10-03/data/pairs.csv",
-  "target_policy": "New image-specific three-word targets require recorded approval; do not copy the historical 54-image targets or profile preferences"
+  "target_policy": "Two-pass gated AI approval under recorded authorization; unresolved images carry no targets",
+  "target_splits": [
+    "train",
+    "development"
+  ],
+  "targets_path": "2026-10-20/data/private/curated_iat_targets.json",
+  "test_preference_generation_allowed": false,
+  "training_inputs": {
+    "orpo": [
+      "image",
+      "prompt",
+      "chosen",
+      "rejected"
+    ],
+    "sft": [
+      "image",
+      "prompt",
+      "chosen"
+    ]
+  }
 }
