@@ -108,13 +108,21 @@ def package_inputs(destination, resume_from=None):
     for name in ("study.py", "curated.py", "review_targets.py", "draft_targets.py", "pilot.py",
                  "objectives.py", "hub_backup.py", "native_train.py", "native_benchmark.py", "remote_native.py",
                  "benchmark.py", "vision.py", "curated_vision_check.py", "qwen_vision_check.py",
-                 "gemma3_vision_check.py",
+                 "gemma3_vision_check.py", "native_extra_benchmarks.py",
                  "native_report.py", "report.py"):
         paths.add(study.ROOT / name)
     paths.update((study.ROOT / "config").glob("*.json"))
     paths.update((study.REPO / "2026-09-11/src/multimodel_bias").glob("*.py"))
     paths.add(study.REPO / "2026-09-11/scripts/fireworks_gemma4.py")
     paths.add(study.REPO / "2026-09-11/data/iat12/manifest.csv")
+    # DecodingTrust + BOLD + VisBias inputs (frozen, sha-pinned under SOURCE.json).
+    paths.update((study.REPO / "2026-09-05/data/bold").glob("*"))
+    paths.update((study.REPO / "2026-09-05/data/decodingtrust").glob("*"))
+    paths.update((study.REPO / "2026-09-05/data/frozen/visbias").glob("*"))
+    visbias_normalized = study.REPO / "2026-09-05/data/private/visbias/normalized"
+    if not visbias_normalized.is_dir():
+        raise ValueError("VisBias normalized images missing: " + str(visbias_normalized))
+    paths.update(visbias_normalized.rglob("*.jpg"))
     paths.add(study.ROOT / "tests/test_native_train.py")
     paths.add(study.ROOT / "tests/test_hub_backup.py")
     config = study.dataset_config()

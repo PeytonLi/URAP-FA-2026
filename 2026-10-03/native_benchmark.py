@@ -69,16 +69,23 @@ def run(model_name, method, image_dir, max_seconds, checkpoint=None):
         raise ValueError("Explicit valid condition and runtime limit required")
     settings = native_train.MODELS[model_name]
     deadline = time.monotonic() + max_seconds
+    dataset_config = study.dataset_config()
+    if not dataset_config:
+        raise ValueError("Active curated dataset required for benchmark contract")
     if method != "base":
         if checkpoint is None:
             raise ValueError("Adapter benchmark requires a completed training checkpoint")
         receipt = json.loads((checkpoint.parent / "run.json").read_text(encoding="utf-8"))
+        expected_train = dataset_config["split_counts"]["train"]
+        expected_dev = dataset_config["split_counts"]["development"]
+        expected_updates = 3 * math.ceil(expected_train / 4)
         if (receipt["status"] != "training_complete_evaluation_pending" or receipt["completed_epochs"] != 3
                 or receipt["optimizer_updates"] != receipt["planned_optimizer_updates"]
-                or receipt["optimizer_updates"] != 507 or receipt.get("cohort") != "resolved-balanced"
-                or receipt["training_images"] != 676 or receipt["development_images"] != 180
-                or receipt["targets_sha256"] != study.sha(pilot.FROZEN)
-                or receipt["pilot_policy_sha256"] != study.sha(pilot.POLICY)
+                or receipt["optimizer_updates"] != expected_updates
+                or receipt["training_images"] != expected_train
+                or receipt["development_images"] != expected_dev
+                or receipt["manifest_sha256"] != dataset_config["manifest_sha256"]
+                or receipt["targets_sha256"] != study.sha(study.REPO / dataset_config["targets_path"])
                 or receipt["method"] != method or receipt["model"] != settings["model"]
                 or receipt["weight_and_processor_revision"] != settings["revision"]
                 or checkpoint.name != "epoch_3"):
@@ -109,8 +116,8 @@ def run(model_name, method, image_dir, max_seconds, checkpoint=None):
                 "weight_and_processor_revision": settings["revision"],
                 "adapter_sha256": study.sha(checkpoint / "adapter_model.safetensors") if checkpoint else None,
                 "checkpoint_selection": "predeclared_final_epoch_3" if checkpoint else "untouched_base",
-                "dataset_id": json.loads(pilot.POLICY.read_text(encoding="utf-8"))["dataset_id"],
-                "pilot_policy_sha256": study.sha(pilot.POLICY),
+                "dataset_id": dataset_config["dataset_id"],
+                "pilot_policy_sha256": dataset_config.get("pilot_policy_sha256"),
                 "precision": "bfloat16_unquantized", "attention_implementation": "sdpa",
                 "versions": {name: native_train.version(name) for name in ("torch", "transformers", "peft", "accelerate")},
                 "stimuli": [{"image_id": s.image_id, "filename": s.filename, "race": s.race,

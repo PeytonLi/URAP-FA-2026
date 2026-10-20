@@ -137,7 +137,8 @@ def main():
             raise RuntimeError("Driver-compatible CUDA runtime installation failed")
         packages = ["torch==2.11.0", "torchvision==0.26.0", "transformers==5.14.0",
                     "peft==0.21.0", "accelerate==1.15.0", "huggingface_hub==1.33.0",
-                    "Pillow==11.3.0", "matplotlib", "numpy", "pandas", "scipy"]
+                    "Pillow==11.3.0", "matplotlib", "numpy", "pandas", "scipy",
+                    "detoxify==0.5.2", "vaderSentiment==3.3.2"]
         installation = subprocess.Popen([python, "-m", "pip", "install", "--disable-pip-version-check", *packages])
         study.save_json(ACTIVE, {"worker_pid": os.getpid(), "child_pid": installation.pid, "phase": "installation"})
         if installation.wait(timeout=3600):
@@ -145,6 +146,15 @@ def main():
         subprocess.run([python, str(ROOT / "tests/test_native_train.py")], check=True, timeout=120)
         subprocess.run([python, str(ROOT / "tests/test_hub_backup.py")], check=True, timeout=120)
         subprocess.run([python, str(ROOT / "hub_backup.py"), "auth"], check=True, timeout=60)
+        # Extra-benchmark data: the 09-11 modules resolve data dirs relative to
+        # their own tree; point them at the bundled 09-05 frozen data.
+        data_root = ROOT.parent / "2026-09-11" / "data"
+        for name, target in (("bold", "../../2026-09-05/data/bold"),
+                             ("decodingtrust", "../../2026-09-05/data/decodingtrust"),
+                             ("visbias", "../../2026-09-05/data/frozen/visbias")):
+            link = data_root / name
+            if not link.exists():
+                link.symlink_to(target)
         gpu = subprocess.run([python, "-c", "import torch,json; assert torch.cuda.is_available(); "
             "assert torch.cuda.is_bf16_supported(); print(json.dumps({'gpu':torch.cuda.get_device_name(0),"
             "'memory_gib':torch.cuda.get_device_properties(0).total_memory/2**30,'cuda':torch.version.cuda}))"], check=True)
@@ -200,6 +210,27 @@ def main():
                 study.save_json(outputs, summary)
                 if code:
                     raise RuntimeError("Native benchmark failed; retain partial records")
+            # Advisor-requested suite: DecodingTrust/BOLD/VisBias on base + ORPO only.
+            for method in ("base", "orpo"):
+                if STOP.exists():
+                    raise InterruptedError("Owned run stopped before extra evaluation")
+                command = [python, "-u", str(ROOT / "native_extra_benchmarks.py"), "--model", model,
+                           "--method", method, "--max-seconds", "5400"]
+                if method != "base":
+                    folders = list((ROOT / "data/private/native_runs").glob(model + "_" + method + "_*"))
+                    if len(folders) != 1:
+                        raise ValueError("Exactly one fresh training run per condition required")
+                    command.extend(["--checkpoint", str(folders[0] / "epoch_3")])
+                child = subprocess.Popen(command, cwd=ROOT.parent, stdout=worker_log,
+                                         stderr=subprocess.STDOUT)
+                study.save_json(ACTIVE, {"worker_pid": os.getpid(), "child_pid": child.pid,
+                                        "phase": model + "_" + method + "_extra_benchmarks"})
+                code = child.wait()
+                summary["conditions"].append({"model": model, "extra_benchmarks": method,
+                                              "exit_code": code})
+                study.save_json(outputs, summary)
+                if code:
+                    raise RuntimeError("Extra benchmark failed; retain partial records")
         summary["status"] = "training_and_benchmarks_complete_reports_pending"
     except BaseException as exc:
         summary["status"] = "incomplete" if STOP.exists() else "failed"
@@ -226,6 +257,7 @@ def package_outputs():
     files = {}
     with tarfile.open(archive, "w:gz", compresslevel=1) as handle:
         for relative in ("data/private/native_runs", "results/native_benchmarks",
+                         "results/extra_benchmarks",
                          "data/private/remote_summary.json", "data/private/remote_worker.log"):
             path = ROOT / relative
             if path.exists():
