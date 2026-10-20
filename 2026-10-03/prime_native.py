@@ -120,6 +120,7 @@ def package_inputs(destination, resume_from=None):
     paths.update((study.REPO / "2026-09-11/src/multimodel_bias").glob("*.py"))
     paths.add(study.REPO / "2026-09-11/scripts/fireworks_gemma4.py")
     paths.add(study.REPO / "2026-09-11/data/iat12/manifest.csv")
+    paths.add(study.REPO / "2026-09-11/config/models_aug31.json")  # visbias.py orders results by it
     # DecodingTrust + BOLD + VisBias inputs (frozen, sha-pinned under SOURCE.json).
     paths.update((study.REPO / "2026-09-05/data/bold").glob("*"))
     paths.update((study.REPO / "2026-09-05/data/decodingtrust").glob("*"))
