@@ -36,8 +36,6 @@ MAX_HOURLY_USD = 2.0
 SPEND_CEILING_USD = 4.0
 BALANCE_RESERVE_USD = 0.50
 IMAGE = "runpod/pytorch:2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04"
-# remote_native installs torch cu128 wheels; they need CUDA >=12.8 host drivers.
-ALLOWED_CUDA = ["12.8", "12.9", "13.0"]
 WATCHDOG_KEEPALIVE = "/tmp/urap_launcher_keepalive"
 WATCHDOG_STALE_SECONDS = 45 * 60
 
@@ -149,7 +147,7 @@ def launch(resume_from=None):
             "cloudType": "SECURE", "computeType": "GPU", "gpuCount": 1,
             "containerDiskInGb": 60, "volumeInGb": 0,
             "ports": ["22/tcp"], "supportPublicIp": True,
-            "interruptible": False, "allowedCudaVersions": ALLOWED_CUDA,
+            "interruptible": False,
             "env": {"PUBLIC_KEY": public}}
     receipt = {"started_at": study.now(), "provider": "runpod", "pod_name": name,
                "quote": {"gpu": gpu_id, "price_hr": price, "stock": offer["stock"],
