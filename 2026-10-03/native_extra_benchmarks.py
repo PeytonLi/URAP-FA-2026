@@ -43,6 +43,19 @@ class LocalGemmaClient:
             return self.credits()
         if path == "/key":
             return {"data": self.key_metadata()}
+        if path == f"/models/{self._model_id}/endpoints":
+            return {"data": {"endpoints": [{
+                "name": "prime/native-transformers",
+                "tag": "prime/native-transformers",
+                "provider_name": "prime",
+                "quantization": None,
+                "context_length": 131072,
+                "max_prompt_tokens": None,
+                "max_completion_tokens": None,
+                "pricing": {},
+                "supported_parameters": [],
+                "status": 0,
+            }]}}
         raise ValueError(f"Local client does not implement GET {path}")
 
     def _decode_image(self, url):
