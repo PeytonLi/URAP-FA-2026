@@ -36,8 +36,10 @@ MAX_HOURLY_USD = 2.0
 SPEND_CEILING_USD = 4.0
 BALANCE_RESERVE_USD = 0.50
 IMAGE = "runpod/pytorch:2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04"
-# remote_native installs torch cu128 wheels; require CUDA >=12.4 hosts.
-ALLOWED_CUDA = ["12.4", "12.5", "12.6", "12.7", "12.8", "12.9", "13.0", "13.1"]
+# remote_native installs torch cu128 wheels; they need CUDA >=12.8 host drivers.
+ALLOWED_CUDA = ["12.8", "12.9", "13.0"]
+WATCHDOG_KEEPALIVE = "/tmp/urap_launcher_keepalive"
+WATCHDOG_STALE_SECONDS = 45 * 60
 
 
 def runpod_key():
@@ -54,7 +56,9 @@ def api(method, path, body=None, graphql=False, timeout=30):
     req.add_header("Authorization", "Bearer " + runpod_key())
     req.add_header("Content-Type", "application/json")
     with urllib.request.urlopen(req, timeout=timeout) as response:
-        payload = json.loads(response.read())
+        raw_body = response.read()
+        # 204 No Content (e.g. DELETE /pods/{id}) has no body to parse.
+        payload = json.loads(raw_body) if raw_body.strip() else {}
     if graphql and payload.get("errors"):
         raise ValueError("RunPod GraphQL error: " + json.dumps(payload["errors"])[:400])
     return payload
@@ -80,6 +84,8 @@ def gpu_offers():
         if not math.isfinite(price) or price <= 0 or price > MAX_HOURLY_USD:
             continue
         stock = (low.get("stockStatus") or "").lower()
+        if stock in ("none", "unavailable"):
+            continue  # an out-of-stock offer can only fail the create call
         offers.append({"price": price, "stock": stock, "gpu": gpu})
     rank = {"high": 0, "medium": 1, "low": 2}
     offers.sort(key=lambda o: (o["price"], rank.get(o["stock"], 3)))
@@ -124,7 +130,8 @@ def launch(resume_from=None):
         if time.monotonic() >= poll_deadline:
             raise ValueError("No eligible on-demand RunPod GPU offer; no paid resource created")
         time.sleep(60)
-    offer = offers[0]
+    offer_index = 0
+    offer = offers[offer_index]
     price = float(offer["price"])
     gpu_id = offer["gpu"]["id"]
     stamp = study.now().replace(":", "").replace("-", "").replace("+", "_")
@@ -157,10 +164,30 @@ def launch(resume_from=None):
     scp_args = None
     worker_pid = None
     started = time.monotonic()
-    signal.signal(signal.SIGTERM, lambda signum, frame: (_ for _ in ()).throw(
-        SystemExit(f"launcher received signal {signum}")))
+    for sig in (signal.SIGTERM, signal.SIGHUP, signal.SIGQUIT):
+        signal.signal(sig, lambda signum, frame: (_ for _ in ()).throw(
+            SystemExit(f"launcher received signal {signum}")))
     try:
-        raw = api("POST", "/pods", body=body)
+        while True:
+            try:
+                raw = api("POST", "/pods", body=body)
+                break
+            except urllib.error.HTTPError as exc:
+                # Out-of-stock or host-constraint rejections: try the next
+                # eligible offer rather than dying with capacity still around.
+                offer_index += 1
+                if offer_index >= len(offers):
+                    raise
+                offer = offers[offer_index]
+                price = float(offer["price"])
+                gpu_id = offer["gpu"]["id"]
+                body["gpuTypeIds"] = [gpu_id]
+                receipt.update(quote={"gpu": gpu_id, "price_hr": price,
+                                      "stock": offer["stock"], "image": IMAGE},
+                               quoted_hourly_usd=price,
+                               offer_retries=offer_index,
+                               last_offer_error=str(exc)[:200])
+                study.save_json(folder / "launch.json", receipt)
         study.save_json(folder / "pod_created.json", raw)
         owned = raw.get("id")
         if not owned:
@@ -220,15 +247,21 @@ def launch(resume_from=None):
             raise ValueError("Owned remote worker PID missing")
         receipt["remote_worker_pid"] = worker_pid
         study.save_json(folder / "launch.json", receipt)
-        for shutdown_cmd in ("sudo -n shutdown -h +{0}", "shutdown -h +{0}"):
-            try:
-                command([*ssh_args, shutdown_cmd.format(DEAD_MANS_MINUTES)],
-                        capture_output=True, timeout=30)
-                receipt["dead_mans_switch_armed"] = shutdown_cmd.split()[0]
-                break
-            except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
-                continue
-        else:
+        # Dead-man's switch, container-safe: RunPod pods have no systemd, so a
+        # detached watchdog polls a keepalive file the monitor touches; on
+        # staleness it DELETEs its own pod via the injected RUNPOD_API_KEY.
+        watchdog = (
+            "setsid bash -c 'while :; do sleep 60; "
+            "if [ $(( $(date +%s) - $(stat -c %Y " + WATCHDOG_KEEPALIVE +
+            " 2>/dev/null || echo 0) )) -gt " + str(WATCHDOG_STALE_SECONDS) + " ]; then "
+            "curl -s -m 30 -X DELETE https://rest.runpod.io/v1/pods/\"$RUNPOD_POD_ID\" "
+            "-H \"Authorization: Bearer $RUNPOD_API_KEY\" >/dev/null 2>&1; fi; done' "
+            ">/dev/null 2>&1 &")
+        try:
+            command([*ssh_args, "date +%s > " + WATCHDOG_KEEPALIVE + "; " + watchdog],
+                    capture_output=True, timeout=30)
+            receipt["dead_mans_switch_armed"] = "api_watchdog"
+        except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
             receipt["dead_mans_switch_armed"] = False
         last_wallet = 0.0
         last_liveness = 0.0
@@ -240,13 +273,10 @@ def launch(resume_from=None):
             if receipt.get("dead_mans_switch_armed") and \
                     time.monotonic() - last_deadman >= DEAD_MANS_MINUTES * 60 // 4:
                 try:
-                    command([*ssh_args, "sudo -n shutdown -c >/dev/null 2>&1 || "
-                                        "shutdown -c >/dev/null 2>&1 || true; "
-                                        "sudo -n shutdown -h +" + str(DEAD_MANS_MINUTES) + " || "
-                                        "shutdown -h +" + str(DEAD_MANS_MINUTES)],
+                    command([*ssh_args, "date +%s > " + WATCHDOG_KEEPALIVE],
                             capture_output=True, timeout=30)
                 except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
-                    pass
+                    pass  # keepalive only gets staler on failure — watchdog stays armed
                 last_deadman = time.monotonic()
             if time.monotonic() - last_liveness >= 300:
                 try:
