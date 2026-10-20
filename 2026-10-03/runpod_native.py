@@ -167,6 +167,10 @@ def launch(resume_from=None):
     for sig in (signal.SIGTERM, signal.SIGHUP, signal.SIGQUIT):
         signal.signal(sig, lambda signum, frame: (_ for _ in ()).throw(
             SystemExit(f"launcher received signal {signum}")))
+    # RunPod stock flaps minute-to-minute and a listed offer can still reject
+    # the create call ("no instances currently available"). Cycle the whole
+    # offer list, then refresh it and keep retrying until the deadline.
+    provision_deadline = time.monotonic() + 60 * 60
     try:
         while True:
             try:
@@ -177,7 +181,16 @@ def launch(resume_from=None):
                 # eligible offer rather than dying with capacity still around.
                 offer_index += 1
                 if offer_index >= len(offers):
-                    raise
+                    if time.monotonic() >= provision_deadline:
+                        raise
+                    receipt.update(offer_rounds=receipt.get("offer_rounds", 0) + 1,
+                                   last_offer_error=str(exc)[:200])
+                    study.save_json(folder / "launch.json", receipt)
+                    time.sleep(60)
+                    offers = gpu_offers()
+                    if not offers:
+                        continue  # nothing listed this minute; poll again
+                    offer_index = 0
                 offer = offers[offer_index]
                 price = float(offer["price"])
                 gpu_id = offer["gpu"]["id"]
