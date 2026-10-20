@@ -4,19 +4,19 @@
   "benchmark_images_training_allowed": false,
   "cohort_note": "confidence-gated two-pass subset of the frozen pool",
   "dataset_counts": {
-    "fairface": 189,
-    "utkface": 106
+    "fairface": 126,
+    "utkface": 105
   },
   "dataset_id": "image-curation-2026-09-29-v1",
   "manifest_path": "2026-10-20/data/selected_images_gated.csv",
-  "manifest_sha256": "bdb88933d1d5376168f084d107018aaeaea611e2268691507f969a0cc59810ef",
+  "manifest_sha256": "669e84eb192a025bf6eeb8dfe195542c433740e679ce1cc1ef7b4e9e903ba81a",
   "parent_manifest_path": "2026-09-29/data/selected_images.csv",
   "preserve_published_splits": true,
   "primary_benchmark": "2026-09-11/data/iat12/manifest.csv",
   "profile_targets_used": 0,
   "split_counts": {
-    "development": 61,
-    "train": 234
+    "development": 47,
+    "train": 184
   },
   "superseded_pairs": "2026-10-03/data/pairs.csv",
   "target_policy": "Two-pass gated AI approval under recorded authorization; unresolved images carry no targets",

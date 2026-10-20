@@ -6,11 +6,14 @@ from __future__ import annotations
 
 import argparse
 import json
+import random
 from collections import Counter, defaultdict
 from pathlib import Path
 
 import common
 import policy
+
+CAP_SHUFFLE_SEED = 20261020
 
 TARGET_VERSION = "iat-gated-v1"
 
@@ -89,16 +92,25 @@ def export(name: str = "curated_iat_targets",
         records.append(rec)
 
     # Variety cap: no single chosen triple may cover more than cap_share of
-    # the cohort. Deterministic keep: lowest image_ids first. Capped-out
-    # records are reported, not exported — a dominant generic triple is the
-    # October collapse mode.
+    # the EXPORTED cohort (post-demotion). Within each triple, records are
+    # kept in a seeded-random order so demotions are unbiased across
+    # datasets/races — deterministic, not image_id-sorted. Capped-out records
+    # are reported, not exported — a dominant generic triple is the October
+    # collapse mode.
     by_triple = defaultdict(list)
     for r in records:
         by_triple[r["chosen"]].append(r)
+    rng = random.Random(CAP_SHUFFLE_SEED)
+    for group in by_triple.values():
+        rng.shuffle(group)
     cap = max(3, int(cap_share * len(records)))
+    while cap > 1:
+        kept_count = sum(min(len(group), cap) for group in by_triple.values())
+        if kept_count and cap / kept_count <= cap_share:
+            break
+        cap -= 1
     kept, demoted = [], []
     for triple, group in by_triple.items():
-        group.sort(key=lambda r: r["image_id"])
         kept.extend(group[:cap])
         demoted.extend(group[cap:])
     records = kept
@@ -106,6 +118,7 @@ def export(name: str = "curated_iat_targets",
         "records": len(records),
         "demoted_by_variety_cap": [r["image_id"] for r in demoted],
         "cap_share": cap_share,
+        "cap_semantics": "max share of any chosen triple in the exported cohort",
         "cap_per_triple": cap,
         "errors": errors,
         "by_split": dict(Counter(r["split"] for r in records)),

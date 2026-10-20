@@ -209,7 +209,7 @@ def launch(resume_from=None):
         raise ValueError("This authorization uses the personal credit wallet, not an unrelated team")
     # Leave a substantial reserve for asynchronous billing, artifact retrieval,
     # termination delays and a failed local monitor. Never enable credit top-ups.
-    spending_ceiling = min(70.0, wallet.balance_usd - 20.0)
+    spending_ceiling = min(40.0, wallet.balance_usd - 4.0)
     catalog = {gpu: client.get("/availability/gpus", params={"gpu_type": gpu, "gpu_count": 1,
                "page": 1, "page_size": 100}) for gpu in ("H100_80GB", "H200_141GB")}
     checked_at = study.now()
@@ -368,7 +368,7 @@ def launch(resume_from=None):
                     receipt["wallet_latest_usd"] = balance.balance_usd
                     receipt["wallet_checked_at"] = study.now()
                     study.save_json(folder / "launch.json", receipt)
-                    if wallet.balance_usd - balance.balance_usd >= spending_ceiling or balance.balance_usd < 20:
+                    if wallet.balance_usd - balance.balance_usd >= spending_ceiling or balance.balance_usd < 4:
                         raise TimeoutError("Prime credit reserve reached")
                 last_wallet = time.monotonic()
             try:
