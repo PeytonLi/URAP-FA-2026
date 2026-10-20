@@ -339,17 +339,29 @@ def launch(resume_from=None):
         # Dead-man's switch: a pod-side shutdown the monitor keeps postponing.
         # If the launcher dies (SIGKILL, host reboot, VM sleep), the last
         # scheduled shutdown still fires and billing stops on the pod itself.
-        command([*ssh_args, "shutdown -h +" + str(DEAD_MANS_MINUTES)],
-                capture_output=True, timeout=30)
+        # Best-effort: the pod user needs sudo for shutdown; if the switch
+        # can't arm, the monitor remains the billing guard.
+        for shutdown_cmd in ("sudo -n shutdown -h +{0}", "shutdown -h +{0}"):
+            try:
+                command([*ssh_args, shutdown_cmd.format(DEAD_MANS_MINUTES)],
+                        capture_output=True, timeout=30)
+                receipt["dead_mans_switch_armed"] = shutdown_cmd.split()[0]
+                break
+            except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
+                continue
+        else:
+            receipt["dead_mans_switch_armed"] = False
         last_wallet = 0.0
         last_liveness = 0.0
         last_deadman = time.monotonic()
         while True:
             if time.monotonic() >= deadline:
                 raise TimeoutError("Owned pod wall-time/spending guard reached")
-            if time.monotonic() - last_deadman >= DEAD_MANS_MINUTES * 60 // 4:
+            if receipt.get("dead_mans_switch_armed") and time.monotonic() - last_deadman >= DEAD_MANS_MINUTES * 60 // 4:
                 try:
-                    command([*ssh_args, "shutdown -c >/dev/null 2>&1 || true; "
+                    command([*ssh_args, "sudo -n shutdown -c >/dev/null 2>&1 || "
+                                        "shutdown -c >/dev/null 2>&1 || true; "
+                                        "sudo -n shutdown -h +" + str(DEAD_MANS_MINUTES) + " || "
                                         "shutdown -h +" + str(DEAD_MANS_MINUTES)],
                             capture_output=True, timeout=30)
                 except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
