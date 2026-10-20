@@ -69,21 +69,27 @@ class LocalGemmaClient:
         import torch
         from transformers import set_seed
         images = []
-        content = []
-        for part in payload["messages"][-1]["content"]:
-            if part["type"] == "text":
-                content.append({"type": "text", "text": part["text"]})
-            elif part["type"] == "image_url":
-                image = self._decode_image(part["image_url"]["url"])
-                images.append(image)
-                content.append({"type": "image"})
+        messages = []
+        for message in payload["messages"]:
+            parts = message["content"]
+            content = []
+            if isinstance(parts, str):
+                content.append({"type": "text", "text": parts})
             else:
-                raise ValueError(f"Unsupported content part {part['type']}")
-        user = {"role": "user", "content": content}
+                for part in parts:
+                    if part["type"] == "text":
+                        content.append({"type": "text", "text": part["text"]})
+                    elif part["type"] == "image_url":
+                        image = self._decode_image(part["image_url"]["url"])
+                        images.append(image)
+                        content.append({"type": "image"})
+                    else:
+                        raise ValueError(f"Unsupported content part {part['type']}")
+            messages.append({"role": message["role"], "content": content})
         options = {"tokenize": True, "return_dict": True, "return_tensors": "pt",
                    "add_generation_prompt": True}
         inputs = self._processor.apply_chat_template(
-            [user], images=images or None, **options)
+            messages, images=images or None, **options)
         inputs = {k: v.to(self._model.device, dtype=self._model.dtype if v.is_floating_point() else v.dtype)
                   for k, v in inputs.items()}
         set_seed(int(payload.get("seed") or 0))
