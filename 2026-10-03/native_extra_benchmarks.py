@@ -28,7 +28,7 @@ class LocalGemmaClient:
         self._revision = revision
 
     def credits(self):
-        return {"remaining": 1e9, "used": 0.0}
+        return {"remaining": 1e9, "used": 0.0, "total_usage": 0.0}
 
     def key_metadata(self):
         return {"label": "native-local", "limit": None}
