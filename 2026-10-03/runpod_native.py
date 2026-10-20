@@ -53,6 +53,8 @@ def api(method, path, body=None, graphql=False, timeout=30):
     req = urllib.request.Request(url, data=data, method=method)
     req.add_header("Authorization", "Bearer " + runpod_key())
     req.add_header("Content-Type", "application/json")
+    # rest.runpod.io's edge 403s the default Python-urllib user-agent (curl works).
+    req.add_header("User-Agent", "curl/8.5.0")
     with urllib.request.urlopen(req, timeout=timeout) as response:
         raw_body = response.read()
         # 204 No Content (e.g. DELETE /pods/{id}) has no body to parse.
