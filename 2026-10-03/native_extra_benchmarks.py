@@ -178,7 +178,8 @@ def run_visbias(client, spec, out_dir, seed):
                                       base_seed=seed, max_description_tokens=256,
                                       max_comparison_tokens=8, max_workers=1,
                                       minimum_request_interval_seconds=0.0, max_run_cost_usd=1e9,
-                                      minimum_account_balance_usd=0.0, provider={})
+                                      minimum_account_balance_usd=0.0, bootstrap_samples=2_000,
+                                      provider={})
     runner = visbias.VisBiasRunner(client, f"visbias-{spec.key}", config, [spec], tasks, out_dir.parent)
     return runner.run()
 
