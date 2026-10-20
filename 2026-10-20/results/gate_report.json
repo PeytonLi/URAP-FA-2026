@@ -1,0 +1,352 @@
+{
+  "counts": {
+    "adjudication": 303,
+    "labelable": 1920,
+    "missing": 1,
+    "resolved": 179,
+    "unresolved": 1437
+  },
+  "matched_blocks": {
+    "divergent_chosen_blocks": 21,
+    "examples": {
+      "fairface_0fd8a4f02c55": [
+        [
+          "fa_adaa5c0884354cfd4016",
+          "Happy, Joyful, Smiling",
+          "Black"
+        ],
+        [
+          "fa_ddf28d6091b5363f3bdf",
+          "Happy, Joyful, Smiling",
+          "Black"
+        ],
+        [
+          "fa_047c9f978fdebaeb93df",
+          "Cheerful, Happy, Smiling",
+          "Latino_Hispanic"
+        ],
+        [
+          "fa_0c9371559bc7492b9e61",
+          "Happy, Joyful, Smiling",
+          "Southeast Asian"
+        ],
+        [
+          "fa_ec56bbb285374e5340ba",
+          "Happy, Joyful, Smiling",
+          "White"
+        ],
+        [
+          "fa_c80a71a267ad06e24e98",
+          "Happy, Joyful, Smiling",
+          "White"
+        ]
+      ],
+      "fairface_117292244d5b": [
+        [
+          "fa_7a3fbecddc7fb3c97e67",
+          "Glad, Pleasing, Smiling",
+          "East Asian"
+        ],
+        [
+          "fa_0ffe339f778fad427df0",
+          "Happy, Joyful, Smiling",
+          "East Asian"
+        ]
+      ],
+      "fairface_6a5284558e02": [
+        [
+          "fa_a2cdd204406e3264d0aa",
+          "Happy, Joyful, Smiling",
+          "Southeast Asian"
+        ],
+        [
+          "fa_8e085d9512fb2fe97852",
+          "Cheerful, Happy, Smiling",
+          "White"
+        ]
+      ],
+      "fairface_8c6c7d80ae4c": [
+        [
+          "fa_7984f073ea3edf31c969",
+          "Happy, Joyful, Smiling",
+          "East Asian"
+        ],
+        [
+          "fa_e9438a8b8b5eea528639",
+          "Happy, Joyful, Smiling",
+          "Indian"
+        ],
+        [
+          "fa_2dbe5176e072d0168b98",
+          "Cheerful, Happy, Smiling",
+          "Latino_Hispanic"
+        ]
+      ],
+      "fairface_988b37cbbc19": [
+        [
+          "fa_e7a9f7bc9ff073a8b121",
+          "Grief, Pain, Sadness",
+          "Middle Eastern"
+        ],
+        [
+          "fa_939dbe4fc2d1be8fb168",
+          "Angry, Annoy, Bothersome",
+          "Middle Eastern"
+        ]
+      ],
+      "utkface_07d26adcba04": [
+        [
+          "ut_51a1f916e8b753204b4f",
+          "Happy, Joyful, Smiling",
+          "Black"
+        ],
+        [
+          "ut_a8aecac9bcd55f7a9452",
+          "Cheerful, Happy, Smiling",
+          "Black"
+        ]
+      ],
+      "utkface_117292244d5b": [
+        [
+          "ut_c01f9e2e7bc1f28128bd",
+          "Happy, Joyful, Smiling",
+          "Asian"
+        ],
+        [
+          "ut_e8fd16a7b12eeb557be3",
+          "Happy, Joyful, Smiling",
+          "Other"
+        ],
+        [
+          "ut_5e91c9cc8f226624695a",
+          "Cheerful, Happy, Smiling",
+          "Other"
+        ]
+      ],
+      "utkface_1c409301c871": [
+        [
+          "ut_81d5e19e244b56107d50",
+          "Happy, Joyful, Smiling",
+          "Asian"
+        ],
+        [
+          "ut_915071a4641565c0876c",
+          "Cheerful, Happy, Smiling",
+          "Indian"
+        ]
+      ],
+      "utkface_3f08c1226d1f": [
+        [
+          "ut_83171f33a4b25a8a800b",
+          "Angry, Annoy, Negative",
+          "Asian"
+        ],
+        [
+          "ut_e33d7854a8672e9ece52",
+          "Angry, Annoy, Bothersome",
+          "Black"
+        ]
+      ],
+      "utkface_65da22752016": [
+        [
+          "ut_6650d715073ba471d3bf",
+          "Happy, Joyful, Smiling",
+          "Black"
+        ],
+        [
+          "ut_19c37fee855ba071a14b",
+          "Cheerful, Happy, Smiling",
+          "White"
+        ]
+      ],
+      "utkface_6d4750f5e543": [
+        [
+          "ut_835e94f6f55cc52e7256",
+          "Happy, Joyful, Smiling",
+          "Other"
+        ],
+        [
+          "ut_7abb47335141b5e8f82a",
+          "Cheerful, Happy, Smiling",
+          "White"
+        ]
+      ],
+      "utkface_75c6ecd83bed": [
+        [
+          "ut_e0acb1762ace380afe7e",
+          "Happy, Joyful, Smiling",
+          "Black"
+        ],
+        [
+          "ut_8d24a0932058b84ac3fe",
+          "Cheerful, Happy, Smiling",
+          "Indian"
+        ]
+      ],
+      "utkface_80ae1d57fb91": [
+        [
+          "ut_89220450a56c220dae44",
+          "Happy, Joyful, Smiling",
+          "Black"
+        ],
+        [
+          "ut_8f9072abefad75a7f5fb",
+          "Happy, Joyful, Smiling",
+          "Other"
+        ],
+        [
+          "ut_bfaacef2a293d801f91f",
+          "Cheerful, Happy, Smiling",
+          "White"
+        ]
+      ],
+      "utkface_8b4303f0aec3": [
+        [
+          "ut_cb21248209735aaba27f",
+          "Happy, Joyful, Smiling",
+          "Other"
+        ],
+        [
+          "ut_c2ded1f20d9b144f3444",
+          "Cheerful, Happy, Smiling",
+          "White"
+        ]
+      ],
+      "utkface_8c6c7d80ae4c": [
+        [
+          "ut_ae44b202b772d3cd1edd",
+          "Happy, Joyful, Smiling",
+          "Black"
+        ],
+        [
+          "ut_089fb7b078e0a05469e4",
+          "Happy, Joyful, Smiling",
+          "Other"
+        ],
+        [
+          "ut_3e5d0bd10078c8d01f03",
+          "Cheerful, Happy, Smiling",
+          "White"
+        ]
+      ],
+      "utkface_9f835ea4abb9": [
+        [
+          "ut_e0a86b7d036313ee0167",
+          "Happy, Joyful, Smiling",
+          "Other"
+        ],
+        [
+          "ut_2ca91a497c7b1059786c",
+          "Cheerful, Happy, Smiling",
+          "White"
+        ]
+      ],
+      "utkface_b2e230997e33": [
+        [
+          "ut_c2be45c50ee69950668e",
+          "Happy, Joyful, Smiling",
+          "Black"
+        ],
+        [
+          "ut_ad77993acd3dcf0fb540",
+          "Cheerful, Happy, Smiling",
+          "Other"
+        ]
+      ],
+      "utkface_b6a73a8e8689": [
+        [
+          "ut_7783d16518f4c6619a61",
+          "Happy, Joyful, Smiling",
+          "Asian"
+        ],
+        [
+          "ut_6391e4f634d4a8ad05ba",
+          "Happy, Joyful, Smiling",
+          "Black"
+        ],
+        [
+          "ut_286fa51e0723c1a2f98c",
+          "Happy, Joyful, Smiling",
+          "Indian"
+        ],
+        [
+          "ut_87148370cfe783b96193",
+          "Cheerful, Happy, Smiling",
+          "Other"
+        ]
+      ],
+      "utkface_e234a3e13f77": [
+        [
+          "ut_f6278758a8e5772af631",
+          "Happy, Joyful, Smiling",
+          "Black"
+        ],
+        [
+          "ut_661f2ad801a05a93bd82",
+          "Cheerful, Happy, Smiling",
+          "Indian"
+        ]
+      ],
+      "utkface_fad52e7cf240": [
+        [
+          "ut_80ec4d273a4563dac12a",
+          "Happy, Joyful, Smiling",
+          "Black"
+        ],
+        [
+          "ut_df49aa0b104669085717",
+          "Cheerful, Happy, Smiling",
+          "Other"
+        ],
+        [
+          "ut_a7698bec49d5878c83e1",
+          "Happy, Joyful, Smiling",
+          "Other"
+        ]
+      ]
+    },
+    "with_multiple_resolved": 55
+  },
+  "rate_by_race": {
+    "Asian": 0.0938,
+    "Black": 0.1406,
+    "East Asian": 0.075,
+    "Indian": 0.0469,
+    "Latino_Hispanic": 0.075,
+    "Middle Eastern": 0.1062,
+    "Other": 0.1812,
+    "Southeast Asian": 0.0625,
+    "White": 0.075
+  },
+  "resolved_by_dataset": {
+    "fairface": 81,
+    "utkface": 98
+  },
+  "resolved_by_expression_class": {
+    "negative": 18,
+    "neutral": 5,
+    "positive": 150,
+    "uncertain": 6
+  },
+  "resolved_by_race": {
+    "Asian": 15,
+    "Black": 45,
+    "East Asian": 12,
+    "Indian": 15,
+    "Latino_Hispanic": 12,
+    "Middle Eastern": 17,
+    "Other": 29,
+    "Southeast Asian": 10,
+    "White": 24
+  },
+  "resolved_by_split": {
+    "development": 36,
+    "train": 143
+  },
+  "unresolved_reasons": {
+    "blocking_flag": 1196,
+    "chosen_disagreement": 87,
+    "expression_disagreement": 11,
+    "low_confidence": 143
+  }
+}
