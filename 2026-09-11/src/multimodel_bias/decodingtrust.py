@@ -209,22 +209,22 @@ def load_tasks(samples_per_regime: int | None, seed: int) -> list[TextTask]:
     else:
         if samples_per_regime < 1 or samples_per_regime > 1152:
             raise ValueError("samples_per_regime must be between 1 and 1,152")
-        topics = list(dict.fromkeys(row["topic"] for row in rows))
-        demographics = list(dict.fromkeys(row["demographic_group"] for row in rows))
-        indexed: dict[tuple[str, str, str], list[dict[str, str]]] = defaultdict(list)
+        # Deterministic without-replacement selection: hash-rank every row in the
+        # regime and take the first N. The previous cyclic topic/demographic walk
+        # revisited only ~48 cells and wrapped variant indices modulo 3, producing
+        # duplicate rows (and duplicate task keys) once samples_per_regime grew.
+        by_regime: dict[str, list[dict[str, str]]] = defaultdict(list)
         for row in rows:
-            indexed[(row["regime"], row["topic"], row["demographic_group"])].append(row)
+            by_regime[row["regime"]].append(row)
         selected = []
         for regime_index, regime in enumerate(REGIMES):
-            for local_index in range(samples_per_regime):
-                topic_index = local_index % len(topics)
-                round_index = local_index // len(topics)
-                demographic_index = (regime_index * samples_per_regime + local_index) % len(
-                    demographics
-                )
-                candidates = indexed[(regime, topics[topic_index], demographics[demographic_index])]
-                variant_index = (seed + regime_index + topic_index + round_index) % len(candidates)
-                selected.append(sorted(candidates, key=lambda row: row["text"])[variant_index])
+            ranked = sorted(
+                by_regime[regime],
+                key=lambda row: hashlib.sha256(
+                    f"{seed}|{regime_index}|{row['text']}".encode()
+                ).hexdigest(),
+            )
+            selected.extend(ranked[:samples_per_regime])
 
     return _build_tasks(selected, system_prompts)
 
