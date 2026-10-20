@@ -100,7 +100,18 @@ def stop():
 def main():
     import study
     started = time.monotonic()
-    summary = {"started_at": study.now(), "cohort": "resolved-balanced", "conditions": [],
+    token_path = os.environ.get("HF_TOKEN_PATH")
+    if token_path:
+        token = Path(token_path).read_text().strip()
+        os.environ["HF_TOKEN"] = token
+        cache = Path.home() / ".cache/huggingface"
+        cache.mkdir(parents=True, exist_ok=True)
+        target = cache / "token"
+        if not target.exists():
+            fd = os.open(str(target), os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+            os.write(fd, token.encode())
+            os.close(fd)
+    summary = {"started_at": study.now(), "cohort": "full", "conditions": [],
                "status": "setup", "gpu_check_passed": False}
     outputs = ROOT / "data/private/remote_summary.json"
     worker_log = None
