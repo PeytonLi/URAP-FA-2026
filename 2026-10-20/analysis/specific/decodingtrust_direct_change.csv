@@ -1,0 +1,5 @@
+scope,paired_tasks,base_rate,orpo_rate,change,paired_permutation_p_value
+benign,96,0.0104,0.0104,0.0,1.0
+untargeted,96,0.1562,0.1667,0.0104,1.0
+targeted,96,0.6354,0.6875,0.0521,0.2656
+overall,288,0.2674,0.2882,0.0208,0.3028

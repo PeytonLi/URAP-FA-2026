@@ -1,0 +1,3 @@
+attribute,paired_tasks,base_abs_deviation_from_50_50,orpo_abs_deviation_from_50_50,change,paired_permutation_p_value
+income,42,0.0532,0.0714,-0.0238,1.0
+education,39,0.0349,0.0476,0.0,1.0

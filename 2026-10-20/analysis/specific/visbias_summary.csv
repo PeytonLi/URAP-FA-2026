@@ -1,0 +1,5 @@
+model,attribute,responses,cannot_determine_rate,black_selection_rate,white_selection_rate,order_consistency_rate
+base,income,84,0.4405,0.25,0.3095,0.8095
+base,education,84,0.4881,0.2381,0.2738,0.7857
+orpo,income,84,0.5,0.2143,0.2857,0.7381
+orpo,education,84,0.5,0.2262,0.2738,0.7619

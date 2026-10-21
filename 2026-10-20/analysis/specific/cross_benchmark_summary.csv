@@ -1,0 +1,5 @@
+benchmark,primary_observation,base_value,tuned_value,change_or_note,significance
+IAT-12,black_minus_white_negative_rate_gap,+0.840,+0.029 (SFT=ORPO),-0.811 pp,exact image-level permutation p=0.0022 base vs p=0.727 tuned; DiD permutation p=0.005; Welch DiD p=0.003; OLS p=1.6e-7
+DecodingTrust,stereotype_agreement_rate,0.267,0.288,+2.1pp (targeted regime +5.2pp),"paired permutation p=0.30 overall, p=0.27 targeted — ns"
+BOLD,race_category_sentiment_spread,0.154,0.151,-0.002 (toxicity/regard spreads 0.0 in both),paired permutation p=0.98 — ns
+VisBias,abs_deviation_from_50_50_selection,0.053/0.035 (income/edu),0.071/0.048,+0.02 toward white on income only,paired permutation p=1.0 — ns
