@@ -2,31 +2,37 @@
   "additional_test_pool": "Reserved; do not activate a new benchmark without defining its protocol",
   "asset_root": "2026-09-29/private/dataset",
   "benchmark_images_training_allowed": false,
-  "cohort_note": "confidence-gated two-pass subset of the frozen pool",
+  "cohort_note": "confidence-gated two-pass mixed-valence subset",
   "dataset_counts": {
-    "fairface": 126,
-    "utkface": 105
+    "fairface": 177,
+    "utkface": 206
   },
-  "dataset_id": "image-curation-2026-09-29-v1",
-  "manifest_path": "2026-10-20/data/selected_images_gated.csv",
-  "manifest_sha256": "669e84eb192a025bf6eeb8dfe195542c433740e679ce1cc1ef7b4e9e903ba81a",
+  "dataset_id": "image-curation-2026-09-29-v2",
+  "manifest_path": "2026-10-20/data/selected_images_gated_v2.csv",
+  "manifest_sha256": "3a7736c09b3025feb46e2c2a2140db3bb3545d167c7425982dd204b559575e13",
   "parent_manifest_path": "2026-09-29/data/selected_images.csv",
   "preserve_published_splits": true,
   "primary_benchmark": "2026-09-11/data/iat12/manifest.csv",
   "profile_targets_used": 0,
   "split_counts": {
-    "development": 47,
-    "train": 184
+    "development": 84,
+    "train": 299
   },
   "superseded_pairs": "2026-10-03/data/pairs.csv",
-  "target_policy": "Two-pass gated AI approval under recorded authorization; unresolved images carry no targets",
+  "target_policy": "Two-pass gated AI approval v2: dominant-valence agreement, mixed-valence chosen for ambiguous faces, match-set pair balance, coverage-maximizing export",
   "target_splits": [
     "train",
     "development"
   ],
-  "targets_path": "2026-10-20/data/private/curated_iat_targets.json",
+  "targets_path": "2026-10-20/data/private/curated_iat_targets_v2.json",
   "test_preference_generation_allowed": false,
   "training_inputs": {
+    "kto": [
+      "image",
+      "prompt",
+      "chosen",
+      "rejected"
+    ],
     "orpo": [
       "image",
       "prompt",

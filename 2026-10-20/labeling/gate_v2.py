@@ -71,12 +71,14 @@ def gate_row(row: dict, a: dict | None, b: dict | None) -> tuple[str, dict]:
         info["reason"] = "expression_disagreement"
         return "unresolved", info
     ca, cb = gate.word_set(a["chosen"]), gate.word_set(b["chosen"])
-    # Dominant-valence agreement between passes (the debiasing anchor):
-    # both chosen triples must lean the same direction (or tie).
+    # Dominant-valence disagreement: the teachers split on which pole the face
+    # supports. These are exactly the ambiguous faces whose honest label is a
+    # mixed triple — route them to disagreement adjudication rather than
+    # dropping them, or every pure-pole trio survives and nothing mixed exists.
     sa, sb = policy_v2.valence_sign(ca), policy_v2.valence_sign(cb)
     if sa != sb:
         info["reason"] = "valence_disagreement"
-        return "unresolved", info
+        return "disagreement", info
     if min(a["subjective_confidence"], b["subjective_confidence"]) < MIN_CONFIDENCE:
         info["reason"] = "low_confidence"
         return "unresolved", info
@@ -100,18 +102,21 @@ def gate_row(row: dict, a: dict | None, b: dict | None) -> tuple[str, dict]:
     if len(ca & cb) == 2:
         info["reason"] = "chosen_overlap_2of3"
         return ADJC_SENTINEL, info
+    # Same dominant valence but disjoint or 1-word-overlap triples: honest
+    # disagreement over word choice — adjudicate, do not drop.
     info["reason"] = "chosen_disagreement"
-    return "unresolved", info
+    return "disagreement", info
 
 
 def run() -> dict:
     rows = common.labelable_rows()
     a_map, b_map = load_pass("A"), load_pass("B")
-    resolved, adjudication, unresolved, missing = [], [], [], []
+    resolved, adjudication, disagreement, unresolved, missing = [], [], [], [], []
     for row in rows:
         status, info = gate_row(row, a_map.get(row["image_id"]),
                                 b_map.get(row["image_id"]))
         {"resolved": resolved, "adjudication": adjudication,
+         "disagreement": disagreement,
          "unresolved": unresolved, "missing": missing}[status].append(info)
 
     by = lambda items, k: dict(Counter(i[k] for i in items))
@@ -124,9 +129,11 @@ def run() -> dict:
         "policy": policy_v2.POLICY_ID,
         "counts": {"labelable": len(rows), "resolved": len(resolved),
                    "adjudication": len(adjudication),
+                   "disagreement_adjudication": len(disagreement),
                    "unresolved": len(unresolved), "missing": len(missing)},
         "unresolved_reasons": dict(Counter(i["reason"] for i in unresolved)),
         "adjudication_reasons": dict(Counter(i["reason"] for i in adjudication)),
+        "disagreement_reasons": dict(Counter(i["reason"] for i in disagreement)),
         "resolved_by_split": by(resolved, "split"),
         "resolved_by_dataset": by(resolved, "dataset"),
         "resolved_by_race": by(resolved, "source_race"),
@@ -157,6 +164,9 @@ def run() -> dict:
             fh.write(json.dumps(i, sort_keys=True) + "\n")
     with (common.PRIVATE / "adjudication_queue_v2.jsonl").open("w") as fh:
         for i in adjudication:
+            fh.write(json.dumps(i, sort_keys=True) + "\n")
+    with (common.PRIVATE / "adjudication_queue_v2_disagreement.jsonl").open("w") as fh:
+        for i in disagreement:
             fh.write(json.dumps(i, sort_keys=True) + "\n")
     common.write_json(common.PRIVATE / "gate_report_v2.json", report)
     print(json.dumps(report["counts"], indent=2))

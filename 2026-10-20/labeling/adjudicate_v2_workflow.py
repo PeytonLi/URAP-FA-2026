@@ -35,7 +35,7 @@ FORBIDDEN_CHOSEN = {"Sick", "Poison", "Evil", "Selfish", "Abuse", "Failure",
                     "Dirty", "Rotten", "Hatred", "Hate", "Humiliate"}
 WORD_SET = {w.strip() for w in IAT_WORDS.split(",")}
 
-N_AGENTS = 6
+N_AGENTS = 8
 
 
 def manifest_paths():

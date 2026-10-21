@@ -151,14 +151,23 @@ class GateV2Tests(unittest.TestCase):
         self.assertEqual(status, "adjudication")
         self.assertEqual(info["reason"], "pure_pole_on_ambiguous")
 
-    def test_valence_disagreement_unresolved(self):
+    def test_valence_disagreement_goes_to_disagreement_adjudication(self):
         a = self.rec2(["Angry", "Annoy", "Glad"], ["Happy", "Joyful", "Lovely"],
                       "neutral")
         b = self.rec2(["Happy", "Joyful", "Glad"], ["Angry", "Annoy", "Awful"],
                       "uncertain", tag="B")
         status, info = gate_v2.gate_row(ROW, a, b)
-        self.assertEqual(status, "unresolved")
+        self.assertEqual(status, "disagreement")
         self.assertEqual(info["reason"], "valence_disagreement")
+
+    def test_chosen_disagreement_goes_to_disagreement_adjudication(self):
+        a = self.rec2(["Angry", "Annoy", "Awful"], ["Happy", "Joyful", "Glad"],
+                      "negative")
+        b = self.rec2(["Sadness", "Pain", "Grief"], ["Happy", "Joyful", "Glad"],
+                      "negative", tag="B")
+        status, info = gate_v2.gate_row(ROW, a, b)
+        self.assertEqual(status, "disagreement")
+        self.assertEqual(info["reason"], "chosen_disagreement")
 
     def test_expression_contradiction_unresolved(self):
         a = self.rec2(["Angry", "Annoy", "Awful"], ["Happy", "Joyful", "Glad"],

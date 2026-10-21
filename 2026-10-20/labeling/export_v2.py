@@ -41,13 +41,15 @@ def load_resolved_v2() -> list[dict]:
         for line in path.open():
             if line.strip():
                 out.append(json.loads(line))
-    adj = common.PRIVATE / "adjudication_decisions_v2.jsonl"
-    if adj.exists():
-        for line in adj.open():
-            if line.strip():
-                rec = json.loads(line)
-                if rec.get("decision") == "approved":
-                    out.append(rec)
+    for name in ("adjudication_decisions_v2.jsonl",
+                 "adjudication_decisions_v2b.jsonl"):
+        adj = common.PRIVATE / name
+        if adj.exists():
+            for line in adj.open():
+                if line.strip():
+                    rec = json.loads(line)
+                    if rec.get("decision") == "approved":
+                        out.append(rec)
     return out
 
 
