@@ -24,13 +24,13 @@ from decimal import Decimal
 from pathlib import Path
 
 import common
-import policy
+import policy as default_policy
 
 MAX_OUTPUT_TOKENS = 700
 REQUEST_RESERVATION_USD = Decimal("0.02")
 
 
-def teacher_payload(image_path: Path, model: str) -> dict:
+def teacher_payload(image_path: Path, model: str, pol) -> dict:
     data_url = ("data:image/png;base64,"
                 + base64.b64encode(image_path.read_bytes()).decode("ascii"))
     body = {
@@ -38,9 +38,9 @@ def teacher_payload(image_path: Path, model: str) -> dict:
         "stream": False,
         "response_format": {"type": "json_schema", "json_schema": {
             "name": "iat_preference_draft", "strict": True,
-            "schema": policy.RESPONSE_SCHEMA}},
+            "schema": pol.RESPONSE_SCHEMA}},
         "messages": [
-            {"role": "system", "content": policy.POLICY},
+            {"role": "system", "content": pol.POLICY},
             {"role": "user", "content": [
                 {"type": "image_url", "image_url": {"url": data_url}},
                 {"type": "text",
@@ -87,7 +87,10 @@ def call_teacher(payload: dict, model: str, base_url: str, key: str,
 
 
 def run_pass(pass_tag: str, limit: int | None = None,
-             workers: int = 8) -> dict:
+             workers: int = 8, policy_module: str = "policy",
+             store_name: str | None = None) -> dict:
+    import importlib
+    pol = importlib.import_module(policy_module)
     key = os.environ.get("URAP_TEACHER_API_KEY", "")
     model = os.environ.get("URAP_TEACHER_MODEL", "gpt-5-mini")
     base_url = os.environ.get("URAP_TEACHER_BASE_URL",
@@ -96,7 +99,8 @@ def run_pass(pass_tag: str, limit: int | None = None,
         raise SystemExit("URAP_TEACHER_API_KEY not set")
     rows = common.labelable_rows()
     store = common.JsonlStore(
-        common.PRIVATE / f"drafts_{pass_tag}.jsonl", key="image_id")
+        common.PRIVATE / (store_name or f"drafts_{pass_tag}.jsonl"),
+        key="image_id")
     todo = [r for r in rows if r["image_id"] not in store]
     if limit:
         todo = todo[:limit]
@@ -105,7 +109,7 @@ def run_pass(pass_tag: str, limit: int | None = None,
 
     def work(row):
         value, receipt = call_teacher(
-            teacher_payload(common.image_file(row), model),
+            teacher_payload(common.image_file(row), model, pol),
             model, base_url, key)
         return row, value, receipt
 
@@ -116,7 +120,7 @@ def run_pass(pass_tag: str, limit: int | None = None,
             results["attempted"] += 1
             try:
                 row, value, receipt = fut.result()
-                rec = policy.draft_record(
+                rec = pol.draft_record(
                     row, value, pass_tag, f"{base_url}|{model}", receipt)
                 store.append(rec)
                 results["drafted"] += 1
@@ -130,9 +134,9 @@ def run_pass(pass_tag: str, limit: int | None = None,
                 print(f"{pass_tag}: {results['attempted']}/{len(todo)} "
                       f"drafted={results['drafted']} "
                       f"failed={len(results['failed'])}", flush=True)
-    common.write_json(common.PRIVATE / f"run_{pass_tag}_summary.json",
+    common.write_json(common.PRIVATE / f"run_{store.path.stem}_{pass_tag}_summary.json",
                       {"pass_tag": pass_tag, "model": model,
-                       "base_url": base_url,
+                       "base_url": base_url, "policy": pol.POLICY_ID,
                        "todo": len(todo), **{k: (len(v) if isinstance(v, list)
                                                 else v)
                                             for k, v in results.items()}})
@@ -146,8 +150,13 @@ def main():
     ap.add_argument("--pass-tag", required=True, choices=["A", "B"])
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--workers", type=int, default=8)
+    ap.add_argument("--policy-module", default="policy",
+                    help="python module supplying POLICY/SCHEMA/draft_record")
+    ap.add_argument("--store-name", default=None,
+                    help="override drafts file name (e.g. drafts_v2_A.jsonl)")
     args = ap.parse_args()
-    run_pass(args.pass_tag, args.limit, args.workers)
+    run_pass(args.pass_tag, args.limit, args.workers,
+             args.policy_module, args.store_name)
 
 
 if __name__ == "__main__":

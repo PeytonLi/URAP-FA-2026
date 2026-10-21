@@ -85,8 +85,8 @@ def batch_update(model, optimizer, examples, method, coefficient=0.1, example_we
     """Stream microbatches; fixed dataset weights, not batch-normalized weights."""
     import torch
 
-    if method not in ("sft", "orpo") or not examples:
-        raise ValueError("A nonempty SFT or ORPO batch is required")
+    if method not in ("sft", "orpo", "kto") or not examples:
+        raise ValueError("A nonempty SFT, ORPO or KTO batch is required")
     weights = [1.0] * len(examples) if example_weights is None else example_weights
     if len(weights) != len(examples) or any(
             isinstance(w, bool) or not isinstance(w, (int, float)) or not math.isfinite(w) or w <= 0 for w in weights):
@@ -97,15 +97,22 @@ def batch_update(model, optimizer, examples, method, coefficient=0.1, example_we
     weighted_loss = 0.0
     for (chosen, rejected), weight in zip(examples, weights):
         scores = [response_logprobs(model, chosen)]
-        if method == "orpo":
+        if method in ("orpo", "kto"):
             if rejected is None:
-                raise ValueError("ORPO requires the image-conditioned rejected branch")
+                raise ValueError("Preference methods require the image-conditioned rejected branch")
             if not torch.equal(chosen["pixel_values"], rejected["pixel_values"]):
                 raise ValueError("Both preference branches must use the same image")
             scores.append(response_logprobs(model, rejected))
+        reference = None
+        if method == "kto":
+            # Frozen-base (adapter-disabled) forward on identical inputs; no gradients.
+            with torch.no_grad(), model.disable_adapter():
+                reference = [response_logprobs(model, chosen),
+                             response_logprobs(model, rejected)]
         masks = [torch.ones_like(score) for score in scores]
         loss, values = (objectives.sft_loss(masks, scores) if method == "sft" else
-                        objectives.orpo_loss(masks, scores, coefficient=coefficient))
+                        objectives.orpo_loss(masks, scores, coefficient=coefficient) if method == "orpo" else
+                        objectives.kto_loss(masks, scores, reference, beta=coefficient))
         (loss * weight / len(examples)).backward()
         weighted_loss += float(loss.detach()) * weight / len(examples)
         metrics.append(values)
@@ -151,7 +158,7 @@ def encode_row(processor, model_name, row, asset_root, method):
             return g3_inputs(processor, image, row[branch])[0]
         return checked_inputs(processor, image, row[branch],
                               enable_thinking=MODELS[model_name]["enable_thinking"])[0]
-    return render("chosen"), render("rejected") if method == "orpo" else None
+    return render("chosen"), render("rejected") if method in ("orpo", "kto") else None
 
 
 def approved_cohort(cohort="full"):
@@ -233,7 +240,9 @@ def train(model_name, method, max_seconds, cohort="full"):
                "max_seconds": max_seconds, "runtime_ceiling_is_not_provider_billing_control": True,
                "optimizer": "AdamW", "learning_rate": 1e-5, "weight_decay": 0,
                "orpo_coefficient": 0.1 if method == "orpo" else None,
-               "loss_reduction": objectives.SFT_REDUCTION if method == "sft" else objectives.ORPO_REDUCTION,
+               "kto_beta": 0.1 if method == "kto" else None,
+               "loss_reduction": objectives.SFT_REDUCTION if method == "sft" else (
+                   objectives.ORPO_REDUCTION if method == "orpo" else objectives.KTO_REDUCTION),
                "versions": {name: version(name) for name in ("torch", "transformers", "peft", "accelerate")},
                "gpu": torch.cuda.get_device_name(0), "adapter": adapter, "image_control": control,
                "history": [], "development": [], "checkpoints": [], "matched_base_benchmark_required": True,
@@ -309,7 +318,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("check-data", "train"))
     parser.add_argument("--model", choices=MODELS)
-    parser.add_argument("--method", choices=("sft", "orpo"))
+    parser.add_argument("--method", choices=("sft", "orpo", "kto"))
     parser.add_argument("--max-seconds", type=float)
     parser.add_argument("--cohort", choices=("full", "resolved-balanced"), default="full")
     args = parser.parse_args()

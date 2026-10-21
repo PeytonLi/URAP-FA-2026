@@ -12,7 +12,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]
 
 import common  # noqa: E402
 import gate  # noqa: E402
+import gate_v2  # noqa: E402
 import policy  # noqa: E402
+import policy_v2  # noqa: E402
 
 
 def draft(chosen, rejected, expression="negative", conf=0.9, flags=()):
@@ -114,6 +116,63 @@ class GateTests(unittest.TestCase):
     def test_missing_pass(self):
         status, _ = gate.gate_row(ROW, None, None)
         self.assertEqual(status, "missing")
+
+
+class GateV2Tests(unittest.TestCase):
+    def rec2(self, chosen, rejected, expression, conf=0.9, tag="A"):
+        return policy_v2.draft_record(
+            ROW, draft(chosen, rejected, expression=expression, conf=conf),
+            tag, "test-teacher")
+
+    def test_mixed_triple_resolves_on_ambiguous(self):
+        # neutral face + mixed chosen is the v2 happy path (v1 blocked this)
+        a = self.rec2(["Angry", "Annoy", "Glad"], ["Happy", "Joyful", "Lovely"],
+                      "neutral")
+        b = self.rec2(["Glad", "Annoy", "Angry"], ["Happy", "Joyful", "Lovely"],
+                      "uncertain", tag="B")
+        status, info = gate_v2.gate_row(ROW, a, b)
+        self.assertEqual(status, "resolved")
+        self.assertEqual(policy_v2.valence_sign(gate.word_set(info["chosen"])), -1)
+
+    def test_pure_pole_resolves_on_clear_expression(self):
+        a = self.rec2(["Angry", "Annoy", "Awful"], ["Happy", "Joyful", "Glad"],
+                      "negative")
+        b = self.rec2(["Awful", "Angry", "Annoy"], ["Glad", "Happy", "Joyful"],
+                      "negative", tag="B")
+        status, _ = gate_v2.gate_row(ROW, a, b)
+        self.assertEqual(status, "resolved")
+
+    def test_pure_pole_on_ambiguous_goes_to_adjudication(self):
+        a = self.rec2(["Angry", "Annoy", "Awful"], ["Happy", "Joyful", "Glad"],
+                      "neutral")
+        b = self.rec2(["Angry", "Annoy", "Awful"], ["Happy", "Joyful", "Glad"],
+                      "uncertain", tag="B")
+        status, info = gate_v2.gate_row(ROW, a, b)
+        self.assertEqual(status, "adjudication")
+        self.assertEqual(info["reason"], "pure_pole_on_ambiguous")
+
+    def test_valence_disagreement_unresolved(self):
+        a = self.rec2(["Angry", "Annoy", "Glad"], ["Happy", "Joyful", "Lovely"],
+                      "neutral")
+        b = self.rec2(["Happy", "Joyful", "Glad"], ["Angry", "Annoy", "Awful"],
+                      "uncertain", tag="B")
+        status, info = gate_v2.gate_row(ROW, a, b)
+        self.assertEqual(status, "unresolved")
+        self.assertEqual(info["reason"], "valence_disagreement")
+
+    def test_expression_contradiction_unresolved(self):
+        a = self.rec2(["Angry", "Annoy", "Awful"], ["Happy", "Joyful", "Glad"],
+                      "negative")
+        b = self.rec2(["Angry", "Annoy", "Awful"], ["Happy", "Joyful", "Glad"],
+                      "positive", tag="B")
+        status, _ = gate_v2.gate_row(ROW, a, b)
+        self.assertEqual(status, "unresolved")
+
+    def test_valence_sign(self):
+        self.assertEqual(policy_v2.valence_sign({"Happy", "Glad", "Angry"}), 1)
+        self.assertEqual(policy_v2.valence_sign({"Angry", "Annoy", "Glad"}), -1)
+        self.assertTrue(policy_v2.is_pure_pole({"Angry", "Annoy", "Awful"}))
+        self.assertFalse(policy_v2.is_pure_pole({"Angry", "Annoy", "Glad"}))
 
 
 class ManifestTests(unittest.TestCase):

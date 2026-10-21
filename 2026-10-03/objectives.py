@@ -1,4 +1,4 @@
-"""Response-only, batch-mean SFT/ORPO objectives for the IAT study.
+"""Response-only, batch-mean SFT/ORPO/KTO objectives for the IAT study.
 
 These functions compute local losses. Importing/calling them never provisions
 compute, updates model weights, or makes a dataset training-ready.
@@ -7,6 +7,7 @@ import math
 
 SFT_REDUCTION = "response_token_mean_then_example_mean"
 ORPO_REDUCTION = "response_token_mean_then_pair_mean"
+KTO_REDUCTION = "response_token_mean_then_example_value_mean"
 
 
 def _log1mexp(value):
@@ -76,3 +77,47 @@ def orpo_loss(data, logprobs, *, coefficient=0.1):
                   "preference_loss": float(preference_terms.detach().mean()),
                   "preference_accuracy": float((log_odds.detach() > 0).float().mean()),
                   "batch_pairs": len(chosen), "orpo_coefficient": coefficient}
+
+
+def kto_loss(data, logprobs, reference_logprobs, *, beta=0.1,
+             desirable_weight=1.0, undesirable_weight=1.0):
+    """Paired KTO over (chosen, rejected) branches sharing one image+prompt.
+
+    Each example's value is the policy-vs-reference mean response logprob margin
+    scaled by beta. Because every pair here conditions on the same image and
+    prompt, the Kullback-Leibler baseline for each branch is estimated on the
+    pair's counterfactual branch (the mismatched output for the same input), so
+    the desirable value uses z_chosen - z_rejected and the undesirable value its
+    negation. Reference scores must be the adapter-disabled (frozen base)
+    forward pass on identical inputs.
+    """
+    import torch
+
+    for name, weight in (("desirable_weight", desirable_weight),
+                         ("undesirable_weight", undesirable_weight)):
+        if not math.isfinite(weight) or weight < 0:
+            raise ValueError(f"KTO {name} must be finite and nonnegative")
+    if not math.isfinite(beta) or beta <= 0:
+        raise ValueError("KTO beta must be finite and positive")
+    if len(data) % 2 or len(data) != len(reference_logprobs):
+        raise ValueError("KTO needs ordered chosen/rejected pairs with matching reference scores")
+    policy = torch.stack(_response_means(data, logprobs))
+    reference = torch.stack(_response_means(data, reference_logprobs))
+    margins = beta * (policy - reference)
+    chosen_margin, rejected_margin = margins[0::2], margins[1::2]
+    # KL baseline per branch = the policy-vs-reference margin on the pair's
+    # OTHER branch (the mismatched output for the same image+prompt).
+    kl_for_desirable = rejected_margin
+    kl_for_undesirable = chosen_margin
+    desirable_values = torch.sigmoid(chosen_margin - kl_for_desirable)
+    undesirable_values = torch.sigmoid(kl_for_undesirable - rejected_margin)
+    pair_margin = chosen_margin - rejected_margin
+    desirable_loss = desirable_weight * (1.0 - desirable_values)
+    undesirable_loss = undesirable_weight * (1.0 - undesirable_values)
+    loss = (desirable_loss + undesirable_loss).mean()
+    return loss, {"kto_loss": float(loss.detach()),
+                  "desirable_loss": float(desirable_loss.detach().mean()),
+                  "undesirable_loss": float(undesirable_loss.detach().mean()),
+                  "preference_accuracy": float((pair_margin.detach() > 0).float().mean()),
+                  "kl_margin_estimate": float(pair_margin.detach().mean()),
+                  "batch_pairs": len(chosen_margin), "kto_beta": beta}
