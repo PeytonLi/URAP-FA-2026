@@ -81,7 +81,8 @@ def target_failures(target, image, ai_authorization_sha256=None):
                 or target.get("approval_authorization_sha256") != ai_authorization_sha256):
             failures.append("ai_approval_not_authorized")
         if target.get("draft_source") not in (
-                "codex_direct_visual_review", "two_pass_gated_teachers"):
+                "codex_direct_visual_review", "two_pass_gated_teachers",
+                "two_pass_gated_teachers_v2"):
             failures.append("ai_approval_requires_direct_inspection")
     elif kind != "human":
         failures.append("unknown_reviewer_kind")
