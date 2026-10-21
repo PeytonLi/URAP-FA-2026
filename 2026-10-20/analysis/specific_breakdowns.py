@@ -136,6 +136,67 @@ fig.tight_layout()
 fig.savefig(OUT / "iat_per_image_rates.png", dpi=150, bbox_inches="tight")
 plt.close(fig)
 
+# ============ IAT word-distribution equality (Peyton's end goal) ============
+# For each condition: the 61-word frequency vector pooled over black images vs
+# white images. Test = exact permutation at the IMAGE level (all 924 ways to
+# label 6 of 12 images "black"): is the word distribution group-dependent?
+# Also reports per-group distinct words + normalized entropy (the variety half
+# of "fair AND expressive, never fair-by-flattening").
+from itertools import combinations
+
+VOCAB = sorted(VALID)
+per_image_counts = {}
+for cond, path in iat_conditions.items():
+    vecs = defaultdict(lambda: np.zeros(len(VOCAB)))
+    for r in read_csv(path):
+        for w in [w.strip().lower().strip(".") for w in r["response"].split(",")]:
+            if w in VALID:
+                vecs[r["image_id"]][VOCAB.index(w)] += 1
+    per_image_counts[cond] = vecs
+
+
+def tv_distance(bvec, wvec):
+    bs, ws = bvec.sum(), wvec.sum()
+    if bs == 0 or ws == 0:
+        return float("nan")
+    return float(0.5 * np.abs(bvec / bs - wvec / ws).sum())
+
+
+def norm_entropy(vec):
+    p = vec[vec > 0] / vec.sum()
+    return float(-(p * np.log2(p)).sum() / np.log2(len(vec)))
+
+
+def exact_word_dist_perm(vecs, black_ids):
+    imgs = sorted(vecs)
+    bidx = [imgs.index(i) for i in black_ids]
+    widx = [i for i in range(len(imgs)) if i not in bidx]
+    obs = tv_distance(sum(vecs[imgs[i]] for i in bidx),
+                      sum(vecs[imgs[i]] for i in widx))
+    draws = []
+    for combo in combinations(range(len(imgs)), 6):
+        rest = [i for i in range(len(imgs)) if i not in combo]
+        draws.append(tv_distance(sum(vecs[imgs[i]] for i in combo),
+                                 sum(vecs[imgs[i]] for i in rest)))
+    return obs, float(np.mean(np.array(draws) >= obs - 1e-12))
+
+
+with open(OUT / "iat_word_distribution_equality.csv", "w", newline="") as f:
+    w = csv.writer(f)
+    w.writerow(["model", "black_distinct_words", "white_distinct_words",
+                "black_norm_entropy", "white_norm_entropy",
+                "total_variation_distance", "exact_permutation_p_value"])
+    for cond in iat_conditions:
+        vecs = per_image_counts[cond]
+        black_ids = [i for i in vecs if i.startswith("b")]
+        white_ids = [i for i in vecs if i.startswith("w")]
+        bvec = sum(vecs[i] for i in black_ids)
+        wvec = sum(vecs[i] for i in white_ids)
+        tv, p = exact_word_dist_perm(vecs, black_ids)
+        w.writerow([cond, int((bvec > 0).sum()), int((wvec > 0).sum()),
+                    round(norm_entropy(bvec), 4), round(norm_entropy(wvec), 4),
+                    round(tv, 4), round(p, 6)])
+
 # ============ DecodingTrust ============
 dt = {c: read_csv(RUN / f"extra_benchmarks/decodingtrust/gemma3_12b_{c}_native/responses.csv")
       for c in ["base", "orpo"]}
