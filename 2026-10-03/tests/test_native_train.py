@@ -70,7 +70,7 @@ class NativeTrainTests(unittest.TestCase):
         torch.set_num_threads(2)
         receipts = []
         for name in native.MODELS:
-            for method in ("sft", "orpo"):
+            for method in ("sft", "orpo", "kto"):
                 with self.subTest(model=name, method=method):
                     model, metadata = native.attach_lora(tiny_model(name))
                     chosen, rejected = tiny_inputs(name), tiny_inputs(name, True)

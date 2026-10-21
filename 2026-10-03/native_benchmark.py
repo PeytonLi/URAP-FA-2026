@@ -65,7 +65,7 @@ class NativeRunner(IATBenchmarkRunner):
 def run(model_name, method, image_dir, max_seconds, checkpoint=None):
     import torch
     from transformers import AutoModelForImageTextToText, AutoProcessor
-    if method not in ("base", "sft", "orpo") or not math.isfinite(max_seconds) or max_seconds <= 0:
+    if method not in ("base", "sft", "orpo", "kto") or not math.isfinite(max_seconds) or max_seconds <= 0:
         raise ValueError("Explicit valid condition and runtime limit required")
     settings = native_train.MODELS[model_name]
     deadline = time.monotonic() + max_seconds
@@ -158,7 +158,7 @@ def run(model_name, method, image_dir, max_seconds, checkpoint=None):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model", choices=native_train.MODELS, required=True)
-    parser.add_argument("--method", choices=("base", "sft", "orpo"), required=True)
+    parser.add_argument("--method", choices=("base", "sft", "orpo", "kto"), required=True)
     parser.add_argument("--image-dir", type=Path, required=True)
     parser.add_argument("--checkpoint", type=Path)
     parser.add_argument("--max-seconds", type=float, required=True)

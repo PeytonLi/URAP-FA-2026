@@ -164,7 +164,7 @@ def main():
         # The bootstrap parent is system Python; scientific imports belong in the pinned venv.
         ready_training, ready_benchmarks = verify_resume(python, worker_log)
         for model in ("gemma3_12b",):
-            for method in ("sft", "orpo"):
+            for method in ("sft", "orpo", "kto"):
                 if STOP.exists():
                     raise InterruptedError("Owned run stopped before the next condition")
                 if (model, method) in ready_training:
@@ -185,7 +185,7 @@ def main():
                 study.save_json(outputs, summary)
                 if code:
                     raise RuntimeError("Actual training failed; do not silently substitute a condition")
-            for method in ("base", "sft", "orpo"):
+            for method in ("base", "sft", "orpo", "kto"):
                 if STOP.exists():
                     raise InterruptedError("Owned run stopped before evaluation")
                 if (model, method) in ready_benchmarks:
@@ -210,8 +210,10 @@ def main():
                 study.save_json(outputs, summary)
                 if code:
                     raise RuntimeError("Native benchmark failed; retain partial records")
-            # Advisor-requested suite: DecodingTrust/BOLD/VisBias on base + ORPO only.
-            for method in ("base", "orpo"):
+            # Advisor-requested suite: DecodingTrust/BOLD/VisBias on base plus
+            # each preference-tuned adapter (SFT excluded: IAT-identical to ORPO
+            # in round 1 and not a preference method).
+            for method in ("base", "orpo", "kto"):
                 if STOP.exists():
                     raise InterruptedError("Owned run stopped before extra evaluation")
                 command = [python, "-u", str(ROOT / "native_extra_benchmarks.py"), "--model", model,

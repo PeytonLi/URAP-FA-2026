@@ -24,7 +24,7 @@ def verified_results(recovered, require_all=True):
     hashes = {row["image_id"]: row["sha256"] for row in expected_images}
     training, conditions = {}, {}
     for name, settings in native_train.MODELS.items():
-        for method in ("sft", "orpo"):
+        for method in ("sft", "orpo", "kto"):
             runs = list((recovered / "data/private/native_runs").glob(name + "_" + method + "_*/run.json"))
             if not runs and not require_all:
                 continue
@@ -52,6 +52,7 @@ def verified_results(recovered, require_all=True):
             recipe = {"seed": 0, "logical_batch_size": 4, "requested_epochs": 3,
                       "optimizer": "AdamW", "learning_rate": 1e-5, "weight_decay": 0,
                       "orpo_coefficient": 0.1 if method == "orpo" else None,
+                      "kto_beta": 0.1 if method == "kto" else None,
                       "loss_weighting": "equal_examples"}
             if any(run.get(field) != value for field, value in recipe.items()):
                 raise ValueError("Actual training recipe differs from the reported protocol")
@@ -61,7 +62,7 @@ def verified_results(recovered, require_all=True):
                     raise ValueError("Final adapter/processor/optimizer checksum mismatch")
             training[name, method] = (run, checkpoint)
         contracts = []
-        for method in ("base", "sft", "orpo"):
+        for method in ("base", "sft", "orpo", "kto"):
             key = name + "_" + method + "_native_balanced"
             folder = recovered / "results/native_benchmarks" / key
             if not require_all and not (folder / "run_manifest.json").exists():
@@ -97,7 +98,7 @@ def verified_results(recovered, require_all=True):
         if any(contract != contracts[0] for contract in contracts[1:]):
             raise ValueError(f"Base and adapter runtimes/benchmarks differ: {name}")
         if contracts and any(training[name, method][0]["versions"] != contracts[0]["versions"]
-                             for method in ("sft", "orpo") if (name, method) in training):
+                             for method in ("sft", "orpo", "kto") if (name, method) in training):
             raise ValueError(f"Training and benchmark runtime versions differ: {name}")
     return training, conditions
 
@@ -125,7 +126,7 @@ def main(recovered):
     metrics = json.loads((analysis / "metrics.json").read_text(encoding="utf-8"))["models"]
     summary = ["| Model / condition | Valid / 600 | Black negative rate | White negative rate | Gap (pp) | Unique triples |",
                "| --- | ---: | ---: | ---: | ---: | ---: |"]
-    provenance = {"created_at": study.now(), "benchmark_slots": len(records), "training_conditions": 6,
+    provenance = {"created_at": study.now(), "benchmark_slots": len(records), "training_conditions": len(training),
                   "optimizer_updates": sum(r[0]["optimizer_updates"] for r in training.values()),
                   "policy_sha256": dataset.get("pilot_policy_sha256"), "cohort_sha256": cohort_sha,
                   "source_manifest_sha256": dataset["manifest_sha256"], "source_commit": dataset["source_commit"],
@@ -184,7 +185,7 @@ def main(recovered):
               for source in sorted({row['dataset'] for row in cohort})], "",
             "| Method | Updates | Dev chosen loss | Dev macro preference accuracy |",
             "| --- | ---: | ---: | ---: |"]
-        for method in ("sft", "orpo"):
+        for method in ("sft", "orpo", "kto"):
             run, checkpoint = training[name, method]
             dev = run["development"][-1]
             lines.append(f"| {method.upper()} | {run['optimizer_updates']} | {dev['response_loss']:.4f} | "
@@ -192,7 +193,7 @@ def main(recovered):
         lines += ["", "Preference accuracy asks whether the chosen response receives higher mean conditional "
                   "log probability than the rejected response. It is not free-generation accuracy.", "",
                   "### Actual execution evidence", ""]
-        for method in ("sft", "orpo"):
+        for method in ("sft", "orpo", "kto"):
             run, checkpoint = training[name, method]
             lines += [f"{method.upper()}: `{run['gpu']}`; {run['adapter']['trainable_parameters']:,} trainable "
                 f"adapter parameters. Elapsed {run['elapsed_seconds']/60:.1f} minutes including weight loading "
@@ -209,7 +210,7 @@ def main(recovered):
                   "the existing deterministic fallback. Invalid final responses remain in validity counts; "
                   "word rates use the actual valid-response denominators. Confidence intervals resample image "
                   "clusters, not individual repetitions. There are only six photos per race."]
-        for method in ("base", "sft", "orpo"):
+        for method in ("base", "sft", "orpo", "kto"):
             model, rows, folder, contract = conditions[name, method]
             values = metrics[model.key]
             words = Counter(word for row in rows if row["valid_three"] for word in row["words"].split("|"))
@@ -289,7 +290,7 @@ def main(recovered):
         "provides limited evidence about unseen faces or population-level fairness. [Machine-readable metrics](analysis/metrics.json)."]
     (output / "COMPARISON.md").write_text("\n".join(comparison) + "\n", encoding="utf-8")
     study.save_json(output / "report_manifest.json", provenance)
-    print(json.dumps({"output": str(output), "training_conditions": 6, "benchmark_slots": len(records)}))
+    print(json.dumps({"output": str(output), "training_conditions": len(training), "benchmark_slots": len(records)}))
 
 
 if __name__ == "__main__":
