@@ -1,0 +1,5 @@
+model,black_distinct_words,white_distinct_words,black_norm_entropy,white_norm_entropy,total_variation_distance,exact_permutation_p_value
+base,7,11,0.3108,0.4891,0.8367,0.002165
+sft,26,32,0.5008,0.5825,0.1633,0.229437
+orpo,24,31,0.4797,0.5655,0.1789,0.194805
+kto,3,5,0.2672,0.2709,0.0022,1.0

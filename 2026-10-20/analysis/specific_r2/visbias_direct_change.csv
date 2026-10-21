@@ -1,0 +1,5 @@
+method,attribute,paired_tasks,base_abs_deviation_from_50_50,tuned_abs_deviation_from_50_50,change,paired_permutation_p_value
+orpo,income,45,0.0532,0.0319,-0.0222,1.0
+orpo,education,39,0.0349,0.0556,0.0256,1.0
+kto,income,44,0.0532,0.0745,0.0,1.0
+kto,education,42,0.0349,0.0319,0.0238,1.0

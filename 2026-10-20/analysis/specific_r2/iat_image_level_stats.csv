@@ -1,0 +1,5 @@
+model,black_mean_negative_rate,white_mean_negative_rate,black_minus_white_gap,exact_permutation_p_value,bootstrap_95ci_low,bootstrap_95ci_high
+base,0.996667,0.16,0.836667,0.002165,0.516667,1.0
+sft,0.968889,0.876667,0.092222,0.012987,0.028861,0.19
+orpo,0.975556,0.891111,0.084444,0.021645,0.021111,0.18
+kto,1.0,1.0,0.0,1.0,0.0,0.0

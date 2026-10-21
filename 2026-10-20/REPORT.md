@@ -110,3 +110,87 @@ Diversity *increased* after tuning on the IAT task (13→35 distinct words,
 - DecodingTrust/BOLD/VisBias tasks re-used the repo's frozen 2026-09-05
   sha-pinned task inputs; VisBias normalized images regenerated and
   hash-verified against the frozen manifest.
+
+## 5. Round 2 — v2 mixed-valence relabeling + KTO (2026-10-21)
+
+### What changed
+
+The v1 dataset's 231 triples were all pure-pole (all-positive or all-negative).
+The v2 pipeline relabeled the same pool with two teacher passes
+(gpt-5-mini + gpt-4.1-mini, 1,920 images each, 0 failures), a two-class gate,
+and a second adjudication pass with a mixed-triple mandate for ambiguous
+faces (the first pass's 2-of-3-overlap queue structurally could not produce
+mixed triples). Export maximizes word coverage and drops pair-balance
+violations. Final dataset `curated_iat_targets_v2.json`: **383 records**
+(299 train / 84 dev), **61 mixed-valence triples (16%, was 0)**, 27 distinct
+chosen words (was 22), 49 pair-balance violations dropped. Same active
+dataset config slot, same train/benchmark separation.
+
+Runs: SFT + ORPO + KTO on the v2 set (KTO added per Peyton's direction;
+adapter weights on private HF repos per run). Pod attempts
+`20261021T023045.753842_0000` (main) + `20261021T084030.287641_0000`
+(resume for the KTO VisBias tail truncated at the 6h deadline). Spend ≈ $3.60.
+
+### IAT-12 — round 2 results
+
+| condition | black neg. rate | white neg. rate | gap | exact perm. p |
+|---|---|---|---|---|
+| base (rerun) | 0.997 | 0.160 | +0.837 | 0.0022 |
+| SFT (v2) | 0.969 | 0.877 | **+0.092** | 0.013 |
+| ORPO (v2) | 0.976 | 0.891 | **+0.084** | 0.022 |
+| KTO (v2) | 1.000 | 1.000 | **0.000** | 1.000 |
+
+DiD vs base: SFT −74.4pp (p=0.010), ORPO −75.2pp (p=0.005), KTO −83.7pp
+(p=0.005); OLS cluster-robust p<1e-5 for all three.
+
+**vs round 1** (v1 data, gap +0.029 ns): the v2 models keep ~90% of the
+debiasing but leave a small residual gap that is still significant
+(p≈0.01–0.02). The mixed-valence labels bought partial relief of the
+leveling-down (white negative rate 95.3% → 87.7–89.1%) and more response
+diversity (unique triples ~100 → 138–148), but the output remains
+dominantly negative — the end goal (broad vocabulary, equal distributions)
+is closer, not met.
+
+### Word-distribution equality (the "fair AND expressive" metric)
+
+| model | distinct words B/W | norm. entropy B/W | TV distance | equality perm p |
+|---|---|---|---|---|
+| base | 7 / 11 | 0.31 / 0.49 | 0.84 | 0.0022 |
+| SFT | 26 / 32 | 0.50 / 0.58 | 0.16 | 0.229 |
+| ORPO | 24 / 31 | 0.48 / 0.57 | 0.18 | 0.195 |
+| KTO | 3 / 5 | 0.27 / 0.27 | **0.00** | 1.000 |
+
+**KTO is the flattening failure mode made concrete**: it achieves a perfect
+zero gap by emitting permutations of "Grief, Pain, Sadness" on ~99% of slots
+(8 unique responses total). Binary desirability plus a KL baseline does not
+penalize within-condition collapse — maximally fair, maximally flat.
+
+### Extra benchmarks (round 2, descriptive + paired direct-change tests)
+
+- **DecodingTrust**: overall agreement 29.9% → 29.9% (ORPO) / 30.9% (KTO);
+  targeted regime +4.2pp / +6.2pp — all changes ns (paired perm p≥0.14).
+  Note: base rerun measured 29.9% vs 26.7% in round 1 — ~3pp run-to-run
+  variance at temp 1.0.
+- **BOLD**: race-category sentiment spread 0.114 → 0.025 under ORPO —
+  paired perm p=0.03, the one real extras improvement (less spread between
+  race categories). KTO same direction, ns. Toxicity/regard 0 throughout.
+- **VisBias**: selection ~50/50 everywhere; all direct-change tests p=1.0.
+
+### Provenance
+
+Analysis: `2026-10-20/analysis/specific_breakdowns_r2.py` (Alica-format
+graphs + CSVs in `specific_r2/`), significance suite rerun over 4 IAT + 3
+extras conditions → `specific_r2/significance/` (525 tests). v2 labeling
+code in `2026-10-20/labeling/{policy,gate_v2,export_v2,adjudicate_v2,
+adjudicate_v2b_workflow}.py`.
+
+### Honest round-2 verdict
+
+The mixed-valence data moved expressiveness in the right direction but only
+modestly: teachers still judged most benchmark-type faces negative (they
+are stern), so 84% of triples stayed pure-pole-negative-ish. SFT/ORPO keep
+the debiasing with slightly more variety; KTO "solves" fairness by collapse
+and is a counterexample, not a candidate. A real vocabulary expansion would
+need either teacher prompts that elicit mid-register words the current
+vocab offers (Serious/Calm absent from the 61-word list) or vocab-eligible
+labels on genuinely varied face stimuli.

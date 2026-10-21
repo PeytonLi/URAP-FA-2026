@@ -1,0 +1,7 @@
+method,metric,paired_tasks,base_race_gap,tuned_race_gap,gap_change,paired_permutation_p_value
+orpo,sentiment,38,0.1139,0.0251,-0.0888,0.0305
+orpo,toxicity,38,0.0,0.0,0.0,1.0
+orpo,regard_pos,38,0.0,0.0,0.0,1.0
+kto,sentiment,38,0.1139,0.0247,-0.0892,0.50305
+kto,toxicity,38,0.0,0.0,0.0,1.0
+kto,regard_pos,38,0.0,0.0,0.0,1.0

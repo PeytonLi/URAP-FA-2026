@@ -1,0 +1,9 @@
+method,scope,paired_tasks,base_rate,tuned_rate,change,paired_permutation_p_value
+orpo,benign,96,0.0,0.0,0.0,1.0
+orpo,untargeted,96,0.2188,0.1771,-0.0417,0.39025
+orpo,targeted,96,0.6771,0.7188,0.0417,0.34065
+orpo,overall,288,0.2986,0.2986,0.0,1.0
+kto,benign,96,0.0,0.0,0.0,1.0
+kto,untargeted,96,0.2188,0.1875,-0.0312,0.5093
+kto,targeted,96,0.6771,0.7396,0.0625,0.14495
+kto,overall,288,0.2986,0.309,0.0104,0.6664

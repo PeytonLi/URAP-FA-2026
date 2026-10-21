@@ -1,0 +1,6 @@
+benchmark,primary_observation,base_value,tuned_value,change_or_note,significance
+IAT-12 (v2 mixed-valence data),black_minus_white_negative_rate_gap,+0.837,SFT +0.092 / ORPO +0.084 / KTO +0.000,SFT -74.4pp / ORPO -75.2pp / KTO -83.7pp,"exact image-level perm: base p=0.0022 -> SFT p=0.013, ORPO p=0.022 (residual gap still significant), KTO p=1.0; DiD perm: SFT p=0.010, ORPO/KTO p=0.005; OLS all p<1e-5"
+IAT-12 word distribution,distinct words / TV distance black-vs-white,"7-11 words, TV=0.84",SFT 26/32 TV=0.16 / ORPO 24/31 TV=0.18 / KTO 3/5 TV=0.00,variety up modestly; KTO collapsed to 8 unique responses,"word-dist equality perm: SFT p=0.23, ORPO p=0.19, KTO p=1.0"
+DecodingTrust,stereotype_agreement_rate,0.299,ORPO 0.299 / KTO 0.309,targeted regime +4.2pp (ORPO) / +6.2pp (KTO),paired permutation: all changes ns (p>=0.14)
+BOLD,race_category_sentiment_spread,0.114,ORPO 0.025 / KTO 0.025,-0.089 spread reduction,ORPO paired perm p=0.03 (real improvement); KTO p=0.50
+VisBias,abs_deviation_from_50_50_selection,0.053/0.035 (income/edu),ORPO 0.032/0.056 / KTO 0.075/0.032,all shifts small and inconsistent,paired permutation p=1.0 — ns

@@ -1,0 +1,14 @@
+benchmark,condition,responses,valid_responses,invalid_or_refusal,exact_format_rate,distinct_words,unique_response_tuples,normalized_word_entropy,errors,agree,disagree,no_response_refusal,api_error,unscored,distinct_responses,completed,empty_response,description_responses,description_completed,comparison_responses,comparison_completed,cannot_determine_rate,unclassified_rate,black_selected_rate,white_selected_rate
+iat12,base,600,600,0,1.0,11,19,0.513595362172506,0,,,,,,,,,,,,,,,,
+iat12,sft,600,600,0,1.0,35,148,0.5490032699720688,0,,,,,,,,,,,,,,,,
+iat12,orpo,600,600,0,1.0,34,138,0.5302355640627274,0,,,,,,,,,,,,,,,,
+iat12,kto,600,600,0,1.0,5,8,0.2692442731287275,0,,,,,,,,,,,,,,,,
+decodingtrust,base,288,,,,,,,,86,170,32,0,0,288,,,,,,,,,,
+decodingtrust,orpo,288,,,,,,,,86,168,34,0,0,288,,,,,,,,,,
+decodingtrust,kto,288,,,,,,,,89,168,31,0,0,288,,,,,,,,,,
+bold,base,192,,0,,,,,,,,,,,191,192,0,,,,,,,,
+bold,orpo,192,,0,,,,,,,,,,,191,192,0,,,,,,,,
+bold,kto,192,,0,,,,,,,,,,,191,192,0,,,,,,,,
+visbias,base,252,,,,,,,0,,,,,,,,,84,84,168,168,0.4642857142857143,0.0,0.24404761904761904,0.2916666666666667
+visbias,orpo,252,,,,,,,0,,,,,,,,,84,84,168,168,0.4523809523809524,0.0,0.25,0.2976190476190476
+visbias,kto,252,,,,,,,0,,,,,,,,,84,84,168,168,0.44047619047619047,0.0,0.25,0.30952380952380953
