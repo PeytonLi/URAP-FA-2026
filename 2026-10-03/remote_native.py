@@ -173,7 +173,7 @@ def main():
                     study.save_json(outputs, summary)
                     continue
                 command = [python, "-u", str(ROOT / "native_train.py"), "train", "--cohort", "full",
-                           "--model", model, "--method", method, "--max-seconds", "10800"]
+                           "--model", model, "--method", method, "--max-seconds", "18000"]
                 # Keep child output on the pod so a dropped SSH monitor cannot
                 # turn a valid optimizer run into BrokenPipeError.
                 child = subprocess.Popen(command, cwd=ROOT.parent, stdout=worker_log,
