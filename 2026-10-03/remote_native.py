@@ -266,7 +266,7 @@ def package_outputs():
     files = {}
     with tarfile.open(archive, "w:gz", compresslevel=1) as handle:
         for relative in ("data/private/native_runs", "results/native_benchmarks",
-                         "results/extra_benchmarks",
+                         "results/native_development", "results/extra_benchmarks",
                          "data/private/remote_summary.json", "data/private/remote_worker.log"):
             path = ROOT / relative
             if path.exists():

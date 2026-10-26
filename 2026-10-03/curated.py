@@ -266,7 +266,8 @@ def validate_multitriple_blocks(rows, targets, config):
         if len(set(schedules)) != 1:
             raise ValueError("Valence-unbalanced candidate variants")
         if config.get("identical_answers_within_block"):
-            answer_sets = {tuple(frozenset(v["chosen"].split(", "))
+            answer_sets = {tuple((frozenset(v["chosen"].split(", ")),
+                                  frozenset(v["rejected"].split(", ")))
                                  for v in preference_variants(targets[r["image_id"]]))
                            for r in members}
             if len(answer_sets) != 1:
