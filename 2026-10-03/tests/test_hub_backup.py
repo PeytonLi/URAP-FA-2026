@@ -179,11 +179,12 @@ class HubBackupTests(unittest.TestCase):
             with self.subTest(upload_failure=failure), tempfile.TemporaryDirectory() as folder, contextlib.ExitStack() as stack:
                 root = Path(folder)
                 model = torch.nn.Linear(1, 1)
-                row = {"split": "train"}
+                row = {"split": "train", "image_id": "fixture_train"}
                 stack.enter_context(patch.object(study, "ROOT", root))
                 stack.enter_context(patch.object(native, "approved_cohort", return_value=(
                     {"dataset_id": "fixture", "manifest_sha256": "fixture", "targets_path": __file__},
-                    [row | {"reviewer_kind": "fixture"}], [{"reviewer_kind": "fixture"}], root)))
+                    [row | {"reviewer_kind": "fixture"}],
+                    [{"image_id": "fixture_dev", "reviewer_kind": "fixture"}], root)))
                 for name, value in (("is_available", True), ("is_bf16_supported", True), ("device_count", 1),
                                     ("get_device_name", "fixture-no-GPU"), ("max_memory_allocated", 0)):
                     stack.enter_context(patch.object(torch.cuda, name, return_value=value))
@@ -208,9 +209,9 @@ class HubBackupTests(unittest.TestCase):
                 uploads = stack.enter_context(patch.object(hub, "publish", side_effect=publish))
                 if failure:
                     with self.assertRaisesRegex(RuntimeError, "fixture upload failure"):
-                        native.train("gemma4", "sft", 60)
+                        native.train("gemma3_12b", "orpo", 60)
                 else:
-                    native.train("gemma4", "sft", 60)
+                    native.train("gemma3_12b", "orpo", 60)
                 receipt = json.loads(next((root / "data/private/native_runs").glob("*/run.json")).read_text())
                 self.assertEqual(uploads.call_count, 1 if failure else 3)
                 self.assertEqual(receipt["status"], "failed" if failure else "training_complete_evaluation_pending")

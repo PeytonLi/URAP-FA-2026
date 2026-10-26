@@ -3,6 +3,7 @@ import argparse
 import csv
 import json
 import math
+import sys
 from collections import Counter
 from dataclasses import asdict
 from pathlib import Path
@@ -18,13 +19,20 @@ def percent(value):
 
 
 def verified_results(recovered, require_all=True):
+    dataset = study.dataset_config()
+    if not dataset:
+        raise ValueError("Active curated dataset required for report validation")
     expected_images = [{k: row[k] for k in ("image_id", "filename", "race", "gender", "sha256")}
                        for row in study.read_csv(study.REPO / "2026-09-11/data/iat12/manifest.csv")]
     slots = {(row["image_id"], iteration) for row in expected_images for iteration in range(1, 51)}
     hashes = {row["image_id"]: row["sha256"] for row in expected_images}
     training, conditions = {}, {}
-    for name, settings in native_train.MODELS.items():
-        for method in ("sft", "orpo", "kto"):
+    methods = dataset.get("training_methods", ("sft", "orpo", "kto"))
+    model_settings = ({"gemma3_12b": native_train.MODELS["gemma3_12b"]}
+                      if dataset.get("dataset_id") == "image-curation-2026-09-29-v3"
+                      else native_train.MODELS)
+    for name, settings in model_settings.items():
+        for method in methods:
             runs = list((recovered / "data/private/native_runs").glob(name + "_" + method + "_*/run.json"))
             if not runs and not require_all:
                 continue
@@ -38,9 +46,10 @@ def verified_results(recovered, require_all=True):
                 raise ValueError("Active curated dataset required for report validation")
             expected_train = dataset["split_counts"]["train"]
             expected_dev = dataset["split_counts"]["development"]
+            expected_examples = dataset.get("example_split_counts", dataset["split_counts"])
             if (run["status"] != "training_complete_evaluation_pending"
                     or run["optimizer_updates"] != run["planned_optimizer_updates"]
-                    or run["planned_optimizer_updates"] != 3 * -(-expected_train // 4)
+                    or run["planned_optimizer_updates"] != 3 * -(-expected_examples["train"] // 4)
                     or run["completed_epochs"] != 3 or run.get("cohort") != "full"
                     or run["model"] != settings["model"] or run["method"] != method
                     or run["weight_and_processor_revision"] != settings["revision"]
@@ -62,7 +71,7 @@ def verified_results(recovered, require_all=True):
                     raise ValueError("Final adapter/processor/optimizer checksum mismatch")
             training[name, method] = (run, checkpoint)
         contracts = []
-        for method in ("base", "sft", "orpo", "kto"):
+        for method in ("base", *methods):
             key = name + "_" + method + "_native_balanced"
             folder = recovered / "results/native_benchmarks" / key
             if not require_all and not (folder / "run_manifest.json").exists():
@@ -104,6 +113,8 @@ def verified_results(recovered, require_all=True):
 
 
 def main(recovered):
+    if study.dataset_config().get("dataset_id") == "image-curation-2026-09-29-v3":
+        return coverage_report(recovered)
     training, conditions = verified_results(recovered)
     dataset = study.dataset_config()
     cohort = json.loads((study.REPO / dataset["targets_path"]).read_text(encoding="utf-8"))
@@ -136,6 +147,8 @@ def main(recovered):
                   "identity_disjointness_established": False,
                   "response_sha256": {}, "analysis": artifacts, "training_performed": True}
     for name, settings in native_train.MODELS.items():
+        available_methods = [method for method in ("sft", "orpo", "kto")
+                             if (name, method) in training]
         lines = [f"# {benchmark.MODELS[name][1]}: native base, SFT and ORPO", "",
             f"Pinned weights and processor: `{settings['model']}@{settings['revision']}`. BF16, native Transformers.", "",
             f"[Official model card at the tested revision](https://huggingface.co/{settings['model']}/blob/{settings['revision']}/README.md).", "",
@@ -185,7 +198,7 @@ def main(recovered):
               for source in sorted({row['dataset'] for row in cohort})], "",
             "| Method | Updates | Dev chosen loss | Dev macro preference accuracy |",
             "| --- | ---: | ---: | ---: |"]
-        for method in ("sft", "orpo", "kto"):
+        for method in available_methods:
             run, checkpoint = training[name, method]
             dev = run["development"][-1]
             lines.append(f"| {method.upper()} | {run['optimizer_updates']} | {dev['response_loss']:.4f} | "
@@ -193,7 +206,7 @@ def main(recovered):
         lines += ["", "Preference accuracy asks whether the chosen response receives higher mean conditional "
                   "log probability than the rejected response. It is not free-generation accuracy.", "",
                   "### Actual execution evidence", ""]
-        for method in ("sft", "orpo", "kto"):
+        for method in available_methods:
             run, checkpoint = training[name, method]
             lines += [f"{method.upper()}: `{run['gpu']}`; {run['adapter']['trainable_parameters']:,} trainable "
                 f"adapter parameters. Elapsed {run['elapsed_seconds']/60:.1f} minutes including weight loading "
@@ -210,7 +223,7 @@ def main(recovered):
                   "the existing deterministic fallback. Invalid final responses remain in validity counts; "
                   "word rates use the actual valid-response denominators. Confidence intervals resample image "
                   "clusters, not individual repetitions. There are only six photos per race."]
-        for method in ("base", "sft", "orpo", "kto"):
+        for method in ("base", *available_methods):
             model, rows, folder, contract = conditions[name, method]
             values = metrics[model.key]
             words = Counter(word for row in rows if row["valid_three"] for word in row["words"].split("|"))
@@ -291,6 +304,51 @@ def main(recovered):
     (output / "COMPARISON.md").write_text("\n".join(comparison) + "\n", encoding="utf-8")
     study.save_json(output / "report_manifest.json", provenance)
     print(json.dumps({"output": str(output), "training_conditions": len(training), "benchmark_slots": len(records)}))
+
+
+def coverage_report(recovered):
+    training, conditions = verified_results(recovered)
+    sys.path.insert(0, str(study.REPO / "2026-10-20/analysis"))
+    import variety
+    output = study.ROOT / "reports/native_coverage_v3"
+    dataset = study.dataset_config()
+    labels = [(method, conditions["gemma3_12b", method][2] / "responses.csv")
+              for method in ("base", "orpo")]
+    summaries = variety.main(
+        labels, output, [("orpo", study.REPO / dataset["targets_path"])])
+    run = training["gemma3_12b", "orpo"][0]
+    lines = [
+        "# ORPO coverage experiment v3", "",
+        "Only Gemma 3 12B-IT ORPO was trained. The checkpoint is the predeclared final third epoch.",
+        f"Training: {run['training_images']} images / {run['training_examples']} preference examples; "
+        f"{run['optimizer_updates']} optimizer updates. Development received no optimizer updates.",
+        "The frozen test protocol remains 12 photos, 50 repetitions, temperature 1.0, identical prompts and seeds.",
+        "Training uses independently supported candidate words, not human ground-truth expression labels.", "",
+        "| Condition / output view | Valid | Vocabulary union | Black / White words | Median unordered triples per image | Word TV |",
+        "| --- | ---: | ---: | ---: | ---: | ---: |",
+    ]
+    for summary in summaries:
+        tv = summary.get("word_tv_image_weighted")
+        tv_text = f"{tv:.4f}" if tv is not None else "Not estimable"
+        lines.append(
+            f"| {summary['condition']} / {summary['view']} | {summary['valid_responses']}/600 | "
+            f"{summary['distinct_words_union']}/61 | {summary['distinct_words_black']} / "
+            f"{summary['distinct_words_white']} | {summary['per_image_unordered_triples_median']} | "
+            f"{tv_text} |")
+    tuned = next(s for s in summaries if s["condition"] == "orpo" and s["view"] == "sampled_exact")
+    lines.extend([
+        "", f"The >=50-word union target was {'met' if tuned['target_50_met'] else 'not met'} on strict sampled outputs.",
+        "Report per-group coverage and overlap alongside union coverage. Non-significance does not establish distribution equality.",
+        "A low race gap alone is not success: inspect coverage, entropy, dominant-triple concentration and validity together.",
+        "These 12 stimuli do not establish population fairness or visible-expression accuracy.", "",
+        "![Word counts](word_counts.png)", "![Per-image variety](per_image_variety.png)",
+        "![Valence rates](per_image_rates.png)", "",
+        "See summary.csv, per_image.csv, word_counts.csv and provenance.json for denominators, exact 924-assignment "
+        "image-level permutation tests, 10,000 image-cluster bootstrap draws and input checksums.",
+    ])
+    (output / "REPORT.md").write_text("\n".join(lines) + "\n")
+    print(json.dumps({"output": str(output), "training_conditions": len(training)}))
+    return output
 
 
 if __name__ == "__main__":

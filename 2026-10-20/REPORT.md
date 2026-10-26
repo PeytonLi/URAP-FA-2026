@@ -194,3 +194,90 @@ and is a counterexample, not a candidate. A real vocabulary expansion would
 need either teacher prompts that elicit mid-register words the current
 vocab offers (Serious/Calm absent from the 61-word list) or vocab-eligible
 labels on genuinely varied face stimuli.
+
+## 6. V3 implementation and a stricter variety baseline
+
+**Execution status:** v3 code is implemented and fixture-tested, but the live
+candidate-label pilot received OpenAI `credit_balance_exhausted`. It produced
+no accepted labels. Labeling then moved to Bitdeer Model Studio with
+DeepSeek V4.1 Flash-1017 and GLM-5.3-Flash as independent teachers.
+
+**Feasibility result (pilot, not a final dataset).** The first Bitdeer pilot
+approved nothing because teachers placed general caveats in vetoing review
+flags. After flags were restricted to image-level blockers (policy v3_2), the
+same balanced 48-image pilot gave 95/96 valid calls. Both teachers supported
+at least one word with confidence >=0.8 on 11 images; only 4 images had the
+three words needed for one triple. The jointly supported vocabulary was four
+smile words: Smiling, Happy, Joyful and Cheerful. DeepSeek alone used 13 words
+confidently, GLM four. None of the negative-expression pilot images received
+joint support, and no complete Black/White matched block survived.
+Honest visible-expression labels therefore look far from the 50-word target;
+many vocabulary words (for example Friendship, Disaster, Magnificent) are not
+facial expressions. Reaching 50 words would need a different target design,
+which is a research decision rather than a labeling fix.
+No v3 adapter has been trained or benchmarked. The active
+dataset remains v2; these numbers reanalyze the stored round-2 outputs.
+
+Future fine-tuning is **ORPO only**, starting from the pinned Gemma 3 12B-IT
+base. SFT/KTO results remain historical evidence, not new training conditions.
+The v3 data method is independently supported word candidates, at most two
+coverage follow-ups, and multiple non-permutation preference triples per image.
+The exact protocol and commands are in `README.md`.
+
+### Baseline using non-permutation diversity
+
+`analysis/variety.py` distinguishes an ordered string from an unordered
+three-word combination. It also separates the untouched sampled answer from
+the final scorer output, which may contain a deterministic fallback.
+
+| Measure | Base, final scored | ORPO v2, final scored | ORPO v2, strict sampled |
+| --- | ---: | ---: | ---: |
+| Valid / 600 slots | 600 | 600 | 571 |
+| Vocabulary union / 61 | 11 | 34 | 34 |
+| Black / White words | 7 / 11 | 24 / 31 | 24 / 31 |
+| Shared vocabulary words | 7 | 21 | 21 |
+| Median distinct unordered triples per image | 3.5 | 17.0 | 17.0 |
+| Dominant unordered triple share | 43.0% | 38.0% | 38.0% |
+| Effective vocabulary size, exp(Shannon entropy) | 8.26 | 8.84 | 8.90 |
+| Words used at least five times in both groups | 4 | 11 | 11 |
+| Image-weighted word-distribution TV | 0.837 | 0.179 | 0.176 |
+| Black-minus-White negative-word gap | +83.7 pp | +8.4 pp | +8.6 pp |
+
+ORPO v2 needed fallback on 29 slots, leaving 571 valid strict sampled answers.
+The strict check reuses the frozen scorer's parsing and exact-format rules,
+including its handling of adjacent duplicate words. Raw samples and final
+scorer outputs are both retained; the frozen benchmark's scoring/fallback
+rules are not changed by this reanalysis.
+
+Earlier ordered-string counts overstate semantic variety when many answers
+are permutations. Coverage also needs frequency context: ORPO v2 has 34 words
+in the union, yet an effective vocabulary of only about nine equally frequent
+words. The new target remains at least 50 union words, with each group's
+coverage, overlap, entropy and concentration reported alongside it. It is not
+enough for one group to carry the rare-word tail.
+
+### Corrections and interpretation limits
+
+- Training-label coverage is **not** a hard upper limit on generated
+  vocabulary. In the stored v2 run, 5.0% of final responses contain a word
+  absent from the training-split chosen labels. Coverage-targeted training
+  is an intervention to test, not an already established causal explanation.
+- The policy allows 50 preferred-label words, excluding 11 unsupported
+  judgments. Evaluation still contains all 61. Reaching the requested target
+  cannot justify unsupported face labels or a changed test prompt.
+- Exact image-level permutation p-values do not establish equality when
+  nonsignificant. TV distance is still nonzero, and six images per group
+  provide limited evidence. Race-label exchangeability is an assumption, not
+  a randomized causal race intervention.
+- Historical extras p-values are exploratory; a small unadjusted p-value
+  among many tests is not independently confirmed improvement.
+- KTO's observed collapse is established for that run. Attributing the
+  collapse to a specific objective mechanism would require controlled
+  ablations; it is not proven by the response histogram alone.
+
+Reproducible outputs: `analysis/variety_r2/summary.csv`, `per_image.csv`,
+`word_counts.csv`, `provenance.json`, `word_counts.png`,
+`per_image_variety.png` and `per_image_rates.png`. Provenance records the
+input checksums and analysis source hash. Inference uses all 924 assignments
+of six of the 12 images to a group and 10,000 image-cluster bootstrap draws;
+repeated generations are not treated as independent people.

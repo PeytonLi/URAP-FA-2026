@@ -7,12 +7,9 @@ Used instead of Prime after the wallet there ran dry. Everything provider-neutra
 prime_native so `runpod_native.py launch --resume-from <dir>` behaves identically.
 """
 import argparse
-import base64
 import json
 import math
 import os
-import re
-import shlex
 import signal
 import subprocess
 import tarfile
@@ -180,8 +177,7 @@ def launch(resume_from=None, attach_pod=None, attach_key=None):
                          "image": IMAGE},
                "quoted_hourly_usd": price, "spending_ceiling_usd": spending_ceiling,
                "wallet_before_usd": wallet_before, "input_bundle": bundle,
-               "requested_conditions": ["gemma3_12b_sft", "gemma3_12b_orpo",
-                                      "gemma3_12b_kto"],
+               "requested_conditions": ["gemma3_12b_orpo"],
                "status": "provisioning", "optimizer_updates_verified": 0,
                "hugging_face_account": hub_account, "hub_backups_required": True}
     study.save_json(folder / "launch.json", receipt)

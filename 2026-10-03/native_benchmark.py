@@ -9,9 +9,42 @@ from pathlib import Path
 
 import benchmark
 import native_train
-import pilot
 import study
-from multimodel_bias.iat import IATBenchmarkRunner, deterministic_task_id
+from multimodel_bias.iat import IATBenchmarkRunner, Stimulus, deterministic_task_id
+
+
+def development_stimuli(dataset):
+    """Freeze three complete development match sets without using model outputs."""
+    from collections import defaultdict
+    import curated
+    rows = curated.selected_rows(dataset)
+    blocks = defaultdict(list)
+    for row in rows:
+        if row["split"] == "development":
+            blocks[row["match_set_id"]].append(row)
+    chosen = []
+    for sid in sorted(blocks, key=lambda s: hashlib.sha256(("development-v3|" + s).encode()).hexdigest()):
+        members = blocks[sid]
+        if (len(members) == 4
+                and sum(r["source_race"] == "Black" for r in members) == 2
+                and sum(r["source_race"] == "White" for r in members) == 2):
+            chosen.extend(members)
+        if len(chosen) == 12:
+            break
+    if len(chosen) != 12:
+        raise ValueError("Three complete development blocks required")
+    from PIL import Image
+    stimuli = []
+    for row in chosen:
+        image = (study.REPO / dataset["asset_root"] / row["image_path"]).resolve()
+        if not study.image_matches_manifest(row, image):
+            raise ValueError("Development image hash mismatch")
+        with Image.open(image) as im:
+            width, height = im.size
+        stimuli.append(Stimulus(
+            row["image_id"], image.name, row["source_race"], row["source_gender"],
+            width, height, study.sha(image), image))
+    return stimuli
 
 
 class NativeRunner(IATBenchmarkRunner):
@@ -62,7 +95,9 @@ class NativeRunner(IATBenchmarkRunner):
         return response
 
 
-def run(model_name, method, image_dir, max_seconds, checkpoint=None):
+def run(model_name, method, image_dir, max_seconds, checkpoint=None, development=False):
+    if model_name != "gemma3_12b" or method not in ("base", "orpo"):
+        raise ValueError("New evaluation is Gemma 3 12B base/ORPO-only")
     import torch
     from transformers import AutoModelForImageTextToText, AutoProcessor
     if method not in ("base", "sft", "orpo", "kto") or not math.isfinite(max_seconds) or max_seconds <= 0:
@@ -78,7 +113,8 @@ def run(model_name, method, image_dir, max_seconds, checkpoint=None):
         receipt = json.loads((checkpoint.parent / "run.json").read_text(encoding="utf-8"))
         expected_train = dataset_config["split_counts"]["train"]
         expected_dev = dataset_config["split_counts"]["development"]
-        expected_updates = 3 * math.ceil(expected_train / 4)
+        expected_examples = dataset_config.get("example_split_counts", dataset_config["split_counts"])
+        expected_updates = 3 * math.ceil(expected_examples["train"] / 4)
         if (receipt["status"] != "training_complete_evaluation_pending" or receipt["completed_epochs"] != 3
                 or receipt["optimizer_updates"] != receipt["planned_optimizer_updates"]
                 or receipt["optimizer_updates"] != expected_updates
@@ -103,13 +139,19 @@ def run(model_name, method, image_dir, max_seconds, checkpoint=None):
         native = PeftModel.from_pretrained(native, checkpoint)
     native.eval()
     key = model_name + "_" + method + "_native_balanced"
+    if development:
+        key += "_development"
     model = replace(benchmark.fw.model_spec(settings["model"], 1, key=key,
         display_name=benchmark.MODELS[model_name][1] + " (native " + method + ")",
         base_model=settings["model"] + "@" + settings["revision"]), provider_endpoint="prime/native-transformers")
     config = benchmark.fw.run_config(1)
-    stimuli = benchmark.fw.load_stimuli(study.REPO / "2026-09-11/data/iat12/manifest.csv", image_dir=image_dir)
+    stimuli = development_stimuli(dataset_config) if development else benchmark.fw.load_stimuli(
+        study.REPO / "2026-09-11/data/iat12/manifest.csv", image_dir=image_dir)
+    if development:
+        config = replace(config, benchmark_version="iat-development-v3-12x50")
     runner = NativeRunner(native, processor, model_name, deadline, key, config, [model], stimuli,
-                          output_root=study.ROOT / "results/native_benchmarks")
+                          output_root=study.ROOT / ("results/native_development" if development
+                                                   else "results/native_benchmarks"))
     records = benchmark.fw.dedupe_records(benchmark.fw._jsonl_records(runner.records_path))
     contract = {"provider": "prime/native-transformers", "logical_base_model": model.api_revision_hint,
                 "model": asdict(model), "config": asdict(config), "prompt": study.IAT_PROMPT,
@@ -157,10 +199,11 @@ def run(model_name, method, image_dir, max_seconds, checkpoint=None):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--model", choices=native_train.MODELS, required=True)
-    parser.add_argument("--method", choices=("base", "sft", "orpo", "kto"), required=True)
+    parser.add_argument("--model", choices=("gemma3_12b",), required=True)
+    parser.add_argument("--method", choices=("base", "orpo"), required=True)
     parser.add_argument("--image-dir", type=Path, required=True)
     parser.add_argument("--checkpoint", type=Path)
     parser.add_argument("--max-seconds", type=float, required=True)
+    parser.add_argument("--development", action="store_true")
     args = parser.parse_args()
-    run(args.model, args.method, args.image_dir, args.max_seconds, args.checkpoint)
+    run(args.model, args.method, args.image_dir, args.max_seconds, args.checkpoint, args.development)

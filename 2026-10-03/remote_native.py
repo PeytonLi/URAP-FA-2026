@@ -1,4 +1,4 @@
-"""Owned-pod worker: six independent native trainings, then matched benchmarks."""
+"""Owned-pod worker: ORPO-only training, then matched benchmarks."""
 import argparse
 import json
 import os
@@ -164,7 +164,7 @@ def main():
         # The bootstrap parent is system Python; scientific imports belong in the pinned venv.
         ready_training, ready_benchmarks = verify_resume(python, worker_log)
         for model in ("gemma3_12b",):
-            for method in ("sft", "orpo", "kto"):
+            for method in ("orpo",):
                 if STOP.exists():
                     raise InterruptedError("Owned run stopped before the next condition")
                 if (model, method) in ready_training:
@@ -185,10 +185,14 @@ def main():
                 study.save_json(outputs, summary)
                 if code:
                     raise RuntimeError("Actual training failed; do not silently substitute a condition")
-            for method in ("base", "sft", "orpo", "kto"):
+            evaluations = [(method, development)
+                           for development in ((True, False) if study.dataset_config().get(
+                               "dataset_id") == "image-curation-2026-09-29-v3" else (False,))
+                           for method in ("base", "orpo")]
+            for method, development in evaluations:
                 if STOP.exists():
                     raise InterruptedError("Owned run stopped before evaluation")
-                if (model, method) in ready_benchmarks:
+                if not development and (model, method) in ready_benchmarks:
                     summary["conditions"].append({"model": model, "benchmark": method,
                                                   "exit_code": 0, "reused_verified_benchmark": True})
                     study.save_json(outputs, summary)
@@ -196,6 +200,8 @@ def main():
                 command = [python, "-u", str(ROOT / "native_benchmark.py"), "--model", model,
                            "--method", method, "--image-dir", str(ROOT / "data/private/benchmark_images"),
                            "--max-seconds", "3600"]
+                if development:
+                    command.append("--development")
                 if method != "base":
                     folders = list((ROOT / "data/private/native_runs").glob(model + "_" + method + "_*"))
                     if len(folders) != 1:
@@ -204,16 +210,16 @@ def main():
                 child = subprocess.Popen(command, cwd=ROOT.parent, stdout=worker_log,
                                          stderr=subprocess.STDOUT)
                 study.save_json(ACTIVE, {"worker_pid": os.getpid(), "child_pid": child.pid,
-                                        "phase": model + "_" + method + "_benchmark"})
+                                        "phase": model + "_" + method + (
+                                            "_development" if development else "_benchmark")})
                 code = child.wait()
-                summary["conditions"].append({"model": model, "benchmark": method, "exit_code": code})
+                summary["conditions"].append({"model": model, "benchmark": method,
+                                              "development": development, "exit_code": code})
                 study.save_json(outputs, summary)
                 if code:
                     raise RuntimeError("Native benchmark failed; retain partial records")
-            # Advisor-requested suite: DecodingTrust/BOLD/VisBias on base plus
-            # each preference-tuned adapter (SFT excluded: IAT-identical to ORPO
-            # in round 1 and not a preference method).
-            for method in ("base", "orpo", "kto"):
+            for method in (() if study.dataset_config().get("benchmark_scope") == "iat_only"
+                           else ("base", "orpo")):
                 if STOP.exists():
                     raise InterruptedError("Owned run stopped before extra evaluation")
                 command = [python, "-u", str(ROOT / "native_extra_benchmarks.py"), "--model", model,
