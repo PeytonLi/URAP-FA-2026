@@ -281,3 +281,34 @@ Reproducible outputs: `analysis/variety_r2/summary.csv`, `per_image.csv`,
 input checksums and analysis source hash. Inference uses all 924 assignments
 of six of the 12 images to a group and 10,000 image-cluster bootstrap draws;
 repeated generations are not treated as independent people.
+
+## 7. V4 matched answers (training labels built, not yet trained)
+
+Because honest per-face labels supported only four smile words (section 6),
+the user chose a different target design: "both faces in each Black/White
+pair get the same set of varied three-word answers, spread across all 50
+words and still leaning positive or negative to match the expression. Fair
+and varied by design, but the words are no longer claims about each face".
+
+`labeling/matched_v4.py` builds these targets deterministically, with no
+model calls. Every one of the 160 match blocks (2 Black + 2 White photos)
+gets four answers, and all four photos in a block get the same four. The
+lean comes from the block's automated `expression_class` (metadata, not
+ground truth). Positive words per answer are 2,2,2,1 for positive blocks,
+1,1,1,2 for negative, 1,2,1,2 for neutral and 2,1,2,1 for uncertain, so
+every chosen answer mixes valence. Each answer's rejected counterpart uses
+only the block's leaning pole, which is the collapse seen in rounds 1-2 and
+in KTO. Words are spread by least-used selection within each split, so
+development blocks never steer training.
+
+| Split | Answers | Distinct words | Effective vocabulary | Distinct triples | Black-White word TV |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Train | 1,920 | 50 / 50 | 49.5 | 474 | 0.000 |
+| Development | 640 | 50 / 50 | 49.4 | 159 | 0.000 |
+
+Word distributions are identical across races by construction, so TV = 0
+here says nothing about the trained model. The real test is the model's own
+outputs: development photos first, then the unchanged frozen benchmark.
+Some answers combine words that would be odd as face descriptions (for
+example "Cherish, Ugly, Gross"); that is the accepted cost of this design.
+Aggregates: `analysis/matched_v4/audit.json`, `label_word_counts.png`.

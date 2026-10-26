@@ -187,7 +187,7 @@ def main():
                     raise RuntimeError("Actual training failed; do not silently substitute a condition")
             evaluations = [(method, development)
                            for development in ((True, False) if study.dataset_config().get(
-                               "dataset_id") == "image-curation-2026-09-29-v3" else (False,))
+                               "dataset_id") in study.MULTITRIPLE_DATASETS else (False,))
                            for method in ("base", "orpo")]
             for method, development in evaluations:
                 if STOP.exists():

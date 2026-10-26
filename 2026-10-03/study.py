@@ -81,6 +81,9 @@ def read_csv(path):
         return list(csv.DictReader(handle))
 
 
+MULTITRIPLE_DATASETS = ("image-curation-2026-09-29-v3", "image-curation-2026-09-29-v4")
+
+
 def dataset_config():
     path = ROOT / "config/active_dataset.json"
     if not path.is_file():
@@ -88,7 +91,8 @@ def dataset_config():
     config = json.loads(path.read_text(encoding="utf-8"))
     if config.get("dataset_id") not in ("image-curation-2026-09-29-v1",
                                         "image-curation-2026-09-29-v2",
-                                        "image-curation-2026-09-29-v3"):
+                                        "image-curation-2026-09-29-v3",
+                                        "image-curation-2026-09-29-v4"):
         raise ValueError("Unknown active dataset; refusing to fall back to historical training data")
     return config
 

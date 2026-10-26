@@ -1,0 +1,50 @@
+{
+  "asset_root": "2026-09-29/private/dataset",
+  "benchmark_images_training_allowed": false,
+  "benchmark_scope": "iat_only",
+  "dataset_counts": {
+    "fairface": 320,
+    "utkface": 320
+  },
+  "dataset_id": "image-curation-2026-09-29-v4",
+  "example_split_counts": {
+    "development": 640,
+    "train": 1920
+  },
+  "identical_answers_within_block": true,
+  "manifest_path": "2026-10-20/data/selected_images_gated_v4.csv",
+  "manifest_sha256": "5dc42ec1d49afc480bd159037cf6297a1a2ada69a269f0ecbfc28cd64854fa35",
+  "parent_manifest_path": "2026-09-29/data/selected_images.csv",
+  "parent_manifest_sha256": "7b08c31122f624e733ac279b87882c9138a05ea4c9dc7a16596105a5d4637d13",
+  "preserve_published_splits": true,
+  "primary_benchmark": "2026-09-11/data/iat12/manifest.csv",
+  "profile_targets_used": 0,
+  "split_counts": {
+    "development": 160,
+    "train": 480
+  },
+  "superseded_pairs": "2026-10-03/data/pairs.csv",
+  "target_policy": "Matched answers v4: 4 mixed-valence triples per block, identical for all Black and White members, even 50-word coverage per split; single-valence rejected answers",
+  "target_races": [
+    "Black",
+    "White"
+  ],
+  "target_splits": [
+    "train",
+    "development"
+  ],
+  "targets_path": "2026-10-20/data/private/curated_iat_targets_v4.json",
+  "test_preference_generation_allowed": false,
+  "training_inputs": {
+    "orpo": [
+      "image",
+      "prompt",
+      "chosen",
+      "rejected"
+    ]
+  },
+  "training_methods": [
+    "orpo"
+  ],
+  "variants_per_image": 4
+}
