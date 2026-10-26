@@ -14,20 +14,55 @@ import study
 
 
 class NativeReportTests(unittest.TestCase):
+    def test_orpo_only_coverage_report_uses_csv_and_does_not_claim_target_met(self):
+        with tempfile.TemporaryDirectory(prefix="urap-coverage-report-fixture-") as folder:
+            root = Path(folder)
+            targets = root / "targets.json"
+            study.save_json(targets, [{"split": "train", "chosen": "Happy, Joyful, Smiling"}])
+            dataset = {"dataset_id": "image-curation-2026-09-29-v3", "targets_path": str(targets)}
+            training = {("gemma3_12b", "orpo"): ({
+                "training_images": 4, "training_examples": 16, "optimizer_updates": 12}, root)}
+            conditions = {}
+            for method in ("base", "orpo"):
+                source = root / method
+                source.mkdir()
+                rows = [{"image_id": f"fixture_{i}", "image_sha256": f"hash_{i}",
+                         "iteration": n, "race": "Black" if i < 6 else "White",
+                         "valid_three": True, "negative_count": 0,
+                         "words": "Happy|Joyful|Smiling", "sampled_raw": "Happy, Joyful, Smiling",
+                         "response_source": "sampled"} for i in range(12) for n in range(1, 51)]
+                with (source / "responses.csv").open("w", newline="") as handle:
+                    writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+                    writer.writeheader()
+                    writer.writerows(rows)
+                conditions["gemma3_12b", method] = (None, rows, source, {})
+            with patch.object(study, "ROOT", root), \
+                    patch.object(study, "dataset_config", return_value=dataset), \
+                    patch.object(native_report, "verified_results", return_value=(training, conditions)):
+                output = native_report.main(root)
+            text = (output / "REPORT.md").read_text()
+            self.assertIn("Only Gemma 3 12B-IT ORPO was trained", text)
+            self.assertIn("target was not met", text)
+            self.assertTrue((output / "word_counts.png").is_file())
+            with (output / "summary.csv").open() as handle:
+                summaries = list(csv.DictReader(handle))
+            self.assertEqual(len(summaries), 4)
+            self.assertTrue(all(s["distinct_words_union"] == "3" for s in summaries))
+
     def test_render_all_nine_conditions_in_temporary_fixture_only(self):
         # Rendering check only: synthetic records, no pretrained weights/results.
         nr = native_report
         training, conditions = {}, {}
         with tempfile.TemporaryDirectory(prefix="urap-report-fixture-") as folder:
             root = Path(folder)
-            frozen, policy = root / "cohort.json", root / "policy.json"
-            study.save_json(frozen, {"rows": [{"dataset": "fairface", "split": "train",
+            frozen = root / "cohort.json"
+            study.save_json(frozen, [{"dataset": "fairface", "split": "train",
                                               "image_id": "fixture_train", "chosen": "Happy, Joyful, Smiling",
                                               "rejected": "Angry, Negative, Sadness"},
-                                             {"dataset": "utkface", "split": "development"}]})
-            study.save_json(policy, {"fixture_only": True})
+                                             {"dataset": "utkface", "split": "development"}])
             dataset = {"manifest_path": "fixture.csv", "manifest_sha256": "fixture_hash",
-                       "source_commit": "fixture_commit"}
+                       "source_commit": "fixture_commit", "targets_path": str(frozen),
+                       "split_counts": {"train": 1, "development": 1}}
             for name in nr.native_train.MODELS:
                 for method in ("sft", "orpo"):
                     category = {"chosen_preference_accuracy": 0.5}
@@ -63,22 +98,23 @@ class NativeReportTests(unittest.TestCase):
                 return original_analysis(records, models, output, **{**options, "bootstrap_samples": 20})
             with patch.object(study, "ROOT", root), \
                     patch.object(study, "dataset_config", return_value=dataset), \
-                    patch.object(nr.pilot, "FROZEN", frozen), patch.object(nr.pilot, "POLICY", policy), \
                     patch.object(nr, "verified_results", return_value=(training, conditions)), \
                     patch.object(nr.benchmark.fw, "write_iat_analysis", side_effect=small_analysis):
                 nr.main(root)
             output = root / "reports/native_balanced"
             manifest = json.loads((output / "report_manifest.json").read_text())
-            self.assertEqual((manifest["training_conditions"], manifest["benchmark_slots"]), (6, 5400))
+            model_count = len(nr.native_train.MODELS)
+            self.assertEqual((manifest["training_conditions"], manifest["benchmark_slots"]),
+                             (model_count * 2, model_count * 3 * 600))
             self.assertEqual(manifest["chosen_training_triple_counts"], {"Happy, Joyful, Smiling": 1})
             self.assertEqual(manifest["rejected_training_triple_counts"], {"Angry, Negative, Sadness": 1})
             self.assertFalse(manifest["identity_disjointness_established"])
             self.assertEqual(manifest["training_implementation_sha256"], study.sha(Path(nr.native_train.__file__)))
-            self.assertEqual(len(list(output.glob("*_per_image.csv"))), 9)
-            self.assertEqual(len(list((output / "analysis/plots").glob("*_01_word_counts.png"))), 9)
+            self.assertEqual(len(list(output.glob("*_per_image.csv"))), model_count * 3)
+            self.assertEqual(len(list((output / "analysis/plots").glob("*_01_word_counts.png"))), model_count * 3)
             self.assertTrue((output / "analysis/plots/comparison_02_race_gaps.png").is_file())
             with (output / "analysis/word_counts.csv").open() as handle:
-                self.assertEqual(len(list(csv.DictReader(handle))), 9 * 2 * 61)
+                self.assertEqual(len(list(csv.DictReader(handle))), model_count * 3 * 2 * 61)
             for name in nr.native_train.MODELS:
                 text = (output / f"{name}.md").read_text()
                 self.assertIn("## Changes from the native base", text)
@@ -105,7 +141,10 @@ class NativeReportTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             recovered = Path(folder) / "recovered"
             output = Path(folder) / "output"
-            with patch.object(study, "ROOT", output):
+            dataset = {"split_counts": {"train": 676, "development": 180},
+                       "targets_path": "fixture.json", "manifest_sha256": "fixture_hash"}
+            with patch.object(study, "ROOT", output), \
+                    patch.object(study, "dataset_config", return_value=dataset):
                 self.assertEqual(native_report.verified_results(recovered, require_all=False), ({}, {}))
                 with self.assertRaisesRegex(ValueError, "Exactly one completed"):
                     native_report.main(recovered)
@@ -117,7 +156,8 @@ class NativeReportTests(unittest.TestCase):
                 self.assertFalse(output.exists())
                 settings = native_report.native_train.MODELS["gemma4"]
                 study.save_json(run, {"status": "training_complete_evaluation_pending",
-                    "optimizer_updates": 507, "completed_epochs": 3, "cohort": "resolved-balanced",
+                    "optimizer_updates": 507, "planned_optimizer_updates": 507,
+                    "completed_epochs": 3, "cohort": "full", "manifest_sha256": "fixture_hash",
                     "model": settings["model"], "method": "sft", "weight_and_processor_revision": settings["revision"],
                     "targets_sha256": "fixture_hash", "pilot_policy_sha256": "fixture_hash",
                     "training_images": 676, "development_images": 180, "test_images_used": 0,

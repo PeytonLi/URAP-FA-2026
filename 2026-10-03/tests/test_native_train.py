@@ -113,7 +113,7 @@ class NativeTrainTests(unittest.TestCase):
                 patch.object(native.study, "dataset_config", return_value={"fixture": True}), \
                 patch.object(AutoModelForImageTextToText, "from_pretrained") as load:
             with self.assertRaisesRegex(ValueError, "incomplete targets"):
-                native.train("gemma4", "sft", 60)
+                native.train("gemma3_12b", "orpo", 60)
             load.assert_not_called()
             self.assertEqual(list(Path(folder).iterdir()), [])
 

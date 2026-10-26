@@ -39,7 +39,7 @@ class CuratedTests(unittest.TestCase):
     def test_split_balanced_but_broken_matching_sets_are_rejected(self):
         rows = [{**row} for row in self.rows]
         train = next(row for row in rows if row["split"] == "train")
-        test = next(row for row in rows if row["split"] == "test")
+        test = next(row for row in rows if row["split"] == "development")
         train["split"], test["split"] = test["split"], train["split"]
         with self.assertRaisesRegex(ValueError, "crosses research splits"):
             curated.validate_rows(rows, self.config)
@@ -65,14 +65,15 @@ class CuratedTests(unittest.TestCase):
         self.assertIn("approval_missing", curated.target_failures({**target, "reviewer": None}, image))
         self.assertIn("target_provenance_missing",
                       curated.target_failures({**target, "target_provenance": None}, image))
-        test_image = next(row for row in self.rows if row["split"] == "test")
+        test_image = {**image, "split": "test"}
         self.assertIn("heldout_test_target_forbidden", curated.target_failures(target, test_image))
 
     def test_no_target_file_means_no_invented_labels(self):
         with tempfile.TemporaryDirectory() as folder:
             targets, audit = curated.reviewed_targets(self.rows, Path(folder) / "absent.json")
         self.assertEqual(targets, {})
-        self.assertEqual(audit["required_records"], 1920)
+        self.assertEqual(audit["required_records"], sum(
+            row["split"] in ("train", "development") for row in self.rows))
         self.assertFalse(audit["ready"])
 
     def test_ai_targets_require_current_user_authorization_and_keep_their_source(self):

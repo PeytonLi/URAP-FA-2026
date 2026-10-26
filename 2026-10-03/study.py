@@ -87,7 +87,8 @@ def dataset_config():
         return None
     config = json.loads(path.read_text(encoding="utf-8"))
     if config.get("dataset_id") not in ("image-curation-2026-09-29-v1",
-                                        "image-curation-2026-09-29-v2"):
+                                        "image-curation-2026-09-29-v2",
+                                        "image-curation-2026-09-29-v3"):
         raise ValueError("Unknown active dataset; refusing to fall back to historical training data")
     return config
 

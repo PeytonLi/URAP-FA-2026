@@ -24,5 +24,14 @@
     "authorization_date_local": "2026-10-20",
     "authorization_source": "User: Pick 3 words but only when there it passes a specific confidence level. Maybe 80-90%? / Full AI Labeling but again only if its confident in its answer.",
     "scope": "AI approval of image-specific train/development targets only when two independent teacher passes agree on the chosen triple at confidence >= 0.8 with no ambiguity flags; Devin adjudicates two-of-three overlaps; unresolved images stay unlabeled."
+  },
+  "ai_target_approval_candidates_v3": {
+    "authorized": true,
+    "authorization_source": "User: Don't retrain SFT. only do ORPO from now on. Other than that, you can start implementing everything and figure out how to improve on the metrics I described",
+    "approved_proposal": "Candidate-set elicitation, targeted coverage curriculum, coverage-maximizing multi-triple export and pair balance on the existing training/development pool.",
+    "scope": "Two independent image-viewing teachers support every chosen word at subjective confidence >= 0.8 without review flags. Export two to four distinct unordered triples from supported words only. Preserve splits and complete race-matched blocks with equal positive-word counts. Never force labels for coverage; no benchmark or reserved-test labels. AI proposals, not ground truth.",
+    "external_teacher_generation_authorized": true,
+    "labeling_spend_cap_usd": 20,
+    "training_methods": ["orpo"]
   }
 }

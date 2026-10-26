@@ -131,6 +131,7 @@ def package_inputs(destination, resume_from=None):
     paths.update(visbias_normalized.rglob("*.jpg"))
     paths.add(study.ROOT / "tests/test_native_train.py")
     paths.add(study.ROOT / "tests/test_hub_backup.py")
+    paths.add(study.REPO / "2026-10-20/analysis/variety.py")
     config = study.dataset_config()
     paths.add(study.REPO / config["manifest_path"])
     if pilot.FROZEN.is_file():
@@ -275,7 +276,7 @@ def launch(resume_from=None):
     receipt = {"started_at": study.now(), "pod_name": name, "quote": offer, "quoted_hourly_usd": price,
                "spending_ceiling_usd": spending_ceiling, "wallet_before_usd": wallet.balance_usd,
                "credit_top_up_enabled_by_this_work": False, "input_bundle": bundle,
-               "requested_conditions": ["gemma3_12b_sft", "gemma3_12b_orpo"], "status": "provisioning",
+               "requested_conditions": ["gemma3_12b_orpo"], "status": "provisioning",
                "optimizer_updates_verified": 0, "ssh_key_id": key_id,
                "hugging_face_account": hub_account, "hub_backups_required": True}
     study.save_json(folder / "launch.json", receipt)

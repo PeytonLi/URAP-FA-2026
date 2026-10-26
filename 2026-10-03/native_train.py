@@ -1,4 +1,4 @@
-"""Native single-GPU image LoRA SFT/ORPO candidate; no provider provisioning.
+"""Native single-GPU Gemma 3 ORPO training; historical objective fixtures retained.
 
 Full approved coverage, or the separately frozen authorized pilot, is mandatory.
 CPU fixture checks are not real study runs or evidence of full-size GPU feasibility.
@@ -175,7 +175,8 @@ def approved_cohort(cohort="full"):
         raise ValueError("Unknown training cohort")
     train = [r for r in rows if r["split"] == "train"]
     dev = [r for r in rows if r["split"] == "development"]
-    if len(train) != config["split_counts"]["train"] or len(dev) != config["split_counts"]["development"]:
+    expected = config.get("example_split_counts", config["split_counts"])
+    if len(train) != expected["train"] or len(dev) != expected["development"]:
         raise ValueError("The full frozen training/development cohort is required")
     asset_root = (study.REPO / config["asset_root"]).resolve()
     for row in rows:
@@ -196,6 +197,8 @@ def save_checkpoint(model, processor, optimizer, path):
 
 
 def train(model_name, method, max_seconds, cohort="full"):
+    if model_name != "gemma3_12b" or method != "orpo":
+        raise ValueError("New training is Gemma 3 12B ORPO-only; historical methods are read-only")
     import torch
     from transformers import AutoModelForImageTextToText, AutoProcessor, set_seed
 
@@ -233,7 +236,9 @@ def train(model_name, method, max_seconds, cohort="full"):
                "pilot_class_weights": config.get("pilot_class_weights"),
                "pilot_policy_sha256": config.get("pilot_policy_sha256"),
                "loss_weighting": "fixed_dataset_weights_then_logical_batch_mean" if cohort != "full" else "equal_examples",
-               "training_images": len(train_rows), "development_images": len(dev_rows),
+               "training_images": len({r["image_id"] for r in train_rows}),
+               "development_images": len({r["image_id"] for r in dev_rows}),
+               "training_examples": len(train_rows), "development_examples": len(dev_rows),
                "test_images_used": 0, "profile_targets_used": 0, "optimizer_updates": 0,
                "completed_epochs": 0, "requested_epochs": 3, "logical_batch_size": 4,
                "planned_optimizer_updates": 3 * math.ceil(len(train_rows) / 4),
@@ -317,14 +322,17 @@ def train(model_name, method, max_seconds, cohort="full"):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("check-data", "train"))
-    parser.add_argument("--model", choices=MODELS)
-    parser.add_argument("--method", choices=("sft", "orpo", "kto"))
+    parser.add_argument("--model", choices=("gemma3_12b",))
+    parser.add_argument("--method", choices=("orpo",))
     parser.add_argument("--max-seconds", type=float)
     parser.add_argument("--cohort", choices=("full", "resolved-balanced"), default="full")
     args = parser.parse_args()
     if args.action == "check-data":
         _, training, development, _ = approved_cohort(args.cohort)
-        print(json.dumps({"training_images": len(training), "development_images": len(development), "optimizer_updates": 0}))
+        print(json.dumps({"training_images": len({r["image_id"] for r in training}),
+                          "development_images": len({r["image_id"] for r in development}),
+                          "training_examples": len(training), "development_examples": len(development),
+                          "optimizer_updates": 0}))
         return
     if not args.model or not args.method or args.max_seconds is None:
         parser.error("train requires --model, --method and --max-seconds")

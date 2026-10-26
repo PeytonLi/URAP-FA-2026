@@ -186,8 +186,8 @@ def run_visbias(client, spec, out_dir, seed):
 
 def main():
     parser = argparse.ArgumentParser(description="Local DecodingTrust/BOLD/VisBias for Gemma-3")
-    parser.add_argument("--model", default="gemma3_12b")
-    parser.add_argument("--method", required=True, choices=["base", "orpo", "kto"])
+    parser.add_argument("--model", default="gemma3_12b", choices=["gemma3_12b"])
+    parser.add_argument("--method", required=True, choices=["base", "orpo"])
     parser.add_argument("--checkpoint", type=Path)
     parser.add_argument("--benchmarks", default="decodingtrust,bold,visbias")
     parser.add_argument("--dt-samples-per-regime", type=int, default=200)
