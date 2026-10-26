@@ -126,9 +126,13 @@ as the inferential unit. A nonsignificant test is not evidence of equality.
 Strict sampled responses and final benchmark-scored responses are separate
 views: fallback or word-order permutations cannot manufacture expressiveness.
 
-Current status: OpenAI returned `credit_balance_exhausted`. Bitdeer access was
-then verified on actual images, and the broader 48-image pilot is in progress.
-No v3 adapter or new-model benchmark result exists yet.
+Current status: OpenAI returned `credit_balance_exhausted`; labeling now uses
+Bitdeer. Policy `visible_expression_candidates_v3_2` restricts `review_flags` to
+image-level blockers and moves caveats to `review_notes`. Its balanced 48-image
+pilot (96 calls, 95 valid) found jointly supported words on 11 images, three or
+more on 4, and only four words in total: Smiling, Happy, Joyful, Cheerful. No
+matched block was complete, so no export, adapter or v3 benchmark exists yet.
+`audit_v3.py --provider bitdeer --out PATH` writes this aggregate audit.
 `analysis/variety_r2/` is explicitly a reanalysis of stored round-2 base/ORPO
 outputs, not a v3 result.
 

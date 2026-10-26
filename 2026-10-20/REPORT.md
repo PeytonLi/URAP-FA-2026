@@ -199,9 +199,22 @@ labels on genuinely varied face stimuli.
 
 **Execution status:** v3 code is implemented and fixture-tested, but the live
 candidate-label pilot received OpenAI `credit_balance_exhausted`. It produced
-no accepted labels. The user subsequently provided Bitdeer Model Studio access;
-DeepSeek V4.1 Flash-1017 and GLM-5.3-Flash successfully processed the initial
-four photos, and a balanced 48-image pilot is now in progress.
+no accepted labels. Labeling then moved to Bitdeer Model Studio with
+DeepSeek V4.1 Flash-1017 and GLM-5.3-Flash as independent teachers.
+
+**Feasibility result (pilot, not a final dataset).** The first Bitdeer pilot
+approved nothing because teachers placed general caveats in vetoing review
+flags. After flags were restricted to image-level blockers (policy v3_2), the
+same balanced 48-image pilot gave 95/96 valid calls. Both teachers supported
+at least one word with confidence >=0.8 on 11 images; only 4 images had the
+three words needed for one triple. The jointly supported vocabulary was four
+smile words: Smiling, Happy, Joyful and Cheerful. DeepSeek alone used 13 words
+confidently, GLM four. None of the negative-expression pilot images received
+joint support, and no complete Black/White matched block survived.
+Honest visible-expression labels therefore look far from the 50-word target;
+many vocabulary words (for example Friendship, Disaster, Magnificent) are not
+facial expressions. Reaching 50 words would need a different target design,
+which is a research decision rather than a labeling fix.
 No v3 adapter has been trained or benchmarked. The active
 dataset remains v2; these numbers reanalyze the stored round-2 outputs.
 
