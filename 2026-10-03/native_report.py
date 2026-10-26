@@ -29,7 +29,7 @@ def verified_results(recovered, require_all=True):
     training, conditions = {}, {}
     methods = dataset.get("training_methods", ("sft", "orpo", "kto"))
     model_settings = ({"gemma3_12b": native_train.MODELS["gemma3_12b"]}
-                      if dataset.get("dataset_id") == "image-curation-2026-09-29-v3"
+                      if dataset.get("dataset_id") in study.MULTITRIPLE_DATASETS
                       else native_train.MODELS)
     for name, settings in model_settings.items():
         for method in methods:
@@ -113,7 +113,7 @@ def verified_results(recovered, require_all=True):
 
 
 def main(recovered):
-    if study.dataset_config().get("dataset_id") == "image-curation-2026-09-29-v3":
+    if study.dataset_config().get("dataset_id") in study.MULTITRIPLE_DATASETS:
         return coverage_report(recovered)
     training, conditions = verified_results(recovered)
     dataset = study.dataset_config()

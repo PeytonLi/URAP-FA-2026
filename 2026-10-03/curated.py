@@ -18,7 +18,7 @@ def preference_variants(target):
         {branch: target.get(branch) for branch in ("chosen", "rejected")}])
 
 
-def variant_failures(target):
+def variant_failures(target, require_word_support=True):
     variants = preference_variants(target)
     if (not isinstance(variants, list) or not 2 <= len(variants) <= 4
             or not all(isinstance(v, dict) for v in variants)):
@@ -42,6 +42,10 @@ def variant_failures(target):
         if key in seen:
             failures.append("permutation_only_variant")
         seen.add(key)
+        if chosen & rejected:
+            failures.append("chosen_rejected_overlap")
+        if not require_word_support:
+            continue
         for word in chosen:
             support = evidence.get(word)
             if (not isinstance(support, list) or len(support) != 2
@@ -113,6 +117,8 @@ def ai_approval_authorization(source=None):
         return None
     authorization = (permission.get("ai_target_approval_candidates_v3", {})
                      if source == "two_pass_candidates_v3" else
+                     permission.get("ai_target_approval_matched_v4", {})
+                     if source == "matched_block_answers_v4" else
                      permission.get("ai_target_approval_gated_two_pass")
                      or permission.get("ai_target_approval", {}))
     if (authorization.get("authorized") is not True
@@ -139,7 +145,8 @@ def target_failures(target, image, ai_authorization_sha256=None):
             failures.append("ai_approval_not_authorized")
         if target.get("draft_source") not in (
                 "codex_direct_visual_review", "two_pass_gated_teachers",
-                "two_pass_gated_teachers_v2", "two_pass_candidates_v3"):
+                "two_pass_gated_teachers_v2", "two_pass_candidates_v3",
+                "matched_block_answers_v4"):
             failures.append("ai_approval_requires_direct_inspection")
     elif kind != "human":
         failures.append("unknown_reviewer_kind")
@@ -154,7 +161,9 @@ def target_failures(target, image, ai_authorization_sha256=None):
     if (study.exact_target(target.get("chosen", "")) and study.exact_target(target.get("rejected", ""))
             and set(target["chosen"].split(", ")) == set(target["rejected"].split(", "))):
         failures.append("identical_responses")
-    if "preference_variants" in target or target.get("draft_source") == "two_pass_candidates_v3":
+    if target.get("draft_source") == "matched_block_answers_v4":
+        failures.extend(variant_failures(target, require_word_support=False))
+    elif "preference_variants" in target or target.get("draft_source") == "two_pass_candidates_v3":
         failures.extend(variant_failures(target))
     return failures
 
@@ -211,7 +220,7 @@ def training_rows(config):
     targets, audit = reviewed_targets(rows, study.REPO / config["targets_path"])
     if not audit["ready"]:
         raise ValueError("Approved image-specific train/development targets are incomplete")
-    if config["dataset_id"] == "image-curation-2026-09-29-v3":
+    if config["dataset_id"] in study.MULTITRIPLE_DATASETS:
         validate_multitriple_blocks(rows, targets, config)
     return [{**row, "task_type": "iat_3word", "prompt": study.IAT_PROMPT,
              "chosen": variant["chosen"],
@@ -256,6 +265,13 @@ def validate_multitriple_blocks(rows, targets, config):
                      for r in members]
         if len(set(schedules)) != 1:
             raise ValueError("Valence-unbalanced candidate variants")
+        if config.get("identical_answers_within_block"):
+            answer_sets = {tuple((frozenset(v["chosen"].split(", ")),
+                                  frozenset(v["rejected"].split(", ")))
+                                 for v in preference_variants(targets[r["image_id"]]))
+                           for r in members}
+            if len(answer_sets) != 1:
+                raise ValueError("Matched block members have different answers")
     dev_blocks = sum(members[0]["split"] == "development"
                      for members in selected.values())
     if dev_blocks < 3:

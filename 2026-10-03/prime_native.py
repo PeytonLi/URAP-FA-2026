@@ -134,6 +134,9 @@ def package_inputs(destination, resume_from=None):
     paths.add(study.REPO / "2026-10-20/analysis/variety.py")
     config = study.dataset_config()
     paths.add(study.REPO / config["manifest_path"])
+    if config.get("parent_manifest_path"):
+        # Multi-triple validation re-checks blocks against the parent manifest on the pod.
+        paths.add(study.REPO / config["parent_manifest_path"])
     if pilot.FROZEN.is_file():
         paths.add(pilot.FROZEN)
     for name in ("draft_targets.json", "codex_direct_reviews.json", "ai_review_decisions.json", "human_review_decisions.json"):

@@ -32,6 +32,8 @@ MIN_VRAM_GB = 48
 MAX_HOURLY_USD = 2.0
 SPEND_CEILING_USD = 4.0
 BALANCE_RESERVE_USD = 0.50
+# Wall time the ceiling must buy: v4 ORPO (~4.4 h) + setup + four IAT evals.
+MIN_RUN_HOURS = 6.5
 IMAGE = "runpod/pytorch:2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04"
 WATCHDOG_KEEPALIVE = "/tmp/urap_launcher_keepalive"
 WATCHDOG_STALE_SECONDS = 45 * 60
@@ -78,7 +80,8 @@ def gpu_offers():
         price = low.get("uninterruptablePrice") or gpu.get("securePrice")
         if (gpu.get("memoryInGb") or 0) < MIN_VRAM_GB or not isinstance(price, (int, float)):
             continue
-        if not math.isfinite(price) or price <= 0 or price > MAX_HOURLY_USD:
+        if (not math.isfinite(price) or price <= 0 or price > MAX_HOURLY_USD
+                or SPEND_CEILING_USD / price < MIN_RUN_HOURS):
             continue
         stock = (low.get("stockStatus") or "").lower()
         if stock in ("none", "unavailable"):
@@ -110,6 +113,8 @@ def launch(resume_from=None, attach_pod=None, attach_key=None):
     if wallet_before <= BALANCE_RESERVE_USD:
         raise ValueError(f"RunPod balance ${wallet_before:.2f} below reserve ${BALANCE_RESERVE_USD:.2f}")
     spending_ceiling = min(SPEND_CEILING_USD, wallet_before - BALANCE_RESERVE_USD)
+    if spending_ceiling < SPEND_CEILING_USD:
+        raise ValueError("RunPod balance cannot fund the full run; no paid resource created")
     attached = None
     if attach_pod:
         # Drive a pod that already exists (created outside this launcher, e.g. a
@@ -120,7 +125,8 @@ def launch(resume_from=None, attach_pod=None, attach_key=None):
             raise ValueError("attach target pod not found: " + str(attach_pod))
         price = float(attached.get("costPerHr") or 0)
         gpu_id = (attached.get("machine") or {}).get("gpuTypeId") or "attached"
-        if not math.isfinite(price) or price <= 0 or price > MAX_HOURLY_USD:
+        if (not math.isfinite(price) or price <= 0 or price > MAX_HOURLY_USD
+                or spending_ceiling / price < MIN_RUN_HOURS):
             raise ValueError(f"Attached pod costs ${price}/hr — outside the $0-{MAX_HOURLY_USD} guard")
         offers = [{"price": price, "stock": "attached", "gpu": {"id": gpu_id}}]
     else:
@@ -228,7 +234,8 @@ def launch(resume_from=None, attach_pod=None, attach_key=None):
             raise ValueError("Successful pod response missing ID; inspect private ownership receipt")
         receipt.update(pod_id=owned, status="waiting_for_ssh")
         study.save_json(folder / "launch.json", receipt)
-        deadline = started + min(6 * 3600, spending_ceiling / price * 3600)
+        # Billing starts at creation; unbilled provisioning retries must not eat run time.
+        deadline = time.monotonic() + min(MIN_RUN_HOURS * 3600, spending_ceiling / price * 3600)
         ready_deadline = time.monotonic() + 900
         while time.monotonic() < ready_deadline:
             try:

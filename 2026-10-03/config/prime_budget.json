@@ -32,6 +32,18 @@
     "scope": "Two independent image-viewing teachers support every chosen word at subjective confidence >= 0.8 without review flags. Export two to four distinct unordered triples from supported words only. Preserve splits and complete race-matched blocks with equal positive-word counts. Never force labels for coverage; no benchmark or reserved-test labels. AI proposals, not ground truth.",
     "external_teacher_generation_authorized": true,
     "labeling_spend_cap_usd": 20,
-    "training_methods": ["orpo"]
+    "training_methods": [
+      "orpo"
+    ]
+  },
+  "ai_target_approval_matched_v4": {
+    "authorized": true,
+    "authorization_date_local": "2026-10-26",
+    "authorization_source": "User: Selected: Matched answers (recommended): both faces in each Black/White pair get the same set of varied three-word answers, spread across all 50 words and still leaning positive or negative to match the expression. Fair and varied by design, but the words are no longer claims about each face",
+    "scope": "Deterministic design targets for existing train/development images only: identical answer sets for every member of a race-matched block, mixed-valence chosen triples leaning with the block's automated expression class, even coverage of the 50 eligible words. Not claims about any face; no benchmark or reserved-test targets.",
+    "external_teacher_generation_authorized": false,
+    "training_methods": [
+      "orpo"
+    ]
   }
 }

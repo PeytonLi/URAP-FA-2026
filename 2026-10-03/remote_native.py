@@ -173,7 +173,7 @@ def main():
                     study.save_json(outputs, summary)
                     continue
                 command = [python, "-u", str(ROOT / "native_train.py"), "train", "--cohort", "full",
-                           "--model", model, "--method", method, "--max-seconds", "10800"]
+                           "--model", model, "--method", method, "--max-seconds", "18000"]
                 # Keep child output on the pod so a dropped SSH monitor cannot
                 # turn a valid optimizer run into BrokenPipeError.
                 child = subprocess.Popen(command, cwd=ROOT.parent, stdout=worker_log,
@@ -187,7 +187,7 @@ def main():
                     raise RuntimeError("Actual training failed; do not silently substitute a condition")
             evaluations = [(method, development)
                            for development in ((True, False) if study.dataset_config().get(
-                               "dataset_id") == "image-curation-2026-09-29-v3" else (False,))
+                               "dataset_id") in study.MULTITRIPLE_DATASETS else (False,))
                            for method in ("base", "orpo")]
             for method, development in evaluations:
                 if STOP.exists():
@@ -266,7 +266,7 @@ def package_outputs():
     files = {}
     with tarfile.open(archive, "w:gz", compresslevel=1) as handle:
         for relative in ("data/private/native_runs", "results/native_benchmarks",
-                         "results/extra_benchmarks",
+                         "results/native_development", "results/extra_benchmarks",
                          "data/private/remote_summary.json", "data/private/remote_worker.log"):
             path = ROOT / relative
             if path.exists():
