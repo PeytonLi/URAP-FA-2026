@@ -2,7 +2,7 @@
 
 Descriptive only (no significance tests). The untuned base and round-2 ORPO
 come from the round-2 run; v4 ORPO comes from the extras-only run given on the
-command line. Alica-style graphs and CSVs land in 2026-10-20/analysis/extras_v4/.
+command line. Single-chart graphs (one PNG per chart) and CSVs land in 2026-10-20/analysis/extras_v4/.
 """
 import argparse
 import csv
@@ -12,7 +12,6 @@ from pathlib import Path
 
 import matplotlib
 matplotlib.use("Agg")
-import matplotlib.pyplot as plt
 import numpy as np
 
 from split_panels import save_each
@@ -67,14 +66,9 @@ def grouped(ax, keys, value, title, fmt="%.3f", rotation=0):
 
 
 def figure(stem, headline, panels):
-    """Combined side-by-side graph plus one PNG per panel in separate/."""
-    fig, axes = plt.subplots(1, len(panels), figsize=(22, 7))
-    for ax, (_, _, draw) in zip(axes, panels):
-        draw(ax)
-    fig.suptitle(headline, fontsize=13)
-    fig.tight_layout(); fig.savefig(OUT / f"{stem}.png", dpi=150, bbox_inches="tight"); plt.close(fig)
+    """One PNG per chart (no combined figures), e.g. decodingtrust_by_regime.png."""
     for name, size, draw in panels:
-        save_each([(name, draw)], OUT / "separate", stem, size, headline)
+        save_each([(name, draw)], OUT, stem, size, headline)
 
 
 def agree(rows):

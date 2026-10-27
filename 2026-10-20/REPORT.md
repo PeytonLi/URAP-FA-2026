@@ -276,8 +276,13 @@ enough for one group to carry the rare-word tail.
   ablations; it is not proven by the response histogram alone.
 
 Reproducible outputs: `analysis/variety_r2/summary.csv`, `per_image.csv`,
-`word_counts.csv`, `provenance.json`, `word_counts.png`,
-`per_image_variety.png` and `per_image_rates.png`. Provenance records the
+`word_counts.csv`, `word_counts_reference_order.csv`, `provenance.json`, and
+one PNG per chart: `word_counts_<condition>.png`,
+`per_image_variety_<measure>.png` and `per_image_rates_<condition>.png`.
+Word-count charts always use the fixed `REFERENCE_WORD_ORDER` from
+`2026-09-11/src/multimodel_bias/plots.py` (30 positive words, then 31
+negative) on a green/red background, so charts from different fine-tuning
+runs can be compared bar by bar. Provenance records the
 input checksums and analysis source hash. Inference uses all 924 assignments
 of six of the 12 images to a group and 10,000 image-cluster bootstrap draws;
 repeated generations are not treated as independent people.
@@ -371,5 +376,5 @@ Reading: v4's IAT gains do not carry over to these text and occupation
 tests. DecodingTrust is roughly unchanged (lower untargeted agreement,
 targeted unchanged). BOLD race spread is between base and round 2. VisBias
 stays near chance, with slightly lower answer-order consistency. Outputs:
-`analysis/extras_v4/` (`summary.csv`, three graphs, `provenance.json`),
+`analysis/extras_v4/` (`summary.csv`, one PNG per chart, `provenance.json`),
 produced by `analysis/extras_v4.py`.

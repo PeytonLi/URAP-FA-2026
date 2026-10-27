@@ -1,4 +1,4 @@
-"""Draw each panel of a multi-panel graph again as its own single-chart PNG."""
+"""Save every chart as its own PNG; graphs are never combined into one image."""
 from pathlib import Path
 
 
