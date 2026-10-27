@@ -172,7 +172,9 @@ def main():
                 if STOP.exists():
                     raise InterruptedError("Owned run stopped before the next condition")
                 if extras_only and (model, method) not in ready_training:
-                    raise RuntimeError("Extras-only run must reuse a verified checkpoint, not train")
+                    if method in plan["extra_methods"]:
+                        raise RuntimeError("Extras-only run must reuse a verified checkpoint, not train")
+                    continue
                 if (model, method) in ready_training:
                     summary["conditions"].append({"model": model, "method": method,
                                                   "exit_code": 0, "reused_verified_checkpoint": True})

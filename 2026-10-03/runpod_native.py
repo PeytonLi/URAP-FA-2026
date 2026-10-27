@@ -187,7 +187,8 @@ def launch(resume_from=None, attach_pod=None, attach_key=None, extras_only=None)
                          "image": IMAGE},
                "quoted_hourly_usd": price, "spending_ceiling_usd": spending_ceiling,
                "wallet_before_usd": wallet_before, "input_bundle": bundle,
-               "requested_conditions": ["gemma3_12b_orpo"],
+               "requested_conditions": (["gemma3_12b_" + m + "_extras" for m in extras_only]
+                                        if extras_only is not None else ["gemma3_12b_orpo"]),
                "status": "provisioning", "optimizer_updates_verified": 0,
                "hugging_face_account": hub_account, "hub_backups_required": True}
     study.save_json(folder / "launch.json", receipt)
@@ -436,8 +437,11 @@ def launch(resume_from=None, attach_pod=None, attach_key=None, extras_only=None)
                     raise ValueError("Recovered checkpoint/evaluation file checksum mismatch")
                 receipt["outputs_recovered_and_verified"] = True
                 receipt["recovery_checksums"] = hashes
+                # Count only runs trained on this pod, not checkpoints shipped in for reuse.
                 runs = [json.loads(path.read_text(encoding="utf-8")) for path in
-                        (folder / "recovered/data/private/native_runs").glob("*/run.json")]
+                        (folder / "recovered/data/private/native_runs").glob("*/run.json")
+                        if "2026-10-03/" + path.relative_to(folder / "recovered").as_posix()
+                        not in bundle["files"]]
                 receipt["optimizer_updates_verified"] = sum(run["optimizer_updates"] for run in runs)
                 receipt["completed_training_conditions"] = sum(
                     run["status"] == "training_complete_evaluation_pending" for run in runs)
