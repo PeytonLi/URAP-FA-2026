@@ -650,16 +650,6 @@ def launch(resume_from=None, attach_pod=None, attach_key=None, extras_only=None,
                 receipt["optimizer_updates_verified"] = sum(run["optimizer_updates"] for run in runs)
                 receipt["completed_training_conditions"] = sum(
                     run["status"] == "training_complete_evaluation_pending" for run in runs)
-                if prompt_sweep:
-                    checked = subprocess.run(
-                        [sys.executable, str(study.REPO / "2026-10-20/analysis/prompt_sweep.py"),
-                         "--recovered", str(folder / "recovered"), "--verify-only"],
-                        capture_output=True, timeout=600, check=False)
-                    receipt["semantic_outputs_verified"] = (
-                        checked.returncode == 0 and receipt["optimizer_updates_verified"] == 0
-                        and receipt["completed_training_conditions"] == 0)
-                    receipt["semantic_check_output"] = (checked.stdout + checked.stderr).decode(
-                        "utf-8", errors="replace")[-2000:]
         except BaseException as exc:
             receipt["recovery_error_type"] = type(exc).__name__
             if isinstance(exc, subprocess.CalledProcessError):
@@ -680,6 +670,20 @@ def launch(resume_from=None, attach_pod=None, attach_key=None, extras_only=None,
                                termination_verified=outcome["verified"])
                 if not outcome["verified"]:
                     receipt["cleanup_requires_attention"] = True
+            if prompt_sweep and receipt.get("outputs_recovered_and_verified"):
+                # Local-only check, run after deletion so it cannot consume paid time.
+                try:
+                    checked = subprocess.run(
+                        [sys.executable, str(study.REPO / "2026-10-20/analysis/prompt_sweep.py"),
+                         "--recovered", str(folder / "recovered"), "--verify-only"],
+                        capture_output=True, timeout=600, check=False)
+                    receipt["semantic_outputs_verified"] = (
+                        checked.returncode == 0 and receipt["optimizer_updates_verified"] == 0
+                        and receipt["completed_training_conditions"] == 0)
+                    receipt["semantic_check_output"] = (checked.stdout + checked.stderr).decode(
+                        "utf-8", errors="replace")[-2000:]
+                except subprocess.TimeoutExpired:
+                    receipt["semantic_outputs_verified"] = False
             receipt["finished_at"] = study.now()
             receipt["elapsed_seconds"] = time.monotonic() - started
             study.save_json(folder / "launch.json", receipt)
