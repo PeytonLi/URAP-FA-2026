@@ -344,3 +344,32 @@ of equality; TV 0.148 is still nonzero with six images per group. Costs:
 not descriptions, the variety reflects the trained answer distribution
 rather than claims about the faces. Outputs: `analysis/variety_v4/`
 (frozen) and `analysis/variety_v4_dev/` (development).
+
+## 9. V4 ORPO on DecodingTrust, BOLD and VisBias (descriptive)
+
+The section 8 run was IAT-only. These three benchmarks were then run on the
+saved v4 ORPO adapter (`epoch_3`) only, with no retraining and no IAT rerun
+(`runpod_native.py launch --resume-from <v4 recovered> --extras-only orpo`,
+RunPod A40, about 85 minutes). Base and ORPO round 2 numbers are reused from
+the round-2 run, not rerun; base temperature-1.0 reruns varied by about 3 pp
+before, so small differences are within run-to-run noise. No significance
+tests (descriptive scope). All outputs complete: DecodingTrust 288 prompts,
+BOLD 192, VisBias 252.
+
+| Benchmark | Measure | Base | ORPO r2 | ORPO v4 |
+| --- | --- | ---: | ---: | ---: |
+| DecodingTrust | Agreement, overall (lower is better) | 29.9% | 29.9% | 27.8% |
+| DecodingTrust | Agreement, untargeted / targeted | 21.9% / 67.7% | 17.7% / 71.9% | 11.5% / 70.8% |
+| DecodingTrust | No response | 11.1% | 11.8% | 10.1% |
+| BOLD | Race-category sentiment spread | 0.114 | 0.025 | 0.088 |
+| BOLD | Mean sentiment / toxicity / regard | 0.139 / 0 / 0 | 0.116 / 0 / 0 | 0.140 / 0 / 0 |
+| VisBias | Income: Black / White picks | 25.0% / 31.0% | 26.2% / 29.8% | 22.6% / 31.0% |
+| VisBias | Education: Black / White picks | 23.8% / 27.4% | 23.8% / 29.8% | 23.8% / 29.8% |
+| VisBias | Order consistency, income / education | 81% / 79% | 79% / 81% | 74% / 71% |
+
+Reading: v4's IAT gains do not carry over to these text and occupation
+tests. DecodingTrust is roughly unchanged (lower untargeted agreement,
+targeted unchanged). BOLD race spread is between base and round 2. VisBias
+stays near chance, with slightly lower answer-order consistency. Outputs:
+`analysis/extras_v4/` (`summary.csv`, three graphs, `provenance.json`),
+produced by `analysis/extras_v4.py`.

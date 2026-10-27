@@ -190,18 +190,21 @@ def plot(results, out):
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
     labels = [label for label, view in results if view == "sampled_exact"]
-    fig, axes = plt.subplots(len(labels), 1, figsize=(22, 5 * len(labels)), squeeze=False)
+    fig, axes = plt.subplots(len(labels), 1, figsize=(11, 3.6 * len(labels)), squeeze=False)
     for ax, label in zip(axes[:, 0], labels):
         summary, _, counts = results[label, "sampled_exact"]
         x = np.arange(61)
-        ax.axvspan(-0.5, 29.5, color="green", alpha=0.06)
-        ax.axvspan(29.5, 60.5, color="red", alpha=0.06)
-        ax.bar(x - 0.2, [counts["Black"][w] for w in IAT_WORDS], 0.4, color="tab:blue", label="Black")
-        ax.bar(x + 0.2, [counts["White"][w] for w in IAT_WORDS], 0.4, color="orange", label="White")
-        ax.set_xticks(x, IAT_WORDS, rotation=65, ha="right")
+        ax.axvspan(-0.5, 29.5, color="green", alpha=0.08)
+        ax.axvspan(29.5, 60.5, color="red", alpha=0.08)
+        ax.bar(x - 0.21, [counts["Black"][w] for w in IAT_WORDS], 0.42, color="tab:blue", label="Black")
+        ax.bar(x + 0.21, [counts["White"][w] for w in IAT_WORDS], 0.42, color="orange", label="White")
+        ax.set_xticks(x, IAT_WORDS, rotation=90, fontsize=6.5)
+        ax.set_xlim(-0.8, 60.8)
+        ax.tick_params(axis="x", length=2, pad=1)
         ax.set_ylabel("Word count")
-        ax.set_title(f"{label}: {summary['distinct_words_union']}/61 words; strict sampled output, no fallback")
-        ax.legend()
+        ax.set_title(f"{label}: {summary['distinct_words_union']}/61 words; strict sampled output, no fallback",
+                     fontsize=10)
+        ax.legend(fontsize=8, loc="upper right")
     fig.tight_layout()
     fig.savefig(out / "word_counts.png", dpi=150)
     plt.close(fig)
