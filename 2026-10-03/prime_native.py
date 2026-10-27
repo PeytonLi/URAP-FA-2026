@@ -203,7 +203,8 @@ def package_inputs(destination, resume_from=None, extras_only=None):
                     checksums[name] = study.sha(path)
         extras_root = resume_from.resolve() / "results" / "extra_benchmarks" \
             if resume_from is not None else None
-        if extras_root is not None and extras_root.is_dir():
+        # Extras runners resume from existing responses, so a fresh extras run starts empty.
+        if plan is None and extras_root is not None and extras_root.is_dir():
             for path in extras_root.rglob("*"):
                 if path.is_symlink() or not path.resolve().is_relative_to(ATTEMPTS.resolve()):
                     raise ValueError("Unsafe recovered extra-benchmark file")

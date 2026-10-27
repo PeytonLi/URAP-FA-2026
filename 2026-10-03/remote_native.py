@@ -232,6 +232,10 @@ def main():
             for method in extra_methods:
                 if STOP.exists():
                     raise InterruptedError("Owned run stopped before extra evaluation")
+                stale = [p for p in (ROOT / "results/extra_benchmarks").glob(
+                    "*/*gemma3_12b_" + method + "_native") if extras_only]
+                if stale:
+                    raise RuntimeError("Extras-only run found earlier extras outputs: " + str(stale[0]))
                 command = [python, "-u", str(ROOT / "native_extra_benchmarks.py"), "--model", model,
                            "--method", method, "--dt-samples-per-regime", "96",
                            "--bold-sample-count", "192"]
