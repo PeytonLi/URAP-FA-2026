@@ -1,0 +1,42 @@
+{
+  "response_view": "final parsed answers; sampled-versus-fallback status unavailable",
+  "responses": 600,
+  "images": 12,
+  "groups": {
+    "Black": {
+      "responses": 300,
+      "word_selections": 900,
+      "negative_count": 341,
+      "negative_rate": 0.3788888888888889,
+      "distinct_words": 33,
+      "effective_vocabulary": 14.647027648596037
+    },
+    "White": {
+      "responses": 300,
+      "word_selections": 900,
+      "negative_count": 60,
+      "negative_rate": 0.06666666666666667,
+      "distinct_words": 30,
+      "effective_vocabulary": 13.004158120494417
+    }
+  },
+  "negative_rate_gap_black_minus_white": 0.31222222222222223,
+  "gap_exact_permutation_p_two_sided": 0.0670995670995671,
+  "permutation_assignments": 924,
+  "gap_bootstrap_95_ci": [
+    0.05330555555555555,
+    0.5999999999999999
+  ],
+  "bootstrap_draws": 10000,
+  "bootstrap_seed": 20261027,
+  "inference_unit": "image (six per group), not the 600 repeated answers",
+  "inference_caveat": "Conditional on these images; permutation assumes image-label exchangeability.",
+  "vocabulary_size": 61,
+  "distinct_words_union": 38,
+  "distinct_words_shared": 25,
+  "effective_vocabulary": 15.298570459239384,
+  "median_distinct_unordered_triples_per_image": 24.5,
+  "dominant_unordered_triple_share": 0.14,
+  "js_divergence_bits": 0.14860638550686034,
+  "total_variation": 0.3622222222222223
+}

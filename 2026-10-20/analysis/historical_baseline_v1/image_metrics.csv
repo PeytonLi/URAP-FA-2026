@@ -1,0 +1,13 @@
+image_filename,race,responses,negative_count,word_selections,negative_rate,distinct_words,distinct_unordered_triples
+bf14_nc.jpg,Black,50,5,150,0.03333333333333333,20,30
+bf23_nc.jpg,Black,50,18,150,0.12,18,13
+bf56_nc.jpg,Black,50,15,150,0.1,23,31
+bm14_nc.jpg,Black,50,111,150,0.74,19,17
+bm23_nc.jpg,Black,50,138,150,0.92,14,7
+bm56_nc.jpg,Black,50,54,150,0.36,23,25
+wf2_nc.jpg,White,50,3,150,0.02,21,29
+wf3_nc.jpg,White,50,6,150,0.04,20,30
+wf6_nc.jpg,White,50,15,150,0.1,19,24
+wm1_nc.jpg,White,50,0,150,0.0,16,19
+wm4_nc.jpg,White,50,3,150,0.02,20,28
+wm6_nc.jpg,White,50,33,150,0.22,26,24
