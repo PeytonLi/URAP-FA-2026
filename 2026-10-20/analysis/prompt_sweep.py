@@ -91,7 +91,7 @@ def audit_prompt(recovered, prompt_id):
         stats.require(fallback == {r["task_id"] for r in rows
                                    if r["response_source"].startswith("fallback")},
                       "Fallback/scorer mismatch")
-        image_indices = {r["image_id"]: i for i, r in enumerate(identities)}
+        image_indices = {r["image_id"]: i for i, r in enumerate(identities, start=1)}
         image_map = {r["image_id"]: r for r in identities}
         for row in rows:
             image = image_map[row["image_id"]]
