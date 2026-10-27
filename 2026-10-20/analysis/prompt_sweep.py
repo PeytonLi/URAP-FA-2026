@@ -23,6 +23,7 @@ from multimodel_bias.iat import deterministic_seed
 
 PLAN = REPO / "2026-10-03/config/iat_prompt_sweep_analysis.json"
 ADAPTER_SHA256 = iat_prompts.ADAPTER_SHA256
+SWEEP_SOURCES = stats.FINAL_SOURCES | {"fallback_invalid"}
 
 
 def jsonl(path):
@@ -87,7 +88,8 @@ def audit_prompt(recovered, prompt_id):
         fallback = {task for task, stage in keyed if stage == "fallback"}
         stats.require(sampled == {r["task_id"] for r in rows}
                       == {r["task_id"] for r in records}, "Sampled task set mismatch")
-        stats.require(fallback == {r["task_id"] for r in rows if r["response_source"] == "fallback"},
+        stats.require(fallback == {r["task_id"] for r in rows
+                                   if r["response_source"].startswith("fallback")},
                       "Fallback/scorer mismatch")
         image_indices = {r["image_id"]: i for i, r in enumerate(identities)}
         image_map = {r["image_id"]: r for r in identities}
@@ -125,7 +127,7 @@ def audit_prompt(recovered, prompt_id):
             "adapter_sha256": contract["adapter_sha256"]}
     stats.require(normalized_contract(contracts["base"]) == normalized_contract(contracts["tuned"]),
                   "Base/ORPO contracts differ beyond the intended condition namespace")
-    stats.validate_pair(data["base"], data["tuned"])
+    stats.validate_pair(data["base"], data["tuned"], SWEEP_SOURCES)
     return data, {"prompt": spec, "conditions": audits, "original_sources_verified": True,
                   "historical_baseline_used_for_tuning_inference": False}, sources
 
@@ -167,7 +169,7 @@ def run(recovered, out):
     audited = {p: audit_prompt(recovered, p) for p in iat_prompts.PROMPT_IDS}
     results, per_image, prepared = [], [], {}
     for prompt_id, (data, audit, sources) in audited.items():
-        rows, images, _ = stats.analyze(data["base"], data["tuned"])
+        rows, images, _ = stats.analyze(data["base"], data["tuned"], SWEEP_SOURCES)
         for row in rows:
             row.update(prompt_id=prompt_id, interpretation=iat_prompts.KINDS[prompt_id])
         results.extend(rows)

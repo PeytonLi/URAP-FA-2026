@@ -227,6 +227,34 @@ class SemanticGate(unittest.TestCase):
             with self.assertRaises(FileNotFoundError):
                 self.sweep.verify(root)
 
+    def pair_rows(self, last_source, last_words):
+        rows = []
+        for image in range(12):
+            race = "Black" if image < 6 else "White"
+            for iteration in range(1, 51):
+                words = ["Happy", "Joyful", "Love"]
+                source = "sampled"
+                if image == 11 and iteration == 50:
+                    words, source = last_words, last_source
+                rows.append({
+                    "image_id": f"img{image}", "iteration": str(iteration),
+                    "image_sha256": f"sha{image}", "image_filename": f"f{image}.jpg",
+                    "race": race, "gender": "Female", "seed": str(image * 100 + iteration),
+                    "response_source": source, "words": "|".join(words),
+                    "valid_three": str(len(words) == 3), "word_count": str(len(words)),
+                    "negative_count": "0", "sampled_raw": "Happy, Joyful, Love"})
+        return rows
+
+    def test_invalid_fallback_is_a_terminal_invalid_slot(self):
+        stats = sys.modules["iat_significance_v4"]
+        both_invalid = self.pair_rows("fallback_invalid", ["Happy", "Joyful"])
+        self.sweep.stats.validate_pair(both_invalid, both_invalid, self.sweep.SWEEP_SOURCES)
+        with self.assertRaisesRegex(ValueError, "Unknown final response source"):
+            stats.validate_pair(both_invalid, both_invalid)
+        forged = self.pair_rows("fallback_invalid", ["Happy", "Joyful", "Love"])
+        with self.assertRaises(ValueError):
+            self.sweep.stats.validate_pair(forged, forged, self.sweep.SWEEP_SOURCES)
+
 
 if __name__ == "__main__":
     unittest.main()

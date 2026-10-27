@@ -44,7 +44,10 @@ def require(check, reason):
         raise ValueError(reason)
 
 
-def validate_pair(base, tuned):
+FINAL_SOURCES = frozenset({"sampled", "fallback"})
+
+
+def validate_pair(base, tuned, sources=FINAL_SOURCES):
     for rows in (base, tuned):
         variety.validate_slots(rows)
 
@@ -56,11 +59,14 @@ def validate_pair(base, tuned):
     for rows in (base, tuned):
         grouped = defaultdict(list)
         for row in rows:
-            require(row["response_source"] in {"sampled", "fallback"},
-                    "Unknown final response source")
+            require(row["response_source"] in sources, "Unknown final response source")
             grouped[row["image_id"]].append(row)
             words = variety.word_tuple(row, "final_scored")
-            require(len(words) == int(row["word_count"]), "Final scorer denominator changed")
+            if row["response_source"] == "fallback_invalid":
+                require(not words and int(row["word_count"]) < 3,
+                        "Invalid fallback must stay a terminal invalid slot")
+            else:
+                require(len(words) == int(row["word_count"]), "Final scorer denominator changed")
         for image in grouped.values():
             require(len({(r["race"], r["gender"], r["image_filename"]) for r in image}) == 1,
                     "Within-image metadata drift")
@@ -325,8 +331,8 @@ def analyze_view(base, tuned, view, sensitivity=False):
     return rows
 
 
-def analyze(base_rows, tuned_rows):
-    validate_pair(base_rows, tuned_rows)
+def analyze(base_rows, tuned_rows, sources=FINAL_SOURCES):
+    validate_pair(base_rows, tuned_rows, sources)
     views = {}
     rows = []
     for view in ("sampled_exact", "final_scored", "sampled_distinct"):
