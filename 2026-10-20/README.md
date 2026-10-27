@@ -6,6 +6,21 @@ September-29 image pool: 1,440 train + 480 development images from
 480 test images are never labeled — they stay reserved). The 12 benchmark
 images remain excluded.
 
+## Historical graph baseline
+
+The exact saved responses behind Peyton's reference word-count graph are frozen
+in [`analysis/historical_baseline_v1/`](analysis/historical_baseline_v1/README.md).
+Use that export, not the current v4 base rerun, as the historical reference.
+Its Black/White negative rates are 37.89% / 6.67%, with 38/61 vocabulary words.
+The export records protocol limitations; comparisons with newer native-chat
+runs are descriptive until generation and scoring are aligned. All figures
+remain separate, using the same 61-word order.
+
+Retrospective tests for the protocol-matched v4 native base/ORPO pair are in
+[`analysis/iat_stats_v4/REPORT.md`](analysis/iat_stats_v4/REPORT.md).
+That difference-in-differences test uses the native base rerun, **not** the
+historical screenshot baseline; the latter remains an independent reference.
+
 ## V3: ORPO-only coverage and response variety
 
 New training uses **Gemma 3 12B-IT ORPO only**. SFT and KTO implementations

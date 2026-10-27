@@ -1,0 +1,39 @@
+{
+  "status": "retrospective; recorded before running this additional test family, not preregistered",
+  "comparison": "protocol-matched native Gemma 3 12B base versus ORPO v4",
+  "primary_view": "sampled_exact; preserve the existing exact-format parser, including accepted nonadjacent repeated words",
+  "parser_clarification": "Before results were exported, inspection found eight accepted A,B,A samples. Preserve the previously published denominator, handle token multiplicities in rarefaction, and add a no-repeated-word sensitivity rather than silently change the scorer.",
+  "independent_unit": "image; 12 images, six per race; 50 attempts per image",
+  "primary_tests": [
+    "negative_gap_change_did",
+    "word_entropy_change",
+    "unordered_triples_change"
+  ],
+  "primary_multiplicity": "Holm over these three tests",
+  "primary_race_permutation": "all 924 unblocked assignments retaining six images per race",
+  "primary_paired_permutation": "all 4096 image-level base/tuned swaps",
+  "tails": "two-sided signed contrasts; upper tail for nonnegative TV disparity",
+  "bootstrap": {
+    "draws": 10000,
+    "seed": 20261027,
+    "unit": "paired images resampled within race",
+    "interval": "95% percentile, marginal not multiplicity-adjusted"
+  },
+  "diagnostics": [
+    "negative-word gap within each model",
+    "61-word total variation between mean per-image race distributions within each model"
+  ],
+  "diagnostic_multiplicity": "Holm over four within-model tests",
+  "quality_test": "paired image-level change in strict-valid-answer fraction",
+  "sensitivities": [
+    "gender-blocked race permutations; 400 assignments",
+    "final scorer output including fallback, kept separate from strict sampled output",
+    "sampled_distinct: exclude accepted nonadjacent word repetitions as an explicit sensitivity",
+    "exact expected entropy and distinct triples after rarefying each model to the smaller valid-answer count per image"
+  ],
+  "sensitivity_multiplicity": "Holm within each labeled sensitivity family; not alternative headline selection",
+  "equivalence": "not run: no scientifically justified equivalence margin agreed in advance",
+  "welch_and_ols": "not primary tests; not run in this analysis",
+  "historical_baseline": "descriptive reference only; no pooled or causal comparison with native outputs",
+  "interpretation": "Conditional on this small fixed benchmark; label permutations require exchangeability, and paired swaps require within-image condition exchangeability under the null."
+}

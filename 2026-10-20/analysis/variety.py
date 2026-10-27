@@ -185,63 +185,99 @@ def write_csv(path, records):
         writer.writerows(records)
 
 
+BLACK_COLOR = "#3B6FB6"
+WHITE_COLOR = "#DCA03A"
+
+
+def word_count_caption(summary, counts):
+    neg = {race: sum(counts[race][w] for w in NEGATIVE_IAT_SET) for race in ("Black", "White")}
+    total = {race: sum(counts[race].values()) for race in ("Black", "White")}
+    gap = summary.get("black_minus_white_negative_rate")
+    p = summary.get("negative_gap_exact_p")
+    gap_text = (f"Black-White negative-rate gap {gap * 100:+.1f} points (exact p = {p:.3f}). "
+                if isinstance(gap, float) and isinstance(p, float) else "")
+    return (f"Negative words: {neg['Black']} of {total['Black']} for Black photos, "
+            f"{neg['White']} of {total['White']} for White photos. {gap_text}"
+            f"Words used: {summary['distinct_words_union']} of 61 "
+            f"(Black {summary['distinct_words_black']}, White {summary['distinct_words_white']}). "
+            f"Median distinct answers per photo: {summary['per_image_unordered_triples_median']:g} of 50. "
+            f"Strict sampled output, invalid answers excluded.")
+
+
 def plot(results, out):
+    import textwrap
+
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
+    from multimodel_bias.plots import REFERENCE_WORD_ORDER
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from split_panels import save_each
+    order = list(REFERENCE_WORD_ORDER)
+    n_pos = sum(w not in NEGATIVE_IAT_SET for w in order)
+    if sorted(order) != sorted(IAT_WORDS) or any(w in NEGATIVE_IAT_SET for w in order[:n_pos]):
+        raise ValueError("Reference word order must list all positive words before negative words")
     labels = [label for label, view in results if view == "sampled_exact"]
-    fig, axes = plt.subplots(len(labels), 1, figsize=(11, 3.6 * len(labels)), squeeze=False)
-    for ax, label in zip(axes[:, 0], labels):
+
+    def word_counts(ax, label):
         summary, _, counts = results[label, "sampled_exact"]
-        x = np.arange(61)
-        ax.axvspan(-0.5, 29.5, color="green", alpha=0.08)
-        ax.axvspan(29.5, 60.5, color="red", alpha=0.08)
-        ax.bar(x - 0.21, [counts["Black"][w] for w in IAT_WORDS], 0.42, color="tab:blue", label="Black")
-        ax.bar(x + 0.21, [counts["White"][w] for w in IAT_WORDS], 0.42, color="orange", label="White")
-        ax.set_xticks(x, IAT_WORDS, rotation=90, fontsize=6.5)
-        ax.set_xlim(-0.8, 60.8)
-        ax.tick_params(axis="x", length=2, pad=1)
-        ax.set_ylabel("Word count")
-        ax.set_title(f"{label}: {summary['distinct_words_union']}/61 words; strict sampled output, no fallback",
-                     fontsize=10)
-        ax.legend(fontsize=8, loc="upper right")
-    fig.tight_layout()
-    fig.savefig(out / "word_counts.png", dpi=150)
-    plt.close(fig)
-    fig, axes = plt.subplots(1, 2, figsize=(22, 7))
-    for j, (field, title) in enumerate((
-            ("distinct_words", "Distinct words per image (50 draws)"),
-            ("distinct_unordered_triples", "Distinct unordered triples per image (50 draws)"))):
+        x = np.arange(len(order))
+        width = 0.36
+        ax.axvspan(-0.5, n_pos - 0.5, color="green", alpha=0.08, lw=0)
+        ax.axvspan(n_pos - 0.5, len(order) - 0.5, color="red", alpha=0.08, lw=0)
+        ax.bar(x - width / 2, [counts["Black"][w] for w in order], width, color=BLACK_COLOR, label="black photo")
+        ax.bar(x + width / 2, [counts["White"][w] for w in order], width, color=WHITE_COLOR, label="white photo")
+        ax.set_xticks(x, order, rotation=90, fontsize=8)
+        ax.set_xlim(-0.8, len(order) - 0.2)
+        ax.set_xlabel("Words")
+        ax.set_ylabel("Count")
+        ax.set_title(f"Word Counts by Image File Prefix: {label}")
+        ax.grid(axis="y", color="#E4E7EB", linewidth=0.8)
+        ax.set_axisbelow(True)
+        ax.legend(frameon=False, loc="upper right")
+        ax.figure.text(0.5, -0.02, textwrap.fill(word_count_caption(summary, counts), 150),
+                       ha="center", va="top", fontsize=8.5, color="#303840")
+
+    def variety(ax, field, title):
         images = results[labels[0], "sampled_exact"][1]
         x = np.arange(len(images))
         width = 0.8 / len(labels)
         for i, label in enumerate(labels):
             values = results[label, "sampled_exact"][1]
-            bar = axes[j].bar(x - 0.4 + width / 2 + i * width, [r[field] for r in values], width, label=label)
-            axes[j].bar_label(bar, fmt="%.0f", fontsize=8)
-        axes[j].set_xticks(x, [r["image_id"] for r in images], rotation=20)
-        axes[j].set_title(title)
-        axes[j].legend()
-    fig.suptitle("Expressiveness before fallback; permutations are not new triples")
-    fig.tight_layout()
-    fig.savefig(out / "per_image_variety.png", dpi=150)
-    plt.close(fig)
-    fig, axes = plt.subplots(len(labels), 1, figsize=(22, 4 * len(labels)), squeeze=False)
-    for ax, label in zip(axes[:, 0], labels):
+            bar = ax.bar(x - 0.4 + width / 2 + i * width, [r[field] for r in values], width, label=label)
+            ax.bar_label(bar, fmt="%.0f", fontsize=8)
+        ax.set_xticks(x, [r["image_id"] for r in images], rotation=20)
+        ax.set_title(title)
+        ax.legend(loc="upper left", bbox_to_anchor=(1.0, 1.0), fontsize=8)
+
+    def rates(ax, label):
         _, images, _ = results[label, "final_scored"]
         bar = ax.bar(
             np.arange(len(images)),
             [r["negative_rate"] if r["negative_rate"] is not None else float("nan") for r in images],
-            color=["tab:blue" if r["race"] == "Black" else "orange" for r in images])
-        ax.bar_label(bar, fmt="%.3f")
+            color=[BLACK_COLOR if r["race"] == "Black" else WHITE_COLOR for r in images])
+        ax.bar_label(bar, fmt="%.3f", fontsize=8)
         ax.set_xticks(np.arange(len(images)), [r["image_id"] for r in images], rotation=20)
         ax.set_ylim(0, 1.12)
         ax.set_ylabel("Negative-word rate")
-        ax.set_title(f"{label}: final scorer, including fallback (Black=blue; White=orange)")
-    fig.suptitle("Image-level valence rates; low gaps can coexist with collapse")
-    fig.tight_layout()
-    fig.savefig(out / "per_image_rates.png", dpi=150)
-    plt.close(fig)
+        ax.set_title(f"{label}: final scorer, including fallback (Black=blue; White=gold)")
+
+    save_each([(label, lambda ax, label=label: word_counts(ax, label)) for label in labels],
+              out, "word_counts", (14, 6.5))
+    save_each([(field, lambda ax, f=field, t=title: variety(ax, f, t)) for field, title in (
+        ("distinct_words", "Distinct words per image (50 draws)"),
+        ("distinct_unordered_triples", "Distinct unordered triples per image (50 draws)"))],
+        out, "per_image_variety", (10, 5), "Expressiveness before fallback; permutations are not new triples")
+    save_each([(label, lambda ax, label=label: rates(ax, label)) for label in labels],
+              out, "per_image_rates", (10, 4.5), "Image-level valence rates; low gaps can coexist with collapse")
+    with (out / "word_counts_reference_order.csv").open("w", newline="") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(["condition", "position", "word", "valence", "black_count", "white_count"])
+        for label in labels:
+            counts = results[label, "sampled_exact"][2]
+            for i, w in enumerate(order, 1):
+                writer.writerow([label, i, w, "negative" if w in NEGATIVE_IAT_SET else "positive",
+                                 counts["Black"][w], counts["White"][w]])
 
 
 def main(conditions, out, training_targets=None):
