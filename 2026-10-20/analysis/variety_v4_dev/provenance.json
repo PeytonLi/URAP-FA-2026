@@ -75,7 +75,7 @@
     "Sick"
   ],
   "entropy_denominator": 61,
-  "analysis_script_sha256": "f601a545fdb1b3344f649256f6dc2d4a809089cb85322d7929efc77366f29223",
+  "analysis_script_sha256": "2a9fce2424b0a47f4361c1e22b6fb84f8725553ba0b7adc424148de4e6e74e2a",
   "unit_of_inference": "image",
   "bootstrap_samples": 10000,
   "caveats": [

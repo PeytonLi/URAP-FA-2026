@@ -21,7 +21,7 @@ from pathlib import Path, PurePosixPath
 import curated
 import hub_backup
 import study
-from prime_native import (ATTEMPTS, DEAD_MANS_MINUTES, command, package_inputs,
+from prime_native import (ATTEMPTS, DEAD_MANS_MINUTES, command, extras_only_plan, package_inputs,
                           resume_results, retry, transfer_hub_token)
 
 API = "https://rest.runpod.io/v1"
@@ -104,9 +104,13 @@ def terminate_pod(pod_id):
     return api("DELETE", "/pods/" + pod_id, timeout=30)
 
 
-def launch(resume_from=None, attach_pod=None, attach_key=None):
+def launch(resume_from=None, attach_pod=None, attach_key=None, extras_only=None):
+    if extras_only is not None and not resume_from:
+        raise ValueError("--extras-only requires --resume-from with a verified checkpoint")
     if resume_from:
-        resume_results(resume_from)  # Validate before cloud calls or purchases.
+        resumed = resume_results(resume_from)  # Validate before cloud calls or purchases.
+        if extras_only is not None:
+            extras_only_plan(extras_only, resumed[0])
     curated.training_rows(study.dataset_config())  # Fail before any billable provisioning or upload.
     hub_api, hub_account = hub_backup.connect()  # No paid pod without a usable Hub login.
     wallet_before = balance()
@@ -155,7 +159,7 @@ def launch(resume_from=None, attach_pod=None, attach_key=None):
     folder = ATTEMPTS / stamp
     folder.mkdir(parents=True, exist_ok=False)
     archive = folder / "inputs.tar.gz"
-    bundle = package_inputs(archive, resume_from=resume_from)
+    bundle = package_inputs(archive, resume_from=resume_from, extras_only=extras_only)
     study.save_json(folder / "input_checksums.json", bundle)
     if attach_key:
         key = Path(attach_key)
@@ -183,7 +187,8 @@ def launch(resume_from=None, attach_pod=None, attach_key=None):
                          "image": IMAGE},
                "quoted_hourly_usd": price, "spending_ceiling_usd": spending_ceiling,
                "wallet_before_usd": wallet_before, "input_bundle": bundle,
-               "requested_conditions": ["gemma3_12b_orpo"],
+               "requested_conditions": (["gemma3_12b_" + m + "_extras" for m in extras_only]
+                                        if extras_only is not None else ["gemma3_12b_orpo"]),
                "status": "provisioning", "optimizer_updates_verified": 0,
                "hugging_face_account": hub_account, "hub_backups_required": True}
     study.save_json(folder / "launch.json", receipt)
@@ -271,10 +276,12 @@ def launch(resume_from=None, attach_pod=None, attach_key=None):
             raise TimeoutError("Owned pod SSH never became usable within 15 minutes")
         remote = "/tmp/" + name
         command([*ssh_args, "mkdir", "-p", remote], capture_output=True, timeout=30)
+        # Resumed checkpoints make the bundle large; allow ~200 KB/s on slow pod links.
+        upload_timeout = 180 + Path(archive).stat().st_size // 200_000
         retry(lambda: command([*scp_args, archive, host + ":" + remote + "/inputs.tar.gz"],
-                              capture_output=True, timeout=180), attempts=3, delay=10)
+                              capture_output=True, timeout=upload_timeout), attempts=3, delay=10)
         command([*ssh_args, "tar", "-xzf", remote + "/inputs.tar.gz", "-C", remote],
-                capture_output=True, timeout=60)
+                capture_output=True, timeout=300)
         hub_token_path = transfer_hub_token(ssh_args, remote, hub_api.token)
         receipt.update(status="running_remote_worker", remote_workspace=remote,
                        deadline_monotonic_seconds=deadline,
@@ -432,8 +439,11 @@ def launch(resume_from=None, attach_pod=None, attach_key=None):
                     raise ValueError("Recovered checkpoint/evaluation file checksum mismatch")
                 receipt["outputs_recovered_and_verified"] = True
                 receipt["recovery_checksums"] = hashes
+                # Count only runs trained on this pod, not checkpoints shipped in for reuse.
                 runs = [json.loads(path.read_text(encoding="utf-8")) for path in
-                        (folder / "recovered/data/private/native_runs").glob("*/run.json")]
+                        (folder / "recovered/data/private/native_runs").glob("*/run.json")
+                        if "2026-10-03/" + path.relative_to(folder / "recovered").as_posix()
+                        not in bundle["files"]]
                 receipt["optimizer_updates_verified"] = sum(run["optimizer_updates"] for run in runs)
                 receipt["completed_training_conditions"] = sum(
                     run["status"] == "training_complete_evaluation_pending" for run in runs)
@@ -490,9 +500,12 @@ if __name__ == "__main__":
     parser.add_argument("--attach-pod", help="existing pod id to drive instead of creating one")
     parser.add_argument("--attach-key", type=Path,
                         help="private key matching the attached pod's injected PUBLIC_KEY")
+    parser.add_argument("--extras-only", type=lambda text: text.split(","),
+                        help="comma list (base,orpo): skip training/IAT, run only DT/BOLD/VisBias")
     args = parser.parse_args()
     result = launch(resume_from=args.resume_from,
-                    attach_pod=args.attach_pod, attach_key=args.attach_key)
+                    attach_pod=args.attach_pod, attach_key=args.attach_key,
+                    extras_only=args.extras_only)
     raise SystemExit(0 if result["status"] == "worker_complete_reports_pending"
                      and result.get("outputs_recovered_and_verified")
                      and result.get("termination_verified") else 1)

@@ -1,5 +1,7 @@
 """One owned H100/H200 pod, credit/time guard, output recovery and verified cleanup."""
 import argparse
+import hashlib
+import io
 import json
 import math
 import os
@@ -102,8 +104,23 @@ def resume_results(recovered):
     return training, conditions
 
 
-def package_inputs(destination, resume_from=None):
+RUN_PLAN = "2026-10-03/data/private/run_plan.json"
+
+
+def extras_only_plan(methods, resumed_training):
+    """Plan an extras-only run that reuses verified checkpoints instead of training."""
+    methods = list(methods)
+    if not methods or len(set(methods)) != len(methods) or not set(methods) <= {"base", "orpo"}:
+        raise ValueError("Extras-only methods must be distinct choices of base/orpo")
+    missing = [m for m in methods if m != "base" and ("gemma3_12b", m) not in resumed_training]
+    if missing:
+        raise ValueError("Extras-only run needs a verified recovered checkpoint for: " + ", ".join(missing))
+    return {"mode": "extras_only", "extra_methods": methods}
+
+
+def package_inputs(destination, resume_from=None, extras_only=None):
     resumed = resume_results(resume_from) if resume_from else ({}, {})
+    plan = extras_only_plan(extras_only, resumed[0]) if extras_only is not None else None
     config = study.dataset_config()
     if not config:
         raise ValueError("Active curated dataset is required")
@@ -186,7 +203,8 @@ def package_inputs(destination, resume_from=None):
                     checksums[name] = study.sha(path)
         extras_root = resume_from.resolve() / "results" / "extra_benchmarks" \
             if resume_from is not None else None
-        if extras_root is not None and extras_root.is_dir():
+        # Extras runners resume from existing responses, so a fresh extras run starts empty.
+        if plan is None and extras_root is not None and extras_root.is_dir():
             for path in extras_root.rglob("*"):
                 if path.is_symlink() or not path.resolve().is_relative_to(ATTEMPTS.resolve()):
                     raise ValueError("Unsafe recovered extra-benchmark file")
@@ -194,12 +212,18 @@ def package_inputs(destination, resume_from=None):
                     name = "2026-10-03/results/extra_benchmarks/" + path.relative_to(extras_root).as_posix()
                     archive.add(path, arcname=name)
                     checksums[name] = study.sha(path)
+        if plan is not None:
+            payload = json.dumps(plan, indent=2, sort_keys=True).encode()
+            info = tarfile.TarInfo(RUN_PLAN)
+            info.size = len(payload)
+            archive.addfile(info, io.BytesIO(payload))
+            checksums[RUN_PLAN] = hashlib.sha256(payload).hexdigest()
     return {"files": checksums, "archive_sha256": study.sha(destination),
             "training_images": sum(1 for r in rows if r["split"] == "train"),
             "development_images": sum(1 for r in rows if r["split"] == "development"),
             "benchmark_images": len(stimuli), "credentials_included": False,
             "benchmark_training_allowed": False, "resumed_training_conditions": len(resumed[0]),
-            "resumed_benchmark_conditions": len(resumed[1])}
+            "resumed_benchmark_conditions": len(resumed[1]), "run_plan": plan}
 
 
 def launch(resume_from=None):
