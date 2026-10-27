@@ -204,7 +204,7 @@ def word_count_caption(summary, counts):
             f"Strict sampled output, invalid answers excluded.")
 
 
-def plot(results, out):
+def plot(results, out, title_prefix=None):
     import textwrap
 
     import matplotlib
@@ -231,7 +231,7 @@ def plot(results, out):
         ax.set_xlim(-0.8, len(order) - 0.2)
         ax.set_xlabel("Words")
         ax.set_ylabel("Count")
-        ax.set_title(f"Word Counts by Image File Prefix: {label}")
+        ax.set_title(f"Word Counts by Image File Prefix: {title_prefix + ' ' if title_prefix else ''}{label}")
         ax.grid(axis="y", color="#E4E7EB", linewidth=0.8)
         ax.set_axisbelow(True)
         ax.legend(frameon=False, loc="upper right")
@@ -280,7 +280,7 @@ def plot(results, out):
                                  counts["Black"][w], counts["White"][w]])
 
 
-def main(conditions, out, training_targets=None):
+def main(conditions, out, training_targets=None, title_prefix=None):
     out.mkdir(parents=True, exist_ok=True)
     results, summaries, per_image, word_rows, provenance = {}, [], [], [], {}
     slots = None
@@ -329,7 +329,7 @@ def main(conditions, out, training_targets=None):
             "This reanalysis does not select v3 training labels or hyperparameters.",
             "Race-label permutation assumes image-level exchangeability and does not identify a causal race effect.",
         ]}, indent=2) + "\n")
-    plot(results, out)
+    plot(results, out, title_prefix)
     return summaries
 
 
