@@ -163,10 +163,16 @@ def main():
         worker_log = (ROOT / "data/private/remote_worker.log").open("a", encoding="utf-8")
         # The bootstrap parent is system Python; scientific imports belong in the pinned venv.
         ready_training, ready_benchmarks = verify_resume(python, worker_log)
+        plan_path = ROOT / "data/private/run_plan.json"
+        plan = json.loads(plan_path.read_text()) if plan_path.exists() else {}
+        extras_only = plan.get("mode") == "extras_only"
+        summary["run_plan"] = plan or None
         for model in ("gemma3_12b",):
             for method in ("orpo",):
                 if STOP.exists():
                     raise InterruptedError("Owned run stopped before the next condition")
+                if extras_only and (model, method) not in ready_training:
+                    raise RuntimeError("Extras-only run must reuse a verified checkpoint, not train")
                 if (model, method) in ready_training:
                     summary["conditions"].append({"model": model, "method": method,
                                                   "exit_code": 0, "reused_verified_checkpoint": True})
@@ -188,7 +194,7 @@ def main():
             evaluations = [(method, development)
                            for development in ((True, False) if study.dataset_config().get(
                                "dataset_id") in study.MULTITRIPLE_DATASETS else (False,))
-                           for method in ("base", "orpo")]
+                           for method in ("base", "orpo")] if not extras_only else []
             for method, development in evaluations:
                 if STOP.exists():
                     raise InterruptedError("Owned run stopped before evaluation")
@@ -218,8 +224,10 @@ def main():
                 study.save_json(outputs, summary)
                 if code:
                     raise RuntimeError("Native benchmark failed; retain partial records")
-            for method in (() if study.dataset_config().get("benchmark_scope") == "iat_only"
-                           else ("base", "orpo")):
+            extra_methods = (tuple(plan["extra_methods"]) if extras_only
+                             else () if study.dataset_config().get("benchmark_scope") == "iat_only"
+                             else ("base", "orpo"))
+            for method in extra_methods:
                 if STOP.exists():
                     raise InterruptedError("Owned run stopped before extra evaluation")
                 command = [python, "-u", str(ROOT / "native_extra_benchmarks.py"), "--model", model,
