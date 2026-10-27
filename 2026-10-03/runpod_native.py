@@ -276,10 +276,12 @@ def launch(resume_from=None, attach_pod=None, attach_key=None, extras_only=None)
             raise TimeoutError("Owned pod SSH never became usable within 15 minutes")
         remote = "/tmp/" + name
         command([*ssh_args, "mkdir", "-p", remote], capture_output=True, timeout=30)
+        # Resumed checkpoints make the bundle large; allow ~200 KB/s on slow pod links.
+        upload_timeout = 180 + Path(archive).stat().st_size // 200_000
         retry(lambda: command([*scp_args, archive, host + ":" + remote + "/inputs.tar.gz"],
-                              capture_output=True, timeout=180), attempts=3, delay=10)
+                              capture_output=True, timeout=upload_timeout), attempts=3, delay=10)
         command([*ssh_args, "tar", "-xzf", remote + "/inputs.tar.gz", "-C", remote],
-                capture_output=True, timeout=60)
+                capture_output=True, timeout=300)
         hub_token_path = transfer_hub_token(ssh_args, remote, hub_api.token)
         receipt.update(status="running_remote_worker", remote_workspace=remote,
                        deadline_monotonic_seconds=deadline,
