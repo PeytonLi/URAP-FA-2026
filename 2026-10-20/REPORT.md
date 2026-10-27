@@ -312,3 +312,35 @@ outputs: development photos first, then the unchanged frozen benchmark.
 Some answers combine words that would be odd as face descriptions (for
 example "Cherish, Ugly, Gross"); that is the accepted cost of this design.
 Aggregates: `analysis/matched_v4/audit.json`, `label_word_counts.png`.
+
+## 8. V4 ORPO results (RunPod A40, $2.90)
+
+Gemma 3 12B-IT, ORPO only, trained on the v4 matched answers (1,920 train
+examples, 3 epochs, 1,440 updates, about 4.3 h). It was evaluated with the
+unchanged protocol (12 photos x 50 repeats, temperature 1.0) on three held-out
+development blocks first, then on the frozen IAT-12 benchmark. Strict sampled
+view, image as the unit, exact 924-assignment permutations, 10,000-draw
+image bootstrap:
+
+| Measure | Base (frozen) | ORPO v2 (frozen) | ORPO v4 (dev) | ORPO v4 (frozen) |
+| --- | ---: | ---: | ---: | ---: |
+| Valid / 600 | 600 | 571 | 563 | 563 |
+| Vocabulary union / 61 | 11 | 34 | 53 | **53** |
+| Black / White / shared words | 7 / 11 / 7 | 24 / 31 / 21 | 52 / 53 / 52 | 53 / 52 / 52 |
+| Effective vocabulary size | 8.3 | 8.9 | 48.0 | 47.6 |
+| Median distinct triples per image | 3.5 | 17 | 46.5 | 46.5 |
+| Dominant triple share | 43% | 38% | 0.5% | 0.5% |
+| Word TV (exact p) | 0.837 (0.002) | 0.176 | 0.150 (0.22) | 0.148 (0.16) |
+| Black-White negative gap (exact p) | +83.7 pp (0.002) | +8.6 pp | -1.4 pp (0.24) | -0.9 pp (0.62) |
+| Gap 95% bootstrap CI | [51.7, 100] | | [-3.4, 0.4] | [-4.0, 2.2] |
+
+The 50-word target is met on the frozen benchmark (53 of 61 words; the
+eight missing are judgment words the labels excluded, two of which still
+appear rarely). The negative-word gap fell from +83.7 pp to -0.9 pp without
+flattening: about 48 effectively used words and nearly every response to a
+photo is a different combination. Nonsignificant differences are not proof
+of equality; TV 0.148 is still nonzero with six images per group. Costs:
+28 fallback slots (vs 0 for base). Because v4 targets are matched answers,
+not descriptions, the variety reflects the trained answer distribution
+rather than claims about the faces. Outputs: `analysis/variety_v4/`
+(frozen) and `analysis/variety_v4_dev/` (development).
