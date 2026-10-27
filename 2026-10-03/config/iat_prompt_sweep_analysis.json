@@ -1,0 +1,40 @@
+{
+  "status": "frozen before this prompt sweep generates any outputs; exploratory robustness study on previously inspected images",
+  "prompt_ids": ["3", "4", "5"],
+  "interpretations": {
+    "3": "wording_robustness",
+    "4": "person_association",
+    "5": "visible_expression"
+  },
+  "comparison": "native Gemma 3 12B base versus the saved v4 ORPO adapter, separately within every prompt",
+  "pool_prompts": false,
+  "primary_view": "sampled_exact; preserve the existing parser, including accepted nonadjacent repeated words; no fallback replacement",
+  "independent_unit": "image; 12 frozen images, six per race, 50 sampled attempts per image and condition",
+  "primary_tests": ["negative_gap_change_did", "word_entropy_change", "unordered_triples_change"],
+  "primary_multiplicity": "Holm across all nine prompt-by-test primary hypotheses; no choice of best prompt",
+  "race_permutations": "all 924 unblocked six-versus-six assignments, keeping base and ORPO paired within image",
+  "paired_permutations": "all 4096 image-level base/ORPO swaps",
+  "tails": "two-sided signed effects; upper tail for nonnegative total variation",
+  "bootstrap": {
+    "draws": 10000,
+    "seed": 20261027,
+    "unit": "paired images resampled within race",
+    "interval": "95% percentile; marginal, not simultaneous"
+  },
+  "diagnostics": ["negative-word gap within each model", "61-word total variation within each model"],
+  "diagnostic_multiplicity": "Holm across 12 diagnostics: four per prompt",
+  "quality": "paired change in strict-valid-answer fraction; Holm across three prompts",
+  "sensitivities": [
+    "gender-blocked race permutations",
+    "final scorer including fallback, separately labeled",
+    "sampled_distinct: exclude repeated-word answers",
+    "exact equal-valid-count rarefaction of whole answers within image"
+  ],
+  "sensitivity_multiplicity": "Holm across prompts within each separately labeled sensitivity family",
+  "coverage": "report union, Black and White vocabulary counts, shared vocabulary, and all 61 word counts",
+  "missing_outputs": "do not substitute earlier results or impute invalid content; fail completeness/provenance checks; report any zero-valid-image inference as unavailable",
+  "historical_baseline": "unchanged descriptive reference; not pooled with native prompt outputs or used for tuning contrasts",
+  "equivalence": "not tested; no agreed scientifically justified margin",
+  "graphs": "separate single-chart PNGs, fixed reference word order, green positive and red negative background",
+  "limits": "exchangeability assumptions and small fixed stimulus set; distributional variety is not grounded expression accuracy"
+}

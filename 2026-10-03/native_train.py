@@ -12,6 +12,7 @@ import random
 import time
 from collections import Counter
 from importlib.metadata import version
+from pathlib import Path
 
 import curated
 import hub_backup
@@ -26,6 +27,24 @@ MODELS = {"gemma4": {"model": GEMMA_HF, "revision": GEMMA_REVISION, "enable_thin
                          "revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
                          "enable_thinking": None},
           **QWEN_MODELS}
+
+
+def verify_checkpoint_inventory(checkpoint, files):
+    required = {"adapter_config.json", "adapter_model.safetensors"}
+    if not isinstance(files, dict) or not required <= files.keys():
+        raise ValueError("Checkpoint inventory must include adapter weights and config")
+    if checkpoint.is_symlink() or not checkpoint.is_dir():
+        raise ValueError("Checkpoint must be a real directory")
+    for name, digest in files.items():
+        if (not isinstance(name, str) or Path(name).name != name or "\\" in name
+                or name in (".", "..") or not isinstance(digest, str)
+                or len(digest) != 64 or any(c not in "0123456789abcdef" for c in digest)):
+            raise ValueError("Unsafe checkpoint inventory")
+        path = checkpoint / name
+        if path.is_symlink() or not path.is_file() or study.sha(path) != digest:
+            raise ValueError("Checkpoint inventory checksum mismatch")
+    if any(p.name not in files for p in checkpoint.glob("adapter_model*")):
+        raise ValueError("Untracked adapter weights in checkpoint")
 
 
 def response_logprobs(model, inputs):

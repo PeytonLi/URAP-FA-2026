@@ -33,11 +33,27 @@ def worker_status(pid):
             "child_running": owned_pid_running(active.get("child_pid"))}
 
 
-def detach():
+def required_plan(expected_mode):
+    path = ROOT / "data/private/run_plan.json"
+    if expected_mode not in ("training", "extras_only", "prompt_sweep"):
+        raise ValueError("An explicit expected run mode is required")
+    if not path.exists():
+        if expected_mode == "training":
+            return {}
+        raise ValueError("Missing evaluation-only run plan; refuse training")
+    plan = json.loads(path.read_text())
+    if not isinstance(plan, dict) or not plan or plan.get("mode") != expected_mode:
+        raise ValueError("Missing or mismatched run plan; refuse training")
+    return plan
+
+
+def detach(expected_mode=None):
+    required_plan(expected_mode)
     log = ROOT / "data/private/remote_worker.log"
     log.parent.mkdir(parents=True, exist_ok=True)
     with log.open("a", encoding="utf-8") as output:
-        child = subprocess.Popen([sys.executable, str(ROOT / "remote_native.py")],
+        child = subprocess.Popen([sys.executable, str(ROOT / "remote_native.py"),
+                                  "--expected-mode", expected_mode],
                                  stdin=subprocess.DEVNULL, stdout=output,
                                  stderr=subprocess.STDOUT, start_new_session=True)
     return {"worker_pid": child.pid}
@@ -45,12 +61,15 @@ def detach():
 
 def verify_resume(python, output):
     import study
-    probe = ("import native_report,native_train,study; "
+    probe = ("import native_report,native_train,study,iat_prompts,json; "
              "t,b=native_report.verified_results(study.ROOT,require_all=False); "
+             "p=study.ROOT/'data/private/run_plan.json'; "
+             "sweep=p.exists() and json.loads(p.read_text()).get('mode')=='prompt_sweep'; "
              "v={n:native_train.version(n) for n in ('torch','transformers','peft','accelerate')}; "
              "assert all(r['versions']==v for r,c in t.values()), 'Recovered runtime mismatch'; "
              "study.save_json(study.ROOT/'data/private/verified_resume_plan.json', "
-             "{'training':list(t),'benchmarks':list(b)})")
+             "{'training':list(t),'benchmarks':list(b), "
+             "'prompt_sweep':iat_prompts.sweep_plan(t) if sweep else None})")
     child = subprocess.Popen([python, "-c", probe], cwd=ROOT, stdout=output, stderr=subprocess.STDOUT)
     study.save_json(ACTIVE, {"worker_pid": os.getpid(), "child_pid": child.pid, "phase": "resume_verification"})
     if child.wait(timeout=120):
@@ -97,8 +116,9 @@ def stop():
                 pass
 
 
-def main():
+def main(expected_mode=None):
     import study
+    plan = required_plan(expected_mode)
     started = time.monotonic()
     token_path = os.environ.get("HF_TOKEN_PATH")
     if token_path:
@@ -164,17 +184,18 @@ def main():
         worker_log = (ROOT / "data/private/remote_worker.log").open("a", encoding="utf-8")
         # The bootstrap parent is system Python; scientific imports belong in the pinned venv.
         ready_training, ready_benchmarks = verify_resume(python, worker_log)
-        plan_path = ROOT / "data/private/run_plan.json"
-        plan = json.loads(plan_path.read_text()) if plan_path.exists() else {}
+        if required_plan(expected_mode) != plan:
+            raise ValueError("Run plan changed during setup")
         extras_only = plan.get("mode") == "extras_only"
         prompt_sweep = plan.get("mode") == "prompt_sweep"
         if prompt_sweep:
-            import iat_prompts
-            if plan != iat_prompts.sweep_plan(ready_training):
+            verified = json.loads((ROOT / "data/private/verified_resume_plan.json").read_text())
+            if plan != verified["prompt_sweep"]:
                 raise ValueError("Prompt sweep differs from the frozen evaluation-only plan")
         if plan and plan.get("mode") not in ("extras_only", "prompt_sweep"):
             raise ValueError("Unknown remote run plan; refuse training")
         summary["run_plan"] = plan or None
+        summary["training_commands_started"] = 0
         for model in ("gemma3_12b",):
             for method in ("orpo",):
                 if prompt_sweep:
@@ -196,6 +217,7 @@ def main():
                            "--model", model, "--method", method, "--max-seconds", "18000"]
                 # Keep child output on the pod so a dropped SSH monitor cannot
                 # turn a valid optimizer run into BrokenPipeError.
+                summary["training_commands_started"] += 1
                 child = subprocess.Popen(command, cwd=ROOT.parent, stdout=worker_log,
                                          stderr=subprocess.STDOUT)
                 study.save_json(ACTIVE, {"worker_pid": os.getpid(), "child_pid": child.pid,
@@ -320,14 +342,15 @@ if __name__ == "__main__":
     action.add_argument("--package", action="store_true")
     action.add_argument("--detach", action="store_true")
     action.add_argument("--status", type=int)
+    parser.add_argument("--expected-mode", choices=("training", "extras_only", "prompt_sweep"))
     args = parser.parse_args()
     if args.stop:
         stop()
     elif args.package:
         package_outputs()
     elif args.detach:
-        print(json.dumps(detach()), flush=True)
+        print(json.dumps(detach(args.expected_mode)), flush=True)
     elif args.status is not None:
         print(json.dumps(worker_status(args.status)), flush=True)
     else:
-        main()
+        main(args.expected_mode)

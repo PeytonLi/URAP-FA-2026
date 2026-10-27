@@ -80,7 +80,7 @@ class BalancedPilotTests(unittest.TestCase):
                 patch.object(remote.sys, "stderr", io.StringIO()) as errors:
             with patch.object(remote.subprocess, "run", side_effect=RuntimeError("setup fixture")):
                 with self.assertRaisesRegex(RuntimeError, "setup fixture"):
-                    remote.main()
+                    remote.main(expected_mode="training")
             summary = json.loads((Path(folder) / "data/private/remote_summary.json").read_text())
             self.assertEqual(summary["status"], "failed")
             self.assertEqual(summary["conditions"], [])

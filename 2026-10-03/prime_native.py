@@ -378,7 +378,8 @@ def launch(resume_from=None):
                        estimated_max_gpu_charge_usd=(deadline - started) / 3600 * price)
         study.save_json(folder / "launch.json", receipt)
         detached = command([*ssh_args, "env", "HF_TOKEN_PATH=" + hub_token_path,
-                            "python3", remote + "/2026-10-03/remote_native.py", "--detach"],
+                            "python3", remote + "/2026-10-03/remote_native.py", "--detach",
+                            "--expected-mode", "training"],
                            capture_output=True, timeout=30)
         worker_pid = json.loads(detached.stdout)["worker_pid"]
         if not isinstance(worker_pid, int) or isinstance(worker_pid, bool) or worker_pid <= 0:

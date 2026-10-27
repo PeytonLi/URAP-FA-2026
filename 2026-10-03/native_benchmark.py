@@ -52,6 +52,10 @@ class NativeRunner(IATBenchmarkRunner):
     def __init__(self, native_model, processor, model_name, deadline, *args,
                  prompt=None, prompt_id=None, **kwargs):
         self.prompt_spec = iat_prompts.prompt_spec(prompt_id) if prompt_id is not None else None
+        if self.prompt_spec:
+            if prompt is not None and prompt != self.prompt_spec["prompt"]:
+                raise ValueError("Prompt text does not match the frozen prompt ID")
+            prompt = self.prompt_spec["prompt"]
         super().__init__(None, *args, **kwargs)
         self.native_model, self.processor = native_model, processor
         self.model_name, self.deadline, self.inputs = model_name, deadline, {}
@@ -59,6 +63,9 @@ class NativeRunner(IATBenchmarkRunner):
 
     def _append_jsonl(self, path, value):
         if self.prompt_spec and path.name in ("responses.jsonl", "api_responses.jsonl"):
+            if ("prompt_sha256" in value
+                    and value["prompt_sha256"] != self.prompt_spec["prompt_sha256"]):
+                raise ValueError("Actual prompt hash differs from the frozen prompt ID")
             value = {**value, "prompt_id": self.prompt_spec["prompt_id"],
                      "prompt_sha256": self.prompt_spec["prompt_sha256"]}
         super()._append_jsonl(path, value)
@@ -143,8 +150,9 @@ def run(model_name, method, image_dir, max_seconds, checkpoint=None, development
                 or checkpoint.name != "epoch_3"):
             raise ValueError("Incomplete or mismatched adapter cannot be evaluated as a study result")
         expected = receipt["checkpoints"][-1]["files"]
-        if any(study.sha(checkpoint / name) != digest for name, digest in expected.items()):
-            raise ValueError("Adapter/processor checkpoint checksum mismatch")
+        native_train.verify_checkpoint_inventory(checkpoint, expected)
+        if spec:
+            iat_prompts.checkpoint_identity(checkpoint)
     elif checkpoint is not None:
         raise ValueError("Untouched base must not load an adapter")
     processor = AutoProcessor.from_pretrained(settings["model"], revision=settings["revision"])
@@ -213,11 +221,11 @@ def run(model_name, method, image_dir, max_seconds, checkpoint=None, development
     benchmark.fw._write_records_csv(runner.output_dir / "responses.csv", records)
     study.save_json(manifest_path, {"contract": contract, "expected_responses": 600,
                                    "recorded_responses": len(records), "status": "complete"})
-    # Reuse scorer, all-61-word reference ordering and blue/gold graph style.
-    analysis = runner.output_dir / "analysis"
-    analysis.mkdir(exist_ok=True)
-    benchmark.fw.write_iat_analysis(records, [model], analysis,
-                                   bootstrap_samples=config.bootstrap_samples, bootstrap_seed=config.base_seed)
+    if not spec:
+        analysis = runner.output_dir / "analysis"
+        analysis.mkdir(exist_ok=True)
+        benchmark.fw.write_iat_analysis(records, [model], analysis,
+                                       bootstrap_samples=config.bootstrap_samples, bootstrap_seed=config.base_seed)
     print(json.dumps({"condition": key, "status": "complete", "responses": 600}), flush=True)
 
 
