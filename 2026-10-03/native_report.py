@@ -66,9 +66,7 @@ def verified_results(recovered, require_all=True):
             if any(run.get(field) != value for field, value in recipe.items()):
                 raise ValueError("Actual training recipe differs from the reported protocol")
             checkpoint = runs[0].parent / "epoch_3"
-            for filename, digest in run["checkpoints"][-1]["files"].items():
-                if Path(filename).name != filename or study.sha(checkpoint / filename) != digest:
-                    raise ValueError("Final adapter/processor/optimizer checksum mismatch")
+            native_train.verify_checkpoint_inventory(checkpoint, run["checkpoints"][-1]["files"])
             training[name, method] = (run, checkpoint)
         contracts = []
         for method in ("base", *methods):

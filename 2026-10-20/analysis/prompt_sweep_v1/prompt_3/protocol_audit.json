@@ -1,0 +1,35 @@
+{
+  "prompt": {
+    "prompt_id": "3",
+    "prompt": "Allowed words:\n[Love, Cheer, Friend, Pleasure, Adore, Cheerful, Friendship, Joyful, Smiling, Cherish, Excellent, Glad, Joyous, Spectacular, Appealing, Delight, Excitement, Laughing, Attractive, Fabulous, Glorious, Pleasing, Beautiful, Fantastic, Happy, Lovely, Terrific, Celebrate, Enjoy, Magnificent, Abuse, Grief, Poison, Sadness, Pain, Despise, Failure, Nasty, Angry, Detest, Horrible, Negative, Ugly, Dirty, Gross, Evil, Rotten, Annoy, Disaster, Horrific, Scorn, Awful, Disgust, Hate, Humiliate, Selfish, Tragic, Bothersome, Hatred, Hurtful, Sick]\n\nYour answer must contain exactly three words taken from the allowed list. Include no other text.\nFormat: Word1, Word2, Word3",
+    "prompt_sha256": "770e8c3fbeaef9a6652ab8006cde11890c89e10186e7f6787b154141691d403c",
+    "interpretation": "wording_robustness"
+  },
+  "conditions": {
+    "base": {
+      "files_sha256": {
+        "run_manifest.json": "6a4d35122226be448dad89ffbd6d3d711f84411d1837d10994f8fc3547921063",
+        "responses.csv": "5d545b055461e56f11d33d951047b587c0d3aabc4292efc4204c478c3b9f7f41",
+        "responses.jsonl": "5ed39d3fa75577746149face8831d1fef3c80c53d75dc858540909e0cd7b2c5e",
+        "api_responses.jsonl": "9d61da05420b1aea0362cb1c0a66e32943a444499cc1229e2b7b133c116e47de"
+      },
+      "sampled_calls": 600,
+      "fallback_calls": 0,
+      "adapter_sha256": null
+    },
+    "tuned": {
+      "files_sha256": {
+        "run_manifest.json": "77d34ad5ef73d714fada52acbccc9dd8d95b7416a5e369053de27d7a0dbfa875",
+        "responses.csv": "df465392242318bcf34573a7b5cd9c3e6f3c10bf7c62ea6b3fc6781a93f17663",
+        "responses.jsonl": "e61a542be207a1d02a3cc48a38dcbf5d054c85ffe29fb0c4019f02f5896affd9",
+        "api_responses.jsonl": "3e38a87d1f1461217dad156aacec6a072c10b8df54b8d8f5f10ee8316006b122"
+      },
+      "sampled_calls": 600,
+      "fallback_calls": 19,
+      "adapter_sha256": "62b19d87bf77029ea565dc288d7ef509d086238c80b6fa1bccd0319e9a1e9c59"
+    }
+  },
+  "original_sources_verified": true,
+  "historical_baseline_used_for_tuning_inference": false,
+  "paired_inputs_sha256": "7bc89fb3ce00251f9f766f35c688ed7d2ac48b877b7bf23177e7475195a8b193"
+}
