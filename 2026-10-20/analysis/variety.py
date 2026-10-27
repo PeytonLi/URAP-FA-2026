@@ -189,9 +189,12 @@ def plot(results, out):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from split_panels import save_each
+    separate = out / "separate"
     labels = [label for label, view in results if view == "sampled_exact"]
-    fig, axes = plt.subplots(len(labels), 1, figsize=(11, 3.6 * len(labels)), squeeze=False)
-    for ax, label in zip(axes[:, 0], labels):
+
+    def word_counts(ax, label):
         summary, _, counts = results[label, "sampled_exact"]
         x = np.arange(61)
         ax.axvspan(-0.5, 29.5, color="green", alpha=0.08)
@@ -205,43 +208,63 @@ def plot(results, out):
         ax.set_title(f"{label}: {summary['distinct_words_union']}/61 words; strict sampled output, no fallback",
                      fontsize=10)
         ax.legend(fontsize=8, loc="upper right")
-    fig.tight_layout()
-    fig.savefig(out / "word_counts.png", dpi=150)
-    plt.close(fig)
-    fig, axes = plt.subplots(1, 2, figsize=(22, 7))
-    for j, (field, title) in enumerate((
-            ("distinct_words", "Distinct words per image (50 draws)"),
-            ("distinct_unordered_triples", "Distinct unordered triples per image (50 draws)"))):
+
+    def variety(ax, field, title):
         images = results[labels[0], "sampled_exact"][1]
         x = np.arange(len(images))
         width = 0.8 / len(labels)
         for i, label in enumerate(labels):
             values = results[label, "sampled_exact"][1]
-            bar = axes[j].bar(x - 0.4 + width / 2 + i * width, [r[field] for r in values], width, label=label)
-            axes[j].bar_label(bar, fmt="%.0f", fontsize=8)
-        axes[j].set_xticks(x, [r["image_id"] for r in images], rotation=20)
-        axes[j].set_title(title)
-        axes[j].legend()
-    fig.suptitle("Expressiveness before fallback; permutations are not new triples")
-    fig.tight_layout()
-    fig.savefig(out / "per_image_variety.png", dpi=150)
-    plt.close(fig)
-    fig, axes = plt.subplots(len(labels), 1, figsize=(22, 4 * len(labels)), squeeze=False)
-    for ax, label in zip(axes[:, 0], labels):
+            bar = ax.bar(x - 0.4 + width / 2 + i * width, [r[field] for r in values], width, label=label)
+            ax.bar_label(bar, fmt="%.0f", fontsize=8)
+        ax.set_xticks(x, [r["image_id"] for r in images], rotation=20)
+        ax.set_title(title)
+        ax.legend()
+
+    def rates(ax, label):
         _, images, _ = results[label, "final_scored"]
         bar = ax.bar(
             np.arange(len(images)),
             [r["negative_rate"] if r["negative_rate"] is not None else float("nan") for r in images],
             color=["tab:blue" if r["race"] == "Black" else "orange" for r in images])
-        ax.bar_label(bar, fmt="%.3f")
+        ax.bar_label(bar, fmt="%.3f", fontsize=8)
         ax.set_xticks(np.arange(len(images)), [r["image_id"] for r in images], rotation=20)
         ax.set_ylim(0, 1.12)
         ax.set_ylabel("Negative-word rate")
         ax.set_title(f"{label}: final scorer, including fallback (Black=blue; White=orange)")
-    fig.suptitle("Image-level valence rates; low gaps can coexist with collapse")
+
+    fig, axes = plt.subplots(len(labels), 1, figsize=(11, 3.6 * len(labels)), squeeze=False)
+    for ax, label in zip(axes[:, 0], labels):
+        word_counts(ax, label)
+    fig.tight_layout()
+    fig.savefig(out / "word_counts.png", dpi=150)
+    plt.close(fig)
+    save_each([(label, lambda ax, label=label: word_counts(ax, label)) for label in labels],
+              separate, "word_counts", (11, 3.6))
+
+    fields = (("distinct_words", "Distinct words per image (50 draws)"),
+              ("distinct_unordered_triples", "Distinct unordered triples per image (50 draws)"))
+    headline = "Expressiveness before fallback; permutations are not new triples"
+    fig, axes = plt.subplots(1, 2, figsize=(22, 7))
+    for ax, (field, title) in zip(axes, fields):
+        variety(ax, field, title)
+    fig.suptitle(headline)
+    fig.tight_layout()
+    fig.savefig(out / "per_image_variety.png", dpi=150)
+    plt.close(fig)
+    save_each([(field, lambda ax, f=field, t=title: variety(ax, f, t)) for field, title in fields],
+              separate, "per_image_variety", (10, 5), headline)
+
+    headline = "Image-level valence rates; low gaps can coexist with collapse"
+    fig, axes = plt.subplots(len(labels), 1, figsize=(22, 4 * len(labels)), squeeze=False)
+    for ax, label in zip(axes[:, 0], labels):
+        rates(ax, label)
+    fig.suptitle(headline)
     fig.tight_layout()
     fig.savefig(out / "per_image_rates.png", dpi=150)
     plt.close(fig)
+    save_each([(label, lambda ax, label=label: rates(ax, label)) for label in labels],
+              separate, "per_image_rates", (10, 4.5), headline)
 
 
 def main(conditions, out, training_targets=None):
