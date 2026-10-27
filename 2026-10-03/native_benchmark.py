@@ -8,6 +8,7 @@ from dataclasses import asdict, replace
 from pathlib import Path
 
 import benchmark
+import iat_prompts
 import native_train
 import study
 from multimodel_bias.iat import IATBenchmarkRunner, Stimulus, deterministic_task_id
@@ -48,10 +49,19 @@ def development_stimuli(dataset):
 
 
 class NativeRunner(IATBenchmarkRunner):
-    def __init__(self, native_model, processor, model_name, deadline, *args, **kwargs):
+    def __init__(self, native_model, processor, model_name, deadline, *args,
+                 prompt=None, prompt_id=None, **kwargs):
+        self.prompt_spec = iat_prompts.prompt_spec(prompt_id) if prompt_id is not None else None
         super().__init__(None, *args, **kwargs)
         self.native_model, self.processor = native_model, processor
         self.model_name, self.deadline, self.inputs = model_name, deadline, {}
+        self.prompt = study.IAT_PROMPT if prompt is None else prompt
+
+    def _append_jsonl(self, path, value):
+        if self.prompt_spec and path.name in ("responses.jsonl", "api_responses.jsonl"):
+            value = {**value, "prompt_id": self.prompt_spec["prompt_id"],
+                     "prompt_sha256": self.prompt_spec["prompt_sha256"]}
+        super()._append_jsonl(path, value)
 
     def _call(self, *, task_id, stage, model, stimulus, seed, fallback):
         import torch
@@ -67,7 +77,7 @@ class NativeRunner(IATBenchmarkRunner):
             if thinking is not None:
                 options["enable_thinking"] = thinking
             user = {"role": "user", "content": [{"type": "image", "path": str(stimulus.path)},
-                                                    {"type": "text", "text": study.IAT_PROMPT}]}
+                                                    {"type": "text", "text": self.prompt}]}
             inputs = self.processor.apply_chat_template([user], **options)
             if "pixel_values" not in inputs or not inputs["pixel_values"].numel():
                 raise ValueError("Native benchmark must contain real image pixels")
@@ -89,15 +99,21 @@ class NativeRunner(IATBenchmarkRunner):
                               "completion_tokens": ids.numel()}}
         self._append_jsonl(self.api_path, {"task_id": task_id, "stage": stage, "requested_at": study.now(),
             "image_id": stimulus.image_id, "image_sha256": stimulus.sha256, "seed": seed,
-            "prompt_sha256": hashlib.sha256(study.IAT_PROMPT.encode()).hexdigest(),
+            "prompt_sha256": hashlib.sha256(self.prompt.encode()).hexdigest(),
             "model_id_requested": model.model_id, "request_parameters": generation,
             "response": response})
         return response
 
 
-def run(model_name, method, image_dir, max_seconds, checkpoint=None, development=False):
+def run(model_name, method, image_dir, max_seconds, checkpoint=None, development=False, prompt_id=None):
+    spec = iat_prompts.prompt_spec(prompt_id) if prompt_id is not None else None
+    if spec and development:
+        raise ValueError("Prompt sweep is frozen IAT-12 only")
+    prompt = spec["prompt"] if spec else study.IAT_PROMPT
     if model_name != "gemma3_12b" or method not in ("base", "orpo"):
         raise ValueError("New evaluation is Gemma 3 12B base/ORPO-only")
+    if spec:
+        iat_prompts.output_location(study.ROOT, method, prompt_id)
     import torch
     from transformers import AutoModelForImageTextToText, AutoProcessor
     if method not in ("base", "sft", "orpo", "kto") or not math.isfinite(max_seconds) or max_seconds <= 0:
@@ -141,6 +157,8 @@ def run(model_name, method, image_dir, max_seconds, checkpoint=None, development
     key = model_name + "_" + method + "_native_balanced"
     if development:
         key += "_development"
+    if spec:
+        _, key = iat_prompts.output_location(study.ROOT, method, prompt_id)
     model = replace(benchmark.fw.model_spec(settings["model"], 1, key=key,
         display_name=benchmark.MODELS[model_name][1] + " (native " + method + ")",
         base_model=settings["model"] + "@" + settings["revision"]), provider_endpoint="prime/native-transformers")
@@ -149,12 +167,16 @@ def run(model_name, method, image_dir, max_seconds, checkpoint=None, development
         study.REPO / "2026-09-11/data/iat12/manifest.csv", image_dir=image_dir)
     if development:
         config = replace(config, benchmark_version="iat-development-v3-12x50")
+    if spec:
+        config = replace(config, benchmark_version=iat_prompts.benchmark_version(method, prompt_id))
+    output_root = study.ROOT / ("results/native_development" if development else "results/native_benchmarks")
+    if spec:
+        output_root, key = iat_prompts.output_location(study.ROOT, method, prompt_id)
     runner = NativeRunner(native, processor, model_name, deadline, key, config, [model], stimuli,
-                          output_root=study.ROOT / ("results/native_development" if development
-                                                   else "results/native_benchmarks"))
+                          output_root=output_root, prompt=prompt, prompt_id=prompt_id)
     records = benchmark.fw.dedupe_records(benchmark.fw._jsonl_records(runner.records_path))
     contract = {"provider": "prime/native-transformers", "logical_base_model": model.api_revision_hint,
-                "model": asdict(model), "config": asdict(config), "prompt": study.IAT_PROMPT,
+                "model": asdict(model), "config": asdict(config), "prompt": prompt,
                 "weight_and_processor_revision": settings["revision"],
                 "adapter_sha256": study.sha(checkpoint / "adapter_model.safetensors") if checkpoint else None,
                 "checkpoint_selection": "predeclared_final_epoch_3" if checkpoint else "untouched_base",
@@ -165,6 +187,8 @@ def run(model_name, method, image_dir, max_seconds, checkpoint=None, development
                 "stimuli": [{"image_id": s.image_id, "filename": s.filename, "race": s.race,
                              "gender": s.gender, "sha256": s.sha256} for s in stimuli],
                 "native_and_fireworks_numerical_equivalence_claimed": False}
+    if spec:
+        contract.update(spec)
     manifest_path = runner.output_dir / "run_manifest.json"
     if manifest_path.exists() and json.loads(manifest_path.read_text())["contract"] != contract:
         raise ValueError("Existing native benchmark contract differs")
@@ -205,5 +229,7 @@ if __name__ == "__main__":
     parser.add_argument("--checkpoint", type=Path)
     parser.add_argument("--max-seconds", type=float, required=True)
     parser.add_argument("--development", action="store_true")
+    parser.add_argument("--prompt-id", choices=iat_prompts.PROMPT_IDS)
     args = parser.parse_args()
-    run(args.model, args.method, args.image_dir, args.max_seconds, args.checkpoint, args.development)
+    run(args.model, args.method, args.image_dir, args.max_seconds, args.checkpoint,
+        args.development, args.prompt_id)

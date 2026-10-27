@@ -20,6 +20,7 @@ from pathlib import Path, PurePosixPath
 
 import curated
 import hub_backup
+import iat_prompts
 import study
 from prime_native import (ATTEMPTS, DEAD_MANS_MINUTES, command, extras_only_plan, package_inputs,
                           resume_results, retry, transfer_hub_token)
@@ -104,13 +105,17 @@ def terminate_pod(pod_id):
     return api("DELETE", "/pods/" + pod_id, timeout=30)
 
 
-def launch(resume_from=None, attach_pod=None, attach_key=None, extras_only=None):
+def launch(resume_from=None, attach_pod=None, attach_key=None, extras_only=None, prompt_sweep=False):
+    if prompt_sweep and (extras_only is not None or resume_from is None):
+        raise ValueError("Prompt sweep needs a saved checkpoint and cannot run extras")
     if extras_only is not None and not resume_from:
         raise ValueError("--extras-only requires --resume-from with a verified checkpoint")
     if resume_from:
         resumed = resume_results(resume_from)  # Validate before cloud calls or purchases.
         if extras_only is not None:
             extras_only_plan(extras_only, resumed[0])
+        if prompt_sweep:
+            iat_prompts.sweep_plan(resumed[0])
     curated.training_rows(study.dataset_config())  # Fail before any billable provisioning or upload.
     hub_api, hub_account = hub_backup.connect()  # No paid pod without a usable Hub login.
     wallet_before = balance()
@@ -159,7 +164,8 @@ def launch(resume_from=None, attach_pod=None, attach_key=None, extras_only=None)
     folder = ATTEMPTS / stamp
     folder.mkdir(parents=True, exist_ok=False)
     archive = folder / "inputs.tar.gz"
-    bundle = package_inputs(archive, resume_from=resume_from, extras_only=extras_only)
+    bundle = package_inputs(archive, resume_from=resume_from, extras_only=extras_only,
+                            prompt_sweep=prompt_sweep)
     study.save_json(folder / "input_checksums.json", bundle)
     if attach_key:
         key = Path(attach_key)
@@ -187,7 +193,10 @@ def launch(resume_from=None, attach_pod=None, attach_key=None, extras_only=None)
                          "image": IMAGE},
                "quoted_hourly_usd": price, "spending_ceiling_usd": spending_ceiling,
                "wallet_before_usd": wallet_before, "input_bundle": bundle,
-               "requested_conditions": (["gemma3_12b_" + m + "_extras" for m in extras_only]
+               "requested_conditions": ([f"gemma3_12b_{m}_prompt_{p}"
+                                         for p in iat_prompts.PROMPT_IDS for m in ("base", "orpo")]
+                                        if prompt_sweep else
+                                        ["gemma3_12b_" + m + "_extras" for m in extras_only]
                                         if extras_only is not None else ["gemma3_12b_orpo"]),
                "status": "provisioning", "optimizer_updates_verified": 0,
                "hugging_face_account": hub_account, "hub_backups_required": True}
@@ -502,10 +511,12 @@ if __name__ == "__main__":
                         help="private key matching the attached pod's injected PUBLIC_KEY")
     parser.add_argument("--extras-only", type=lambda text: text.split(","),
                         help="comma list (base,orpo): skip training/IAT, run only DT/BOLD/VisBias")
+    parser.add_argument("--prompt-sweep", action="store_true",
+                        help="evaluate only prompts 3,4,5 on base and saved ORPO; never train")
     args = parser.parse_args()
     result = launch(resume_from=args.resume_from,
                     attach_pod=args.attach_pod, attach_key=args.attach_key,
-                    extras_only=args.extras_only)
+                    extras_only=args.extras_only, prompt_sweep=args.prompt_sweep)
     raise SystemExit(0 if result["status"] == "worker_complete_reports_pending"
                      and result.get("outputs_recovered_and_verified")
                      and result.get("termination_verified") else 1)

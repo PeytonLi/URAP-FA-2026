@@ -145,6 +145,7 @@ def main():
             raise RuntimeError("Remote dependency installation failed")
         subprocess.run([python, str(ROOT / "tests/test_native_train.py")], check=True, timeout=120)
         subprocess.run([python, str(ROOT / "tests/test_hub_backup.py")], check=True, timeout=120)
+        subprocess.run([python, str(ROOT / "tests/test_iat_prompts.py")], check=True, timeout=120)
         subprocess.run([python, str(ROOT / "hub_backup.py"), "auth"], check=True, timeout=60)
         # Extra-benchmark data: the 09-11 modules resolve data dirs relative to
         # their own tree; point them at the bundled 09-05 frozen data.
@@ -166,9 +167,20 @@ def main():
         plan_path = ROOT / "data/private/run_plan.json"
         plan = json.loads(plan_path.read_text()) if plan_path.exists() else {}
         extras_only = plan.get("mode") == "extras_only"
+        prompt_sweep = plan.get("mode") == "prompt_sweep"
+        if prompt_sweep:
+            import iat_prompts
+            if plan != iat_prompts.sweep_plan(ready_training):
+                raise ValueError("Prompt sweep differs from the frozen evaluation-only plan")
+        if plan and plan.get("mode") not in ("extras_only", "prompt_sweep"):
+            raise ValueError("Unknown remote run plan; refuse training")
         summary["run_plan"] = plan or None
         for model in ("gemma3_12b",):
             for method in ("orpo",):
+                if prompt_sweep:
+                    summary["conditions"].append({"model": model, "method": method,
+                                                  "exit_code": 0, "reused_verified_checkpoint": True})
+                    continue
                 if STOP.exists():
                     raise InterruptedError("Owned run stopped before the next condition")
                 if extras_only and (model, method) not in ready_training:
@@ -196,11 +208,14 @@ def main():
             evaluations = [(method, development)
                            for development in ((True, False) if study.dataset_config().get(
                                "dataset_id") in study.MULTITRIPLE_DATASETS else (False,))
-                           for method in ("base", "orpo")] if not extras_only else []
-            for method, development in evaluations:
+                           for method in ("base", "orpo")] if not (extras_only or prompt_sweep) else []
+            prompt_evaluations = [(method, False, prompt_id) for prompt_id in ("3", "4", "5")
+                                  for method in ("base", "orpo")] if prompt_sweep else []
+            for method, development, prompt_id in (
+                    [(m, d, None) for m, d in evaluations] + prompt_evaluations):
                 if STOP.exists():
                     raise InterruptedError("Owned run stopped before evaluation")
-                if not development and (model, method) in ready_benchmarks:
+                if not prompt_sweep and not development and (model, method) in ready_benchmarks:
                     summary["conditions"].append({"model": model, "benchmark": method,
                                                   "exit_code": 0, "reused_verified_benchmark": True})
                     study.save_json(outputs, summary)
@@ -210,6 +225,8 @@ def main():
                            "--max-seconds", "3600"]
                 if development:
                     command.append("--development")
+                if prompt_id is not None:
+                    command.extend(["--prompt-id", prompt_id])
                 if method != "base":
                     folders = list((ROOT / "data/private/native_runs").glob(model + "_" + method + "_*"))
                     if len(folders) != 1:
@@ -219,14 +236,16 @@ def main():
                                          stderr=subprocess.STDOUT)
                 study.save_json(ACTIVE, {"worker_pid": os.getpid(), "child_pid": child.pid,
                                         "phase": model + "_" + method + (
+                                            "_prompt_" + prompt_id if prompt_id is not None else
                                             "_development" if development else "_benchmark")})
                 code = child.wait()
                 summary["conditions"].append({"model": model, "benchmark": method,
-                                              "development": development, "exit_code": code})
+                                              "development": development, "prompt_id": prompt_id,
+                                              "exit_code": code})
                 study.save_json(outputs, summary)
                 if code:
                     raise RuntimeError("Native benchmark failed; retain partial records")
-            extra_methods = (tuple(plan["extra_methods"]) if extras_only
+            extra_methods = (() if prompt_sweep else tuple(plan["extra_methods"]) if extras_only
                              else () if study.dataset_config().get("benchmark_scope") == "iat_only"
                              else ("base", "orpo"))
             for method in extra_methods:
@@ -254,7 +273,8 @@ def main():
                 study.save_json(outputs, summary)
                 if code:
                     raise RuntimeError("Extra benchmark failed; retain partial records")
-        summary["status"] = "training_and_benchmarks_complete_reports_pending"
+        summary["status"] = ("prompt_sweep_complete_reports_pending" if prompt_sweep
+                             else "training_and_benchmarks_complete_reports_pending")
     except BaseException as exc:
         summary["status"] = "incomplete" if STOP.exists() else "failed"
         summary["error_type"] = type(exc).__name__
@@ -280,6 +300,7 @@ def package_outputs():
     files = {}
     with tarfile.open(archive, "w:gz", compresslevel=1) as handle:
         for relative in ("data/private/native_runs", "results/native_benchmarks",
+                         "results/native_prompt_sweep",
                          "results/native_development", "results/extra_benchmarks",
                          "data/private/remote_summary.json", "data/private/remote_worker.log"):
             path = ROOT / relative

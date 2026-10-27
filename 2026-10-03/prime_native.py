@@ -17,6 +17,7 @@ from pathlib import Path, PurePosixPath
 import curated
 import pilot
 import hub_backup
+import iat_prompts
 import study
 
 ATTEMPTS = study.ROOT / "data/private/prime_native"
@@ -118,9 +119,12 @@ def extras_only_plan(methods, resumed_training):
     return {"mode": "extras_only", "extra_methods": methods}
 
 
-def package_inputs(destination, resume_from=None, extras_only=None):
+def package_inputs(destination, resume_from=None, extras_only=None, prompt_sweep=False):
+    if prompt_sweep and (extras_only is not None or resume_from is None):
+        raise ValueError("Prompt sweep needs a saved checkpoint and cannot run extras")
     resumed = resume_results(resume_from) if resume_from else ({}, {})
-    plan = extras_only_plan(extras_only, resumed[0]) if extras_only is not None else None
+    plan = (iat_prompts.sweep_plan(resumed[0]) if prompt_sweep else
+            extras_only_plan(extras_only, resumed[0]) if extras_only is not None else None)
     config = study.dataset_config()
     if not config:
         raise ValueError("Active curated dataset is required")
@@ -130,7 +134,7 @@ def package_inputs(destination, resume_from=None, extras_only=None):
                  "objectives.py", "hub_backup.py", "native_train.py", "native_benchmark.py", "remote_native.py",
                  "benchmark.py", "vision.py", "curated_vision_check.py", "qwen_vision_check.py",
                  "gemma3_vision_check.py", "native_extra_benchmarks.py",
-                 "prime_native.py",
+                 "prime_native.py", "runpod_native.py", "iat_prompts.py",
                  "native_report.py", "report.py"):
         paths.add(study.ROOT / name)
     paths.update((study.ROOT / "config").glob("*.json"))
@@ -148,6 +152,7 @@ def package_inputs(destination, resume_from=None, extras_only=None):
     paths.update(visbias_normalized.rglob("*.jpg"))
     paths.add(study.ROOT / "tests/test_native_train.py")
     paths.add(study.ROOT / "tests/test_hub_backup.py")
+    paths.add(study.ROOT / "tests/test_iat_prompts.py")
     paths.add(study.REPO / "2026-10-20/analysis/variety.py")
     config = study.dataset_config()
     paths.add(study.REPO / config["manifest_path"])
@@ -193,7 +198,7 @@ def package_inputs(destination, resume_from=None, extras_only=None):
                 name = "2026-10-03/data/private/native_runs/" + path.relative_to(checkpoint.parent.parent).as_posix()
                 archive.add(path, arcname=name)
                 checksums[name] = study.sha(path)
-        for _, _, folder, _ in resumed[1].values():
+        for _, _, folder, _ in (() if prompt_sweep else resumed[1].values()):
             for path in folder.rglob("*"):
                 if path.is_symlink() or not path.resolve().is_relative_to(ATTEMPTS.resolve()):
                     raise ValueError("Unsafe recovered benchmark file")
@@ -223,7 +228,7 @@ def package_inputs(destination, resume_from=None, extras_only=None):
             "development_images": sum(1 for r in rows if r["split"] == "development"),
             "benchmark_images": len(stimuli), "credentials_included": False,
             "benchmark_training_allowed": False, "resumed_training_conditions": len(resumed[0]),
-            "resumed_benchmark_conditions": len(resumed[1]), "run_plan": plan}
+            "resumed_benchmark_conditions": 0 if prompt_sweep else len(resumed[1]), "run_plan": plan}
 
 
 def launch(resume_from=None):
