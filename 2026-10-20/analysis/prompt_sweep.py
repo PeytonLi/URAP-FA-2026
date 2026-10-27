@@ -1,4 +1,4 @@
-"""Audit and analyze prompts 3/4/5 without training, inference or provider calls."""
+"""Audit and analyze prompts 2/3/4 (run IDs 3/4/5) without training, inference or provider calls."""
 from __future__ import annotations
 
 import argparse
@@ -140,7 +140,7 @@ def adjust_across_prompts(results):
     for family, members in families.items():
         for row, p in zip(members, holm([r["raw_p"] for r in members]), strict=True):
             row["holm_p"] = p
-            row["multiplicity_family"] = family + "_across_prompts_3_4_5"
+            row["multiplicity_family"] = family + "_across_prompts_2_3_4"
 
 
 def verify(recovered):
@@ -171,21 +171,26 @@ def run(recovered, out):
     for prompt_id, (data, audit, sources) in audited.items():
         rows, images, _ = stats.analyze(data["base"], data["tuned"], SWEEP_SOURCES)
         for row in rows:
-            row.update(prompt_id=prompt_id, interpretation=iat_prompts.KINDS[prompt_id])
+            row.update(prompt=iat_prompts.REPORT_NUMBERS[prompt_id], run_prompt_id=prompt_id,
+                       interpretation=iat_prompts.KINDS[prompt_id])
         results.extend(rows)
-        per_image.extend({"prompt_id": prompt_id, **image} for image in images)
+        per_image.extend({"prompt": iat_prompts.REPORT_NUMBERS[prompt_id], "run_prompt_id": prompt_id,
+                          **image} for image in images)
         prepared[prompt_id] = data, audit, sources, rows
     adjust_across_prompts(results)
     out.mkdir(parents=True)
     stats.save_json(out / "analysis_plan.json", plan)
-    stats.save_json(out / "protocol_audit.json", {p: values[1] for p, values in prepared.items()})
+    stats.save_json(out / "protocol_audit.json", {"prompt_" + iat_prompts.REPORT_NUMBERS[p]: values[1]
+                                                    for p, values in prepared.items()})
     variety.write_csv(out / "tests.csv", results)
     variety.write_csv(out / "per_image.csv", per_image)
-    flat = [{ "prompt_id": row["prompt_id"], "interpretation": row["interpretation"],
+    flat = [{"prompt": row["prompt"], "run_prompt_id": row["run_prompt_id"],
+             "interpretation": row["interpretation"],
               **stats.flat_rows([row])[0]} for row in results]
     variety.write_csv(out / "statistics_table.csv", flat)
     for prompt_id, (data, audit, sources, rows) in prepared.items():
-        folder = out / ("prompt_" + prompt_id)
+        number = iat_prompts.REPORT_NUMBERS[prompt_id]
+        folder = out / ("prompt_" + number)
         folder.mkdir()
         inputs = [{"condition": label, **{key: r[key] for key in stats.INPUT_FIELDS}}
                   for label in ("base", "tuned") for r in data[label]]
@@ -193,13 +198,15 @@ def run(recovered, out):
         variety.write_csv(folder / "tests.csv", rows)
         stats.save_json(folder / "protocol_audit.json", {
             **audit, "paired_inputs_sha256": stats.digest(folder / "paired_responses.csv")})
-        variety.main(sources, folder / "graphs")
+        variety.main(sources, folder / "graphs", title_prefix="Prompt " + number)
     primary = [row for row in flat if row["Family"] == "primary"]
     lines = [
-        "# Prompts 3, 4 and 5: base versus saved ORPO",
+        "# Prompts 2, 3 and 4: base versus saved ORPO",
         "",
         "Evaluation only: 3,600 sampled attempts, no retraining or extra benchmarks.",
-        "Every prompt is reported separately. Prompt 3 changes wording; prompts 4 and 5",
+        "Prompt 1 is the original baseline prompt (study.IAT_PROMPT), evaluated earlier in",
+        "iat_stats_v4. Run IDs 3, 4 and 5 in raw outputs are reported as prompts 2, 3 and 4.",
+        "Every prompt is reported separately. Prompt 2 changes wording; prompts 3 and 4",
         "change task interpretation. They are not pooled as one task.",
         "",
         "See statistics_table.csv for effects, 95% image-bootstrap confidence intervals,",

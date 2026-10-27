@@ -712,7 +712,7 @@ if __name__ == "__main__":
     parser.add_argument("--extras-only", type=lambda text: text.split(","),
                         help="comma list (base,orpo): skip training/IAT, run only DT/BOLD/VisBias")
     parser.add_argument("--prompt-sweep", action="store_true",
-                        help="evaluate only prompts 3,4,5 on base and saved ORPO; never train")
+                        help="evaluate only run IDs 3,4,5 (reported as prompts 2,3,4) on base and saved ORPO; never train")
     args = parser.parse_args()
     if args.action == "reap":
         reap(args.name, args.launcher_pid, args.receipt, args.deadline_epoch)

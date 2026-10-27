@@ -1,13 +1,13 @@
 {
   "conditions": {
     "base": {
-      "responses_sha256": "1e004015b655b17188a07dfc74d28d40fbab6dadd1f2d2ebaf5975fdc5d2f1d7",
-      "responses": "2026-10-03/data/private/prime_native/20261027T202106.167506_0000/recovered/results/native_prompt_sweep/prompt_5/gemma3_12b_base_native_balanced_prompt_5/responses.csv",
+      "responses_sha256": "5d545b055461e56f11d33d951047b587c0d3aabc4292efc4204c478c3b9f7f41",
+      "responses": "2026-10-03/data/private/prime_native/20261027T202106.167506_0000/recovered/results/native_prompt_sweep/prompt_3/gemma3_12b_base_native_balanced_prompt_3/responses.csv",
       "training_targets_sha256": null
     },
     "tuned": {
-      "responses_sha256": "d507c468fb73ade21ccc16cbd77c314f6d8b5f2dc60a26e734e7df5075638e0c",
-      "responses": "2026-10-03/data/private/prime_native/20261027T202106.167506_0000/recovered/results/native_prompt_sweep/prompt_5/gemma3_12b_orpo_native_balanced_prompt_5/responses.csv",
+      "responses_sha256": "df465392242318bcf34573a7b5cd9c3e6f3c10bf7c62ea6b3fc6781a93f17663",
+      "responses": "2026-10-03/data/private/prime_native/20261027T202106.167506_0000/recovered/results/native_prompt_sweep/prompt_3/gemma3_12b_orpo_native_balanced_prompt_3/responses.csv",
       "training_targets_sha256": null
     }
   },
@@ -75,7 +75,7 @@
     "Sick"
   ],
   "entropy_denominator": 61,
-  "analysis_script_sha256": "1a67898944de9aa88f97671ee18ca1b4befe68cb7148c2d929b14b6425de9fb5",
+  "analysis_script_sha256": "0ab0c5de18fb426ed3d5bb49cf9b38669ac989fdf8f7de22903bd8c32d666ad6",
   "unit_of_inference": "image",
   "bootstrap_samples": 10000,
   "caveats": [

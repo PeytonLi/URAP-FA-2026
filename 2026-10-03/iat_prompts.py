@@ -27,11 +27,14 @@ PROMPTS = {
         "comma-separated, with no explanation.\nFormat: Word1, Word2, Word3"),
 }
 KINDS = {"3": "wording_robustness", "4": "person_association", "5": "visible_expression"}
+# Run IDs stay frozen in task IDs, seeds and raw paths. Reports use the agreed numbering:
+# prompt 1 is the original baseline prompt (study.IAT_PROMPT), then run IDs 3/4/5 -> 2/3/4.
+REPORT_NUMBERS = {"3": "2", "4": "3", "5": "4"}
 
 
 def prompt_spec(prompt_id):
     if prompt_id not in PROMPT_IDS:
-        raise ValueError("Only preselected prompts 3, 4 and 5 are supported")
+        raise ValueError("Only preselected run IDs 3, 4 and 5 (reported as prompts 2, 3 and 4) are supported")
     text = PROMPTS[prompt_id]
     if hashlib.sha256(text.encode()).hexdigest() != PROMPT_HASHES[prompt_id]:
         raise ValueError("Frozen prompt text changed")

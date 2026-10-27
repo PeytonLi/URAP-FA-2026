@@ -1,7 +1,9 @@
-# Prompts 3, 4 and 5: base versus saved ORPO
+# Prompts 2, 3 and 4: base versus saved ORPO
 
 Evaluation only: 3,600 sampled attempts, no retraining or extra benchmarks.
-Every prompt is reported separately. Prompt 3 changes wording; prompts 4 and 5
+Prompt 1 is the original baseline prompt (study.IAT_PROMPT), evaluated earlier in
+iat_stats_v4. Run IDs 3, 4 and 5 in raw outputs are reported as prompts 2, 3 and 4.
+Every prompt is reported separately. Prompt 2 changes wording; prompts 3 and 4
 change task interpretation. They are not pooled as one task.
 
 See statistics_table.csv for effects, 95% image-bootstrap confidence intervals,
