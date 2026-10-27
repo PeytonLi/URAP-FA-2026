@@ -1,0 +1,30 @@
+Test,Group,Family,View,Base,Tuned,Change,95% CI,CI applies to,raw p,Holm p
+negative_gap_change_did,Black-White,primary,sampled_exact,83.67%,-0.89%,-84.56 points,"[-103.0073, -51.4673]",change,0.0043290043,0.0043290043
+word_entropy_change,all images,primary,sampled_exact,0.3297,0.8960,+0.5664,"[0.5510, 0.5816]",change,0.00048828125,0.0014648438
+unordered_triples_change,all images,primary,sampled_exact,3.3333,46.6667,+43.3333,"[42.0833, 44.5833]",change,0.00048828125,0.0014648438
+base_negative_gap,Black-White,diagnostics,sampled_exact,83.67%,—,—,"[51.6667, 100.0000]",within-model racial disparity,0.0021645022,0.0086580087
+base_word_tv,Black-White,diagnostics,sampled_exact,0.8367,—,—,"[0.5611, 1.0000]",within-model racial disparity,0.0021645022,0.0086580087
+tuned_negative_gap,Black-White,diagnostics,sampled_exact,—,-0.89%,—,"[-3.9730, 2.1955]",within-model racial disparity,0.61471861,0.61471861
+tuned_word_tv,Black-White,diagnostics,sampled_exact,—,0.1481,—,"[0.1535, 0.2390]",within-model racial disparity,0.16017316,0.32034632
+negative_gap_change_did,Black-White,gender_blocked_sensitivity,sampled_exact,83.67%,-0.89%,-84.56 points,"[-102.3412, -52.3584]",change,0.01,0.03
+base_negative_gap,Black-White,gender_blocked_sensitivity,sampled_exact,83.67%,—,—,"[51.6667, 100.0000]",within-model racial disparity,0.005,0.025
+base_word_tv,Black-White,gender_blocked_sensitivity,sampled_exact,0.8367,—,—,"[0.5867, 1.0000]",within-model racial disparity,0.005,0.025
+tuned_negative_gap,Black-White,gender_blocked_sensitivity,sampled_exact,—,-0.89%,—,"[-2.9046, 1.1361]",within-model racial disparity,0.55,0.55
+tuned_word_tv,Black-White,gender_blocked_sensitivity,sampled_exact,—,0.1481,—,"[0.1493, 0.2265]",within-model racial disparity,0.19,0.38
+strict_valid_answer_fraction_change,all images,quality,sampled_exact,100.00%,93.83%,-6.17 points,"[-8.0000, -4.3333]",change,0.0009765625,0.0009765625
+negative_gap_change_did,Black-White,final_primary_sensitivity,final_scored,83.67%,-1.78%,-85.44 points,"[-103.7778, -52.5556]",change,0.0021645022,0.0021645022
+word_entropy_change,all images,final_primary_sensitivity,final_scored,0.3297,0.8920,+0.5623,"[0.5463, 0.5785]",change,0.00048828125,0.0014648438
+unordered_triples_change,all images,final_primary_sensitivity,final_scored,3.3333,48.3333,+45.0000,"[43.9167, 46.0000]",change,0.00048828125,0.0014648438
+base_negative_gap,Black-White,final_diagnostics_sensitivity,final_scored,83.67%,—,—,"[51.6667, 100.0000]",within-model racial disparity,0.0021645022,0.0086580087
+base_word_tv,Black-White,final_diagnostics_sensitivity,final_scored,0.8367,—,—,"[0.5611, 1.0000]",within-model racial disparity,0.0021645022,0.0086580087
+tuned_negative_gap,Black-White,final_diagnostics_sensitivity,final_scored,—,-1.78%,—,"[-4.8889, 1.3333]",within-model racial disparity,0.35714286,0.35714286
+tuned_word_tv,Black-White,final_diagnostics_sensitivity,final_scored,—,0.1500,—,"[0.1567, 0.2444]",within-model racial disparity,0.14718615,0.29437229
+negative_gap_change_did,Black-White,distinct_words_primary_sensitivity,sampled_distinct,83.67%,-0.85%,-84.51 points,"[-103.0092, -51.3396]",change,0.0043290043,0.0043290043
+word_entropy_change,all images,distinct_words_primary_sensitivity,sampled_distinct,0.3297,0.8966,+0.5670,"[0.5519, 0.5819]",change,0.00048828125,0.0014648438
+unordered_triples_change,all images,distinct_words_primary_sensitivity,sampled_distinct,3.3333,46.0000,+42.6667,"[41.4167, 44.0000]",change,0.00048828125,0.0014648438
+base_negative_gap,Black-White,distinct_words_diagnostics_sensitivity,sampled_distinct,83.67%,—,—,"[51.6667, 100.0000]",within-model racial disparity,0.0021645022,0.0086580087
+base_word_tv,Black-White,distinct_words_diagnostics_sensitivity,sampled_distinct,0.8367,—,—,"[0.5611, 1.0000]",within-model racial disparity,0.0021645022,0.0086580087
+tuned_negative_gap,Black-White,distinct_words_diagnostics_sensitivity,sampled_distinct,—,-0.85%,—,"[-3.9287, 2.2017]",within-model racial disparity,0.62337662,0.62337662
+tuned_word_tv,Black-White,distinct_words_diagnostics_sensitivity,sampled_distinct,—,0.1476,—,"[0.1537, 0.2403]",within-model racial disparity,0.15151515,0.3030303
+word_entropy_change,all images,equal_valid_count_sensitivity,rarefied_sampled_exact,0.3295,0.8960,+0.5666,"[0.5513, 0.5817]",change,0.00048828125,0.0009765625
+unordered_triples_change,all images,equal_valid_count_sensitivity,rarefied_sampled_exact,3.2882,46.6667,+43.3785,"[42.1260, 44.6181]",change,0.00048828125,0.0009765625

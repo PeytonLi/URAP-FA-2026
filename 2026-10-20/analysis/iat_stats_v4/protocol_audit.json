@@ -1,0 +1,36 @@
+{
+  "original_sources_verified": true,
+  "conditions": {
+    "base": {
+      "responses": "2026-10-03/data/private/prime_native/20261026T185635.824148_0000/recovered/results/native_benchmarks/gemma3_12b_base_native_balanced/responses.csv",
+      "responses_sha256": "32652ff01d42ffbbbd03617875200ed050131752baa2a75882ddd87e09b9cc6b",
+      "run_manifest_sha256": "68b5b11e0d1a03cc93c7af0e23d0e9fa78574288094377122e7893a8371785cb",
+      "api_log_sha256": "405c5115ebe587a30a716744da1fcb227dff9b6f3b84257595c4cca6b1aa032d",
+      "sampled_calls": 600,
+      "fallback_calls": 0,
+      "adapter_sha256": null
+    },
+    "tuned": {
+      "responses": "2026-10-03/data/private/prime_native/20261026T185635.824148_0000/recovered/results/native_benchmarks/gemma3_12b_orpo_native_balanced/responses.csv",
+      "responses_sha256": "1bc96e2d736537482d926cd77c88bb1c0bd8a21e5b0d61149b4b39a6d0e2b444",
+      "run_manifest_sha256": "e3e796dded5e1cfafed8adcb2d16a2bf1f932be67d07b6521deed2e3ac899ee5",
+      "api_log_sha256": "fc5dd897bec4d9a41a182b0b4fc15cf932d7c42f82486fe1c222e91507393176",
+      "sampled_calls": 600,
+      "fallback_calls": 28,
+      "adapter_sha256": "62b19d87bf77029ea565dc288d7ef509d086238c80b6fa1bccd0319e9a1e9c59"
+    }
+  },
+  "paired_images": 12,
+  "slots_per_condition": 600,
+  "prompt_sha256": "427f09c21a3fd30765904b95e8a80b864567028453dcf00d408ee0a9396a9280",
+  "model_revision": "96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "versions": {
+    "accelerate": "1.15.0",
+    "peft": "0.21.0",
+    "torch": "2.11.0+cu128",
+    "transformers": "5.14.0"
+  },
+  "native_contracts_match_except_adapter_and_condition_identity": true,
+  "historical_screenshot_baseline_in_tuning_tests": false,
+  "paired_inputs_sha256": "86ffb492a3b6fb05fb05e0f0286d3454ee8006bb6beeb0fe70c29a8b4d69966b"
+}
