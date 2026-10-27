@@ -64,7 +64,8 @@ env_file=${URAP_ENV_FILE:-/proc/1/environ}
 api=${URAP_API:-https://rest.runpod.io/v1}
 pick() { tr '\0' '\n' < "$env_file" | sed -n "s/^$1=//p" | head -n 1; }
 pod=${RUNPOD_POD_ID:-$(pick RUNPOD_POD_ID)}
-key=${RUNPOD_API_KEY:-$(pick RUNPOD_API_KEY)}
+key=$(cat "$(dirname "$0")/key" 2>/dev/null)
+key=${key:-${RUNPOD_API_KEY:-$(pick RUNPOD_API_KEY)}}
 expiry=$(( $(date +%s) + $1 ))
 echo "$expiry" > "$(dirname "$0")/expiry"
 while :; do
@@ -80,7 +81,8 @@ done
 WATCHDOG_CHECK = r'''d=$1; pid=$(cat "$d/pid" 2>/dev/null); env_file=${URAP_ENV_FILE:-/proc/1/environ}
 api=${URAP_API:-https://rest.runpod.io/v1}
 pick() { tr '\0' '\n' < "$env_file" | sed -n "s/^$1=//p" | head -n 1; }
-pod=${RUNPOD_POD_ID:-$(pick RUNPOD_POD_ID)}; key=${RUNPOD_API_KEY:-$(pick RUNPOD_API_KEY)}
+pod=${RUNPOD_POD_ID:-$(pick RUNPOD_POD_ID)}; key=$(cat "$d/key" 2>/dev/null)
+key=${key:-${RUNPOD_API_KEY:-$(pick RUNPOD_API_KEY)}}
 alive=false; [ -n "$pid" ] && kill -0 "$pid" 2>/dev/null && \
   tr '\0' ' ' < "/proc/$pid/cmdline" | grep -q "$d/watchdog.sh" && alive=true
 code=0; command -v curl >/dev/null && [ -n "$key" ] && code=$(curl -s -m 30 -o /dev/null \
@@ -212,6 +214,10 @@ def delete_and_verify(pod_id, attempts=20, delay=10, sleep=time.sleep):
 
 def arm_watchdog(ssh_args, seconds, pod_id):
     """Install and verify the pod-side switch before any bulk transfer or worker."""
+    # The pod-injected key cannot read its own pod (HTTP 403), so the switch uses the
+    # owner key, passed on stdin into a 0600 file that dies with the container disk.
+    command([*ssh_args, "umask 077 && mkdir -p " + WATCHDOG_DIR + " && cat > " + WATCHDOG_DIR +
+             "/key"], input=runpod_key().encode(), capture_output=True, timeout=30)
     command([*ssh_args, "mkdir -p " + WATCHDOG_DIR + " && cat > " + WATCHDOG_DIR +
              "/watchdog.sh && chmod 700 " + WATCHDOG_DIR + "/watchdog.sh && date +%s > " +
              WATCHDOG_KEEPALIVE], input=WATCHDOG_SCRIPT.encode(), capture_output=True, timeout=30)

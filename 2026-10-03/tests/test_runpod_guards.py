@@ -95,6 +95,16 @@ class WatchdogScript(unittest.TestCase):
         self.assertEqual((state["pod_id"], state["api_status"]), ("pod-1", 200))
         self.assertTrue(3590 <= state["remaining"] <= 3600)
 
+    def test_owner_key_file_overrides_pod_injected_key(self):
+        (self.tmp / "key").write_text("owner")
+        keepalive = self.tmp / "keepalive"
+        keepalive.touch()
+        self.start(2, 3600, keepalive)
+        self.assertEqual(self.deletes()[0][1:], ("/pods/pod-1", "Bearer owner"))
+        subprocess.run(["bash", "-s", str(self.tmp)], input=runpod_native.WATCHDOG_CHECK.encode(),
+                       capture_output=True, env=self.env, check=True)
+        self.assertIn(("GET", "/pods/pod-1", "Bearer owner"), FakeRunpod.calls)
+
     def test_check_reports_dead_watchdog(self):
         (self.tmp / "pid").write_text("999999")
         out = subprocess.run(["bash", "-s", str(self.tmp)], input=runpod_native.WATCHDOG_CHECK.encode(),
