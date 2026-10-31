@@ -46,6 +46,8 @@ BALANCE_RESERVE_USD = 0.50
 MIN_RUN_HOURS = 6.5
 IMAGE = "runpod/pytorch:2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04"
 PROMPT_SWEEP_HOURS = 3.0  # 3,600 sampled attempts; measured ~9 min per 600 plus setup
+# Batch A: 4,800 attempts incl. 120-token describe-then-choose; batch B: 7,200 attempts.
+BATCH_HOURS = {"v1": PROMPT_SWEEP_HOURS, "A": 5.0, "B": 5.5}
 CONTAINER_DISK_GB = 60
 # https://docs.runpod.io/pods/pricing: running container disk, billed per second.
 STORAGE_USD_PER_GB_MONTH = 0.10
@@ -151,7 +153,7 @@ def balance():
     return float(payload["data"]["myself"]["clientBalance"])
 
 
-def gpu_offers(run_hours=MIN_RUN_HOURS):
+def gpu_offers(run_hours=MIN_RUN_HOURS, ceiling=SPEND_CEILING_USD):
     payload = api("POST", None, graphql=True, body={
         "query": "query{gpuTypes{id displayName memoryInGb securePrice "
                  "lowestPrice(input:{gpuCount:1,secureCloud:true})"
@@ -162,7 +164,7 @@ def gpu_offers(run_hours=MIN_RUN_HOURS):
         price = low.get("uninterruptablePrice") or gpu.get("securePrice")
         if (gpu.get("memoryInGb") or 0) < MIN_VRAM_GB or not isinstance(price, (int, float)):
             continue
-        if not affordable(price, SPEND_CEILING_USD, run_hours):
+        if not affordable(price, ceiling, run_hours):
             continue
         stock = (low.get("stockStatus") or "").lower()
         if stock in ("none", "unavailable"):
@@ -278,7 +280,13 @@ def reap(name, launcher_pid, receipt_path, deadline_epoch, poll=30, sleep=time.s
     return outcome
 
 
-def launch(resume_from=None, attach_pod=None, attach_key=None, extras_only=None, prompt_sweep=False):
+def launch(resume_from=None, attach_pod=None, attach_key=None, extras_only=None, prompt_sweep=False,
+           spend_ceiling_usd=SPEND_CEILING_USD):
+    batch = ("v1" if prompt_sweep is True else prompt_sweep) if prompt_sweep else None
+    if batch is not None:
+        iat_prompts.batch_ids(batch)
+    if not (math.isfinite(spend_ceiling_usd) and 0 < spend_ceiling_usd <= 25):
+        raise ValueError("Spending ceiling must be a finite amount up to $25")
     if prompt_sweep and (extras_only is not None or resume_from is None):
         raise ValueError("Prompt sweep needs a saved checkpoint and cannot run extras")
     if extras_only is not None and not resume_from:
@@ -288,15 +296,15 @@ def launch(resume_from=None, attach_pod=None, attach_key=None, extras_only=None,
         if extras_only is not None:
             extras_only_plan(extras_only, resumed[0])
         if prompt_sweep:
-            iat_prompts.sweep_plan(resumed[0])
+            iat_prompts.sweep_plan(resumed[0], batch)
     curated.training_rows(study.dataset_config())  # Fail before any billable provisioning or upload.
     hub_api, hub_account = hub_backup.connect()  # No paid pod without a usable Hub login.
     wallet_before = balance()
     if wallet_before <= BALANCE_RESERVE_USD:
         raise ValueError(f"RunPod balance ${wallet_before:.2f} below reserve ${BALANCE_RESERVE_USD:.2f}")
-    spending_ceiling = min(SPEND_CEILING_USD, wallet_before - BALANCE_RESERVE_USD)
-    run_hours = PROMPT_SWEEP_HOURS if prompt_sweep else MIN_RUN_HOURS
-    if spending_ceiling < SPEND_CEILING_USD:
+    spending_ceiling = min(spend_ceiling_usd, wallet_before - BALANCE_RESERVE_USD)
+    run_hours = BATCH_HOURS[batch] if prompt_sweep else MIN_RUN_HOURS
+    if spending_ceiling < spend_ceiling_usd:
         raise ValueError("RunPod balance cannot fund the full run; no paid resource created")
     attached = None
     if attach_pod:
@@ -315,7 +323,7 @@ def launch(resume_from=None, attach_pod=None, attach_key=None, extras_only=None,
         # Capacity flickers; poll up to 30 min for an eligible on-demand offer.
         poll_deadline = time.monotonic() + 30 * 60
         while True:
-            offers = gpu_offers(run_hours)
+            offers = gpu_offers(run_hours, spending_ceiling)
             checked_at = study.now()
             capacity = {"checked_at": checked_at, "provider": "runpod",
                         "availability": [{"gpu": o["gpu"]["id"], "price": o["price"],
@@ -370,7 +378,7 @@ def launch(resume_from=None, attach_pod=None, attach_key=None, extras_only=None,
                           "max_charge_usd": hourly_cost(price) * paid_seconds(run_hours) / 3600},
                "wallet_before_usd": wallet_before, "input_bundle": bundle,
                "requested_conditions": ([f"gemma3_12b_{m}_prompt_{p}"
-                                         for p in iat_prompts.PROMPT_IDS for m in ("base", "orpo")]
+                                         for p in iat_prompts.batch_ids(batch) for m in ("base", "orpo")]
                                         if prompt_sweep else
                                         ["gemma3_12b_" + m + "_extras" for m in extras_only]
                                         if extras_only is not None else ["gemma3_12b_orpo"]),
@@ -408,7 +416,7 @@ def launch(resume_from=None, attach_pod=None, attach_key=None, extras_only=None,
                                    last_offer_error=str(exc)[:200])
                     study.save_json(folder / "launch.json", receipt)
                     time.sleep(60)
-                    offers = gpu_offers(run_hours)
+                    offers = gpu_offers(run_hours, spending_ceiling)
                     if not offers:
                         continue  # nothing listed this minute; poll again
                     offer_index = 0
@@ -567,7 +575,7 @@ def launch(resume_from=None, attach_pod=None, attach_key=None, extras_only=None,
                 if not state["worker_running"] and not state["child_running"]:
                     break
             time.sleep(10)
-        complete = (iat_prompts.complete_summary(state["summary"]) if prompt_sweep else
+        complete = (iat_prompts.complete_summary(state["summary"], batch) if prompt_sweep else
                     state["summary"].get("status") == "training_and_benchmarks_complete_reports_pending")
         receipt.update(remote_exit_code=0 if complete else 1,
                        status="worker_complete_reports_pending" if complete else "remote_failed")
@@ -681,7 +689,7 @@ def launch(resume_from=None, attach_pod=None, attach_key=None, extras_only=None,
                 try:
                     checked = subprocess.run(
                         [sys.executable, str(study.REPO / "2026-10-20/analysis/prompt_sweep.py"),
-                         "--recovered", str(folder / "recovered"), "--verify-only"],
+                         "--recovered", str(folder / "recovered"), "--verify-only", "--batch", batch],
                         capture_output=True, timeout=600, check=False)
                     receipt["semantic_outputs_verified"] = (
                         checked.returncode == 0 and receipt["optimizer_updates_verified"] == 0
@@ -713,15 +721,22 @@ if __name__ == "__main__":
                         help="comma list (base,orpo): skip training/IAT, run only DT/BOLD/VisBias")
     parser.add_argument("--prompt-sweep", action="store_true",
                         help="evaluate only run IDs 3,4,5 (reported as prompts 2,3,4) on base and saved ORPO; never train")
+    parser.add_argument("--prompt-batch", choices=("A", "B"),
+                        help="evaluate only reported prompts 5-8 (A) or 9-13 (B) on base and saved ORPO; never train")
+    parser.add_argument("--spend-ceiling-usd", type=float, default=SPEND_CEILING_USD)
     args = parser.parse_args()
+    if args.prompt_batch and args.prompt_sweep:
+        parser.error("Choose --prompt-sweep or --prompt-batch, not both")
+    sweep = args.prompt_batch or args.prompt_sweep
     if args.action == "reap":
         reap(args.name, args.launcher_pid, args.receipt, args.deadline_epoch)
         raise SystemExit(0)
     result = launch(resume_from=args.resume_from,
                     attach_pod=args.attach_pod, attach_key=args.attach_key,
-                    extras_only=args.extras_only, prompt_sweep=args.prompt_sweep)
+                    extras_only=args.extras_only, prompt_sweep=sweep,
+                    spend_ceiling_usd=args.spend_ceiling_usd)
     raise SystemExit(0 if result["status"] == "worker_complete_reports_pending"
                      and result.get("outputs_recovered_and_verified")
                      and result.get("termination_verified")
-                     and (not args.prompt_sweep or result.get("semantic_outputs_verified"))
+                     and (not sweep or result.get("semantic_outputs_verified"))
                      else 1)

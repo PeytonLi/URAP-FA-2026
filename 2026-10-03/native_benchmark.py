@@ -60,14 +60,17 @@ class NativeRunner(IATBenchmarkRunner):
         self.native_model, self.processor = native_model, processor
         self.model_name, self.deadline, self.inputs = model_name, deadline, {}
         self.prompt = study.IAT_PROMPT if prompt is None else prompt
+        self.options = (self.prompt_spec or {}).get("options") or {}
+        self.rendered, self.gray_images = {}, {}
 
     def _append_jsonl(self, path, value):
         if self.prompt_spec and path.name in ("responses.jsonl", "api_responses.jsonl"):
-            if ("prompt_sha256" in value
-                    and value["prompt_sha256"] != self.prompt_spec["prompt_sha256"]):
+            expected = self.rendered.get(value.get("task_id"), self.prompt_spec["prompt_sha256"])
+            if "prompt_sha256" in value and value["prompt_sha256"] != expected:
                 raise ValueError("Actual prompt hash differs from the frozen prompt ID")
-            value = {**value, "prompt_id": self.prompt_spec["prompt_id"],
-                     "prompt_sha256": self.prompt_spec["prompt_sha256"]}
+            value = {**value, "prompt_id": self.prompt_spec["prompt_id"], "prompt_sha256": expected}
+            if self.options:
+                value["prompt_template_sha256"] = self.prompt_spec["prompt_sha256"]
         super()._append_jsonl(path, value)
 
     def _call(self, *, task_id, stage, model, stimulus, seed, fallback):
@@ -75,41 +78,67 @@ class NativeRunner(IATBenchmarkRunner):
         from transformers import set_seed
         if time.monotonic() >= self.deadline:
             raise TimeoutError("Native benchmark deadline reached; keep partial records")
-        if stimulus.image_id not in self.inputs:
+        prompt = self.prompt
+        if self.options:
+            prompt = iat_prompts.render(self.prompt_spec["prompt_id"], stimulus.image_id, stimulus.race,
+                                        seed - 1_000_000 if fallback else seed)
+        cache_key = stimulus.image_id, prompt
+        if cache_key not in self.inputs:
+            if len(self.inputs) >= 24:
+                self.inputs.clear()
             if study.sha(stimulus.path) != stimulus.sha256:
                 raise ValueError("Benchmark image hash changed")
+            image_path = stimulus.path
+            if self.options.get("image", "face") != "face":
+                image_path = self.gray_image(stimulus)
             options = {"tokenize": True, "return_dict": True, "return_tensors": "pt",
                        "add_generation_prompt": True}
             thinking = native_train.MODELS[self.model_name]["enable_thinking"]
             if thinking is not None:
                 options["enable_thinking"] = thinking
-            user = {"role": "user", "content": [{"type": "image", "path": str(stimulus.path)},
-                                                    {"type": "text", "text": self.prompt}]}
+            user = {"role": "user", "content": [{"type": "image", "path": str(image_path)},
+                                                    {"type": "text", "text": prompt}]}
             inputs = self.processor.apply_chat_template([user], **options)
             if "pixel_values" not in inputs or not inputs["pixel_values"].numel():
                 raise ValueError("Native benchmark must contain real image pixels")
-            self.inputs[stimulus.image_id] = {
+            self.inputs[cache_key] = {
                 k: v.to(self.native_model.device, dtype=self.native_model.dtype if v.is_floating_point() else v.dtype)
                 for k, v in inputs.items()}
-        inputs = self.inputs[stimulus.image_id]
+        inputs = self.inputs[cache_key]
         set_seed(seed)
-        generation = {"max_new_tokens": 30, "do_sample": not fallback, "use_cache": True,
+        max_new = self.options.get("max_new_tokens", 30)
+        generation = {"max_new_tokens": max_new, "do_sample": not fallback, "use_cache": True,
                       "top_k": 0, "top_p": 1.0, "temperature": 1.0}
         with torch.inference_mode():
             ids = self.native_model.generate(**inputs, **generation)[0, inputs["input_ids"].shape[1]:]
-        text = self.processor.tokenizer.decode(ids, skip_special_tokens=True,
-                                               clean_up_tokenization_spaces=False)
+        generated = self.processor.tokenizer.decode(ids, skip_special_tokens=True,
+                                                    clean_up_tokenization_spaces=False)
+        text = iat_prompts.answer_text(self.prompt_spec["prompt_id"], generated) if self.options else generated
         response = {"model": model.model_id, "provider": "prime/native-transformers",
                     "choices": [{"message": {"content": text},
-                                 "finish_reason": "length" if ids.numel() == 30 else "stop"}],
+                                 "finish_reason": "length" if ids.numel() == max_new else "stop"}],
                     "usage": {"prompt_tokens": inputs["input_ids"].shape[1],
                               "completion_tokens": ids.numel()}}
-        self._append_jsonl(self.api_path, {"task_id": task_id, "stage": stage, "requested_at": study.now(),
+        call = {"task_id": task_id, "stage": stage, "requested_at": study.now(),
             "image_id": stimulus.image_id, "image_sha256": stimulus.sha256, "seed": seed,
-            "prompt_sha256": hashlib.sha256(self.prompt.encode()).hexdigest(),
+            "prompt_sha256": hashlib.sha256(prompt.encode()).hexdigest(),
             "model_id_requested": model.model_id, "request_parameters": generation,
-            "response": response})
+            "response": response}
+        if self.options:
+            self.rendered[task_id] = call["prompt_sha256"]
+            call.update(generated_text=generated, image_input=self.options["image"])
+        self._append_jsonl(self.api_path, call)
         return response
+
+    def gray_image(self, stimulus):
+        if stimulus.image_id not in self.gray_images:
+            import tempfile
+            from PIL import Image
+            folder = Path(tempfile.mkdtemp(prefix="iat_gray_"))
+            path = folder / (stimulus.image_id + ".png")
+            Image.new("RGB", (stimulus.width, stimulus.height), (128, 128, 128)).save(path)
+            self.gray_images[stimulus.image_id] = path
+        return self.gray_images[stimulus.image_id]
 
 
 def run(model_name, method, image_dir, max_seconds, checkpoint=None, development=False, prompt_id=None):
@@ -237,7 +266,7 @@ if __name__ == "__main__":
     parser.add_argument("--checkpoint", type=Path)
     parser.add_argument("--max-seconds", type=float, required=True)
     parser.add_argument("--development", action="store_true")
-    parser.add_argument("--prompt-id", choices=iat_prompts.PROMPT_IDS)
+    parser.add_argument("--prompt-id", choices=iat_prompts.ALL_PROMPT_IDS)
     args = parser.parse_args()
     run(args.model, args.method, args.image_dir, args.max_seconds, args.checkpoint,
         args.development, args.prompt_id)
