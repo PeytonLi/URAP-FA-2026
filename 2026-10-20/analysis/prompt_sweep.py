@@ -24,7 +24,9 @@ import study
 from multimodel_bias.iat import deterministic_seed
 
 PLANS = {batch: REPO / "2026-10-03" / name for batch, name in iat_prompts.PLAN_FILES.items()}
-CANNOT_TELL = re.compile(r"^[\W_]*cannot tell[\W_]*$", re.IGNORECASE)
+CANNOT_TELL = re.compile(r"^[\W_]*(i\s+)?cannot\s+tell\b", re.IGNORECASE)
+SEPARATE_FAMILIES = {"p8": "mitigation_", "p9": "negative_control_"}
+PRIMARY_TESTS = ("negative_gap_change_did", "word_entropy_change", "unordered_triples_change")
 ADAPTER_SHA256 = iat_prompts.ADAPTER_SHA256
 SWEEP_SOURCES = stats.FINAL_SOURCES | {"fallback_invalid"}
 
@@ -91,6 +93,14 @@ def audit_prompt(recovered, prompt_id):
                         "do_sample": call["stage"] == "sampled",
                         "use_cache": True, "top_k": 0, "top_p": 1.0, "temperature": 1.0}
             stats.require(call["request_parameters"] == expected, "Decoding drift")
+            options = spec.get("options") or {}
+            if options:
+                stats.require(call["image_input"] == options["image"]
+                              and ("gray_image_sha256" in call) == (options["image"] != "face"),
+                              "Image substitution not provable")
+                stats.require(call["response"]["choices"][0]["message"]["content"]
+                              == iat_prompts.answer_text(prompt_id, call["generated_text"]),
+                              "Scored text is not the frozen extraction of the generation")
         sampled = {task for task, stage in keyed if stage == "sampled"}
         fallback = {task for task, stage in keyed if stage == "fallback"}
         stats.require(sampled == {r["task_id"] for r in rows}
@@ -131,6 +141,8 @@ def audit_prompt(recovered, prompt_id):
         audits[label] = {"files_sha256": {name: stats.digest(folder / name) for name in (
             "run_manifest.json", "responses.csv", "responses.jsonl", "api_responses.jsonl")},
             "sampled_calls": len(sampled), "fallback_calls": len(fallback),
+            "length_finish_share": sum(c["response"]["choices"][0]["finish_reason"] == "length"
+                                       for c in calls) / len(calls),
             "adapter_sha256": contract["adapter_sha256"]}
     stats.require(normalized_contract(contracts["base"]) == normalized_contract(contracts["tuned"]),
                   "Base/ORPO contracts differ beyond the intended condition namespace")
@@ -144,12 +156,20 @@ def adjust_across_prompts(results, batch="v1"):
     families = defaultdict(list)
     for row in results:
         families[row["family"]].append(row)
-    stats.require(len(families["primary"]) == 3 * len(ids), "Need every primary hypothesis")
+    primary = [p for p in ids if batch == "v1" or p not in SEPARATE_FAMILIES]
+    stats.require(len(families["primary"]) == 3 * len(primary), "Need every primary hypothesis")
     label = "_across_prompts_" + "_".join(iat_prompts.REPORT_NUMBERS[p] for p in ids)
     for family, members in families.items():
         for row, p in zip(members, holm([r["raw_p"] for r in members]), strict=True):
             row["holm_p"] = p
             row["multiplicity_family"] = family + label
+
+
+def unavailable_rows(reason):
+    nan = float("nan")
+    return [{**stats.result_row(test, "primary", "sampled_exact", None, None, None, (nan, nan), 1.0, 0,
+                                "unavailable: " + reason, "unavailable"), "status": "unavailable"}
+            for test in PRIMARY_TESTS]
 
 
 def abstention(rows):
@@ -170,7 +190,11 @@ def abstention(rows):
     observed = gap(set(black))
     null = [gap(set(c)) for c in itertools.combinations(images, len(black))]
     p = sum(abs(v) >= abs(observed) - 1e-12 for v in null) / len(null)
-    return {"black_cannot_tell_rate": sum(rates[i] for i in black) / len(black),
+    other = {i: sum(not CANNOT_TELL.match(r["sampled_raw"]) and not variety.exact_sample(r["sampled_raw"])
+                    for r in v) / len(v) for i, v in by_image.items()}
+    return {"black_other_invalid_rate": sum(other[i] for i in black) / len(black),
+            "white_other_invalid_rate": sum(other[i] for i in images if i not in black) / (len(images) - len(black)),
+            "adjustment": "none; descriptive","black_cannot_tell_rate": sum(rates[i] for i in black) / len(black),
             "white_cannot_tell_rate": sum(rates[i] for i in images if i not in black) / (len(images) - len(black)),
             "black_minus_white": observed, "exact_permutation_p": p, "assignments": len(null)}
 
@@ -195,6 +219,8 @@ def run(recovered, out, batch="v1"):
     ids = iat_prompts.batch_ids(batch)
     stats.require(not out.exists(), "Analysis output must start fresh")
     plan = json.loads(PLANS[batch].read_text())
+    stats.require(batch == "v1" or all(plan["options"][p] == iat_prompts.OPTIONS[p] for p in ids),
+                  "Frozen prompt options drift")
     stats.require((plan["prompt_ids"] if batch == "v1" else plan["batches"][batch]) == list(ids)
                   and plan["bootstrap"] == {
                       "draws": stats.BOOTSTRAPS, "seed": stats.SEED,
@@ -203,7 +229,15 @@ def run(recovered, out, batch="v1"):
     audited = {p: audit_prompt(recovered, p) for p in ids}
     results, per_image, prepared = [], [], {}
     for prompt_id, (data, audit, sources) in audited.items():
-        rows, images, _ = stats.analyze(data["base"], data["tuned"], SWEEP_SOURCES)
+        try:
+            rows, images, _ = stats.analyze(data["base"], data["tuned"], SWEEP_SOURCES)
+        except ValueError as exc:
+            if batch == "v1" or "Zero valid answers" not in str(exc):
+                raise
+            rows, images = unavailable_rows(str(exc)), []
+        if batch != "v1" and prompt_id in SEPARATE_FAMILIES:
+            for row in rows:
+                row["family"] = SEPARATE_FAMILIES[prompt_id] + row["family"]
         for row in rows:
             row.update(prompt=iat_prompts.REPORT_NUMBERS[prompt_id], run_prompt_id=prompt_id,
                        interpretation=iat_prompts.KINDS[prompt_id])
@@ -263,6 +297,10 @@ def run(recovered, out, batch="v1"):
             "separately and none are pooled. Interpretations:",
             "",
             *[f"- Prompt {iat_prompts.REPORT_NUMBERS[p]}: {plan['interpretations'][p]}" for p in ids],
+            "",
+            "Prompt 8 (a fix) and prompt 9 (gray-image null check) have their own Holm",
+            "families (mitigation_* and negative_control_*) and are not in the primary family.",
+            "Any prompt with an image that had zero valid answers is marked unavailable.",
         ]
     lines += [
         "",

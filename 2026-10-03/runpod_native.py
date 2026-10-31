@@ -47,7 +47,7 @@ MIN_RUN_HOURS = 6.5
 IMAGE = "runpod/pytorch:2.1.0-py3.10-cuda11.8.0-devel-ubuntu22.04"
 PROMPT_SWEEP_HOURS = 3.0  # 3,600 sampled attempts; measured ~9 min per 600 plus setup
 # Batch A: 4,800 attempts incl. 120-token describe-then-choose; batch B: 7,200 attempts.
-BATCH_HOURS = {"v1": PROMPT_SWEEP_HOURS, "A": 5.0, "B": 5.5}
+BATCH_HOURS = {"v1": PROMPT_SWEEP_HOURS, "A": 6.0, "B": 5.5}
 CONTAINER_DISK_GB = 60
 # https://docs.runpod.io/pods/pricing: running container disk, billed per second.
 STORAGE_USD_PER_GB_MONTH = 0.10
@@ -692,11 +692,11 @@ def launch(resume_from=None, attach_pod=None, attach_key=None, extras_only=None,
                          "--recovered", str(folder / "recovered"), "--verify-only", "--batch", batch],
                         capture_output=True, timeout=600, check=False)
                     receipt["semantic_outputs_verified"] = (
-                        checked.returncode == 0 and receipt["optimizer_updates_verified"] == 0
-                        and receipt["completed_training_conditions"] == 0)
+                        checked.returncode == 0 and receipt.get("optimizer_updates_verified") == 0
+                        and receipt.get("completed_training_conditions") == 0)
                     receipt["semantic_check_output"] = (checked.stdout + checked.stderr).decode(
                         "utf-8", errors="replace")[-2000:]
-                except subprocess.TimeoutExpired:
+                except Exception:  # noqa: BLE001 - the pod is already deleted; record, don't crash
                     receipt["semantic_outputs_verified"] = False
             receipt["finished_at"] = study.now()
             receipt["elapsed_seconds"] = time.monotonic() - started

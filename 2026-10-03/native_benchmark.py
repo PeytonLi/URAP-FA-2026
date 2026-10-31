@@ -127,6 +127,8 @@ class NativeRunner(IATBenchmarkRunner):
         if self.options:
             self.rendered[task_id] = call["prompt_sha256"]
             call.update(generated_text=generated, image_input=self.options["image"])
+            if self.options["image"] != "face":
+                call["gray_image_sha256"] = study.sha(self.gray_image(stimulus))
         self._append_jsonl(self.api_path, call)
         return response
 
