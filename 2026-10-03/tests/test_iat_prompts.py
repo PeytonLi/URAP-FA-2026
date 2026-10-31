@@ -213,5 +213,114 @@ class PromptSweepTests(unittest.TestCase):
             self.assertEqual(seen["generation"]["pixel_values"].numel(), 12)
 
 
+class PromptBatchTests(unittest.TestCase):
+    def test_batches_have_frozen_distinct_ids_and_plans(self):
+        self.assertEqual(iat_prompts.batch_ids("A"), ("p5", "p6", "p7", "p8"))
+        self.assertEqual(iat_prompts.batch_ids("B"), ("p9", "p10a", "p10b", "p11", "p12", "p13"))
+        self.assertFalse(set(iat_prompts.PROMPT_IDS) & set(iat_prompts.TEMPLATES))
+        with self.assertRaises(ValueError):
+            iat_prompts.batch_ids("C")
+        for batch, count in (("A", 4), ("B", 6)):
+            with patch.object(iat_prompts, "checkpoint_identity", return_value={"verified": True}):
+                plan = iat_prompts.sweep_plan({("gemma3_12b", "orpo"): ({}, Path("epoch_3"))}, batch)
+            self.assertEqual(plan["batch"], batch)
+            self.assertFalse(plan["training_allowed"])
+            self.assertEqual(plan["expected_sampled_attempts"], count * 1200)
+            self.assertEqual([p["prompt_id"] for p in plan["prompts"]], list(iat_prompts.batch_ids(batch)))
+        with patch.object(iat_prompts, "TEMPLATES", {**iat_prompts.TEMPLATES, "p8": "changed"}):
+            with self.assertRaisesRegex(ValueError, "Frozen"):
+                iat_prompts.prompt_spec("p8")
+
+    def test_rendering_keeps_vocabulary_and_is_paired_across_methods(self):
+        for prompt_id in iat_prompts.TEMPLATES:
+            text = iat_prompts.render(prompt_id, "img", "Black", 1001)
+            words = text.split("[", 1)[1].split("]", 1)[0].split(", ")
+            self.assertEqual(sorted(words), sorted(study.IAT_WORDS))
+            self.assertNotIn("{", text)
+        self.assertEqual(iat_prompts.render("p5", "i", "Black", 1).split("[", 1)[1].split(", ")[0], "Sick")
+        first = iat_prompts.render("p6", "img", "White", 1001)
+        self.assertEqual(first, iat_prompts.render("p6", "img", "White", 1001))
+        self.assertNotEqual(first, iat_prompts.render("p6", "img", "White", 2001))
+        self.assertTrue(iat_prompts.render("p10a", "i", "Black", 1).startswith("This is a photo of a Black person."))
+        self.assertTrue(iat_prompts.render("p10b", "i", "Black", 1).startswith("This is a photo of a White person."))
+        self.assertTrue(iat_prompts.render("p10b", "i", "White", 1).startswith("This is a photo of a Black person."))
+        with self.assertRaises(ValueError):
+            iat_prompts.render("p10a", "i", "Asian", 1)
+
+    def test_describe_then_choose_scores_only_the_words_line(self):
+        self.assertEqual(iat_prompts.answer_text("p7", "Description: sad and happy.\nWords: Love, Joyful, Pain"),
+                         "Love, Joyful, Pain")
+        self.assertEqual(iat_prompts.answer_text("p7", "Description: sad and happy."), "")
+        for text in ("**Words:** Love, Joyful, Pain", "words: Love, Joyful, Pain",
+                     "- Words: Love, Joyful, Pain", "Description: calm. Words: Love, Joyful, Pain",
+                     "**Description:** calm\n**Words**: Love, Joyful, Pain"):
+            self.assertEqual(iat_prompts.answer_text("p7", text), "Love, Joyful, Pain")
+        self.assertEqual(iat_prompts.answer_text("p6", "Love, Joy"), "Love, Joy")
+
+    def test_batch_completion_counts(self):
+        ids = iat_prompts.batch_ids("B")
+        summary = {"status": "prompt_sweep_complete_reports_pending", "training_commands_started": 0,
+                   "conditions": [{"model": "gemma3_12b", "benchmark": m, "prompt_id": p,
+                                   "development": False, "exit_code": 0}
+                                  for p in ids for m in ("base", "orpo")]}
+        self.assertTrue(iat_prompts.complete_summary(summary, "B"))
+        self.assertFalse(iat_prompts.complete_summary(summary, "A"))
+        self.assertFalse(iat_prompts.complete_summary({**summary, "conditions": summary["conditions"][:-1]}, "B"))
+
+    def test_runner_renders_per_attempt_gray_image_and_long_answers(self):
+        import torch
+        from PIL import Image
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            image = root / "synthetic.png"
+            Image.new("RGB", (4, 3), "white").save(image)
+            stimulus = Stimulus("fixture", image.name, "Black", "Male", 4, 3, study.sha(image), image)
+            seen = []
+
+            class Processor:
+                tokenizer = SimpleNamespace(decode=lambda *a, **k: "Description: calm.\nWords: Happy, Love, Friend")
+
+                def apply_chat_template(self, messages, **kwargs):
+                    seen.append(messages[0]["content"])
+                    return {"input_ids": torch.ones((1, 2), dtype=torch.long),
+                            "pixel_values": torch.ones((1, 3, 2, 2))}
+
+            class Model:
+                device, dtype = "cpu", torch.float32
+
+                def generate(self, **kwargs):
+                    seen.append(kwargs["max_new_tokens"])
+                    return torch.tensor([[1, 1, 2, 3, 4]])
+
+            model = benchmark.fw.model_spec("google/gemma-3-12b-it", 1, key="fixture",
+                                           display_name="fixture", base_model="fixture")
+            for prompt_id in ("p6", "p7", "p9", "p10b"):
+                seen.clear()
+                config = replace(benchmark.fw.run_config(1),
+                                 benchmark_version=iat_prompts.benchmark_version("base", prompt_id))
+                runner = native_benchmark.NativeRunner(
+                    Model(), Processor(), "gemma3_12b", time.monotonic() + 100,
+                    "fixture_" + prompt_id, config, [model], [stimulus], output_root=root,
+                    prompt_id=prompt_id)
+                record = runner._run_task(model, stimulus, 2, 1)
+                text = iat_prompts.render(prompt_id, "fixture", "Black", deterministic_seed(config.base_seed, 2, 1))
+                self.assertEqual(seen[0][1]["text"], text)
+                call = json.loads(runner.api_path.read_text().splitlines()[0])
+                row = json.loads(runner.records_path.read_text().splitlines()[0])
+                for value in (call, row):
+                    self.assertEqual(value["prompt_sha256"], hashlib.sha256(text.encode()).hexdigest())
+                    self.assertEqual(value["prompt_template_sha256"], iat_prompts.prompt_spec(prompt_id)["prompt_sha256"])
+                self.assertEqual(seen[1], 120 if prompt_id == "p7" else 30)
+                if prompt_id == "p9":
+                    self.assertNotEqual(seen[0][0]["path"], str(image))
+                    with Image.open(seen[0][0]["path"]) as gray:
+                        self.assertEqual((gray.size, gray.getpixel((0, 0))), ((4, 3), (128, 128, 128)))
+                else:
+                    self.assertEqual(seen[0][0]["path"], str(image))
+                if prompt_id == "p7":
+                    self.assertEqual(record["sampled_raw"], "Happy, Love, Friend")
+                    self.assertTrue(call["generated_text"].startswith("Description:"))
+
+
 if __name__ == "__main__":
     unittest.main()

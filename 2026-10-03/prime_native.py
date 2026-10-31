@@ -123,7 +123,8 @@ def package_inputs(destination, resume_from=None, extras_only=None, prompt_sweep
     if prompt_sweep and (extras_only is not None or resume_from is None):
         raise ValueError("Prompt sweep needs a saved checkpoint and cannot run extras")
     resumed = resume_results(resume_from) if resume_from else ({}, {})
-    plan = (iat_prompts.sweep_plan(resumed[0]) if prompt_sweep else
+    plan = (iat_prompts.sweep_plan(resumed[0], "v1" if prompt_sweep is True else prompt_sweep)
+            if prompt_sweep else
             extras_only_plan(extras_only, resumed[0]) if extras_only is not None else None)
     config = study.dataset_config()
     if not config:

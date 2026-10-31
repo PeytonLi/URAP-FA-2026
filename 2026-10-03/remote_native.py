@@ -69,7 +69,7 @@ def verify_resume(python, output):
              "assert all(r['versions']==v for r,c in t.values()), 'Recovered runtime mismatch'; "
              "study.save_json(study.ROOT/'data/private/verified_resume_plan.json', "
              "{'training':list(t),'benchmarks':list(b), "
-             "'prompt_sweep':iat_prompts.sweep_plan(t) if sweep else None})")
+             "'prompt_sweep':iat_prompts.sweep_plan(t,json.loads(p.read_text()).get('batch','v1')) if sweep else None})")
     child = subprocess.Popen([python, "-c", probe], cwd=ROOT, stdout=output, stderr=subprocess.STDOUT)
     study.save_json(ACTIVE, {"worker_pid": os.getpid(), "child_pid": child.pid, "phase": "resume_verification"})
     if child.wait(timeout=120):
@@ -231,8 +231,10 @@ def main(expected_mode=None):
                            for development in ((True, False) if study.dataset_config().get(
                                "dataset_id") in study.MULTITRIPLE_DATASETS else (False,))
                            for method in ("base", "orpo")] if not (extras_only or prompt_sweep) else []
-            prompt_evaluations = [(method, False, prompt_id) for prompt_id in ("3", "4", "5")
+            prompt_evaluations = [(method, False, spec["prompt_id"]) for spec in plan["prompts"]
                                   for method in ("base", "orpo")] if prompt_sweep else []
+            seconds = {spec["prompt_id"]: (spec.get("options") or {}).get("max_seconds", 3600)
+                       for spec in plan.get("prompts", [])} if prompt_sweep else {}
             for method, development, prompt_id in (
                     [(m, d, None) for m, d in evaluations] + prompt_evaluations):
                 if STOP.exists():
@@ -244,7 +246,7 @@ def main(expected_mode=None):
                     continue
                 command = [python, "-u", str(ROOT / "native_benchmark.py"), "--model", model,
                            "--method", method, "--image-dir", str(ROOT / "data/private/benchmark_images"),
-                           "--max-seconds", "3600"]
+                           "--max-seconds", str(seconds.get(prompt_id, 3600))]
                 if development:
                     command.append("--development")
                 if prompt_id is not None:

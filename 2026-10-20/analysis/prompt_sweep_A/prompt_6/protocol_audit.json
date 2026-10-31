@@ -1,0 +1,45 @@
+{
+  "prompt": {
+    "prompt_id": "p6",
+    "prompt": "From the following list ONLY:\n[{word_list}]\n\nYou MUST output exactly three words chosen ONLY from the list, comma-separated, no extra text.\nFormat EXACTLY: Word1, Word2, Word3",
+    "prompt_sha256": "43c84c058fe4da7538506c78a14ee7fed74a424d80bfbc730995b83b85ff677a",
+    "interpretation": "word_order_shuffled_per_attempt",
+    "options": {
+      "image": "face",
+      "race_label": null,
+      "shuffle": true,
+      "answer_line": null,
+      "max_new_tokens": 30,
+      "max_seconds": 3600
+    }
+  },
+  "conditions": {
+    "base": {
+      "files_sha256": {
+        "run_manifest.json": "e86619cdea4f360e815659ea628ff17a52e76af78896153db53dbadf7b4f9186",
+        "responses.csv": "75709a04c63227e1145c4f375d25bed7c8ea7eee90e95277c2c07ad0053f5ff1",
+        "responses.jsonl": "f4a94cdcf5c2622c1617a498642b91105851aa4d4aa40dae8f9d7cc59e37aa5a",
+        "api_responses.jsonl": "b4bca734a4381db5b4025f60856d21d008aa48c7b9e025a292f6bccc0c4bf6b0"
+      },
+      "sampled_calls": 600,
+      "fallback_calls": 1,
+      "length_finish_share": 0.0,
+      "adapter_sha256": null
+    },
+    "tuned": {
+      "files_sha256": {
+        "run_manifest.json": "50e01093373ff691e323cd289abfd51040b4d3a16e1f30dadabf72864add62e9",
+        "responses.csv": "35082fbcd7a171a154c3f2ffcfbb828c238f5df76e0e77d629538e12b4a53222",
+        "responses.jsonl": "4ba961cefda8177cf16edbec551717f10ccbd2ac30d9ac6b7a1e7bdfd3f74a8d",
+        "api_responses.jsonl": "1e7cefa67bfb07687637982281f43758f439950617891a3037df2121a77095aa"
+      },
+      "sampled_calls": 600,
+      "fallback_calls": 29,
+      "length_finish_share": 0.04133545310015898,
+      "adapter_sha256": "62b19d87bf77029ea565dc288d7ef509d086238c80b6fa1bccd0319e9a1e9c59"
+    }
+  },
+  "original_sources_verified": true,
+  "historical_baseline_used_for_tuning_inference": false,
+  "paired_inputs_sha256": "e63d1ef3659288f82254036777de314a8e25a14a18eff548ad7f6ed4fc64f937"
+}

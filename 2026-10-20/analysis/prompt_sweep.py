@@ -1,9 +1,11 @@
-"""Audit and analyze prompts 2/3/4 (run IDs 3/4/5) without training, inference or provider calls."""
+"""Audit and analyze prompt batches (v1: prompts 2-4; A: 5-8; B: 9-13) without training, inference or provider calls."""
 from __future__ import annotations
 
 import argparse
 import hashlib
+import itertools
 import json
+import re
 import sys
 from collections import defaultdict
 from dataclasses import asdict, replace
@@ -21,7 +23,10 @@ import native_train
 import study
 from multimodel_bias.iat import deterministic_seed
 
-PLAN = REPO / "2026-10-03/config/iat_prompt_sweep_analysis.json"
+PLANS = {batch: REPO / "2026-10-03" / name for batch, name in iat_prompts.PLAN_FILES.items()}
+CANNOT_TELL = re.compile(r"^[\W_]*(i\s+)?cannot\s+tell\b", re.IGNORECASE)
+SEPARATE_FAMILIES = {"p8": "mitigation_", "p9": "negative_control_"}
+PRIMARY_TESTS = ("negative_gap_change_did", "word_entropy_change", "unordered_triples_change")
 ADAPTER_SHA256 = iat_prompts.ADAPTER_SHA256
 SWEEP_SOURCES = stats.FINAL_SOURCES | {"fallback_invalid"}
 
@@ -71,9 +76,12 @@ def audit_prompt(recovered, prompt_id):
         calls = jsonl(folder / "api_responses.jsonl")
         stats.require(len(records) == 600 and len({r["task_id"] for r in records}) == 600,
                       "Missing/duplicate JSONL responses")
+        races = {r["image_id"]: r["race"] for r in identities}
         for record in records + calls:
+            seed = int(record["seed"]) - (1_000_000 if record.get("stage") == "fallback" else 0)
+            text = iat_prompts.render(prompt_id, record["image_id"], races[record["image_id"]], seed)
             stats.require(record["prompt_id"] == prompt_id
-                          and record["prompt_sha256"] == spec["prompt_sha256"],
+                          and record["prompt_sha256"] == hashlib.sha256(text.encode()).hexdigest(),
                           "Per-record prompt identity mismatch")
         keyed = {}
         for call in calls:
@@ -81,9 +89,18 @@ def audit_prompt(recovered, prompt_id):
             key = call["task_id"], call["stage"]
             stats.require(key not in keyed, "Duplicate API call stage")
             keyed[key] = call
-            expected = {"max_new_tokens": 30, "do_sample": call["stage"] == "sampled",
+            expected = {"max_new_tokens": (spec.get("options") or {}).get("max_new_tokens", 30),
+                        "do_sample": call["stage"] == "sampled",
                         "use_cache": True, "top_k": 0, "top_p": 1.0, "temperature": 1.0}
             stats.require(call["request_parameters"] == expected, "Decoding drift")
+            options = spec.get("options") or {}
+            if options:
+                stats.require(call["image_input"] == options["image"]
+                              and ("gray_image_sha256" in call) == (options["image"] != "face"),
+                              "Image substitution not provable")
+                stats.require(call["response"]["choices"][0]["message"]["content"]
+                              == iat_prompts.answer_text(prompt_id, call["generated_text"]),
+                              "Scored text is not the frozen extraction of the generation")
         sampled = {task for task, stage in keyed if stage == "sampled"}
         fallback = {task for task, stage in keyed if stage == "fallback"}
         stats.require(sampled == {r["task_id"] for r in rows}
@@ -124,6 +141,8 @@ def audit_prompt(recovered, prompt_id):
         audits[label] = {"files_sha256": {name: stats.digest(folder / name) for name in (
             "run_manifest.json", "responses.csv", "responses.jsonl", "api_responses.jsonl")},
             "sampled_calls": len(sampled), "fallback_calls": len(fallback),
+            "length_finish_share": sum(c["response"]["choices"][0]["finish_reason"] == "length"
+                                       for c in calls) / len(calls),
             "adapter_sha256": contract["adapter_sha256"]}
     stats.require(normalized_contract(contracts["base"]) == normalized_contract(contracts["tuned"]),
                   "Base/ORPO contracts differ beyond the intended condition namespace")
@@ -132,44 +151,93 @@ def audit_prompt(recovered, prompt_id):
                   "historical_baseline_used_for_tuning_inference": False}, sources
 
 
-def adjust_across_prompts(results):
+def adjust_across_prompts(results, batch="v1"):
+    ids = iat_prompts.batch_ids(batch)
     families = defaultdict(list)
     for row in results:
         families[row["family"]].append(row)
-    stats.require(len(families["primary"]) == 9, "Need all nine primary hypotheses")
+    primary = [p for p in ids if batch == "v1" or p not in SEPARATE_FAMILIES]
+    stats.require(len(families["primary"]) == 3 * len(primary), "Need every primary hypothesis")
+    label = "_across_prompts_" + "_".join(iat_prompts.REPORT_NUMBERS[p] for p in ids)
     for family, members in families.items():
         for row, p in zip(members, holm([r["raw_p"] for r in members]), strict=True):
             row["holm_p"] = p
-            row["multiplicity_family"] = family + "_across_prompts_2_3_4"
+            row["multiplicity_family"] = family + label
 
 
-def verify(recovered):
-    """Launcher gate: exactly the six expected conditions, each fully audited."""
+def unavailable_rows(reason):
+    nan = float("nan")
+    return [{**stats.result_row(test, "primary", "sampled_exact", None, None, None, (nan, nan), 1.0, 0,
+                                "unavailable: " + reason, "unavailable"), "status": "unavailable"}
+            for test in PRIMARY_TESTS]
+
+
+def abstention(rows):
+    """Per-image sampled 'Cannot tell' rate; Black minus White with exact 924-assignment p."""
+    by_image = defaultdict(list)
+    for row in rows:
+        by_image[row["image_id"]].append(row)
+    rates = {i: sum(bool(CANNOT_TELL.match(r["sampled_raw"])) for r in v) / len(v)
+             for i, v in by_image.items()}
+    race = {i: v[0]["race"] for i, v in by_image.items()}
+    images = sorted(rates)
+    black = [i for i in images if race[i] == "Black"]
+
+    def gap(group):
+        inside = [rates[i] for i in group]
+        outside = [rates[i] for i in images if i not in group]
+        return sum(inside) / len(inside) - sum(outside) / len(outside)
+    observed = gap(set(black))
+    null = [gap(set(c)) for c in itertools.combinations(images, len(black))]
+    p = sum(abs(v) >= abs(observed) - 1e-12 for v in null) / len(null)
+    other = {i: sum(not CANNOT_TELL.match(r["sampled_raw"]) and not variety.exact_sample(r["sampled_raw"])
+                    for r in v) / len(v) for i, v in by_image.items()}
+    return {"black_other_invalid_rate": sum(other[i] for i in black) / len(black),
+            "white_other_invalid_rate": sum(other[i] for i in images if i not in black) / (len(images) - len(black)),
+            "adjustment": "none; descriptive","black_cannot_tell_rate": sum(rates[i] for i in black) / len(black),
+            "white_cannot_tell_rate": sum(rates[i] for i in images if i not in black) / (len(images) - len(black)),
+            "black_minus_white": observed, "exact_permutation_p": p, "assignments": len(null)}
+
+
+def verify(recovered, batch="v1"):
+    """Launcher gate: exactly the expected base/ORPO conditions, each fully audited."""
+    ids = iat_prompts.batch_ids(batch)
     root = recovered / "results/native_prompt_sweep"
     expected = {("prompt_" + p, "gemma3_12b_" + m + "_native_balanced_prompt_" + p)
-                for p in iat_prompts.PROMPT_IDS for m in ("base", "orpo")}
+                for p in ids for m in ("base", "orpo")}
     found = {(d.parent.name, d.name) for d in root.glob("*/*") if d.is_dir()}
     stats.require(found == expected and {d.name for d in root.iterdir()}
-                  == {"prompt_" + p for p in iat_prompts.PROMPT_IDS},
-                  "Prompt sweep must contain exactly the six expected conditions")
+                  == {"prompt_" + p for p in ids},
+                  "Prompt sweep must contain exactly the " + ("six" if batch == "v1" else str(2 * len(ids))) + " expected conditions")
     stats.require(not any((recovered / "results" / name).exists() for name in
                           ("native_benchmarks", "native_development", "extra_benchmarks")),
                   "Prompt sweep recovered outputs outside its scope")
-    return {p: audit_prompt(recovered, p)[1] for p in iat_prompts.PROMPT_IDS}
+    return {p: audit_prompt(recovered, p)[1] for p in ids}
 
 
-def run(recovered, out):
+def run(recovered, out, batch="v1"):
+    ids = iat_prompts.batch_ids(batch)
     stats.require(not out.exists(), "Analysis output must start fresh")
-    plan = json.loads(PLAN.read_text())
-    stats.require(plan["prompt_ids"] == list(iat_prompts.PROMPT_IDS)
+    plan = json.loads(PLANS[batch].read_text())
+    stats.require(batch == "v1" or all(plan["options"][p] == iat_prompts.OPTIONS[p] for p in ids),
+                  "Frozen prompt options drift")
+    stats.require((plan["prompt_ids"] if batch == "v1" else plan["batches"][batch]) == list(ids)
                   and plan["bootstrap"] == {
                       "draws": stats.BOOTSTRAPS, "seed": stats.SEED,
                       "unit": "paired images resampled within race",
                       "interval": "95% percentile; marginal, not simultaneous"}, "Analysis plan drift")
-    audited = {p: audit_prompt(recovered, p) for p in iat_prompts.PROMPT_IDS}
+    audited = {p: audit_prompt(recovered, p) for p in ids}
     results, per_image, prepared = [], [], {}
     for prompt_id, (data, audit, sources) in audited.items():
-        rows, images, _ = stats.analyze(data["base"], data["tuned"], SWEEP_SOURCES)
+        try:
+            rows, images, _ = stats.analyze(data["base"], data["tuned"], SWEEP_SOURCES)
+        except ValueError as exc:
+            if batch == "v1" or "Zero valid answers" not in str(exc):
+                raise
+            rows, images = unavailable_rows(str(exc)), []
+        if batch != "v1" and prompt_id in SEPARATE_FAMILIES:
+            for row in rows:
+                row["family"] = SEPARATE_FAMILIES[prompt_id] + row["family"]
         for row in rows:
             row.update(prompt=iat_prompts.REPORT_NUMBERS[prompt_id], run_prompt_id=prompt_id,
                        interpretation=iat_prompts.KINDS[prompt_id])
@@ -177,7 +245,7 @@ def run(recovered, out):
         per_image.extend({"prompt": iat_prompts.REPORT_NUMBERS[prompt_id], "run_prompt_id": prompt_id,
                           **image} for image in images)
         prepared[prompt_id] = data, audit, sources, rows
-    adjust_across_prompts(results)
+    adjust_across_prompts(results, batch)
     out.mkdir(parents=True)
     stats.save_json(out / "analysis_plan.json", plan)
     stats.save_json(out / "protocol_audit.json", {"prompt_" + iat_prompts.REPORT_NUMBERS[p]: values[1]
@@ -200,17 +268,44 @@ def run(recovered, out):
             **audit, "paired_inputs_sha256": stats.digest(folder / "paired_responses.csv")})
         variety.main(sources, folder / "graphs", title_prefix="Prompt " + number)
     primary = [row for row in flat if row["Family"] == "primary"]
-    lines = [
-        "# Prompts 2, 3 and 4: base versus saved ORPO",
-        "",
-        "Evaluation only: 3,600 sampled attempts, no retraining or extra benchmarks.",
-        "Prompt 1 is the original baseline prompt (study.IAT_PROMPT), evaluated earlier in",
-        "iat_stats_v4. Run IDs 3, 4 and 5 in raw outputs are reported as prompts 2, 3 and 4.",
-        "Every prompt is reported separately. Prompt 2 changes wording; prompts 3 and 4",
-        "change task interpretation. They are not pooled as one task.",
+    abstentions = {}
+    for prompt_id, (data, _, _, _) in prepared.items():
+        if prompt_id == "p12":
+            abstentions[iat_prompts.REPORT_NUMBERS[prompt_id]] = {
+                label: abstention(rows) for label, rows in data.items()}
+    if abstentions:
+        stats.save_json(out / "cannot_tell.json", abstentions)
+    numbers = ", ".join(iat_prompts.REPORT_NUMBERS[p] for p in ids)
+    attempts = len(ids) * 1200
+    if batch == "v1":
+        lines = [
+            "# Prompts 2, 3 and 4: base versus saved ORPO",
+            "",
+            "Evaluation only: 3,600 sampled attempts, no retraining or extra benchmarks.",
+            "Prompt 1 is the original baseline prompt (study.IAT_PROMPT), evaluated earlier in",
+            "iat_stats_v4. Run IDs 3, 4 and 5 in raw outputs are reported as prompts 2, 3 and 4.",
+            "Every prompt is reported separately. Prompt 2 changes wording; prompts 3 and 4",
+            "change task interpretation. They are not pooled as one task.",
+        ]
+    else:
+        lines = [
+            f"# Prompts {numbers}: base versus saved ORPO",
+            "",
+            f"Evaluation only: {attempts:,} sampled attempts, no retraining or extra benchmarks.",
+            "Prompt 1 is the original baseline prompt; prompts 2-4 are in prompt_sweep_v1.",
+            "Raw run IDs carry a p prefix (p10a = prompt 10a). Every prompt is reported",
+            "separately and none are pooled. Interpretations:",
+            "",
+            *[f"- Prompt {iat_prompts.REPORT_NUMBERS[p]}: {plan['interpretations'][p]}" for p in ids],
+            "",
+            "Prompt 8 (a fix) and prompt 9 (gray-image null check) have their own Holm",
+            "families (mitigation_* and negative_control_*) and are not in the primary family.",
+            "Any prompt with an image that had zero valid answers is marked unavailable.",
+        ]
+    lines += [
         "",
         "See statistics_table.csv for effects, 95% image-bootstrap confidence intervals,",
-        "raw p-values and Holm p-values. Holm spans all nine primary hypotheses.",
+        f"raw p-values and Holm p-values. Holm spans all {'nine' if len(primary) == 9 else len(primary)} primary hypotheses.",
         "Diagnostic and sensitivity adjustments span prompts within their labeled families.",
         "The photo is the independent unit, not each answer or selected word.",
         "",
@@ -218,13 +313,15 @@ def run(recovered, out):
         "are sensitivities. Entropy is normalized to log2(61); triples are unordered.",
         "Graphs/summary.csv within each prompt reports per-group rates and vocabulary",
         "coverage. Word-count graphs are separate and share the fixed reference order.",
+        *(["cannot_tell.json reports prompt 12 abstention rates per race and model."] if abstentions else []),
         "",
         "These are exploratory results on 12 already-inspected photos. Nonsignificance",
         "does not establish equivalence; variety does not establish grounded accuracy.",
         "The historical screenshot baseline is unchanged and excluded from tuning tests.",
         "",
         "Reproduce with the recovered checksummed run:",
-        "`python 2026-10-20/analysis/prompt_sweep.py --recovered <recovered> --out <new-output>`",
+        "`python 2026-10-20/analysis/prompt_sweep.py --recovered <recovered> --out <new-output>"
+        + ("" if batch == "v1" else " --batch " + batch) + "`",
         "",
         f"Primary rows: {len(primary)}. Source and script checksums are in provenance.json.",
     ]
@@ -244,9 +341,10 @@ if __name__ == "__main__":
     parser.add_argument("--recovered", type=Path, required=True)
     parser.add_argument("--out", type=Path)
     parser.add_argument("--verify-only", action="store_true")
+    parser.add_argument("--batch", choices=tuple(iat_prompts.BATCHES), default="v1")
     args = parser.parse_args()
     if args.verify_only:
-        print(json.dumps(verify(args.recovered), indent=2, default=str))
+        print(json.dumps(verify(args.recovered, args.batch), indent=2, default=str))
     else:
         stats.require(args.out is not None, "--out is required for the analysis")
-        run(args.recovered, args.out)
+        run(args.recovered, args.out, args.batch)
