@@ -251,6 +251,10 @@ class PromptBatchTests(unittest.TestCase):
         self.assertEqual(iat_prompts.answer_text("p7", "Description: sad and happy.\nWords: Love, Joyful, Pain"),
                          "Love, Joyful, Pain")
         self.assertEqual(iat_prompts.answer_text("p7", "Description: sad and happy."), "")
+        for text in ("**Words:** Love, Joyful, Pain", "words: Love, Joyful, Pain",
+                     "- Words: Love, Joyful, Pain", "Description: calm. Words: Love, Joyful, Pain",
+                     "**Description:** calm\n**Words**: Love, Joyful, Pain"):
+            self.assertEqual(iat_prompts.answer_text("p7", text), "Love, Joyful, Pain")
         self.assertEqual(iat_prompts.answer_text("p6", "Love, Joy"), "Love, Joy")
 
     def test_batch_completion_counts(self):

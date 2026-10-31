@@ -24,7 +24,7 @@ import study
 from multimodel_bias.iat import deterministic_seed
 
 PLANS = {batch: REPO / "2026-10-03" / name for batch, name in iat_prompts.PLAN_FILES.items()}
-CANNOT_TELL = re.compile(r"^\s*cannot tell\W*$", re.IGNORECASE)
+CANNOT_TELL = re.compile(r"^[\W_]*cannot tell[\W_]*$", re.IGNORECASE)
 ADAPTER_SHA256 = iat_prompts.ADAPTER_SHA256
 SWEEP_SOURCES = stats.FINAL_SOURCES | {"fallback_invalid"}
 

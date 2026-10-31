@@ -2,6 +2,7 @@
 import hashlib
 import json
 import random
+import re
 
 import study
 
@@ -125,9 +126,9 @@ def answer_text(prompt_id, generated):
     line = prompt_spec(prompt_id).get("options", {}).get("answer_line")
     if not line:
         return generated
-    picks = [row.split(line, 1)[1].strip() for row in generated.splitlines()
-             if row.strip().startswith(line)]
-    return picks[-1] if picks else ""
+    label = re.escape(line.rstrip(":"))
+    picks = re.findall(r"(?im)\b" + label + r"\b[*_\s]*:[*_\s]*([^\n]*)", generated)
+    return picks[-1].strip().strip("*_ ").strip() if picks else ""
 
 
 def prompt_spec(prompt_id):
