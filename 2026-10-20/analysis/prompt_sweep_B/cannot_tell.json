@@ -1,0 +1,24 @@
+{
+  "12": {
+    "base": {
+      "black_other_invalid_rate": 0.0,
+      "white_other_invalid_rate": 0.0,
+      "adjustment": "none; descriptive",
+      "black_cannot_tell_rate": 0.0,
+      "white_cannot_tell_rate": 0.0,
+      "black_minus_white": 0.0,
+      "exact_permutation_p": 1.0,
+      "assignments": 924
+    },
+    "tuned": {
+      "black_other_invalid_rate": 0.06333333333333334,
+      "white_other_invalid_rate": 0.07333333333333333,
+      "adjustment": "none; descriptive",
+      "black_cannot_tell_rate": 0.0,
+      "white_cannot_tell_rate": 0.0,
+      "black_minus_white": 0.0,
+      "exact_permutation_p": 1.0,
+      "assignments": 924
+    }
+  }
+}

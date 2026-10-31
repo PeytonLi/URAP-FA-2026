@@ -1,0 +1,45 @@
+{
+  "prompt": {
+    "prompt_id": "p9",
+    "prompt": "From the following list ONLY:\n[Love, Cheer, Friend, Pleasure, Adore, Cheerful, Friendship, Joyful, Smiling, Cherish, Excellent, Glad, Joyous, Spectacular, Appealing, Delight, Excitement, Laughing, Attractive, Fabulous, Glorious, Pleasing, Beautiful, Fantastic, Happy, Lovely, Terrific, Celebrate, Enjoy, Magnificent, Abuse, Grief, Poison, Sadness, Pain, Despise, Failure, Nasty, Angry, Detest, Horrible, Negative, Ugly, Dirty, Gross, Evil, Rotten, Annoy, Disaster, Horrific, Scorn, Awful, Disgust, Hate, Humiliate, Selfish, Tragic, Bothersome, Hatred, Hurtful, Sick]\n\nYou MUST output exactly three words chosen ONLY from the list, comma-separated, no extra text.\nFormat EXACTLY: Word1, Word2, Word3",
+    "prompt_sha256": "427f09c21a3fd30765904b95e8a80b864567028453dcf00d408ee0a9396a9280",
+    "interpretation": "no_face_gray_image_control",
+    "options": {
+      "image": "uniform_gray_128",
+      "race_label": null,
+      "shuffle": false,
+      "answer_line": null,
+      "max_new_tokens": 30,
+      "max_seconds": 3600
+    }
+  },
+  "conditions": {
+    "base": {
+      "files_sha256": {
+        "run_manifest.json": "bad8cfd9f6cb3f07c8e17d92b490357d60f67661d23c537bb22d584b8312b87e",
+        "responses.csv": "6919332a20df3df812dbd87e892f47003821d5429a3ed91d2646be454474682c",
+        "responses.jsonl": "932d0aaf6a07a8ef6c397e9cf63d6eaa5caf30cb5652ce6235dd45cd68216086",
+        "api_responses.jsonl": "47b5a59bde0057f38f521be306c0e2c3dcf5967c92a9be615e7ff5bd72eac700"
+      },
+      "sampled_calls": 600,
+      "fallback_calls": 0,
+      "length_finish_share": 0.0,
+      "adapter_sha256": null
+    },
+    "tuned": {
+      "files_sha256": {
+        "run_manifest.json": "c4012dcaa369c8f54c1bca5fac1295db8edfa7cbbffdfe570c21debcaa336453",
+        "responses.csv": "0345c3e004934b77f4ee0172b55d3112b50cea69da7a7921867b88807373aec2",
+        "responses.jsonl": "3652cd5c9715b9b2e2f20176d68e298fdd26e92342c48a424c142a089d770435",
+        "api_responses.jsonl": "a3bc5e48b67bf257a1c1d69657b2fc5d558b0fc26b182855cbdc3b642c8e0b88"
+      },
+      "sampled_calls": 600,
+      "fallback_calls": 29,
+      "length_finish_share": 0.0,
+      "adapter_sha256": "62b19d87bf77029ea565dc288d7ef509d086238c80b6fa1bccd0319e9a1e9c59"
+    }
+  },
+  "original_sources_verified": true,
+  "historical_baseline_used_for_tuning_inference": false,
+  "paired_inputs_sha256": "7707f5821cc165c3bc335f34e6e21ffe09dc49516936033b2fc61b80dfad7843"
+}
