@@ -1,0 +1,16 @@
+{
+  "analysis_script_sha256": "70f63190fb16face6a57845e4a71400b6002c8810558342d60e1c0c5e8c48b50",
+  "statistical_engine_sha256": "8754cc38fe3605eb947baa49f694dd654dbf5b5f6afce0ab0a3d71bba53a9898",
+  "prompt1_paired_sha256": "86ffb492a3b6fb05fb05e0f0286d3454ee8006bb6beeb0fe70c29a8b4d69966b",
+  "batch_dir": "C:\\Users\\lipey\\Code\\URAP\\2026-11-10\\analysis\\prompt_sweep_C",
+  "files_sha256": {
+    "analysis_plan.json": "9aee0f11026c16857687e3a49cf775118732ac20530996b02b2e463f5c0509aa",
+    "REPORT.md": "a96d750fc1fd168ea560f713a76927b94a0d3679598b1f16c1dc8ceffecbddf9",
+    "statistics_table.csv": "71220147b7dcaafe502b491f5fb7b51090f715663b48c934255d674d70f75bac",
+    "tests.csv": "adb3fbcc17b1684c82caf60ce9d26c70e6ba349b2a5d0c6550f4bfbffc3cc506",
+    "prompt_14\\tests.csv": "5f008929220f3778b270a8c704dceb756d11ee42a9e9f82496fad3634bd03899",
+    "prompt_15\\tests.csv": "ef905114cca571fccf2ffe436a150d9876a2757d46389c453b02c4a713970c71",
+    "prompt_16\\tests.csv": "f5939269f67a187f88f520f4e2f7927f54e1d9eafb402ec2972e0e21bf9e78ff",
+    "prompt_17\\tests.csv": "e6782e80f97588ca7b7b9986be320979dc1a006b3a76e1ac9f901358677b7aa6"
+  }
+}

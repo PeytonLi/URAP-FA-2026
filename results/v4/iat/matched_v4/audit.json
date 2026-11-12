@@ -1,0 +1,200 @@
+{
+  "dataset_id": "image-curation-2026-09-29-v4",
+  "parent_manifest_sha256": "7b08c31122f624e733ac279b87882c9138a05ea4c9dc7a16596105a5d4637d13",
+  "rejected_pole": {
+    "negative": "negative",
+    "neutral": "negative",
+    "positive": "positive",
+    "uncertain": "positive"
+  },
+  "schedules": {
+    "negative": [
+      1,
+      1,
+      1,
+      2
+    ],
+    "neutral": [
+      1,
+      2,
+      1,
+      2
+    ],
+    "positive": [
+      2,
+      2,
+      2,
+      1
+    ],
+    "uncertain": [
+      2,
+      1,
+      2,
+      1
+    ]
+  },
+  "splits": {
+    "development": {
+      "black_white_word_tv": 0.0,
+      "chosen_word_counts": {
+        "Adore": 32,
+        "Angry": 44,
+        "Annoy": 44,
+        "Appealing": 36,
+        "Attractive": 36,
+        "Awful": 48,
+        "Beautiful": 36,
+        "Bothersome": 44,
+        "Celebrate": 36,
+        "Cheer": 32,
+        "Cheerful": 32,
+        "Cherish": 32,
+        "Delight": 32,
+        "Despise": 44,
+        "Detest": 48,
+        "Disaster": 44,
+        "Disgust": 48,
+        "Enjoy": 36,
+        "Excellent": 32,
+        "Excitement": 32,
+        "Fabulous": 36,
+        "Fantastic": 36,
+        "Friend": 32,
+        "Friendship": 36,
+        "Glad": 36,
+        "Glorious": 32,
+        "Grief": 44,
+        "Gross": 48,
+        "Happy": 32,
+        "Horrible": 44,
+        "Horrific": 48,
+        "Hurtful": 44,
+        "Joyful": 32,
+        "Joyous": 32,
+        "Laughing": 36,
+        "Love": 32,
+        "Lovely": 36,
+        "Magnificent": 36,
+        "Nasty": 48,
+        "Negative": 44,
+        "Pain": 44,
+        "Pleasing": 32,
+        "Pleasure": 32,
+        "Sadness": 48,
+        "Scorn": 44,
+        "Smiling": 32,
+        "Spectacular": 32,
+        "Terrific": 32,
+        "Tragic": 48,
+        "Ugly": 44
+      },
+      "distinct_chosen_words": 50,
+      "distinct_unordered_triples": 159,
+      "dominant_triple_share": 0.0125,
+      "effective_vocabulary_size": 49.36173759750505,
+      "examples": 640,
+      "images": 160,
+      "min_max_word_count": [
+        32,
+        48
+      ],
+      "positive_words_per_answer_by_race": {
+        "Black": {
+          "1": 136,
+          "2": 184
+        },
+        "White": {
+          "1": 136,
+          "2": 184
+        }
+      },
+      "rejected_distinct_words": 61,
+      "single_valence_chosen_answers": 0,
+      "uncovered_eligible_words": [],
+      "word_entropy_normalized_to_61": 0.9485028513041718
+    },
+    "train": {
+      "black_white_word_tv": 0.0,
+      "chosen_word_counts": {
+        "Adore": 104,
+        "Angry": 136,
+        "Annoy": 136,
+        "Appealing": 100,
+        "Attractive": 100,
+        "Awful": 136,
+        "Beautiful": 100,
+        "Bothersome": 136,
+        "Celebrate": 100,
+        "Cheer": 100,
+        "Cheerful": 104,
+        "Cherish": 100,
+        "Delight": 100,
+        "Despise": 136,
+        "Detest": 136,
+        "Disaster": 136,
+        "Disgust": 136,
+        "Enjoy": 104,
+        "Excellent": 100,
+        "Excitement": 100,
+        "Fabulous": 100,
+        "Fantastic": 100,
+        "Friend": 104,
+        "Friendship": 100,
+        "Glad": 100,
+        "Glorious": 100,
+        "Grief": 136,
+        "Gross": 136,
+        "Happy": 100,
+        "Horrible": 136,
+        "Horrific": 132,
+        "Hurtful": 136,
+        "Joyful": 100,
+        "Joyous": 104,
+        "Laughing": 104,
+        "Love": 100,
+        "Lovely": 100,
+        "Magnificent": 104,
+        "Nasty": 136,
+        "Negative": 136,
+        "Pain": 136,
+        "Pleasing": 104,
+        "Pleasure": 104,
+        "Sadness": 136,
+        "Scorn": 136,
+        "Smiling": 100,
+        "Spectacular": 104,
+        "Terrific": 104,
+        "Tragic": 136,
+        "Ugly": 136
+      },
+      "distinct_chosen_words": 50,
+      "distinct_unordered_triples": 474,
+      "dominant_triple_share": 0.004166666666666667,
+      "effective_vocabulary_size": 49.473118008179156,
+      "examples": 1920,
+      "images": 480,
+      "min_max_word_count": [
+        100,
+        136
+      ],
+      "positive_words_per_answer_by_race": {
+        "Black": {
+          "1": 398,
+          "2": 562
+        },
+        "White": {
+          "1": 398,
+          "2": 562
+        }
+      },
+      "rejected_distinct_words": 61,
+      "single_valence_chosen_answers": 0,
+      "uncovered_eligible_words": [],
+      "word_entropy_normalized_to_61": 0.9490511215919203
+    }
+  },
+  "targets_are_claims_about_faces": false,
+  "targets_sha256": "bb6a3f32e45693d6c83273769bc76f5b7116a4c25b9e66d9f745b99acb110fcd",
+  "test_used_for_selection": false,
+  "variants_per_image": 4
+}

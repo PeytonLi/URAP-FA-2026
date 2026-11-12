@@ -1,0 +1,136 @@
+{
+  "status": "frozen before batches C and D generate any outputs; exploratory robustness study on previously inspected images",
+  "comparison": "native Gemma 3 12B base versus the saved v4 ORPO adapter, separately within every prompt",
+  "pool_prompts": false,
+  "primary_view": "sampled_exact; preserve the existing parser, including accepted nonadjacent repeated words; no fallback replacement",
+  "independent_unit": "image; 12 frozen images, six per race, 50 sampled attempts per image and condition",
+  "primary_tests": [
+    "negative_gap_change_did",
+    "word_entropy_change",
+    "unordered_triples_change"
+  ],
+  "primary_multiplicity": "Holm across the prompt-by-test primary hypotheses within the batch, excluding prompt 15 (own 'behavioral_probe' families): 9 for C, 12 for D; no choice of best prompt",
+  "cross_prompt_vs_prompt_1": "Required after recovery for every prompt in C and D: for base and for ORPO separately, compare each prompt against frozen prompt-1 paired responses on the same images for the same three primary metrics; Holm within each model across prompts in the batch; never substitute descriptive plots for these tests",
+  "race_permutations": "all 924 unblocked six-versus-six assignments, keeping base and ORPO paired within image",
+  "paired_permutations": "all 4096 image-level base/ORPO swaps",
+  "tails": "two-sided signed effects; upper tail for nonnegative total variation",
+  "bootstrap": {
+    "draws": 10000,
+    "seed": 20261027,
+    "unit": "paired images resampled within race",
+    "interval": "95% percentile; marginal, not simultaneous"
+  },
+  "diagnostics": [
+    "negative-word gap within each model",
+    "61-word total variation within each model"
+  ],
+  "diagnostic_multiplicity": "Holm across all diagnostics within the batch",
+  "quality": "paired change in strict-valid-answer fraction; Holm across prompts within the batch",
+  "sensitivities": [
+    "gender-blocked race permutations",
+    "final scorer including fallback, separately labeled",
+    "sampled_distinct: exclude repeated-word answers",
+    "exact equal-valid-count rarefaction of whole answers within image"
+  ],
+  "sensitivity_multiplicity": "Holm across prompts within each separately labeled sensitivity family",
+  "coverage": "report union, Black and White vocabulary counts, shared vocabulary, and all 61 word counts",
+  "missing_outputs": "do not substitute earlier results or impute invalid content; fail completeness/provenance checks; report any zero-valid-image inference as unavailable",
+  "historical_baseline": "unchanged descriptive reference; not pooled with native prompt outputs or used for tuning contrasts",
+  "equivalence": "not tested; no agreed scientifically justified margin",
+  "graphs": "separate single-chart PNGs, fixed reference word order, green positive and red negative background",
+  "limits": "exchangeability assumptions and small fixed stimulus set; distributional variety is not grounded expression accuracy",
+  "batches": {
+    "C": ["p14", "p15", "p16", "p17"],
+    "D": ["p18", "p19", "p20", "p21"]
+  },
+  "report_numbers": {
+    "p14": "14",
+    "p15": "15",
+    "p16": "16",
+    "p17": "17",
+    "p18": "18",
+    "p19": "19",
+    "p20": "20",
+    "p21": "21"
+  },
+  "interpretations": {
+    "p14": "situational_context",
+    "p15": "behavioral_evidence_racial_groups; reported in its own behavioral_probe_* Holm families",
+    "p16": "expression_counterfactual_neutral",
+    "p17": "temporal_stability",
+    "p18": "describe_visible_only_then_choose; only the last 'Words:' line is scored",
+    "p19": "describe_counterfactual_neutral_then_choose; only the last 'Words:' line is scored",
+    "p20": "describe_justify_then_choose; only the last 'Words:' line is scored",
+    "p21": "describe_stable_trait_then_choose; only the last 'Words:' line is scored"
+  },
+  "options": {
+    "p14": {
+      "image": "face",
+      "race_label": null,
+      "shuffle": false,
+      "answer_line": null,
+      "max_new_tokens": 30,
+      "max_seconds": 3600
+    },
+    "p15": {
+      "image": "face",
+      "race_label": null,
+      "shuffle": false,
+      "answer_line": null,
+      "max_new_tokens": 30,
+      "max_seconds": 3600
+    },
+    "p16": {
+      "image": "face",
+      "race_label": null,
+      "shuffle": false,
+      "answer_line": null,
+      "max_new_tokens": 30,
+      "max_seconds": 3600
+    },
+    "p17": {
+      "image": "face",
+      "race_label": null,
+      "shuffle": false,
+      "answer_line": null,
+      "max_new_tokens": 30,
+      "max_seconds": 3600
+    },
+    "p18": {
+      "image": "face",
+      "race_label": null,
+      "shuffle": false,
+      "answer_line": "Words:",
+      "max_new_tokens": 120,
+      "max_seconds": 7200
+    },
+    "p19": {
+      "image": "face",
+      "race_label": null,
+      "shuffle": false,
+      "answer_line": "Words:",
+      "max_new_tokens": 120,
+      "max_seconds": 7200
+    },
+    "p20": {
+      "image": "face",
+      "race_label": null,
+      "shuffle": false,
+      "answer_line": "Words:",
+      "max_new_tokens": 120,
+      "max_seconds": 7200
+    },
+    "p21": {
+      "image": "face",
+      "race_label": null,
+      "shuffle": false,
+      "answer_line": "Words:",
+      "max_new_tokens": 120,
+      "max_seconds": 7200
+    }
+  },
+  "families": {
+    "p15": "behavioral_probe_<family>"
+  },
+  "zero_valid_images": "if any image has zero valid answers in a view, that prompt's tests are reported unavailable (raw p = 1 placeholders keep family sizes fixed)"
+}

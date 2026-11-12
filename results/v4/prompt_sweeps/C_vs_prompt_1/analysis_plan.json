@@ -1,0 +1,51 @@
+{
+  "status": "frozen before batches C and D generate any outputs; exploratory robustness study on previously inspected images",
+  "cross_prompt_vs_prompt_1": "Required after recovery for every prompt in C and D: for base and for ORPO separately, compare each prompt against frozen prompt-1 paired responses on the same images for the same three primary metrics; Holm within each model across prompts in the batch; never substitute descriptive plots for these tests",
+  "primary_tests": [
+    "negative_gap_change_did",
+    "word_entropy_change",
+    "unordered_triples_change"
+  ],
+  "batches": {
+    "C": [
+      "p14",
+      "p15",
+      "p16",
+      "p17"
+    ],
+    "D": [
+      "p18",
+      "p19",
+      "p20",
+      "p21"
+    ]
+  },
+  "report_numbers": {
+    "p14": "14",
+    "p15": "15",
+    "p16": "16",
+    "p17": "17",
+    "p18": "18",
+    "p19": "19",
+    "p20": "20",
+    "p21": "21"
+  },
+  "interpretations": {
+    "p14": "situational_context",
+    "p15": "behavioral_evidence_racial_groups; reported in its own behavioral_probe_* Holm families",
+    "p16": "expression_counterfactual_neutral",
+    "p17": "temporal_stability",
+    "p18": "describe_visible_only_then_choose; only the last 'Words:' line is scored",
+    "p19": "describe_counterfactual_neutral_then_choose; only the last 'Words:' line is scored",
+    "p20": "describe_justify_then_choose; only the last 'Words:' line is scored",
+    "p21": "describe_stable_trait_then_choose; only the last 'Words:' line is scored"
+  },
+  "reference": {
+    "prompt": "1",
+    "paired_responses": "2026-10-27\\analysis\\iat_stats_v4\\paired_responses.csv",
+    "paired_inputs_sha256": "86ffb492a3b6fb05fb05e0f0286d3454ee8006bb6beeb0fe70c29a8b4d69966b",
+    "source": "2026-10-27/analysis/iat_stats_v4"
+  },
+  "batch": "C",
+  "batch_dir": "C:\\Users\\lipey\\Code\\URAP\\2026-11-10\\analysis\\prompt_sweep_C"
+}

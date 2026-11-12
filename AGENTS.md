@@ -10,6 +10,14 @@
 - New training and evaluations must use **Gemma 3 12B-IT only**
   (`google/gemma-3-12b-it`), with no comparison models. Existing Gemma 4/Qwen
   runs and scripts are archived evidence, not authorization to rerun them.
+- Repo layout is top-level `datasets/`, `configs/`, `docs/`, `notebooks/`,
+  `results/`, `scripts/`, versioned `base` → `v4`. Do not recreate
+  calendar-dated week folders at the repository root.
+- Train/eval harness lives under `scripts/train_eval/`. Labeling under
+  `scripts/labeling/src/`. Analysis under `scripts/analysis/`. Prompt-sweep
+  outputs under `results/v4/prompt_sweeps/`. Keep all `.py` modules in
+  `scripts/`; reproducible Jupyter entry points are `notebooks/01`–`08` plus
+  `notebooks/base/` (see `notebooks/README.md` and `scripts/repo_paths.py`).
 - The intended next image pool is
   `C:/Users/lipey/Downloads/FairFace 1400/`. Audit its manifest and image integrity
   before activating it. Preserve declared train/development/test splits; keep the
@@ -20,7 +28,9 @@
 - Never commit credentials, raw face images, model/optimizer weights, downloaded
   archives, runtime environments or cloud authentication files. Private GitHub
   visibility does not make these suitable Git artifacts. Keep them in ignored
-  controlled storage. Do not paste tokens into chat or command arguments.
+  controlled storage (`datasets/private_targets/`,
+  `datasets/shared/fairface_pool_private/`, `scripts/train_eval/_data/private/`,
+  `scripts/train_eval/_runtime/`). Do not paste tokens into chat or command arguments.
 - Always prefix shell commands with `rtk`; use `rtk proxy` for commands without
   a filter or PowerShell cmdlets (via `powershell.exe -NoProfile -Command`).
 - For library, SDK, API, CLI or cloud-service documentation, use Context7:

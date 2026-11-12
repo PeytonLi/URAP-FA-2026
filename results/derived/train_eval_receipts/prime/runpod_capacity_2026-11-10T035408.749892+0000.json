@@ -1,0 +1,24 @@
+{
+  "availability": [
+    {
+      "gpu": "NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition",
+      "price": 0.5,
+      "stock": ""
+    },
+    {
+      "gpu": "NVIDIA A40",
+      "price": 0.59,
+      "stock": "medium"
+    },
+    {
+      "gpu": "NVIDIA RTX A6000",
+      "price": 0.59,
+      "stock": ""
+    }
+  ],
+  "checked_at": "2026-11-10T03:54:08.749892+00:00",
+  "paid_resources_created": false,
+  "provider": "runpod",
+  "spending_ceiling_usd": 4.0,
+  "wallet_usd": 102.1852017902
+}

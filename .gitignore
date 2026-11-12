@@ -8,6 +8,7 @@ __pycache__/
 .matplotlib/
 .model-cache/
 .venv/
+.venv-analysis/
 venv/
 .env
 .env.*
@@ -16,15 +17,31 @@ runpod_offload/
 **/runpod_offload/
 **/checkpoints/
 **/lora_weights/
-/2026-08-31/data/private/
 *.safetensors
 *.pt
 *.pth
-/2026-10-03/runtime/
-/2026-10-03/data/private/
-/2026-10-03/data/upload/
-**/data/private/
-**/runtime/
 Thumbs.db
 .hf-write-token
 pod_key
+**/pod_key
+**/pod_key.pub
+**/known_hosts
+
+# Private / runtime / image storage (never commit)
+**/data/private/
+**/runtime/
+**/_data/private/
+**/_runtime/
+**/_prime-lab/
+datasets/private_targets/
+datasets/shared/fairface_pool_private/
+datasets/shared/root_data/
+scripts/train_eval/_data/private/
+scripts/train_eval/_runtime/
+scripts/train_eval/_prime-lab/
+
+# Local reorg helpers
+_reorg_*.py
+_build_notebooks.py
+_cleanup_reorg.py
+_stop_daemon.*

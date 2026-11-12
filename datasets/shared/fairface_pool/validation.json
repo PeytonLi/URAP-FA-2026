@@ -1,0 +1,60 @@
+{
+  "balance_checks": [
+    {
+      "dataset": "utkface",
+      "images_per_race_gender_cell": 100,
+      "joint_age_expression_equal": true,
+      "split": "all"
+    },
+    {
+      "dataset": "utkface",
+      "images_per_race_gender_cell": 60,
+      "joint_age_expression_equal": true,
+      "split": "train"
+    },
+    {
+      "dataset": "utkface",
+      "images_per_race_gender_cell": 20,
+      "joint_age_expression_equal": true,
+      "split": "development"
+    },
+    {
+      "dataset": "utkface",
+      "images_per_race_gender_cell": 20,
+      "joint_age_expression_equal": true,
+      "split": "test"
+    },
+    {
+      "dataset": "fairface",
+      "images_per_race_gender_cell": 100,
+      "joint_age_expression_equal": true,
+      "split": "all"
+    },
+    {
+      "dataset": "fairface",
+      "images_per_race_gender_cell": 60,
+      "joint_age_expression_equal": true,
+      "split": "train"
+    },
+    {
+      "dataset": "fairface",
+      "images_per_race_gender_cell": 20,
+      "joint_age_expression_equal": true,
+      "split": "development"
+    },
+    {
+      "dataset": "fairface",
+      "images_per_race_gender_cell": 20,
+      "joint_age_expression_equal": true,
+      "split": "test"
+    }
+  ],
+  "bias_benchmarks_run": 0,
+  "config_sha256": "1c5619031e415944e92ae564fdfe9c0dc05857ff89ef3c2417ed98028535067e",
+  "errors": [],
+  "human_validated": false,
+  "image_files_verified": true,
+  "passed": true,
+  "person_disjointness_verified": false,
+  "selected_images": 2400
+}
