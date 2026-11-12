@@ -26,6 +26,7 @@ pod_key
 **/pod_key
 **/pod_key.pub
 **/known_hosts
+AGENTS.md
 
 # Private / runtime / image storage (never commit)
 **/data/private/
