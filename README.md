@@ -41,6 +41,7 @@ Prompt sweeps (prompts 2–21) evaluate **base vs saved V4 ORPO** under alternat
 | Notebook index | [`notebooks/README.md`](notebooks/README.md) (`01`–`08` reproducible Jupyter) |
 | Narrative (V1–V4) | [`docs/REPORT_v1_v4.md`](docs/REPORT_v1_v4.md) |
 | V4 writeup | [`docs/V4_WRITEUP.md`](docs/V4_WRITEUP.md) |
+| **Reproduce ORPO V4** | [`docs/V4_REPLICATION.md`](docs/V4_REPLICATION.md) |
 | Base Colab (GPU) | [`notebooks/base/neutral12_base_colab.ipynb`](notebooks/base/neutral12_base_colab.ipynb) |
 | V4 IAT stats | [`results/v4/iat/iat_stats_v4/`](results/v4/iat/iat_stats_v4/) |
 | Prompt sweeps C/D | [`results/v4/prompt_sweeps/C`](results/v4/prompt_sweeps/C), [`…/D`](results/v4/prompt_sweeps/D) |
@@ -58,10 +59,12 @@ All training/analysis **Python modules remain under `scripts/`**. Notebooks impo
 
 ## Model files and data access
 
-Small configs and CSVs are in Git. LoRA weights, raw FairFace/UTKFace images, and RunPod recoveries stay in ignored local storage under paths such as:
+Small configs and CSVs are in Git. The **ORPO V4 replication pack** is also tracked under [`datasets/v4/replication/`](datasets/v4/replication/) (matched targets + the 640 train/dev faces + IAT-12 eval JPEGs). See [`docs/V4_REPLICATION.md`](docs/V4_REPLICATION.md).
 
-- `datasets/shared/fairface_pool_private/`
-- `datasets/private_targets/`
+LoRA weights, the full FairFace/UTKFace private pool, and RunPod recoveries stay ignored under paths such as:
+
+- `datasets/shared/fairface_pool_private/` (full pool; V4 subset is copied into `datasets/v4/replication/`)
+- `datasets/private_targets/` (legacy local copy; tracked V4 targets live in the replication pack)
 - `scripts/train_eval/_data/private/`
 - `scripts/train_eval/_runtime/`
 

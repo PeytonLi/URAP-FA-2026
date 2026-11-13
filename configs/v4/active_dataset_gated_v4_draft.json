@@ -1,5 +1,5 @@
 {
-  "asset_root": "2026-09-29/private/dataset",
+  "asset_root": "datasets/v4/replication/dataset",
   "benchmark_images_training_allowed": false,
   "benchmark_scope": "iat_only",
   "dataset_counts": {
@@ -12,18 +12,18 @@
     "train": 1920
   },
   "identical_answers_within_block": true,
-  "manifest_path": "2026-10-20\\data\\selected_images_gated_v4.csv",
+  "manifest_path": "datasets/v4/selected_images_gated_v4.csv",
   "manifest_sha256": "5dc42ec1d49afc480bd159037cf6297a1a2ada69a269f0ecbfc28cd64854fa35",
-  "parent_manifest_path": "2026-09-29/data/selected_images.csv",
+  "parent_manifest_path": "datasets/shared/fairface_pool/selected_images.csv",
   "parent_manifest_sha256": "7b08c31122f624e733ac279b87882c9138a05ea4c9dc7a16596105a5d4637d13",
   "preserve_published_splits": true,
-  "primary_benchmark": "2026-09-11/data/iat12/manifest.csv",
+  "primary_benchmark": "datasets/shared/iat12/iat12/manifest.csv",
   "profile_targets_used": 0,
   "split_counts": {
     "development": 160,
     "train": 480
   },
-  "superseded_pairs": "2026-10-03/data/pairs.csv",
+  "superseded_pairs": "datasets/shared/fairface_pool/candidate_audit.csv",
   "target_policy": "Matched answers v4: 4 mixed-valence triples per block, identical for all Black and White members, even 50-word coverage per split; single-valence rejected answers",
   "target_races": [
     "Black",
@@ -33,7 +33,7 @@
     "train",
     "development"
   ],
-  "targets_path": "2026-10-20/data/private/curated_iat_targets_v4.json",
+  "targets_path": "datasets/v4/replication/curated_iat_targets_v4.json",
   "test_preference_generation_allowed": false,
   "training_inputs": {
     "orpo": [

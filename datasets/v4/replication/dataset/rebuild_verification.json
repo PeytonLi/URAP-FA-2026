@@ -1,0 +1,6 @@
+{
+  "source_images_and_exported_png_hashes_match": true,
+  "verified_images": 640,
+  "which": "v4_replication_selected",
+  "note": "Subset of the curated pool required for ORPO v4 train/dev only"
+}

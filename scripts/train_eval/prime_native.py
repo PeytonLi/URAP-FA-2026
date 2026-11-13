@@ -148,7 +148,7 @@ def package_inputs(destination, resume_from=None, extras_only=None, prompt_sweep
     paths.update((study.ROOT / "config").glob("*.json"))
     paths.update((study.REPO / "2026-09-11/src/multimodel_bias").glob("*.py"))
     paths.add(study.REPO / "2026-09-11/scripts/fireworks_gemma4.py")
-    paths.add(study.REPO / "2026-09-11/data/iat12/manifest.csv")
+    paths.add(study.IAT12_MANIFEST)
     paths.add(study.REPO / "2026-09-11/config/models_aug31.json")  # visbias.py orders results by it
     # DecodingTrust + BOLD + VisBias inputs (frozen, sha-pinned under SOURCE.json).
     paths.update((study.REPO / "2026-09-05/data/bold").glob("*"))
@@ -180,7 +180,7 @@ def package_inputs(destination, resume_from=None, extras_only=None, prompt_sweep
         raise ValueError("Approved targets file missing: " + config["targets_path"])
     paths.add(targets)
     paths.update(study.REPO / config["asset_root"] / row["image_path"] for row in rows)
-    stimuli = study.read_csv(study.REPO / "2026-09-11/data/iat12/manifest.csv")
+    stimuli = study.read_csv(study.IAT12_MANIFEST)
     checksums = {}
     with tarfile.open(destination, "w:gz") as archive:
         for path in sorted(paths):

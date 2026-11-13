@@ -19,6 +19,8 @@ import sys
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parents[1]
+IAT12_MANIFEST = REPO / "datasets" / "shared" / "iat12" / "iat12" / "manifest.csv"
+IAT12_IMAGE_DIR = REPO / "datasets" / "shared" / "iat12" / "iat12" / "images"
 sys.path.insert(0, str(REPO / "scripts" / "archive" / "multimodel_bias_src"))
 from multimodel_bias.constants import IAT_PROMPT, IAT_WORDS
 
@@ -323,7 +325,7 @@ def prepare_legacy(asset_root=None):
     asset_root = asset_root or (recovered if recovered.is_dir() else REPO)
     source = SOURCE / "all_claude_eligible_pairs.csv"
     all_rows = read_csv(source)
-    forbidden = {row["sha256"] for row in read_csv(REPO / "2026-09-11/data/iat12/manifest.csv")}
+    forbidden = {row["sha256"] for row in read_csv(IAT12_MANIFEST)}
     rows = [row for row in all_rows if row["task_type"] == "iat_3word"]
     failures = {row["pair_id"]: label_failures(row, forbidden) for row in rows}
     eligible = [row for row in rows if not failures[row["pair_id"]]]
@@ -459,7 +461,7 @@ def audit_legacy(asset_root=None):
     recovered = ROOT / "data/private/assets"
     asset_root = asset_root or (recovered if recovered.is_dir() else REPO)
     source_files = ("mixed_dpo_pairs_frozen.csv", "all_claude_eligible_pairs.csv")
-    evaluation = read_csv(REPO / "2026-09-11/data/iat12/manifest.csv")
+    evaluation = read_csv(IAT12_MANIFEST)
     forbidden = {row["sha256"] for row in evaluation}
     report = {"checked_at": now(), "training_performed": False, "profile_targets_used": 0,
               "prompt_sha256": hashlib.sha256(IAT_PROMPT.encode()).hexdigest(), "sources": []}

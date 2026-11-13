@@ -40,6 +40,14 @@ datasets/shared/root_data/
 scripts/train_eval/_data/private/
 scripts/train_eval/_runtime/
 scripts/train_eval/_prime-lab/
+scripts/train_eval/data/
+scripts/train_eval/results/
+
+# V4 replication pack is intentionally tracked (matched targets + 640 images + IAT-12)
+!datasets/v4/replication/
+!datasets/v4/replication/**
+!datasets/shared/iat12/iat12/images/
+!datasets/shared/iat12/iat12/images/**
 
 # Local reorg helpers
 _reorg_*.py

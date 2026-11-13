@@ -202,8 +202,8 @@ def run(model_name, method, image_dir, max_seconds, checkpoint=None, development
         display_name=benchmark.MODELS[model_name][1] + " (native " + method + ")",
         base_model=settings["model"] + "@" + settings["revision"]), provider_endpoint="prime/native-transformers")
     config = benchmark.fw.run_config(1)
-    stimuli = development_stimuli(dataset_config) if development else benchmark.fw.load_stimuli(
-        study.REPO / "2026-09-11/data/iat12/manifest.csv", image_dir=image_dir)
+        stimuli = development_stimuli(dataset_config) if development else benchmark.fw.load_stimuli(
+        study.IAT12_MANIFEST, image_dir=image_dir)
     if development:
         config = replace(config, benchmark_version="iat-development-v3-12x50")
     if spec:
@@ -264,7 +264,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model", choices=("gemma3_12b",), required=True)
     parser.add_argument("--method", choices=("base", "orpo"), required=True)
-    parser.add_argument("--image-dir", type=Path, required=True)
+    parser.add_argument("--image-dir", type=Path, default=study.IAT12_IMAGE_DIR)
     parser.add_argument("--checkpoint", type=Path)
     parser.add_argument("--max-seconds", type=float, required=True)
     parser.add_argument("--development", action="store_true")

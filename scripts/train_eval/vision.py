@@ -31,7 +31,7 @@ def probe_rows(asset_root):
         if not blocks:
             raise ValueError(f"No complete hash-verified training block for {expression}")
         selected.extend(sorted(blocks[0], key=lambda row: row["fairface_race"]))
-    forbidden = {row["sha256"] for row in study.read_csv(study.REPO / "2026-09-11/data/iat12/manifest.csv")}
+    forbidden = {row["sha256"] for row in study.read_csv(study.IAT12_MANIFEST)}
     if any(study.label_failures(row, forbidden) for row in selected):
         raise ValueError("A modality-probe row failed its historical label audit")
     return selected

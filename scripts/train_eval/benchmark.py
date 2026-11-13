@@ -62,7 +62,7 @@ def probe(selected, image_dir, deployment=None):
     key, _ = study.fireworks_auth()
     client = fw.OpenRouterClient(key, base_url=fw.FIREWORKS_BASE_URL,
                                 max_retries=0, timeout_seconds=45)
-    stimuli = fw.load_stimuli(study.REPO / "2026-09-11/data/iat12/manifest.csv", image_dir=image_dir)
+    stimuli = fw.load_stimuli(study.IAT12_MANIFEST, image_dir=image_dir)
     receipts = []
     for name in selected:
         model_id, display = MODELS[name]
@@ -91,7 +91,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("action", choices=("probe", "smoke", "run"))
     parser.add_argument("--models", nargs="+", choices=tuple(MODELS), default=list(MODELS))
-    parser.add_argument("--image-dir", type=Path, default=Path("C:/Users/lipey/Downloads/12_images/race"))
+    parser.add_argument("--image-dir", type=Path, default=study.IAT12_IMAGE_DIR)
     parser.add_argument("--deployment", help="Dedicated deployment resource for exactly one selected model")
     parser.add_argument("--wait-for-ready", action="store_true")
     parser.add_argument("--cleanup", action="store_true", help="Delete only the deployment in this study's creation receipt")

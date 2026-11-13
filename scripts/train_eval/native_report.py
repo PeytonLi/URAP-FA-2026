@@ -23,7 +23,7 @@ def verified_results(recovered, require_all=True):
     if not dataset:
         raise ValueError("Active curated dataset required for report validation")
     expected_images = [{k: row[k] for k in ("image_id", "filename", "race", "gender", "sha256")}
-                       for row in study.read_csv(study.REPO / "2026-09-11/data/iat12/manifest.csv")]
+                       for row in study.read_csv(study.IAT12_MANIFEST)]
     slots = {(row["image_id"], iteration) for row in expected_images for iteration in range(1, 51)}
     hashes = {row["image_id"]: row["sha256"] for row in expected_images}
     training, conditions = {}, {}
