@@ -1,6 +1,6 @@
 # URAP-FA-2026
 
-Private Fall 2026 research repository: https://github.com/PeytonLi/URAP-FA-2026.
+Fall 2026 research repository: https://github.com/PeytonLi/URAP-FA-2026.
 
 Can we make a vision-language model less biased without making it worse at other tasks?
 
